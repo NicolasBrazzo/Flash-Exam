@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useMutation } from "../hooks/useMutation";
 import { validateEmail } from "../utils/validators";
@@ -34,7 +34,7 @@ export const Login = () => {
     {
       onSuccess: () => {
         showSuccess("Login avvenuto con successo");
-        navigate("/dashboard");
+        navigate("/");
       },
     }
   );
@@ -65,7 +65,7 @@ export const Login = () => {
             <span className="text-2xl leading-none">{APP_LOGO}</span>
           </div>
           <h1 className="text-2xl font-semibold tracking-tight">{APP_NAME}</h1>
-          <p className="text-sm text-muted-foreground">Accedi al gestionale</p>
+          <p className="text-sm text-muted-foreground">Accedi per iniziare a studiare</p>
         </div>
 
         <div className="rounded-xl border bg-card p-6 shadow-sm space-y-4">
@@ -102,18 +102,6 @@ export const Login = () => {
               Accedi
             </Button>
           </form>
-        </div>
-
-        <div className="text-center space-y-2">
-          <p className="text-sm text-muted-foreground">
-            Non hai un account?{" "}
-            <Link
-              to="/register"
-              className="text-foreground hover:underline transition-colors"
-            >
-              Registrati
-            </Link>
-          </p>
         </div>
       </div>
     </div>

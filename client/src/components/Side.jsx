@@ -1,19 +1,18 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { LayoutDashboard, UserPlus, LogOut } from "lucide-react";
+import { House, LogOut } from "lucide-react";
 import { APP_NAME, APP_LOGO } from "../constants/app";
 import { ThemeToggle } from "./ThemeToggle";
 
 // Voci di menu: aggiungere qui le pagine delle risorse del progetto.
 const MENU_ITEMS = [
-  { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
-  { icon: UserPlus, label: "Utenti", path: "/users" },
+  { icon: House, label: "Home", path: "/" },
 ];
 
 export const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, logout } = useAuth();
+  const { logout } = useAuth();
 
   return (
     <aside
@@ -43,13 +42,11 @@ export const Sidebar = () => {
       </div>
 
       <nav className="py-4">
-        {MENU_ITEMS.filter((item) =>
-          // Nascondi la voce "Utenti" se l'utente non è admin
-          item.path === "/users" ? user?.isAdmin : true,
-        ).map((item) => (
+        {MENU_ITEMS.map((item) => (
           <NavLink
             key={item.path}
             to={item.path}
+            end
             className={({ isActive }) =>
               [
                 "flex cursor-pointer items-center gap-3 px-4 py-3 transition-colors",

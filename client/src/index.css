@@ -53,9 +53,8 @@
   --color-accent: var(--accent);
   --color-box-bg: var(--box-bg);
 
-  /* Landing (HomePage): font display (titolo) e dati (numeri/etichette).
-     I testi vivono in src/constants/app.js (HOME); i colori sono i token
-     shadcn condivisi con il resto del gestionale. */
+  /* Font display (titoli) e dati (numeri/etichette), usati insieme ai token
+     shadcn condivisi con il resto del sito. */
   --font-display: "Bricolage Grotesque Variable", "Inter Variable", sans-serif;
   --font-data: "IBM Plex Mono", ui-monospace, monospace;
 }

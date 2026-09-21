@@ -1,6 +1,6 @@
 # Deploy — Railway (backend) + Vercel (frontend)
 
-Procedura collaudata per pubblicare il gestionale: server Express su
+Procedura collaudata per pubblicare il sito: server Express su
 **Railway**, client Vite su **Vercel**, database già su Supabase (non va
 deployato: è lo stesso usato in locale).
 
@@ -52,7 +52,7 @@ poi il frontend, poi si torna su Railway per il CORS.
    ⚠️ Le variabili `VITE_*` vengono **compilate nel bundle**: se cambi
    `VITE_API_URL` dopo il deploy devi fare **Redeploy**.
 5. Deploy. Il file `client/vercel.json` (già nel repo) riscrive tutte le
-   rotte su `index.html`: senza, il refresh su `/dashboard` darebbe 404.
+   rotte su `index.html`: senza, il refresh su una rotta interna darebbe 404.
 
 ## 3. CORS: chiudi il cerchio
 
@@ -62,7 +62,8 @@ il valore viene usato tale e quale come origin CORS). Railway ri-deploya da solo
 
 ## 4. Seed e checklist finale
 
-Il seed si lancia **in locale** ma popola lo stesso Supabase usato dal deploy:
+Il seed si lancia **in locale** ma popola lo stesso Supabase usato dal deploy.
+Crea l'unica utente del sito leggendo le variabili `SEED_*` da `server/.env`:
 
 ```bash
 cd server
@@ -72,10 +73,9 @@ npm run seed
 Checklist (dall'URL Vercel, in incognito):
 
 - [ ] `https://<railway>/health` risponde `{"status":"ok"}`
-- [ ] Registrazione di un nuovo utente (nome, cognome, email, password) funziona
-- [ ] Logout e login con le credenziali di test del seed (`admin@test.it` / `Admin123!`)
-- [ ] Da admin: pagina Utenti visibile e CRUD funzionante
-- [ ] Refresh del browser su `/dashboard` → nessun 404
+- [ ] Login con le credenziali del seed (`SEED_EMAIL` / `SEED_PASSWORD` del `.env` del server)
+- [ ] Dopo il login si atterra sulla Home; il logout riporta al login
+- [ ] Refresh del browser su una rotta interna → nessun 404
 - [ ] Collection Postman: cambia `baseUrl` con l'URL Railway e verifica login + una rotta protetta
 
 ## Problemi tipici

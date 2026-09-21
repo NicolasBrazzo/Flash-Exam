@@ -27,7 +27,6 @@ export const AuthProvider = ({ children }) => {
         setUser({
           id: u.sub,
           email: u.email,
-          isAdmin: u.isAdmin,
           firstName: u.first_name,
           lastName: u.last_name,
         });
@@ -58,32 +57,14 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const register = async (payload) => {
-    try {
-      const res = await api.post("/auth/register", payload);
-      if (res.data.ok && res.data.token) {
-        localStorage.setItem("token", res.data.token);
-        await checkAuth();
-        return { ok: true, message: "Register success" };
-      }
-      return { ok: false, message: res.data?.error || "Register failed" };
-    } catch (err) {
-      return { ok: false, message: err.message };
-    }
-  };
-
-  const logout = async () => {
-    try {
-      await api.post("/auth/logout");
-    } catch (e) {
-      console.error("Logout error: ", e);
-    }
+  // Logout solo lato client: il token JWT è stateless, basta rimuoverlo.
+  const logout = () => {
     localStorage.removeItem("token");
     setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

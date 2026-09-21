@@ -9,8 +9,10 @@ su Supabase. Tenere allineati [`schema.sql`](./schema.sql) e
 
 ## #001 — Schema iniziale
 
-Tabella `T_Users` per autenticazione e gestione utenti del template
-(uuid PK, email univoca, password bcrypt, flag `isAdmin`, `created_at`).
+Tabella `T_Users` per l'autenticazione (uuid PK, email univoca, password
+bcrypt, nome e cognome, `created_at`). Il sito ha una sola utente, creata
+da `npm run seed`: non esiste registrazione pubblica e non esistono ruoli,
+quindi nessuna colonna `isAdmin`.
 
 ```sql
 create extension if not exists "pgcrypto";
@@ -19,24 +21,26 @@ create table if not exists "T_Users" (
     "id"         uuid        primary key default gen_random_uuid(),
     "email"      text        not null unique,
     "password"   text        not null,
-    "isAdmin"    boolean     not null default false,
+    "first_name" text,
+    "last_name"  text,
     "created_at" timestamptz not null default now()
 );
 ```
 
+> Da eseguire manualmente nel SQL Editor di Supabase.
+
 ---
 
-## #002 — Nome e cognome su `T_Users`
+## #002 — Rinominata `T_Users` in `FE_Users`
 
-Aggiunte le colonne `first_name` e `last_name`: la registrazione richiede
-nome e cognome obbligatori (requisito standard delle prove d'esame).
-Colonne nullable a livello DB per non rompere gli utenti esistenti;
-l'obbligatorietà è applicata dai controller (`validateName`).
+Il prefisso delle tabelle del progetto passa da `T_` (neutro, ereditato dal
+template) a `FE_`. Aggiornate le costanti `TABLE_NAME` in
+`server/models/user.model.js` e `USERS_TABLE` in `server/database/seed.js`.
 
 ```sql
-alter table "T_Users"
-  add column "first_name" text,
-  add column "last_name"  text;
+alter table "T_Users" rename to "FE_Users";
 ```
 
-> ⚠️ Da eseguire manualmente nel SQL Editor di Supabase.
+> Da eseguire manualmente nel SQL Editor di Supabase.
+> Se la tabella non è ancora stata creata, salta questo comando: basta
+> eseguire `schema.sql`, che ora crea direttamente `FE_Users`.

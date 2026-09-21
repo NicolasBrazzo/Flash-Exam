@@ -4,7 +4,6 @@ const express = require("express");
 const cors = require("cors");
 
 const authRoutes = require("./controllers/auth.controller");
-const usersRoutes = require("./controllers/users.controller");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,7 +18,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/auth", authRoutes);
-app.use("/users", usersRoutes);
 
 app.get("/health", (req, res) => {
   res.status(200).json({ status: "ok" });

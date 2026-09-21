@@ -62,16 +62,16 @@ api.interceptors.response.use(
 
     // Token scaduto o non valido a sessione avviata: rimuove il token e torna
     // al login. Escluso /auth/login (lì il 401 = credenziali errate, lo gestisce
-    // il form) e le pagine pubbliche (nessun redirect forzato).
+    // il form) e la pagina di login stessa (nessun redirect forzato).
     if (status === 401 && !error.config?.url?.includes('/auth/login')) {
       localStorage.removeItem('token');
-      const publicPaths = ['/', '/login', '/register'];
+      const publicPaths = ['/login'];
       if (!publicPaths.includes(window.location.pathname)) {
         window.location.replace('/login');
       }
     }
 
-    console.log('❌ Errore API:', normalizedError);
+    console.log('Errore API:', normalizedError);
     return Promise.reject(normalizedError);
   }
 );

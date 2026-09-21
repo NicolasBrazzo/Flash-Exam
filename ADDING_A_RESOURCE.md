@@ -1,9 +1,10 @@
-# Aggiungere una risorsa al gestionale
+# Aggiungere una risorsa
 
-Ricetta per aggiungere una nuova risorsa (es. "clienti", "ordini", "spese")
-partendo dal template. I passi sono sempre gli stessi; l'esempio vivo del
-pattern completo è la risorsa **Utenti** (`server/controllers/users.controller.js`
-+ `client/src/pages/Users.jsx`).
+Ricetta per aggiungere una nuova risorsa (es. "domande", "articoli",
+"simulazioni"). I passi sono sempre gli stessi. Nel repo non esiste ancora
+un'implementazione di riferimento: la **prima risorsa reale del progetto**
+lo diventerà (model + controller + service + pagina), quindi curala come
+esempio per tutte le successive.
 
 > Se la risorsa espone un elenco con filtri, paginazione o ordinamento,
 > segui le convenzioni in [`client/src/FILTERS_BE.md`](client/src/FILTERS_BE.md).
@@ -26,7 +27,7 @@ pattern completo è la risorsa **Utenti** (`server/controllers/users.controller.
    in `utils/`), regole di business e risposte HTTP nel formato
    `{ ok: true, ... }` / `{ ok: false, error }` (errori in italiano).
    - Rotte protette: middleware `protect` (`middleware/auth.js`).
-   - Rotte solo-admin: aggiungi anche `isAdmin` (`middleware/isAdmin.js`).
+     Il sito è a utente unico e senza ruoli: non esistono rotte solo-admin.
 3. **Mount** — in `server.js`: `app.use("/<risorsa>", require("./controllers/<risorsa>.controller"));`
 4. **Documentazione** — aggiungi ogni rotta a `server/ENDPOINTS.md` nella
    stessa modifica.
@@ -42,8 +43,7 @@ pattern completo è la risorsa **Utenti** (`server/controllers/users.controller.
 1. **Service** — `src/services/<risorsa>Service.js`: wrappa le chiamate con
    l'istanza `api` (`src/api/client.js`), fa l'unwrap della risposta
    (es. `return res.data.items`) e rilancia gli errori come `Error(message)`.
-2. **Pagina** — `src/pages/<Risorsa>.jsx` copiando il pattern di
-   `src/pages/Users.jsx`:
+2. **Pagina** — `src/pages/<Risorsa>.jsx` seguendo il pattern:
    - `useFetch` per la lista + `useMutation` per create/update/delete;
    - sottocomponente `*Form` inline guidato da `formState` locale;
    - `Modal` per crea/modifica e un altro per il dettaglio;
@@ -56,9 +56,11 @@ pattern completo è la risorsa **Utenti** (`server/controllers/users.controller.
 5. **Label tabella** — mappa `<RISORSA>_COLUMN_LABELS` in
    `src/constants/columnLabels.js`.
 
-## Personalizzare il template (una tantum, a inizio progetto)
+## Configurazione iniziale (una tantum)
 
-- Nome e logo app: `client/src/constants/app.js` + `<title>` in `client/index.html`.
-- Prefisso tabelle: scegli il prefisso del progetto e allinea le costanti
-  `TABLE_NAME` nei models (vedi `server/database/schema.md`).
-- `.env` di entrambi i lati (copiando i `.env.example`).
+- Nome e logo app: `client/src/constants/app.js` + `<title>` in `client/index.html`
+  (`APP_NAME` è al momento il provvisorio "Studio").
+- Prefisso tabelle: `FE_`, allineato alle costanti `TABLE_NAME` nei models
+  (vedi `server/database/schema.md`).
+- `.env` di entrambi i lati (copiando i `.env.example`); lato server le
+  variabili `SEED_*` servono a `npm run seed` per creare l'unica utente.
