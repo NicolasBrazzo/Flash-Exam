@@ -28,8 +28,12 @@ export const ThemeToggle = ({ showLabel = false, showSwitch = true, className })
     );
   }
 
+  // Con l'etichetta la riga intera è un <label>: il tocco sul testo aziona lo
+  // Switch, così il target non si riduce al solo interruttore (iPad)
+  const Wrapper = showLabel ? "label" : "div";
+
   return (
-    <div className={cn("flex items-center gap-3", className)}>
+    <Wrapper className={cn("flex items-center gap-3", showLabel && "cursor-pointer", className)}>
       <span className="flex items-center gap-3 text-muted-foreground">
         <Icon aria-hidden="true" className="w-5 h-5 shrink-0" />
         {showLabel && (
@@ -41,6 +45,6 @@ export const ThemeToggle = ({ showLabel = false, showSwitch = true, className })
         onCheckedChange={toggleTheme}
         aria-label="Attiva tema scuro"
       />
-    </div>
+    </Wrapper>
   );
 };

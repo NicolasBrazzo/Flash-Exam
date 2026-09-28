@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Study site for a single user (see [`docs/PROGETTO.md`](docs/PROGETTO.md) for the project context). Born from a full-stack management-app template and stripped back to the minimal working base: auth for the single user plus the reusable hooks/components. No public registration, no roles, no user management. Domain resources (questions, articles, exam sessions, …) are added following the recipe in [`ADDING_A_RESOURCE.md`](ADDING_A_RESOURCE.md).
 
-Monorepo with two independently-installed packages: `client/` (React SPA) and `server/` (Express REST API backed by Supabase/PostgreSQL). There is no root `package.json` — install and run each side separately. User-facing strings and code comments are in Italian.
+Monorepo with two independently-installed packages: `client/` (React SPA) and `server/` (Express REST API backed by Supabase/PostgreSQL). The root `package.json` holds only dev scripts (plus `concurrently`): the two packages are still installed and deployed separately, each with its own `package.json` and dependencies. User-facing strings and code comments are in Italian.
 
 Deployment (Railway for the server, Vercel for the client) is documented step-by-step in [`DEPLOY.md`](DEPLOY.md).
 
@@ -36,7 +36,12 @@ Deployment (Railway for the server, Vercel for the client) is documented step-by
 
 ## Commands
 
-Run these from inside `client/` or `server/` respectively.
+**Root** (convenience scripts only, run from the repo root):
+- `npm run install:all` — installs root, `server/` and `client/` dependencies
+- `npm run dev` — starts server and client together (via `concurrently`, prefixed logs)
+- `npm run dev:server` / `npm run dev:client` — starts one side only
+
+The package-specific commands below run from inside `client/` or `server/` respectively.
 
 **Client** (`client/`):
 - `npm run dev` — Vite dev server
@@ -67,13 +72,16 @@ Layered, CommonJS. Request flows: **route/controller → model → Supabase**.
 - `models/*.model.js` — pure Supabase data access. Every function queries a table (name in a `TABLE_NAME` constant at the top) and throws a sentinel `Error("DATABASE_*_ERROR")` on failure. No validation or HTTP concerns.
 - `config/db_connection.js` — single shared Supabase client (exported as `supabase`), imported by all models.
 - `config/jwt.js` — centralizes JWT secret/expiry/salt config.
+- `config/zod.js` — configures Zod with the Italian locale (plus Italian type-error messages) and re-exports `z`. Schemas import `z` from here, never from `"zod"` directly.
+- `schemas/*.schema.js` — Zod schemas. **Everything that comes from outside** (import JSON, AI grader output) is validated by a schema in this folder; conventions in `schemas/README.md`.
 - `middleware/auth.js` — exported as `protect`. Verifies `Authorization: Bearer <token>`, attaches decoded payload (`{ sub, email, first_name, last_name }`) to `req.user`. Applied per-route, not globally.
 - `utils/validate*.js` — standalone validators reused across controllers (`validateEmail`, `validatePassword`). They are not wired to a route yet: use them in the controllers that create or modify data.
+- `utils/zodError.js` — `formatZodError(error)` turns a `ZodError` into an array of `"path: message"` strings (max 50); `sendZodError(res, error)` sends the standard `400 { ok: false, error: [...] }`.
 
 **Conventions to follow when adding endpoints:**
 - Every response is JSON shaped `{ ok: true, ... }` or `{ ok: false, error }`. `error` is usually a string but can be an **array** (e.g. `validatePassword` returns a list of failures) — the client joins arrays with `; `.
 - Protected routes: pass `protect` as route middleware.
-- Validate in the controller, then delegate persistence to the model.
+- Validate in the controller, then delegate persistence to the model. External payloads use `schema.safeParse(req.body)` and, on failure, `sendZodError`; after that, use `parsed.data`, not `req.body`.
 - Error strings are Italian and returned to the user.
 
 **Data model** (see `server/database/schema.sql` + `schema.md`, kept in sync manually — they are reconstructed from app code, NOT exported from Supabase; changes are logged in `server/database/CHANGELOG.md`):

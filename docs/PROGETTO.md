@@ -40,7 +40,7 @@ La base è il template dell'utente: vedi `CLAUDE.md` per architettura e convenzi
 ## Decisioni prese con lei
 
 ### Domande
-- **Brevi, specifiche e secche**, con una risposta attesa di circa **2 righe**.
+- **Brevi, specifiche e secche**, con una risposta attesa di circa **2 righe**. 
 - Per gli articoli: domande anche **comma per comma**, non solo sull'articolo intero.
 - **Sì** alle domande di confronto (esempio: "Differenze tra nullità e annullabilità").
 - **No** alle domande inverse ("quale articolo disciplina...?").
