@@ -13,9 +13,11 @@ Il progetto è molto importante per l'utente: cura, qualità e semplicità d'uso
 ### Materiale di studio
 - Manuale: *Torrente, Manuale di diritto privato*, 25a edizione.
 - Codice civile 2026, con le parti rilevanti per Privato 1: Libro I (persone e famiglia, primi titoli), Libro IV (obbligazioni, contratti, fatti illeciti), Libro VI (tutela dei diritti).
-- Circa **1.200 articoli** e circa **50 argomenti** di teoria.
+- Circa **50 argomenti** di teoria.
 - Studia 2-3 ore al giorno, in sessioni da circa un'ora.
 - Usa il sito da **Mac e iPad** (Safari). Il supporto offline non serve. Su iPad l'hover non esiste: ogni interazione deve funzionare anche al tocco.
+
+Il codice civile è **materiale da cui si generano le domande**, non un contenuto del sito: il sito non importa né mostra gli articoli (vedi "Da dove arrivano le domande").
 
 ## Sull'utente
 
@@ -40,16 +42,17 @@ La base è il template dell'utente: vedi `CLAUDE.md` per architettura e convenzi
 ## Decisioni prese con lei
 
 ### Domande
-- **Brevi, specifiche e secche**, con una risposta attesa di circa **2 righe**. 
-- Per gli articoli: domande anche **comma per comma**, non solo sull'articolo intero.
+- **Brevi, specifiche e secche**, con una risposta attesa di circa **2 righe**.
+- **Nessuna domanda su un articolo specifico** ("Cosa dispone l'art. 1541 c.c.?", "Cosa prevede il comma 2 dell'art. 1543?"): non le servono. Le domande sono sui **concetti**, anche quando la risposta si trova negli articoli. Esempio: "Come si acquisisce la capacità giuridica?" (la risposta è nell'art. 1 c.c., ma la domanda non chiede l'articolo).
 - **Sì** alle domande di confronto (esempio: "Differenze tra nullità e annullabilità").
 - **No** alle domande inverse ("quale articolo disciplina...?").
+- Ogni domanda appartiene a un **argomento**: i macro argomenti che lei studia (circa 50). Sono la base per scegliere cosa ripassare nelle flashcard.
 - Le domande vengono generate, non le scrive lei. Più avanti manderà esempi di domande d'esame reali, che sono molto specifiche, da usare come riferimento di stile.
 
 ### Valutazione
 - Conta il **concetto e il contenuto, non le parole esatte**. Nessun punteggio letterale parola per parola.
 - In diritto però la **terminologia tecnica** conta ("nullo" non è "annullabile", "può" non è "deve"). La valutazione deve segnalarla.
-- L'**ordine dei commi** conta, quando la domanda riguarda più commi.
+- L'**ordine** conta quando la risposta attesa è una sequenza (per esempio i requisiti o le fasi elencati da una norma).
 - Dopo ogni risposta lei vuole sapere:
   1. **se è giusta**: esito tra corretta, parzialmente corretta ed errata;
   2. **quali parole o espressioni modificare**: per ognuna, il testo che ha scritto, la versione corretta e il motivo in una riga;
@@ -58,14 +61,14 @@ La base è il template dell'utente: vedi `CLAUDE.md` per architettura e convenzi
 
 ### Modalità di studio
 1. **Simulazione d'esame (feature principale)**: 6 domande estratte a caso, con **timer di 40 minuti** per l'intera prova. Allo scadere la prova si consegna automaticamente con le risposte scritte fino a quel momento; lei può anche consegnare prima. Durante la prova non c'è nessun feedback. Alla fine arrivano il **voto complessivo in trentesimi** e poi la revisione domanda per domanda, con esito, correzioni e suggerimento. Nessun voto per singola domanda.
-2. **Flashcard**: lei sceglie argomenti e **numero di domande**. Feedback immediato dopo ogni risposta, nessun voto, nessun timer.
-3. **Ripasso quotidiano**: ripetizione spaziata sulle domande che sta dimenticando. Nessun timer.
+2. **Flashcard**: lei sceglie gli **argomenti** e il **numero di domande**. Feedback immediato dopo ogni risposta, nessun voto, nessun timer.
+3. **Ripasso quotidiano** (rimandato a dopo l'MVP): ripetizione spaziata sulle domande che sta dimenticando. Nessun timer.
 
 ### Calcolo del voto
 - Ogni domanda vale internamente da 0 a 5 punti, quindi 6 domande danno un massimo di 30.
 - I punti derivano dalla valutazione a concetti (vedi sotto) e li calcola il codice, non l'LLM.
 - Lode: default proposto, cioè 30 con tutte e 6 le risposte corrette e nessuna correzione terminologica. Da confermare con l'utente.
-- Il punteggio interno di ogni risposta, da 0 a 1, alimenta anche la ripetizione spaziata, ma non viene mai mostrato a lei.
+- Il punteggio interno di ogni risposta, da 0 a 1, viene salvato (dopo l'MVP alimenterà la ripetizione spaziata), ma non viene mai mostrato a lei.
 
 ### Aspetto
 - **Semplice e pulito.** Tipografia curata, molto spazio bianco, pochi colori.
@@ -86,91 +89,72 @@ L'LLM riceve la domanda, il materiale di riferimento e la risposta di lei, e res
 }
 ```
 
-- **Domande di teoria**: il riferimento è una **griglia di 2-4 concetti chiave con pesi**, generata insieme alla domanda.
-- **Domande sugli articoli**: il riferimento è il **testo ufficiale dell'articolo o del comma**, preso dalla tabella degli articoli. La griglia è opzionale; se manca, i concetti li estrae l'LLM dal testo.
+- Il materiale di riferimento di ogni domanda è la **risposta di riferimento** più la **rubrica**: una griglia di **2-4 concetti chiave con pesi**, generata insieme alla domanda. La rubrica tiene stabile il voto: senza, l'LLM ricaverebbe i concetti a ogni valutazione e la stessa risposta potrebbe prendere voti diversi.
+- I **riferimenti normativi** della domanda (per esempio artt. 1 e 2 c.c.) si mostrano nella revisione come rimando per lo studio; al grader arrivano solo come contesto, non come testo di legge.
 - I punti (0-5) e il punteggio interno (0-1) li calcola il codice a partire dagli stati dei concetti e dai pesi, con una penalità per le correzioni terminologiche.
 - **Simulazione**: le 6 risposte si valutano alla fine in **una sola chiamata** (batch), così l'attesa è una sola e si rispettano i limiti di richieste.
 - **Fallback**: se l'API non risponde, il sito mostra la risposta di riferimento e lei si autovaluta (giusta, parziale, sbagliata). Lo studio non deve mai bloccarsi.
 - Il provider è isolato in un unico modulo del server (per esempio `services/grader.js`), così si può cambiare toccando un solo file.
 
-## Da dove arrivano domande e articoli
+## Da dove arrivano le domande
 
-### Articoli del codice (import JSON)
-Il file del codice civile preparato da lei ha una struttura molto regolare:
-- intestazioni `LIBRO 1°: ...`, `→ TITOLO I: ...`, `Capo I: ...`;
-- ogni articolo nella forma `Art. 1321: Nozione`, seguita dal testo tra virgolette;
-- commi su righe separate; numeri con suffisso (`Art. 42-bis`, `Art. 1785-ter`);
-- articoli segnati come `(abrogato)` nella rubrica;
-- circa 1.020 articoli, numeri di pagina a piè di pagina da scartare.
+Il sito **non genera domande e non contiene parser**: riceve solo file JSON. Le domande vengono generate **fuori dal sito**, da Claude in chat, **argomento per argomento**, a partire dagli appunti di teoria e dal codice civile, e importate tramite una pagina di import con validazione Zod.
 
-Il sito **non contiene nessun parser**: riceve solo file JSON. Il JSON degli articoli viene prodotto **fuori dal sito**, da Claude in chat, a partire dal file del codice. Data la struttura regolare, Claude lo converte con uno script invece di trascriverlo a mano: così il testo di legge viene copiato identico, senza errori, anche per più di mille articoli. Ogni articolo ha numero, suffisso, rubrica, libro, titolo, capo, abrogato sì/no, testo e commi. Gli articoli abrogati si importano ma si escludono dalle domande. Dagli articoli si possono generare domande **a template** senza AI, per esempio "Cosa dispone l'art. 1541 c.c.?" oppure "Cosa prevede il comma 2 dell'art. 1543 c.c.?".
+Gli appunti di teoria sono discorsivi, organizzati per capitoli e argomenti, con titoli in maiuscolo (per esempio `IL CONTRATTO DI SPEDIZIONE [1737-1741]`) e citazioni di articoli nel testo.
 
-**Attenzione**: i PDF esportati da Pages perdono le legature tipografiche in estrazione. Per esempio "diritto" diventa "diri o" e "fisiche" diventa "siche". Per questo la conversione deve partire da una **esportazione in testo o .docx** dei file originali di Pages, non sul PDF.
+**Attenzione**: i PDF esportati da Pages perdono le legature tipografiche in estrazione. Per esempio "diritto" diventa "diri o" e "fisiche" diventa "siche". Per questo il materiale va passato a Claude come **esportazione in testo o .docx** dei file originali di Pages, non come PDF.
 
-### Domande di teoria (import JSON)
-Gli appunti di teoria sono discorsivi, organizzati per capitoli e argomenti, con titoli in maiuscolo (per esempio `IL CONTRATTO DI SPEDIZIONE [1737-1741]`) e citazioni di articoli nel testo. Le domande vengono generate **fuori dal sito**, da Claude in chat, capitolo per capitolo, e importate come JSON tramite una pagina di import con validazione Zod.
+Formato del JSON di import (un file per argomento):
 
 ```json
 {
-  "deck": { "title": "Il contratto - Causa", "chapter": "Il contratto", "tags": ["causa"] },
+  "topic": { "name": "Capacità giuridica e capacità d'agire" },
   "questions": [
     {
-      "type": "THEORY",
-      "prompt": "Cosa si intende per causa concreta del contratto?",
-      "referenceAnswer": "La funzione economico-individuale che il singolo contratto è diretto a realizzare, cioè la sintesi degli interessi concretamente perseguiti dalle parti.",
+      "prompt": "Come si acquisisce la capacità giuridica?",
+      "answer": "Si acquisisce al momento della nascita. I diritti che la legge riconosce a favore del concepito sono subordinati all'evento della nascita.",
       "rubric": [
-        { "id": "c1", "concept": "Funzione economico-individuale del singolo contratto", "weight": 2 },
-        { "id": "c2", "concept": "Sintesi degli interessi concreti delle parti", "weight": 1 }
+        { "id": "c1", "concept": "Acquisto con la nascita", "weight": 2 },
+        { "id": "c2", "concept": "Diritti del concepito subordinati alla nascita", "weight": 1 }
       ],
-      "relatedArticles": ["1325", "1343"],
-      "tags": ["causa"]
-    },
-    {
-      "type": "ARTICLE",
-      "prompt": "Cosa prevede il comma 1 dell'art. 1543 c.c.?",
-      "articleRef": { "number": "1543", "comma": 1 },
-      "tags": ["vendita di eredità"]
+      "references": ["1"]
     }
   ]
 }
 ```
 
-Le domande di tipo `ARTICLE` nel JSON prendono il testo di riferimento dalla tabella degli articoli, quindi non lo ripetono.
+- `topic.name` identifica l'argomento: se esiste già si riusa, altrimenti si crea.
+- `references` elenca i numeri degli articoli del codice civile collegati (con l'eventuale suffisso, per esempio `"42-bis"`); può essere vuoto.
 
 ## Ripetizione spaziata
+> **Rimandata a dopo l'MVP**: non implementare finché l'utente non lo chiede. Quanto segue resta come riferimento.
+
 Basta **SM-2**, alimentato dal punteggio interno da 0 a 1. Ogni domanda ha il suo stato di ripasso (ease factor, intervallo, ripetizioni, data di scadenza). Le risposte date in simulazione e in flashcard aggiornano anche questo stato. La logica sta in un modulo del server (per esempio `utils/sm2.js`).
 
-## Modello dati (bozza indicativa)
+## Modello dati
 
-Da definire nel dettaglio quando si implementa ciascuna risorsa, seguendo le regole del `CLAUDE.md`: prima `schema.md` e `schema.sql`, poi il CHANGELOG. Colonne JSON come `jsonb`.
+I dettagli (colonne, vincoli, indici) stanno in `server/database/schema.md` e `schema.sql`, che hanno la precedenza su questo riepilogo. Colonne JSON come `jsonb`. Nessuna colonna `user_id`: l'utente è una sola.
 
-- `FE_Articles`: numero, suffisso (bis, ter...), rubrica, libro, titolo, capo, abrogato, testo, commi (jsonb, array ordinato).
-- `FE_Decks`: titolo, capitolo, tag.
-- `FE_Questions`: deck, tipo (ARTICLE o THEORY), prompt, riferimento all'articolo e al comma opzionale, reference_answer opzionale, rubric (jsonb) opzionale, articoli correlati, tag, attiva sì/no.
-- `FE_Attempts`: question, risposta, modalità (EXAM, FLASHCARD, REVIEW), risultato della valutazione (jsonb), punteggio interno, sessione opzionale.
-- `FE_ExamSessions`: domande estratte, inizio, consegna, consegna automatica sì/no, voto in trentesimi, lode.
-- `FE_ReviewStates`: question, ease_factor, interval, repetitions, due_date.
+- `FE_Topics`: i macro argomenti. Nome univoco e posizione (ordine di studio).
+- `FE_Questions`: argomento (FK obbligatoria), prompt, risposta di riferimento, rubrica (jsonb, 2-4 concetti con peso), riferimenti normativi (array di numeri di articolo).
+- `FE_ExamSessions`: inizio, scadenza (decisa dal server), consegna, consegna automatica sì/no, stato, voto in trentesimi, lode.
+- `FE_Attempts`: ogni risposta data. Domanda, sessione opzionale, modalità (EXAM, FLASHCARD), posizione nella prova, risposta, esito, risultato della valutazione (jsonb), fonte della valutazione (AI o autovalutazione), punti e punteggio interno. All'avvio di una simulazione si creano subito le 6 righe con la risposta vuota: così le domande estratte hanno un ordine garantito e le risposte si salvano in bozza durante la prova.
+- Dopo l'MVP: `FE_ReviewStates` (domanda, ease_factor, interval, repetitions, due_date) e la modalità REVIEW.
 
 ## Perimetro dell'MVP (obiettivo: 1-2 settimane)
 
 1. Base pulita dal template: login per un solo utente e Home vuota.
-2. Import degli articoli da JSON, con una pagina per consultare gli articoli (DataTable e FilterBar).
-3. Import del JSON delle domande di teoria.
-4. Generazione delle domande a template dagli articoli.
-5. Grader con Gemini, con fallback di autovalutazione.
-6. **Simulazione d'esame**: 6 domande, timer di 40 minuti, voto in trentesimi e revisione finale.
-7. Flashcard con scelta di argomenti e numero di domande.
-8. Ripasso quotidiano con SM-2 e una Home con le domande in scadenza.
+2. Argomenti e domande: import del JSON e una pagina per consultarle (DataTable e FilterBar).
+3. Grader con Gemini, con fallback di autovalutazione.
+4. **Simulazione d'esame**: 6 domande, timer di 40 minuti, voto in trentesimi e revisione finale.
+5. Flashcard con scelta di argomenti e numero di domande.
 
-Dopo l'MVP: storico delle simulazioni con l'andamento dei voti, statistiche per argomento, ritocchi di design.
+Dopo l'MVP: ripasso quotidiano con SM-2 e una Home con le domande in scadenza, storico delle simulazioni con l'andamento dei voti, statistiche per argomento, ritocchi di design.
 
 ## Ancora da decidere
 
 - Regola della lode (è stato proposto un default).
 - Statistiche e progressi, promemoria, gamification: non ancora chiesti a lei. Non implementare nulla di tutto questo per ora.
+- Consultazione del codice civile dentro il sito: non richiesta. Se servirà, sarà una tabella a parte, senza toccare le domande.
 - Palette esatta e nome definitivo del sito (per ora "Studio").
 - Esempi di domande d'esame reali, che lei manderà più avanti.
-
-## Note tecniche aperte
-- La Sidebar del template si apre al passaggio del mouse: su iPad serve un'apertura al tocco.
-- Utile un `package.json` alla root con `concurrently`, per avviare client e server con un solo comando.

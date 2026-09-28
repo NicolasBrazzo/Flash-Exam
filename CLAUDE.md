@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Study site for a single user (see [`docs/PROGETTO.md`](docs/PROGETTO.md) for the project context). Born from a full-stack management-app template and stripped back to the minimal working base: auth for the single user plus the reusable hooks/components. No public registration, no roles, no user management. Domain resources (questions, articles, exam sessions, …) are added following the recipe in [`ADDING_A_RESOURCE.md`](ADDING_A_RESOURCE.md).
+Study site for a single user (see [`docs/PROGETTO.md`](docs/PROGETTO.md) for the project context). Born from a full-stack management-app template and stripped back to the minimal working base: auth for the single user plus the reusable hooks/components. No public registration, no roles, no user management. Domain resources (topics, questions, exam sessions, …) are added following the recipe in [`ADDING_A_RESOURCE.md`](ADDING_A_RESOURCE.md).
 
 Monorepo with two independently-installed packages: `client/` (React SPA) and `server/` (Express REST API backed by Supabase/PostgreSQL). The root `package.json` holds only dev scripts (plus `concurrently`): the two packages are still installed and deployed separately, each with its own `package.json` and dependencies. User-facing strings and code comments are in Italian.
 

@@ -5,7 +5,7 @@ Sede unica degli schemi [Zod](https://zod.dev) del server.
 ## Regola
 
 **Tutto ciò che entra da fuori passa da uno schema di questa cartella**: i JSON di import
-(articoli, domande) e l'output del grader AI. Nessun controller si fida di questi dati
+(domande) e l'output del grader AI. Nessun controller si fida di questi dati
 senza averli prima validati qui.
 
 La validazione "leggera" dei body delle rotte ordinarie (email, password, campi singoli)
@@ -13,7 +13,7 @@ resta nel controller con i validator di `utils/`, come da `CLAUDE.md`.
 
 ## Convenzioni
 
-- Un file per schema: `<nome>.schema.js` (es. `articlesImport.schema.js`,
+- Un file per schema: `<nome>.schema.js` (es. `questionsImport.schema.js`,
   `graderOutput.schema.js`), in CommonJS, che esporta lo schema.
 - Importare `z` da `config/zod.js`, **mai direttamente da `"zod"`**: lì è attivo il locale
   italiano con i messaggi di errore riscritti.
@@ -21,30 +21,33 @@ resta nel controller con i validator di `utils/`, come da `CLAUDE.md`.
   ```js
   const { z } = require("../config/zod");
 
-  const articlesImportSchema = z.array(
-    z.object({
-      number: z.string().min(1),
-      suffix: z.string().nullable().optional(),
-      commi: z.array(z.string()),
-    })
-  );
+  const questionsImportSchema = z.object({
+    topic: z.object({ name: z.string().min(1) }),
+    questions: z.array(
+      z.object({
+        prompt: z.string().min(1),
+        answer: z.string().min(1),
+        references: z.array(z.string()),
+      })
+    ),
+  });
 
-  module.exports = { articlesImportSchema };
+  module.exports = { questionsImportSchema };
   ```
 
 - Messaggi personalizzati, quando servono, in italiano:
-  `z.string().min(1, "La rubrica non può essere vuota")`.
+  `z.string().min(1, "La domanda non può essere vuota")`.
 
 ## Uso nel controller
 
 Si usa sempre `safeParse` e, in caso di fallimento, `sendZodError` di `utils/zodError.js`:
 
 ```js
-const { articlesImportSchema } = require("../schemas/articlesImport.schema");
+const { questionsImportSchema } = require("../schemas/questionsImport.schema");
 const { sendZodError } = require("../utils/zodError");
 
 router.post("/import", protect, async (req, res) => {
-  const parsed = articlesImportSchema.safeParse(req.body);
+  const parsed = questionsImportSchema.safeParse(req.body);
   if (!parsed.success) return sendZodError(res, parsed.error);
 
   // da qui in poi si usa parsed.data, non req.body
@@ -60,8 +63,8 @@ client unisce con `; `:
 {
   "ok": false,
   "error": [
-    "[3].number: Campo obbligatorio",
-    "[7].commi[0]: Tipo non valido: atteso testo, ricevuto numero"
+    "questions[3].prompt: Campo obbligatorio",
+    "questions[7].references[0]: Tipo non valido: atteso testo, ricevuto numero"
   ]
 }
 ```

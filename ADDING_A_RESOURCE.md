@@ -1,6 +1,6 @@
 # Aggiungere una risorsa
 
-Ricetta per aggiungere una nuova risorsa (es. "domande", "articoli",
+Ricetta per aggiungere una nuova risorsa (es. "argomenti", "domande",
 "simulazioni"). I passi sono sempre gli stessi. Nel repo non esiste ancora
 un'implementazione di riferimento: la **prima risorsa reale del progetto**
 lo diventerà (model + controller + service + pagina), quindi curala come
