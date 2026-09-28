@@ -24,6 +24,26 @@
       "key": "seedPassword",
       "value": "",
       "type": "string"
+    },
+    {
+      "key": "topicId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "questionId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "examId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "attemptId",
+      "value": "",
+      "type": "string"
     }
   ],
   "auth": {
@@ -101,6 +121,516 @@
               ]
             },
             "description": "Dati dell'utente autenticato (dal token). Protetta."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Import",
+      "item": [
+        {
+          "name": "Import domande",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/import/questions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "import",
+                "questions"
+              ]
+            },
+            "description": "Importa le domande di un argomento dal JSON di import. Idempotente: le domande già presenti finiscono in skipped. Salva l'id dell'argomento nella variabile topicId. Protetta.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"topic\": {\n        \"name\": \"Capacità giuridica e capacità d'agire\"\n    },\n    \"questions\": [\n        {\n            \"prompt\": \"Come si acquisisce la capacità giuridica?\",\n            \"answer\": \"Si acquisisce al momento della nascita. I diritti che la legge riconosce a favore del concepito sono subordinati all'evento della nascita.\",\n            \"rubric\": [\n                {\n                    \"id\": \"c1\",\n                    \"concept\": \"Acquisto con la nascita\",\n                    \"weight\": 2\n                },\n                {\n                    \"id\": \"c2\",\n                    \"concept\": \"Diritti del concepito subordinati alla nascita\",\n                    \"weight\": 1\n                }\n            ],\n            \"references\": [\n                \"1\"\n            ]\n        }\n    ]\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res.ok && res.topic && res.topic.id) {",
+                  "    pm.collectionVariables.set('topicId', res.topic && res.topic.id);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Topics",
+      "item": [
+        {
+          "name": "Elenco argomenti",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/topics",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "topics"
+              ]
+            },
+            "description": "Tutti gli argomenti (non paginato), con question_count. Protetta."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Questions",
+      "item": [
+        {
+          "name": "Elenco domande",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/questions?topic_id={{topicId}}&q=&page=1&limit=20&sort=created_at&order=desc",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "questions"
+              ],
+              "query": [
+                {
+                  "key": "topic_id",
+                  "value": "{{topicId}}"
+                },
+                {
+                  "key": "q",
+                  "value": ""
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "sort",
+                  "value": "created_at"
+                },
+                {
+                  "key": "order",
+                  "value": "desc"
+                }
+              ]
+            },
+            "description": "Elenco paginato (FILTERS_BE.md). Filtri: topic_id, q. Salva il primo id nella variabile questionId. Protetta."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res.ok && res.data && res.data[0] && res.data[0].id) {",
+                  "    pm.collectionVariables.set('questionId', res.data && res.data[0] && res.data[0].id);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Dettaglio domanda",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/questions/{{questionId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "questions",
+                "{{questionId}}"
+              ]
+            },
+            "description": "Dettaglio di una domanda. Protetta."
+          }
+        },
+        {
+          "name": "Modifica domanda",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/questions/{{questionId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "questions",
+                "{{questionId}}"
+              ]
+            },
+            "description": "Correzione parziale: almeno un campo tra topic_id, prompt, reference_answer, rubric, references. Protetta.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"reference_answer\": \"Si acquisisce al momento della nascita (art. 1 c.c.).\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Cancella domanda",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/questions/{{questionId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "questions",
+                "{{questionId}}"
+              ]
+            },
+            "description": "Cancella una domanda. 409 se ha già dei tentativi. Protetta."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Exams",
+      "item": [
+        {
+          "name": "Elenco simulazioni",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/exams?status=&page=1&limit=20&sort=started_at&order=desc",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "exams"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": ""
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "sort",
+                  "value": "started_at"
+                },
+                {
+                  "key": "order",
+                  "value": "desc"
+                }
+              ]
+            },
+            "description": "Storico paginato (FILTERS_BE.md). Filtro: status. Protetta."
+          }
+        },
+        {
+          "name": "Avvia simulazione",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/exams",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "exams"
+              ]
+            },
+            "description": "Avvia una simulazione (6 domande, 40 minuti) o riprende quella in corso (resumed: true). Salva l'id nella variabile examId. Protetta."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res.ok && res.exam && res.exam.id) {",
+                  "    pm.collectionVariables.set('examId', res.exam && res.exam.id);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Dettaglio simulazione",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/exams/{{examId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "exams",
+                "{{examId}}"
+              ]
+            },
+            "description": "Prova in corso (senza risposte di riferimento) o revisione finale. Consegna automaticamente una prova scaduta. Protetta."
+          }
+        },
+        {
+          "name": "Salva bozza risposta",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/exams/{{examId}}/answers/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "exams",
+                "{{examId}}",
+                "answers",
+                "1"
+              ]
+            },
+            "description": "Salva in bozza la risposta alla posizione indicata (1-6). 409 se la prova è chiusa o scaduta. Protetta.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"answer\": \"Con la nascita.\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Consegna simulazione",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/exams/{{examId}}/submit",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "exams",
+                "{{examId}}",
+                "submit"
+              ]
+            },
+            "description": "Consegna e valuta con una sola chiamata al grader. answers è opzionale (ultime risposte non salvate). Protetta.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"answers\": [\n        {\n            \"position\": 1,\n            \"answer\": \"Con la nascita.\"\n        }\n    ]\n}"
+            }
+          }
+        },
+        {
+          "name": "Autovalutazione simulazione",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/exams/{{examId}}/self-grade",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "exams",
+                "{{examId}}",
+                "self-grade"
+              ]
+            },
+            "description": "Autovalutazione di riserva quando l'AI non ha risposto: tutte e 6 le posizioni. Protetta.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"verdicts\": [\n        {\n            \"position\": 1,\n            \"verdict\": \"correct\"\n        },\n        {\n            \"position\": 2,\n            \"verdict\": \"correct\"\n        },\n        {\n            \"position\": 3,\n            \"verdict\": \"correct\"\n        },\n        {\n            \"position\": 4,\n            \"verdict\": \"correct\"\n        },\n        {\n            \"position\": 5,\n            \"verdict\": \"correct\"\n        },\n        {\n            \"position\": 6,\n            \"verdict\": \"correct\"\n        }\n    ]\n}"
+            }
+          }
+        },
+        {
+          "name": "Riprova valutazione AI",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/exams/{{examId}}/grade",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "exams",
+                "{{examId}}",
+                "grade"
+              ]
+            },
+            "description": "Riprova la valutazione AI di una prova senza voto. 502 se il grader non risponde. Protetta."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Flashcards",
+      "item": [
+        {
+          "name": "Estrai flashcard",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/flashcards?topics={{topicId}}&count=10",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "flashcards"
+              ],
+              "query": [
+                {
+                  "key": "topics",
+                  "value": "{{topicId}}"
+                },
+                {
+                  "key": "count",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "Domande a caso dagli argomenti scelti (topics: id separati da virgola; count 1-50). Salva il primo id nella variabile questionId. Protetta."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res.ok && res.questions && res.questions[0] && res.questions[0].id) {",
+                  "    pm.collectionVariables.set('questionId', res.questions && res.questions[0] && res.questions[0].id);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Rispondi a flashcard",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/flashcards/answer",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "flashcards",
+                "answer"
+              ]
+            },
+            "description": "Crea il tentativo e lo valuta subito. Salva l'id del tentativo nella variabile attemptId. Protetta.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"question_id\": \"{{questionId}}\",\n    \"answer\": \"Con la nascita.\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res.ok && res.attempt && res.attempt.id) {",
+                  "    pm.collectionVariables.set('attemptId', res.attempt && res.attempt.id);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Attempts",
+      "item": [
+        {
+          "name": "Autovalutazione flashcard",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/attempts/{{attemptId}}/self-grade",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "attempts",
+                "{{attemptId}}",
+                "self-grade"
+              ]
+            },
+            "description": "Autovalutazione di riserva di una flashcard senza valutazione. Protetta.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"verdict\": \"partial\"\n}"
+            }
           }
         }
       ]
