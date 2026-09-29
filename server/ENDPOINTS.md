@@ -88,6 +88,8 @@ Valgono per tutte le sezioni seguenti. Tutte le rotte di dominio sono **protette
   - `400` se il JSON non rispetta lo schema: `topic.name` o `questions`
     mancanti, rubrica fuori da 2-4 concetti, `id` di rubrica duplicati, `weight`
     non intero positivo, e così via.
+  - `409` se, mentre l'import era in corso, un altro import ha inserito una
+    delle stesse domande: non viene inserito nulla e basta riprovare.
 
 ---
 

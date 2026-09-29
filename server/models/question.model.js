@@ -9,10 +9,37 @@ const getQuestions = async ({ topicId, q, page, limit, sort, order }) => {};
 const findQuestionById = async (id) => {};
 
 // Prompt delle domande di un argomento (import: controllo duplicati)
-const getQuestionPromptsByTopic = async (topicId) => {};
+const getQuestionPromptsByTopic = async (topicId) => {
+  const { data, error } = await supabase
+    .from(TABLE_NAME)
+    .select("prompt")
+    .eq("topic_id", topicId);
 
-// Inserimento multiplo (import)
-const createQuestions = async (questions) => {};
+  if (error) {
+    throw new Error("DATABASE_FIND_QUESTION_PROMPTS_ERROR");
+  }
+
+  return data.map((question) => question.prompt);
+};
+
+// Inserimento multiplo (import). Le righe usano i nomi delle colonne:
+// { topic_id, prompt, answer, rubric, article_refs }
+const createQuestions = async (questions) => {
+  const { data, error } = await supabase
+    .from(TABLE_NAME)
+    .insert(questions)
+    .select("id");
+
+  if (error) {
+    // 23505: violato l'indice univoco argomento + prompt normalizzato
+    if (error.code === "23505") {
+      throw new Error("DATABASE_DUPLICATE_QUESTION_ERROR");
+    }
+    throw new Error("DATABASE_CREATE_QUESTIONS_ERROR");
+  }
+
+  return data;
+};
 
 // Aggiorna una domanda (valorizza updated_at)
 const updateQuestion = async (id, fields) => {};
