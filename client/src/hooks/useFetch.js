@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 /**
  * 
@@ -12,24 +12,47 @@ export function useFetch(asyncFn, deps = []) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // useCallback memorizza la funzione: serve sia all'useEffect sia al refetch.
-  // Il commento "eslint-disable" evita l'avviso sulle deps dinamiche.
-  const execute = useCallback(async () => {
-    setIsLoading(true);
-    setError(null);
+  // La funzione piu' recente sta in un ref: load resta stabile e il refetch
+  // usa sempre l'ultima versione di asyncFn.
+  const asyncFnRef = useRef(asyncFn);
+  useEffect(() => {
+    asyncFnRef.current = asyncFn;
+  });
+
+  const load = useCallback(async () => {
     try {
-      const result = await asyncFn();
+      const result = await asyncFnRef.current();
       setData(result);
+      setError(null);
     } catch (err) {
       setError(err.message || "Si è verificato un errore");
     } finally {
       setIsLoading(false);
     }
-  }, deps);
+  }, []);
 
+  const refetch = useCallback(() => {
+    setIsLoading(true);
+    setError(null);
+    return load();
+  }, [load]);
+
+  // Se cambia una delle deps si torna allo stato di caricamento gia' nel render
+  // (nessun setState sincrono dentro l'effetto).
+  const [prevDeps, setPrevDeps] = useState(deps);
+  if (
+    prevDeps.length !== deps.length ||
+    prevDeps.some((d, i) => !Object.is(d, deps[i]))
+  ) {
+    setPrevDeps(deps);
+    setIsLoading(true);
+    setError(null);
+  }
+
+  // Riparte quando cambia una delle deps passate dal chiamante.
   useEffect(() => {
-    execute();
-  }, [execute]);
+    load();
+  }, [load, ...deps]);
 
-  return { data, isLoading, error, refetch: execute };
+  return { data, isLoading, error, refetch };
 }

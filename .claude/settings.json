@@ -1,0 +1,57 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash scripts/gates.sh:*)"
+    ],
+    "deny": [
+      "Bash(vercel:*)",
+      "Bash(npx vercel:*)",
+      "Bash(netlify:*)",
+      "Bash(npx netlify:*)",
+      "Bash(railway:*)",
+      "Bash(npx railway:*)",
+      "Bash(npm publish:*)",
+      "Bash(npm run deploy:*)",
+      "Bash(yarn publish:*)",
+      "Bash(pnpm publish:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git push --force-with-lease:*)",
+      "Bash(git push --delete:*)",
+      "Bash(git push origin main:*)",
+      "Bash(git push origin master:*)",
+      "Bash(git push origin HEAD:main:*)",
+      "Bash(git push origin HEAD:master:*)",
+      "Bash(git push * main:*)",
+      "Bash(git push * master:*)",
+      "Bash(git push --mirror:*)",
+      "mcp__github__merge_pull_request",
+      "mcp__github__enable_pr_auto_merge"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/guard-branch.sh\"" }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/gates.sh\" quick", "timeout": 120 }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/gates.sh\" test", "timeout": 600 }
+        ]
+      }
+    ]
+  }
+}

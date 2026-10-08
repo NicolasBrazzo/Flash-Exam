@@ -1,6 +1,5 @@
-import { createContext, useContext, useLayoutEffect, useState } from "react";
-
-const ThemeContext = createContext(null);
+import { useLayoutEffect, useState } from "react";
+import { ThemeContext } from "./themeContext";
 
 // Chiave in localStorage e classe applicata su <html> (allineata al blocco
 // `.dark` e al @custom-variant di index.css).
@@ -38,5 +37,3 @@ export const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
-
-export const useTheme = () => useContext(ThemeContext);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../hooks/useAuth";
 import { House, LogOut, PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { APP_NAME, APP_LOGO } from "../constants/app";
 import { ThemeToggle } from "./ThemeToggle";

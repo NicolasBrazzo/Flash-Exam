@@ -1,0 +1,47 @@
+name: Agent gates
+
+# Solo verifica: nessun job di deploy (il deploy si fa a mano).
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gates-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # I lockfile sono nel .gitignore: "npm install" al posto di "npm ci".
+      - name: Install
+        run: |
+          npm install --no-audit --no-fund
+          npm --prefix server install --no-audit --no-fund
+          npm --prefix client install --no-audit --no-fund
+
+      - name: Lint
+        run: bash scripts/gates.sh lint
+
+      - name: Typecheck (sintassi JS)
+        run: bash scripts/gates.sh typecheck
+
+      - name: Build
+        run: bash scripts/gates.sh build
+
+      - name: Test
+        run: bash scripts/gates.sh test
+
+      # No-op finche' non esiste lo script "test:e2e" nel client.
+      - name: E2E
+        run: bash scripts/gates.sh e2e

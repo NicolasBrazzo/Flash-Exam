@@ -1,7 +1,7 @@
 import { Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Switch } from "@/components/ui/switch";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../hooks/useTheme";
 
 // Controllo del tema riutilizzabile (Sidebar + pagine pubbliche).
 // - default: icona Sole/Luna + Switch shadcn (versione compatta).
