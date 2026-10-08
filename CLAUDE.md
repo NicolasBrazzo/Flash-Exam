@@ -10,6 +10,43 @@ Monorepo with two independently-installed packages: `client/` (React SPA) and `s
 
 Deployment (Railway for the server, Vercel for the client) is documented step-by-step in [`DEPLOY.md`](DEPLOY.md).
 
+## Sviluppo agentico (loop su TODO.md)
+
+Questa sezione ha la precedenza sulle altre in caso di conflitto sul *flusso di lavoro*; le regole tecniche (database, endpoint, componenti, tabelle, fetching) restano tutte valide. `TODO.md` e' l'autorizzazione a lavorare: i task di `docs/ROADMAP.md` si implementano solo se presenti in `TODO.md`.
+
+**Workflow del loop** - ripeti finche' non restano task `aperto`:
+1. Crea (o riprendi) il branch dedicato `agent/<nome>` a partire dall'ultimo `main`. **Mai lavorare o committare su `main`.**
+2. Leggi il **primo task con stato `aperto`** in `TODO.md` (salta quelli marcati ESEMPIO) e mettilo `in corso`.
+3. **Pianifica** con il subagent `planner`: file da toccare, approccio, test di accettazione da scrivere *prima* del codice.
+4. Scrivi i test/controlli di accettazione del piano, poi implementa.
+5. Fai passare tutti i gate: `bash scripts/gates.sh all`.
+6. Fai rivedere il diff al subagent `reviewer`; correggi se il verdetto e' "DA CORREGGERE" e rilancia i gate.
+7. **Un task = un commit** (conventional commits, descrizione in italiano, es. `feat(questions): ...`). Segna il task `fatto` in `TODO.md` nello stesso commit, con hash/riassunto in Note.
+8. Passa al task successivo.
+
+**Regole**
+- Massimo **3 tentativi** per far passare i gate (o la review) su un task. Al terzo fallimento: ripristina l'albero di lavoro, marca il task `bloccato` in `TODO.md` con una nota sul motivo e passa oltre.
+- Se un task richiede una decisione non presa, un componente nuovo, una dipendenza nuova o una modifica a config esistente, e non puoi chiedere: marcalo `bloccato` con la domanda in Note. In sessione interattiva, chiedi.
+- I **test di accettazione definiti in fase di pianificazione sono intoccabili**: vietato modificarli, saltarli (`skip`, `only`, `xit`, `todo`) o indebolirli (asserzioni allentate, casi rimossi) per far passare i gate. Se il test e' sbagliato, il task e' `bloccato`, non "aggiustato".
+- Vietato disattivare regole ESLint, aggiungere `eslint-disable` o indebolire i gate per ottenere il verde.
+- **Deploy vietato in modo assoluto**: niente `vercel`, `netlify`, `railway`, `npm publish`, script di deploy, push su `main`, `push --force`, merge di PR, ne' qualunque comando che pubblichi qualcosa. Il deploy lo fa l'utente a mano. `DEPLOY.md` e `client/vercel.json` non si toccano.
+- Non installare dipendenze ne' cambiare config esistenti senza chiederlo (vale anche per aggiungere un test runner).
+
+**Gate** (`scripts/gates.sh`, stessi comandi usati da hook e CI `.github/workflows/agent-gates.yml`):
+
+| Gate | Comando | Cosa fa |
+| --- | --- | --- |
+| lint | `bash scripts/gates.sh lint` | `npm --prefix client run lint` |
+| typecheck | `bash scripts/gates.sh typecheck` | progetto in JS: `node --check` su `server/**/*.js` |
+| build | `bash scripts/gates.sh build` | `npm --prefix client run build` |
+| test | `bash scripts/gates.sh test` | script `test` di client/server **se presente** |
+| e2e | `bash scripts/gates.sh e2e` | script `test:e2e` del client **se presente** |
+| tutti | `bash scripts/gates.sh all` | tutti i precedenti in sequenza |
+
+Stato attuale: **non esiste un test runner** (il gate `test` e' un no-op) e il lint del client ha errori preesistenti (task `BASE-1`). Finche' manca un runner, i criteri di accettazione si verificano con i gate, uno script Node eseguibile dove possibile e la checklist manuale del piano.
+
+Hook (`.claude/settings.json`): dopo ogni Edit/Write parte `gates.sh quick` (lint + typecheck); a fine turno parte `gates.sh test`; un hook blocca i `git commit` su `main`/`master`. Setup dell'environment web: `scripts/cloud-setup.sh`.
+
 ## Mandatory working rules
 
 **Database changes:**
@@ -54,7 +91,7 @@ The package-specific commands below run from inside `client/` or `server/` respe
 - `npm start` — plain `node server.js`
 - `npm run seed` — creates the single application user (idempotent upsert on the email), reading `SEED_EMAIL`, `SEED_PASSWORD`, `SEED_FIRST_NAME` and `SEED_LAST_NAME` from `.env`; it fails fast if any is missing. Domain entities get added to `server/database/seed.js`.
 
-There is no test suite in either package.
+There is no test suite in either package (see "Sviluppo agentico" for the gates that stand in for it).
 
 ## Environment
 
