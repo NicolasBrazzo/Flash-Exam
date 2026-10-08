@@ -15,18 +15,19 @@ Deployment (Railway for the server, Vercel for the client) is documented step-by
 Questa sezione ha la precedenza sulle altre in caso di conflitto sul *flusso di lavoro*; le regole tecniche (database, endpoint, componenti, tabelle, fetching) restano tutte valide. `TODO.md` e' l'autorizzazione a lavorare: i task di `docs/ROADMAP.md` si implementano solo se presenti in `TODO.md`.
 
 **Workflow del loop** - ripeti finche' non restano task `aperto`:
-1. Crea (o riprendi) il branch dedicato `agent/<nome>` a partire dall'ultimo `main`. **Mai lavorare o committare su `main`.**
-2. Leggi il **primo task con stato `aperto`** in `TODO.md` (salta quelli marcati ESEMPIO) e mettilo `in corso`.
+1. Crea il branch del task `agent/<ID>` (es. `agent/DOM-1`) a partire da `agents-program` aggiornato. Se una dipendenza non e' ancora stata unita in `agents-program`, parti dal branch del task da cui dipende (PR impilate: la PR avra' per base quel branch). **Mai lavorare o committare su `main` ne' su `agents-program`.**
+2. Leggi il **primo task `aperto` di `TODO.md` le cui dipendenze ("Dipende da") sono tutte `fatto`** e mettilo `in corso`. Leggi anche le sezioni "Definition of done" e "Decisioni assunte" di `TODO.md`: valgono per ogni task.
 3. **Pianifica** con il subagent `planner`: file da toccare, approccio, test di accettazione da scrivere *prima* del codice.
 4. Scrivi i test/controlli di accettazione del piano, poi implementa.
 5. Fai passare tutti i gate: `bash scripts/gates.sh all`.
 6. Fai rivedere il diff al subagent `reviewer`; correggi se il verdetto e' "DA CORREGGERE" e rilancia i gate.
-7. **Un task = un commit** (conventional commits, descrizione in italiano, es. `feat(questions): ...`). Segna il task `fatto` in `TODO.md` nello stesso commit, con hash/riassunto in Note.
-8. Passa al task successivo.
+7. **Un task = un branch = un commit = una PR verso `agents-program`** (conventional commits, descrizione in italiano, es. `feat(questions): ...`). Segna il task `fatto` in `TODO.md` nello stesso commit, con riassunto e scelte fatte in Note. Pusha il branch; apri la PR solo se il prompt di avvio lo chiede, con i criteri `[manuale]` elencati nella descrizione.
+8. Torna a `agents-program` aggiornato (o al branch precedente, se impilato) e passa al task successivo.
 
 **Regole**
 - Massimo **3 tentativi** per far passare i gate (o la review) su un task. Al terzo fallimento: ripristina l'albero di lavoro, marca il task `bloccato` in `TODO.md` con una nota sul motivo e passa oltre.
-- Se un task richiede una decisione non presa, un componente nuovo, una dipendenza nuova o una modifica a config esistente, e non puoi chiedere: marcalo `bloccato` con la domanda in Note. In sessione interattiva, chiedi.
+- Se un task richiede una decisione non presa, un componente nuovo, una dipendenza nuova o una modifica a config esistente **non elencata nelle "Autorizzazioni" di `TODO.md`**, e non puoi chiedere: marcalo `bloccato` con la domanda in Note. In sessione interattiva, chiedi.
+- I criteri di accettazione marcati **[manuale]** (richiedono Supabase, Gemini o un browser) non si spuntano e non impediscono il `fatto`: vanno nella descrizione della PR. Nel cloud non ci sono credenziali Supabase ne' Gemini: non tentare chiamate reali.
 - I **test di accettazione definiti in fase di pianificazione sono intoccabili**: vietato modificarli, saltarli (`skip`, `only`, `xit`, `todo`) o indebolirli (asserzioni allentate, casi rimossi) per far passare i gate. Se il test e' sbagliato, il task e' `bloccato`, non "aggiustato".
 - Vietato disattivare regole ESLint, aggiungere `eslint-disable` o indebolire i gate per ottenere il verde.
 - **Deploy vietato in modo assoluto**: niente `vercel`, `netlify`, `railway`, `npm publish`, script di deploy, push su `main`, `push --force`, merge di PR, ne' qualunque comando che pubblichi qualcosa. Il deploy lo fa l'utente a mano. `DEPLOY.md` e `client/vercel.json` non si toccano.
