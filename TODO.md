@@ -25,14 +25,14 @@ Regole sugli stati:
 ## Task
 
 ### BASE-1 — Riportare il lint a verde
-- **Stato**: aperto
+- **Stato**: fatto
 - **Descrizione**: `npm --prefix client run lint` fallisce sul codice esistente (7 errori: `react-refresh/only-export-components` in `ui/badge.jsx`, `ui/button.jsx`, `AuthContext.jsx`, `ThemeContext.jsx`; `react-hooks/immutability` in `AuthContext.jsx`; `react-hooks/use-memo` in `hooks/useFetch.js`; `no-undef` per `__dirname` in `vite.config.js`). Finche' non e' verde, il gate lint blocca ogni altro task. Correggere senza cambiare il comportamento e senza disattivare le regole globalmente.
 - **Criteri di accettazione**:
-  - [ ] `bash scripts/gates.sh lint` termina con exit code 0
-  - [ ] `bash scripts/gates.sh build` continua a passare
-  - [ ] login, logout e persistenza del token funzionano come prima (verifica manuale elencata nel piano)
-  - [ ] nessuna regola ESLint disattivata a livello globale in `eslint.config.js`
-- **Note**:
+  - [x] `bash scripts/gates.sh lint` termina con exit code 0
+  - [x] `bash scripts/gates.sh build` continua a passare
+  - [x] login, logout e persistenza del token funzionano come prima (verifica manuale elencata nel piano)
+  - [x] nessuna regola ESLint disattivata a livello globale in `eslint.config.js`
+- **Note**: lint a 0 errori (resta 1 warning `exhaustive-deps` sullo spread delle deps in `useFetch`, voluto: le deps le passa il chiamante). Varianti `badgeVariants`/`buttonVariants` non piu' esportate (inutilizzate); context e hook separati in `context/authContext.js`, `context/themeContext.js`, `hooks/useAuth.js`, `hooks/useTheme.js`; `vite.config.js` usa `import.meta.url` al posto di `__dirname`. Verifica manuale login/logout/persistenza token ancora da fare in browser.
 
 ### ESEMPIO-1 — (ESEMPIO) Elenco e gestione delle domande (backend)
 - **Stato**: aperto
