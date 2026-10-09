@@ -1,5 +1,5 @@
 // =============================================================================
-// Seed del database — utente unico dell'applicazione
+// Seed del database — utente unico dell'applicazione (+ dati demo opzionali)
 // =============================================================================
 // Esecuzione:  npm run seed  (da dentro server/)
 //
@@ -11,11 +11,24 @@
 // rilanciato senza creare duplicati (e aggiorna la password se la cambi nel
 // .env). Punta al database configurato in .env (SUPABASE_URL / SUPABASE_KEY),
 // quindi funziona sia in locale sia per popolare il DB usato dal deploy.
+//
+// Dati demo: solo con SEED_DEMO=true aggiunge i due argomenti "[DEMO] ..." di
+// database/demoData.js. Passano per lo schema e la deduplica dell'import,
+// quindi rilanciare il seed non crea duplicati. Non usarlo sul DB del deploy.
 // =============================================================================
 
 require("dotenv").config();
 const bcrypt = require("bcrypt");
 const supabase = require("../config/db_connection");
+const { findTopicByName, createTopic } = require("../models/topic.model");
+const {
+  getQuestionPromptsByTopic,
+  createQuestions,
+} = require("../models/question.model");
+const { questionsImportSchema } = require("../schemas/questionsImport.schema");
+const { formatZodError } = require("../utils/zodError");
+const { selectNewQuestions, isDemoEnabled } = require("../utils/importQuestions");
+const demoData = require("./demoData");
 
 // Non importiamo config/jwt.js (fail-fast su JWT_SECRET, qui non serve)
 const SALT_ROUNDS = Number(process.env.SALT_ROUNDS) || 10;
@@ -67,9 +80,45 @@ const seedUser = async () => {
   console.log(`Utente pronto: ${user.email} (${user.first_name} ${user.last_name})`);
 };
 
+// Stessi passi di POST /import/questions, per ogni argomento demo
+const seedDemoTopic = async (payload) => {
+  const parsed = questionsImportSchema.safeParse(payload);
+  if (!parsed.success) {
+    throw new Error(`Dati demo non validi: ${formatZodError(parsed.error).join("; ")}`);
+  }
+
+  const { topic, questions } = parsed.data;
+
+  let savedTopic = await findTopicByName(topic.name);
+  const created = !savedTopic;
+  if (created) {
+    savedTopic = await createTopic({ name: topic.name });
+  }
+
+  const existingPrompts = created ? [] : await getQuestionPromptsByTopic(savedTopic.id);
+  const rows = selectNewQuestions(questions, existingPrompts, savedTopic.id);
+
+  if (rows.length > 0) {
+    await createQuestions(rows);
+  }
+
+  console.log(
+    `Argomento demo "${savedTopic.name}": ${rows.length} inserite, ${questions.length - rows.length} saltate`
+  );
+};
+
+const seedDemo = async () => {
+  for (const payload of demoData) {
+    await seedDemoTopic(payload);
+  }
+};
+
 const main = async () => {
   console.log("Seed del database in corso...\n");
   await seedUser();
+  if (isDemoEnabled(process.env)) {
+    await seedDemo();
+  }
   console.log("\nSeed completato.");
 };
 

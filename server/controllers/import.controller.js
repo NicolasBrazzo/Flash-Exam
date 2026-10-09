@@ -8,13 +8,9 @@ const {
 const protect = require("../middleware/auth");
 const { questionsImportSchema } = require("../schemas/questionsImport.schema");
 const { sendZodError } = require("../utils/zodError");
+const { selectNewQuestions } = require("../utils/importQuestions");
 
 const router = express.Router();
-
-// Stessa normalizzazione dell'indice univoco su FE_Questions:
-// lower(regexp_replace(btrim(prompt), '\s+', ' ', 'g'))
-const normalizePrompt = (prompt) =>
-  prompt.trim().replace(/\s+/g, " ").toLowerCase();
 
 // Importa le domande di un argomento da JSON
 router.post("/questions", protect, async (req, res) => {
@@ -32,24 +28,8 @@ router.post("/questions", protect, async (req, res) => {
     }
 
     // Scarta le domande già presenti nell'argomento e i duplicati nel file
-    const seen = new Set(
-      created ? [] : (await getQuestionPromptsByTopic(savedTopic.id)).map(normalizePrompt)
-    );
-
-    const rows = [];
-    for (const question of questions) {
-      const key = normalizePrompt(question.prompt);
-      if (seen.has(key)) continue;
-      seen.add(key);
-
-      rows.push({
-        topic_id: savedTopic.id,
-        prompt: question.prompt,
-        answer: question.answer,
-        rubric: question.rubric,
-        article_refs: question.references,
-      });
-    }
+    const existingPrompts = created ? [] : await getQuestionPromptsByTopic(savedTopic.id);
+    const rows = selectNewQuestions(questions, existingPrompts, savedTopic.id);
 
     if (rows.length > 0) {
       await createQuestions(rows);
