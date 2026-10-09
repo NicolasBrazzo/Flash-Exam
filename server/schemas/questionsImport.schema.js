@@ -57,6 +57,7 @@ const questionsImportSchema = z.strictObject({
 });
 
 module.exports = {
+  requiredText,
   rubricSchema,
   referencesSchema,
   questionsImportSchema,

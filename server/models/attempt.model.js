@@ -21,7 +21,18 @@ const createFlashcardAttempt = async ({ question_id, answer }) => {};
 const updateAttempt = async (id, fields) => {};
 
 // Indica se una domanda ha già dei tentativi (blocca la cancellazione)
-const hasAttemptsForQuestion = async (questionId) => {};
+const hasAttemptsForQuestion = async (questionId) => {
+  const { count, error } = await supabase
+    .from(TABLE_NAME)
+    .select("id", { count: "exact", head: true })
+    .eq("question_id", questionId);
+
+  if (error) {
+    throw new Error("DATABASE_FIND_ATTEMPTS_BY_QUESTION_ERROR");
+  }
+
+  return (count ?? 0) > 0;
+};
 
 module.exports = {
   findAttemptById,
