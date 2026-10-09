@@ -30,7 +30,10 @@ const HEADER_CLASS =
  *   - sortable       true per abilitare l'ordinamento sulla colonna
  *   - sortType       "string" | "number" | "boolean" | "date" (default "string")
  *   - render(item)   render custom della cella (default: item[key])
- *   - onClick(item)  rende la cella cliccabile (es. apertura dettagli)
+ *   - onClick(item)  rende la cella cliccabile (es. apertura dettagli): il
+ *                    contenuto diventa un <button>, raggiungibile da tastiera;
+ *                    in queste colonne `render` non deve restituire elementi
+ *                    interattivi (niente pulsanti o link annidati)
  *
  * data: array di item; la riga usa item.id || item._id come chiave
  *
@@ -66,10 +69,11 @@ export const DataTable = ({ columns, data, actions, pagination, onPageChange }) 
     ? sortByField(data, sortField, sortDirection, sortConfig)
     : data || [];
 
-  const cellClass = (col) =>
-    col.onClick
-      ? "px-4 py-3 font-medium text-primary cursor-pointer hover:underline"
-      : "px-4 py-3";
+  const cellClass = (col) => (col.onClick ? "px-2 py-1" : "px-4 py-3");
+
+  // Cella cliccabile: pulsante a tutta cella, alto almeno 44px
+  const CELL_BUTTON_CLASS =
+    "flex min-h-11 w-full cursor-pointer items-center rounded-md px-2 py-2 text-left font-medium text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
   const showPagination = Boolean(pagination && onPageChange) && pagination.totalPages > 0;
 
@@ -112,12 +116,20 @@ export const DataTable = ({ columns, data, actions, pagination, onPageChange }) 
                 className="hover:bg-muted/30 transition-colors"
               >
                 {columns.map((col) => (
-                  <td
-                    key={col.key}
-                    className={cellClass(col)}
-                    onClick={col.onClick ? () => col.onClick(item) : undefined}
-                  >
-                    {col.render ? col.render(item) : item[col.key]}
+                  <td key={col.key} className={cellClass(col)}>
+                    {col.onClick ? (
+                      <button
+                        type="button"
+                        className={CELL_BUTTON_CLASS}
+                        onClick={() => col.onClick(item)}
+                      >
+                        {col.render ? col.render(item) : item[col.key]}
+                      </button>
+                    ) : col.render ? (
+                      col.render(item)
+                    ) : (
+                      item[col.key]
+                    )}
                   </td>
                 ))}
                 {actions && (
