@@ -90,16 +90,16 @@ Schema `#003` (`FE_Topics`, `FE_Questions`, `FE_ExamSessions`, `FE_Attempts`) in
 - **Note**: commit unico del branch `agent/TEST-1` (vedi PR). 14 test in `server/test/questionsImport.schema.test.js` (11 richiesti + 3 di contorno: default `references: []`, `topic.name` vuoto, rubrica valida a 4 concetti). Ogni caso invalido verifica `ZodError`, path e codice dell'issue; solo "topic.name mancante" verifica anche il messaggio ("Campo obbligatorio" del locale in `config/zod.js`). `node --test` senza argomenti esegue ogni `.js` sotto `server/test/`: gli helper condivisi futuri vanno fuori da quella cartella (scritto in `CLAUDE.md`). Il commento in `scripts/gates.sh` ("oggi non ne esistono") è ora impreciso ma non è stato toccato (config non autorizzata). Da verificare: job "Test" della CI sulla PR.
 
 ### SEED-1 — Dati demo opzionali nel seed
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: -
 - **Descrizione**: finché non esistono i JSON veri (lavoro D.1, fuori dal sito) servono domande per provare simulazione e flashcard. `server/database/seed.js` aggiunge, **solo con `SEED_DEMO=true`**, due argomenti di prova e le loro domande. Senza il flag il seed fa esattamente ciò che fa oggi, perché punta anche al database del deploy.
 - **Criteri di accettazione**:
-  - [ ] con `SEED_DEMO` assente o diverso da `true`, comportamento invariato
-  - [ ] con `SEED_DEMO=true`: 2 argomenti con nome che inizia per `[DEMO] ` e almeno 4 domande ciascuno (8 in totale, serve un minimo di 6 per la simulazione); ogni domanda ha `answer` di circa 2 righe, rubrica di 2 o 3 concetti con `id` univoci e peso intero, `references` anche vuoto. Domande brevi sui concetti, mai su un articolo specifico, mai inverse
-  - [ ] le righe passano per gli stessi controlli dell'import (stessa normalizzazione del prompt): rilanciare il seed non crea duplicati
-  - [ ] `server/.env.example` ha `SEED_DEMO=` con un commento che avvisa di non usarlo sul database di produzione; `CLAUDE.md` (comando `npm run seed`) lo menziona
+  - [x] con `SEED_DEMO` assente o diverso da `true`, comportamento invariato
+  - [x] con `SEED_DEMO=true`: 2 argomenti con nome che inizia per `[DEMO] ` e almeno 4 domande ciascuno (8 in totale, serve un minimo di 6 per la simulazione); ogni domanda ha `answer` di circa 2 righe, rubrica di 2 o 3 concetti con `id` univoci e peso intero, `references` anche vuoto. Domande brevi sui concetti, mai su un articolo specifico, mai inverse
+  - [x] le righe passano per gli stessi controlli dell'import (stessa normalizzazione del prompt): rilanciare il seed non crea duplicati
+  - [x] `server/.env.example` ha `SEED_DEMO=` con un commento che avvisa di non usarlo sul database di produzione; `CLAUDE.md` (comando `npm run seed`) lo menziona
   - [ ] [manuale] `SEED_DEMO=true npm run seed` due volte di fila: la seconda non inserisce nulla
-- **Note**:
+- **Note**: commit unico del branch `agent/SEED-1` (vedi PR). La logica dell'import (`normalizePrompt` + deduplica + mappatura nelle righe DB) è estratta in `server/utils/importQuestions.js` (puro, senza DB) e usata sia da `controllers/import.controller.js` (comportamento invariato) sia dal seed; lì c'è anche `isDemoEnabled(env)` (solo la stringa esatta `"true"`). Dati demo in `server/database/demoData.js`, nel formato del JSON di import: "[DEMO] Capacità giuridica e capacità d'agire" e "[DEMO] Le obbligazioni", 4 domande ciascuno; il seed li valida con `questionsImportSchema` e usa `parsed.data`. Test `node:test` in `server/test/importQuestions.test.js` e `server/test/demoData.test.js` (17 casi, passano con `cd server && node --test`): il gate `test` li eseguirà quando TEST-1 (script `test`) sarà unito. Possibile conflitto banale con TEST-1 su `CLAUDE.md` (righe vicine). Da verificare: il seed demo due volte su un DB di sviluppo.
 
 ---
 

@@ -90,7 +90,7 @@ The package-specific commands below run from inside `client/` or `server/` respe
 **Server** (`server/`):
 - `npm run dev` — nodemon (auto-reload) on `server.js`
 - `npm start` — plain `node server.js`
-- `npm run seed` — creates the single application user (idempotent upsert on the email), reading `SEED_EMAIL`, `SEED_PASSWORD`, `SEED_FIRST_NAME` and `SEED_LAST_NAME` from `.env`; it fails fast if any is missing. Domain entities get added to `server/database/seed.js`.
+- `npm run seed` — creates the single application user (idempotent upsert on the email), reading `SEED_EMAIL`, `SEED_PASSWORD`, `SEED_FIRST_NAME` and `SEED_LAST_NAME` from `.env`; it fails fast if any is missing. With `SEED_DEMO=true` it also inserts two demo topics (`[DEMO] ...`, 8 questions from `server/database/demoData.js`) through the same schema and dedupe as the import, so re-running it adds nothing; never set it against the production database. Domain entities get added to `server/database/seed.js`.
 
 **Server tests** (`server/`): `npm test` runs `node --test` (built-in runner, no dependencies) on `server/test/*.test.js`. The client has no test suite (see "Sviluppo agentico" for the gates that stand in for it).
 
@@ -98,7 +98,7 @@ The package-specific commands below run from inside `client/` or `server/` respe
 
 Both sides require `.env` files (copy from the committed `.env.example`); the app throws on startup if key vars are missing.
 
-- `server/.env`: `PORT`, `SUPABASE_URL`, `SUPABASE_KEY`, `JWT_SECRET` (required — `config/jwt.js` fails fast if absent), `FRONTEND_URL` (CORS origin), `NODE_ENV`, plus `SEED_EMAIL`, `SEED_PASSWORD`, `SEED_FIRST_NAME`, `SEED_LAST_NAME` (used only by `npm run seed`). Optional: `JWT_EXPIRES_IN` (default `7d`), `SALT_ROUNDS` (default `10`).
+- `server/.env`: `PORT`, `SUPABASE_URL`, `SUPABASE_KEY`, `JWT_SECRET` (required — `config/jwt.js` fails fast if absent), `FRONTEND_URL` (CORS origin), `NODE_ENV`, plus `SEED_EMAIL`, `SEED_PASSWORD`, `SEED_FIRST_NAME`, `SEED_LAST_NAME` (used only by `npm run seed`). Optional: `JWT_EXPIRES_IN` (default `7d`), `SALT_ROUNDS` (default `10`), `SEED_DEMO` (`true` adds the demo data to `npm run seed`; not for production).
 - `client/.env`: `VITE_API_URL` — base URL of the backend, consumed by `src/api/client.js`.
 
 ## Backend architecture
