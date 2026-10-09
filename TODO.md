@@ -170,17 +170,17 @@ Schema `#003` (`FE_Topics`, `FE_Questions`, `FE_ExamSessions`, `FE_Attempts`) in
 ---
 
 ### AI-1 — Configurazione di Gemini
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: TEST-1
 - **Descrizione**: chiave e modello solo lato server, con fallimento immediato all'avvio se mancano.
 - **Criteri di accettazione**:
-  - [ ] `server/config/gemini.js`: legge `GEMINI_API_KEY` e `GEMINI_MODEL` e **lancia all'import** se mancano, sul modello di `config/jwt.js`; esporta chiave, modello e URL base. Nessun valore di default per la chiave
-  - [ ] `server.js` lo richiede all'avvio (dopo `dotenv`), così il server non parte senza configurazione
-  - [ ] il nome del modello Flash **non è dato per noto**: va verificato sulla documentazione ufficiale di Google AI Studio (WebFetch) e la pagina consultata riportata in Note. Se non raggiungibile, `GEMINI_MODEL` resta vuoto in `.env.example` con un commento e la cosa va nelle Note
-  - [ ] `server/.env.example` con `GEMINI_API_KEY=` e `GEMINI_MODEL=`; `CLAUDE.md` (sezione Environment) li elenca
-  - [ ] la chiave non compare mai in log, errori o risposte, e non è mai in `client/`
+  - [x] `server/config/gemini.js`: legge `GEMINI_API_KEY` e `GEMINI_MODEL` e **lancia all'import** se mancano, sul modello di `config/jwt.js`; esporta chiave, modello e URL base. Nessun valore di default per la chiave
+  - [x] `server.js` lo richiede all'avvio (dopo `dotenv`), così il server non parte senza configurazione
+  - [x] il nome del modello Flash **non è dato per noto**: va verificato sulla documentazione ufficiale di Google AI Studio (WebFetch) e la pagina consultata riportata in Note. Se non raggiungibile, `GEMINI_MODEL` resta vuoto in `.env.example` con un commento e la cosa va nelle Note
+  - [x] `server/.env.example` con `GEMINI_API_KEY=` e `GEMINI_MODEL=`; `CLAUDE.md` (sezione Environment) li elenca
+  - [x] la chiave non compare mai in log, errori o risposte, e non è mai in `client/`
   - [ ] [manuale] su Railway vanno aggiunte le due variabili a mano (`DEPLOY.md` non si tocca)
-- **Note**:
+- **Note**: commit unico del branch `agent/AI-1`, da `agent/TEST-1` (vedi PR). `server/config/gemini.js` legge `GEMINI_API_KEY` e `GEMINI_MODEL` (valori ripuliti dagli spazi; vuoto = mancante) e lancia all'import se ne manca una, con un messaggio che nomina solo la variabile; esporta chiave, modello e `GEMINI_BASE_URL` = `https://generativelanguage.googleapis.com/v1beta`. Nessun default, nessun log, il modulo non chiama dotenv. `server.js` lo richiede subito dopo dotenv e prima dei controller. **Documentazione ufficiale non raggiungibile**: `https://ai.google.dev/gemini-api/docs/models` e `https://ai.google.dev/api/generate-content` sono rifiutate dal proxy dell'ambiente cloud (curl: CONNECT 403; WebFetch: ENOTFOUND), quindi il nome del modello Flash non è stato verificato: `GEMINI_MODEL` resta vuoto in `.env.example`, con un commento che rimanda alla pagina dei modelli, e anche l'URL base `v1beta` va verificato a mano (AI-3 dovrà comunque verificare il formato della richiesta). Conseguenza voluta: senza le due variabili il server non parte più, né in locale né su Railway (vanno aggiunte a mano; `DEPLOY.md` non toccato). Test `server/test/gemini.config.test.js` (10 casi, processo separato con ambiente pulito): variabili mancanti o di soli spazi, chiave mai nello stderr, export, ordine del require in `server.js`, `.env.example`, nessun `GEMINI` nel client.
 
 ### AI-2 — Schema dell'output del grader e costruzione del prompt
 - **Stato**: aperto
