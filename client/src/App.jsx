@@ -9,6 +9,7 @@ import { AppLayout } from "./layouts/AppLayout.jsx";
 import { ToastContainer } from "react-toastify";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { NotFound } from "./pages/NotFound.jsx";
+import { Domande } from "./pages/Domande.jsx";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ function App() {
               <Route element={<PrivateRoute />}>
                 <Route element={<AppLayout />}>
                   <Route path="/" element={<Home />} />
+                  <Route path="/domande" element={<Domande />} />
                 </Route>
               </Route>
               <Route path="*" element={<NotFound />} />

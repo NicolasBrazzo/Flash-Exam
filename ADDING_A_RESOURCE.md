@@ -1,10 +1,13 @@
 # Aggiungere una risorsa
 
 Ricetta per aggiungere una nuova risorsa (es. "argomenti", "domande",
-"simulazioni"). I passi sono sempre gli stessi. Nel repo non esiste ancora
-un'implementazione di riferimento: la **prima risorsa reale del progetto**
-lo diventerà (model + controller + service + pagina), quindi curala come
-esempio per tutte le successive.
+"simulazioni"). I passi sono sempre gli stessi. L'implementazione di
+riferimento è la risorsa **domande**:
+- backend: `server/models/question.model.js` e
+  `server/controllers/questions.controller.js` (elenco paginato, dettaglio,
+  modifica, cancellazione), con i test in `server/test/`;
+- frontend: `client/src/services/questionsService.js` e
+  `client/src/pages/Domande.jsx` (elenco con filtri e paginazione).
 
 > Se la risorsa espone un elenco con filtri, paginazione o ordinamento,
 > segui le convenzioni in [`client/src/FILTERS_BE.md`](client/src/FILTERS_BE.md).
@@ -50,6 +53,18 @@ esempio per tutte le successive.
    - validazione client-side dentro la mutation fn (throw per far emergere
      l'errore) usando i validator di `src/utils/validators/`;
    - `refetch()` in `onSuccess` + toast (`showSuccess`/`showError`).
+
+   Per un **elenco con filtri e paginazione** il riferimento è
+   `src/pages/Domande.jsx`:
+   - `FilterBar` sempre montata (un campo `type: "text"` per la ricerca, i
+     `select` con l'opzione "Tutti"); loader, errore e vuoto sostituiscono
+     solo l'area della tabella, così il campo di ricerca non perde il focus;
+   - la ricerca passa per un debounce (300 ms) prima di entrare nelle deps di
+     `useFetch`; ogni cambio di filtro riporta a pagina 1;
+   - `DataTable` con `pagination` e `onPageChange` (paginazione lato server,
+     nessuna colonna `sortable`);
+   - stati resi nella pagina: `Loader`, errore con "Riprova" (`refetch`),
+     messaggio di elenco vuoto.
 3. **Rotta** — in `App.jsx`, dentro `PrivateRoute` → `AppLayout`.
 4. **Sidebar** — voce in `MENU_ITEMS` in `src/components/Side.jsx`
    (icona lucide + label + path).
