@@ -104,17 +104,17 @@ Schema `#003` (`FE_Topics`, `FE_Questions`, `FE_ExamSessions`, `FE_Attempts`) in
 ---
 
 ### DOM-1 — `GET /questions` e `GET /questions/:id`
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: TEST-1
 - **Descrizione**: elenco paginato e dettaglio delle domande, secondo `client/src/FILTERS_BE.md` e `ENDPOINTS.md`. Riempie `getQuestions` e `findQuestionById` in `models/question.model.js` e le due rotte `GET` in `controllers/questions.controller.js`.
 - **Criteri di accettazione**:
-  - [ ] `server/utils/pagination.js` (puro): `page` default 1, `limit` default 20 con massimo 100, valori non numerici o negativi -> default, `sort` fuori whitelist -> `created_at`, `order` diverso da `asc` -> `desc`; calcola `from`/`to` per `.range()`. Test in `server/test/pagination.test.js`
-  - [ ] `server/utils/serializeQuestion.js` (puro) converte la riga DB nella forma API `{ id, topic: { id, name }, prompt, reference_answer, rubric, references, created_at, updated_at }` (`answer` -> `reference_answer`, `article_refs` -> `references`); test dedicato
-  - [ ] `GET /questions`: filtri `topic_id` (uguaglianza) e `q` (`ilike` sul prompt, con `%` e `_` dell'input resi letterali), `sort` in whitelist `created_at`/`prompt`, `.order()` sempre presente, risposta `{ ok: true, data, pagination: { total, page, limit, totalPages } }`, `totalPages` con `Math.ceil`, pagina oltre l'ultima -> `data: []` con `200`
-  - [ ] `GET /questions/:id`: `{ ok: true, question }`; id inesistente o non uuid -> `404` "Domanda non trovata"
-  - [ ] errori DB -> `500` generico, nessun dettaglio interno nella risposta
+  - [x] `server/utils/pagination.js` (puro): `page` default 1, `limit` default 20 con massimo 100, valori non numerici o negativi -> default, `sort` fuori whitelist -> `created_at`, `order` diverso da `asc` -> `desc`; calcola `from`/`to` per `.range()`. Test in `server/test/pagination.test.js`
+  - [x] `server/utils/serializeQuestion.js` (puro) converte la riga DB nella forma API `{ id, topic: { id, name }, prompt, reference_answer, rubric, references, created_at, updated_at }` (`answer` -> `reference_answer`, `article_refs` -> `references`); test dedicato
+  - [x] `GET /questions`: filtri `topic_id` (uguaglianza) e `q` (`ilike` sul prompt, con `%` e `_` dell'input resi letterali), `sort` in whitelist `created_at`/`prompt`, `.order()` sempre presente, risposta `{ ok: true, data, pagination: { total, page, limit, totalPages } }`, `totalPages` con `Math.ceil`, pagina oltre l'ultima -> `data: []` con `200`
+  - [x] `GET /questions/:id`: `{ ok: true, question }`; id inesistente o non uuid -> `404` "Domanda non trovata"
+  - [x] errori DB -> `500` generico, nessun dettaglio interno nella risposta
   - [ ] [manuale] da Postman: filtro per argomento, ricerca testuale, seconda pagina
-- **Note**:
+- **Note**: commit unico del branch `agent/DOM-1`, impilato su `agent/TEST-1` (vedi PR). Utility pure: `utils/pagination.js` (`parsePagination`, `getRange`, `buildPagination`), `utils/serializeQuestion.js`, `utils/sqlFilters.js` (`escapeLike` per backslash, `%` e `_`; `isUuid`). Scelte: `topic_id` non uuid -> `200` con `data: []` senza interrogare il DB (un filtro per uguaglianza su un id impossibile non trova nulla; evita l'errore Postgres `22P02` che diventerebbe un 500); parametri vuoti (`q=`, `topic_id=`) = nessun filtro; id non uuid -> `404`; ordinamento secondario su `id` per pagine stabili (le domande dello stesso import hanno lo stesso `created_at`); pagina oltre l'ultima: PostgREST risponde `PGRST103`, il model rifà un count `head` con gli stessi filtri e restituisce `data: []` con il totale. Test: 32 nuovi (pagination, serializeQuestion, sqlFilters, model e rotte con un client Supabase finto iniettato in `require.cache`). Non gestiti (fuori criterio): `*` nella ricerca resta un jolly di PostgREST; `page` enorme (oltre 1e21) finisce in 500. Da verificare: fallback `PGRST103` ed escape di `ilike` su Supabase reale.
 
 ### DOM-2 — `PATCH` e `DELETE /questions/:id`
 - **Stato**: aperto
