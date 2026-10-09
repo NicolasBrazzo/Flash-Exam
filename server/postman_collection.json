@@ -236,7 +236,7 @@
                 }
               ]
             },
-            "description": "Elenco paginato (FILTERS_BE.md). Filtri: topic_id, q. Salva il primo id nella variabile questionId. Protetta."
+            "description": "Elenco paginato (FILTERS_BE.md): { ok, data, pagination }. Filtri: topic_id, q (parametri vuoti = nessun filtro). page default 1, limit default 20 (max 100), sort created_at|prompt, order asc|desc. Salva il primo id nella variabile questionId. Protetta."
           },
           "event": [
             {
@@ -268,7 +268,7 @@
                 "{{questionId}}"
               ]
             },
-            "description": "Dettaglio di una domanda. Protetta."
+            "description": "Dettaglio di una domanda: { ok, question }. 404 \"Domanda non trovata\" se non esiste o se l'id non e' un uuid. Protetta."
           }
         },
         {
@@ -291,7 +291,7 @@
                 "{{questionId}}"
               ]
             },
-            "description": "Correzione parziale: almeno un campo tra topic_id, prompt, reference_answer, rubric, references. Protetta.",
+            "description": "Correzione parziale: almeno un campo tra topic_id, prompt, reference_answer, rubric, references (campi sconosciuti -> 400). Risposta { ok, question }. 404 se la domanda o il topic_id non esistono; 409 se il prompt e' gia' presente nell'argomento. Protetta.",
             "body": {
               "mode": "raw",
               "raw": "{\n    \"reference_answer\": \"Si acquisisce al momento della nascita (art. 1 c.c.).\"\n}"
@@ -313,7 +313,7 @@
                 "{{questionId}}"
               ]
             },
-            "description": "Cancella una domanda. 409 se ha già dei tentativi. Protetta."
+            "description": "Cancella una domanda: { ok: true }. 409 se ha già dei tentativi, 404 se non esiste. Protetta."
           }
         }
       ]
@@ -374,7 +374,7 @@
                 "exams"
               ]
             },
-            "description": "Avvia una simulazione (6 domande, 40 minuti) o riprende quella in corso (resumed: true). Salva l'id nella variabile examId. Protetta."
+            "description": "Avvia una simulazione (6 domande, 40 minuti): 201 con resumed: false; oppure riprende quella in corso non scaduta: 200 con resumed: true. 409 se ci sono meno di 6 domande. Salva l'id nella variabile examId. Protetta."
           },
           "event": [
             {
@@ -406,7 +406,7 @@
                 "{{examId}}"
               ]
             },
-            "description": "Prova in corso (senza risposte di riferimento) o revisione finale. Consegna automaticamente una prova scaduta. Protetta."
+            "description": "Prova in corso (senza risposte di riferimento) o revisione finale. 404 se non esiste o l'id non e' un uuid. Consegna automaticamente una prova scaduta (da PROVA-4). Protetta."
           }
         },
         {
@@ -431,7 +431,7 @@
                 "1"
               ]
             },
-            "description": "Salva in bozza la risposta alla posizione indicata (1-6). 409 se la prova è chiusa o scaduta. Protetta.",
+            "description": "Salva in bozza la risposta alla posizione indicata (1-6): { ok, updated_at }. answer anche vuota, massimo 5000 caratteri (400 oltre o se la posizione non e' valida). 409 se la prova è chiusa o scaduta. Protetta.",
             "body": {
               "mode": "raw",
               "raw": "{\n    \"answer\": \"Con la nascita.\"\n}"
@@ -542,7 +542,7 @@
                 }
               ]
             },
-            "description": "Domande a caso dagli argomenti scelti (topics: id separati da virgola; count 1-50). Salva il primo id nella variabile questionId. Protetta."
+            "description": "Domande a caso dagli argomenti scelti (topics: id uuid separati da virgola; count intero 1-50, default 10). Risposta { ok, questions: [{ id, prompt, topic }] }, senza risposta, rubrica ne' riferimenti. 400 se topics manca o non e' valido, se count non e' un intero 1-50 o se un parametro e' ripetuto. Salva il primo id nella variabile questionId. Protetta."
           },
           "event": [
             {

@@ -105,22 +105,33 @@ Valgono per tutte le sezioni seguenti. Tutte le rotte di dominio sono **protette
 
 ## Questions — `/questions`
 
-- `GET /questions` — Elenco paginato delle domande. **Protetta.**
+- `GET /questions` — Elenco paginato delle domande (`client/src/FILTERS_BE.md`). **Protetta.**
   Query: `topic_id` (filtro per argomento), `q` (ricerca case-insensitive nel
-  prompt), `page`, `limit`, `sort` (whitelist: `created_at`, `prompt`), `order`.
+  prompt; `%` e `_` sono letterali), `page` (default `1`), `limit` (default `20`,
+  massimo `100`), `sort` (whitelist: `created_at`, `prompt`; default
+  `created_at`), `order` (`asc`, qualsiasi altro valore `desc`). Parametri vuoti
+  = nessun filtro; un `topic_id` che non è un uuid dà `data: []`.
+  Risposta: `{ "ok": true, "data": [...], "pagination": { "total", "page", "limit", "totalPages" } }`;
+  pagina oltre l'ultima: `data: []` con `200`.
   Ogni elemento di `data` ha:
   `{ "id", "topic": { "id", "name" }, "prompt", "reference_answer", "rubric", "references", "created_at", "updated_at" }`.
-- `GET /questions/:id` — Dettaglio di una domanda (stessa forma di un elemento
-  dell'elenco). **Protetta.** `404` se non esiste.
+- `GET /questions/:id` — Dettaglio di una domanda. **Protetta.**
+  Risposta: `{ "ok": true, "question": {...} }` (stessa forma di un elemento
+  dell'elenco). `404` `"Domanda non trovata"` se non esiste o se l'id non è un uuid.
 - `PATCH /questions/:id` — Corregge una domanda. **Protetta.**
   Body parziale, con almeno un campo tra `topic_id`, `prompt`,
   `reference_answer`, `rubric` e `references`, validato con le stesse regole
-  dell'import. Aggiorna `updated_at`. Risposta: `{ "ok": true, "question": {...} }`.
-  `404` se la domanda o il `topic_id` non esistono. `409` se nell'argomento
-  esiste già una domanda con lo stesso prompt normalizzato.
+  dell'import (`schemas/questionPatch.schema.js`; campi sconosciuti rifiutati,
+  `references: []` svuota i riferimenti). `400` con l'elenco degli errori se il
+  body non è valido. Aggiorna `updated_at`. Risposta: `{ "ok": true, "question": {...} }`
+  (forma API). `404` `"Domanda non trovata"` se la domanda non esiste o l'id
+  non è un uuid; `404` `"Argomento non trovato"` se il `topic_id` non esiste.
+  `409` `"Nell'argomento esiste già una domanda con lo stesso testo"` se
+  nell'argomento esiste già una domanda con lo stesso prompt normalizzato.
 - `DELETE /questions/:id` — Cancella una domanda. **Protetta.**
   Risposta: `{ "ok": true }`. `409` se la domanda ha già dei tentativi
   (`"La domanda è già stata usata in una prova o in una flashcard: puoi correggerla ma non cancellarla"`).
+  `404` `"Domanda non trovata"` se non esiste o se l'id non è un uuid.
 
 ---
 
@@ -176,21 +187,27 @@ Rotte:
   `order`. Ogni elemento di `data` ha i campi di `exam` **senza** `questions`.
 - `GET /exams/:id` — Dettaglio di una simulazione: durante la prova o la
   revisione finale, a seconda di `status`. **Protetta.**
-  Risposta: `{ "ok": true, "exam": {...} }`. `404` se non esiste. Se la prova
-  è `IN_PROGRESS` ma scaduta, prima la consegna automaticamente (vedi sopra).
+  Risposta: `{ "ok": true, "exam": {...} }`. `404` `"Simulazione non trovata"`
+  se non esiste o se l'id non è un uuid. Se la prova è `IN_PROGRESS` ma
+  scaduta, prima la consegna automaticamente (vedi sopra; da PROVA-4).
 - `POST /exams` — Avvia una nuova simulazione. **Protetta.** Body vuoto.
   Estrae 6 domande a caso e crea la sessione, con le 6 righe di `FE_Attempts`
   e la risposta vuota.
   - Risposta `201`: `{ "ok": true, "exam": {...}, "resumed": false }`.
-  - Se esiste già una prova `IN_PROGRESS` non scaduta, non ne crea un'altra e
-    risponde `200` con quella: `{ "ok": true, "exam": {...}, "resumed": true }`.
+  - Se esiste già una prova `IN_PROGRESS` non scaduta (entro `expires_at` più
+    la tolleranza), non ne crea un'altra e risponde `200` con quella:
+    `{ "ok": true, "exam": {...}, "resumed": true }`. Una prova scaduta non
+    viene ripresa (la sua consegna automatica arriva con PROVA-4).
   - `409` se nel database ci sono meno di 6 domande.
 - `PUT /exams/:id/answers/:position` — Salva in bozza la risposta a una
   domanda durante la prova. **Protetta.**
-  Body: `{ "answer": string }` (può essere vuota). `:position` va da 1 a 6.
+  Body: `{ "answer": string }` (può essere vuota, massimo 5000 caratteri,
+  salvata così com'è). `:position` è un intero da 1 a 6.
   Risposta: `{ "ok": true, "updated_at": "..." }`.
-  `404` se la prova o la posizione non esistono. `409` se la prova non è più
-  `IN_PROGRESS` o se è oltre `expires_at` più la tolleranza.
+  `400` se il body non è valido (elenco degli errori) o la posizione non è un
+  intero da 1 a 6. `404` se la prova o la posizione non esistono (o l'id non è
+  un uuid). `409` se la prova non è più `IN_PROGRESS` o se è oltre
+  `expires_at` più la tolleranza (15 secondi).
 - `POST /exams/:id/submit` — Consegna la prova e la fa valutare. **Protetta.**
   Body (opzionale): `{ "answers": [{ "position": number, "answer": string }] }`,
   con le ultime risposte non ancora salvate in bozza, così non si perde nulla.
@@ -226,11 +243,15 @@ arriva subito dopo ogni risposta; niente voto e niente timer. Non esiste una
 sessione: ogni risposta è un tentativo `FLASHCARD` a sé.
 
 - `GET /flashcards` — Estrae domande a caso dagli argomenti scelti. **Protetta.**
-  Query: `topics` (id separati da virgola, obbligatorio), `count` (1-50,
-  default 10). Se le domande disponibili sono meno di `count`, restituisce
-  tutte quelle che ci sono.
+  Query: `topics` (id uuid separati da virgola, obbligatorio; duplicati e
+  virgole in più ignorati, al massimo 100 argomenti), `count` (intero 1-50,
+  default 10; vuoto = default). Domande distinte, in ordine casuale. Se le
+  domande disponibili sono meno di `count`, restituisce tutte quelle che ci
+  sono; argomenti inesistenti o senza domande danno `questions: []`.
   Risposta: `{ "ok": true, "questions": [{ "id", "prompt", "topic": { "id", "name" } }] }`.
-  Non include la risposta di riferimento. `400` se `topics` manca o non è valido.
+  Non include risposta di riferimento, rubrica né riferimenti. `400` con
+  messaggio italiano se `topics` manca o contiene valori non uuid, se `count`
+  non è un intero 1-50 o se un parametro è ripetuto.
 - `POST /flashcards/answer` — Invia la risposta a una flashcard e la fa
   valutare subito. **Protetta.**
   Body: `{ "question_id": uuid, "answer": string }`. Una risposta vuota vale
