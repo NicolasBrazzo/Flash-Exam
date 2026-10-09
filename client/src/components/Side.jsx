@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
-import { BookOpen, House, LogOut, PanelLeftClose, PanelLeftOpen } from "lucide-react";
+import { BookOpen, FileUp, House, LogOut, PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { APP_NAME, APP_LOGO } from "../constants/app";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -9,6 +9,7 @@ import { ThemeToggle } from "./ThemeToggle";
 const MENU_ITEMS = [
   { icon: House, label: "Home", path: "/" },
   { icon: BookOpen, label: "Domande", path: "/domande" },
+  { icon: FileUp, label: "Import", path: "/import" },
 ];
 
 // Stile comune delle righe cliccabili (voci, toggle, logout): altezza 44px,
