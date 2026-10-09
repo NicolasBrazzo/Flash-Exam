@@ -141,7 +141,16 @@ const deleteQuestion = async (id) => {
 };
 
 // Estrae `count` domande a caso tra tutte (simulazione)
-const getRandomQuestions = async (count) => {};
+// (gli id bastano: testo e argomento arrivano con i tentativi creati). `rng` per i test
+const getRandomQuestions = async (count, rng = Math.random) => {
+  const { data, error } = await supabase.from(TABLE_NAME).select("id");
+
+  if (error) {
+    throw new Error("DATABASE_FIND_RANDOM_QUESTIONS_ERROR");
+  }
+
+  return pickRandom((data ?? []).map((row) => row.id), count, rng).map((id) => ({ id }));
+};
 
 // Estrae fino a `count` domande a caso dagli argomenti indicati (flashcard):
 // legge gli id, li sceglie in JS e carica solo quelli, nell'ordine estratto.
