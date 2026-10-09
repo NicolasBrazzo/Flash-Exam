@@ -374,7 +374,7 @@
                 "exams"
               ]
             },
-            "description": "Avvia una simulazione (6 domande, 40 minuti) o riprende quella in corso (resumed: true). Salva l'id nella variabile examId. Protetta."
+            "description": "Avvia una simulazione (6 domande, 40 minuti): 201 con resumed: false; oppure riprende quella in corso non scaduta: 200 con resumed: true. 409 se ci sono meno di 6 domande. Salva l'id nella variabile examId. Protetta."
           },
           "event": [
             {
@@ -406,7 +406,7 @@
                 "{{examId}}"
               ]
             },
-            "description": "Prova in corso (senza risposte di riferimento) o revisione finale. Consegna automaticamente una prova scaduta. Protetta."
+            "description": "Prova in corso (senza risposte di riferimento) o revisione finale. 404 se non esiste o l'id non e' un uuid. Consegna automaticamente una prova scaduta (da PROVA-4). Protetta."
           }
         },
         {

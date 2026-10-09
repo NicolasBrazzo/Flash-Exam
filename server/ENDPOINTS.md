@@ -187,14 +187,17 @@ Rotte:
   `order`. Ogni elemento di `data` ha i campi di `exam` **senza** `questions`.
 - `GET /exams/:id` — Dettaglio di una simulazione: durante la prova o la
   revisione finale, a seconda di `status`. **Protetta.**
-  Risposta: `{ "ok": true, "exam": {...} }`. `404` se non esiste. Se la prova
-  è `IN_PROGRESS` ma scaduta, prima la consegna automaticamente (vedi sopra).
+  Risposta: `{ "ok": true, "exam": {...} }`. `404` `"Simulazione non trovata"`
+  se non esiste o se l'id non è un uuid. Se la prova è `IN_PROGRESS` ma
+  scaduta, prima la consegna automaticamente (vedi sopra; da PROVA-4).
 - `POST /exams` — Avvia una nuova simulazione. **Protetta.** Body vuoto.
   Estrae 6 domande a caso e crea la sessione, con le 6 righe di `FE_Attempts`
   e la risposta vuota.
   - Risposta `201`: `{ "ok": true, "exam": {...}, "resumed": false }`.
-  - Se esiste già una prova `IN_PROGRESS` non scaduta, non ne crea un'altra e
-    risponde `200` con quella: `{ "ok": true, "exam": {...}, "resumed": true }`.
+  - Se esiste già una prova `IN_PROGRESS` non scaduta (entro `expires_at` più
+    la tolleranza), non ne crea un'altra e risponde `200` con quella:
+    `{ "ok": true, "exam": {...}, "resumed": true }`. Una prova scaduta non
+    viene ripresa (la sua consegna automatica arriva con PROVA-4).
   - `409` se nel database ci sono meno di 6 domande.
 - `PUT /exams/:id/answers/:position` — Salva in bozza la risposta a una
   domanda durante la prova. **Protetta.**

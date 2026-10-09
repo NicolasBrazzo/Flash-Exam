@@ -292,18 +292,18 @@ Schema `#003` (`FE_Topics`, `FE_Questions`, `FE_ExamSessions`, `FE_Attempts`) in
 ---
 
 ### PROVA-1 — Avvio della simulazione e lettura (`POST /exams`, `GET /exams/:id`)
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: DOM-1, FLASH-1
 - **Descrizione**: estrae 6 domande, crea la sessione e le 6 righe di `FE_Attempts` con risposta vuota, restituisce la prova. Riempie i model `examSession` e `attempt` (create/find), `getRandomQuestions` e le due rotte.
 - **Criteri di accettazione**:
-  - [ ] `config/exam.js` con `EXAM_QUESTIONS = 6`, `EXAM_DURATION_MINUTES = 40`, `EXAM_GRACE_SECONDS = 15` (D7)
-  - [ ] `utils/serializeExam.js` (puro) per **tutti** gli stati, come in `ENDPOINTS.md`: con `IN_PROGRESS` ogni domanda ha solo `position`, `prompt`, `topic`, `answer`; dopo la consegna aggiunge `reference_answer`, `references`, `verdict`, `grading_source`, `feedback`. Mai `score`, `points`, `rubric`, `concepts`. Test in `server/test/serializeExam.test.js` che verifica l'assenza di `reference_answer` e `rubric` in `IN_PROGRESS` e di `score`/`points`/`concepts`/`rubric` sempre
-  - [ ] `POST /exams` (body vuoto): se esiste una prova `IN_PROGRESS` **non scaduta** risponde `200 { ok: true, exam, resumed: true }` senza crearne un'altra; altrimenti estrae 6 domande **distinte** (D4), crea sessione (`started_at` e `expires_at` decisi dal server) e 6 attempt (`mode: "EXAM"`, `position` 1-6) e risponde `201 { ..., resumed: false }`; meno di 6 domande nel database -> `409` con messaggio italiano
-  - [ ] una `IN_PROGRESS` scaduta non viene ripresa; la sua consegna automatica è PROVA-4 (lasciare il punto di aggancio indicato con un commento che cita PROVA-4)
-  - [ ] se la creazione degli attempt fallisce dopo quella della sessione, la sessione viene rimossa (nessuna prova a metà)
-  - [ ] `GET /exams/:id`: `{ ok: true, exam }`, `404` se non esiste o non è uuid
+  - [x] `config/exam.js` con `EXAM_QUESTIONS = 6`, `EXAM_DURATION_MINUTES = 40`, `EXAM_GRACE_SECONDS = 15` (D7)
+  - [x] `utils/serializeExam.js` (puro) per **tutti** gli stati, come in `ENDPOINTS.md`: con `IN_PROGRESS` ogni domanda ha solo `position`, `prompt`, `topic`, `answer`; dopo la consegna aggiunge `reference_answer`, `references`, `verdict`, `grading_source`, `feedback`. Mai `score`, `points`, `rubric`, `concepts`. Test in `server/test/serializeExam.test.js` che verifica l'assenza di `reference_answer` e `rubric` in `IN_PROGRESS` e di `score`/`points`/`concepts`/`rubric` sempre
+  - [x] `POST /exams` (body vuoto): se esiste una prova `IN_PROGRESS` **non scaduta** risponde `200 { ok: true, exam, resumed: true }` senza crearne un'altra; altrimenti estrae 6 domande **distinte** (D4), crea sessione (`started_at` e `expires_at` decisi dal server) e 6 attempt (`mode: "EXAM"`, `position` 1-6) e risponde `201 { ..., resumed: false }`; meno di 6 domande nel database -> `409` con messaggio italiano
+  - [x] una `IN_PROGRESS` scaduta non viene ripresa; la sua consegna automatica è PROVA-4 (lasciare il punto di aggancio indicato con un commento che cita PROVA-4)
+  - [x] se la creazione degli attempt fallisce dopo quella della sessione, la sessione viene rimossa (nessuna prova a metà)
+  - [x] `GET /exams/:id`: `{ ok: true, exam }`, `404` se non esiste o non è uuid
   - [ ] [manuale] due avvii consecutivi dopo una consegna danno estrazioni diverse; ricaricando, `answer` e `expires_at` coincidono
-- **Note**:
+- **Note**: commit unico del branch `agent/PROVA-1`, impilato su `agent/FLASH-1` (vedi PR). Creati `config/exam.js` (6 domande, 40 minuti, 15 s di tolleranza), `utils/examTime.js` (`buildExamTimes(now)`; PROVA-2 ci aggiungerà `isWithinDeadline`, e conviene allora far usare quella funzione anche a `POST /exams`, che oggi ha la regola in `isStillOpen`) e `utils/serializeExam.js` (whitelist per tutti gli stati: in corso solo `position`, `prompt`, `topic`, `answer`; dopo la consegna anche `reference_answer`, `references`, `verdict`, `grading_source`, `feedback` solo per le valutazioni AI; mai `score`, `points`, `rubric`, `concepts`; stato sconosciuto trattato come in corso). Model: `getRandomQuestions` (una query sugli id di tutte le domande, D4; stesso limite di 1000 righe di FLASH-1), `findExamSessionById`, `findInProgressExamSession` (la più recente), `createExamSession`, `getAttemptsBySession`, `createExamAttempts` (un solo insert, restituisce le righe con domanda e argomento; seleziona già rubrica, score e punti per PROVA-3/4, mai esposti) e la funzione nuova `deleteExamSession` per il rollback (i tentativi vanno via in cascata). Scelte: una prova `IN_PROGRESS` si riprende fino a `expires_at` più la tolleranza (in quella finestra è ancora consegnabile); una prova scaduta non viene ripresa e se ne crea una nuova, lasciando la vecchia `IN_PROGRESS` fino a PROVA-4 (aggancio commentato in `GET /exams/:id` e `POST /exams`; PROVA-4 dovrà consegnare anche eventuali prove scadute più vecchie). Con meno di 6 domande `409` "Servono almeno 6 domande per avviare una simulazione". Rischio noto: un doppio avvio contemporaneo può creare due sessioni (nessun indice univoco e schema non modificabile): da mitigare nel client (PROVA-6, pulsante disabilitato). Test: `serializeExam.test.js`, `exams.routes.test.js` (Supabase finto).
 
 ### PROVA-2 — Salvataggio in bozza (`PUT /exams/:id/answers/:position`)
 - **Stato**: aperto
