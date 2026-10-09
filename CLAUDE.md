@@ -98,7 +98,7 @@ The package-specific commands below run from inside `client/` or `server/` respe
 
 Both sides require `.env` files (copy from the committed `.env.example`); the app throws on startup if key vars are missing.
 
-- `server/.env`: `PORT`, `SUPABASE_URL`, `SUPABASE_KEY`, `JWT_SECRET` (required — `config/jwt.js` fails fast if absent), `FRONTEND_URL` (CORS origin), `NODE_ENV`, plus `SEED_EMAIL`, `SEED_PASSWORD`, `SEED_FIRST_NAME`, `SEED_LAST_NAME` (used only by `npm run seed`). Optional: `JWT_EXPIRES_IN` (default `7d`), `SALT_ROUNDS` (default `10`), `SEED_DEMO` (`true` adds the demo data to `npm run seed`; not for production).
+- `server/.env`: `PORT`, `SUPABASE_URL`, `SUPABASE_KEY`, `JWT_SECRET` (required — `config/jwt.js` fails fast if absent), `FRONTEND_URL` (CORS origin), `NODE_ENV`, `GEMINI_API_KEY` and `GEMINI_MODEL` (required — `config/gemini.js` fails fast if absent; server-side only, never in the client), plus `SEED_EMAIL`, `SEED_PASSWORD`, `SEED_FIRST_NAME`, `SEED_LAST_NAME` (used only by `npm run seed`). Optional: `JWT_EXPIRES_IN` (default `7d`), `SALT_ROUNDS` (default `10`), `SEED_DEMO` (`true` adds the demo data to `npm run seed`; not for production).
 - `client/.env`: `VITE_API_URL` — base URL of the backend, consumed by `src/api/client.js`.
 
 ## Backend architecture

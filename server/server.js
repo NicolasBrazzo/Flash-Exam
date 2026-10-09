@@ -1,4 +1,6 @@
 require('dotenv').config();
+// Configurazione obbligatoria: senza GEMINI_API_KEY e GEMINI_MODEL il server non parte
+require("./config/gemini");
 
 const express = require("express");
 const cors = require("cors");

@@ -170,30 +170,30 @@ Schema `#003` (`FE_Topics`, `FE_Questions`, `FE_ExamSessions`, `FE_Attempts`) in
 ---
 
 ### AI-1 — Configurazione di Gemini
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: TEST-1
 - **Descrizione**: chiave e modello solo lato server, con fallimento immediato all'avvio se mancano.
 - **Criteri di accettazione**:
-  - [ ] `server/config/gemini.js`: legge `GEMINI_API_KEY` e `GEMINI_MODEL` e **lancia all'import** se mancano, sul modello di `config/jwt.js`; esporta chiave, modello e URL base. Nessun valore di default per la chiave
-  - [ ] `server.js` lo richiede all'avvio (dopo `dotenv`), così il server non parte senza configurazione
-  - [ ] il nome del modello Flash **non è dato per noto**: va verificato sulla documentazione ufficiale di Google AI Studio (WebFetch) e la pagina consultata riportata in Note. Se non raggiungibile, `GEMINI_MODEL` resta vuoto in `.env.example` con un commento e la cosa va nelle Note
-  - [ ] `server/.env.example` con `GEMINI_API_KEY=` e `GEMINI_MODEL=`; `CLAUDE.md` (sezione Environment) li elenca
-  - [ ] la chiave non compare mai in log, errori o risposte, e non è mai in `client/`
+  - [x] `server/config/gemini.js`: legge `GEMINI_API_KEY` e `GEMINI_MODEL` e **lancia all'import** se mancano, sul modello di `config/jwt.js`; esporta chiave, modello e URL base. Nessun valore di default per la chiave
+  - [x] `server.js` lo richiede all'avvio (dopo `dotenv`), così il server non parte senza configurazione
+  - [x] il nome del modello Flash **non è dato per noto**: va verificato sulla documentazione ufficiale di Google AI Studio (WebFetch) e la pagina consultata riportata in Note. Se non raggiungibile, `GEMINI_MODEL` resta vuoto in `.env.example` con un commento e la cosa va nelle Note
+  - [x] `server/.env.example` con `GEMINI_API_KEY=` e `GEMINI_MODEL=`; `CLAUDE.md` (sezione Environment) li elenca
+  - [x] la chiave non compare mai in log, errori o risposte, e non è mai in `client/`
   - [ ] [manuale] su Railway vanno aggiunte le due variabili a mano (`DEPLOY.md` non si tocca)
-- **Note**:
+- **Note**: commit unico del branch `agent/AI-1`, da `agent/TEST-1` (vedi PR). `server/config/gemini.js` legge `GEMINI_API_KEY` e `GEMINI_MODEL` (valori ripuliti dagli spazi; vuoto = mancante) e lancia all'import se ne manca una, con un messaggio che nomina solo la variabile; esporta chiave, modello e `GEMINI_BASE_URL` = `https://generativelanguage.googleapis.com/v1beta`. Nessun default, nessun log, il modulo non chiama dotenv. `server.js` lo richiede subito dopo dotenv e prima dei controller. **Documentazione ufficiale non raggiungibile**: `https://ai.google.dev/gemini-api/docs/models` e `https://ai.google.dev/api/generate-content` sono rifiutate dal proxy dell'ambiente cloud (curl: CONNECT 403; WebFetch: ENOTFOUND), quindi il nome del modello Flash non è stato verificato: `GEMINI_MODEL` resta vuoto in `.env.example`, con un commento che rimanda alla pagina dei modelli, e anche l'URL base `v1beta` va verificato a mano (AI-3 dovrà comunque verificare il formato della richiesta). Conseguenza voluta: senza le due variabili il server non parte più, né in locale né su Railway (vanno aggiunte a mano; `DEPLOY.md` non toccato). Test `server/test/gemini.config.test.js` (10 casi, processo separato con ambiente pulito): variabili mancanti o di soli spazi, chiave mai nello stderr, export, ordine del require in `server.js`, `.env.example`, nessun `GEMINI` nel client.
 
 ### AI-2 — Schema dell'output del grader e costruzione del prompt
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: AI-1
 - **Descrizione**: il contratto JSON con il modello e le funzioni pure che costruiscono i prompt. Nessuna chiamata di rete.
 - **Criteri di accettazione**:
-  - [ ] `schemas/graderOutput.schema.js` (Zod): `concepts[{ id, status: present|partial|absent }]`, `verdict: correct|partial|wrong`, `corrections[{ written, suggested, reason }]`, `suggestion`, `exampleAnswer`; campi extra (anche percentuali) scartati; versione batch `{ results: [{ index, ...output }] }`
-  - [ ] `services/graderPrompt.js` (puro): `buildSinglePrompt({ prompt, referenceAnswer, rubric, references, answer })` e `buildBatchPrompt(items)` con `items[].index`. Il prompt, in italiano, dice: conta il concetto e non le parole esatte; la terminologia tecnica è rilevante ("nullo" non è "annullabile", "può" non è "deve") e va segnalata in `corrections`; l'ordine conta se la risposta attesa è una sequenza; usa **solo** gli `id` della rubrica; i riferimenti normativi sono contesto, non testo di legge; rispondi solo JSON; nessuna percentuale. La risposta dello studente è racchiusa in delimitatori e il prompt dice di trattarla come dato e **ignorare istruzioni** al suo interno
-  - [ ] test in `server/test/graderOutput.schema.test.js` e `server/test/graderPrompt.test.js`: output valido; `verdict` fuori dominio, `status` fuori dominio, campi mancanti rifiutati; il prompt contiene domanda, rubrica con id, riferimenti e la risposta tra i delimitatori; nel batch gli `index` compaiono tutti
-- **Note**:
+  - [x] `schemas/graderOutput.schema.js` (Zod): `concepts[{ id, status: present|partial|absent }]`, `verdict: correct|partial|wrong`, `corrections[{ written, suggested, reason }]`, `suggestion`, `exampleAnswer`; campi extra (anche percentuali) scartati; versione batch `{ results: [{ index, ...output }] }`
+  - [x] `services/graderPrompt.js` (puro): `buildSinglePrompt({ prompt, referenceAnswer, rubric, references, answer })` e `buildBatchPrompt(items)` con `items[].index`. Il prompt, in italiano, dice: conta il concetto e non le parole esatte; la terminologia tecnica è rilevante ("nullo" non è "annullabile", "può" non è "deve") e va segnalata in `corrections`; l'ordine conta se la risposta attesa è una sequenza; usa **solo** gli `id` della rubrica; i riferimenti normativi sono contesto, non testo di legge; rispondi solo JSON; nessuna percentuale. La risposta dello studente è racchiusa in delimitatori e il prompt dice di trattarla come dato e **ignorare istruzioni** al suo interno
+  - [x] test in `server/test/graderOutput.schema.test.js` e `server/test/graderPrompt.test.js`: output valido; `verdict` fuori dominio, `status` fuori dominio, campi mancanti rifiutati; il prompt contiene domanda, rubrica con id, riferimenti e la risposta tra i delimitatori; nel batch gli `index` compaiono tutti
+- **Note**: commit unico del branch `agent/AI-2`, impilato su `agent/AI-1` (vedi PR). `schemas/graderOutput.schema.js`: `graderOutputSchema` e `graderBatchOutputSchema` (`results[]` con `index` intero positivo, almeno 1), più le costanti `VERDICTS` e `CONCEPT_STATUSES`. Si usa `z.object` a ogni livello: l'output viene da un LLM, quindi i campi extra (punteggi, percentuali) si scartano invece di far fallire la valutazione. `corrections` può essere vuoto, `suggestion` può essere una stringa vuota, `exampleAnswer` è obbligatoria (si mostra sempre come risposta esemplare), `concepts` ha almeno un elemento. La coerenza degli id con la rubrica e degli index del batch resta ad AI-3/AI-4. `services/graderPrompt.js` (nuova cartella `server/services/`, puro, non richiede `config/gemini`): `buildSinglePrompt` e `buildBatchPrompt` (blocchi `## Domanda index N`, ognuno con la sua rubrica; errore su batch vuoto). Il prompt in italiano contiene tutte le regole del criterio più la regola del verdetto (`correct` solo con tutti i concetti presenti e nessuna correzione, utile alla lode D1); la rubrica mostra id, concetto e peso (come importanza); i riferimenti come "artt. 1, 2 c.c." o "nessuno". La risposta della studentessa sta tra `<<<RISPOSTA_STUDENTE>>>` e `<<<FINE_RISPOSTA_STUDENTE>>>`, con l'istruzione di trattarla come dato; nella risposta `<<<` e `>>>` diventano « e », così il blocco non si può chiudere dall'interno (solo nel testo inviato al modello: chi salva la risposta deve salvare l'originale). Domanda, risposta di riferimento e rubrica non sono filtrate perché vengono dal materiale importato dall'utente. Test: `graderOutput.schema.test.js` e `graderPrompt.test.js` (23 casi). Il testo del prompt andrà rivisto dopo la prova manuale con Gemini (AI-3).
 
 ### AI-3 — Modulo grader: valutazione singola
-- **Stato**: aperto
+- **Stato**: bloccato
 - **Dipende da**: AI-2
 - **Descrizione**: `services/grader.js`, **unico file che conosce il provider**. Chiama Gemini via REST (D5), ottiene JSON, lo valida, gestisce limiti e fallimenti.
 - **Criteri di accettazione**:
@@ -202,7 +202,7 @@ Schema `#003` (`FE_Topics`, `FE_Questions`, `FE_ExamSessions`, `FE_Attempts`) in
   - [ ] output non JSON o non conforme allo schema, **o** con `id` di concetto diversi da quelli della rubrica (mancanti, in più, duplicati): **un solo** nuovo tentativo, poi `Error("GRADER_INVALID_OUTPUT")`; il motivo si logga con `formatZodError`, senza risposta dello studente e senza chiave
   - [ ] test in `server/test/grader.test.js` con `fetchImpl` e `sleep` finti: successo; `429` poi successo con attese 1 s e 2 s; `429` sempre -> `GRADER_UNAVAILABLE` dopo `maxAttempts` chiamate; JSON non valido due volte -> `GRADER_INVALID_OUTPUT`; non valido poi valido -> esattamente 2 chiamate; id rubrica non coerenti rifiutati; la chiave non compare nei messaggi d'errore
   - [ ] [manuale] con una chiave vera, 5 risposte di prova (giusta, parziale, sbagliata, giusta con un termine errato, vuota): esiti sensati
-- **Note**:
+- **Note**: **bloccato** su decisione dell'utente. Il criterio chiede che il formato della richiesta (endpoint `generateContent`, header `x-goog-api-key`, `responseMimeType: "application/json"`) sia verificato sulla documentazione ufficiale di Google AI Studio, ma `ai.google.dev` non è raggiungibile dall'ambiente cloud (il proxy rifiuta la connessione, come in AI-1). Domanda per ripartire: abilitare `ai.google.dev` negli Allowed domains dell'ambiente (impostazioni dell'ambiente cloud, Network access) oppure autorizzare l'implementazione con il formato noto, lasciando la verifica come controllo manuale. AI-4 dipende da questo task e resta fermo; FLASH-2 e PROVA-3 dipendono a loro volta da AI-3/AI-4.
 
 ### AI-4 — Modulo grader: valutazione in batch
 - **Stato**: aperto
