@@ -237,11 +237,15 @@ arriva subito dopo ogni risposta; niente voto e niente timer. Non esiste una
 sessione: ogni risposta è un tentativo `FLASHCARD` a sé.
 
 - `GET /flashcards` — Estrae domande a caso dagli argomenti scelti. **Protetta.**
-  Query: `topics` (id separati da virgola, obbligatorio), `count` (1-50,
-  default 10). Se le domande disponibili sono meno di `count`, restituisce
-  tutte quelle che ci sono.
+  Query: `topics` (id uuid separati da virgola, obbligatorio; duplicati e
+  virgole in più ignorati, al massimo 100 argomenti), `count` (intero 1-50,
+  default 10; vuoto = default). Domande distinte, in ordine casuale. Se le
+  domande disponibili sono meno di `count`, restituisce tutte quelle che ci
+  sono; argomenti inesistenti o senza domande danno `questions: []`.
   Risposta: `{ "ok": true, "questions": [{ "id", "prompt", "topic": { "id", "name" } }] }`.
-  Non include la risposta di riferimento. `400` se `topics` manca o non è valido.
+  Non include risposta di riferimento, rubrica né riferimenti. `400` con
+  messaggio italiano se `topics` manca o contiene valori non uuid, se `count`
+  non è un intero 1-50 o se un parametro è ripetuto.
 - `POST /flashcards/answer` — Invia la risposta a una flashcard e la fa
   valutare subito. **Protetta.**
   Body: `{ "question_id": uuid, "answer": string }`. Una risposta vuota vale

@@ -542,7 +542,7 @@
                 }
               ]
             },
-            "description": "Domande a caso dagli argomenti scelti (topics: id separati da virgola; count 1-50). Salva il primo id nella variabile questionId. Protetta."
+            "description": "Domande a caso dagli argomenti scelti (topics: id uuid separati da virgola; count intero 1-50, default 10). Risposta { ok, questions: [{ id, prompt, topic }] }, senza risposta, rubrica ne' riferimenti. 400 se topics manca o non e' valido, se count non e' un intero 1-50 o se un parametro e' ripetuto. Salva il primo id nella variabile questionId. Protetta."
           },
           "event": [
             {
