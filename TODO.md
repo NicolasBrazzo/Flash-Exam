@@ -228,16 +228,16 @@ Schema `#003` (`FE_Topics`, `FE_Questions`, `FE_ExamSessions`, `FE_Attempts`) in
 ---
 
 ### FLASH-1 — `GET /flashcards`: estrazione delle domande
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: DOM-1
 - **Descrizione**: domande a caso sugli argomenti scelti. Riempie `getRandomQuestionsByTopics` e la rotta `GET /flashcards`; introduce l'utilità di estrazione casuale riusata dalla simulazione.
 - **Criteri di accettazione**:
-  - [ ] `utils/random.js` (puro): `shuffle(array, rng = Math.random)` (Fisher-Yates, non muta l'input) e `pickRandom(array, n, rng)`; test in `server/test/random.test.js` con `rng` deterministico (nessun elemento perso né duplicato, `n` maggiore della lunghezza -> tutti)
-  - [ ] `getRandomQuestionsByTopics(topicIds, count)`: legge gli id delle domande degli argomenti, ne sceglie `count` a caso in JS e carica solo quelle, con l'argomento; nessuna ripetizione
-  - [ ] query `topics` (id uuid separati da virgola, obbligatorio) e `count` (intero 1-50, default 10); `400` con messaggio italiano se `topics` manca o contiene valori non uuid o `count` non è valido; se le domande sono meno di `count` restituisce quelle che ci sono
-  - [ ] risposta `{ ok: true, questions: [{ id, prompt, topic: { id, name } }] }`: **mai** `answer`, `rubric` o `references`. Il parsing della query è una funzione pura con test
+  - [x] `utils/random.js` (puro): `shuffle(array, rng = Math.random)` (Fisher-Yates, non muta l'input) e `pickRandom(array, n, rng)`; test in `server/test/random.test.js` con `rng` deterministico (nessun elemento perso né duplicato, `n` maggiore della lunghezza -> tutti)
+  - [x] `getRandomQuestionsByTopics(topicIds, count)`: legge gli id delle domande degli argomenti, ne sceglie `count` a caso in JS e carica solo quelle, con l'argomento; nessuna ripetizione
+  - [x] query `topics` (id uuid separati da virgola, obbligatorio) e `count` (intero 1-50, default 10); `400` con messaggio italiano se `topics` manca o contiene valori non uuid o `count` non è valido; se le domande sono meno di `count` restituisce quelle che ci sono
+  - [x] risposta `{ ok: true, questions: [{ id, prompt, topic: { id, name } }] }`: **mai** `answer`, `rubric` o `references`. Il parsing della query è una funzione pura con test
   - [ ] [manuale] 10 domande su due argomenti: arrivano 10 domande pertinenti e diverse
-- **Note**:
+- **Note**: commit unico del branch `agent/FLASH-1`, impilato su `agent/DOM-5` (la dipendenza è DOM-1; impilato in fondo alla catena DOM per evitare conflitti su `question.model.js` e preparare PROVA-1/PROVA-6). `utils/random.js` (`shuffle` Fisher-Yates senza mutare l'input, `pickRandom`; `rng` iniettabile, riusato da PROVA-1), `utils/flashcardQuery.js` (`parseFlashcardQuery`, puro), `serializeFlashcard` in `utils/serializeQuestion.js` (whitelist `id`, `prompt`, `topic`), `getRandomQuestionsByTopics` (prima query solo gli id degli argomenti, scelta in JS, seconda query solo `id, prompt, topic` degli id scelti, riordinati come estratti) e la rotta `GET /flashcards`. Scelte: virgole in più e duplicati in `topics` ignorati (id in minuscolo), al massimo 100 argomenti, `count` vuoto vale 10, parametri ripetuti -> 400, argomenti inesistenti o senza domande -> 200 con `questions: []`; parsing della query a mano come `parsePagination` (messaggi italiani precisi). Limite noto: la prima query è soggetta al massimo di 1000 righe di PostgREST, quindi oltre 1000 domande negli argomenti scelti l'estrazione non sarebbe uniforme (stesso limite per `getRandomQuestions` di PROVA-1). `ENDPOINTS.md` e Postman allineati. Test: `random.test.js`, `flashcardQuery.test.js`, `flashcards.routes.test.js` (Supabase finto).
 
 ### FLASH-2 — `POST /flashcards/answer`: valutazione immediata e fallback
 - **Stato**: aperto

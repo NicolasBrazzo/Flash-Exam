@@ -1,12 +1,16 @@
 const supabase = require("../config/db_connection");
 const { getRange } = require("../utils/pagination");
 const { escapeLike } = require("../utils/sqlFilters");
+const { pickRandom } = require("../utils/random");
 
 const TABLE_NAME = "FE_Questions";
 
 // Colonne della forma API (vedi utils/serializeQuestion.js), argomento incluso
 const SELECT_COLUMNS =
   "id, prompt, answer, rubric, article_refs, created_at, updated_at, topic:FE_Topics(id, name)";
+
+// Colonne di una flashcard: niente risposta, rubrica o riferimenti
+const FLASHCARD_COLUMNS = "id, prompt, topic:FE_Topics(id, name)";
 
 // Filtri dell'elenco, applicati solo se presenti
 const applyFilters = (query, { topicId, q }) => {
@@ -139,8 +143,35 @@ const deleteQuestion = async (id) => {
 // Estrae `count` domande a caso tra tutte (simulazione)
 const getRandomQuestions = async (count) => {};
 
-// Estrae fino a `count` domande a caso dagli argomenti indicati (flashcard)
-const getRandomQuestionsByTopics = async (topicIds, count) => {};
+// Estrae fino a `count` domande a caso dagli argomenti indicati (flashcard):
+// legge gli id, li sceglie in JS e carica solo quelli, nell'ordine estratto.
+// `rng` serve solo ai test
+const getRandomQuestionsByTopics = async (topicIds, count, rng = Math.random) => {
+  const { data: idRows, error: idsError } = await supabase
+    .from(TABLE_NAME)
+    .select("id")
+    .in("topic_id", topicIds);
+
+  if (idsError) {
+    throw new Error("DATABASE_FIND_RANDOM_QUESTIONS_ERROR");
+  }
+
+  const picked = pickRandom((idRows ?? []).map((row) => row.id), count, rng);
+  if (picked.length === 0) return [];
+
+  const { data, error } = await supabase
+    .from(TABLE_NAME)
+    .select(FLASHCARD_COLUMNS)
+    .in("id", picked);
+
+  if (error) {
+    throw new Error("DATABASE_FIND_RANDOM_QUESTIONS_ERROR");
+  }
+
+  // .in() non conserva l'ordine: si riordina come estratto
+  const byId = new Map((data ?? []).map((row) => [row.id, row]));
+  return picked.map((id) => byId.get(id)).filter(Boolean);
+};
 
 module.exports = {
   getQuestions,

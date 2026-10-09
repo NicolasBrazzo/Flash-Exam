@@ -11,4 +11,11 @@ const serializeQuestion = (row) => ({
   updated_at: row.updated_at,
 });
 
-module.exports = { serializeQuestion };
+// Flashcard: solo il testo e l'argomento, mai risposta, rubrica o riferimenti
+const serializeFlashcard = (row) => ({
+  id: row.id,
+  prompt: row.prompt,
+  topic: row.topic ? { id: row.topic.id, name: row.topic.name } : null,
+});
+
+module.exports = { serializeQuestion, serializeFlashcard };
