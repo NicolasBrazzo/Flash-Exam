@@ -431,7 +431,7 @@
                 "1"
               ]
             },
-            "description": "Salva in bozza la risposta alla posizione indicata (1-6). 409 se la prova è chiusa o scaduta. Protetta.",
+            "description": "Salva in bozza la risposta alla posizione indicata (1-6): { ok, updated_at }. answer anche vuota, massimo 5000 caratteri (400 oltre o se la posizione non e' valida). 409 se la prova è chiusa o scaduta. Protetta.",
             "body": {
               "mode": "raw",
               "raw": "{\n    \"answer\": \"Con la nascita.\"\n}"

@@ -27,7 +27,20 @@ const getAttemptsBySession = async (sessionId) => {
 };
 
 // Tentativo di una simulazione per posizione
-const findAttemptBySessionAndPosition = async (sessionId, position) => {};
+const findAttemptBySessionAndPosition = async (sessionId, position) => {
+  const { data, error } = await supabase
+    .from(TABLE_NAME)
+    .select(ATTEMPT_COLUMNS)
+    .eq("session_id", sessionId)
+    .eq("position", position)
+    .maybeSingle();
+
+  if (error) {
+    throw new Error("DATABASE_FIND_ATTEMPT_BY_POSITION_ERROR");
+  }
+
+  return data ?? null;
+};
 
 // Crea le 6 righe di una simulazione con la risposta vuota
 // (un solo insert: entrano tutte o nessuna); restituisce le righe con la domanda
@@ -48,7 +61,21 @@ const createExamAttempts = async (attempts) => {
 const createFlashcardAttempt = async ({ question_id, answer }) => {};
 
 // Aggiorna un tentativo (risposta o valutazione; valorizza updated_at)
-const updateAttempt = async (id, fields) => {};
+// Restituisce la riga aggiornata con la domanda, null se non esiste
+const updateAttempt = async (id, fields) => {
+  const { data, error } = await supabase
+    .from(TABLE_NAME)
+    .update({ ...fields, updated_at: new Date().toISOString() })
+    .eq("id", id)
+    .select(ATTEMPT_COLUMNS)
+    .maybeSingle();
+
+  if (error) {
+    throw new Error("DATABASE_UPDATE_ATTEMPT_ERROR");
+  }
+
+  return data ?? null;
+};
 
 // Indica se una domanda ha già dei tentativi (blocca la cancellazione)
 const hasAttemptsForQuestion = async (questionId) => {

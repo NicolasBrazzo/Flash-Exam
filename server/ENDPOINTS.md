@@ -201,10 +201,13 @@ Rotte:
   - `409` se nel database ci sono meno di 6 domande.
 - `PUT /exams/:id/answers/:position` — Salva in bozza la risposta a una
   domanda durante la prova. **Protetta.**
-  Body: `{ "answer": string }` (può essere vuota). `:position` va da 1 a 6.
+  Body: `{ "answer": string }` (può essere vuota, massimo 5000 caratteri,
+  salvata così com'è). `:position` è un intero da 1 a 6.
   Risposta: `{ "ok": true, "updated_at": "..." }`.
-  `404` se la prova o la posizione non esistono. `409` se la prova non è più
-  `IN_PROGRESS` o se è oltre `expires_at` più la tolleranza.
+  `400` se il body non è valido (elenco degli errori) o la posizione non è un
+  intero da 1 a 6. `404` se la prova o la posizione non esistono (o l'id non è
+  un uuid). `409` se la prova non è più `IN_PROGRESS` o se è oltre
+  `expires_at` più la tolleranza (15 secondi).
 - `POST /exams/:id/submit` — Consegna la prova e la fa valutare. **Protetta.**
   Body (opzionale): `{ "answers": [{ "position": number, "answer": string }] }`,
   con le ultime risposte non ancora salvate in bozza, così non si perde nulla.
