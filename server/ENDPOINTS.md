@@ -105,13 +105,19 @@ Valgono per tutte le sezioni seguenti. Tutte le rotte di dominio sono **protette
 
 ## Questions — `/questions`
 
-- `GET /questions` — Elenco paginato delle domande. **Protetta.**
+- `GET /questions` — Elenco paginato delle domande (`client/src/FILTERS_BE.md`). **Protetta.**
   Query: `topic_id` (filtro per argomento), `q` (ricerca case-insensitive nel
-  prompt), `page`, `limit`, `sort` (whitelist: `created_at`, `prompt`), `order`.
+  prompt; `%` e `_` sono letterali), `page` (default `1`), `limit` (default `20`,
+  massimo `100`), `sort` (whitelist: `created_at`, `prompt`; default
+  `created_at`), `order` (`asc`, qualsiasi altro valore `desc`). Parametri vuoti
+  = nessun filtro; un `topic_id` che non è un uuid dà `data: []`.
+  Risposta: `{ "ok": true, "data": [...], "pagination": { "total", "page", "limit", "totalPages" } }`;
+  pagina oltre l'ultima: `data: []` con `200`.
   Ogni elemento di `data` ha:
   `{ "id", "topic": { "id", "name" }, "prompt", "reference_answer", "rubric", "references", "created_at", "updated_at" }`.
-- `GET /questions/:id` — Dettaglio di una domanda (stessa forma di un elemento
-  dell'elenco). **Protetta.** `404` se non esiste.
+- `GET /questions/:id` — Dettaglio di una domanda. **Protetta.**
+  Risposta: `{ "ok": true, "question": {...} }` (stessa forma di un elemento
+  dell'elenco). `404` `"Domanda non trovata"` se non esiste o se l'id non è un uuid.
 - `PATCH /questions/:id` — Corregge una domanda. **Protetta.**
   Body parziale, con almeno un campo tra `topic_id`, `prompt`,
   `reference_answer`, `rubric` e `references`, validato con le stesse regole

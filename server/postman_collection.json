@@ -236,7 +236,7 @@
                 }
               ]
             },
-            "description": "Elenco paginato (FILTERS_BE.md). Filtri: topic_id, q. Salva il primo id nella variabile questionId. Protetta."
+            "description": "Elenco paginato (FILTERS_BE.md): { ok, data, pagination }. Filtri: topic_id, q (parametri vuoti = nessun filtro). page default 1, limit default 20 (max 100), sort created_at|prompt, order asc|desc. Salva il primo id nella variabile questionId. Protetta."
           },
           "event": [
             {
@@ -268,7 +268,7 @@
                 "{{questionId}}"
               ]
             },
-            "description": "Dettaglio di una domanda. Protetta."
+            "description": "Dettaglio di una domanda: { ok, question }. 404 \"Domanda non trovata\" se non esiste o se l'id non e' un uuid. Protetta."
           }
         },
         {
