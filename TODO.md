@@ -104,96 +104,96 @@ Schema `#003` (`FE_Topics`, `FE_Questions`, `FE_ExamSessions`, `FE_Attempts`) in
 ---
 
 ### DOM-1 — `GET /questions` e `GET /questions/:id`
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: TEST-1
 - **Descrizione**: elenco paginato e dettaglio delle domande, secondo `client/src/FILTERS_BE.md` e `ENDPOINTS.md`. Riempie `getQuestions` e `findQuestionById` in `models/question.model.js` e le due rotte `GET` in `controllers/questions.controller.js`.
 - **Criteri di accettazione**:
-  - [ ] `server/utils/pagination.js` (puro): `page` default 1, `limit` default 20 con massimo 100, valori non numerici o negativi -> default, `sort` fuori whitelist -> `created_at`, `order` diverso da `asc` -> `desc`; calcola `from`/`to` per `.range()`. Test in `server/test/pagination.test.js`
-  - [ ] `server/utils/serializeQuestion.js` (puro) converte la riga DB nella forma API `{ id, topic: { id, name }, prompt, reference_answer, rubric, references, created_at, updated_at }` (`answer` -> `reference_answer`, `article_refs` -> `references`); test dedicato
-  - [ ] `GET /questions`: filtri `topic_id` (uguaglianza) e `q` (`ilike` sul prompt, con `%` e `_` dell'input resi letterali), `sort` in whitelist `created_at`/`prompt`, `.order()` sempre presente, risposta `{ ok: true, data, pagination: { total, page, limit, totalPages } }`, `totalPages` con `Math.ceil`, pagina oltre l'ultima -> `data: []` con `200`
-  - [ ] `GET /questions/:id`: `{ ok: true, question }`; id inesistente o non uuid -> `404` "Domanda non trovata"
-  - [ ] errori DB -> `500` generico, nessun dettaglio interno nella risposta
+  - [x] `server/utils/pagination.js` (puro): `page` default 1, `limit` default 20 con massimo 100, valori non numerici o negativi -> default, `sort` fuori whitelist -> `created_at`, `order` diverso da `asc` -> `desc`; calcola `from`/`to` per `.range()`. Test in `server/test/pagination.test.js`
+  - [x] `server/utils/serializeQuestion.js` (puro) converte la riga DB nella forma API `{ id, topic: { id, name }, prompt, reference_answer, rubric, references, created_at, updated_at }` (`answer` -> `reference_answer`, `article_refs` -> `references`); test dedicato
+  - [x] `GET /questions`: filtri `topic_id` (uguaglianza) e `q` (`ilike` sul prompt, con `%` e `_` dell'input resi letterali), `sort` in whitelist `created_at`/`prompt`, `.order()` sempre presente, risposta `{ ok: true, data, pagination: { total, page, limit, totalPages } }`, `totalPages` con `Math.ceil`, pagina oltre l'ultima -> `data: []` con `200`
+  - [x] `GET /questions/:id`: `{ ok: true, question }`; id inesistente o non uuid -> `404` "Domanda non trovata"
+  - [x] errori DB -> `500` generico, nessun dettaglio interno nella risposta
   - [ ] [manuale] da Postman: filtro per argomento, ricerca testuale, seconda pagina
-- **Note**:
+- **Note**: commit unico del branch `agent/DOM-1`, impilato su `agent/TEST-1` (vedi PR). Utility pure: `utils/pagination.js` (`parsePagination`, `getRange`, `buildPagination`), `utils/serializeQuestion.js`, `utils/sqlFilters.js` (`escapeLike` per backslash, `%` e `_`; `isUuid`). Scelte: `topic_id` non uuid -> `200` con `data: []` senza interrogare il DB (un filtro per uguaglianza su un id impossibile non trova nulla; evita l'errore Postgres `22P02` che diventerebbe un 500); parametri vuoti (`q=`, `topic_id=`) = nessun filtro; id non uuid -> `404`; ordinamento secondario su `id` per pagine stabili (le domande dello stesso import hanno lo stesso `created_at`); pagina oltre l'ultima: PostgREST risponde `PGRST103`, il model rifà un count `head` con gli stessi filtri e restituisce `data: []` con il totale. Test: 32 nuovi (pagination, serializeQuestion, sqlFilters, model e rotte con un client Supabase finto iniettato in `require.cache`). Non gestiti (fuori criterio): `*` nella ricerca resta un jolly di PostgREST; `page` enorme (oltre 1e21) finisce in 500. Da verificare: fallback `PGRST103` ed escape di `ilike` su Supabase reale.
 
 ### DOM-2 — `PATCH` e `DELETE /questions/:id`
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: DOM-1
 - **Descrizione**: correggere e cancellare una domanda. Riempie `updateQuestion`, `deleteQuestion` e `hasAttemptsForQuestion` (`attempt.model.js`) e le rotte `PATCH`/`DELETE`.
 - **Criteri di accettazione**:
-  - [ ] `schemas/questionPatch.schema.js`: body parziale con almeno un campo tra `topic_id` (uuid), `prompt`, `reference_answer`, `rubric`, `references`; stesse regole dell'import (rubrica 2-4 concetti con `id` univoci e peso intero positivo). I frammenti riusabili si esportano da `questionsImport.schema.js` **senza cambiare il comportamento dell'import** (i test di TEST-1 restano verdi). Test in `server/test/questionPatch.schema.test.js`: body vuoto, campo sconosciuto, rubrica invalida
-  - [ ] `PATCH`: valida con `safeParse` + `sendZodError`; mappa `reference_answer` -> `answer` e `references` -> `article_refs`; valorizza `updated_at`; risposta `{ ok: true, question }` nella forma API; `404` se la domanda o il `topic_id` non esistono; `409` se esiste già nell'argomento una domanda con lo stesso prompt normalizzato
-  - [ ] `DELETE`: `409` con il messaggio esatto di `ENDPOINTS.md` se la domanda ha tentativi; altrimenti cancella e risponde `{ ok: true }`; `404` se non esiste
+  - [x] `schemas/questionPatch.schema.js`: body parziale con almeno un campo tra `topic_id` (uuid), `prompt`, `reference_answer`, `rubric`, `references`; stesse regole dell'import (rubrica 2-4 concetti con `id` univoci e peso intero positivo). I frammenti riusabili si esportano da `questionsImport.schema.js` **senza cambiare il comportamento dell'import** (i test di TEST-1 restano verdi). Test in `server/test/questionPatch.schema.test.js`: body vuoto, campo sconosciuto, rubrica invalida
+  - [x] `PATCH`: valida con `safeParse` + `sendZodError`; mappa `reference_answer` -> `answer` e `references` -> `article_refs`; valorizza `updated_at`; risposta `{ ok: true, question }` nella forma API; `404` se la domanda o il `topic_id` non esistono; `409` se esiste già nell'argomento una domanda con lo stesso prompt normalizzato
+  - [x] `DELETE`: `409` con il messaggio esatto di `ENDPOINTS.md` se la domanda ha tentativi; altrimenti cancella e risponde `{ ok: true }`; `404` se non esiste
   - [ ] [manuale] da Postman: correzione di una domanda, cancellazione di una senza tentativi
-- **Note**:
+- **Note**: commit unico del branch `agent/DOM-2`, impilato su `agent/DOM-1` (vedi PR). `schemas/questionPatch.schema.js` riusa `requiredText`, `rubricSchema` e `referencesSchema` dell'import (unico cambio all'import: l'export di `requiredText`); `topic_id` validato con `z.guid` (qualsiasi uuid ben formato, come `isUuid`); nessun default, quindi un campo assente resta invariato e `references: []` svuota. Il 409 per prompt duplicato si rileva solo dal `23505` dell'indice univoco (atomico, senza race, e la domanda non confligge con se stessa): messaggio "Nell'argomento esiste già una domanda con lo stesso testo", documentato in `ENDPOINTS.md`. `topic_id` controllato prima dell'update (404 "Argomento non trovato", che vince se mancano sia domanda sia argomento). `updated_at` valorizzato nel model. DELETE: `hasAttemptsForQuestion` (count `head`) poi delete; il `23503` della FK resta come rete di sicurezza -> stesso 409. Id non uuid -> 404. Test: 42 nuovi (`questionPatch.schema.test.js`, `questions.write.test.js` con Supabase finto). Non gestito: argomento cancellato tra il controllo e l'update -> 500 (oggi non esiste una rotta che cancella argomenti). Da verificare: 409 e `maybeSingle` su update/delete senza righe con Supabase reale.
 
 ### DOM-3 — Pagina "Domande" (elenco)
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: DOM-1, SEED-1
 - **Descrizione**: la vista di consultazione del materiale. Crea `client/src/services/` (prima cartella) e la prima pagina di dominio, che diventa il riferimento per le successive: `ADDING_A_RESOURCE.md` e `CLAUDE.md` ("Page pattern") vanno aggiornati con il riferimento a questa pagina.
 - **Criteri di accettazione**:
-  - [ ] `services/topicsService.js` (`getTopics` -> `res.data.topics`) e `services/questionsService.js` (`getQuestions(params)` -> `{ data, pagination }`): usano l'istanza `api`, fanno l'unwrap e rilanciano `Error(message)`
-  - [ ] `QUESTIONS_COLUMN_LABELS` in `constants/columnLabels.js` (prompt, argomento, riferimenti)
-  - [ ] `pages/Domande.jsx` alla rotta `/domande` dentro `PrivateRoute` e `AppLayout`; voce "Domande" (icona Lucide) in `MENU_ITEMS` di `Side.jsx`
-  - [ ] `useFetch` con i filtri nelle deps; `FilterBar` con ricerca testuale e select dell'argomento (opzione "Tutti"); `DataTable` con paginazione collegata a `pagination`; cambiando un filtro si torna a pagina 1
-  - [ ] stati di caricamento (`Loader`), errore (messaggio + "Riprova" con `refetch`) e vuoto ("Nessuna domanda trovata") resi nella pagina
-  - [ ] `riferimenti` mostrati come testo compatto ("art. 1, 2"), vuoto se assenti
+  - [x] `services/topicsService.js` (`getTopics` -> `res.data.topics`) e `services/questionsService.js` (`getQuestions(params)` -> `{ data, pagination }`): usano l'istanza `api`, fanno l'unwrap e rilanciano `Error(message)`
+  - [x] `QUESTIONS_COLUMN_LABELS` in `constants/columnLabels.js` (prompt, argomento, riferimenti)
+  - [x] `pages/Domande.jsx` alla rotta `/domande` dentro `PrivateRoute` e `AppLayout`; voce "Domande" (icona Lucide) in `MENU_ITEMS` di `Side.jsx`
+  - [x] `useFetch` con i filtri nelle deps; `FilterBar` con ricerca testuale e select dell'argomento (opzione "Tutti"); `DataTable` con paginazione collegata a `pagination`; cambiando un filtro si torna a pagina 1
+  - [x] stati di caricamento (`Loader`), errore (messaggio + "Riprova" con `refetch`) e vuoto ("Nessuna domanda trovata") resi nella pagina
+  - [x] `riferimenti` mostrati come testo compatto ("art. 1, 2"), vuoto se assenti
   - [ ] [manuale] su Safari iPad: filtri e paginazione usabili al tocco; tema chiaro e scuro
-- **Note**:
+- **Note**: commit unico del branch `agent/DOM-3`, impilato su `agent/DOM-2` (vedi PR); SEED-1 (dipendenza) è `fatto` sulla sua PR separata e serve solo per avere dati demo, non per il codice. Creati `services/topicsService.js`, `services/questionsService.js`, `utils/formatReferences.js` ("art. 1, 2", sempre "art.") e `pages/Domande.jsx` (rotta `/domande`, voce "Domande" con icona `BookOpen`). Estesi due componenti esistenti, in modo retrocompatibile (nessun componente nuovo): `FilterBar` ha il tipo `text` e campi/pulsanti alti 44 px con testo a 16 px (niente zoom su iPad); `DataTable` ha le props opzionali `pagination` + `onPageChange` (Precedente/Successiva, "Pagina X di Y"). Pagina: ricerca con debounce di 300 ms (setState solo nella callback del timer), ogni cambio di filtro torna a pagina 1, `FilterBar` sempre montata; loader a tutta area solo al primo caricamento, nei ricaricamenti la tabella resta montata (`aria-busy`) così il focus da tastiera non si perde, e i cambi pagina durante una richiesta sono ignorati; etichette dei filtri in una costante della pagina. Se gli argomenti non si caricano la pagina resta usabile senza quel filtro. Verifiche: `node scripts/checks/formatReferences.check.mjs` (9 casi; il client non ha un test runner e lo script non è collegato ai gate), controlli grep del piano, render in Chromium con API finta in tema chiaro e scuro (controlli da 44 px, nessun errore in console, focus mantenuto). Il controllo del piano "nessun eslint-disable in client/src" è stato applicato come "nessuno aggiunto": ne esiste uno dal primo commit in `hooks/useMutation.js`, non toccato. Fuori perimetro, da valutare in un task a parte: `useFetch` non scarta le risposte arrivate in ritardo (una ricerca lenta può sovrascrivere quella nuova); `Loader` ha colori fissi poco leggibili nel tema scuro. `ADDING_A_RESOURCE.md` e `CLAUDE.md` indicano ora la risorsa domande come riferimento.
 
 ### DOM-4 — Dettaglio, modifica e cancellazione di una domanda
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: DOM-2, DOM-3
 - **Descrizione**: dalla riga si apre il dettaglio; da lì si corregge o si cancella.
 - **Criteri di accettazione**:
-  - [ ] `Modal` di dettaglio: argomento, prompt, risposta di riferimento, rubrica (concetto e peso), riferimenti
-  - [ ] `Modal` di modifica con `*Form` inline e `formState` locale: modifica `prompt`, `answer`, `references` (voci separate da virgola) e, per ogni concetto **esistente**, testo e peso; non si aggiungono né tolgono concetti (fuori perimetro); validazione client dentro la mutation fn con `useMutation`, `PATCH` via `questionsService.updateQuestion`, `refetch()` e toast in `onSuccess`; errore `409`/`400` del server mostrato nel form
-  - [ ] cancellazione: `Modal` di conferma, `DELETE` via service; sul `409` si mostra il messaggio del server e la domanda resta; sul successo `refetch()`
-  - [ ] se la pagina cancellata resta vuota si torna alla pagina precedente
-  - [ ] nessun componente nuovo; textarea con testo da almeno 16 px (niente zoom automatico su iPad)
+  - [x] `Modal` di dettaglio: argomento, prompt, risposta di riferimento, rubrica (concetto e peso), riferimenti
+  - [x] `Modal` di modifica con `*Form` inline e `formState` locale: modifica `prompt`, `answer`, `references` (voci separate da virgola) e, per ogni concetto **esistente**, testo e peso; non si aggiungono né tolgono concetti (fuori perimetro); validazione client dentro la mutation fn con `useMutation`, `PATCH` via `questionsService.updateQuestion`, `refetch()` e toast in `onSuccess`; errore `409`/`400` del server mostrato nel form
+  - [x] cancellazione: `Modal` di conferma, `DELETE` via service; sul `409` si mostra il messaggio del server e la domanda resta; sul successo `refetch()`
+  - [x] se la pagina cancellata resta vuota si torna alla pagina precedente
+  - [x] nessun componente nuovo; textarea con testo da almeno 16 px (niente zoom automatico su iPad)
   - [ ] [manuale] correzione di una domanda e cancellazione di una senza tentativi, da browser
-- **Note**:
+- **Note**: commit unico del branch `agent/DOM-4`, impilato su `agent/DOM-3` (vedi PR). Dalla colonna "Domanda" (ora un pulsante, raggiungibile da tastiera) si apre il `Modal` di dettaglio; da lì "Modifica" (form inline `QuestionForm` con `formState` locale) ed "Elimina" (`Modal` di conferma). Funzioni pure in `utils/questionForm.js` (`questionToFormState`, `parseReferences`, `validateQuestionForm` con gli stessi testi del server, `formStateToPatch`, `pageAfterDelete`), verificate da `scripts/checks/questionForm.check.mjs` (29 casi). `questionsService` ha `updateQuestion` e `deleteQuestion`. Scelte: il PATCH invia solo i campi cambiati (la rubrica intera, con gli stessi id, se cambia un testo o un peso); se non cambia nulla il form mostra "Nessuna modifica da salvare"; errori di validazione, 400 e 409 mostrati nel form come elenco (`role="alert"`); il modale non si chiude durante un salvataggio o una cancellazione; dopo la cancellazione dell'unico elemento di una pagina successiva alla prima si torna alla precedente, altrimenti `refetch()`. Nell'interfaccia il campo `answer` del criterio è "Risposta di riferimento" (`reference_answer` nell'API). Estesi in modo retrocompatibile due componenti esistenti (nessun componente nuovo): `Modal` (pulsante chiudi da 44 px, prop `size` md/lg, chiusura con Esc, contenuto scrollabile entro il 90% dell'altezza) e `DataTable` (cella con `onClick` resa come `<button>`). Textarea e input del form a 16 px (niente zoom su iPad), controlli alti almeno 44 px. Verifiche: gate, controlli statici del piano, scenari in Chromium con API finta (tema chiaro e scuro, tastiera, PATCH, 409/400, DELETE, ritorno di pagina). Fuori perimetro: focus trap nel dialog e ritorno del focus alla chiusura (passando dal dettaglio alla modifica il focus finisce sul body); le osservazioni di DOM-3 su `useFetch` e `Loader` restano valide.
 
 ### DOM-5 — Pagina "Import"
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: DOM-3
 - **Descrizione**: importare i JSON delle domande dal sito, senza passare da Postman.
 - **Criteri di accettazione**:
-  - [ ] `services/importService.js` -> `POST /import/questions`
-  - [ ] `pages/Import.jsx` alla rotta `/import`, voce in `MENU_ITEMS` (icona Lucide): selezione di un file `.json` **oppure** incolla in una textarea ampia (su iPad il selettore file è scomodo); il file selezionato riempie la textarea
-  - [ ] il JSON si parsa nel browser: se non è sintassi valida, errore italiano chiaro **senza** chiamare il server
-  - [ ] `useMutation`; esito `201` come riepilogo (nome argomento, "creato" o "già esistente", domande inserite, domande ignorate); `400`: l'`error` arriva già unito con `; ` dal client Axios, la pagina lo separa e mostra un elenco voce per voce; `409` con il messaggio del server
-  - [ ] la pagina non si rompe con file vuoti o enormi; il pulsante è disabilitato durante la richiesta
+  - [x] `services/importService.js` -> `POST /import/questions`
+  - [x] `pages/Import.jsx` alla rotta `/import`, voce in `MENU_ITEMS` (icona Lucide): selezione di un file `.json` **oppure** incolla in una textarea ampia (su iPad il selettore file è scomodo); il file selezionato riempie la textarea
+  - [x] il JSON si parsa nel browser: se non è sintassi valida, errore italiano chiaro **senza** chiamare il server
+  - [x] `useMutation`; esito `201` come riepilogo (nome argomento, "creato" o "già esistente", domande inserite, domande ignorate); `400`: l'`error` arriva già unito con `; ` dal client Axios, la pagina lo separa e mostra un elenco voce per voce; `409` con il messaggio del server
+  - [x] la pagina non si rompe con file vuoti o enormi; il pulsante è disabilitato durante la richiesta
   - [ ] [manuale] import di un argomento di prova, reimport (0 inserite), file sbagliato
-- **Note**:
+- **Note**: commit unico del branch `agent/DOM-5`, impilato su `agent/DOM-4` (vedi PR). Creati `services/importService.js` (`importQuestions`), `utils/importJson.js` (funzioni pure: `parseImportText`, `describeJsonError`, `summarizeImport`, limiti), `pages/Import.jsx` alla rotta `/import` e la voce "Import" (icona `FileUp`) nel menu. Il file `.json` scelto con un pulsante da 44 px riempie la textarea (ampia, a 16 px, in sola lettura durante l'invio); il JSON si parsa nel browser: vuoto, sintassi non valida (con riga e colonna quando il browser le fornisce; su Safari messaggio generico), radice non oggetto e dimensione eccessiva danno un errore italiano senza chiamare il server. Riepilogo del 201 (argomento, "creato"/"già esistente", inserite, ignorate), 400 come elenco voce per voce, 409 con il messaggio del server; pulsante disabilitato durante la richiesta. **Decisione per l'utente**: `server/server.js` usa `express.json()` con il limite di default di 100 kB, e un body più grande finisce nel gestore globale come 500 "Errore interno del server". Non l'ho toccato (modifica di config non autorizzata): il client blocca i JSON il cui body compatto supera 100 kB (1 MB per il file letto) e suggerisce di dividere l'argomento. Se gli argomenti veri superano 100 kB, va autorizzato `express.json({ limit: "1mb" })` e/o una risposta 413 italiana nel gestore globale; poi `MAX_BODY_BYTES` in `utils/importJson.js` va allineato. `ErrorList` è duplicato inline in `Domande.jsx` e `Import.jsx`: estrarlo in `components/` richiede il permesso per un componente nuovo. Verifiche: `node scripts/checks/importJson.check.mjs` (20 casi), controlli statici del piano, scenari in Chromium con API finta (file, errori locali senza richieste, 201, 400, 409, doppio click, 44 px in tema chiaro e scuro).
 
 ---
 
 ### AI-1 — Configurazione di Gemini
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: TEST-1
 - **Descrizione**: chiave e modello solo lato server, con fallimento immediato all'avvio se mancano.
 - **Criteri di accettazione**:
-  - [ ] `server/config/gemini.js`: legge `GEMINI_API_KEY` e `GEMINI_MODEL` e **lancia all'import** se mancano, sul modello di `config/jwt.js`; esporta chiave, modello e URL base. Nessun valore di default per la chiave
-  - [ ] `server.js` lo richiede all'avvio (dopo `dotenv`), così il server non parte senza configurazione
-  - [ ] il nome del modello Flash **non è dato per noto**: va verificato sulla documentazione ufficiale di Google AI Studio (WebFetch) e la pagina consultata riportata in Note. Se non raggiungibile, `GEMINI_MODEL` resta vuoto in `.env.example` con un commento e la cosa va nelle Note
-  - [ ] `server/.env.example` con `GEMINI_API_KEY=` e `GEMINI_MODEL=`; `CLAUDE.md` (sezione Environment) li elenca
-  - [ ] la chiave non compare mai in log, errori o risposte, e non è mai in `client/`
+  - [x] `server/config/gemini.js`: legge `GEMINI_API_KEY` e `GEMINI_MODEL` e **lancia all'import** se mancano, sul modello di `config/jwt.js`; esporta chiave, modello e URL base. Nessun valore di default per la chiave
+  - [x] `server.js` lo richiede all'avvio (dopo `dotenv`), così il server non parte senza configurazione
+  - [x] il nome del modello Flash **non è dato per noto**: va verificato sulla documentazione ufficiale di Google AI Studio (WebFetch) e la pagina consultata riportata in Note. Se non raggiungibile, `GEMINI_MODEL` resta vuoto in `.env.example` con un commento e la cosa va nelle Note
+  - [x] `server/.env.example` con `GEMINI_API_KEY=` e `GEMINI_MODEL=`; `CLAUDE.md` (sezione Environment) li elenca
+  - [x] la chiave non compare mai in log, errori o risposte, e non è mai in `client/`
   - [ ] [manuale] su Railway vanno aggiunte le due variabili a mano (`DEPLOY.md` non si tocca)
-- **Note**:
+- **Note**: commit unico del branch `agent/AI-1`, da `agent/TEST-1` (vedi PR). `server/config/gemini.js` legge `GEMINI_API_KEY` e `GEMINI_MODEL` (valori ripuliti dagli spazi; vuoto = mancante) e lancia all'import se ne manca una, con un messaggio che nomina solo la variabile; esporta chiave, modello e `GEMINI_BASE_URL` = `https://generativelanguage.googleapis.com/v1beta`. Nessun default, nessun log, il modulo non chiama dotenv. `server.js` lo richiede subito dopo dotenv e prima dei controller. **Documentazione ufficiale non raggiungibile**: `https://ai.google.dev/gemini-api/docs/models` e `https://ai.google.dev/api/generate-content` sono rifiutate dal proxy dell'ambiente cloud (curl: CONNECT 403; WebFetch: ENOTFOUND), quindi il nome del modello Flash non è stato verificato: `GEMINI_MODEL` resta vuoto in `.env.example`, con un commento che rimanda alla pagina dei modelli, e anche l'URL base `v1beta` va verificato a mano (AI-3 dovrà comunque verificare il formato della richiesta). Conseguenza voluta: senza le due variabili il server non parte più, né in locale né su Railway (vanno aggiunte a mano; `DEPLOY.md` non toccato). Test `server/test/gemini.config.test.js` (10 casi, processo separato con ambiente pulito): variabili mancanti o di soli spazi, chiave mai nello stderr, export, ordine del require in `server.js`, `.env.example`, nessun `GEMINI` nel client.
 
 ### AI-2 — Schema dell'output del grader e costruzione del prompt
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: AI-1
 - **Descrizione**: il contratto JSON con il modello e le funzioni pure che costruiscono i prompt. Nessuna chiamata di rete.
 - **Criteri di accettazione**:
-  - [ ] `schemas/graderOutput.schema.js` (Zod): `concepts[{ id, status: present|partial|absent }]`, `verdict: correct|partial|wrong`, `corrections[{ written, suggested, reason }]`, `suggestion`, `exampleAnswer`; campi extra (anche percentuali) scartati; versione batch `{ results: [{ index, ...output }] }`
-  - [ ] `services/graderPrompt.js` (puro): `buildSinglePrompt({ prompt, referenceAnswer, rubric, references, answer })` e `buildBatchPrompt(items)` con `items[].index`. Il prompt, in italiano, dice: conta il concetto e non le parole esatte; la terminologia tecnica è rilevante ("nullo" non è "annullabile", "può" non è "deve") e va segnalata in `corrections`; l'ordine conta se la risposta attesa è una sequenza; usa **solo** gli `id` della rubrica; i riferimenti normativi sono contesto, non testo di legge; rispondi solo JSON; nessuna percentuale. La risposta dello studente è racchiusa in delimitatori e il prompt dice di trattarla come dato e **ignorare istruzioni** al suo interno
-  - [ ] test in `server/test/graderOutput.schema.test.js` e `server/test/graderPrompt.test.js`: output valido; `verdict` fuori dominio, `status` fuori dominio, campi mancanti rifiutati; il prompt contiene domanda, rubrica con id, riferimenti e la risposta tra i delimitatori; nel batch gli `index` compaiono tutti
-- **Note**:
+  - [x] `schemas/graderOutput.schema.js` (Zod): `concepts[{ id, status: present|partial|absent }]`, `verdict: correct|partial|wrong`, `corrections[{ written, suggested, reason }]`, `suggestion`, `exampleAnswer`; campi extra (anche percentuali) scartati; versione batch `{ results: [{ index, ...output }] }`
+  - [x] `services/graderPrompt.js` (puro): `buildSinglePrompt({ prompt, referenceAnswer, rubric, references, answer })` e `buildBatchPrompt(items)` con `items[].index`. Il prompt, in italiano, dice: conta il concetto e non le parole esatte; la terminologia tecnica è rilevante ("nullo" non è "annullabile", "può" non è "deve") e va segnalata in `corrections`; l'ordine conta se la risposta attesa è una sequenza; usa **solo** gli `id` della rubrica; i riferimenti normativi sono contesto, non testo di legge; rispondi solo JSON; nessuna percentuale. La risposta dello studente è racchiusa in delimitatori e il prompt dice di trattarla come dato e **ignorare istruzioni** al suo interno
+  - [x] test in `server/test/graderOutput.schema.test.js` e `server/test/graderPrompt.test.js`: output valido; `verdict` fuori dominio, `status` fuori dominio, campi mancanti rifiutati; il prompt contiene domanda, rubrica con id, riferimenti e la risposta tra i delimitatori; nel batch gli `index` compaiono tutti
+- **Note**: commit unico del branch `agent/AI-2`, impilato su `agent/AI-1` (vedi PR). `schemas/graderOutput.schema.js`: `graderOutputSchema` e `graderBatchOutputSchema` (`results[]` con `index` intero positivo, almeno 1), più le costanti `VERDICTS` e `CONCEPT_STATUSES`. Si usa `z.object` a ogni livello: l'output viene da un LLM, quindi i campi extra (punteggi, percentuali) si scartano invece di far fallire la valutazione. `corrections` può essere vuoto, `suggestion` può essere una stringa vuota, `exampleAnswer` è obbligatoria (si mostra sempre come risposta esemplare), `concepts` ha almeno un elemento. La coerenza degli id con la rubrica e degli index del batch resta ad AI-3/AI-4. `services/graderPrompt.js` (nuova cartella `server/services/`, puro, non richiede `config/gemini`): `buildSinglePrompt` e `buildBatchPrompt` (blocchi `## Domanda index N`, ognuno con la sua rubrica; errore su batch vuoto). Il prompt in italiano contiene tutte le regole del criterio più la regola del verdetto (`correct` solo con tutti i concetti presenti e nessuna correzione, utile alla lode D1); la rubrica mostra id, concetto e peso (come importanza); i riferimenti come "artt. 1, 2 c.c." o "nessuno". La risposta della studentessa sta tra `<<<RISPOSTA_STUDENTE>>>` e `<<<FINE_RISPOSTA_STUDENTE>>>`, con l'istruzione di trattarla come dato; nella risposta `<<<` e `>>>` diventano « e », così il blocco non si può chiudere dall'interno (solo nel testo inviato al modello: chi salva la risposta deve salvare l'originale). Domanda, risposta di riferimento e rubrica non sono filtrate perché vengono dal materiale importato dall'utente. Test: `graderOutput.schema.test.js` e `graderPrompt.test.js` (23 casi). Il testo del prompt andrà rivisto dopo la prova manuale con Gemini (AI-3).
 
 ### AI-3 — Modulo grader: valutazione singola
-- **Stato**: aperto
+- **Stato**: bloccato
 - **Dipende da**: AI-2
 - **Descrizione**: `services/grader.js`, **unico file che conosce il provider**. Chiama Gemini via REST (D5), ottiene JSON, lo valida, gestisce limiti e fallimenti.
 - **Criteri di accettazione**:
@@ -202,7 +202,7 @@ Schema `#003` (`FE_Topics`, `FE_Questions`, `FE_ExamSessions`, `FE_Attempts`) in
   - [ ] output non JSON o non conforme allo schema, **o** con `id` di concetto diversi da quelli della rubrica (mancanti, in più, duplicati): **un solo** nuovo tentativo, poi `Error("GRADER_INVALID_OUTPUT")`; il motivo si logga con `formatZodError`, senza risposta dello studente e senza chiave
   - [ ] test in `server/test/grader.test.js` con `fetchImpl` e `sleep` finti: successo; `429` poi successo con attese 1 s e 2 s; `429` sempre -> `GRADER_UNAVAILABLE` dopo `maxAttempts` chiamate; JSON non valido due volte -> `GRADER_INVALID_OUTPUT`; non valido poi valido -> esattamente 2 chiamate; id rubrica non coerenti rifiutati; la chiave non compare nei messaggi d'errore
   - [ ] [manuale] con una chiave vera, 5 risposte di prova (giusta, parziale, sbagliata, giusta con un termine errato, vuota): esiti sensati
-- **Note**:
+- **Note**: **bloccato** su decisione dell'utente. Il criterio chiede che il formato della richiesta (endpoint `generateContent`, header `x-goog-api-key`, `responseMimeType: "application/json"`) sia verificato sulla documentazione ufficiale di Google AI Studio, ma `ai.google.dev` non è raggiungibile dall'ambiente cloud (il proxy rifiuta la connessione, come in AI-1). Domanda per ripartire: abilitare `ai.google.dev` negli Allowed domains dell'ambiente (impostazioni dell'ambiente cloud, Network access) oppure autorizzare l'implementazione con il formato noto, lasciando la verifica come controllo manuale. AI-4 dipende da questo task e resta fermo; FLASH-2 e PROVA-3 dipendono a loro volta da AI-3/AI-4.
 
 ### AI-4 — Modulo grader: valutazione in batch
 - **Stato**: aperto
@@ -216,28 +216,28 @@ Schema `#003` (`FE_Topics`, `FE_Questions`, `FE_ExamSessions`, `FE_Attempts`) in
 - **Note**:
 
 ### AI-5 — Calcolo del punteggio e del voto
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: TEST-1
 - **Descrizione**: `server/utils/scoring.js`, funzioni pure che implementano D1 e D2. Sono gli unici numeri che determinano il voto: formula e penalità documentate in commento in cima al file.
 - **Criteri di accettazione**:
-  - [ ] `computeScore({ rubric, concepts, corrections })` -> punteggio interno 0-1 (D2); `computePoints(score)` -> 0-5 con 2 decimali; `selfGradeScore(verdict)` -> 1 / 0,5 / 0; `emptyAnswerResult()` -> verdetto `wrong`, punteggio 0, punti 0 (D6); `computeExamGrade(attempts)` -> `{ grade, honors }` con voto intero 0-30 e lode per D1
-  - [ ] test in `server/test/scoring.test.js`: tutti i concetti `present` e nessuna correzione -> 1 e 5 punti; tutti `absent` -> 0; concetti pieni con 1 correzione -> sotto il massimo; 5 correzioni -> penalità limitata a 0,3; pesi diversi (peso 2 `present` + peso 1 `absent` -> 2/3); 6 domande da 5 punti -> 30 con lode; 6 da 5 ma una con correzione -> 29 o meno senza lode; 5 corrette e una `partial` -> niente lode; autovalutazione -> mai lode; arrotondamento del voto
-  - [ ] nessun export restituisce o formatta percentuali
-- **Note**:
+  - [x] `computeScore({ rubric, concepts, corrections })` -> punteggio interno 0-1 (D2); `computePoints(score)` -> 0-5 con 2 decimali; `selfGradeScore(verdict)` -> 1 / 0,5 / 0; `emptyAnswerResult()` -> verdetto `wrong`, punteggio 0, punti 0 (D6); `computeExamGrade(attempts)` -> `{ grade, honors }` con voto intero 0-30 e lode per D1
+  - [x] test in `server/test/scoring.test.js`: tutti i concetti `present` e nessuna correzione -> 1 e 5 punti; tutti `absent` -> 0; concetti pieni con 1 correzione -> sotto il massimo; 5 correzioni -> penalità limitata a 0,3; pesi diversi (peso 2 `present` + peso 1 `absent` -> 2/3); 6 domande da 5 punti -> 30 con lode; 6 da 5 ma una con correzione -> 29 o meno senza lode; 5 corrette e una `partial` -> niente lode; autovalutazione -> mai lode; arrotondamento del voto
+  - [x] nessun export restituisce o formatta percentuali
+- **Note**: commit unico del branch `agent/AI-5`, da `agent/TEST-1` (vedi PR). `server/utils/scoring.js` con le cinque funzioni pure del criterio e un commento in testa con formula, penalità, arrotondamenti e lode. **Precisazione di D2 da confermare**: il voto è la somma dei punti arrotondata all'intero più vicino con il **.5 per difetto** (29,5 -> 29, 29,51 -> 30, 29,94 -> 30); con l'arrotondamento classico cinque risposte perfette e una con una correzione (5 x 5 + 4,5 = 29,5) darebbero 30, contro il criterio "6 da 5 ma una con correzione -> 29 o meno". Altre scelte: un concetto della rubrica senza valutazione conta `absent` e gli id fuori rubrica si ignorano (un dato mancante non alza mai il voto); dati malformati (rubrica vuota, peso non positivo, stato sconosciuto, id ripetuti, punti fuori 0-5) lanciano errori sentinella `SCORING_INVALID_*`; score arrotondato a 3 decimali come la colonna `numeric(4,3)` e punti ricavati dai millesimi dello score (quindi `computePoints(0.66666)` = 3,34, non 3,33: in pratica gli score arrivano sempre a 3 decimali); calcoli con interi per evitare errori floating. Lode (D1): voto 30, tutte le risposte valutate dall'AI, tutti `correct`, nessuna correzione; 6 x 4,99 dà 30 con lode (D1 alla lettera). `computeExamGrade` non impone 6 tentativi (lo controllano PROVA-3/PROVA-4) e limita il voto a 30. Verdetti e stati sono costanti locali, duplicate rispetto ad AI-2 (non ancora unito): da unificare dopo. Per PROVA-3/4: `points` letto dal DB (`numeric`) può arrivare come stringa e va convertito con `Number()`. Test: `server/test/scoring.test.js` (30 casi).
 
 ---
 
 ### FLASH-1 — `GET /flashcards`: estrazione delle domande
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: DOM-1
 - **Descrizione**: domande a caso sugli argomenti scelti. Riempie `getRandomQuestionsByTopics` e la rotta `GET /flashcards`; introduce l'utilità di estrazione casuale riusata dalla simulazione.
 - **Criteri di accettazione**:
-  - [ ] `utils/random.js` (puro): `shuffle(array, rng = Math.random)` (Fisher-Yates, non muta l'input) e `pickRandom(array, n, rng)`; test in `server/test/random.test.js` con `rng` deterministico (nessun elemento perso né duplicato, `n` maggiore della lunghezza -> tutti)
-  - [ ] `getRandomQuestionsByTopics(topicIds, count)`: legge gli id delle domande degli argomenti, ne sceglie `count` a caso in JS e carica solo quelle, con l'argomento; nessuna ripetizione
-  - [ ] query `topics` (id uuid separati da virgola, obbligatorio) e `count` (intero 1-50, default 10); `400` con messaggio italiano se `topics` manca o contiene valori non uuid o `count` non è valido; se le domande sono meno di `count` restituisce quelle che ci sono
-  - [ ] risposta `{ ok: true, questions: [{ id, prompt, topic: { id, name } }] }`: **mai** `answer`, `rubric` o `references`. Il parsing della query è una funzione pura con test
+  - [x] `utils/random.js` (puro): `shuffle(array, rng = Math.random)` (Fisher-Yates, non muta l'input) e `pickRandom(array, n, rng)`; test in `server/test/random.test.js` con `rng` deterministico (nessun elemento perso né duplicato, `n` maggiore della lunghezza -> tutti)
+  - [x] `getRandomQuestionsByTopics(topicIds, count)`: legge gli id delle domande degli argomenti, ne sceglie `count` a caso in JS e carica solo quelle, con l'argomento; nessuna ripetizione
+  - [x] query `topics` (id uuid separati da virgola, obbligatorio) e `count` (intero 1-50, default 10); `400` con messaggio italiano se `topics` manca o contiene valori non uuid o `count` non è valido; se le domande sono meno di `count` restituisce quelle che ci sono
+  - [x] risposta `{ ok: true, questions: [{ id, prompt, topic: { id, name } }] }`: **mai** `answer`, `rubric` o `references`. Il parsing della query è una funzione pura con test
   - [ ] [manuale] 10 domande su due argomenti: arrivano 10 domande pertinenti e diverse
-- **Note**:
+- **Note**: commit unico del branch `agent/FLASH-1`, impilato su `agent/DOM-5` (la dipendenza è DOM-1; impilato in fondo alla catena DOM per evitare conflitti su `question.model.js` e preparare PROVA-1/PROVA-6). `utils/random.js` (`shuffle` Fisher-Yates senza mutare l'input, `pickRandom`; `rng` iniettabile, riusato da PROVA-1), `utils/flashcardQuery.js` (`parseFlashcardQuery`, puro), `serializeFlashcard` in `utils/serializeQuestion.js` (whitelist `id`, `prompt`, `topic`), `getRandomQuestionsByTopics` (prima query solo gli id degli argomenti, scelta in JS, seconda query solo `id, prompt, topic` degli id scelti, riordinati come estratti) e la rotta `GET /flashcards`. Scelte: virgole in più e duplicati in `topics` ignorati (id in minuscolo), al massimo 100 argomenti, `count` vuoto vale 10, parametri ripetuti -> 400, argomenti inesistenti o senza domande -> 200 con `questions: []`; parsing della query a mano come `parsePagination` (messaggi italiani precisi). Limite noto: la prima query è soggetta al massimo di 1000 righe di PostgREST, quindi oltre 1000 domande negli argomenti scelti l'estrazione non sarebbe uniforme (stesso limite per `getRandomQuestions` di PROVA-1). `ENDPOINTS.md` e Postman allineati. Test: `random.test.js`, `flashcardQuery.test.js`, `flashcards.routes.test.js` (Supabase finto).
 
 ### FLASH-2 — `POST /flashcards/answer`: valutazione immediata e fallback
 - **Stato**: aperto
@@ -292,30 +292,30 @@ Schema `#003` (`FE_Topics`, `FE_Questions`, `FE_ExamSessions`, `FE_Attempts`) in
 ---
 
 ### PROVA-1 — Avvio della simulazione e lettura (`POST /exams`, `GET /exams/:id`)
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: DOM-1, FLASH-1
 - **Descrizione**: estrae 6 domande, crea la sessione e le 6 righe di `FE_Attempts` con risposta vuota, restituisce la prova. Riempie i model `examSession` e `attempt` (create/find), `getRandomQuestions` e le due rotte.
 - **Criteri di accettazione**:
-  - [ ] `config/exam.js` con `EXAM_QUESTIONS = 6`, `EXAM_DURATION_MINUTES = 40`, `EXAM_GRACE_SECONDS = 15` (D7)
-  - [ ] `utils/serializeExam.js` (puro) per **tutti** gli stati, come in `ENDPOINTS.md`: con `IN_PROGRESS` ogni domanda ha solo `position`, `prompt`, `topic`, `answer`; dopo la consegna aggiunge `reference_answer`, `references`, `verdict`, `grading_source`, `feedback`. Mai `score`, `points`, `rubric`, `concepts`. Test in `server/test/serializeExam.test.js` che verifica l'assenza di `reference_answer` e `rubric` in `IN_PROGRESS` e di `score`/`points`/`concepts`/`rubric` sempre
-  - [ ] `POST /exams` (body vuoto): se esiste una prova `IN_PROGRESS` **non scaduta** risponde `200 { ok: true, exam, resumed: true }` senza crearne un'altra; altrimenti estrae 6 domande **distinte** (D4), crea sessione (`started_at` e `expires_at` decisi dal server) e 6 attempt (`mode: "EXAM"`, `position` 1-6) e risponde `201 { ..., resumed: false }`; meno di 6 domande nel database -> `409` con messaggio italiano
-  - [ ] una `IN_PROGRESS` scaduta non viene ripresa; la sua consegna automatica è PROVA-4 (lasciare il punto di aggancio indicato con un commento che cita PROVA-4)
-  - [ ] se la creazione degli attempt fallisce dopo quella della sessione, la sessione viene rimossa (nessuna prova a metà)
-  - [ ] `GET /exams/:id`: `{ ok: true, exam }`, `404` se non esiste o non è uuid
+  - [x] `config/exam.js` con `EXAM_QUESTIONS = 6`, `EXAM_DURATION_MINUTES = 40`, `EXAM_GRACE_SECONDS = 15` (D7)
+  - [x] `utils/serializeExam.js` (puro) per **tutti** gli stati, come in `ENDPOINTS.md`: con `IN_PROGRESS` ogni domanda ha solo `position`, `prompt`, `topic`, `answer`; dopo la consegna aggiunge `reference_answer`, `references`, `verdict`, `grading_source`, `feedback`. Mai `score`, `points`, `rubric`, `concepts`. Test in `server/test/serializeExam.test.js` che verifica l'assenza di `reference_answer` e `rubric` in `IN_PROGRESS` e di `score`/`points`/`concepts`/`rubric` sempre
+  - [x] `POST /exams` (body vuoto): se esiste una prova `IN_PROGRESS` **non scaduta** risponde `200 { ok: true, exam, resumed: true }` senza crearne un'altra; altrimenti estrae 6 domande **distinte** (D4), crea sessione (`started_at` e `expires_at` decisi dal server) e 6 attempt (`mode: "EXAM"`, `position` 1-6) e risponde `201 { ..., resumed: false }`; meno di 6 domande nel database -> `409` con messaggio italiano
+  - [x] una `IN_PROGRESS` scaduta non viene ripresa; la sua consegna automatica è PROVA-4 (lasciare il punto di aggancio indicato con un commento che cita PROVA-4)
+  - [x] se la creazione degli attempt fallisce dopo quella della sessione, la sessione viene rimossa (nessuna prova a metà)
+  - [x] `GET /exams/:id`: `{ ok: true, exam }`, `404` se non esiste o non è uuid
   - [ ] [manuale] due avvii consecutivi dopo una consegna danno estrazioni diverse; ricaricando, `answer` e `expires_at` coincidono
-- **Note**:
+- **Note**: commit unico del branch `agent/PROVA-1`, impilato su `agent/FLASH-1` (vedi PR). Creati `config/exam.js` (6 domande, 40 minuti, 15 s di tolleranza), `utils/examTime.js` (`buildExamTimes(now)`; PROVA-2 ci aggiungerà `isWithinDeadline`, e conviene allora far usare quella funzione anche a `POST /exams`, che oggi ha la regola in `isStillOpen`) e `utils/serializeExam.js` (whitelist per tutti gli stati: in corso solo `position`, `prompt`, `topic`, `answer`; dopo la consegna anche `reference_answer`, `references`, `verdict`, `grading_source`, `feedback` solo per le valutazioni AI; mai `score`, `points`, `rubric`, `concepts`; stato sconosciuto trattato come in corso). Model: `getRandomQuestions` (una query sugli id di tutte le domande, D4; stesso limite di 1000 righe di FLASH-1), `findExamSessionById`, `findInProgressExamSession` (la più recente), `createExamSession`, `getAttemptsBySession`, `createExamAttempts` (un solo insert, restituisce le righe con domanda e argomento; seleziona già rubrica, score e punti per PROVA-3/4, mai esposti) e la funzione nuova `deleteExamSession` per il rollback (i tentativi vanno via in cascata). Scelte: una prova `IN_PROGRESS` si riprende fino a `expires_at` più la tolleranza (in quella finestra è ancora consegnabile); una prova scaduta non viene ripresa e se ne crea una nuova, lasciando la vecchia `IN_PROGRESS` fino a PROVA-4 (aggancio commentato in `GET /exams/:id` e `POST /exams`; PROVA-4 dovrà consegnare anche eventuali prove scadute più vecchie). Con meno di 6 domande `409` "Servono almeno 6 domande per avviare una simulazione". Rischio noto: un doppio avvio contemporaneo può creare due sessioni (nessun indice univoco e schema non modificabile): da mitigare nel client (PROVA-6, pulsante disabilitato). Test: `serializeExam.test.js`, `exams.routes.test.js` (Supabase finto).
 
 ### PROVA-2 — Salvataggio in bozza (`PUT /exams/:id/answers/:position`)
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: PROVA-1
 - **Descrizione**: le risposte si salvano sul server mentre lei scrive.
 - **Criteri di accettazione**:
-  - [ ] `utils/examTime.js` (puro): `isWithinDeadline(exam, now, graceSeconds)`; test in `server/test/examTime.test.js` (prima, esattamente a, dentro la tolleranza, oltre)
-  - [ ] body `{ answer }` stringa (anche vuota, massimo 5000 caratteri -> `400`); `position` intero 1-6 altrimenti `400`
-  - [ ] `404` se la prova o la posizione non esistono; `409` se la prova non è `IN_PROGRESS` o è oltre `expires_at` più la tolleranza
-  - [ ] aggiorna solo `answer` e `updated_at` dell'attempt; risposta `{ ok: true, updated_at }`
+  - [x] `utils/examTime.js` (puro): `isWithinDeadline(exam, now, graceSeconds)`; test in `server/test/examTime.test.js` (prima, esattamente a, dentro la tolleranza, oltre)
+  - [x] body `{ answer }` stringa (anche vuota, massimo 5000 caratteri -> `400`); `position` intero 1-6 altrimenti `400`
+  - [x] `404` se la prova o la posizione non esistono; `409` se la prova non è `IN_PROGRESS` o è oltre `expires_at` più la tolleranza
+  - [x] aggiorna solo `answer` e `updated_at` dell'attempt; risposta `{ ok: true, updated_at }`
   - [ ] [manuale] scrivere, ricaricare: la bozza c'è; dopo i 40 minuti più tolleranza: `409`
-- **Note**:
+- **Note**: commit unico del branch `agent/PROVA-2`, impilato su `agent/PROVA-1` (vedi PR). `utils/examTime.js` ha `isWithinDeadline(exam, now, graceSeconds = 15)` (puro; `now` Date o millisecondi; dati non validi -> false; non guarda lo stato, lo controlla il chiamante), ora usato anche da `POST /exams` al posto dell'helper locale di PROVA-1 (comportamento identico, test di PROVA-1 invariati). `schemas/examDraft.schema.js`: `examAnswerSchema` (stringa, massimo 5000 caratteri, nessun trim, anche vuota; da riusare in PROVA-3) ed `examDraftSchema` strict. Model: `findAttemptBySessionAndPosition` e `updateAttempt(id, fields)` generico (aggiunge `updated_at`, restituisce la riga con la domanda: servirà a PROVA-3). Rotta `PUT /exams/:id/answers/:position`, nell'ordine: id non uuid 404, posizione non intera 1-6 (anche "01") 400, body non valido 400 con elenco, prova inesistente 404, prova non `IN_PROGRESS` 409 "Simulazione già consegnata", oltre `expires_at` + 15 s 409 "Tempo scaduto: la simulazione non accetta più risposte", posizione senza tentativo 404; aggiorna solo `answer` (+ `updated_at`) e risponde `{ ok: true, updated_at }`. Limiti noti: tra il controllo dello stato e l'update la prova potrebbe venire consegnata (utente singolo, rischio basso; PROVA-3 legge le risposte dopo il passaggio a `GRADING`); il limite di 5000 conta unità UTF-16 come `string.length` nel client; un body JSON malformato finisce nel gestore globale come 500 (comportamento di tutte le rotte). Test: `examTime.test.js`, `examDraft.test.js` (Supabase finto).
 
 ### PROVA-3 — Consegna e voto (`POST /exams/:id/submit`)
 - **Stato**: aperto
@@ -357,18 +357,18 @@ Schema `#003` (`FE_Topics`, `FE_Questions`, `FE_ExamSessions`, `FE_Attempts`) in
 ---
 
 ### PROVA-6 — Pagina della prova: avvio, domande e bozza
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: PROVA-2, DOM-3
 - **Descrizione**: svolgere la simulazione con la calma di un esame vero. Questo task copre avvio, navigazione e salvataggio; timer e consegna sono PROVA-7.
 - **Criteri di accettazione**:
-  - [ ] `services/examService.js` (`startExam`, `getExam`, `saveDraft`, `submitExam`, `selfGradeExam`, `regradeExam`); il file vuoto `pages/Simulation.jsx` viene rimosso
-  - [ ] `pages/Simulazione.jsx` alle rotte `/simulazione` (avvio) e `/simulazione/:id` (prova), voce in `MENU_ITEMS`. Avvio: testo sobrio (sei domande, 40 minuti, nessun feedback durante la prova) e un solo pulsante; il pulsante chiama `POST /exams`: con `resumed: true` un toast avvisa che la prova in corso è stata ripresa; poi naviga a `/simulazione/:id`. Ricaricare `/simulazione/:id` ricarica con `GET /exams/:id`
-  - [ ] prova: una domanda per schermata, avanti e indietro libero (D3), indicatore "Domanda 2 di 6" e sei pallini cliccabili per saltare, textarea ampia (testo da almeno 16 px, comoda con la tastiera dell'iPad)
-  - [ ] salvataggio in bozza con debounce (circa 800 ms), alla navigazione tra domande, a `visibilitychange` e prima di lasciare la pagina, **senza interrompere la scrittura** (la textarea non perde focus né cursore); indicatore discreto "Salvato" o "Salvataggio non riuscito, riprovo"; un errore di salvataggio non blocca la scrittura
-  - [ ] nessun feedback, nessun aiutino, nessun pulsante di contestazione durante la prova
-  - [ ] se `GET /exams/:id` restituisce una prova già consegnata, si va a `/simulazione/:id/risultato`
+  - [x] `services/examService.js` (`startExam`, `getExam`, `saveDraft`, `submitExam`, `selfGradeExam`, `regradeExam`); il file vuoto `pages/Simulation.jsx` viene rimosso
+  - [x] `pages/Simulazione.jsx` alle rotte `/simulazione` (avvio) e `/simulazione/:id` (prova), voce in `MENU_ITEMS`. Avvio: testo sobrio (sei domande, 40 minuti, nessun feedback durante la prova) e un solo pulsante; il pulsante chiama `POST /exams`: con `resumed: true` un toast avvisa che la prova in corso è stata ripresa; poi naviga a `/simulazione/:id`. Ricaricare `/simulazione/:id` ricarica con `GET /exams/:id`
+  - [x] prova: una domanda per schermata, avanti e indietro libero (D3), indicatore "Domanda 2 di 6" e sei pallini cliccabili per saltare, textarea ampia (testo da almeno 16 px, comoda con la tastiera dell'iPad)
+  - [x] salvataggio in bozza con debounce (circa 800 ms), alla navigazione tra domande, a `visibilitychange` e prima di lasciare la pagina, **senza interrompere la scrittura** (la textarea non perde focus né cursore); indicatore discreto "Salvato" o "Salvataggio non riuscito, riprovo"; un errore di salvataggio non blocca la scrittura
+  - [x] nessun feedback, nessun aiutino, nessun pulsante di contestazione durante la prova
+  - [x] se `GET /exams/:id` restituisce una prova già consegnata, si va a `/simulazione/:id/risultato`
   - [ ] [manuale] scrivere, chiudere la scheda, riaprire: le risposte ci sono; su iPad la tastiera non copre il campo
-- **Note**:
+- **Note**: commit unico del branch `agent/PROVA-6`, impilato su `agent/PROVA-2` (vedi PR). Creati `services/examService.js` (le sei funzioni del criterio più `saveDraftKeepalive`; gli errori conservano lo status HTTP, così la pagina riconosce il 409), `utils/examDraft.js` (funzioni pure, verificate da `scripts/checks/examDraft.check.mjs`, 27 casi) e `pages/Simulazione.jsx` su `/simulazione` (avvio) e `/simulazione/:id` (prova), voce "Simulazione" (icona `ClipboardList`) nel menu; rimosso `pages/Simulation.jsx`. Avvio: testo sobrio e un solo pulsante, disabilitato durante la richiesta più una guardia sul doppio click (mitiga il doppio avvio segnalato in PROVA-1), toast se la prova è ripresa. Prova: una domanda per schermata (D3), "Domanda N di 6", Precedente/Successiva e sei pallini da 44 px (`aria-current`, icona di spunta e `aria-label` per le risposte scritte, non solo colore); una sola textarea sempre montata a 16 px, così focus e cursore non si perdono mai; nome dell'argomento mostrato sopra la domanda. Bozza: debounce di 800 ms per posizione, salvataggio immediato al cambio domanda, con `visibilitychange`/`pagehide`/`beforeunload` e all'uscita dalla pagina via `fetch` con `keepalive` e token (axios non supporta keepalive; `sendBeacon` non permette PUT né header); indicatore discreto "Salvataggio in corso" / "Salvato" / "Salvataggio non riuscito, riprovo" con nuovi tentativi a 2, 4, 8, poi 15 s; un 409 ferma i salvataggi e mostra il messaggio del server con il link al risultato; dopo l'uscita dalla pagina nessun timer o tentativo residuo. Una prova già consegnata porta a `/simulazione/:id/risultato` con replace: la pagina arriva con PROVA-8, oggi si vede NotFound. Aggancio per PROVA-7 commentato nell'intestazione della prova (`buildSubmitAnswers`, `submitExam` senza timeout). Limiti noti: con un 400/404 persistente i salvataggi riprovano ogni 15 s finché la pagina è aperta; keepalive limitato a circa 64 KB in volo; se una PUT normale e un keepalive arrivano al server in ordine inverso il testo più vecchio potrebbe prevalere (raro). Verifiche: gate, controlli statici del piano, 17 scenari in Chromium con API finta (tema chiaro e scuro).
 
 ### PROVA-7 — Timer, consegna manuale e automatica
 - **Stato**: aperto
