@@ -216,14 +216,14 @@ Schema `#003` (`FE_Topics`, `FE_Questions`, `FE_ExamSessions`, `FE_Attempts`) in
 - **Note**:
 
 ### AI-5 — Calcolo del punteggio e del voto
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: TEST-1
 - **Descrizione**: `server/utils/scoring.js`, funzioni pure che implementano D1 e D2. Sono gli unici numeri che determinano il voto: formula e penalità documentate in commento in cima al file.
 - **Criteri di accettazione**:
-  - [ ] `computeScore({ rubric, concepts, corrections })` -> punteggio interno 0-1 (D2); `computePoints(score)` -> 0-5 con 2 decimali; `selfGradeScore(verdict)` -> 1 / 0,5 / 0; `emptyAnswerResult()` -> verdetto `wrong`, punteggio 0, punti 0 (D6); `computeExamGrade(attempts)` -> `{ grade, honors }` con voto intero 0-30 e lode per D1
-  - [ ] test in `server/test/scoring.test.js`: tutti i concetti `present` e nessuna correzione -> 1 e 5 punti; tutti `absent` -> 0; concetti pieni con 1 correzione -> sotto il massimo; 5 correzioni -> penalità limitata a 0,3; pesi diversi (peso 2 `present` + peso 1 `absent` -> 2/3); 6 domande da 5 punti -> 30 con lode; 6 da 5 ma una con correzione -> 29 o meno senza lode; 5 corrette e una `partial` -> niente lode; autovalutazione -> mai lode; arrotondamento del voto
-  - [ ] nessun export restituisce o formatta percentuali
-- **Note**:
+  - [x] `computeScore({ rubric, concepts, corrections })` -> punteggio interno 0-1 (D2); `computePoints(score)` -> 0-5 con 2 decimali; `selfGradeScore(verdict)` -> 1 / 0,5 / 0; `emptyAnswerResult()` -> verdetto `wrong`, punteggio 0, punti 0 (D6); `computeExamGrade(attempts)` -> `{ grade, honors }` con voto intero 0-30 e lode per D1
+  - [x] test in `server/test/scoring.test.js`: tutti i concetti `present` e nessuna correzione -> 1 e 5 punti; tutti `absent` -> 0; concetti pieni con 1 correzione -> sotto il massimo; 5 correzioni -> penalità limitata a 0,3; pesi diversi (peso 2 `present` + peso 1 `absent` -> 2/3); 6 domande da 5 punti -> 30 con lode; 6 da 5 ma una con correzione -> 29 o meno senza lode; 5 corrette e una `partial` -> niente lode; autovalutazione -> mai lode; arrotondamento del voto
+  - [x] nessun export restituisce o formatta percentuali
+- **Note**: commit unico del branch `agent/AI-5`, da `agent/TEST-1` (vedi PR). `server/utils/scoring.js` con le cinque funzioni pure del criterio e un commento in testa con formula, penalità, arrotondamenti e lode. **Precisazione di D2 da confermare**: il voto è la somma dei punti arrotondata all'intero più vicino con il **.5 per difetto** (29,5 -> 29, 29,51 -> 30, 29,94 -> 30); con l'arrotondamento classico cinque risposte perfette e una con una correzione (5 x 5 + 4,5 = 29,5) darebbero 30, contro il criterio "6 da 5 ma una con correzione -> 29 o meno". Altre scelte: un concetto della rubrica senza valutazione conta `absent` e gli id fuori rubrica si ignorano (un dato mancante non alza mai il voto); dati malformati (rubrica vuota, peso non positivo, stato sconosciuto, id ripetuti, punti fuori 0-5) lanciano errori sentinella `SCORING_INVALID_*`; score arrotondato a 3 decimali come la colonna `numeric(4,3)` e punti ricavati dai millesimi dello score (quindi `computePoints(0.66666)` = 3,34, non 3,33: in pratica gli score arrivano sempre a 3 decimali); calcoli con interi per evitare errori floating. Lode (D1): voto 30, tutte le risposte valutate dall'AI, tutti `correct`, nessuna correzione; 6 x 4,99 dà 30 con lode (D1 alla lettera). `computeExamGrade` non impone 6 tentativi (lo controllano PROVA-3/PROVA-4) e limita il voto a 30. Verdetti e stati sono costanti locali, duplicate rispetto ad AI-2 (non ancora unito): da unificare dopo. Per PROVA-3/4: `points` letto dal DB (`numeric`) può arrivare come stringa e va convertito con `Number()`. Test: `server/test/scoring.test.js` (30 casi).
 
 ---
 
