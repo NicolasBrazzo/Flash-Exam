@@ -291,7 +291,7 @@
                 "{{questionId}}"
               ]
             },
-            "description": "Correzione parziale: almeno un campo tra topic_id, prompt, reference_answer, rubric, references. Protetta.",
+            "description": "Correzione parziale: almeno un campo tra topic_id, prompt, reference_answer, rubric, references (campi sconosciuti -> 400). Risposta { ok, question }. 404 se la domanda o il topic_id non esistono; 409 se il prompt e' gia' presente nell'argomento. Protetta.",
             "body": {
               "mode": "raw",
               "raw": "{\n    \"reference_answer\": \"Si acquisisce al momento della nascita (art. 1 c.c.).\"\n}"
@@ -313,7 +313,7 @@
                 "{{questionId}}"
               ]
             },
-            "description": "Cancella una domanda. 409 se ha già dei tentativi. Protetta."
+            "description": "Cancella una domanda: { ok: true }. 409 se ha già dei tentativi, 404 se non esiste. Protetta."
           }
         }
       ]

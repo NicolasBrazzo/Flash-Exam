@@ -121,12 +121,17 @@ Valgono per tutte le sezioni seguenti. Tutte le rotte di dominio sono **protette
 - `PATCH /questions/:id` — Corregge una domanda. **Protetta.**
   Body parziale, con almeno un campo tra `topic_id`, `prompt`,
   `reference_answer`, `rubric` e `references`, validato con le stesse regole
-  dell'import. Aggiorna `updated_at`. Risposta: `{ "ok": true, "question": {...} }`.
-  `404` se la domanda o il `topic_id` non esistono. `409` se nell'argomento
-  esiste già una domanda con lo stesso prompt normalizzato.
+  dell'import (`schemas/questionPatch.schema.js`; campi sconosciuti rifiutati,
+  `references: []` svuota i riferimenti). `400` con l'elenco degli errori se il
+  body non è valido. Aggiorna `updated_at`. Risposta: `{ "ok": true, "question": {...} }`
+  (forma API). `404` `"Domanda non trovata"` se la domanda non esiste o l'id
+  non è un uuid; `404` `"Argomento non trovato"` se il `topic_id` non esiste.
+  `409` `"Nell'argomento esiste già una domanda con lo stesso testo"` se
+  nell'argomento esiste già una domanda con lo stesso prompt normalizzato.
 - `DELETE /questions/:id` — Cancella una domanda. **Protetta.**
   Risposta: `{ "ok": true }`. `409` se la domanda ha già dei tentativi
   (`"La domanda è già stata usata in una prova o in una flashcard: puoi correggerla ma non cancellarla"`).
+  `404` `"Domanda non trovata"` se non esiste o se l'id non è un uuid.
 
 ---
 

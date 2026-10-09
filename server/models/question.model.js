@@ -95,11 +95,46 @@ const createQuestions = async (questions) => {
   return data;
 };
 
-// Aggiorna una domanda (valorizza updated_at)
-const updateQuestion = async (id, fields) => {};
+// Aggiorna una domanda (valorizza updated_at). `fields` usa i nomi delle
+// colonne; restituisce la riga aggiornata con l'argomento, null se non esiste
+const updateQuestion = async (id, fields) => {
+  const { data, error } = await supabase
+    .from(TABLE_NAME)
+    .update({ ...fields, updated_at: new Date().toISOString() })
+    .eq("id", id)
+    .select(SELECT_COLUMNS)
+    .maybeSingle();
 
-// Cancella una domanda
-const deleteQuestion = async (id) => {};
+  if (error) {
+    // 23505: violato l'indice univoco argomento + prompt normalizzato
+    if (error.code === "23505") {
+      throw new Error("DATABASE_DUPLICATE_QUESTION_ERROR");
+    }
+    throw new Error("DATABASE_UPDATE_QUESTION_ERROR");
+  }
+
+  return data;
+};
+
+// Cancella una domanda; restituisce la riga cancellata, null se non esiste
+const deleteQuestion = async (id) => {
+  const { data, error } = await supabase
+    .from(TABLE_NAME)
+    .delete()
+    .eq("id", id)
+    .select("id")
+    .maybeSingle();
+
+  if (error) {
+    // 23503: la domanda ha dei tentativi (FK on delete restrict da FE_Attempts)
+    if (error.code === "23503") {
+      throw new Error("DATABASE_QUESTION_HAS_ATTEMPTS_ERROR");
+    }
+    throw new Error("DATABASE_DELETE_QUESTION_ERROR");
+  }
+
+  return data;
+};
 
 // Estrae `count` domande a caso tra tutte (simulazione)
 const getRandomQuestions = async (count) => {};
