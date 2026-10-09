@@ -79,15 +79,15 @@ Schema `#003` (`FE_Topics`, `FE_Questions`, `FE_ExamSessions`, `FE_Attempts`) in
 ---
 
 ### TEST-1 — Test runner del server con `node:test`
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: -
 - **Descrizione**: il progetto non ha test. Si aggiunge il runner integrato di Node 22 (zero dipendenze) per le funzioni pure e gli schemi Zod del server, così i task successivi hanno test di accettazione veri. Il client resta senza test automatici. Il gate `test` di `scripts/gates.sh` e la CI lo eseguono già tramite `npm --prefix server run test --if-present`.
 - **Criteri di accettazione**:
-  - [ ] `server/package.json` ha lo script `"test": "node --test"` e nessuna nuova dipendenza
-  - [ ] `server/test/questionsImport.schema.test.js` copre: payload valido; `topic.name` mancante; rubrica con 1 o 5 concetti; `id` di rubrica duplicati; `weight` 0, negativo o decimale; `references` non array. Ogni caso invalido produce un errore Zod
-  - [ ] `bash scripts/gates.sh test` esegue i test e passa; la CI li esegue
-  - [ ] `CLAUDE.md` (tabella dei gate e frase "Stato attuale") aggiornato: il server ha un test runner, il client no
-- **Note**:
+  - [x] `server/package.json` ha lo script `"test": "node --test"` e nessuna nuova dipendenza
+  - [x] `server/test/questionsImport.schema.test.js` copre: payload valido; `topic.name` mancante; rubrica con 1 o 5 concetti; `id` di rubrica duplicati; `weight` 0, negativo o decimale; `references` non array. Ogni caso invalido produce un errore Zod
+  - [x] `bash scripts/gates.sh test` esegue i test e passa; la CI li esegue
+  - [x] `CLAUDE.md` (tabella dei gate e frase "Stato attuale") aggiornato: il server ha un test runner, il client no
+- **Note**: commit unico del branch `agent/TEST-1` (vedi PR). 14 test in `server/test/questionsImport.schema.test.js` (11 richiesti + 3 di contorno: default `references: []`, `topic.name` vuoto, rubrica valida a 4 concetti). Ogni caso invalido verifica `ZodError`, path e codice dell'issue; solo "topic.name mancante" verifica anche il messaggio ("Campo obbligatorio" del locale in `config/zod.js`). `node --test` senza argomenti esegue ogni `.js` sotto `server/test/`: gli helper condivisi futuri vanno fuori da quella cartella (scritto in `CLAUDE.md`). Il commento in `scripts/gates.sh` ("oggi non ne esistono") è ora impreciso ma non è stato toccato (config non autorizzata). Da verificare: job "Test" della CI sulla PR.
 
 ### SEED-1 — Dati demo opzionali nel seed
 - **Stato**: aperto

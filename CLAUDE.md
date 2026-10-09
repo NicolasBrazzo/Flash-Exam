@@ -40,11 +40,11 @@ Questa sezione ha la precedenza sulle altre in caso di conflitto sul *flusso di 
 | lint | `bash scripts/gates.sh lint` | `npm --prefix client run lint` |
 | typecheck | `bash scripts/gates.sh typecheck` | progetto in JS: `node --check` su `server/**/*.js` |
 | build | `bash scripts/gates.sh build` | `npm --prefix client run build` |
-| test | `bash scripts/gates.sh test` | script `test` di client/server **se presente** |
+| test | `bash scripts/gates.sh test` | script `test` di client/server **se presente**: oggi solo il server (`node --test` su `server/test/*.test.js`) |
 | e2e | `bash scripts/gates.sh e2e` | script `test:e2e` del client **se presente** |
 | tutti | `bash scripts/gates.sh all` | tutti i precedenti in sequenza |
 
-Stato attuale: **non esiste un test runner** (il gate `test` e' un no-op) e il lint del client ha errori preesistenti (task `BASE-1`). Finche' manca un runner, i criteri di accettazione si verificano con i gate, uno script Node eseguibile dove possibile e la checklist manuale del piano.
+Stato attuale: il **server** ha un test runner (`node:test` integrato in Node 22, zero dipendenze): `npm --prefix server test` esegue i file `server/test/*.test.js`, che coprono funzioni pure e schemi Zod. Ogni `.js` dentro `server/test/` viene eseguito come test, quindi gli helper condivisi vanno dentro i file di test o fuori da quella cartella. Il **client** non ha test automatici: i suoi criteri di accettazione si verificano con lint, build e la checklist manuale del piano.
 
 Hook (`.claude/settings.json`): dopo ogni Edit/Write parte `gates.sh quick` (lint + typecheck); a fine turno parte `gates.sh test`; un hook blocca i `git commit` su `main`/`master`. Setup dell'environment web: `scripts/cloud-setup.sh`.
 
@@ -92,7 +92,7 @@ The package-specific commands below run from inside `client/` or `server/` respe
 - `npm start` — plain `node server.js`
 - `npm run seed` — creates the single application user (idempotent upsert on the email), reading `SEED_EMAIL`, `SEED_PASSWORD`, `SEED_FIRST_NAME` and `SEED_LAST_NAME` from `.env`; it fails fast if any is missing. Domain entities get added to `server/database/seed.js`.
 
-There is no test suite in either package (see "Sviluppo agentico" for the gates that stand in for it).
+**Server tests** (`server/`): `npm test` runs `node --test` (built-in runner, no dependencies) on `server/test/*.test.js`. The client has no test suite (see "Sviluppo agentico" for the gates that stand in for it).
 
 ## Environment
 
