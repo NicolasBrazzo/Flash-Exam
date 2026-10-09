@@ -10,6 +10,7 @@ import { ToastContainer } from "react-toastify";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { NotFound } from "./pages/NotFound.jsx";
 import { Domande } from "./pages/Domande.jsx";
+import { Import } from "./pages/Import.jsx";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ function App() {
                 <Route element={<AppLayout />}>
                   <Route path="/" element={<Home />} />
                   <Route path="/domande" element={<Domande />} />
+                  <Route path="/import" element={<Import />} />
                 </Route>
               </Route>
               <Route path="*" element={<NotFound />} />
