@@ -26,23 +26,28 @@ const serializeExamQuestion = (attempt, submitted) => {
   };
 };
 
+// Campi della simulazione senza le domande (elemento dello storico, GET /exams)
+const serializeExamSummary = (session) => ({
+  id: session.id,
+  status: session.status,
+  started_at: session.started_at,
+  expires_at: session.expires_at,
+  submitted_at: session.submitted_at ?? null,
+  auto_submitted: Boolean(session.auto_submitted),
+  grade: session.grade ?? null,
+  honors: Boolean(session.honors),
+});
+
 // session: riga di FE_ExamSessions; attempts: righe di FE_Attempts con la domanda.
 // Uno stato sconosciuto si tratta come prova in corso (nel dubbio si nasconde)
 const serializeExam = (session, attempts) => {
   const submitted = SUBMITTED_STATUSES.includes(session.status);
   return {
-    id: session.id,
-    status: session.status,
-    started_at: session.started_at,
-    expires_at: session.expires_at,
-    submitted_at: session.submitted_at ?? null,
-    auto_submitted: Boolean(session.auto_submitted),
-    grade: session.grade ?? null,
-    honors: Boolean(session.honors),
+    ...serializeExamSummary(session),
     questions: [...attempts]
       .sort((a, b) => a.position - b.position)
       .map((attempt) => serializeExamQuestion(attempt, submitted)),
   };
 };
 
-module.exports = { serializeExam };
+module.exports = { serializeExam, serializeExamSummary };
