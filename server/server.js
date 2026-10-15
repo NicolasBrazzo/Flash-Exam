@@ -12,6 +12,7 @@ const questionsRoutes = require("./controllers/questions.controller");
 const examsRoutes = require("./controllers/exams.controller");
 const flashcardsRoutes = require("./controllers/flashcards.controller");
 const attemptsRoutes = require("./controllers/attempts.controller");
+const errorHandler = require("./middleware/errorHandler");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -41,10 +42,7 @@ app.use((req, res) => {
   res.status(404).json({ ok: false, error: "Rotta non trovata" });
 });
 
-app.use((err, req, res, next) => {
-  console.error("Server error:", err);
-  res.status(500).json({ ok: false, error: "Errore interno del server" });
-});
+app.use(errorHandler);
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Backend ON at port ${PORT}`);

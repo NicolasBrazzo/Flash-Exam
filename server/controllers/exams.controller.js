@@ -18,7 +18,8 @@ const { getRandomQuestions } = require("../models/question.model");
 const protect = require("../middleware/auth");
 const { EXAM_QUESTIONS } = require("../config/exam");
 const { buildExamTimes, isWithinDeadline } = require("../utils/examTime");
-const { serializeExam } = require("../utils/serializeExam");
+const { serializeExam, serializeExamSummary } = require("../utils/serializeExam");
+const { parsePagination, buildPagination } = require("../utils/pagination");
 const { isUuid } = require("../utils/sqlFilters");
 const { examDraftSchema } = require("../schemas/examDraft.schema");
 const { examSubmitSchema } = require("../schemas/examSubmit.schema");
@@ -46,6 +47,10 @@ const SERVICE_ERRORS = {
   EXAM_GRADING_IN_PROGRESS: [409, EXAM_GRADING_IN_PROGRESS],
 };
 
+// Filtri e ordinamenti ammessi dallo storico
+const EXAM_STATUSES = ["IN_PROGRESS", "GRADING", "GRADED", "SELF_GRADED"];
+const SORTABLE_FIELDS = ["started_at", "grade"];
+
 // Posizione dall'URL: intero da 1 a EXAM_QUESTIONS, senza zeri iniziali
 const parsePosition = (value) => {
   if (!/^[1-9]\d*$/.test(value)) return null;
@@ -68,7 +73,32 @@ const serviceError = (res, label, err) => {
 const router = express.Router();
 
 // Storico delle simulazioni
-router.get("/", protect, async (req, res) => {});
+router.get("/", protect, async (req, res) => {
+  try {
+    const { page, limit, sort, order } = parsePagination(req.query, {
+      sortable: SORTABLE_FIELDS,
+      defaultSort: "started_at",
+    });
+
+    // Vuoto: nessun filtro. Un valore fuori whitelist non trova nulla (come
+    // topic_id non uuid in GET /questions). Sola lettura: niente consegna automatica
+    const { status } = req.query;
+    if (status !== undefined && status !== "" && !EXAM_STATUSES.includes(status)) {
+      return res.json({ ok: true, data: [], pagination: buildPagination(0, page, limit) });
+    }
+
+    const { rows, total } = await getExamSessions({ status: status || undefined, page, limit, sort, order });
+
+    return res.json({
+      ok: true,
+      data: rows.map(serializeExamSummary),
+      pagination: buildPagination(total, page, limit),
+    });
+
+  } catch (err) {
+    return serverError(res, "GET EXAMS ERROR:", err);
+  }
+});
 
 // Dettaglio di una simulazione
 router.get("/:id", protect, async (req, res) => {

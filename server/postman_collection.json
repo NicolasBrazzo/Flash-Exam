@@ -102,7 +102,7 @@
                 "login"
               ]
             },
-            "description": "Login con le credenziali dell'unica utente (variabili seedEmail / seedPassword, da allineare a SEED_EMAIL e SEED_PASSWORD del .env). Salva automaticamente il token nella variabile della collection: le altre richieste lo usano via Bearer."
+            "description": "Login con le credenziali dell'unica utente (variabili seedEmail / seedPassword, da allineare a SEED_EMAIL e SEED_PASSWORD del .env). Salva automaticamente il token nella variabile della collection: le altre richieste lo usano via Bearer. 400 \"Email e password sono obbligatorie\", 401 \"Credenziali non valide\". Pubblica."
           }
         },
         {
@@ -120,7 +120,7 @@
                 "me"
               ]
             },
-            "description": "Dati dell'utente autenticato (dal token). Protetta."
+            "description": "Utente autenticato: { ok, user: { sub, email, first_name, last_name, iat, exp } } (payload del token). Protetta."
           }
         }
       ]
@@ -322,45 +322,6 @@
       "name": "Exams",
       "item": [
         {
-          "name": "Elenco simulazioni",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/exams?status=&page=1&limit=20&sort=started_at&order=desc",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "exams"
-              ],
-              "query": [
-                {
-                  "key": "status",
-                  "value": ""
-                },
-                {
-                  "key": "page",
-                  "value": "1"
-                },
-                {
-                  "key": "limit",
-                  "value": "20"
-                },
-                {
-                  "key": "sort",
-                  "value": "started_at"
-                },
-                {
-                  "key": "order",
-                  "value": "desc"
-                }
-              ]
-            },
-            "description": "Storico paginato (FILTERS_BE.md). Filtro: status. Protetta."
-          }
-        },
-        {
           "name": "Avvia simulazione",
           "request": {
             "method": "POST",
@@ -512,6 +473,45 @@
             },
             "description": "Riprova la valutazione AI di una prova senza voto (SELF_GRADED con grade null, oppure GRADING da piu' di 5 minuti). 404 prova inesistente, 409 se gia' valutata, non consegnata o valutazione in corso. 502 se il grader non risponde: la prova resta com'era. Protetta."
           }
+        },
+        {
+          "name": "Elenco simulazioni",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/exams?status=&page=1&limit=20&sort=started_at&order=desc",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "exams"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": ""
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "sort",
+                  "value": "started_at"
+                },
+                {
+                  "key": "order",
+                  "value": "desc"
+                }
+              ]
+            },
+            "description": "Storico paginato (FILTERS_BE.md): { ok, data, pagination }, ogni elemento senza questions. status: IN_PROGRESS | GRADING | GRADED | SELF_GRADED (vuoto = nessun filtro; altro valore = data vuoto). sort: started_at (default) o grade, prove senza voto in fondo; order asc/desc; limit massimo 100. Non consegna le prove scadute. Protetta."
+          }
         }
       ]
     },
@@ -655,7 +655,7 @@
                 "health"
               ]
             },
-            "description": "Verifica che il server sia su. Pubblica."
+            "description": "Health check: 200 { status: \"ok\" }. Pubblica."
           }
         }
       ]

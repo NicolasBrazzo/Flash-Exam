@@ -1,4 +1,5 @@
 const supabase = require("../config/db_connection");
+const { getRange } = require("../utils/pagination");
 
 const TABLE_NAME = "FE_ExamSessions";
 
@@ -6,8 +7,39 @@ const TABLE_NAME = "FE_ExamSessions";
 const SESSION_COLUMNS =
   "id, status, started_at, expires_at, submitted_at, auto_submitted, grade, honors";
 
-// Storico paginato con filtro status e ordinamento
-const getExamSessions = async ({ status, page, limit, sort, order }) => {};
+// Filtro facoltativo per stato
+const applyStatus = (query, status) => (status ? query.eq("status", status) : query);
+
+// Storico paginato con filtro status e ordinamento. Le prove senza voto vanno
+// sempre in fondo; spareggio su id. Restituisce { rows, total }
+const getExamSessions = async ({ status, page, limit, sort, order }) => {
+  const { from, to } = getRange(page, limit);
+
+  const { data, count, error } = await applyStatus(
+    supabase.from(TABLE_NAME).select(SESSION_COLUMNS, { count: "exact" }),
+    status
+  )
+    .order(sort, { ascending: order === "asc", nullsFirst: false })
+    .order("id", { ascending: true })
+    .range(from, to);
+
+  if (error) {
+    // PGRST103: pagina oltre l'ultima. Non è un errore: pagina vuota con il totale
+    if (error.code === "PGRST103") {
+      const { count: total, error: countError } = await applyStatus(
+        supabase.from(TABLE_NAME).select("id", { count: "exact", head: true }),
+        status
+      );
+      if (countError) {
+        throw new Error("DATABASE_FIND_EXAM_SESSIONS_ERROR");
+      }
+      return { rows: [], total: total ?? 0 };
+    }
+    throw new Error("DATABASE_FIND_EXAM_SESSIONS_ERROR");
+  }
+
+  return { rows: data ?? [], total: count ?? 0 };
+};
 
 // Simulazione per id
 const findExamSessionById = async (id) => {
