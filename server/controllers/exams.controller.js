@@ -22,13 +22,29 @@ const { serializeExam } = require("../utils/serializeExam");
 const { isUuid } = require("../utils/sqlFilters");
 const { examDraftSchema } = require("../schemas/examDraft.schema");
 const { examSubmitSchema } = require("../schemas/examSubmit.schema");
-const { submitExam } = require("../services/examGrading");
+const { examSelfGradeSchema } = require("../schemas/examSelfGrade.schema");
+const { submitExam, selfGradeExam, regradeExam, settleExpiredExam } = require("../services/examGrading");
 const { sendZodError } = require("../utils/zodError");
 
 const EXAM_NOT_FOUND = "Simulazione non trovata";
 const EXAM_ALREADY_SUBMITTED = "Simulazione già consegnata";
 const EXAM_TIME_OVER = "Tempo scaduto: la simulazione non accetta più risposte";
 const POSITION_NOT_FOUND = "Domanda non trovata in questa simulazione";
+const EXAM_ALREADY_GRADED = "Simulazione già valutata";
+const EXAM_NOT_AWAITING_SELF_GRADE = "La simulazione non è in attesa di autovalutazione";
+const EXAM_NOT_SUBMITTED = "Simulazione non ancora consegnata";
+const EXAM_GRADING_IN_PROGRESS = "Valutazione già in corso: riprova tra qualche minuto";
+const GRADER_UNAVAILABLE = "Valutazione AI non disponibile: riprova più tardi";
+
+// Errori del servizio con la loro risposta HTTP (gli altri sono 500)
+const SERVICE_ERRORS = {
+  EXAM_NOT_FOUND: [404, EXAM_NOT_FOUND],
+  EXAM_ALREADY_SUBMITTED: [409, EXAM_ALREADY_SUBMITTED],
+  EXAM_ALREADY_GRADED: [409, EXAM_ALREADY_GRADED],
+  EXAM_NOT_AWAITING_SELF_GRADE: [409, EXAM_NOT_AWAITING_SELF_GRADE],
+  EXAM_NOT_SUBMITTED: [409, EXAM_NOT_SUBMITTED],
+  EXAM_GRADING_IN_PROGRESS: [409, EXAM_GRADING_IN_PROGRESS],
+};
 
 // Posizione dall'URL: intero da 1 a EXAM_QUESTIONS, senza zeri iniziali
 const parsePosition = (value) => {
@@ -40,6 +56,13 @@ const parsePosition = (value) => {
 const serverError = (res, label, err) => {
   console.error(label, err);
   return res.status(500).json({ ok: false, error: "Errore interno del server" });
+};
+
+// Risposta per un errore del servizio di valutazione (solo il codice nei log)
+const serviceError = (res, label, err) => {
+  const known = SERVICE_ERRORS[err.message];
+  if (known) return res.status(known[0]).json({ ok: false, error: known[1] });
+  return serverError(res, label, err.message);
 };
 
 const router = express.Router();
@@ -61,8 +84,12 @@ router.get("/:id", protect, async (req, res) => {
       return res.status(404).json({ ok: false, error: EXAM_NOT_FOUND });
     }
 
-    // PROVA-4: una prova IN_PROGRESS scaduta (oltre la tolleranza) va consegnata
+    // Una prova IN_PROGRESS scaduta (oltre la tolleranza) si consegna
     // automaticamente con le bozze salvate prima di rispondere
+    const settled = await settleExpiredExam(session);
+    if (settled) {
+      return res.json({ ok: true, exam: serializeExam(settled.session, settled.attempts) });
+    }
 
     const attempts = await getAttemptsBySession(session.id);
 
@@ -85,8 +112,8 @@ router.post("/", protect, async (req, res) => {
       return res.json({ ok: true, exam: serializeExam(inProgress, attempts), resumed: true });
     }
 
-    // PROVA-4: qui la prova IN_PROGRESS scaduta va consegnata automaticamente
-    // prima di proseguire. Per ora non viene ripresa e se ne crea una nuova
+    // Una prova in corso scaduta si consegna (e valuta) prima di crearne una nuova
+    if (inProgress) await settleExpiredExam(inProgress);
 
     // D4: estrazione su tutto il materiale
     const questions = await getRandomQuestions(EXAM_QUESTIONS);
@@ -211,9 +238,47 @@ router.post("/:id/submit", protect, async (req, res) => {
 });
 
 // Autovalutazione di riserva
-router.post("/:id/self-grade", protect, async (req, res) => {});
+router.post("/:id/self-grade", protect, async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (!isUuid(id)) {
+      return res.status(404).json({ ok: false, error: EXAM_NOT_FOUND });
+    }
+
+    const parsed = examSelfGradeSchema.safeParse(req.body ?? {});
+    if (!parsed.success) return sendZodError(res, parsed.error);
+
+    const { session, attempts } = await selfGradeExam(id, parsed.data.verdicts, { now: new Date() });
+
+    return res.json({ ok: true, exam: serializeExam(session, attempts) });
+
+  } catch (err) {
+    return serviceError(res, "POST EXAM SELF-GRADE ERROR:", err);
+  }
+});
 
 // Riprova la valutazione AI
-router.post("/:id/grade", protect, async (req, res) => {});
+router.post("/:id/grade", protect, async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (!isUuid(id)) {
+      return res.status(404).json({ ok: false, error: EXAM_NOT_FOUND });
+    }
+
+    const { session, attempts } = await regradeExam(id, { now: new Date() });
+
+    return res.json({ ok: true, exam: serializeExam(session, attempts) });
+
+  } catch (err) {
+    // Il grader non risponde neanche ora: la prova resta com'era
+    if (err.message === "GRADER_UNAVAILABLE" || err.message === "GRADER_INVALID_OUTPUT") {
+      console.error("POST EXAM GRADE:", err.message);
+      return res.status(502).json({ ok: false, error: GRADER_UNAVAILABLE });
+    }
+    return serviceError(res, "POST EXAM GRADE ERROR:", err);
+  }
+});
 
 module.exports = router;
