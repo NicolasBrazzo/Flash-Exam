@@ -9,7 +9,20 @@ const ATTEMPT_COLUMNS =
   "question:FE_Questions(id, prompt, answer, rubric, article_refs, topic:FE_Topics(id, name))";
 
 // Tentativo per id, con la domanda (risposta di riferimento e riferimenti)
-const findAttemptById = async (id) => {};
+// (con session_id e mode: l'autovalutazione distingue flashcard e simulazioni)
+const findAttemptById = async (id) => {
+  const { data, error } = await supabase
+    .from(TABLE_NAME)
+    .select(`session_id, mode, ${ATTEMPT_COLUMNS}`)
+    .eq("id", id)
+    .maybeSingle();
+
+  if (error) {
+    throw new Error("DATABASE_FIND_ATTEMPT_BY_ID_ERROR");
+  }
+
+  return data ?? null;
+};
 
 // Tentativi di una simulazione ordinati per position, con domanda e argomento
 const getAttemptsBySession = async (sessionId) => {
@@ -58,7 +71,20 @@ const createExamAttempts = async (attempts) => {
 };
 
 // Crea un tentativo FLASHCARD
-const createFlashcardAttempt = async ({ question_id, answer }) => {};
+// (senza sessione né posizione, come richiede il CHECK di FE_Attempts)
+const createFlashcardAttempt = async ({ question_id, answer }) => {
+  const { data, error } = await supabase
+    .from(TABLE_NAME)
+    .insert({ question_id, answer, mode: "FLASHCARD" })
+    .select(ATTEMPT_COLUMNS)
+    .single();
+
+  if (error) {
+    throw new Error("DATABASE_CREATE_FLASHCARD_ATTEMPT_ERROR");
+  }
+
+  return data;
+};
 
 // Aggiorna un tentativo (risposta o valutazione; valorizza updated_at)
 // Restituisce la riga aggiornata con la domanda, null se non esiste

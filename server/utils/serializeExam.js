@@ -2,18 +2,9 @@
 // mai score, points, rubric o concepts. Durante la prova escono solo testo,
 // argomento e bozza; la revisione arriva solo dopo la consegna.
 
-const SUBMITTED_STATUSES = ["GRADING", "GRADED", "SELF_GRADED"];
+const { serializeFeedback } = require("./serializeFeedback");
 
-// Feedback del grader, solo per le valutazioni AI
-const serializeFeedback = (attempt) => {
-  if (attempt.grading_source !== "AI" || !attempt.grading) return null;
-  const { corrections, suggestion, exampleAnswer } = attempt.grading;
-  return {
-    corrections: (corrections ?? []).map(({ written, suggested, reason }) => ({ written, suggested, reason })),
-    suggestion: suggestion ?? null,
-    exampleAnswer: exampleAnswer ?? null,
-  };
-};
+const SUBMITTED_STATUSES = ["GRADING", "GRADED", "SELF_GRADED"];
 
 const serializeExamQuestion = (attempt, submitted) => {
   const question = attempt.question ?? {};

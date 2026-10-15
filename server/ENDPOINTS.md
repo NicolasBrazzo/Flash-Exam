@@ -254,25 +254,31 @@ sessione: ogni risposta è un tentativo `FLASHCARD` a sé.
   non è un intero 1-50 o se un parametro è ripetuto.
 - `POST /flashcards/answer` — Invia la risposta a una flashcard e la fa
   valutare subito. **Protetta.**
-  Body: `{ "question_id": uuid, "answer": string }`. Una risposta vuota vale
-  "non so": non va all'AI ed è `wrong` d'ufficio.
-  Crea il tentativo e chiama il grader. Risposta `201`:
+  Body: `{ "question_id": uuid, "answer": string }` (massimo 5000 caratteri,
+  salvata così com'è). Una risposta vuota o di soli spazi vale "non so": non va
+  all'AI ed è `wrong` d'ufficio, con `grading_source: "SELF"` e `feedback: null`.
+  Crea prima il tentativo con la risposta, poi chiama il grader. Risposta `201`:
   ```json
   {
     "ok": true,
     "attempt": {
       "id": "uuid",
       "verdict": "correct | partial | wrong | null",
-      "grading_source": "AI | null",
+      "grading_source": "AI | SELF | null",
       "feedback": { "corrections": [], "suggestion": "...", "exampleAnswer": "..." },
       "reference_answer": "...",
       "references": ["1"]
     }
   }
   ```
-  Se il grader non risponde, `verdict`, `grading_source` e `feedback` sono
-  `null`: il tentativo resta da valutare e si chiude con
-  `POST /attempts/:id/self-grade`. `404` se la domanda non esiste.
+  `feedback` è valorizzato solo con `grading_source: "AI"`; nessun punteggio
+  nella risposta. Se il grader non risponde, `verdict`, `grading_source` e
+  `feedback` sono `null`: il tentativo resta da valutare e si chiude con
+  `POST /attempts/:id/self-grade`. `400` se il body non è valido (`question_id`
+  non uuid, `answer` non testo o oltre 5000 caratteri, campi in più), con
+  l'elenco degli errori. `404` se la domanda non esiste. `500` se il
+  salvataggio fallisce o la valutazione dà un errore inatteso (il tentativo,
+  se già creato, resta salvato e da valutare).
 
 ---
 
