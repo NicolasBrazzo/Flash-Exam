@@ -26,8 +26,10 @@ const Section = ({ title, children }) => (
  * feedback         { corrections, suggestion, exampleAnswer } | null
  * referenceAnswer  risposta di riferimento della domanda
  * references       numeri di articolo
+ * announce         false per non annunciare l'esito (revisione con più blocchi
+ *                  già caricati: l'esito non cambia, l'annuncio sarebbe rumore)
  */
-export const FeedbackBlock = ({ verdict, feedback, referenceAnswer, references }) => {
+export const FeedbackBlock = ({ verdict, feedback, referenceAnswer, references, announce = true }) => {
   const info = verdictInfo(verdict);
   const Icon = info ? ICONS[info.icon] : null;
   const corrections = feedback?.corrections ?? [];
@@ -38,7 +40,7 @@ export const FeedbackBlock = ({ verdict, feedback, referenceAnswer, references }
   return (
     <div className="space-y-4 rounded-lg border bg-card p-4 text-base shadow-sm">
       {info && (
-        <p role="status" className={`flex items-center gap-2 rounded-md border px-3 py-2 font-medium ${TONES[info.tone]}`}>
+        <p role={announce ? "status" : undefined} className={`flex items-center gap-2 rounded-md border px-3 py-2 font-medium ${TONES[info.tone]}`}>
           <Icon className="size-5 shrink-0" aria-hidden="true" />
           {info.label}
         </p>

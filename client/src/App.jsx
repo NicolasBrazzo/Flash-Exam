@@ -13,6 +13,7 @@ import { Domande } from "./pages/Domande.jsx";
 import { Import } from "./pages/Import.jsx";
 import { Simulazione } from "./pages/Simulazione.jsx";
 import { Flashcard } from "./pages/Flashcard.jsx";
+import { RisultatoSimulazione } from "./pages/RisultatoSimulazione.jsx";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ function App() {
                   <Route path="/import" element={<Import />} />
                   <Route path="/simulazione" element={<Simulazione />} />
                   <Route path="/simulazione/:id" element={<Simulazione />} />
+                  <Route path="/simulazione/:id/risultato" element={<RisultatoSimulazione />} />
                 </Route>
               </Route>
               <Route path="*" element={<NotFound />} />
