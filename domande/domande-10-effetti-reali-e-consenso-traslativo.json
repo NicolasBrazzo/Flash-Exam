@@ -1,0 +1,181 @@
+{
+  "topic": { "name": "Effetti obbligatori e reali, consenso traslativo" },
+  "questions": [
+    {
+      "prompt": "Che differenza c'è tra contratti di attribuzione e contratti di accertamento?",
+      "answer": "I contratti di attribuzione modificano le situazioni giuridiche delle parti e determinano spostamenti patrimoniali; quelli di accertamento si limitano a chiarire le situazioni giuridiche esistenti, senza modificarle.",
+      "rubric": [
+        { "id": "c1", "concept": "attribuzione: modificano le situazioni giuridiche", "weight": 2 },
+        { "id": "c2", "concept": "accertamento: chiariscono senza modificare", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra contratti a efficacia obbligatoria e contratti a efficacia reale?",
+      "answer": "I contratti a efficacia obbligatoria fanno nascere solo obbligazioni, cioè debiti e crediti. Quelli a efficacia reale trasferiscono la proprietà o costituiscono o trasferiscono diritti reali o altri diritti, per effetto del consenso.",
+      "rubric": [
+        { "id": "c1", "concept": "obbligatoria: fanno nascere obbligazioni", "weight": 2 },
+        { "id": "c2", "concept": "reale: trasferiscono o costituiscono diritti", "weight": 2 },
+        { "id": "c3", "concept": "il trasferimento avviene con il consenso", "weight": 1 }
+      ],
+      "references": ["1376"]
+    },
+    {
+      "prompt": "Che differenza c'è tra contratti consensuali e contratti reali?",
+      "answer": "I contratti consensuali si perfezionano con il solo consenso delle parti; i contratti reali richiedono, oltre all'accordo, la consegna della cosa, come il comodato, il mutuo e il deposito.",
+      "rubric": [
+        { "id": "c1", "concept": "consensuali: basta il consenso", "weight": 2 },
+        { "id": "c2", "concept": "reali: serve anche la consegna della cosa", "weight": 2 },
+        { "id": "c3", "concept": "esempi: comodato, mutuo, deposito", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra contratto reale e contratto a efficacia reale?",
+      "answer": "Contratto reale indica il modo in cui il contratto si conclude, cioè con la consegna della cosa. Contratto a efficacia reale indica gli effetti, cioè il trasferimento o la costituzione di un diritto.",
+      "rubric": [
+        { "id": "c1", "concept": "reale: riguarda la formazione, serve la consegna", "weight": 2 },
+        { "id": "c2", "concept": "a efficacia reale: riguarda gli effetti traslativi", "weight": 2 }
+      ],
+      "references": ["1376"]
+    },
+    {
+      "prompt": "Perché molti contratti gratuiti sono contratti reali?",
+      "answer": "Perché chi si impegna senza ricevere nulla in cambio potrebbe non avere una seria volontà di vincolarsi: la consegna della cosa dimostra nei fatti questa volontà.",
+      "rubric": [
+        { "id": "c1", "concept": "dubbio sulla serietà dell'impegno gratuito", "weight": 2 },
+        { "id": "c2", "concept": "la consegna dimostra la volontà di vincolarsi", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra diritti assoluti e diritti relativi?",
+      "answer": "I diritti assoluti si possono far valere nei confronti di tutti, come la proprietà e i diritti della personalità. I diritti relativi si possono far valere solo nei confronti di una o più persone determinate, come il diritto di credito.",
+      "rubric": [
+        { "id": "c1", "concept": "assoluti: opponibili a tutti", "weight": 2 },
+        { "id": "c2", "concept": "relativi: verso persone determinate", "weight": 2 },
+        { "id": "c3", "concept": "esempi: proprietà e credito", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che cosa sono i diritti reali?",
+      "answer": "Sono diritti soggettivi assoluti su beni, che tutelano interessi patrimoniali e possono essere fatti valere nei confronti di tutti; il principale è la proprietà.",
+      "rubric": [
+        { "id": "c1", "concept": "diritti assoluti", "weight": 2 },
+        { "id": "c2", "concept": "a contenuto patrimoniale, su beni", "weight": 1 },
+        { "id": "c3", "concept": "il principale è la proprietà", "weight": 1 }
+      ],
+      "references": ["832"]
+    },
+    {
+      "prompt": "Che cosa stabilisce il principio del consenso traslativo?",
+      "answer": "Nei contratti che trasferiscono la proprietà di una cosa determinata o costituiscono o trasferiscono un diritto reale o altro diritto, il diritto si trasmette e si acquista per effetto del consenso delle parti legittimamente manifestato, senza bisogno di consegna o pagamento.",
+      "rubric": [
+        { "id": "c1", "concept": "il diritto passa con il consenso", "weight": 2 },
+        { "id": "c2", "concept": "riguarda cosa determinata, diritti reali o altri diritti", "weight": 1 },
+        { "id": "c3", "concept": "non servono consegna né pagamento del prezzo", "weight": 2 }
+      ],
+      "references": ["1376"]
+    },
+    {
+      "prompt": "Perché è importante stabilire il momento del passaggio della proprietà?",
+      "answer": "Perché da quel momento il rischio del perimento fortuito passa all'acquirente, risponde dei danni a terzi chi è proprietario e il bene passa dalla garanzia dei creditori dell'alienante a quella dei creditori dell'acquirente.",
+      "rubric": [
+        { "id": "c1", "concept": "passaggio del rischio del perimento", "weight": 2 },
+        { "id": "c2", "concept": "responsabilità per i danni causati dalla cosa", "weight": 1 },
+        { "id": "c3", "concept": "garanzia patrimoniale dei creditori", "weight": 1 }
+      ],
+      "references": ["1376"]
+    },
+    {
+      "prompt": "In che cosa il principio del consenso traslativo si distingue dalla tradizione romana e tedesca?",
+      "answer": "Nel sistema italiano, che lo ha ripreso dal codice napoleonico, la proprietà passa con il solo consenso. Nel diritto romano e in quello tedesco il trasferimento richiede attività ulteriori, come la consegna o l'iscrizione.",
+      "rubric": [
+        { "id": "c1", "concept": "in Italia basta il consenso", "weight": 2 },
+        { "id": "c2", "concept": "origine nel codice napoleonico", "weight": 1 },
+        { "id": "c3", "concept": "nel sistema tedesco servono atti ulteriori", "weight": 1 }
+      ],
+      "references": ["1376"]
+    },
+    {
+      "prompt": "Come si conciliano l'efficacia reale del contratto e il principio di relatività?",
+      "answer": "Distinguendo gli effetti del contratto, che si producono tra le parti con il consenso, dall'opponibilità di quegli effetti ai terzi, che richiede un'ulteriore formalità diversa secondo il bene: consegna, notificazione, trascrizione.",
+      "rubric": [
+        { "id": "c1", "concept": "distinzione tra efficacia e opponibilità", "weight": 2 },
+        { "id": "c2", "concept": "gli effetti tra le parti nascono dal consenso", "weight": 1 },
+        { "id": "c3", "concept": "l'opponibilità richiede un'attività ulteriore", "weight": 2 }
+      ],
+      "references": ["1372", "1376"]
+    },
+    {
+      "prompt": "Chi prevale se la stessa cosa mobile è alienata a più persone?",
+      "answer": "Prevale chi per primo ne ha acquistato in buona fede il possesso, anche se il suo titolo è di data posteriore.",
+      "rubric": [
+        { "id": "c1", "concept": "chi per primo consegue il possesso", "weight": 2 },
+        { "id": "c2", "concept": "in buona fede", "weight": 1 },
+        { "id": "c3", "concept": "anche se il titolo è posteriore", "weight": 1 }
+      ],
+      "references": ["1155"]
+    },
+    {
+      "prompt": "Chi prevale se lo stesso immobile è venduto a due persone diverse?",
+      "answer": "Prevale chi ha trascritto per primo il proprio atto di acquisto nei registri immobiliari, anche se ha acquistato per secondo.",
+      "rubric": [
+        { "id": "c1", "concept": "chi trascrive per primo", "weight": 2 },
+        { "id": "c2", "concept": "anche se ha acquistato dopo", "weight": 2 }
+      ],
+      "references": ["2644"]
+    },
+    {
+      "prompt": "Chi prevale se lo stesso diritto personale di godimento è concesso a più persone?",
+      "answer": "Prevale chi per primo ha conseguito il godimento; se nessuno lo ha conseguito, è preferito chi ha il titolo di data certa anteriore, salve le norme sulla trascrizione.",
+      "rubric": [
+        { "id": "c1", "concept": "chi per primo ha conseguito il godimento", "weight": 2 },
+        { "id": "c2", "concept": "altrimenti il titolo di data certa anteriore", "weight": 2 },
+        { "id": "c3", "concept": "salve le norme sulla trascrizione", "weight": 1 }
+      ],
+      "references": ["1380"]
+    },
+    {
+      "prompt": "Come si rende opponibile ai terzi la cessione di un credito?",
+      "answer": "La cessione è opponibile ai terzi con la notificazione al debitore ceduto o con la sua accettazione con atto di data certa: tra più cessioni dello stesso credito prevale quella notificata o accettata per prima.",
+      "rubric": [
+        { "id": "c1", "concept": "notificazione al debitore o sua accettazione", "weight": 2 },
+        { "id": "c2", "concept": "atto di data certa", "weight": 1 },
+        { "id": "c3", "concept": "prevale la prima notificata o accettata", "weight": 1 }
+      ],
+      "references": ["1265"]
+    },
+    {
+      "prompt": "Quando passa la proprietà nella vendita di cose determinate solo nel genere?",
+      "answer": "Con l'individuazione fatta d'accordo tra le parti o nei modi da esse stabiliti; se le cose devono essere trasportate, l'individuazione avviene anche con la consegna al vettore o allo spedizioniere.",
+      "rubric": [
+        { "id": "c1", "concept": "con l'individuazione", "weight": 2 },
+        { "id": "c2", "concept": "fatta d'accordo tra le parti", "weight": 1 },
+        { "id": "c3", "concept": "o con la consegna al vettore o spedizioniere", "weight": 1 }
+      ],
+      "references": ["1378"]
+    },
+    {
+      "prompt": "Quando passa la proprietà se oggetto del trasferimento è una massa di cose?",
+      "answer": "Con il consenso, come per le cose determinate, anche se le cose sono omogenee e per certi effetti devono essere numerate, pesate o misurate.",
+      "rubric": [
+        { "id": "c1", "concept": "passa con il consenso", "weight": 2 },
+        { "id": "c2", "concept": "anche se le cose vanno numerate, pesate o misurate", "weight": 1 }
+      ],
+      "references": ["1377"]
+    },
+    {
+      "prompt": "In quali casi l'effetto traslativo del consenso è differito?",
+      "answer": "Quando il trasferimento riguarda cose generiche, che richiedono l'individuazione, cose future, che devono venire a esistenza, o cose altrui, che il venditore deve prima acquistare: in questi casi il contratto produce subito solo effetti obbligatori.",
+      "rubric": [
+        { "id": "c1", "concept": "cose generiche", "weight": 1 },
+        { "id": "c2", "concept": "cose future", "weight": 1 },
+        { "id": "c3", "concept": "cose altrui", "weight": 1 },
+        { "id": "c4", "concept": "nel frattempo effetti solo obbligatori", "weight": 2 }
+      ],
+      "references": ["1378", "1472", "1478"]
+    }
+  ]
+}

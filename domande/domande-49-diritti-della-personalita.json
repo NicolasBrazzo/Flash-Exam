@@ -1,0 +1,111 @@
+{
+  "topic": { "name": "I diritti della personalità" },
+  "questions": [
+    {
+      "prompt": "Che cosa sono i diritti della personalità?",
+      "answer": "Sono diritti assoluti e non patrimoniali che tutelano i beni essenziali della persona, come la vita, l'integrità fisica, il nome, l'immagine, l'onore, la riservatezza e l'identità personale; si acquistano con la nascita.",
+      "rubric": [
+        { "id": "c1", "concept": "diritti assoluti e non patrimoniali", "weight": 2 },
+        { "id": "c2", "concept": "tutelano beni essenziali della persona", "weight": 1 },
+        { "id": "c3", "concept": "esempi: integrità fisica, nome, immagine, riservatezza", "weight": 1 }
+      ],
+      "references": ["5", "6", "10"]
+    },
+    {
+      "prompt": "Quando sono vietati gli atti di disposizione del proprio corpo?",
+      "answer": "Quando cagionano una diminuzione permanente dell'integrità fisica o quando sono altrimenti contrari alla legge, all'ordine pubblico o al buon costume.",
+      "rubric": [
+        { "id": "c1", "concept": "diminuzione permanente dell'integrità fisica", "weight": 2 },
+        { "id": "c2", "concept": "contrarietà a legge, ordine pubblico o buon costume", "weight": 2 }
+      ],
+      "references": ["5"]
+    },
+    {
+      "prompt": "Quali deroghe al divieto di atti di disposizione del corpo sono previste dalla legge?",
+      "answer": "Le leggi speciali consentono, a titolo gratuito, il trapianto da vivente di rene e di parti di fegato o polmone, e gli interventi di rettificazione dei caratteri sessuali.",
+      "rubric": [
+        { "id": "c1", "concept": "donazione di organi da vivente a titolo gratuito", "weight": 2 },
+        { "id": "c2", "concept": "rettificazione dei caratteri sessuali", "weight": 1 }
+      ],
+      "references": ["5"]
+    },
+    {
+      "prompt": "Che cos'è il diritto al nome?",
+      "answer": "È il diritto di ogni persona al nome che le è attribuito per legge, composto da prenome e cognome, con funzione di identificazione sociale; non sono ammessi cambiamenti, aggiunte o rettifiche se non nei casi e con le formalità di legge.",
+      "rubric": [
+        { "id": "c1", "concept": "nome attribuito per legge: prenome e cognome", "weight": 1 },
+        { "id": "c2", "concept": "funzione di identificazione", "weight": 1 },
+        { "id": "c3", "concept": "cambiamenti solo nei casi di legge", "weight": 2 }
+      ],
+      "references": ["6"]
+    },
+    {
+      "prompt": "Contro quali lesioni è tutelato il nome?",
+      "answer": "Contro la contestazione, quando si impedisce l'uso del proprio nome; l'usurpazione, quando altri lo usa per identificare se stesso; e l'utilizzazione abusiva, quando lo si usa per un personaggio o un prodotto.",
+      "rubric": [
+        { "id": "c1", "concept": "contestazione", "weight": 1 },
+        { "id": "c2", "concept": "usurpazione", "weight": 1 },
+        { "id": "c3", "concept": "utilizzazione abusiva", "weight": 1 }
+      ],
+      "references": ["7"]
+    },
+    {
+      "prompt": "Quali rimedi ha chi subisce la lesione del diritto al nome?",
+      "answer": "Può chiedere al giudice la cessazione del fatto lesivo e il risarcimento dei danni; il giudice può ordinare la pubblicazione della sentenza su uno o più giornali.",
+      "rubric": [
+        { "id": "c1", "concept": "cessazione del fatto lesivo", "weight": 2 },
+        { "id": "c2", "concept": "risarcimento dei danni", "weight": 1 },
+        { "id": "c3", "concept": "pubblicazione della sentenza", "weight": 1 }
+      ],
+      "references": ["7"]
+    },
+    {
+      "prompt": "Chi può agire a tutela del nome oltre al suo titolare?",
+      "answer": "Anche chi, pur non portando il nome contestato o usato indebitamente, ha un interesse alla sua tutela fondato su ragioni familiari degne di protezione.",
+      "rubric": [
+        { "id": "c1", "concept": "chi non porta il nome", "weight": 1 },
+        { "id": "c2", "concept": "interesse fondato su ragioni familiari", "weight": 2 }
+      ],
+      "references": ["8"]
+    },
+    {
+      "prompt": "Lo pseudonimo è tutelato?",
+      "answer": "Sì, lo pseudonimo usato da una persona in modo che abbia acquistato l'importanza del nome è tutelato come il nome.",
+      "rubric": [
+        { "id": "c1", "concept": "sì, come il nome", "weight": 2 },
+        { "id": "c2", "concept": "se ha acquistato l'importanza del nome", "weight": 2 }
+      ],
+      "references": ["9"]
+    },
+    {
+      "prompt": "In che cosa consiste il diritto all'immagine?",
+      "answer": "Nel divieto per i terzi di esporre, pubblicare o mettere in commercio il ritratto di una persona senza il suo consenso, fuori dai casi consentiti dalla legge o con pregiudizio al decoro o alla reputazione; il giudice può ordinare la cessazione dell'abuso, salvo il risarcimento.",
+      "rubric": [
+        { "id": "c1", "concept": "divieto di pubblicare il ritratto senza consenso", "weight": 2 },
+        { "id": "c2", "concept": "fuori dai casi di legge o con pregiudizio al decoro", "weight": 1 },
+        { "id": "c3", "concept": "cessazione dell'abuso e risarcimento", "weight": 1 }
+      ],
+      "references": ["10"]
+    },
+    {
+      "prompt": "Che cosa tutelano il diritto alla riservatezza e il diritto all'identità personale?",
+      "answer": "La riservatezza tutela l'interesse a non vedere divulgate vicende della propria vita privata e i propri dati personali. L'identità personale tutela l'interesse a essere rappresentati all'esterno in modo conforme alla propria reale personalità, senza travisamenti.",
+      "rubric": [
+        { "id": "c1", "concept": "riservatezza: vita privata e dati personali", "weight": 2 },
+        { "id": "c2", "concept": "identità: rappresentazione fedele della persona", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Quali caratteri hanno i diritti della personalità?",
+      "answer": "Sono assoluti, perché valgono verso tutti; non patrimoniali; indisponibili e intrasmissibili; imprescrittibili. La loro lesione dà diritto al risarcimento anche del danno non patrimoniale.",
+      "rubric": [
+        { "id": "c1", "concept": "assoluti", "weight": 1 },
+        { "id": "c2", "concept": "non patrimoniali", "weight": 1 },
+        { "id": "c3", "concept": "indisponibili e imprescrittibili", "weight": 1 },
+        { "id": "c4", "concept": "lesione: risarcimento anche non patrimoniale", "weight": 1 }
+      ],
+      "references": ["2059"]
+    }
+  ]
+}

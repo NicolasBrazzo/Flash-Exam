@@ -1,0 +1,271 @@
+{
+  "topic": { "name": "Le prove" },
+  "questions": [
+    {
+      "prompt": "Che cosa significa che l'onere della prova è un rischio?",
+      "answer": "Significa che se un fatto rilevante resta non provato, il giudice decide contro la parte che aveva l'onere di provarlo: su di essa grava il rischio della mancata o insufficiente prova.",
+      "rubric": [
+        { "id": "c1", "concept": "il fatto non provato si considera inesistente", "weight": 1 },
+        { "id": "c2", "concept": "la parte onerata perde", "weight": 2 }
+      ],
+      "references": ["2697"]
+    },
+    {
+      "prompt": "Che differenza c'è tra fatti costitutivi e fatti impeditivi, modificativi o estintivi?",
+      "answer": "I fatti costitutivi fondano il diritto fatto valere e li prova chi agisce; quelli impeditivi, modificativi o estintivi ne escludono l'efficacia o lo modificano o estinguono, e li prova chi li eccepisce.",
+      "rubric": [
+        { "id": "c1", "concept": "costitutivi: fondano il diritto, li prova l'attore", "weight": 2 },
+        { "id": "c2", "concept": "impeditivi, modificativi, estintivi: li prova chi eccepisce", "weight": 2 }
+      ],
+      "references": ["2697"]
+    },
+    {
+      "prompt": "Che cosa stabilisce il principio di vicinanza della prova?",
+      "answer": "Che, quando la legge non lo chiarisce, l'onere della prova va posto a carico della parte che è più vicina alla prova e quindi in grado di fornirla più agevolmente.",
+      "rubric": [
+        { "id": "c1", "concept": "onere sulla parte più vicina alla prova", "weight": 2 },
+        { "id": "c2", "concept": "che può fornirla più facilmente", "weight": 1 }
+      ],
+      "references": ["2697"]
+    },
+    {
+      "prompt": "Le parti possono modificare l'onere della prova?",
+      "answer": "Sì, ma sono nulli i patti che invertono o modificano l'onere della prova quando riguardano diritti indisponibili o rendono a una parte eccessivamente difficile l'esercizio del diritto.",
+      "rubric": [
+        { "id": "c1", "concept": "sì, in generale", "weight": 1 },
+        { "id": "c2", "concept": "nulli per diritti indisponibili", "weight": 1 },
+        { "id": "c3", "concept": "nulli se rendono eccessivamente difficile l'esercizio del diritto", "weight": 2 }
+      ],
+      "references": ["2698"]
+    },
+    {
+      "prompt": "Che differenza c'è tra prove precostituite e prove costituende?",
+      "answer": "Le prove precostituite, come i documenti, esistono già prima del processo; le prove costituende, come la testimonianza, la confessione giudiziale e il giuramento, si formano nel corso del giudizio.",
+      "rubric": [
+        { "id": "c1", "concept": "precostituite: esistono prima del processo", "weight": 2 },
+        { "id": "c2", "concept": "costituende: si formano nel processo", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che cos'è l'atto pubblico?",
+      "answer": "È il documento redatto con le formalità richieste da un notaio o da un altro pubblico ufficiale autorizzato ad attribuirgli pubblica fede nel luogo in cui l'atto è formato.",
+      "rubric": [
+        { "id": "c1", "concept": "redatto da notaio o pubblico ufficiale autorizzato", "weight": 2 },
+        { "id": "c2", "concept": "con le formalità richieste", "weight": 1 },
+        { "id": "c3", "concept": "fa pubblica fede", "weight": 1 }
+      ],
+      "references": ["2699"]
+    },
+    {
+      "prompt": "Di che cosa fa piena prova l'atto pubblico?",
+      "answer": "Fa piena prova, fino a querela di falso, della provenienza del documento dal pubblico ufficiale, delle dichiarazioni delle parti e degli altri fatti che l'ufficiale attesta avvenuti in sua presenza o da lui compiuti; non prova la veridicità del contenuto delle dichiarazioni.",
+      "rubric": [
+        { "id": "c1", "concept": "piena prova fino a querela di falso", "weight": 2 },
+        { "id": "c2", "concept": "provenienza, dichiarazioni rese e fatti attestati", "weight": 1 },
+        { "id": "c3", "concept": "non la verità del contenuto delle dichiarazioni", "weight": 1 }
+      ],
+      "references": ["2700"]
+    },
+    {
+      "prompt": "Che cos'è la conversione formale dell'atto pubblico?",
+      "answer": "Il documento formato da un ufficiale incompetente o incapace o senza le formalità prescritte, se è sottoscritto dalle parti, ha la stessa efficacia probatoria della scrittura privata.",
+      "rubric": [
+        { "id": "c1", "concept": "atto pubblico viziato", "weight": 1 },
+        { "id": "c2", "concept": "sottoscritto dalle parti", "weight": 1 },
+        { "id": "c3", "concept": "vale come scrittura privata", "weight": 2 }
+      ],
+      "references": ["2701"]
+    },
+    {
+      "prompt": "Che efficacia probatoria ha la scrittura privata?",
+      "answer": "Fa piena prova, fino a querela di falso, della provenienza delle dichiarazioni da chi l'ha sottoscritta, se questi ne riconosce la sottoscrizione o se essa è legalmente considerata riconosciuta.",
+      "rubric": [
+        { "id": "c1", "concept": "prova della provenienza delle dichiarazioni", "weight": 2 },
+        { "id": "c2", "concept": "se la sottoscrizione è riconosciuta o legalmente riconosciuta", "weight": 2 }
+      ],
+      "references": ["2702"]
+    },
+    {
+      "prompt": "Quando la sottoscrizione della scrittura privata si considera legalmente riconosciuta?",
+      "answer": "Quando è autenticata dal notaio o da altro pubblico ufficiale autorizzato, che attesta che è stata apposta in sua presenza dopo averne accertato l'identità, oppure quando è accertata giudizialmente con il procedimento di verificazione, o non è disconosciuta.",
+      "rubric": [
+        { "id": "c1", "concept": "autenticazione del notaio", "weight": 2 },
+        { "id": "c2", "concept": "verificazione giudiziale", "weight": 1 },
+        { "id": "c3", "concept": "mancato disconoscimento", "weight": 1 }
+      ],
+      "references": ["2703"]
+    },
+    {
+      "prompt": "Che cos'è la data certa della scrittura privata?",
+      "answer": "È la data opponibile ai terzi: per la scrittura autenticata è quella dell'autenticazione; per quella non autenticata è quella della registrazione, della morte o sopravvenuta impossibilità fisica di uno dei sottoscrittori, o di un altro fatto che stabilisca con certezza l'anteriorità del documento.",
+      "rubric": [
+        { "id": "c1", "concept": "data opponibile ai terzi", "weight": 1 },
+        { "id": "c2", "concept": "autenticazione o registrazione", "weight": 2 },
+        { "id": "c3", "concept": "o altro fatto certo che prova l'anteriorità", "weight": 1 }
+      ],
+      "references": ["2704"]
+    },
+    {
+      "prompt": "Che valore hanno le riproduzioni meccaniche e le copie fotografiche?",
+      "answer": "Le riproduzioni meccaniche, come foto e registrazioni, fanno piena prova dei fatti rappresentati se chi le subisce non ne disconosce la conformità. Le copie fotografiche di scritture valgono come gli originali se la conformità è attestata da un pubblico ufficiale o non è espressamente disconosciuta.",
+      "rubric": [
+        { "id": "c1", "concept": "riproduzioni: piena prova se non disconosciute", "weight": 2 },
+        { "id": "c2", "concept": "copie: valgono se attestate o non disconosciute", "weight": 2 }
+      ],
+      "references": ["2712", "2719"]
+    },
+    {
+      "prompt": "Contro chi fanno prova le scritture contabili dell'impresa?",
+      "answer": "I libri e le altre scritture contabili delle imprese soggette a registrazione fanno prova contro l'imprenditore; chi vuole trarne vantaggio non può però scinderne il contenuto.",
+      "rubric": [
+        { "id": "c1", "concept": "fanno prova contro l'imprenditore", "weight": 2 },
+        { "id": "c2", "concept": "contenuto non scindibile", "weight": 1 }
+      ],
+      "references": ["2709"]
+    },
+    {
+      "prompt": "Che cos'è la testimonianza?",
+      "answer": "È la narrazione in giudizio, da parte di una persona estranea alla causa e senza un interesse che ne legittimerebbe la partecipazione, di fatti controversi di cui ha conoscenza.",
+      "rubric": [
+        { "id": "c1", "concept": "narrazione in giudizio di fatti", "weight": 1 },
+        { "id": "c2", "concept": "da parte di un terzo estraneo e non interessato", "weight": 2 }
+      ],
+      "references": ["2721"]
+    },
+    {
+      "prompt": "Quali limiti di ammissibilità ha la prova testimoniale dei contratti?",
+      "answer": "Non è ammessa per contratti il cui valore supera una soglia molto bassa, salvo che il giudice la consenta considerando le parti e le circostanze; non è ammessa per patti aggiunti o contrari a un documento anteriori o contemporanei; per i patti successivi è ammessa solo se il giudice li ritiene verosimili.",
+      "rubric": [
+        { "id": "c1", "concept": "limite di valore superabile dal giudice", "weight": 1 },
+        { "id": "c2", "concept": "esclusa per patti anteriori o contemporanei al documento", "weight": 2 },
+        { "id": "c3", "concept": "patti successivi: solo se verosimili", "weight": 1 }
+      ],
+      "references": ["2721", "2722", "2723"]
+    },
+    {
+      "prompt": "Perché non si possono provare per testimoni patti anteriori o contemporanei contrari a un documento?",
+      "answer": "Perché si presume che, se le parti avessero voluto un accordo diverso, lo avrebbero scritto nel documento: la legge ritiene inattendibile una testimonianza che contraddica quanto le parti hanno messo per iscritto.",
+      "rubric": [
+        { "id": "c1", "concept": "le parti avrebbero scritto l'accordo diverso", "weight": 2 },
+        { "id": "c2", "concept": "la testimonianza contraria si presume inattendibile", "weight": 1 }
+      ],
+      "references": ["2722"]
+    },
+    {
+      "prompt": "In quali casi i limiti alla prova testimoniale non operano?",
+      "answer": "Quando c'è un principio di prova per iscritto che rende verosimile il fatto, quando la parte è stata nell'impossibilità morale o materiale di procurarsi una prova scritta e quando ha perso senza colpa il documento che le forniva la prova.",
+      "rubric": [
+        { "id": "c1", "concept": "principio di prova per iscritto", "weight": 1 },
+        { "id": "c2", "concept": "impossibilità morale o materiale", "weight": 1 },
+        { "id": "c3", "concept": "perdita incolpevole del documento", "weight": 2 }
+      ],
+      "references": ["2724"]
+    },
+    {
+      "prompt": "Si può provare per testimoni un contratto per cui è richiesta la forma scritta?",
+      "answer": "Solo se la parte ha perso senza colpa il documento: vale sia quando lo scritto è richiesto ad substantiam sia quando è richiesto solo per la prova, per legge o per volontà delle parti.",
+      "rubric": [
+        { "id": "c1", "concept": "solo per perdita incolpevole del documento", "weight": 2 },
+        { "id": "c2", "concept": "sia ad substantiam sia ad probationem", "weight": 2 }
+      ],
+      "references": ["2725"]
+    },
+    {
+      "prompt": "Che cosa sono le presunzioni?",
+      "answer": "Sono le conseguenze che la legge o il giudice traggono da un fatto noto per risalire a un fatto ignorato.",
+      "rubric": [
+        { "id": "c1", "concept": "da un fatto noto a uno ignoto", "weight": 2 },
+        { "id": "c2", "concept": "tratte dalla legge o dal giudice", "weight": 1 }
+      ],
+      "references": ["2727"]
+    },
+    {
+      "prompt": "Che differenza c'è tra presunzioni legali assolute e relative?",
+      "answer": "Le presunzioni assolute (iuris et de iure) non ammettono prova contraria; quelle relative (iuris tantum) la ammettono e invertono l'onere della prova a carico di chi vuole contestare il fatto presunto.",
+      "rubric": [
+        { "id": "c1", "concept": "assolute: nessuna prova contraria", "weight": 2 },
+        { "id": "c2", "concept": "relative: ammettono prova contraria", "weight": 2 }
+      ],
+      "references": ["2728"]
+    },
+    {
+      "prompt": "Quando il giudice può fondarsi su presunzioni semplici?",
+      "answer": "Quando gli indizi sono gravi, precisi e concordanti; non può farvi ricorso nei casi in cui la legge esclude la prova per testimoni.",
+      "rubric": [
+        { "id": "c1", "concept": "indizi gravi, precisi e concordanti", "weight": 2 },
+        { "id": "c2", "concept": "escluse dove è esclusa la prova testimoniale", "weight": 2 }
+      ],
+      "references": ["2729"]
+    },
+    {
+      "prompt": "Che cos'è la confessione?",
+      "answer": "È la dichiarazione che una parte fa della verità di fatti a sé sfavorevoli e favorevoli all'altra parte. Non è un negozio ma una dichiarazione di scienza e deve provenire da chi è capace di disporre del diritto.",
+      "rubric": [
+        { "id": "c1", "concept": "dichiarazione di fatti sfavorevoli a sé e favorevoli all'altro", "weight": 2 },
+        { "id": "c2", "concept": "dichiarazione di scienza", "weight": 1 },
+        { "id": "c3", "concept": "capacità di disporre del diritto", "weight": 1 }
+      ],
+      "references": ["2730", "2731"]
+    },
+    {
+      "prompt": "Che efficacia hanno la confessione giudiziale e quella stragiudiziale?",
+      "answer": "La confessione giudiziale fa piena prova contro chi l'ha resa. Quella stragiudiziale fatta alla parte o a chi la rappresenta ha la stessa efficacia; se fatta a un terzo o in un testamento è liberamente apprezzata dal giudice.",
+      "rubric": [
+        { "id": "c1", "concept": "giudiziale: piena prova", "weight": 2 },
+        { "id": "c2", "concept": "stragiudiziale alla parte: stessa efficacia", "weight": 1 },
+        { "id": "c3", "concept": "a un terzo: libero apprezzamento", "weight": 1 }
+      ],
+      "references": ["2733", "2735"]
+    },
+    {
+      "prompt": "Quando la confessione può essere revocata?",
+      "answer": "Solo se si prova che è stata determinata da errore di fatto o da violenza; non basta dimostrare che quanto dichiarato non corrisponde al vero.",
+      "rubric": [
+        { "id": "c1", "concept": "errore di fatto o violenza", "weight": 2 },
+        { "id": "c2", "concept": "non basta la non veridicità", "weight": 1 }
+      ],
+      "references": ["2732"]
+    },
+    {
+      "prompt": "Che cos'è il giuramento decisorio?",
+      "answer": "È il giuramento che una parte deferisce all'altra per farne dipendere la decisione totale o parziale della causa: se la parte giura, il fatto è considerato vero senza possibilità di prova contraria; se rifiuta, soccombe sul punto.",
+      "rubric": [
+        { "id": "c1", "concept": "deferito da una parte all'altra", "weight": 1 },
+        { "id": "c2", "concept": "decide la causa o il punto", "weight": 2 },
+        { "id": "c3", "concept": "non ammette prova contraria", "weight": 1 }
+      ],
+      "references": ["2736", "2738"]
+    },
+    {
+      "prompt": "Quando non è ammesso il giuramento?",
+      "answer": "Su diritti indisponibili, su un fatto illecito, su un contratto per cui è richiesta la forma scritta ad substantiam e per negare un fatto che risulta da un atto pubblico come avvenuto in presenza del pubblico ufficiale.",
+      "rubric": [
+        { "id": "c1", "concept": "diritti indisponibili", "weight": 1 },
+        { "id": "c2", "concept": "fatto illecito", "weight": 1 },
+        { "id": "c3", "concept": "contratti con forma scritta ad substantiam", "weight": 1 },
+        { "id": "c4", "concept": "contro quanto attestato in atto pubblico", "weight": 1 }
+      ],
+      "references": ["2739"]
+    },
+    {
+      "prompt": "Che cosa può fare la parte danneggiata da un falso giuramento?",
+      "answer": "Non può fornire prova contraria né ottenere la revocazione della sentenza civile; può solo, dopo la condanna penale per falso giuramento, chiedere il risarcimento dei danni.",
+      "rubric": [
+        { "id": "c1", "concept": "nessuna prova contraria né revocazione", "weight": 2 },
+        { "id": "c2", "concept": "risarcimento dopo la condanna penale", "weight": 2 }
+      ],
+      "references": ["2738"]
+    },
+    {
+      "prompt": "Che cos'è il giuramento suppletorio?",
+      "answer": "È il giuramento deferito d'ufficio dal giudice a una parte per decidere la causa quando la domanda o l'eccezione non sono pienamente provate ma nemmeno del tutto prive di prova; una sua specie è il giuramento estimatorio, per stabilire il valore della cosa.",
+      "rubric": [
+        { "id": "c1", "concept": "deferito d'ufficio dal giudice", "weight": 2 },
+        { "id": "c2", "concept": "prova incompleta ma non assente", "weight": 1 },
+        { "id": "c3", "concept": "estimatorio per il valore della cosa", "weight": 1 }
+      ],
+      "references": ["2736"]
+    }
+  ]
+}

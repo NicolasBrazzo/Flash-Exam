@@ -1,0 +1,347 @@
+{
+  "topic": { "name": "La conclusione del contratto" },
+  "questions": [
+    {
+      "prompt": "Quali sono i procedimenti di conclusione del contratto previsti dal codice?",
+      "answer": "Lo scambio di proposta e accettazione, l'inizio dell'esecuzione senza preventiva risposta, il mancato rifiuto nei contratti con obbligazioni del solo proponente e la conclusione mediante condizioni generali di contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "proposta e accettazione", "weight": 1 },
+        { "id": "c2", "concept": "esecuzione prima della risposta dell'accettante", "weight": 1 },
+        { "id": "c3", "concept": "mancato rifiuto nei contratti con obbligazioni del solo proponente", "weight": 1 },
+        { "id": "c4", "concept": "condizioni generali di contratto", "weight": 1 }
+      ],
+      "references": ["1326", "1327", "1333", "1341"]
+    },
+    {
+      "prompt": "Che differenza c'è tra contratti negoziati e contratti non negoziati?",
+      "answer": "I contratti negoziati sono preceduti da una trattativa tra le parti; i non negoziati si concludono senza trattativa, su un contenuto predisposto unilateralmente da un contraente, come nelle condizioni generali di contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "negoziati: preceduti da trattativa", "weight": 2 },
+        { "id": "c2", "concept": "non negoziati: senza trattativa, contenuto predisposto da una parte", "weight": 2 }
+      ],
+      "references": ["1341"]
+    },
+    {
+      "prompt": "Quando è concluso il contratto nello schema di proposta e accettazione?",
+      "answer": "Il contratto è concluso nel momento in cui chi ha fatto la proposta ha conoscenza dell'accettazione dell'altra parte.",
+      "rubric": [
+        { "id": "c1", "concept": "momento della conoscenza dell'accettazione", "weight": 2 },
+        { "id": "c2", "concept": "la conoscenza è del proponente", "weight": 2 }
+      ],
+      "references": ["1326"]
+    },
+    {
+      "prompt": "Che cos'è la proposta contrattuale?",
+      "answer": "È l'atto unilaterale recettizio con cui una parte offre all'altra la conclusione di un contratto secondo un contenuto già definito, tale che basti l'accettazione per concluderlo.",
+      "rubric": [
+        { "id": "c1", "concept": "atto unilaterale recettizio", "weight": 2 },
+        { "id": "c2", "concept": "offerta di concludere il contratto", "weight": 1 },
+        { "id": "c3", "concept": "contenuto completo, basta l'accettazione", "weight": 1 }
+      ],
+      "references": ["1326"]
+    },
+    {
+      "prompt": "Che cosa stabilisce il principio di conformità tra proposta e accettazione?",
+      "answer": "L'accettazione conclude il contratto solo se è conforme alla proposta nella sostanza; un'accettazione non conforme equivale a una nuova proposta.",
+      "rubric": [
+        { "id": "c1", "concept": "l'accettazione deve corrispondere alla proposta", "weight": 2 },
+        { "id": "c2", "concept": "la conformità è sostanziale, non letterale", "weight": 1 },
+        { "id": "c3", "concept": "un'accettazione non conforme vale come nuova proposta", "weight": 2 }
+      ],
+      "references": ["1326"]
+    },
+    {
+      "prompt": "Che cosa succede se l'accettazione arriva al proponente oltre il termine?",
+      "answer": "L'accettazione deve giungere entro il termine stabilito dal proponente o in quello ordinariamente necessario; il proponente può però ritenere efficace l'accettazione tardiva, purché ne dia immediatamente avviso all'altra parte.",
+      "rubric": [
+        { "id": "c1", "concept": "l'accettazione deve giungere entro il termine", "weight": 1 },
+        { "id": "c2", "concept": "il proponente può considerare efficace l'accettazione tardiva", "weight": 2 },
+        { "id": "c3", "concept": "deve darne immediato avviso all'altra parte", "weight": 2 }
+      ],
+      "references": ["1326"]
+    },
+    {
+      "prompt": "Che effetto ha un'accettazione data in forma diversa da quella richiesta dal proponente?",
+      "answer": "Se il proponente ha richiesto una forma determinata per l'accettazione, l'accettazione data in forma diversa non ha effetto.",
+      "rubric": [
+        { "id": "c1", "concept": "il proponente può richiedere una forma per l'accettazione", "weight": 1 },
+        { "id": "c2", "concept": "l'accettazione in forma diversa non ha effetto", "weight": 2 }
+      ],
+      "references": ["1326"]
+    },
+    {
+      "prompt": "Che differenza c'è tra atti recettizi e atti non recettizi?",
+      "answer": "Gli atti recettizi sono diretti a una persona determinata e producono effetto quando giungono a sua conoscenza; gli atti non recettizi non hanno un destinatario determinato.",
+      "rubric": [
+        { "id": "c1", "concept": "recettizi: diretti a una persona determinata", "weight": 2 },
+        { "id": "c2", "concept": "producono effetto quando giungono a conoscenza del destinatario", "weight": 2 },
+        { "id": "c3", "concept": "non recettizi: senza destinatario determinato", "weight": 1 }
+      ],
+      "references": ["1334"]
+    },
+    {
+      "prompt": "Da quando producono effetto gli atti unilaterali recettizi?",
+      "answer": "Producono effetto dal momento in cui pervengono a conoscenza della persona alla quale sono destinati.",
+      "rubric": [
+        { "id": "c1", "concept": "dal momento della conoscenza", "weight": 2 },
+        { "id": "c2", "concept": "da parte del destinatario", "weight": 1 }
+      ],
+      "references": ["1334"]
+    },
+    {
+      "prompt": "Che cosa prevede la presunzione di conoscenza delle dichiarazioni recettizie?",
+      "answer": "La proposta, l'accettazione, la loro revoca e ogni dichiarazione diretta a una persona determinata si presumono conosciute quando arrivano all'indirizzo del destinatario, salvo che questi provi di essere stato, senza sua colpa, nell'impossibilità di averne notizia.",
+      "rubric": [
+        { "id": "c1", "concept": "si presumono conosciute quando arrivano all'indirizzo del destinatario", "weight": 2 },
+        { "id": "c2", "concept": "presunzione relativa: ammessa la prova contraria", "weight": 1 },
+        { "id": "c3", "concept": "prova dell'impossibilità di averne notizia senza colpa", "weight": 2 }
+      ],
+      "references": ["1335"]
+    },
+    {
+      "prompt": "Che cosa si intende per indirizzo del destinatario ai fini della presunzione di conoscenza?",
+      "answer": "Oltre a dimora, residenza, domicilio e sede, la giurisprudenza intende qualsiasi luogo che rientri nella sfera di controllo del destinatario, compreso l'indirizzo di posta elettronica.",
+      "rubric": [
+        { "id": "c1", "concept": "dimora, residenza, domicilio, sede", "weight": 1 },
+        { "id": "c2", "concept": "ogni luogo nella sfera di controllo del destinatario", "weight": 2 },
+        { "id": "c3", "concept": "comprende la posta elettronica (interpretazione evolutiva)", "weight": 1 }
+      ],
+      "references": ["1335"]
+    },
+    {
+      "prompt": "Che differenza c'è tra dimora, residenza e domicilio?",
+      "answer": "La dimora è il luogo in cui la persona si trova con una minima stabilità; la residenza è il luogo della dimora abituale; il domicilio è il luogo in cui la persona ha stabilito la sede principale dei suoi affari e interessi.",
+      "rubric": [
+        { "id": "c1", "concept": "dimora: luogo in cui ci si trova con minima stabilità", "weight": 1 },
+        { "id": "c2", "concept": "residenza: dimora abituale", "weight": 2 },
+        { "id": "c3", "concept": "domicilio: sede principale di affari e interessi", "weight": 2 }
+      ],
+      "references": ["43"]
+    },
+    {
+      "prompt": "Quando l'offerta al pubblico vale come proposta contrattuale?",
+      "answer": "Quando contiene gli estremi essenziali del contratto alla cui conclusione è diretta, salvo che risulti diversamente dalle circostanze o dagli usi. Altrimenti è un semplice invito a proporre.",
+      "rubric": [
+        { "id": "c1", "concept": "deve contenere gli estremi essenziali del contratto", "weight": 2 },
+        { "id": "c2", "concept": "salvo diversa indicazione di circostanze o usi", "weight": 1 },
+        { "id": "c3", "concept": "altrimenti è invito a proporre", "weight": 1 }
+      ],
+      "references": ["1336"]
+    },
+    {
+      "prompt": "Che cos'è l'invito a proporre?",
+      "answer": "È una dichiarazione rivolta al pubblico che non contiene gli estremi essenziali del contratto: non vale come proposta, ma sollecita gli altri a fare proposte contrattuali.",
+      "rubric": [
+        { "id": "c1", "concept": "manca degli estremi essenziali del contratto", "weight": 2 },
+        { "id": "c2", "concept": "non è una proposta", "weight": 1 },
+        { "id": "c3", "concept": "sollecita proposte altrui", "weight": 1 }
+      ],
+      "references": ["1336"]
+    },
+    {
+      "prompt": "Come si revoca l'offerta al pubblico?",
+      "answer": "La revoca fatta nella stessa forma dell'offerta o in forma equipollente è efficace anche nei confronti di chi non ne ha avuto notizia.",
+      "rubric": [
+        { "id": "c1", "concept": "nella stessa forma dell'offerta o equipollente", "weight": 2 },
+        { "id": "c2", "concept": "efficace anche verso chi non ne ha avuto notizia", "weight": 2 }
+      ],
+      "references": ["1336"]
+    },
+    {
+      "prompt": "Quando si conclude il contratto con l'esecuzione prima della risposta dell'accettante?",
+      "answer": "Quando, su richiesta del proponente, per la natura dell'affare o secondo gli usi, la prestazione deve eseguirsi senza preventiva risposta: il contratto è concluso nel tempo e nel luogo in cui ha avuto inizio l'esecuzione.",
+      "rubric": [
+        { "id": "c1", "concept": "su richiesta del proponente, per natura dell'affare o usi", "weight": 1 },
+        { "id": "c2", "concept": "non serve l'accettazione", "weight": 1 },
+        { "id": "c3", "concept": "concluso nel tempo e luogo di inizio dell'esecuzione", "weight": 2 }
+      ],
+      "references": ["1327"]
+    },
+    {
+      "prompt": "Quale obbligo ha l'accettante che inizia l'esecuzione senza preventiva risposta?",
+      "answer": "Deve dare prontamente avviso all'altra parte dell'iniziata esecuzione; in mancanza è tenuto al risarcimento del danno.",
+      "rubric": [
+        { "id": "c1", "concept": "deve avvisare prontamente il proponente", "weight": 2 },
+        { "id": "c2", "concept": "in mancanza risponde del danno", "weight": 2 }
+      ],
+      "references": ["1327"]
+    },
+    {
+      "prompt": "Come si conclude un contratto con obbligazioni del solo proponente?",
+      "answer": "La proposta è irrevocabile appena giunge a conoscenza del destinatario, il quale può rifiutarla nel termine richiesto dalla natura dell'affare o dagli usi; in mancanza di rifiuto il contratto è concluso.",
+      "rubric": [
+        { "id": "c1", "concept": "la proposta è irrevocabile appena conosciuta", "weight": 1 },
+        { "id": "c2", "concept": "il destinatario può rifiutare entro il termine", "weight": 1 },
+        { "id": "c3", "concept": "in mancanza di rifiuto il contratto è concluso", "weight": 2 }
+      ],
+      "references": ["1333"]
+    },
+    {
+      "prompt": "Perché nei contratti con obbligazioni del solo proponente basta il mancato rifiuto?",
+      "answer": "Perché il destinatario riceve solo un vantaggio e normalmente un vantaggio non si rifiuta: la legge semplifica il procedimento, rispettando l'autonomia del destinatario con il potere di rifiuto.",
+      "rubric": [
+        { "id": "c1", "concept": "il destinatario riceve solo un vantaggio", "weight": 2 },
+        { "id": "c2", "concept": "semplificazione per economia", "weight": 1 },
+        { "id": "c3", "concept": "l'autonomia è garantita dal potere di rifiuto", "weight": 1 }
+      ],
+      "references": ["1333"]
+    },
+    {
+      "prompt": "Che differenza c'è tra donazione e contratto gratuito non donativo?",
+      "answer": "Nella donazione una parte arricchisce l'altra per spirito di liberalità, senza un interesse patrimoniale; nel contratto gratuito chi attribuisce il vantaggio persegue un proprio interesse patrimoniale, per esempio i campioni pubblicitari.",
+      "rubric": [
+        { "id": "c1", "concept": "donazione: spirito di liberalità", "weight": 2 },
+        { "id": "c2", "concept": "contratto gratuito: interesse patrimoniale di chi attribuisce", "weight": 2 },
+        { "id": "c3", "concept": "la donazione richiede l'atto pubblico", "weight": 1 }
+      ],
+      "references": ["769", "1333"]
+    },
+    {
+      "prompt": "Che cosa sono le condizioni generali di contratto?",
+      "answer": "Sono clausole predisposte unilateralmente da un contraente, di solito un'impresa, per regolare in modo uniforme una serie indefinita di contratti; all'altra parte resta solo la scelta se aderire o no.",
+      "rubric": [
+        { "id": "c1", "concept": "predisposte unilateralmente da un contraente", "weight": 2 },
+        { "id": "c2", "concept": "uniformi per una serie di contratti", "weight": 1 },
+        { "id": "c3", "concept": "l'altra parte può solo aderire o no", "weight": 1 }
+      ],
+      "references": ["1341"]
+    },
+    {
+      "prompt": "Quando le condizioni generali di contratto sono efficaci verso l'aderente?",
+      "answer": "Sono efficaci se al momento della conclusione del contratto l'aderente le ha conosciute o avrebbe dovuto conoscerle usando l'ordinaria diligenza: basta la conoscibilità.",
+      "rubric": [
+        { "id": "c1", "concept": "conosciute o conoscibili con l'ordinaria diligenza", "weight": 2 },
+        { "id": "c2", "concept": "al momento della conclusione del contratto", "weight": 1 },
+        { "id": "c3", "concept": "non serve l'effettiva conoscenza", "weight": 1 }
+      ],
+      "references": ["1341"]
+    },
+    {
+      "prompt": "Che cosa sono le clausole vessatorie e quando sono efficaci?",
+      "answer": "Sono clausole delle condizioni generali che danno particolari vantaggi al predisponente o svantaggi all'aderente; sono efficaci solo se specificamente approvate per iscritto.",
+      "rubric": [
+        { "id": "c1", "concept": "clausole sfavorevoli all'aderente", "weight": 1 },
+        { "id": "c2", "concept": "necessaria la specifica approvazione per iscritto", "weight": 2 },
+        { "id": "c3", "concept": "altrimenti non hanno effetto", "weight": 1 }
+      ],
+      "references": ["1341"]
+    },
+    {
+      "prompt": "Quali clausole sono considerate vessatorie nelle condizioni generali di contratto?",
+      "answer": "Quelle che stabiliscono a favore del predisponente limitazioni di responsabilità, facoltà di recedere o sospendere l'esecuzione; o a carico dell'aderente decadenze, limiti alle eccezioni, restrizioni alla libertà contrattuale con i terzi, tacita proroga o rinnovazione, clausole compromissorie o deroghe alla competenza.",
+      "rubric": [
+        { "id": "c1", "concept": "a favore del predisponente: limitazioni di responsabilità, recesso, sospensione", "weight": 2 },
+        { "id": "c2", "concept": "a carico dell'aderente: decadenze, limiti alle eccezioni, restrizioni con i terzi", "weight": 2 },
+        { "id": "c3", "concept": "tacita proroga, clausole compromissorie, deroghe alla competenza", "weight": 1 }
+      ],
+      "references": ["1341"]
+    },
+    {
+      "prompt": "Che cos'è la revoca di un atto?",
+      "answer": "È un atto di secondo grado, proveniente dallo stesso autore, che elimina gli effetti giuridici di un atto precedente.",
+      "rubric": [
+        { "id": "c1", "concept": "atto di secondo grado", "weight": 1 },
+        { "id": "c2", "concept": "elimina gli effetti di un atto precedente", "weight": 2 },
+        { "id": "c3", "concept": "proviene dall'autore dell'atto revocato", "weight": 1 }
+      ],
+      "references": ["1328"]
+    },
+    {
+      "prompt": "Fino a quando la proposta contrattuale può essere revocata?",
+      "answer": "La proposta può essere revocata finché il contratto non è concluso, cioè finché l'accettazione non è giunta a conoscenza del proponente o, nello schema dell'esecuzione, finché non è iniziata l'esecuzione.",
+      "rubric": [
+        { "id": "c1", "concept": "finché il contratto non è concluso", "weight": 2 },
+        { "id": "c2", "concept": "prima che il proponente conosca l'accettazione o inizi l'esecuzione", "weight": 1 }
+      ],
+      "references": ["1328"]
+    },
+    {
+      "prompt": "A quale condizione l'accettazione può essere revocata?",
+      "answer": "L'accettazione può essere revocata purché la revoca giunga a conoscenza del proponente prima dell'accettazione.",
+      "rubric": [
+        { "id": "c1", "concept": "la revoca deve giungere al proponente", "weight": 1 },
+        { "id": "c2", "concept": "prima dell'accettazione", "weight": 2 }
+      ],
+      "references": ["1328"]
+    },
+    {
+      "prompt": "Che cosa succede se l'accettazione arriva al proponente prima che la revoca della proposta arrivi all'oblato?",
+      "answer": "Il contratto è concluso, perché la revoca è possibile solo finché il contratto non è concluso. Se invece la revoca arriva all'oblato prima che l'accettazione giunga al proponente, il contratto non si conclude.",
+      "rubric": [
+        { "id": "c1", "concept": "il contratto è concluso", "weight": 2 },
+        { "id": "c2", "concept": "la revoca opera solo prima della conclusione", "weight": 1 },
+        { "id": "c3", "concept": "se la revoca arriva prima, il contratto non si conclude", "weight": 1 }
+      ],
+      "references": ["1328", "1326"]
+    },
+    {
+      "prompt": "In quali casi la proposta è irrevocabile?",
+      "answer": "Quando il proponente si è obbligato a mantenerla ferma per un certo tempo, quando è oggetto di un patto di opzione e, per legge, nei contratti con obbligazioni del solo proponente.",
+      "rubric": [
+        { "id": "c1", "concept": "impegno del proponente a mantenerla ferma", "weight": 1 },
+        { "id": "c2", "concept": "patto di opzione", "weight": 1 },
+        { "id": "c3", "concept": "contratti con obbligazioni del solo proponente", "weight": 1 }
+      ],
+      "references": ["1329", "1331", "1333"]
+    },
+    {
+      "prompt": "Che effetto ha la revoca di una proposta irrevocabile?",
+      "answer": "La revoca è senza effetto: la proposta resta ferma per il tempo stabilito e l'accettazione dell'oblato conclude il contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "la revoca è senza effetto", "weight": 2 },
+        { "id": "c2", "concept": "l'accettazione nel termine conclude comunque il contratto", "weight": 2 }
+      ],
+      "references": ["1329"]
+    },
+    {
+      "prompt": "Che cosa succede alla proposta irrevocabile se il proponente muore o diventa incapace?",
+      "answer": "La morte o la sopravvenuta incapacità del proponente non tolgono efficacia alla proposta irrevocabile, salvo che la natura dell'affare o altre circostanze lo escludano.",
+      "rubric": [
+        { "id": "c1", "concept": "la proposta irrevocabile resta efficace", "weight": 2 },
+        { "id": "c2", "concept": "salvo che lo escludano la natura dell'affare o le circostanze", "weight": 1 }
+      ],
+      "references": ["1329"]
+    },
+    {
+      "prompt": "Che cos'è il patto di opzione?",
+      "answer": "È l'accordo con cui una parte resta vincolata alla propria dichiarazione e l'altra ha la facoltà di accettarla o no: la dichiarazione vale come proposta irrevocabile. Se non è fissato un termine, lo stabilisce il giudice.",
+      "rubric": [
+        { "id": "c1", "concept": "è un accordo tra le parti", "weight": 1 },
+        { "id": "c2", "concept": "una parte resta vincolata, l'altra ha facoltà di accettare", "weight": 2 },
+        { "id": "c3", "concept": "la dichiarazione vale come proposta irrevocabile", "weight": 1 },
+        { "id": "c4", "concept": "in mancanza di termine lo fissa il giudice", "weight": 1 }
+      ],
+      "references": ["1331"]
+    },
+    {
+      "prompt": "Che differenza c'è tra proposta irrevocabile e opzione?",
+      "answer": "La proposta irrevocabile è un atto unilaterale con cui il proponente si impegna a mantenerla ferma; l'opzione è un contratto tra le parti, spesso a titolo oneroso, che produce lo stesso effetto di irrevocabilità.",
+      "rubric": [
+        { "id": "c1", "concept": "proposta irrevocabile: atto unilaterale", "weight": 2 },
+        { "id": "c2", "concept": "opzione: accordo bilaterale", "weight": 2 },
+        { "id": "c3", "concept": "l'opzione può prevedere un corrispettivo", "weight": 1 }
+      ],
+      "references": ["1329", "1331"]
+    },
+    {
+      "prompt": "Che cosa succede a proposta e accettazione se il dichiarante muore o diventa incapace prima della conclusione del contratto?",
+      "answer": "Di regola perdono efficacia. Restano efficaci se la proposta è irrevocabile o se sono fatte dall'imprenditore nell'esercizio dell'impresa, salvo che si tratti di piccoli imprenditori o che diversamente risulti dalla natura dell'affare.",
+      "rubric": [
+        { "id": "c1", "concept": "di regola perdono efficacia", "weight": 2 },
+        { "id": "c2", "concept": "eccezione: proposta irrevocabile", "weight": 1 },
+        { "id": "c3", "concept": "eccezione: imprenditore nell'esercizio dell'impresa", "weight": 1 },
+        { "id": "c4", "concept": "non per i piccoli imprenditori", "weight": 1 }
+      ],
+      "references": ["1329", "1330"]
+    },
+    {
+      "prompt": "Perché la proposta dell'imprenditore non perde efficacia per la sua morte o incapacità?",
+      "answer": "Perché i contratti conclusi nell'esercizio dell'impresa hanno carattere impersonale: sono legati all'impresa e non alla persona dell'imprenditore. La regola non vale per i piccoli imprenditori.",
+      "rubric": [
+        { "id": "c1", "concept": "carattere impersonale dei contratti d'impresa", "weight": 2 },
+        { "id": "c2", "concept": "esclusi i piccoli imprenditori", "weight": 1 }
+      ],
+      "references": ["1330"]
+    }
+  ]
+}

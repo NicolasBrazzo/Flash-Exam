@@ -1,0 +1,161 @@
+{
+  "topic": { "name": "Effetti del contratto, recesso e caparra" },
+  "questions": [
+    {
+      "prompt": "In quali modi può essere sciolto un contratto?",
+      "answer": "Per mutuo consenso delle parti o per le cause ammesse dalla legge, come la risoluzione per inadempimento, per impossibilità sopravvenuta o per eccessiva onerosità sopravvenuta, e il recesso unilaterale quando è consentito.",
+      "rubric": [
+        { "id": "c1", "concept": "mutuo consenso", "weight": 2 },
+        { "id": "c2", "concept": "cause ammesse dalla legge", "weight": 1 },
+        { "id": "c3", "concept": "esempi: risoluzione e recesso", "weight": 1 }
+      ],
+      "references": ["1372"]
+    },
+    {
+      "prompt": "Che cos'è il mutuo dissenso?",
+      "answer": "È l'accordo con cui le parti sciolgono consensualmente il contratto concluso tra loro: come il contratto nasce dall'accordo, così può essere estinto con un nuovo accordo.",
+      "rubric": [
+        { "id": "c1", "concept": "accordo delle parti", "weight": 2 },
+        { "id": "c2", "concept": "che scioglie il contratto", "weight": 2 }
+      ],
+      "references": ["1372"]
+    },
+    {
+      "prompt": "Che cos'è il diritto di recesso?",
+      "answer": "È il diritto di una parte di sciogliere il contratto con una propria dichiarazione unilaterale, senza bisogno del consenso dell'altra. Può derivare da una clausola contrattuale o dalla legge.",
+      "rubric": [
+        { "id": "c1", "concept": "scioglimento con dichiarazione unilaterale", "weight": 2 },
+        { "id": "c2", "concept": "senza consenso dell'altra parte", "weight": 1 },
+        { "id": "c3", "concept": "fonte convenzionale o legale", "weight": 1 }
+      ],
+      "references": ["1373"]
+    },
+    {
+      "prompt": "Fino a quando si può esercitare il recesso convenzionale?",
+      "answer": "Nei contratti a esecuzione istantanea finché il contratto non abbia avuto un principio di esecuzione. Nei contratti a esecuzione continuata o periodica anche dopo, ma il recesso non ha effetto per le prestazioni già eseguite o in corso. È salvo il patto contrario.",
+      "rubric": [
+        { "id": "c1", "concept": "di regola fino al principio di esecuzione", "weight": 2 },
+        { "id": "c2", "concept": "nei contratti di durata anche dopo", "weight": 1 },
+        { "id": "c3", "concept": "non tocca le prestazioni già eseguite o in corso", "weight": 1 },
+        { "id": "c4", "concept": "salvo patto contrario", "weight": 1 }
+      ],
+      "references": ["1373"]
+    },
+    {
+      "prompt": "Quando ha effetto il recesso se è stato pattuito un corrispettivo?",
+      "answer": "Il recesso ha effetto solo quando la prestazione del corrispettivo (multa penitenziale) è stata eseguita.",
+      "rubric": [
+        { "id": "c1", "concept": "ha effetto quando il corrispettivo è pagato", "weight": 2 },
+        { "id": "c2", "concept": "si chiama multa penitenziale", "weight": 1 }
+      ],
+      "references": ["1373"]
+    },
+    {
+      "prompt": "Che cos'è il diritto di recesso del consumatore?",
+      "answer": "È il diritto attribuito dalla legge al consumatore che conclude un contratto fuori dai locali commerciali o a distanza di recedere entro un breve termine senza motivazione. È irrinunciabile e il professionista deve informarne il consumatore.",
+      "rubric": [
+        { "id": "c1", "concept": "attribuito dalla legge", "weight": 1 },
+        { "id": "c2", "concept": "contratti fuori dai locali commerciali o a distanza", "weight": 1 },
+        { "id": "c3", "concept": "irrinunciabile", "weight": 2 },
+        { "id": "c4", "concept": "obbligo di informazione del professionista", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra contratti a effetti istantanei e contratti di durata?",
+      "answer": "Nei contratti a effetti istantanei le prestazioni si esauriscono in un atto puntuale, a esecuzione immediata o differita. Nei contratti di durata le prestazioni si sviluppano nel tempo, a esecuzione periodica o continuata.",
+      "rubric": [
+        { "id": "c1", "concept": "istantanei: prestazione puntuale", "weight": 2 },
+        { "id": "c2", "concept": "istantanei: immediata o differita", "weight": 1 },
+        { "id": "c3", "concept": "durata: prestazioni nel tempo", "weight": 2 },
+        { "id": "c4", "concept": "durata: periodica o continuata", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra esecuzione periodica ed esecuzione continuata?",
+      "answer": "Nell'esecuzione periodica le prestazioni si ripetono a intervalli, come il pagamento dei canoni; nell'esecuzione continuata la prestazione è permanente e non frazionata, come il godimento del bene locato.",
+      "rubric": [
+        { "id": "c1", "concept": "periodica: prestazioni a intervalli", "weight": 2 },
+        { "id": "c2", "concept": "continuata: prestazione permanente e non frazionata", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che cos'è la caparra confirmatoria?",
+      "answer": "È una somma di denaro o una quantità di cose fungibili che una parte dà all'altra al momento della conclusione del contratto. In caso di adempimento va restituita o imputata alla prestazione dovuta.",
+      "rubric": [
+        { "id": "c1", "concept": "denaro o cose fungibili dati alla conclusione", "weight": 2 },
+        { "id": "c2", "concept": "con l'adempimento si restituisce o si imputa alla prestazione", "weight": 2 }
+      ],
+      "references": ["1385"]
+    },
+    {
+      "prompt": "Che cosa succede alla caparra confirmatoria in caso di inadempimento?",
+      "answer": "Se è inadempiente chi l'ha data, l'altra parte può recedere e trattenere la caparra. Se è inadempiente chi l'ha ricevuta, l'altra parte può recedere ed esigere il doppio della caparra.",
+      "rubric": [
+        { "id": "c1", "concept": "inadempiente chi l'ha data: recesso e ritenzione", "weight": 2 },
+        { "id": "c2", "concept": "inadempiente chi l'ha ricevuta: recesso e doppio", "weight": 2 }
+      ],
+      "references": ["1385"]
+    },
+    {
+      "prompt": "La parte non inadempiente deve per forza recedere e trattenere la caparra confirmatoria?",
+      "answer": "No: può preferire di domandare l'esecuzione o la risoluzione del contratto; in tal caso il risarcimento del danno è regolato dalle norme generali e va provato.",
+      "rubric": [
+        { "id": "c1", "concept": "può chiedere esecuzione o risoluzione", "weight": 2 },
+        { "id": "c2", "concept": "il risarcimento segue le norme generali", "weight": 2 }
+      ],
+      "references": ["1385"]
+    },
+    {
+      "prompt": "Che cos'è la caparra penitenziale?",
+      "answer": "È la caparra pattuita quando il contratto attribuisce a una o a entrambe le parti il diritto di recesso: ha solo la funzione di corrispettivo del recesso. Il recedente perde la caparra data o restituisce il doppio di quella ricevuta.",
+      "rubric": [
+        { "id": "c1", "concept": "collegata a un diritto di recesso pattuito", "weight": 2 },
+        { "id": "c2", "concept": "funzione di corrispettivo del recesso", "weight": 2 },
+        { "id": "c3", "concept": "il recedente la perde o restituisce il doppio", "weight": 1 }
+      ],
+      "references": ["1386"]
+    },
+    {
+      "prompt": "Che differenza c'è tra caparra confirmatoria e caparra penitenziale?",
+      "answer": "La confirmatoria rafforza il vincolo e liquida preventivamente il danno da inadempimento, consentendo il recesso alla parte adempiente. La penitenziale è il prezzo di un recesso già pattuito ed esclude ogni ulteriore risarcimento.",
+      "rubric": [
+        { "id": "c1", "concept": "confirmatoria: legata all'inadempimento", "weight": 2 },
+        { "id": "c2", "concept": "penitenziale: corrispettivo del recesso pattuito", "weight": 2 },
+        { "id": "c3", "concept": "la confirmatoria lascia salva la tutela ordinaria", "weight": 1 }
+      ],
+      "references": ["1385", "1386"]
+    },
+    {
+      "prompt": "Che differenza c'è tra caparra penitenziale e multa penitenziale?",
+      "answer": "La caparra penitenziale è consegnata al momento della conclusione del contratto; la multa penitenziale è solo promessa e va pagata se si esercita il recesso.",
+      "rubric": [
+        { "id": "c1", "concept": "caparra: già consegnata", "weight": 2 },
+        { "id": "c2", "concept": "multa: promessa, si paga al recesso", "weight": 2 }
+      ],
+      "references": ["1373", "1386"]
+    },
+    {
+      "prompt": "Che cos'è la clausola penale?",
+      "answer": "È la clausola con cui si conviene che, in caso di inadempimento o ritardo, una parte sia tenuta a una determinata prestazione: limita il risarcimento alla prestazione promessa, se non è stata convenuta la risarcibilità del danno ulteriore, ed è dovuta senza prova del danno.",
+      "rubric": [
+        { "id": "c1", "concept": "prestazione predeterminata per inadempimento o ritardo", "weight": 2 },
+        { "id": "c2", "concept": "dovuta indipendentemente dalla prova del danno", "weight": 1 },
+        { "id": "c3", "concept": "limita il risarcimento salvo patto per il danno ulteriore", "weight": 1 }
+      ],
+      "references": ["1382"]
+    },
+    {
+      "prompt": "Il giudice può ridurre la penale?",
+      "answer": "Sì, il giudice può ridurla equamente se l'obbligazione principale è stata eseguita in parte o se l'ammontare della penale è manifestamente eccessivo, tenuto conto dell'interesse del creditore all'adempimento.",
+      "rubric": [
+        { "id": "c1", "concept": "riduzione equa da parte del giudice", "weight": 1 },
+        { "id": "c2", "concept": "se l'obbligazione è stata eseguita in parte", "weight": 1 },
+        { "id": "c3", "concept": "se la penale è manifestamente eccessiva", "weight": 2 }
+      ],
+      "references": ["1384"]
+    }
+  ]
+}

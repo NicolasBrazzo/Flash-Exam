@@ -1,0 +1,129 @@
+{
+  "topic": { "name": "La simulazione del contratto" },
+  "questions": [
+    {
+      "prompt": "Che cos'è la simulazione del contratto?",
+      "answer": "È il fenomeno per cui le parti concludono un contratto apparente di cui non vogliono gli effetti, concordando in segreto che non si produca alcun effetto o che se ne producano di diversi.",
+      "rubric": [
+        { "id": "c1", "concept": "contratto apparente non voluto", "weight": 2 },
+        { "id": "c2", "concept": "accordo segreto tra le parti", "weight": 1 },
+        { "id": "c3", "concept": "nessun effetto o effetti diversi", "weight": 1 }
+      ],
+      "references": ["1414"]
+    },
+    {
+      "prompt": "Che differenza c'è tra simulazione assoluta e simulazione relativa?",
+      "answer": "Nella simulazione assoluta le parti non vogliono alcun contratto: dietro l'apparenza non c'è nulla. In quella relativa vogliono un contratto diverso da quello apparente, il contratto dissimulato.",
+      "rubric": [
+        { "id": "c1", "concept": "assoluta: nessun contratto voluto", "weight": 2 },
+        { "id": "c2", "concept": "relativa: è voluto un contratto diverso", "weight": 2 },
+        { "id": "c3", "concept": "il contratto nascosto si chiama dissimulato", "weight": 1 }
+      ],
+      "references": ["1414"]
+    },
+    {
+      "prompt": "Che cos'è il contratto dissimulato e quando produce effetti tra le parti?",
+      "answer": "È il contratto realmente voluto dalle parti e nascosto dietro quello simulato. Produce effetto tra le parti purché ne sussistano i requisiti di sostanza e di forma.",
+      "rubric": [
+        { "id": "c1", "concept": "contratto realmente voluto e nascosto", "weight": 2 },
+        { "id": "c2", "concept": "efficace se ha requisiti di sostanza e forma", "weight": 2 }
+      ],
+      "references": ["1414"]
+    },
+    {
+      "prompt": "Che effetti ha il contratto simulato tra le parti?",
+      "answer": "Il contratto simulato non produce effetti tra le parti; nella simulazione relativa tra loro ha effetto il contratto dissimulato, se ne ha i requisiti.",
+      "rubric": [
+        { "id": "c1", "concept": "il contratto simulato non produce effetti tra le parti", "weight": 2 },
+        { "id": "c2", "concept": "vale il dissimulato se ha i requisiti", "weight": 1 }
+      ],
+      "references": ["1414"]
+    },
+    {
+      "prompt": "Che cos'è l'interposizione fittizia di persona?",
+      "answer": "È una simulazione relativa soggettiva: il contratto appare concluso con una persona, ma tutte le parti, compreso il terzo, sono d'accordo che gli effetti si producano verso un altro soggetto.",
+      "rubric": [
+        { "id": "c1", "concept": "simulazione relativa sul soggetto", "weight": 2 },
+        { "id": "c2", "concept": "accordo di tutte e tre le parti", "weight": 2 }
+      ],
+      "references": ["1414"]
+    },
+    {
+      "prompt": "La simulazione è opponibile ai terzi che hanno acquistato in buona fede dal titolare apparente?",
+      "answer": "No: la simulazione non può essere opposta né dalle parti né dagli aventi causa o dai creditori del simulato alienante ai terzi che in buona fede hanno acquistato diritti dal titolare apparente, salvi gli effetti della trascrizione della domanda di simulazione.",
+      "rubric": [
+        { "id": "c1", "concept": "non è opponibile al terzo acquirente in buona fede", "weight": 2 },
+        { "id": "c2", "concept": "il terzo ha acquistato dal titolare apparente", "weight": 1 },
+        { "id": "c3", "concept": "salvi gli effetti della trascrizione della domanda", "weight": 1 }
+      ],
+      "references": ["1415"]
+    },
+    {
+      "prompt": "Chi può far valere la simulazione nei confronti delle parti?",
+      "answer": "I terzi pregiudicati dalla simulazione, come i creditori del simulato alienante, possono farla valere nei confronti delle parti.",
+      "rubric": [
+        { "id": "c1", "concept": "i terzi pregiudicati", "weight": 2 },
+        { "id": "c2", "concept": "esempio: creditori del simulato alienante", "weight": 1 }
+      ],
+      "references": ["1415"]
+    },
+    {
+      "prompt": "La simulazione è opponibile ai creditori del titolare apparente?",
+      "answer": "Non può essere opposta dai contraenti ai creditori del titolare apparente che in buona fede hanno compiuto atti di esecuzione sui beni oggetto del contratto simulato.",
+      "rubric": [
+        { "id": "c1", "concept": "non opponibile ai creditori del titolare apparente", "weight": 2 },
+        { "id": "c2", "concept": "che in buona fede hanno compiuto atti di esecuzione", "weight": 2 }
+      ],
+      "references": ["1416"]
+    },
+    {
+      "prompt": "Chi prevale tra i creditori del simulato alienante e quelli del simulato acquirente?",
+      "answer": "I creditori del simulato alienante possono far valere la simulazione e sono preferiti ai creditori chirografari del simulato acquirente, se il loro credito è anteriore all'atto simulato.",
+      "rubric": [
+        { "id": "c1", "concept": "prevalgono i creditori del simulato alienante", "weight": 2 },
+        { "id": "c2", "concept": "verso i chirografari del simulato acquirente", "weight": 1 },
+        { "id": "c3", "concept": "se il credito è anteriore all'atto simulato", "weight": 2 }
+      ],
+      "references": ["1416"]
+    },
+    {
+      "prompt": "Come si prova la simulazione?",
+      "answer": "I terzi e i creditori possono provarla con ogni mezzo, anche testimoni. Le parti possono provarla con testimoni solo per far valere l'illiceità del contratto dissimulato; altrimenti serve di norma la controdichiarazione scritta.",
+      "rubric": [
+        { "id": "c1", "concept": "terzi e creditori: prova libera, anche per testimoni", "weight": 2 },
+        { "id": "c2", "concept": "parti: testimoni solo per l'illiceità del dissimulato", "weight": 2 },
+        { "id": "c3", "concept": "altrimenti controdichiarazione scritta", "weight": 1 }
+      ],
+      "references": ["1417"]
+    },
+    {
+      "prompt": "Che cos'è la controdichiarazione?",
+      "answer": "È il documento con cui le parti attestano per iscritto il loro accordo simulatorio, cioè che il contratto apparente non è voluto o che è voluto un contratto diverso.",
+      "rubric": [
+        { "id": "c1", "concept": "documento scritto delle parti", "weight": 1 },
+        { "id": "c2", "concept": "prova l'accordo simulatorio", "weight": 2 }
+      ],
+      "references": ["1417"]
+    },
+    {
+      "prompt": "Che effetto ha la trascrizione della domanda giudiziale?",
+      "answer": "Ha effetto prenotativo: se la domanda è accolta, gli effetti della sentenza trascritta retroagiscono al momento della trascrizione della domanda, prevalendo sulle trascrizioni successive.",
+      "rubric": [
+        { "id": "c1", "concept": "effetto prenotativo", "weight": 2 },
+        { "id": "c2", "concept": "la sentenza retroagisce alla trascrizione della domanda", "weight": 2 },
+        { "id": "c3", "concept": "prevale sugli acquisti trascritti dopo", "weight": 1 }
+      ],
+      "references": ["2652"]
+    },
+    {
+      "prompt": "Che differenza c'è tra simulazione e nullità del contratto?",
+      "answer": "Il risultato è simile, perché il contratto simulato non produce effetti tra le parti, ma la nullità dipende dalla mancanza di requisiti o dalla violazione di norme imperative, mentre la simulazione deriva da una scelta delle parti e la legge non la vieta.",
+      "rubric": [
+        { "id": "c1", "concept": "in entrambi i casi mancano gli effetti", "weight": 1 },
+        { "id": "c2", "concept": "la nullità deriva da difetti o violazioni di legge", "weight": 2 },
+        { "id": "c3", "concept": "la simulazione è una scelta delle parti non vietata", "weight": 2 }
+      ],
+      "references": ["1414", "1418"]
+    }
+  ]
+}

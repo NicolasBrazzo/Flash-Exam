@@ -1,0 +1,133 @@
+{
+  "topic": { "name": "Tutela giurisdizionale dei diritti ed esecuzione forzata" },
+  "questions": [
+    {
+      "prompt": "Chi provvede alla tutela giurisdizionale dei diritti?",
+      "answer": "L'autorità giudiziaria, su domanda di parte e, quando la legge lo prevede, anche su istanza del pubblico ministero o d'ufficio; nell'interesse delle categorie professionali può agire anche su domanda delle associazioni riconosciute nei casi di legge.",
+      "rubric": [
+        { "id": "c1", "concept": "autorità giudiziaria su domanda di parte", "weight": 2 },
+        { "id": "c2", "concept": "nei casi di legge PM o d'ufficio", "weight": 1 },
+        { "id": "c3", "concept": "associazioni per le categorie professionali", "weight": 1 }
+      ],
+      "references": ["2907"]
+    },
+    {
+      "prompt": "Che cos'è l'autotutela e quali esempi ne prevede il codice?",
+      "answer": "È la possibilità, eccezionale, di tutelare da sé il proprio diritto senza ricorrere al giudice: per esempio il recesso trattenendo la caparra, la diffida ad adempiere, la clausola risolutiva espressa, l'eccezione di inadempimento, la legittima difesa, il diritto di ritenzione e la vendita della cosa data in pegno.",
+      "rubric": [
+        { "id": "c1", "concept": "tutela diretta senza giudice, eccezionale", "weight": 2 },
+        { "id": "c2", "concept": "esempi contrattuali: caparra, diffida, clausola risolutiva, eccezione", "weight": 1 },
+        { "id": "c3", "concept": "altri esempi: legittima difesa, ritenzione, vendita del pegno", "weight": 1 }
+      ],
+      "references": ["1385", "1454", "1460", "2044"]
+    },
+    {
+      "prompt": "Quali tipi di azione di cognizione esistono?",
+      "answer": "L'azione di mero accertamento, che chiede di accertare l'esistenza o il modo di essere di un rapporto; l'azione di condanna, che chiede al giudice di ordinare al soccombente una condotta; l'azione costitutiva, che chiede di costituire, modificare o estinguere un rapporto giuridico.",
+      "rubric": [
+        { "id": "c1", "concept": "mero accertamento", "weight": 1 },
+        { "id": "c2", "concept": "condanna", "weight": 1 },
+        { "id": "c3", "concept": "costitutiva", "weight": 1 }
+      ],
+      "references": ["2908"]
+    },
+    {
+      "prompt": "Che cosa sono le sentenze costitutive e quando sono ammesse?",
+      "answer": "Sono sentenze che costituiscono, modificano o estinguono rapporti giuridici, con effetto tra le parti, i loro eredi e aventi causa; sono ammesse solo nei casi previsti dalla legge, come l'annullamento o la sentenza che tiene luogo del contratto non concluso.",
+      "rubric": [
+        { "id": "c1", "concept": "costituiscono, modificano o estinguono rapporti", "weight": 2 },
+        { "id": "c2", "concept": "solo nei casi previsti dalla legge", "weight": 1 },
+        { "id": "c3", "concept": "efficaci tra parti, eredi e aventi causa", "weight": 1 }
+      ],
+      "references": ["2908"]
+    },
+    {
+      "prompt": "Che cos'è il processo esecutivo?",
+      "answer": "È il processo con cui il creditore munito di titolo esecutivo ottiene la realizzazione coattiva del suo diritto quando il debitore non adempie spontaneamente, in forma specifica o mediante espropriazione forzata.",
+      "rubric": [
+        { "id": "c1", "concept": "realizzazione coattiva del diritto", "weight": 2 },
+        { "id": "c2", "concept": "presuppone un titolo esecutivo", "weight": 1 },
+        { "id": "c3", "concept": "in forma specifica o per espropriazione", "weight": 1 }
+      ],
+      "references": ["2910", "2930"]
+    },
+    {
+      "prompt": "Che cos'è il processo cautelare?",
+      "answer": "È il processo che serve a evitare che, durante il giudizio di cognizione, la controparte compia atti che vanifichino gli effetti della futura sentenza, come il sequestro conservativo.",
+      "rubric": [
+        { "id": "c1", "concept": "tutela provvisoria durante il giudizio", "weight": 2 },
+        { "id": "c2", "concept": "evita che la sentenza resti inutile", "weight": 1 },
+        { "id": "c3", "concept": "esempio: sequestro conservativo", "weight": 1 }
+      ],
+      "references": ["2905"]
+    },
+    {
+      "prompt": "Su quali beni può svolgersi l'espropriazione forzata?",
+      "answer": "Sui beni del debitore e anche sui beni di un terzo, quando sono vincolati a garanzia del credito, come nel pegno o nell'ipoteca del terzo datore, o quando sono oggetto di un atto revocato perché compiuto in pregiudizio del creditore.",
+      "rubric": [
+        { "id": "c1", "concept": "beni del debitore", "weight": 1 },
+        { "id": "c2", "concept": "beni del terzo vincolati a garanzia", "weight": 2 },
+        { "id": "c3", "concept": "beni oggetto di atto revocato", "weight": 1 }
+      ],
+      "references": ["2910"]
+    },
+    {
+      "prompt": "In quali casi è possibile l'esecuzione forzata in forma specifica?",
+      "answer": "Per l'obbligo di consegnare o rilasciare una cosa determinata, per gli obblighi di fare fungibili, che si fanno eseguire a spese dell'obbligato, per l'obbligo di concludere un contratto, con sentenza costitutiva, e per gli obblighi di non fare la cui violazione abbia prodotto un'opera, che si fa distruggere a spese dell'obbligato.",
+      "rubric": [
+        { "id": "c1", "concept": "consegna o rilascio di cosa determinata", "weight": 1 },
+        { "id": "c2", "concept": "fare fungibile a spese dell'obbligato", "weight": 1 },
+        { "id": "c3", "concept": "obbligo di contrarre", "weight": 1 },
+        { "id": "c4", "concept": "distruzione dell'opera fatta in violazione", "weight": 1 }
+      ],
+      "references": ["2930", "2931", "2932", "2933"]
+    },
+    {
+      "prompt": "Che cosa ottiene il creditore se l'obbligo violato riguarda cose generiche o un fare infungibile?",
+      "answer": "Non può ottenere l'esecuzione in forma specifica: ha diritto soltanto al risarcimento del danno.",
+      "rubric": [
+        { "id": "c1", "concept": "niente esecuzione in forma specifica", "weight": 1 },
+        { "id": "c2", "concept": "solo risarcimento del danno", "weight": 2 }
+      ],
+      "references": ["2930", "2931"]
+    },
+    {
+      "prompt": "Come si svolge l'espropriazione forzata?",
+      "answer": "Inizia con il pignoramento, che individua i beni da espropriare; i beni vengono poi venduti e il ricavato è distribuito tra il creditore procedente e quelli intervenuti, secondo le cause di prelazione.",
+      "rubric": [
+        { "id": "c1", "concept": "pignoramento", "weight": 2 },
+        { "id": "c2", "concept": "vendita dei beni", "weight": 1 },
+        { "id": "c3", "concept": "distribuzione del ricavato tra i creditori", "weight": 1 }
+      ],
+      "references": ["2910"]
+    },
+    {
+      "prompt": "Quali effetti sostanziali produce il pignoramento?",
+      "answer": "Gli atti di alienazione dei beni pignorati non hanno effetto in pregiudizio del creditore pignorante e dei creditori intervenuti: è un'inefficacia relativa, che solo loro possono far valere.",
+      "rubric": [
+        { "id": "c1", "concept": "alienazioni inefficaci verso i creditori", "weight": 2 },
+        { "id": "c2", "concept": "inefficacia relativa", "weight": 2 }
+      ],
+      "references": ["2913"]
+    },
+    {
+      "prompt": "Come sono tutelati i terzi che acquistano beni pignorati?",
+      "answer": "Per i mobili non registrati è tutelato chi ha acquistato in buona fede il possesso prima del pignoramento; per immobili e mobili registrati prevale chi ha trascritto il proprio acquisto prima del pignoramento.",
+      "rubric": [
+        { "id": "c1", "concept": "mobili: possesso in buona fede", "weight": 2 },
+        { "id": "c2", "concept": "immobili e registrati: trascrizione anteriore al pignoramento", "weight": 2 }
+      ],
+      "references": ["2913", "2914"]
+    },
+    {
+      "prompt": "Come si computano i termini secondo il codice civile?",
+      "answer": "Non si conta il giorno iniziale e si conta quello finale; se scade in un giorno festivo è prorogato al primo giorno non festivo; i termini a mesi o anni scadono nel giorno corrispondente del mese finale o, se manca, nell'ultimo giorno del mese.",
+      "rubric": [
+        { "id": "c1", "concept": "escluso il giorno iniziale, incluso il finale", "weight": 2 },
+        { "id": "c2", "concept": "proroga se scade di festivo", "weight": 1 },
+        { "id": "c3", "concept": "mesi e anni: giorno corrispondente", "weight": 1 }
+      ],
+      "references": ["2963"]
+    }
+  ]
+}

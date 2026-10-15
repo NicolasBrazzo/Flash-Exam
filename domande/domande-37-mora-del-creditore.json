@@ -1,0 +1,140 @@
+{
+  "topic": { "name": "La mora del creditore" },
+  "questions": [
+    {
+      "prompt": "Quando il creditore è in mora?",
+      "answer": "Quando, senza motivo legittimo, non riceve il pagamento offertogli nei modi di legge o non compie quanto è necessario affinché il debitore possa adempiere.",
+      "rubric": [
+        { "id": "c1", "concept": "senza motivo legittimo", "weight": 1 },
+        { "id": "c2", "concept": "rifiuta la prestazione offerta nei modi di legge", "weight": 2 },
+        { "id": "c3", "concept": "o non coopera all'adempimento", "weight": 2 }
+      ],
+      "references": ["1206"]
+    },
+    {
+      "prompt": "Quale interesse tutela la disciplina della mora del creditore?",
+      "answer": "L'interesse del debitore a liberarsi dall'obbligazione adempiendo, senza subire le conseguenze del ritardo causato dalla mancata cooperazione del creditore.",
+      "rubric": [
+        { "id": "c1", "concept": "interesse del debitore a liberarsi", "weight": 2 },
+        { "id": "c2", "concept": "il ritardo è imputabile al creditore", "weight": 1 }
+      ],
+      "references": ["1206"]
+    },
+    {
+      "prompt": "Il creditore ha un dovere di cooperare all'adempimento?",
+      "answer": "Sì: dalla disciplina della mora del creditore e dal principio di correttezza si ricava che il creditore deve compiere le attività necessarie a permettere al debitore di adempiere.",
+      "rubric": [
+        { "id": "c1", "concept": "dovere di cooperazione del creditore", "weight": 2 },
+        { "id": "c2", "concept": "fondato su mora credendi e correttezza", "weight": 1 }
+      ],
+      "references": ["1206", "1175"]
+    },
+    {
+      "prompt": "Quali requisiti deve avere l'offerta per costituire in mora il creditore?",
+      "answer": "Deve essere fatta al creditore capace di ricevere, da chi può validamente adempiere, comprendere l'intera somma o cosa dovuta con frutti, interessi e spese, essere fatta dopo la scadenza del termine stabilito a favore del creditore e dopo l'avveramento della condizione, alla persona o al domicilio del creditore, tramite un pubblico ufficiale.",
+      "rubric": [
+        { "id": "c1", "concept": "soggetti legittimati a dare e ricevere", "weight": 1 },
+        { "id": "c2", "concept": "totalità della prestazione con accessori", "weight": 1 },
+        { "id": "c3", "concept": "termine scaduto e condizione avverata", "weight": 1 },
+        { "id": "c4", "concept": "fatta da un pubblico ufficiale", "weight": 2 }
+      ],
+      "references": ["1208"]
+    },
+    {
+      "prompt": "Che differenza c'è tra offerta reale e offerta per intimazione?",
+      "answer": "L'offerta reale si usa per denaro, titoli di credito e cose mobili da consegnare al domicilio del creditore: il pubblico ufficiale presenta materialmente i beni. L'offerta per intimazione si usa per immobili e per cose mobili da consegnare altrove: si intima al creditore, con atto notificato nelle forme della citazione, di riceverle.",
+      "rubric": [
+        { "id": "c1", "concept": "reale: presentazione materiale dei beni", "weight": 2 },
+        { "id": "c2", "concept": "reale: denaro, titoli, mobili al domicilio del creditore", "weight": 1 },
+        { "id": "c3", "concept": "intimazione: invito a ricevere notificato come una citazione", "weight": 2 }
+      ],
+      "references": ["1209"]
+    },
+    {
+      "prompt": "Come si costituisce in mora il creditore nelle obbligazioni di fare?",
+      "answer": "Con l'intimazione di ricevere la prestazione o di compiere gli atti necessari per renderla possibile; l'intimazione può essere fatta nelle forme d'uso (offerta secondo gli usi).",
+      "rubric": [
+        { "id": "c1", "concept": "intimazione di ricevere o cooperare", "weight": 2 },
+        { "id": "c2", "concept": "nelle forme d'uso", "weight": 2 }
+      ],
+      "references": ["1217"]
+    },
+    {
+      "prompt": "Quali effetti produce la mora del creditore?",
+      "answer": "Passa a carico del creditore il rischio dell'impossibilità sopravvenuta non imputabile al debitore; non sono più dovuti interessi né frutti non percepiti; il creditore deve risarcire i danni derivati dalla mora e sostenere le spese di custodia e conservazione.",
+      "rubric": [
+        { "id": "c1", "concept": "rischio dell'impossibilità a carico del creditore", "weight": 2 },
+        { "id": "c2", "concept": "niente interessi né frutti non percepiti", "weight": 1 },
+        { "id": "c3", "concept": "risarcimento e spese di custodia", "weight": 1 }
+      ],
+      "references": ["1207"]
+    },
+    {
+      "prompt": "Da quando decorrono gli effetti della mora del creditore?",
+      "answer": "Dal giorno dell'offerta, se questa è poi dichiarata valida con sentenza passata in giudicato o se è accettata dal creditore.",
+      "rubric": [
+        { "id": "c1", "concept": "dal giorno dell'offerta", "weight": 2 },
+        { "id": "c2", "concept": "se convalidata con sentenza o accettata", "weight": 2 }
+      ],
+      "references": ["1207"]
+    },
+    {
+      "prompt": "La costituzione in mora del creditore libera il debitore?",
+      "answer": "No, il debitore resta obbligato: per liberarsi deve eseguire il deposito delle cose dovute, che lo libera quando è accettato dal creditore o dichiarato valido con sentenza passata in giudicato.",
+      "rubric": [
+        { "id": "c1", "concept": "la mora non libera il debitore", "weight": 2 },
+        { "id": "c2", "concept": "serve il deposito", "weight": 1 },
+        { "id": "c3", "concept": "libera se accettato o convalidato con sentenza", "weight": 1 }
+      ],
+      "references": ["1210"]
+    },
+    {
+      "prompt": "Quali requisiti deve avere il deposito liberatorio?",
+      "answer": "Deve essere preceduto da un'intimazione al creditore con giorno, ora e luogo del deposito; la cosa va consegnata con interessi e frutti nel luogo indicato dalla legge o dal giudice; il pubblico ufficiale redige un processo verbale, notificato al creditore se non è comparso. Il denaro può essere depositato in banca.",
+      "rubric": [
+        { "id": "c1", "concept": "intimazione preventiva con giorno, ora e luogo", "weight": 1 },
+        { "id": "c2", "concept": "consegna della cosa con interessi e frutti", "weight": 1 },
+        { "id": "c3", "concept": "processo verbale del pubblico ufficiale", "weight": 2 }
+      ],
+      "references": ["1212"]
+    },
+    {
+      "prompt": "Il debitore può ritirare il deposito eseguito?",
+      "answer": "Sì, finché il deposito non è accettato dal creditore o dichiarato valido con sentenza passata in giudicato; dopo non può più ritirarlo ed è liberato.",
+      "rubric": [
+        { "id": "c1", "concept": "può ritirarlo prima dell'accettazione o della sentenza", "weight": 2 },
+        { "id": "c2", "concept": "dopo è liberato e non può ritirarlo", "weight": 2 }
+      ],
+      "references": ["1210"]
+    },
+    {
+      "prompt": "Come si libera il debitore che deve consegnare un immobile se il creditore è in mora?",
+      "answer": "L'offerta consiste nell'intimazione al creditore di prenderne possesso; dopo l'intimazione il debitore può ottenere dal giudice la nomina di un sequestratario ed è liberato con la consegna dell'immobile a questi.",
+      "rubric": [
+        { "id": "c1", "concept": "intimazione di prendere possesso", "weight": 1 },
+        { "id": "c2", "concept": "nomina di un sequestratario", "weight": 2 },
+        { "id": "c3", "concept": "liberazione con la consegna al sequestratario", "weight": 1 }
+      ],
+      "references": ["1216"]
+    },
+    {
+      "prompt": "Che cosa può fare il debitore se le cose dovute sono deperibili o costose da custodire?",
+      "answer": "Dopo l'offerta reale o l'intimazione, può farsi autorizzare dal tribunale a venderle nei modi stabiliti per le cose pignorate e a depositarne il prezzo.",
+      "rubric": [
+        { "id": "c1", "concept": "autorizzazione del tribunale a vendere", "weight": 2 },
+        { "id": "c2", "concept": "deposito del prezzo ricavato", "weight": 2 }
+      ],
+      "references": ["1211"]
+    },
+    {
+      "prompt": "Che effetto ha l'offerta non formale della prestazione?",
+      "answer": "Non costituisce in mora il creditore, ma, se tempestiva, seria e completa, impedisce che il debitore sia considerato in mora, salvo che il creditore l'abbia rifiutata per un motivo legittimo.",
+      "rubric": [
+        { "id": "c1", "concept": "non costituisce in mora il creditore", "weight": 2 },
+        { "id": "c2", "concept": "evita la mora del debitore", "weight": 2 },
+        { "id": "c3", "concept": "salvo rifiuto legittimo", "weight": 1 }
+      ],
+      "references": ["1220"]
+    }
+  ]
+}

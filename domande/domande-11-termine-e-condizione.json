@@ -1,0 +1,160 @@
+{
+  "topic": { "name": "Termine e condizione" },
+  "questions": [
+    {
+      "prompt": "Che differenza c'è tra termine e condizione?",
+      "answer": "Entrambi subordinano gli effetti del contratto a un evento futuro, ma il termine è un evento certo, che sicuramente si verificherà, mentre la condizione è un evento incerto.",
+      "rubric": [
+        { "id": "c1", "concept": "entrambi riguardano un evento futuro", "weight": 1 },
+        { "id": "c2", "concept": "termine: evento certo", "weight": 2 },
+        { "id": "c3", "concept": "condizione: evento incerto", "weight": 2 }
+      ],
+      "references": ["1353"]
+    },
+    {
+      "prompt": "Che cos'è la condizione apposta al contratto?",
+      "answer": "È l'avvenimento futuro e incerto a cui le parti subordinano l'efficacia o la risoluzione del contratto o di un singolo patto.",
+      "rubric": [
+        { "id": "c1", "concept": "avvenimento futuro e incerto", "weight": 2 },
+        { "id": "c2", "concept": "da cui dipende l'efficacia o la risoluzione", "weight": 2 },
+        { "id": "c3", "concept": "voluta dalle parti", "weight": 1 }
+      ],
+      "references": ["1353"]
+    },
+    {
+      "prompt": "Che differenza c'è tra condizione sospensiva e condizione risolutiva?",
+      "answer": "Con la condizione sospensiva gli effetti del contratto iniziano solo se e quando l'evento si verifica. Con quella risolutiva gli effetti si producono subito, ma cessano se l'evento si verifica.",
+      "rubric": [
+        { "id": "c1", "concept": "sospensiva: gli effetti iniziano con l'evento", "weight": 2 },
+        { "id": "c2", "concept": "risolutiva: gli effetti cessano con l'evento", "weight": 2 }
+      ],
+      "references": ["1353"]
+    },
+    {
+      "prompt": "Che differenza c'è tra condizione volontaria e condizione legale (condicio iuris)?",
+      "answer": "La condizione volontaria è inserita dalle parti; la condicio iuris è un requisito di efficacia stabilito dalla legge, su cui la volontà delle parti non incide e a cui non si applica la disciplina della condizione.",
+      "rubric": [
+        { "id": "c1", "concept": "volontaria: posta dalle parti", "weight": 2 },
+        { "id": "c2", "concept": "condicio iuris: prevista dalla legge", "weight": 2 },
+        { "id": "c3", "concept": "alla condicio iuris non si applica la disciplina della condizione", "weight": 1 }
+      ],
+      "references": ["1353"]
+    },
+    {
+      "prompt": "Che effetto ha sul contratto una condizione illecita?",
+      "answer": "Rende nullo il contratto, sia che la condizione sia sospensiva sia che sia risolutiva. È illecita la condizione contraria a norme imperative, all'ordine pubblico o al buon costume.",
+      "rubric": [
+        { "id": "c1", "concept": "il contratto è nullo", "weight": 2 },
+        { "id": "c2", "concept": "sia sospensiva sia risolutiva", "weight": 1 },
+        { "id": "c3", "concept": "contraria a norme imperative, ordine pubblico o buon costume", "weight": 1 }
+      ],
+      "references": ["1354"]
+    },
+    {
+      "prompt": "Che effetto ha sul contratto una condizione impossibile?",
+      "answer": "Se è sospensiva rende nullo il contratto; se è risolutiva si considera come non apposta e il contratto resta efficace.",
+      "rubric": [
+        { "id": "c1", "concept": "sospensiva impossibile: contratto nullo", "weight": 2 },
+        { "id": "c2", "concept": "risolutiva impossibile: si ha per non apposta", "weight": 2 }
+      ],
+      "references": ["1354"]
+    },
+    {
+      "prompt": "Che differenza c'è tra condizione casuale, potestativa e mista?",
+      "answer": "La condizione casuale dipende dal caso o dalla volontà di terzi; quella potestativa dipende dalla volontà di una delle parti; quella mista dipende in parte dalla volontà di una parte e in parte dal caso.",
+      "rubric": [
+        { "id": "c1", "concept": "casuale: dipende dal caso", "weight": 1 },
+        { "id": "c2", "concept": "potestativa: dipende dalla volontà di una parte", "weight": 2 },
+        { "id": "c3", "concept": "mista: in parte volontà e in parte caso", "weight": 1 }
+      ],
+      "references": ["1355"]
+    },
+    {
+      "prompt": "Che differenza c'è tra condizione potestativa semplice e condizione meramente potestativa?",
+      "answer": "La potestativa semplice consiste in un comportamento volontario di una parte che però dipende anche da motivi e interessi apprezzabili. La meramente potestativa dipende dal puro arbitrio della parte, svincolato da qualsiasi valutazione di convenienza.",
+      "rubric": [
+        { "id": "c1", "concept": "semplice: comportamento legato a interessi apprezzabili", "weight": 2 },
+        { "id": "c2", "concept": "meramente potestativa: puro arbitrio", "weight": 2 }
+      ],
+      "references": ["1355"]
+    },
+    {
+      "prompt": "Quando la condizione meramente potestativa rende nullo il contratto?",
+      "answer": "È nulla l'alienazione di un diritto o l'assunzione di un obbligo subordinata a una condizione sospensiva che dipenda dalla mera volontà dell'alienante o del debitore. È invece valida se dipende dalla volontà dell'acquirente o del creditore.",
+      "rubric": [
+        { "id": "c1", "concept": "condizione sospensiva", "weight": 1 },
+        { "id": "c2", "concept": "dipendente dalla mera volontà dell'alienante o del debitore", "weight": 2 },
+        { "id": "c3", "concept": "il negozio è nullo", "weight": 1 },
+        { "id": "c4", "concept": "valido se dipende da acquirente o creditore", "weight": 1 }
+      ],
+      "references": ["1355"]
+    },
+    {
+      "prompt": "Che cos'è la pendenza della condizione?",
+      "answer": "È il periodo tra la conclusione del contratto e il momento in cui la condizione si avvera o diventa certo che non si avvererà, durante il quale gli effetti del contratto sono incerti.",
+      "rubric": [
+        { "id": "c1", "concept": "periodo successivo alla conclusione", "weight": 1 },
+        { "id": "c2", "concept": "fino all'avveramento o alla certezza del mancato avveramento", "weight": 2 },
+        { "id": "c3", "concept": "incertezza sugli effetti", "weight": 1 }
+      ],
+      "references": ["1356"]
+    },
+    {
+      "prompt": "Come devono comportarsi le parti durante la pendenza della condizione?",
+      "answer": "Chi si è obbligato o ha alienato un diritto sotto condizione sospensiva, o lo ha acquistato sotto condizione risolutiva, deve comportarsi secondo buona fede per conservare integre le ragioni dell'altra parte.",
+      "rubric": [
+        { "id": "c1", "concept": "obbligo di buona fede", "weight": 2 },
+        { "id": "c2", "concept": "conservare integre le ragioni dell'altra parte", "weight": 2 }
+      ],
+      "references": ["1358"]
+    },
+    {
+      "prompt": "Quali atti può compiere l'acquirente durante la pendenza della condizione?",
+      "answer": "Sotto condizione sospensiva può compiere atti conservativi. Sotto condizione risolutiva può esercitare il diritto, mentre l'altro contraente può compiere atti conservativi.",
+      "rubric": [
+        { "id": "c1", "concept": "sospensiva: l'acquirente compie atti conservativi", "weight": 2 },
+        { "id": "c2", "concept": "risolutiva: l'acquirente esercita il diritto", "weight": 1 },
+        { "id": "c3", "concept": "risolutiva: l'alienante compie atti conservativi", "weight": 1 }
+      ],
+      "references": ["1356"]
+    },
+    {
+      "prompt": "Si può disporre di un diritto sottoposto a condizione durante la pendenza?",
+      "answer": "Sì, chi ha un diritto subordinato a condizione sospensiva o risolutiva può disporne, ma gli effetti di ogni atto di disposizione sono subordinati alla stessa condizione.",
+      "rubric": [
+        { "id": "c1", "concept": "sì, se ne può disporre", "weight": 1 },
+        { "id": "c2", "concept": "gli atti di disposizione sono soggetti alla stessa condizione", "weight": 2 }
+      ],
+      "references": ["1357"]
+    },
+    {
+      "prompt": "Che cos'è la finzione di avveramento della condizione?",
+      "answer": "La condizione si considera avverata se è mancata per causa imputabile alla parte che aveva interesse contrario al suo avveramento. Opera solo per le condizioni potestative o miste, non per quelle puramente casuali.",
+      "rubric": [
+        { "id": "c1", "concept": "la condizione si considera avverata", "weight": 2 },
+        { "id": "c2", "concept": "mancata per causa imputabile alla parte contraria", "weight": 2 },
+        { "id": "c3", "concept": "non per le condizioni casuali", "weight": 1 }
+      ],
+      "references": ["1359"]
+    },
+    {
+      "prompt": "Gli effetti dell'avveramento della condizione sono retroattivi?",
+      "answer": "Sì, retroagiscono al momento della conclusione del contratto, salvo diversa volontà delle parti o natura del rapporto. Nei contratti a esecuzione continuata o periodica la condizione risolutiva non tocca le prestazioni già eseguite.",
+      "rubric": [
+        { "id": "c1", "concept": "retroagiscono alla conclusione", "weight": 2 },
+        { "id": "c2", "concept": "salvo volontà delle parti o natura del rapporto", "weight": 1 },
+        { "id": "c3", "concept": "nei contratti di durata non toccano le prestazioni eseguite", "weight": 1 }
+      ],
+      "references": ["1360"]
+    },
+    {
+      "prompt": "Che cosa succede agli atti di amministrazione compiuti in pendenza della condizione?",
+      "answer": "Restano fermi gli atti di amministrazione compiuti dalla parte a cui spettava l'esercizio del diritto; i frutti percepiti sono dovuti dal giorno in cui la condizione si è avverata, salvo diverse disposizioni.",
+      "rubric": [
+        { "id": "c1", "concept": "gli atti di amministrazione restano fermi", "weight": 2 },
+        { "id": "c2", "concept": "i frutti sono dovuti dall'avveramento", "weight": 2 }
+      ],
+      "references": ["1361"]
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "topic": { "name": "Il fatto illecito: elementi della responsabilità extracontrattuale" },
+  "questions": [
+    {
+      "prompt": "Quali sono gli elementi del fatto illecito extracontrattuale?",
+      "answer": "Un fatto doloso o colposo, un danno ingiusto e il nesso di causalità tra il fatto e il danno; inoltre deve mancare un rapporto obbligatorio preesistente tra danneggiante e danneggiato.",
+      "rubric": [
+        { "id": "c1", "concept": "fatto doloso o colposo", "weight": 1 },
+        { "id": "c2", "concept": "danno ingiusto", "weight": 1 },
+        { "id": "c3", "concept": "nesso di causalità", "weight": 1 },
+        { "id": "c4", "concept": "assenza di un'obbligazione preesistente", "weight": 1 }
+      ],
+      "references": ["2043"]
+    },
+    {
+      "prompt": "Che cos'è il danno ingiusto?",
+      "answer": "È il danno che lede un interesse del danneggiato meritevole di tutela, anche se non è un diritto soggettivo, quando questo interesse prevale, nel bilanciamento, sull'interesse del danneggiante alla libertà di agire.",
+      "rubric": [
+        { "id": "c1", "concept": "lesione di un interesse meritevole di tutela", "weight": 2 },
+        { "id": "c2", "concept": "anche se non è un diritto soggettivo", "weight": 1 },
+        { "id": "c3", "concept": "bilanciamento con la libertà d'azione del danneggiante", "weight": 2 }
+      ],
+      "references": ["2043"]
+    },
+    {
+      "prompt": "Come si è evoluta la nozione di danno ingiusto?",
+      "answer": "In origine era ingiusto solo il danno alla proprietà o ad altri diritti assoluti; poi si è riconosciuta la lesione del diritto di credito; poi quella di interessi meritevoli di tutela; con la sentenza delle Sezioni Unite del 1999 si è affermato il bilanciamento tra interesse del danneggiato e libertà del danneggiante.",
+      "rubric": [
+        { "id": "c1", "concept": "prima solo diritti assoluti", "weight": 1 },
+        { "id": "c2", "concept": "poi diritti di credito", "weight": 1 },
+        { "id": "c3", "concept": "poi interessi meritevoli di tutela", "weight": 1 },
+        { "id": "c4", "concept": "Cassazione 1999: bilanciamento degli interessi", "weight": 1 }
+      ],
+      "references": ["2043"]
+    },
+    {
+      "prompt": "Perché la lesione di un diritto di credito può essere un danno ingiusto?",
+      "answer": "Perché anche il credito è un interesse tutelato: per esempio, chi uccide una persona lede il diritto al mantenimento dei familiari che dipendevano da lei, che possono chiedere il risarcimento al danneggiante.",
+      "rubric": [
+        { "id": "c1", "concept": "il credito è un interesse tutelato anche verso i terzi", "weight": 2 },
+        { "id": "c2", "concept": "esempio: familiari che perdono il mantenimento", "weight": 1 }
+      ],
+      "references": ["2043"]
+    },
+    {
+      "prompt": "Che differenza c'è tra dolo e colpa nell'illecito extracontrattuale?",
+      "answer": "Il dolo è la volontà di cagionare il danno; la colpa è il danno non voluto ma causato da negligenza, imprudenza o imperizia, o dall'inosservanza di leggi, regolamenti o discipline.",
+      "rubric": [
+        { "id": "c1", "concept": "dolo: volontà di danneggiare", "weight": 2 },
+        { "id": "c2", "concept": "colpa: negligenza, imprudenza, imperizia", "weight": 2 }
+      ],
+      "references": ["2043"]
+    },
+    {
+      "prompt": "Che cosa significa principio di equivalenza tra dolo e colpa?",
+      "answer": "Significa che nella responsabilità civile il risarcimento è dovuto nella stessa misura sia se il danno è doloso sia se è colposo, perché la funzione è risarcire la vittima, non punire il danneggiante.",
+      "rubric": [
+        { "id": "c1", "concept": "stesso risarcimento per dolo e colpa", "weight": 2 },
+        { "id": "c2", "concept": "funzione risarcitoria e non punitiva", "weight": 2 }
+      ],
+      "references": ["2043"]
+    },
+    {
+      "prompt": "Che cosa sono i criteri di imputazione della responsabilità civile?",
+      "answer": "Sono i criteri con cui la legge individua il soggetto su cui trasferire il costo del danno: la colpa e il dolo sono il criterio generale; ci sono poi criteri oggettivi, come la sorveglianza, la custodia, il rapporto di lavoro o l'esercizio di attività pericolose.",
+      "rubric": [
+        { "id": "c1", "concept": "individuano chi deve risarcire", "weight": 2 },
+        { "id": "c2", "concept": "dolo e colpa come criterio generale", "weight": 1 },
+        { "id": "c3", "concept": "criteri oggettivi speciali", "weight": 1 }
+      ],
+      "references": ["2043", "2047", "2049", "2050", "2051"]
+    },
+    {
+      "prompt": "Che cos'è l'imputabilità nella responsabilità civile?",
+      "answer": "È la capacità di intendere e di volere al momento del fatto: chi ne è privo non risponde del danno, salvo che l'incapacità derivi da sua colpa, perché senza imputabilità non si può formulare un giudizio di colpa.",
+      "rubric": [
+        { "id": "c1", "concept": "capacità di intendere e di volere al momento del fatto", "weight": 2 },
+        { "id": "c2", "concept": "senza di essa non si risponde", "weight": 1 },
+        { "id": "c3", "concept": "salvo incapacità procurata per colpa", "weight": 2 }
+      ],
+      "references": ["2046"]
+    },
+    {
+      "prompt": "Come si accerta il nesso di causalità nella responsabilità civile?",
+      "answer": "Secondo il criterio del più probabile che non: il fatto è causa del danno se, alla luce delle conoscenze disponibili, il danno ne è la conseguenza più probabile, con una probabilità superiore al cinquanta per cento.",
+      "rubric": [
+        { "id": "c1", "concept": "criterio del più probabile che non", "weight": 2 },
+        { "id": "c2", "concept": "probabilità superiore al 50 per cento", "weight": 1 }
+      ],
+      "references": ["2043"]
+    },
+    {
+      "prompt": "Che effetto ha la legittima difesa sulla responsabilità civile?",
+      "answer": "Esclude l'antigiuridicità: non è responsabile chi cagiona il danno per legittima difesa di sé o di altri, quindi non deve né risarcimento né indennità.",
+      "rubric": [
+        { "id": "c1", "concept": "esclude l'antigiuridicità", "weight": 2 },
+        { "id": "c2", "concept": "nessun risarcimento", "weight": 2 }
+      ],
+      "references": ["2044"]
+    },
+    {
+      "prompt": "Che effetto ha lo stato di necessità sulla responsabilità civile?",
+      "answer": "Chi ha cagionato il danno perché costretto dalla necessità di salvare sé o altri dal pericolo attuale di un grave danno alla persona, non causato da lui né altrimenti evitabile, non deve il risarcimento; al danneggiato spetta però un'indennità fissata dal giudice secondo equità.",
+      "rubric": [
+        { "id": "c1", "concept": "necessità di salvare da un grave danno alla persona", "weight": 1 },
+        { "id": "c2", "concept": "pericolo non volontariamente causato né evitabile", "weight": 1 },
+        { "id": "c3", "concept": "nessun risarcimento ma indennità equitativa", "weight": 2 }
+      ],
+      "references": ["2045"]
+    },
+    {
+      "prompt": "Perché nello stato di necessità si parla di indennità e non di risarcimento?",
+      "answer": "Perché il risarcimento presuppone un fatto illecito, mentre lo stato di necessità esclude l'illiceità: la legge prevede solo una misura compensativa, l'indennità, a favore del danneggiato estraneo alla vicenda.",
+      "rubric": [
+        { "id": "c1", "concept": "il risarcimento presuppone l'illecito", "weight": 2 },
+        { "id": "c2", "concept": "nello stato di necessità manca l'illiceità", "weight": 1 },
+        { "id": "c3", "concept": "l'indennità compensa il danneggiato estraneo", "weight": 1 }
+      ],
+      "references": ["2045"]
+    },
+    {
+      "prompt": "Come si risarcisce il danno da fatto illecito extracontrattuale?",
+      "answer": "Si applicano le regole sul danno emergente e lucro cessante, sulla valutazione equitativa e sul concorso di colpa del danneggiato; il lucro cessante è valutato dal giudice con equo apprezzamento delle circostanze.",
+      "rubric": [
+        { "id": "c1", "concept": "danno emergente e lucro cessante", "weight": 1 },
+        { "id": "c2", "concept": "valutazione equitativa e concorso di colpa", "weight": 1 },
+        { "id": "c3", "concept": "lucro cessante con equo apprezzamento", "weight": 2 }
+      ],
+      "references": ["2056"]
+    },
+    {
+      "prompt": "Come rispondono più persone responsabili dello stesso danno?",
+      "answer": "Se il fatto dannoso è imputabile a più persone, tutte sono obbligate in solido al risarcimento; chi ha risarcito ha regresso contro gli altri nella misura della gravità della rispettiva colpa e delle conseguenze, e nel dubbio le colpe si presumono uguali.",
+      "rubric": [
+        { "id": "c1", "concept": "responsabilità solidale", "weight": 2 },
+        { "id": "c2", "concept": "regresso secondo gravità della colpa", "weight": 1 },
+        { "id": "c3", "concept": "nel dubbio colpe uguali", "weight": 1 }
+      ],
+      "references": ["2055"]
+    },
+    {
+      "prompt": "In quanto tempo si prescrive il diritto al risarcimento da fatto illecito?",
+      "answer": "In cinque anni dal giorno in cui il fatto si è verificato; per i danni da circolazione dei veicoli in due anni; se il fatto è reato e il reato ha una prescrizione più lunga, si applica questa.",
+      "rubric": [
+        { "id": "c1", "concept": "cinque anni", "weight": 2 },
+        { "id": "c2", "concept": "due anni per la circolazione dei veicoli", "weight": 1 },
+        { "id": "c3", "concept": "termine più lungo se il fatto è reato", "weight": 1 }
+      ],
+      "references": ["2947"]
+    },
+    {
+      "prompt": "Che differenza c'è tra responsabilità contrattuale ed extracontrattuale quanto all'onere della prova?",
+      "answer": "Nella responsabilità contrattuale il creditore prova il titolo e allega l'inadempimento, mentre il debitore deve provare di aver adempiuto o l'impossibilità non imputabile. In quella extracontrattuale il danneggiato deve provare tutti gli elementi: fatto, dolo o colpa, danno e nesso causale.",
+      "rubric": [
+        { "id": "c1", "concept": "contrattuale: la prova liberatoria è del debitore", "weight": 2 },
+        { "id": "c2", "concept": "extracontrattuale: il danneggiato prova tutti gli elementi", "weight": 2 }
+      ],
+      "references": ["1218", "2043", "2697"]
+    }
+  ]
+}

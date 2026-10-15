@@ -1,0 +1,170 @@
+{
+  "topic": { "name": "Interdizione e inabilitazione" },
+  "questions": [
+    {
+      "prompt": "Quali sono gli istituti a protezione delle persone prive in tutto o in parte di autonomia?",
+      "answer": "La minore età, l'interdizione giudiziale, l'inabilitazione, l'emancipazione, l'amministrazione di sostegno e la disciplina dell'incapacità naturale; l'interdizione legale ha invece funzione sanzionatoria.",
+      "rubric": [
+        { "id": "c1", "concept": "minore età, interdizione, inabilitazione", "weight": 1 },
+        { "id": "c2", "concept": "amministrazione di sostegno ed emancipazione", "weight": 1 },
+        { "id": "c3", "concept": "incapacità naturale", "weight": 1 },
+        { "id": "c4", "concept": "l'interdizione legale è sanzionatoria", "weight": 1 }
+      ],
+      "references": ["404", "414", "415", "428"]
+    },
+    {
+      "prompt": "Quali sono i presupposti dell'interdizione giudiziale?",
+      "answer": "Un maggiorenne o minore emancipato in condizioni di abituale infermità di mente che lo rende incapace di provvedere ai propri interessi, quando l'interdizione è necessaria per assicurargli adeguata protezione.",
+      "rubric": [
+        { "id": "c1", "concept": "abituale infermità di mente", "weight": 1 },
+        { "id": "c2", "concept": "incapacità di provvedere ai propri interessi", "weight": 1 },
+        { "id": "c3", "concept": "necessità di adeguata protezione (residualità)", "weight": 2 }
+      ],
+      "references": ["414"]
+    },
+    {
+      "prompt": "Che cosa significa che l'infermità di mente deve essere abituale?",
+      "answer": "Che non deve essere transitoria, ma stabile; non è necessario che sia irreversibile né che escluda del tutto lucidi intervalli.",
+      "rubric": [
+        { "id": "c1", "concept": "non transitoria ma stabile", "weight": 2 },
+        { "id": "c2", "concept": "non serve irreversibilità né assenza di lucidi intervalli", "weight": 2 }
+      ],
+      "references": ["414"]
+    },
+    {
+      "prompt": "Perché si dice che l'interdizione ha carattere residuale?",
+      "answer": "Perché si pronuncia solo quando è necessaria per assicurare adeguata protezione, cioè quando gli strumenti meno invasivi, come l'amministrazione di sostegno, non sono sufficienti.",
+      "rubric": [
+        { "id": "c1", "concept": "solo se necessaria", "weight": 2 },
+        { "id": "c2", "concept": "se l'amministrazione di sostegno non basta", "weight": 2 }
+      ],
+      "references": ["414", "404"]
+    },
+    {
+      "prompt": "Il minore può essere interdetto o inabilitato?",
+      "answer": "Il minore non emancipato può essere interdetto o inabilitato nell'ultimo anno della minore età; l'interdizione o l'inabilitazione ha effetto dal giorno in cui raggiunge la maggiore età.",
+      "rubric": [
+        { "id": "c1", "concept": "nell'ultimo anno di minore età", "weight": 2 },
+        { "id": "c2", "concept": "effetti dalla maggiore età", "weight": 2 }
+      ],
+      "references": ["416"]
+    },
+    {
+      "prompt": "Chi può promuovere l'interdizione o l'inabilitazione?",
+      "answer": "L'interessato stesso, il coniuge, la persona stabilmente convivente, i parenti entro il quarto grado, gli affini entro il secondo grado, il tutore o curatore e il pubblico ministero. Se l'interessato è sotto responsabilità genitoriale, solo il genitore o il pubblico ministero.",
+      "rubric": [
+        { "id": "c1", "concept": "interessato, coniuge e convivente", "weight": 1 },
+        { "id": "c2", "concept": "parenti entro il quarto, affini entro il secondo grado", "weight": 1 },
+        { "id": "c3", "concept": "tutore, curatore e pubblico ministero", "weight": 1 },
+        { "id": "c4", "concept": "minore: solo genitore o PM", "weight": 1 }
+      ],
+      "references": ["417"]
+    },
+    {
+      "prompt": "Che cosa deve fare il giudice prima di pronunciare l'interdizione?",
+      "answer": "Deve procedere all'esame personale dell'interdicendo, eventualmente con l'aiuto di un consulente tecnico, e può disporre d'ufficio altri mezzi istruttori; dopo l'esame può nominare un tutore provvisorio.",
+      "rubric": [
+        { "id": "c1", "concept": "esame personale obbligatorio", "weight": 2 },
+        { "id": "c2", "concept": "eventuale consulente tecnico e istruttoria d'ufficio", "weight": 1 },
+        { "id": "c3", "concept": "possibile tutore provvisorio", "weight": 1 }
+      ],
+      "references": ["419"]
+    },
+    {
+      "prompt": "Da quando produce effetti la sentenza di interdizione e come è resa pubblica?",
+      "answer": "Dal giorno della pubblicazione della sentenza; è annotata dal cancelliere nel registro delle tutele e comunicata entro dieci giorni all'ufficiale dello stato civile per l'annotazione a margine dell'atto di nascita.",
+      "rubric": [
+        { "id": "c1", "concept": "dalla pubblicazione della sentenza", "weight": 2 },
+        { "id": "c2", "concept": "annotazione nel registro e a margine dell'atto di nascita", "weight": 2 }
+      ],
+      "references": ["421", "423"]
+    },
+    {
+      "prompt": "Qual è la condizione giuridica dell'interdetto?",
+      "answer": "È simile a quella del minore: non può compiere atti negoziali, salvo quelli necessari alla vita quotidiana o autorizzati dal giudice; è rappresentato da un tutore e non può sposarsi, fare testamento o riconoscere figli.",
+      "rubric": [
+        { "id": "c1", "concept": "incapacità di agire come il minore", "weight": 2 },
+        { "id": "c2", "concept": "rappresentato dal tutore", "weight": 1 },
+        { "id": "c3", "concept": "esclusi matrimonio, testamento e riconoscimento", "weight": 1 }
+      ],
+      "references": ["424", "427"]
+    },
+    {
+      "prompt": "Che sorte hanno gli atti compiuti dall'interdetto?",
+      "answer": "Quelli compiuti dopo la sentenza o dopo la nomina del tutore provvisorio, se segue l'interdizione, sono annullabili su istanza del tutore, dell'interdetto o dei suoi eredi o aventi causa. Quelli anteriori seguono la disciplina dell'incapacità naturale.",
+      "rubric": [
+        { "id": "c1", "concept": "annullabili dopo sentenza o tutore provvisorio", "weight": 2 },
+        { "id": "c2", "concept": "legittimati tutore, interdetto, eredi, aventi causa", "weight": 1 },
+        { "id": "c3", "concept": "atti anteriori: incapacità naturale", "weight": 1 }
+      ],
+      "references": ["427"]
+    },
+    {
+      "prompt": "Il giudice può consentire all'interdetto di compiere alcuni atti?",
+      "answer": "Sì, nella sentenza o in provvedimenti successivi può stabilire che alcuni atti di ordinaria amministrazione possano essere compiuti dall'interdetto senza il tutore o con la sua assistenza.",
+      "rubric": [
+        { "id": "c1", "concept": "sì, per alcuni atti di ordinaria amministrazione", "weight": 2 },
+        { "id": "c2", "concept": "da solo o con l'assistenza del tutore", "weight": 1 }
+      ],
+      "references": ["427"]
+    },
+    {
+      "prompt": "Che cos'è l'interdizione legale?",
+      "answer": "È una pena accessoria alla condanna all'ergastolo o alla reclusione per delitti non colposi non inferiore a cinque anni. Ha funzione sanzionatoria: l'interdetto legale non può disporre del patrimonio, amministrato da un tutore, e i suoi atti sono annullabili da chiunque vi abbia interesse.",
+      "rubric": [
+        { "id": "c1", "concept": "pena accessoria a gravi condanne", "weight": 2 },
+        { "id": "c2", "concept": "funzione sanzionatoria", "weight": 1 },
+        { "id": "c3", "concept": "annullabilità assoluta degli atti", "weight": 1 }
+      ],
+      "references": ["1441"]
+    },
+    {
+      "prompt": "Quali sono i presupposti dell'inabilitazione?",
+      "answer": "L'infermità di mente non così grave da giustificare l'interdizione; la prodigalità o l'abuso abituale di alcol o stupefacenti che espongono sé o la famiglia a gravi pregiudizi economici; la sordità o cecità dalla nascita o dalla prima infanzia senza educazione sufficiente.",
+      "rubric": [
+        { "id": "c1", "concept": "infermità di mente meno grave", "weight": 1 },
+        { "id": "c2", "concept": "prodigalità, alcol o droghe con gravi pregiudizi economici", "weight": 2 },
+        { "id": "c3", "concept": "sordità o cecità senza educazione sufficiente", "weight": 1 }
+      ],
+      "references": ["415"]
+    },
+    {
+      "prompt": "Quali atti può compiere l'inabilitato?",
+      "answer": "Può compiere da solo gli atti di ordinaria amministrazione; per quelli di straordinaria amministrazione e per stare in giudizio serve l'assistenza del curatore. Il giudice può autorizzarlo a compiere da solo alcuni atti eccedenti l'ordinaria amministrazione.",
+      "rubric": [
+        { "id": "c1", "concept": "ordinaria amministrazione da solo", "weight": 2 },
+        { "id": "c2", "concept": "straordinaria con assistenza del curatore", "weight": 2 },
+        { "id": "c3", "concept": "il giudice può ampliarne l'autonomia", "weight": 1 }
+      ],
+      "references": ["424", "427"]
+    },
+    {
+      "prompt": "Che differenza c'è tra il ruolo del tutore e quello del curatore?",
+      "answer": "Il tutore rappresenta l'incapace e agisce in sua vece; il curatore non si sostituisce all'inabilitato ma lo assiste, integrandone la volontà negli atti di straordinaria amministrazione.",
+      "rubric": [
+        { "id": "c1", "concept": "tutore: rappresentanza, sostituisce l'incapace", "weight": 2 },
+        { "id": "c2", "concept": "curatore: assistenza, integra la volontà", "weight": 2 }
+      ],
+      "references": ["424"]
+    },
+    {
+      "prompt": "Come si revocano l'interdizione e l'inabilitazione?",
+      "answer": "Quando ne cessa la causa, su istanza del coniuge, dei parenti entro il quarto grado, degli affini entro il secondo, del tutore o curatore o del pubblico ministero. La sentenza di revoca produce effetti dal passaggio in giudicato; il giudice tutelare vigila e informa il pubblico ministero.",
+      "rubric": [
+        { "id": "c1", "concept": "quando cessa la causa", "weight": 1 },
+        { "id": "c2", "concept": "su istanza dei legittimati o del PM", "weight": 1 },
+        { "id": "c3", "concept": "effetti dal passaggio in giudicato", "weight": 2 }
+      ],
+      "references": ["429", "431"]
+    },
+    {
+      "prompt": "Che cosa può disporre il giudice nel giudizio di revoca dell'interdizione?",
+      "answer": "Se ritiene che l'infermo non abbia riacquistato la piena capacità, può revocare l'interdizione e dichiararlo inabilitato, oppure trasmettere gli atti al giudice tutelare per aprire un'amministrazione di sostegno.",
+      "rubric": [
+        { "id": "c1", "concept": "revoca con dichiarazione di inabilitazione", "weight": 2 },
+        { "id": "c2", "concept": "o trasmissione per l'amministrazione di sostegno", "weight": 2 }
+      ],
+      "references": ["429", "432"]
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "topic": { "name": "Locazione, affitto e leasing" },
+  "questions": [
+    {
+      "prompt": "Che cos'è la locazione?",
+      "answer": "È il contratto con cui una parte, il locatore, si obbliga a far godere all'altra, il conduttore, una cosa mobile o immobile per un dato tempo, verso un determinato corrispettivo.",
+      "rubric": [
+        { "id": "c1", "concept": "obbligo di far godere una cosa", "weight": 2 },
+        { "id": "c2", "concept": "per un dato tempo", "weight": 1 },
+        { "id": "c3", "concept": "verso corrispettivo", "weight": 1 }
+      ],
+      "references": ["1571"]
+    },
+    {
+      "prompt": "Che differenza c'è tra locazione e affitto?",
+      "answer": "L'affitto è la locazione di una cosa produttiva, mobile o immobile: l'affittuario deve curarne la gestione secondo la destinazione economica e ne fa propri i frutti e le altre utilità.",
+      "rubric": [
+        { "id": "c1", "concept": "l'affitto riguarda una cosa produttiva", "weight": 2 },
+        { "id": "c2", "concept": "l'affittuario la gestisce secondo la destinazione economica", "weight": 1 },
+        { "id": "c3", "concept": "gli spettano i frutti", "weight": 1 }
+      ],
+      "references": ["1615"]
+    },
+    {
+      "prompt": "Qual è la durata massima della locazione secondo il codice civile?",
+      "answer": "La locazione non può stipularsi per un tempo eccedente i trent'anni; se è stipulata per un periodo più lungo o in perpetuo, è ridotta a trent'anni. Se non è determinata la durata, si applicano i termini legali secondo il tipo di bene.",
+      "rubric": [
+        { "id": "c1", "concept": "massimo trent'anni", "weight": 2 },
+        { "id": "c2", "concept": "riduzione a trent'anni se più lunga", "weight": 1 },
+        { "id": "c3", "concept": "senza termine: si applicano i termini di legge", "weight": 1 }
+      ],
+      "references": ["1573", "1574"]
+    },
+    {
+      "prompt": "Quali sono le obbligazioni principali del locatore?",
+      "answer": "Consegnare la cosa in buono stato di manutenzione, mantenerla in stato da servire all'uso convenuto eseguendo le riparazioni necessarie, salvo la piccola manutenzione, e garantirne il pacifico godimento.",
+      "rubric": [
+        { "id": "c1", "concept": "consegna in buono stato", "weight": 1 },
+        { "id": "c2", "concept": "mantenerla idonea all'uso con le riparazioni necessarie", "weight": 2 },
+        { "id": "c3", "concept": "garantire il pacifico godimento", "weight": 1 }
+      ],
+      "references": ["1575", "1576"]
+    },
+    {
+      "prompt": "Che cosa può fare il conduttore se la cosa locata presenta vizi che ne diminuiscono il godimento?",
+      "answer": "Può chiedere la risoluzione del contratto o una riduzione del corrispettivo, salvo che si tratti di vizi da lui conosciuti o facilmente riconoscibili; il locatore risponde anche dei danni se non prova di averli ignorati senza colpa.",
+      "rubric": [
+        { "id": "c1", "concept": "risoluzione o riduzione del canone", "weight": 2 },
+        { "id": "c2", "concept": "salvo vizi noti o facilmente riconoscibili", "weight": 1 },
+        { "id": "c3", "concept": "risarcimento salvo ignoranza incolpevole", "weight": 1 }
+      ],
+      "references": ["1578"]
+    },
+    {
+      "prompt": "Quali sono le obbligazioni principali del conduttore?",
+      "answer": "Prendere in consegna la cosa e osservare la diligenza del buon padre di famiglia nel servirsene per l'uso convenuto, pagare il corrispettivo nei termini e restituire la cosa nello stato in cui l'ha ricevuta, salvo il deterioramento d'uso.",
+      "rubric": [
+        { "id": "c1", "concept": "usare la cosa con diligenza per l'uso convenuto", "weight": 1 },
+        { "id": "c2", "concept": "pagare il canone", "weight": 2 },
+        { "id": "c3", "concept": "restituire la cosa nello stato ricevuto", "weight": 1 }
+      ],
+      "references": ["1587", "1590"]
+    },
+    {
+      "prompt": "Il conduttore ha diritto a un'indennità per i miglioramenti e le addizioni alla cosa locata?",
+      "answer": "Per i miglioramenti non ha diritto a indennità, salvo che li abbia fatti con il consenso del locatore. Le addizioni può toglierle alla fine della locazione; se il locatore preferisce ritenerle, deve pagare un'indennità.",
+      "rubric": [
+        { "id": "c1", "concept": "miglioramenti: indennità solo con consenso del locatore", "weight": 2 },
+        { "id": "c2", "concept": "addizioni: il conduttore può toglierle", "weight": 1 },
+        { "id": "c3", "concept": "se il locatore le ritiene paga un'indennità", "weight": 1 }
+      ],
+      "references": ["1592", "1593"]
+    },
+    {
+      "prompt": "Che differenza c'è tra sublocazione e cessione del contratto di locazione?",
+      "answer": "Con la sublocazione il conduttore resta obbligato verso il locatore e diventa a sua volta locatore di un terzo; di regola è ammessa salvo patto contrario. Con la cessione il cessionario subentra nella posizione del conduttore, e serve il consenso del locatore.",
+      "rubric": [
+        { "id": "c1", "concept": "sublocazione: nuovo contratto, il conduttore resta obbligato", "weight": 2 },
+        { "id": "c2", "concept": "sublocazione ammessa salvo patto contrario", "weight": 1 },
+        { "id": "c3", "concept": "cessione: subentro, serve il consenso del locatore", "weight": 2 }
+      ],
+      "references": ["1594"]
+    },
+    {
+      "prompt": "La vendita della cosa locata scioglie la locazione?",
+      "answer": "No (emptio non tollit locatum): la locazione è opponibile all'acquirente se ha data certa anteriore all'alienazione; le locazioni ultranovennali di immobili devono essere trascritte.",
+      "rubric": [
+        { "id": "c1", "concept": "la locazione prosegue con l'acquirente", "weight": 2 },
+        { "id": "c2", "concept": "se ha data certa anteriore", "weight": 1 },
+        { "id": "c3", "concept": "ultranovennali: trascrizione", "weight": 1 }
+      ],
+      "references": ["1599"]
+    },
+    {
+      "prompt": "Che cos'è la rinnovazione tacita della locazione?",
+      "answer": "Se, scaduto il termine, il conduttore rimane nella detenzione della cosa e il locatore non si oppone, la locazione si ha per rinnovata; la locazione senza termine si rinnova se nessuna parte dà disdetta nel termine.",
+      "rubric": [
+        { "id": "c1", "concept": "il conduttore resta nella detenzione dopo la scadenza", "weight": 2 },
+        { "id": "c2", "concept": "senza opposizione o disdetta", "weight": 1 },
+        { "id": "c3", "concept": "il contratto si rinnova", "weight": 1 }
+      ],
+      "references": ["1596", "1597"]
+    },
+    {
+      "prompt": "Quali sono le caratteristiche della locazione abitativa a canone libero?",
+      "answer": "Il canone è liberamente determinato dalle parti; la durata minima è di quattro anni, con rinnovo obbligatorio per altri quattro alla prima scadenza, che il locatore può negare solo per motivi tassativi. Serve la forma scritta a pena di nullità.",
+      "rubric": [
+        { "id": "c1", "concept": "canone libero", "weight": 1 },
+        { "id": "c2", "concept": "durata quattro più quattro anni", "weight": 2 },
+        { "id": "c3", "concept": "diniego del primo rinnovo solo per motivi tassativi", "weight": 1 },
+        { "id": "c4", "concept": "forma scritta ad substantiam", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che cosa sono i contratti di locazione a canone concertato?",
+      "answer": "Sono contratti tipo il cui canone e le cui clausole sono fissati da accordi locali tra le organizzazioni dei proprietari e degli inquilini, con agevolazioni fiscali; durano almeno tre anni con proroga di diritto di altri due.",
+      "rubric": [
+        { "id": "c1", "concept": "condizioni fissate da accordi tra organizzazioni", "weight": 2 },
+        { "id": "c2", "concept": "agevolazioni fiscali", "weight": 1 },
+        { "id": "c3", "concept": "durata tre più due anni", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che conseguenza ha la mancanza della forma scritta nella locazione abitativa?",
+      "answer": "Il contratto è nullo, perché la forma scritta è richiesta ad substantiam; se però la mancata forma scritta è stata imposta dal locatore, la nullità può essere fatta valere solo dal conduttore, che può chiedere di riconoscere il rapporto.",
+      "rubric": [
+        { "id": "c1", "concept": "nullità per mancanza della forma scritta", "weight": 2 },
+        { "id": "c2", "concept": "se imposta dal locatore, la fa valere solo il conduttore", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che cosa succede al patto che prevede un canone maggiore di quello risultante dal contratto registrato?",
+      "answer": "È nullo: è nulla ogni pattuizione diretta a determinare un canone superiore a quello risultante dal contratto scritto e registrato.",
+      "rubric": [
+        { "id": "c1", "concept": "patto nullo", "weight": 2 },
+        { "id": "c2", "concept": "canone superiore a quello registrato", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Quali tutele ha il conduttore di un immobile abitativo?",
+      "answer": "Può recedere per gravi motivi con preavviso di sei mesi; in caso di sua morte subentrano il coniuge, gli eredi, i parenti e affini conviventi, il convivente e l'unito civilmente; se è moroso può sanare la morosità in giudizio evitando lo sfratto.",
+      "rubric": [
+        { "id": "c1", "concept": "recesso per gravi motivi con sei mesi di preavviso", "weight": 1 },
+        { "id": "c2", "concept": "successione nel contratto dei familiari conviventi", "weight": 1 },
+        { "id": "c3", "concept": "sanatoria della morosità in giudizio", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Qual è la durata minima della locazione di immobili a uso diverso dall'abitazione?",
+      "answer": "Non inferiore a sei anni per attività industriali, commerciali, artigianali, turistiche o professionali, e a nove anni per l'attività alberghiera, salvo che l'attività sia per natura transitoria; alla prima scadenza il locatore può negare il rinnovo solo per motivi tassativi.",
+      "rubric": [
+        { "id": "c1", "concept": "sei anni", "weight": 2 },
+        { "id": "c2", "concept": "nove anni per gli alberghi", "weight": 1 },
+        { "id": "c3", "concept": "rinnovo negabile solo per motivi tassativi", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Quali diritti ha il conduttore di un immobile a uso commerciale alla cessazione del rapporto e in caso di vendita?",
+      "answer": "Se il rapporto cessa non per suo inadempimento o recesso, ha diritto a un'indennità per la perdita dell'avviamento commerciale; se il locatore vende l'immobile, ha diritto di prelazione.",
+      "rubric": [
+        { "id": "c1", "concept": "indennità per la perdita dell'avviamento", "weight": 2 },
+        { "id": "c2", "concept": "salvo inadempimento o recesso del conduttore", "weight": 1 },
+        { "id": "c3", "concept": "prelazione in caso di vendita", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Il conduttore di un immobile commerciale può cedere il contratto senza il consenso del locatore?",
+      "answer": "Sì, può sublocare l'immobile o cedere il contratto senza il consenso del locatore, purché venga insieme ceduta o locata l'azienda.",
+      "rubric": [
+        { "id": "c1", "concept": "sì, senza consenso del locatore", "weight": 2 },
+        { "id": "c2", "concept": "se è ceduta o locata anche l'azienda", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Quali obblighi e poteri ha l'affittuario di una cosa produttiva?",
+      "answer": "Deve curarne la gestione in conformità alla destinazione economica e all'interesse della produzione; gli spettano i frutti. Può prendere iniziative per aumentare il reddito purché non comportino obblighi per il locatore; se non rispetta la buona tecnica o muta stabilmente la destinazione, il locatore può chiedere la risoluzione.",
+      "rubric": [
+        { "id": "c1", "concept": "gestione secondo la destinazione economica", "weight": 2 },
+        { "id": "c2", "concept": "gli spettano i frutti", "weight": 1 },
+        { "id": "c3", "concept": "risoluzione se viola la buona tecnica o muta la destinazione", "weight": 1 }
+      ],
+      "references": ["1615", "1618", "1620"]
+    },
+    {
+      "prompt": "Che cos'è il leasing finanziario?",
+      "answer": "È il contratto con cui un intermediario finanziario acquista o fa costruire un bene scelto dall'utilizzatore e glielo concede in godimento per un tempo determinato verso un canone periodico; alla scadenza l'utilizzatore può acquistarne la proprietà a un prezzo prestabilito o deve restituirlo.",
+      "rubric": [
+        { "id": "c1", "concept": "il finanziatore acquista il bene scelto dall'utilizzatore", "weight": 2 },
+        { "id": "c2", "concept": "godimento verso canone periodico", "weight": 1 },
+        { "id": "c3", "concept": "alla scadenza opzione di acquisto o restituzione", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra leasing operativo e leasing finanziario?",
+      "answer": "Nel leasing operativo il concedente è lo stesso produttore del bene e il rapporto è bilaterale. In quello finanziario il concedente è un finanziatore che acquista il bene dal fornitore per l'utilizzatore: l'operazione coinvolge tre soggetti.",
+      "rubric": [
+        { "id": "c1", "concept": "operativo: concedente è il produttore, rapporto bilaterale", "weight": 2 },
+        { "id": "c2", "concept": "finanziario: intermediario, operazione trilaterale", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra leasing di godimento e leasing traslativo?",
+      "answer": "Nel leasing di godimento prevale l'interesse all'uso temporaneo del bene; in quello traslativo prevale l'interesse ad acquistarne la proprietà alla scadenza, perché il bene conserva un valore superiore al prezzo di opzione.",
+      "rubric": [
+        { "id": "c1", "concept": "godimento: interesse all'uso temporaneo", "weight": 2 },
+        { "id": "c2", "concept": "traslativo: interesse all'acquisto finale", "weight": 2 }
+      ],
+      "references": []
+    }
+  ]
+}

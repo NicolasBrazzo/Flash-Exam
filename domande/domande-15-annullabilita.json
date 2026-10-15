@@ -1,0 +1,170 @@
+{
+  "topic": { "name": "L'annullabilità del contratto" },
+  "questions": [
+    {
+      "prompt": "Che differenza c'è tra nullità e annullabilità?",
+      "answer": "La nullità è il vizio più grave: il contratto non produce effetti, l'azione spetta a chiunque vi abbia interesse, è rilevabile d'ufficio, imprescrittibile e non convalidabile. Il contratto annullabile produce effetti finché non è annullato; l'azione spetta solo alla parte protetta, si prescrive in cinque anni e il contratto è convalidabile.",
+      "rubric": [
+        { "id": "c1", "concept": "il nullo non produce effetti, l'annullabile sì fino all'annullamento", "weight": 2 },
+        { "id": "c2", "concept": "legittimazione: chiunque vi abbia interesse contro la sola parte protetta", "weight": 1 },
+        { "id": "c3", "concept": "imprescrittibile contro prescrizione quinquennale", "weight": 1 },
+        { "id": "c4", "concept": "non convalidabile contro convalidabile", "weight": 1 }
+      ],
+      "references": ["1418", "1441", "1442", "1444"]
+    },
+    {
+      "prompt": "Che cosa significa che l'annullabilità è solo testuale?",
+      "answer": "Significa che il contratto è annullabile solo nei casi espressamente previsti dalla legge, mentre la nullità può derivare anche dalla violazione di una qualsiasi norma imperativa.",
+      "rubric": [
+        { "id": "c1", "concept": "solo nei casi previsti dalla legge", "weight": 2 },
+        { "id": "c2", "concept": "la nullità può essere anche virtuale", "weight": 1 }
+      ],
+      "references": ["1425", "1427"]
+    },
+    {
+      "prompt": "Quali sono le cause di annullabilità del contratto?",
+      "answer": "L'incapacità legale di agire di una parte, l'incapacità naturale alle condizioni di legge e i vizi della volontà, cioè errore, dolo e violenza; inoltre altri casi previsti dalla legge, come il contratto con se stesso o in conflitto di interessi.",
+      "rubric": [
+        { "id": "c1", "concept": "incapacità legale", "weight": 1 },
+        { "id": "c2", "concept": "incapacità naturale", "weight": 1 },
+        { "id": "c3", "concept": "vizi della volontà: errore, dolo, violenza", "weight": 2 },
+        { "id": "c4", "concept": "altri casi previsti dalla legge", "weight": 1 }
+      ],
+      "references": ["1425", "1427"]
+    },
+    {
+      "prompt": "Quando è annullabile il contratto concluso da un incapace?",
+      "answer": "È annullabile se una parte era legalmente incapace di contrattare; il contratto concluso da persona incapace di intendere o di volere è annullabile quando ricorrono le condizioni dell'incapacità naturale, cioè il grave pregiudizio e la mala fede dell'altro contraente.",
+      "rubric": [
+        { "id": "c1", "concept": "incapacità legale: annullabile", "weight": 2 },
+        { "id": "c2", "concept": "incapacità naturale: alle condizioni dell'art. 428", "weight": 1 },
+        { "id": "c3", "concept": "pregiudizio e mala fede dell'altro contraente", "weight": 1 }
+      ],
+      "references": ["1425", "428"]
+    },
+    {
+      "prompt": "Il minore che ha nascosto la sua età può chiedere l'annullamento del contratto?",
+      "answer": "No, se ha occultato la minore età con raggiri il contratto non è annullabile. La semplice dichiarazione di essere maggiorenne però non impedisce l'annullamento.",
+      "rubric": [
+        { "id": "c1", "concept": "con raggiri il contratto non è annullabile", "weight": 2 },
+        { "id": "c2", "concept": "la semplice dichiarazione di maggiore età non basta", "weight": 2 }
+      ],
+      "references": ["1426"]
+    },
+    {
+      "prompt": "Che natura ha l'azione di annullamento e in che cosa differisce dall'azione di nullità?",
+      "answer": "L'azione di annullamento è costitutiva: la sentenza modifica la realtà giuridica eliminando effetti che il contratto aveva prodotto. L'azione di nullità è di mero accertamento: il giudice dichiara che il contratto non ha mai prodotto effetti.",
+      "rubric": [
+        { "id": "c1", "concept": "annullamento: azione costitutiva", "weight": 2 },
+        { "id": "c2", "concept": "elimina effetti già prodotti", "weight": 1 },
+        { "id": "c3", "concept": "nullità: azione di mero accertamento", "weight": 2 }
+      ],
+      "references": ["1441", "1421"]
+    },
+    {
+      "prompt": "Chi può chiedere l'annullamento del contratto?",
+      "answer": "Solo la parte nel cui interesse l'annullabilità è stabilita dalla legge. Fa eccezione l'incapacità del condannato in stato di interdizione legale, che può essere fatta valere da chiunque vi abbia interesse.",
+      "rubric": [
+        { "id": "c1", "concept": "solo la parte protetta", "weight": 2 },
+        { "id": "c2", "concept": "eccezione: interdizione legale, chiunque vi abbia interesse", "weight": 2 }
+      ],
+      "references": ["1441"]
+    },
+    {
+      "prompt": "In quanto tempo si prescrive l'azione di annullamento e da quando decorre?",
+      "answer": "In cinque anni. Per vizi del consenso o incapacità legale decorre da quando è cessata la violenza, è stato scoperto l'errore o il dolo, è cessata l'interdizione o inabilitazione o il minore è diventato maggiorenne; negli altri casi dalla conclusione del contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "cinque anni", "weight": 2 },
+        { "id": "c2", "concept": "vizi e incapacità: dalla cessazione della causa", "weight": 2 },
+        { "id": "c3", "concept": "altri casi: dalla conclusione", "weight": 1 }
+      ],
+      "references": ["1442"]
+    },
+    {
+      "prompt": "L'eccezione di annullamento si prescrive?",
+      "answer": "No: l'annullabilità può essere opposta dalla parte convenuta per l'esecuzione del contratto anche se è prescritta l'azione per farla valere.",
+      "rubric": [
+        { "id": "c1", "concept": "l'eccezione non si prescrive", "weight": 2 },
+        { "id": "c2", "concept": "opponibile da chi è convenuto per l'esecuzione", "weight": 2 }
+      ],
+      "references": ["1442"]
+    },
+    {
+      "prompt": "Che cos'è la convalida del contratto annullabile?",
+      "answer": "È l'atto con cui la parte legittimata all'annullamento rende definitivamente valido il contratto. Può essere espressa, con un atto che menziona il contratto, il motivo di annullabilità e la volontà di convalidare, o tacita, eseguendo volontariamente il contratto conoscendo il vizio.",
+      "rubric": [
+        { "id": "c1", "concept": "rende definitivamente valido il contratto", "weight": 2 },
+        { "id": "c2", "concept": "compiuta dalla parte legittimata", "weight": 1 },
+        { "id": "c3", "concept": "espressa o tacita mediante esecuzione consapevole", "weight": 2 }
+      ],
+      "references": ["1444"]
+    },
+    {
+      "prompt": "A quali condizioni è efficace la convalida?",
+      "answer": "Chi convalida deve essere la parte legittimata all'annullamento e deve essere in condizione di concludere validamente il contratto, cioè la causa di annullabilità deve essere cessata.",
+      "rubric": [
+        { "id": "c1", "concept": "parte legittimata", "weight": 1 },
+        { "id": "c2", "concept": "in condizione di concludere validamente il contratto", "weight": 2 },
+        { "id": "c3", "concept": "causa di annullabilità cessata", "weight": 1 }
+      ],
+      "references": ["1444"]
+    },
+    {
+      "prompt": "Che cos'è la rettifica del contratto annullabile per errore?",
+      "answer": "La parte in errore non può chiedere l'annullamento se, prima che ne derivi pregiudizio, l'altra parte offre di eseguire il contratto in modo conforme a quello che l'errante intendeva concludere.",
+      "rubric": [
+        { "id": "c1", "concept": "offerta di eseguire secondo la volontà dell'errante", "weight": 2 },
+        { "id": "c2", "concept": "prima che derivi pregiudizio", "weight": 1 },
+        { "id": "c3", "concept": "esclude l'annullamento", "weight": 1 }
+      ],
+      "references": ["1432"]
+    },
+    {
+      "prompt": "Quali effetti ha l'annullamento tra le parti?",
+      "answer": "Opera retroattivamente: il contratto si considera come mai concluso e le parti devono restituirsi le prestazioni eseguite, anche con l'azione di ripetizione dell'indebito.",
+      "rubric": [
+        { "id": "c1", "concept": "effetto retroattivo", "weight": 2 },
+        { "id": "c2", "concept": "restituzione delle prestazioni", "weight": 2 }
+      ],
+      "references": ["1443", "2033"]
+    },
+    {
+      "prompt": "Che cosa deve restituire il contraente incapace se il contratto è annullato?",
+      "answer": "Non è tenuto a restituire la prestazione ricevuta se non nei limiti in cui è stata rivolta a suo vantaggio.",
+      "rubric": [
+        { "id": "c1", "concept": "restituisce solo nei limiti del vantaggio", "weight": 2 },
+        { "id": "c2", "concept": "tutela dell'incapace", "weight": 1 }
+      ],
+      "references": ["1443"]
+    },
+    {
+      "prompt": "L'annullamento del contratto è opponibile ai terzi?",
+      "answer": "Di regola no: l'annullamento non pregiudica i diritti acquistati a titolo oneroso dai terzi in buona fede. È opponibile se il terzo è in mala fede, se ha acquistato a titolo gratuito, se l'annullamento dipende da incapacità legale, salvi inoltre gli effetti della trascrizione della domanda.",
+      "rubric": [
+        { "id": "c1", "concept": "di regola inopponibile ai terzi", "weight": 2 },
+        { "id": "c2", "concept": "opponibile al terzo in mala fede o acquirente gratuito", "weight": 1 },
+        { "id": "c3", "concept": "opponibile se dipende da incapacità legale", "weight": 1 },
+        { "id": "c4", "concept": "salvi gli effetti della trascrizione della domanda", "weight": 1 }
+      ],
+      "references": ["1445"]
+    },
+    {
+      "prompt": "Perché l'annullamento per incapacità legale è opponibile anche ai terzi in buona fede?",
+      "answer": "Perché l'affidamento del terzo non è incolpevole: consultando i registri dello stato civile avrebbe potuto accertare che il suo dante causa aveva acquistato da un incapace legale.",
+      "rubric": [
+        { "id": "c1", "concept": "l'incapacità legale risulta da pubblici registri", "weight": 2 },
+        { "id": "c2", "concept": "l'affidamento del terzo non è incolpevole", "weight": 2 }
+      ],
+      "references": ["1445"]
+    },
+    {
+      "prompt": "Che effetto ha l'annullabilità del vincolo di una sola parte in un contratto plurilaterale?",
+      "answer": "Nei contratti plurilaterali con scopo comune non comporta l'annullamento dell'intero contratto, salvo che la partecipazione di quella parte debba considerarsi essenziale.",
+      "rubric": [
+        { "id": "c1", "concept": "il contratto resta in piedi", "weight": 2 },
+        { "id": "c2", "concept": "salvo partecipazione essenziale", "weight": 2 }
+      ],
+      "references": ["1446"]
+    }
+  ]
+}

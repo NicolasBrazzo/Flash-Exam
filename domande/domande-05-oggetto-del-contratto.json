@@ -1,0 +1,113 @@
+{
+  "topic": { "name": "L'oggetto del contratto" },
+  "questions": [
+    {
+      "prompt": "In quali modi è stato inteso l'oggetto del contratto?",
+      "answer": "Come l'insieme delle prestazioni a carico delle parti, come il bene a cui il contratto si riferisce (tesi criticata, perché non sempre c'è un bene) e come il contenuto normativo del contratto, cioè le regole che disciplinano il rapporto.",
+      "rubric": [
+        { "id": "c1", "concept": "le prestazioni contrattuali", "weight": 2 },
+        { "id": "c2", "concept": "il bene, tesi criticata perché non sempre c'è un bene", "weight": 1 },
+        { "id": "c3", "concept": "il contenuto normativo del contratto", "weight": 1 }
+      ],
+      "references": ["1346"]
+    },
+    {
+      "prompt": "Quali requisiti deve avere l'oggetto del contratto?",
+      "answer": "L'oggetto deve essere possibile, lecito, determinato o determinabile; in mancanza il contratto è nullo.",
+      "rubric": [
+        { "id": "c1", "concept": "possibile", "weight": 1 },
+        { "id": "c2", "concept": "lecito", "weight": 1 },
+        { "id": "c3", "concept": "determinato o determinabile", "weight": 1 },
+        { "id": "c4", "concept": "la mancanza dei requisiti causa la nullità", "weight": 1 }
+      ],
+      "references": ["1346", "1418"]
+    },
+    {
+      "prompt": "Che cosa significa che l'oggetto del contratto deve essere possibile?",
+      "answer": "Che il contratto non può prevedere prestazioni irrealizzabili, né materialmente o tecnicamente né giuridicamente.",
+      "rubric": [
+        { "id": "c1", "concept": "la prestazione deve essere realizzabile", "weight": 2 },
+        { "id": "c2", "concept": "possibilità materiale e giuridica", "weight": 2 }
+      ],
+      "references": ["1346"]
+    },
+    {
+      "prompt": "Può essere oggetto di contratto una cosa futura?",
+      "answer": "Sì, la prestazione di cose future può essere dedotta in contratto, salvi i particolari divieti di legge: per esempio la vendita di un appartamento ancora da costruire.",
+      "rubric": [
+        { "id": "c1", "concept": "sì, è ammessa", "weight": 2 },
+        { "id": "c2", "concept": "salvo i divieti di legge", "weight": 2 }
+      ],
+      "references": ["1348"]
+    },
+    {
+      "prompt": "Che cosa succede se la prestazione inizialmente impossibile diventa possibile?",
+      "answer": "Il contratto sottoposto a condizione sospensiva o a termine è valido se la prestazione diventa possibile prima dell'avveramento della condizione o della scadenza del termine.",
+      "rubric": [
+        { "id": "c1", "concept": "contratto sotto condizione sospensiva o a termine", "weight": 1 },
+        { "id": "c2", "concept": "diventa possibile prima della condizione o del termine", "weight": 2 },
+        { "id": "c3", "concept": "il contratto è valido", "weight": 1 }
+      ],
+      "references": ["1347"]
+    },
+    {
+      "prompt": "Che cosa significa che l'oggetto deve essere determinato o determinabile?",
+      "answer": "Che le prestazioni devono essere definite nel contratto, oppure ricavabili con criteri o elementi esterni indicati dalle parti (contratto per relationem). Altrimenti l'accordo non sarebbe serio né azionabile.",
+      "rubric": [
+        { "id": "c1", "concept": "determinato: prestazioni definite nel contratto", "weight": 1 },
+        { "id": "c2", "concept": "determinabile: con criteri o elementi esterni", "weight": 2 },
+        { "id": "c3", "concept": "contratto per relationem", "weight": 1 }
+      ],
+      "references": ["1346"]
+    },
+    {
+      "prompt": "Perché la determinatezza dell'oggetto è un requisito importante?",
+      "answer": "Perché senza di essa è dubbia la serietà dell'accordo e non è possibile applicare i rimedi per attuare i diritti delle parti in caso di controversia.",
+      "rubric": [
+        { "id": "c1", "concept": "serietà dell'accordo", "weight": 2 },
+        { "id": "c2", "concept": "possibilità di tutela giudiziale dei diritti", "weight": 2 }
+      ],
+      "references": ["1346"]
+    },
+    {
+      "prompt": "In un contratto formale l'oggetto può essere determinato per relationem?",
+      "answer": "Sì, se l'elemento da determinare non è essenziale. Se invece riguarda un elemento essenziale, come il prezzo di una vendita immobiliare, anche l'elemento esterno a cui si rinvia deve avere la forma richiesta.",
+      "rubric": [
+        { "id": "c1", "concept": "sì per gli elementi non essenziali", "weight": 2 },
+        { "id": "c2", "concept": "per quelli essenziali il rinvio deve avere la stessa forma", "weight": 2 }
+      ],
+      "references": ["1346", "1350"]
+    },
+    {
+      "prompt": "Che cos'è l'arbitraggio?",
+      "answer": "È la determinazione dell'oggetto del contratto affidata dalle parti a un terzo, detto arbitratore, che deve procedere con equo apprezzamento salvo che le parti si siano rimesse al suo mero arbitrio.",
+      "rubric": [
+        { "id": "c1", "concept": "determinazione dell'oggetto affidata a un terzo", "weight": 2 },
+        { "id": "c2", "concept": "il terzo è l'arbitratore", "weight": 1 },
+        { "id": "c3", "concept": "equo apprezzamento o mero arbitrio", "weight": 1 }
+      ],
+      "references": ["1349"]
+    },
+    {
+      "prompt": "Che cosa succede se la determinazione del terzo arbitratore è manifestamente iniqua o manca?",
+      "answer": "Se il terzo doveva decidere con equo apprezzamento e la sua determinazione manca o è manifestamente iniqua o erronea, la determinazione è fatta dal giudice.",
+      "rubric": [
+        { "id": "c1", "concept": "caso dell'equo apprezzamento", "weight": 1 },
+        { "id": "c2", "concept": "decisione mancante, iniqua o erronea", "weight": 1 },
+        { "id": "c3", "concept": "la determinazione la fa il giudice", "weight": 2 }
+      ],
+      "references": ["1349"]
+    },
+    {
+      "prompt": "Che differenza c'è tra arbitraggio con equo apprezzamento e con mero arbitrio?",
+      "answer": "Con l'equo apprezzamento la decisione si impugna se manifestamente iniqua o erronea e, se manca, provvede il giudice. Con il mero arbitrio si impugna solo provando la mala fede del terzo e, se il terzo non decide e le parti non lo sostituiscono, il contratto è nullo.",
+      "rubric": [
+        { "id": "c1", "concept": "equo apprezzamento: impugnabile se iniqua o erronea", "weight": 1 },
+        { "id": "c2", "concept": "equo apprezzamento: in mancanza provvede il giudice", "weight": 1 },
+        { "id": "c3", "concept": "mero arbitrio: impugnabile solo per mala fede", "weight": 2 },
+        { "id": "c4", "concept": "mero arbitrio: in mancanza il contratto è nullo", "weight": 1 }
+      ],
+      "references": ["1349"]
+    }
+  ]
+}

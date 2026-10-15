@@ -1,0 +1,161 @@
+{
+  "topic": { "name": "Pagamento con surrogazione e cessione del credito" },
+  "questions": [
+    {
+      "prompt": "Che cos'è il pagamento con surrogazione?",
+      "answer": "È il pagamento del terzo che non estingue l'obbligazione ma la modifica dal lato attivo: il terzo che paga subentra nei diritti che il creditore soddisfatto aveva verso il debitore.",
+      "rubric": [
+        { "id": "c1", "concept": "il terzo paga il creditore", "weight": 1 },
+        { "id": "c2", "concept": "l'obbligazione non si estingue", "weight": 2 },
+        { "id": "c3", "concept": "il terzo subentra nei diritti del creditore", "weight": 2 }
+      ],
+      "references": ["1201", "1202", "1203"]
+    },
+    {
+      "prompt": "Che differenza c'è tra adempimento del terzo e pagamento con surrogazione?",
+      "answer": "Con il semplice adempimento del terzo l'obbligazione si estingue e il debitore è liberato. Con la surrogazione il creditore è soddisfatto ma il debito sopravvive: il terzo diventa il nuovo creditore del debitore.",
+      "rubric": [
+        { "id": "c1", "concept": "adempimento del terzo: l'obbligazione si estingue", "weight": 2 },
+        { "id": "c2", "concept": "surrogazione: il terzo diventa creditore", "weight": 2 }
+      ],
+      "references": ["1180", "1201"]
+    },
+    {
+      "prompt": "Quali sono i tipi di surrogazione per pagamento?",
+      "answer": "La surrogazione per volontà del creditore, quella per volontà del debitore (per imprestito) e quella legale, che opera di diritto nei casi previsti dalla legge.",
+      "rubric": [
+        { "id": "c1", "concept": "per volontà del creditore", "weight": 1 },
+        { "id": "c2", "concept": "per volontà del debitore", "weight": 1 },
+        { "id": "c3", "concept": "legale", "weight": 1 }
+      ],
+      "references": ["1201", "1202", "1203"]
+    },
+    {
+      "prompt": "Quali requisiti ha la surrogazione per volontà del creditore?",
+      "answer": "Il creditore che riceve il pagamento da un terzo può surrogarlo nei propri diritti, ma la surrogazione deve essere espressa e contemporanea al pagamento; altrimenti il pagamento estingue l'obbligazione.",
+      "rubric": [
+        { "id": "c1", "concept": "dichiarazione espressa del creditore", "weight": 2 },
+        { "id": "c2", "concept": "contemporanea al pagamento", "weight": 2 }
+      ],
+      "references": ["1201"]
+    },
+    {
+      "prompt": "Che cos'è la surrogazione per volontà del debitore?",
+      "answer": "Il debitore che prende a mutuo denaro per pagare il debito può surrogare il mutuante nei diritti del creditore, anche senza il consenso di questo. Servono mutuo e quietanza con data certa, l'indicazione nel mutuo della destinazione della somma e la menzione nella quietanza della sua provenienza.",
+      "rubric": [
+        { "id": "c1", "concept": "mutuo per pagare il debito", "weight": 1 },
+        { "id": "c2", "concept": "surroga del mutuante senza consenso del creditore", "weight": 2 },
+        { "id": "c3", "concept": "data certa, destinazione nel mutuo, provenienza nella quietanza", "weight": 2 }
+      ],
+      "references": ["1202"]
+    },
+    {
+      "prompt": "In quali casi opera la surrogazione legale?",
+      "answer": "A favore del creditore che paga un altro creditore preferito per privilegio, pegno o ipoteca; dell'acquirente di un immobile che paga i creditori ipotecari; di chi, tenuto con altri o per altri, aveva interesse a pagare; dell'erede con beneficio d'inventario che paga con denaro proprio i debiti ereditari; negli altri casi di legge.",
+      "rubric": [
+        { "id": "c1", "concept": "creditore che paga un creditore preferito", "weight": 1 },
+        { "id": "c2", "concept": "acquirente dell'immobile ipotecato", "weight": 1 },
+        { "id": "c3", "concept": "coobbligato o garante tenuto al pagamento", "weight": 1 },
+        { "id": "c4", "concept": "erede con beneficio d'inventario", "weight": 1 }
+      ],
+      "references": ["1203"]
+    },
+    {
+      "prompt": "Che cos'è la cessione del credito?",
+      "answer": "È il contratto con cui il creditore (cedente) trasferisce a titolo oneroso o gratuito il suo credito a un terzo (cessionario), anche senza il consenso del debitore, purché il credito non sia strettamente personale e il trasferimento non sia vietato dalla legge.",
+      "rubric": [
+        { "id": "c1", "concept": "trasferimento del credito tra cedente e cessionario", "weight": 2 },
+        { "id": "c2", "concept": "senza consenso del debitore", "weight": 2 },
+        { "id": "c3", "concept": "salvo crediti personali o divieti di legge", "weight": 1 }
+      ],
+      "references": ["1260"]
+    },
+    {
+      "prompt": "Perché per cedere il credito non serve il consenso del debitore?",
+      "answer": "Perché per il debitore è indifferente a chi eseguire la prestazione: la prestazione resta la stessa e l'adempimento è un atto dovuto. Il consenso servirebbe solo se il credito avesse carattere strettamente personale.",
+      "rubric": [
+        { "id": "c1", "concept": "per il debitore è indifferente la persona del creditore", "weight": 2 },
+        { "id": "c2", "concept": "la prestazione non cambia", "weight": 1 }
+      ],
+      "references": ["1260"]
+    },
+    {
+      "prompt": "Il patto che esclude la cedibilità del credito è opponibile al cessionario?",
+      "answer": "Le parti possono escludere la cedibilità del credito, ma il patto non è opponibile al cessionario se non si prova che egli lo conosceva al tempo della cessione.",
+      "rubric": [
+        { "id": "c1", "concept": "il divieto pattizio è valido", "weight": 1 },
+        { "id": "c2", "concept": "opponibile solo al cessionario che lo conosceva", "weight": 2 }
+      ],
+      "references": ["1260"]
+    },
+    {
+      "prompt": "Chi non può rendersi cessionario di crediti litigiosi?",
+      "answer": "Magistrati, funzionari di cancelleria, ufficiali giudiziari, avvocati e notai non possono acquistare, neppure per interposta persona, diritti contestati davanti all'autorità giudiziaria in cui esercitano, a pena di nullità e risarcimento dei danni.",
+      "rubric": [
+        { "id": "c1", "concept": "magistrati, avvocati, notai e personale giudiziario", "weight": 1 },
+        { "id": "c2", "concept": "crediti litigiosi nel loro ufficio", "weight": 2 },
+        { "id": "c3", "concept": "a pena di nullità", "weight": 1 }
+      ],
+      "references": ["1261"]
+    },
+    {
+      "prompt": "Da quando la cessione del credito ha effetto verso il debitore ceduto?",
+      "answer": "Da quando il debitore l'ha accettata o gli è stata notificata. Anche prima della notifica, però, il debitore che paga al cedente non è liberato se il cessionario prova che conosceva l'avvenuta cessione.",
+      "rubric": [
+        { "id": "c1", "concept": "dalla notificazione o dall'accettazione", "weight": 2 },
+        { "id": "c2", "concept": "il pagamento al cedente libera se il debitore ignorava la cessione", "weight": 1 },
+        { "id": "c3", "concept": "non libera se il cessionario prova la conoscenza", "weight": 1 }
+      ],
+      "references": ["1264"]
+    },
+    {
+      "prompt": "Che cosa trasferisce la cessione oltre al credito?",
+      "answer": "Il credito è trasferito con i privilegi, le garanzie personali e reali e gli altri accessori, salvo patto contrario; il cedente non può trasferire il possesso della cosa ricevuta in pegno senza il consenso del costituente.",
+      "rubric": [
+        { "id": "c1", "concept": "privilegi e garanzie personali e reali", "weight": 2 },
+        { "id": "c2", "concept": "altri accessori del credito", "weight": 1 },
+        { "id": "c3", "concept": "salvo patto contrario", "weight": 1 }
+      ],
+      "references": ["1263"]
+    },
+    {
+      "prompt": "Il cedente risponde dell'esistenza del credito e della solvenza del debitore?",
+      "answer": "Nella cessione a titolo oneroso il cedente garantisce l'esistenza del credito (nomen verum), ma non la solvenza del debitore (nomen bonum), salvo che ne abbia assunto la garanzia.",
+      "rubric": [
+        { "id": "c1", "concept": "garantisce l'esistenza del credito", "weight": 2 },
+        { "id": "c2", "concept": "non la solvenza del debitore", "weight": 2 },
+        { "id": "c3", "concept": "salvo garanzia espressamente assunta", "weight": 1 }
+      ],
+      "references": ["1266", "1267"]
+    },
+    {
+      "prompt": "Entro quali limiti risponde il cedente che ha garantito la solvenza del debitore?",
+      "answer": "Risponde nei limiti di quanto ha ricevuto, oltre agli interessi, alle spese della cessione e dell'escussione e al risarcimento del danno; ogni patto che aggravi la sua responsabilità è senza effetto. La garanzia cessa se l'insolvenza è dipesa dalla negligenza del cessionario nell'agire contro il debitore.",
+      "rubric": [
+        { "id": "c1", "concept": "nei limiti di quanto ricevuto più accessori", "weight": 2 },
+        { "id": "c2", "concept": "nullo il patto che aggrava la responsabilità", "weight": 1 },
+        { "id": "c3", "concept": "cessa per negligenza del cessionario", "weight": 1 }
+      ],
+      "references": ["1267"]
+    },
+    {
+      "prompt": "Che differenza c'è tra cessione pro soluto e cessione pro solvendo?",
+      "answer": "Nella cessione pro soluto il cedente non garantisce la solvenza del debitore e il rischio dell'inadempimento è del cessionario. Nella cessione pro solvendo il cedente garantisce anche il pagamento e risponde se il debitore non paga.",
+      "rubric": [
+        { "id": "c1", "concept": "pro soluto: non garantisce la solvenza", "weight": 2 },
+        { "id": "c2", "concept": "pro solvendo: garantisce il pagamento", "weight": 2 }
+      ],
+      "references": ["1267"]
+    },
+    {
+      "prompt": "Che cos'è il factoring?",
+      "answer": "È il contratto con cui un'impresa specializzata, il factor, acquista i crediti commerciali di un imprenditore e ne cura la gestione e la riscossione, spesso anticipandone il valore, in cambio di una commissione: si fonda sulla cessione dei crediti.",
+      "rubric": [
+        { "id": "c1", "concept": "cessione di crediti d'impresa a un factor", "weight": 2 },
+        { "id": "c2", "concept": "gestione, riscossione e anticipazione", "weight": 1 },
+        { "id": "c3", "concept": "verso una commissione", "weight": 1 }
+      ],
+      "references": ["1260"]
+    }
+  ]
+}

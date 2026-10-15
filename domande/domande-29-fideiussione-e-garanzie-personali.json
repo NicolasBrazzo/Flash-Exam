@@ -1,0 +1,198 @@
+{
+  "topic": { "name": "Fideiussione e altre garanzie contrattuali" },
+  "questions": [
+    {
+      "prompt": "Che cos'è la fideiussione?",
+      "answer": "È il contratto con cui una persona, il fideiussore, obbligandosi personalmente verso il creditore, garantisce l'adempimento di un'obbligazione altrui.",
+      "rubric": [
+        { "id": "c1", "concept": "obbligazione personale verso il creditore", "weight": 2 },
+        { "id": "c2", "concept": "garanzia dell'adempimento di un debito altrui", "weight": 2 }
+      ],
+      "references": ["1936"]
+    },
+    {
+      "prompt": "Che differenza c'è tra garanzia personale e garanzia reale?",
+      "answer": "Con la garanzia personale, come la fideiussione, un terzo risponde con tutto il suo patrimonio ma senza diritto di seguito né prelazione su beni specifici. Con la garanzia reale, pegno e ipoteca, un bene determinato è vincolato al soddisfacimento del credito, con prelazione e seguito.",
+      "rubric": [
+        { "id": "c1", "concept": "personale: risponde un terzo con tutto il patrimonio", "weight": 2 },
+        { "id": "c2", "concept": "personale: niente seguito né prelazione", "weight": 1 },
+        { "id": "c3", "concept": "reale: vincolo su un bene con prelazione e seguito", "weight": 2 }
+      ],
+      "references": ["1936", "2740", "2741"]
+    },
+    {
+      "prompt": "Serve il consenso del debitore per la fideiussione?",
+      "answer": "No, la fideiussione è efficace anche se il debitore non ne ha conoscenza: il rapporto si forma tra creditore e fideiussore e, comportando obblighi solo per il fideiussore, si conclude senza bisogno di accettazione del creditore.",
+      "rubric": [
+        { "id": "c1", "concept": "efficace anche all'insaputa del debitore", "weight": 2 },
+        { "id": "c2", "concept": "rapporto tra creditore e fideiussore", "weight": 1 },
+        { "id": "c3", "concept": "si conclude per mancato rifiuto del creditore", "weight": 1 }
+      ],
+      "references": ["1936", "1333"]
+    },
+    {
+      "prompt": "Come deve essere manifestata la volontà di prestare fideiussione?",
+      "answer": "Deve essere espressa: non si può desumere da comportamenti concludenti, data la gravità dell'impegno.",
+      "rubric": [
+        { "id": "c1", "concept": "volontà espressa", "weight": 2 },
+        { "id": "c2", "concept": "non desumibile da fatti concludenti", "weight": 1 }
+      ],
+      "references": ["1937"]
+    },
+    {
+      "prompt": "Che cosa significa che la fideiussione è accessoria?",
+      "answer": "Significa che esiste solo se esiste un'obbligazione principale valida: non può eccedere ciò che è dovuto dal debitore né essere prestata a condizioni più onerose, e il fideiussore può opporre al creditore le eccezioni del debitore principale.",
+      "rubric": [
+        { "id": "c1", "concept": "presuppone un'obbligazione principale valida", "weight": 2 },
+        { "id": "c2", "concept": "non può eccedere il debito principale", "weight": 1 },
+        { "id": "c3", "concept": "il fideiussore oppone le eccezioni del debitore", "weight": 1 }
+      ],
+      "references": ["1939", "1941", "1945"]
+    },
+    {
+      "prompt": "È valida la fideiussione per l'obbligazione di un incapace?",
+      "answer": "Sì, la fideiussione è valida anche se l'obbligazione principale è annullabile per incapacità del debitore; per questo il fideiussore non può opporre al creditore l'eccezione derivante dall'incapacità.",
+      "rubric": [
+        { "id": "c1", "concept": "valida anche per il debito dell'incapace", "weight": 2 },
+        { "id": "c2", "concept": "il fideiussore non può opporre l'incapacità", "weight": 2 }
+      ],
+      "references": ["1939", "1945"]
+    },
+    {
+      "prompt": "Il fideiussore risponde in solido con il debitore?",
+      "answer": "Sì, è obbligato in solido con il debitore principale; le parti però possono pattuire il beneficio di escussione, per cui il fideiussore paga solo dopo l'escussione infruttuosa del debitore.",
+      "rubric": [
+        { "id": "c1", "concept": "responsabilità solidale", "weight": 2 },
+        { "id": "c2", "concept": "salvo patto di beneficio di escussione", "weight": 2 }
+      ],
+      "references": ["1944"]
+    },
+    {
+      "prompt": "Che cos'è il beneficio di escussione?",
+      "answer": "È il patto per cui il fideiussore, convenuto dal creditore, può pretendere che questi escuta prima il debitore principale, indicando i beni del debitore da sottoporre a esecuzione; è tenuto solo per quanto il creditore non riesce a ottenere.",
+      "rubric": [
+        { "id": "c1", "concept": "il creditore deve prima escutere il debitore", "weight": 2 },
+        { "id": "c2", "concept": "il fideiussore indica i beni del debitore", "weight": 1 },
+        { "id": "c3", "concept": "paga solo il residuo", "weight": 1 }
+      ],
+      "references": ["1944"]
+    },
+    {
+      "prompt": "Che cos'è il beneficio della divisione?",
+      "answer": "Se più persone hanno prestato fideiussione per lo stesso debito, ciascuna è obbligata per l'intero, ma se è pattuito il beneficio della divisione ciascun fideiussore può esigere che il creditore riduca l'azione alla sua parte.",
+      "rubric": [
+        { "id": "c1", "concept": "pluralità di fideiussori", "weight": 1 },
+        { "id": "c2", "concept": "ciascuno risponde solo per la sua parte", "weight": 2 },
+        { "id": "c3", "concept": "solo se pattuito", "weight": 1 }
+      ],
+      "references": ["1946", "1947"]
+    },
+    {
+      "prompt": "Quali azioni ha il fideiussore che ha pagato?",
+      "answer": "È surrogato nei diritti che il creditore aveva contro il debitore, comprese le garanzie, e ha inoltre azione di regresso contro il debitore per il capitale, gli interessi e le spese, anche se il debitore ignorava la fideiussione.",
+      "rubric": [
+        { "id": "c1", "concept": "surrogazione nei diritti del creditore", "weight": 2 },
+        { "id": "c2", "concept": "azione di regresso contro il debitore", "weight": 2 },
+        { "id": "c3", "concept": "anche se il debitore ignorava la fideiussione", "weight": 1 }
+      ],
+      "references": ["1949", "1950"]
+    },
+    {
+      "prompt": "Quando la fideiussione si estingue per fatto del creditore?",
+      "answer": "Quando, per fatto del creditore, non può avere effetto la surrogazione del fideiussore nei diritti, pegni, ipoteche e privilegi del creditore.",
+      "rubric": [
+        { "id": "c1", "concept": "fatto del creditore", "weight": 1 },
+        { "id": "c2", "concept": "impedisce la surrogazione del fideiussore", "weight": 2 }
+      ],
+      "references": ["1955"]
+    },
+    {
+      "prompt": "Quando il fideiussore di un'obbligazione futura è liberato?",
+      "answer": "Quando il creditore, senza autorizzazione del fideiussore, ha fatto credito al debitore pur conoscendo che le sue condizioni patrimoniali erano divenute tali da rendere notevolmente più difficile il soddisfacimento del credito. È nulla la rinuncia preventiva a questa liberazione.",
+      "rubric": [
+        { "id": "c1", "concept": "credito concesso senza autorizzazione del fideiussore", "weight": 1 },
+        { "id": "c2", "concept": "conoscendo il peggioramento delle condizioni del debitore", "weight": 2 },
+        { "id": "c3", "concept": "nulla la rinuncia preventiva", "weight": 1 }
+      ],
+      "references": ["1956"]
+    },
+    {
+      "prompt": "Che cosa prevede la regola sulla scadenza dell'obbligazione principale nella fideiussione?",
+      "answer": "Il fideiussore resta obbligato anche dopo la scadenza dell'obbligazione principale, purché il creditore entro sei mesi abbia proposto le sue istanze contro il debitore e le abbia continuate con diligenza.",
+      "rubric": [
+        { "id": "c1", "concept": "il fideiussore resta obbligato dopo la scadenza", "weight": 1 },
+        { "id": "c2", "concept": "se il creditore agisce contro il debitore entro sei mesi", "weight": 2 },
+        { "id": "c3", "concept": "e prosegue con diligenza", "weight": 1 }
+      ],
+      "references": ["1957"]
+    },
+    {
+      "prompt": "Che cos'è la fideiussione omnibus e a quale condizione è valida?",
+      "answer": "È la fideiussione che garantisce tutti i debiti, anche futuri, di un soggetto verso una banca. È valida solo se è indicato l'importo massimo garantito.",
+      "rubric": [
+        { "id": "c1", "concept": "garantisce tutti i debiti anche futuri verso la banca", "weight": 2 },
+        { "id": "c2", "concept": "valida solo con importo massimo indicato", "weight": 2 }
+      ],
+      "references": ["1938"]
+    },
+    {
+      "prompt": "Che cos'è il mandato di credito?",
+      "answer": "È il contratto con cui una persona incarica un'altra di fare credito a un terzo in nome e per conto proprio: chi ha conferito l'incarico risponde come fideiussore di un debito futuro. Chi ha accettato l'incarico non può rinunciarvi, mentre il mandante può revocarlo risarcendo il danno.",
+      "rubric": [
+        { "id": "c1", "concept": "incarico di fare credito a un terzo", "weight": 2 },
+        { "id": "c2", "concept": "il mandante risponde come fideiussore", "weight": 2 },
+        { "id": "c3", "concept": "revocabile con risarcimento", "weight": 1 }
+      ],
+      "references": ["1958"]
+    },
+    {
+      "prompt": "Che cos'è la garanzia autonoma o a prima richiesta?",
+      "answer": "È la garanzia con cui un soggetto, di solito una banca, si obbliga a pagare al beneficiario l'importo stabilito a semplice richiesta, rinunciando a opporre le eccezioni relative al rapporto principale: l'obbligo è autonomo, non accessorio.",
+      "rubric": [
+        { "id": "c1", "concept": "pagamento a semplice richiesta", "weight": 2 },
+        { "id": "c2", "concept": "rinuncia alle eccezioni del rapporto principale", "weight": 1 },
+        { "id": "c3", "concept": "obbligazione autonoma, non accessoria", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra fideiussione e garanzia autonoma?",
+      "answer": "La fideiussione è accessoria: il fideiussore paga ciò che deve il debitore e può opporre le sue eccezioni. La garanzia autonoma è svincolata dal rapporto principale: il garante paga a prima richiesta senza poter sollevare eccezioni e poi si rivale sul debitore.",
+      "rubric": [
+        { "id": "c1", "concept": "fideiussione: accessoria, eccezioni del debitore opponibili", "weight": 2 },
+        { "id": "c2", "concept": "garanzia autonoma: nessuna eccezione, pagamento a richiesta", "weight": 2 }
+      ],
+      "references": ["1936", "1945"]
+    },
+    {
+      "prompt": "Che cos'è l'anticresi?",
+      "answer": "È il contratto con cui il debitore o un terzo si obbliga a consegnare un immobile al creditore a garanzia del credito, affinché questi ne percepisca i frutti imputandoli agli interessi, se dovuti, e poi al capitale. Richiede la forma scritta.",
+      "rubric": [
+        { "id": "c1", "concept": "consegna di un immobile al creditore", "weight": 2 },
+        { "id": "c2", "concept": "il creditore percepisce i frutti", "weight": 1 },
+        { "id": "c3", "concept": "imputati a interessi e capitale", "weight": 1 },
+        { "id": "c4", "concept": "forma scritta", "weight": 1 }
+      ],
+      "references": ["1960"]
+    },
+    {
+      "prompt": "Che differenza c'è tra anticresi e ipoteca?",
+      "answer": "Con l'ipoteca il bene resta nel possesso del debitore e il creditore ha un diritto reale con prelazione sul ricavato. Con l'anticresi l'immobile passa al creditore che ne percepisce i frutti, ma non acquista un diritto reale di prelazione.",
+      "rubric": [
+        { "id": "c1", "concept": "ipoteca: il bene resta al debitore", "weight": 1 },
+        { "id": "c2", "concept": "ipoteca: diritto reale con prelazione", "weight": 2 },
+        { "id": "c3", "concept": "anticresi: godimento dei frutti, nessuna prelazione", "weight": 2 }
+      ],
+      "references": ["1960", "2808"]
+    },
+    {
+      "prompt": "Si applica all'anticresi il divieto del patto commissorio?",
+      "answer": "Sì, è nullo il patto per cui, in mancanza di pagamento, la proprietà dell'immobile passa al creditore.",
+      "rubric": [
+        { "id": "c1", "concept": "sì, si applica il divieto", "weight": 2 },
+        { "id": "c2", "concept": "nullo il passaggio automatico della proprietà al creditore", "weight": 2 }
+      ],
+      "references": ["1963"]
+    }
+  ]
+}

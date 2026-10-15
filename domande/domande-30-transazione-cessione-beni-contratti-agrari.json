@@ -1,0 +1,138 @@
+{
+  "topic": { "name": "Transazione, cessione dei beni ai creditori e contratti agrari" },
+  "questions": [
+    {
+      "prompt": "Che cos'è la transazione?",
+      "answer": "È il contratto con cui le parti, facendosi reciproche concessioni, pongono fine a una lite già cominciata o prevengono una lite che può sorgere tra loro.",
+      "rubric": [
+        { "id": "c1", "concept": "reciproche concessioni", "weight": 2 },
+        { "id": "c2", "concept": "pone fine o previene una lite", "weight": 2 }
+      ],
+      "references": ["1965"]
+    },
+    {
+      "prompt": "Perché le reciproche concessioni sono essenziali nella transazione?",
+      "answer": "Perché senza concessioni da entrambe le parti non c'è transazione: se una parte accetta integralmente la pretesa dell'altra si ha una semplice rinuncia o un riconoscimento.",
+      "rubric": [
+        { "id": "c1", "concept": "servono concessioni di entrambe le parti", "weight": 2 },
+        { "id": "c2", "concept": "altrimenti c'è solo rinuncia o riconoscimento", "weight": 2 }
+      ],
+      "references": ["1965"]
+    },
+    {
+      "prompt": "Che cos'è la transazione novativa?",
+      "answer": "È la transazione con cui le parti creano, modificano o estinguono rapporti diversi da quello controverso. Se è novativa, non si può risolvere per inadempimento per tornare alle pretese originarie, salvo che il diritto di risoluzione sia stato espressamente pattuito.",
+      "rubric": [
+        { "id": "c1", "concept": "crea o modifica rapporti diversi da quello controverso", "weight": 2 },
+        { "id": "c2", "concept": "non risolubile per inadempimento salvo patto espresso", "weight": 2 }
+      ],
+      "references": ["1965", "1976"]
+    },
+    {
+      "prompt": "Quali limiti incontra la transazione quanto ai diritti e ai soggetti?",
+      "answer": "Le parti devono avere la capacità di disporre dei diritti oggetto della lite, e la transazione è nulla se riguarda diritti che per loro natura o per legge sono sottratti alla disponibilità delle parti.",
+      "rubric": [
+        { "id": "c1", "concept": "capacità di disporre dei diritti", "weight": 2 },
+        { "id": "c2", "concept": "nulla se su diritti indisponibili", "weight": 2 }
+      ],
+      "references": ["1966"]
+    },
+    {
+      "prompt": "Quale forma richiede la transazione?",
+      "answer": "Deve essere provata per iscritto; la forma scritta è richiesta a pena di nullità se la transazione riguarda rapporti per i quali la legge la richiede, come i diritti reali immobiliari.",
+      "rubric": [
+        { "id": "c1", "concept": "forma scritta per la prova", "weight": 2 },
+        { "id": "c2", "concept": "ad substantiam per i diritti reali immobiliari", "weight": 2 }
+      ],
+      "references": ["1967", "1350"]
+    },
+    {
+      "prompt": "Si può impugnare la transazione per errore di diritto o per lesione?",
+      "answer": "No: non è annullabile per errore di diritto relativo alle questioni oggetto della controversia, né può essere impugnata per lesione, perché la sua funzione è proprio evitare l'accertamento della situazione controversa.",
+      "rubric": [
+        { "id": "c1", "concept": "non annullabile per errore di diritto sulle questioni controverse", "weight": 2 },
+        { "id": "c2", "concept": "non impugnabile per lesione", "weight": 1 },
+        { "id": "c3", "concept": "la funzione è evitare l'accertamento", "weight": 1 }
+      ],
+      "references": ["1969", "1970"]
+    },
+    {
+      "prompt": "Quando la transazione è annullabile?",
+      "answer": "Quando una parte era consapevole della temerarietà della sua pretesa; quando è stata conclusa in base a documenti poi riconosciuti falsi; quando si scoprono documenti ignoti alle parti da cui risulta che una di esse non aveva alcun diritto.",
+      "rubric": [
+        { "id": "c1", "concept": "consapevolezza della temerarietà della pretesa", "weight": 1 },
+        { "id": "c2", "concept": "documenti falsi", "weight": 1 },
+        { "id": "c3", "concept": "scoperta di documenti ignoti decisivi", "weight": 1 }
+      ],
+      "references": ["1971", "1973", "1975"]
+    },
+    {
+      "prompt": "Che cosa succede alla transazione su un contratto illecito o nullo?",
+      "answer": "È nulla la transazione relativa a un contratto illecito, anche se le parti hanno trattato della nullità. Se il contratto è nullo per altre cause, la transazione è annullabile solo su istanza della parte che ignorava la causa di nullità.",
+      "rubric": [
+        { "id": "c1", "concept": "contratto illecito: transazione nulla", "weight": 2 },
+        { "id": "c2", "concept": "nullità per altre cause: annullabile", "weight": 1 },
+        { "id": "c3", "concept": "su istanza della parte che ignorava la nullità", "weight": 1 }
+      ],
+      "references": ["1972"]
+    },
+    {
+      "prompt": "Che cos'è la cessione dei beni ai creditori?",
+      "answer": "È il contratto con cui il debitore incarica i suoi creditori, o alcuni di essi, di liquidare tutte o alcune sue attività e di ripartire tra loro il ricavato in soddisfazione dei crediti. Serve a evitare la procedura esecutiva e richiede la forma scritta.",
+      "rubric": [
+        { "id": "c1", "concept": "incarico ai creditori di liquidare i beni", "weight": 2 },
+        { "id": "c2", "concept": "ripartizione del ricavato tra i creditori", "weight": 1 },
+        { "id": "c3", "concept": "evita l'esecuzione forzata", "weight": 1 },
+        { "id": "c4", "concept": "forma scritta", "weight": 1 }
+      ],
+      "references": ["1977", "1978"]
+    },
+    {
+      "prompt": "Quando il debitore è liberato nella cessione dei beni ai creditori?",
+      "answer": "Salvo patto contrario la cessione è fatta pro solvendo: il debitore è liberato verso i creditori solo dal giorno in cui ricevono la parte loro spettante e nei limiti di quanto ricevuto.",
+      "rubric": [
+        { "id": "c1", "concept": "cessione pro solvendo", "weight": 2 },
+        { "id": "c2", "concept": "liberazione solo nei limiti di quanto ricevuto", "weight": 2 }
+      ],
+      "references": ["1984"]
+    },
+    {
+      "prompt": "Quali poteri conserva il debitore che ha ceduto i beni ai creditori?",
+      "answer": "Perde la disponibilità dei beni ceduti, ma può controllare la gestione, ha diritto al residuo della liquidazione e può recedere dal contratto offrendo il pagamento del capitale, degli interessi e delle spese.",
+      "rubric": [
+        { "id": "c1", "concept": "perde la disponibilità dei beni", "weight": 1 },
+        { "id": "c2", "concept": "controllo sulla gestione e diritto al residuo", "weight": 1 },
+        { "id": "c3", "concept": "recesso offrendo il pagamento", "weight": 2 }
+      ],
+      "references": ["1980", "1982", "1983", "1985"]
+    },
+    {
+      "prompt": "Quando i creditori possono annullare la cessione dei beni?",
+      "answer": "Quando il debitore, pur dichiarando di cedere tutti i beni, ne ha dissimulato una parte notevole, o ha occultato passività o simulato passività inesistenti.",
+      "rubric": [
+        { "id": "c1", "concept": "dissimulazione di una parte notevole dei beni", "weight": 2 },
+        { "id": "c2", "concept": "passività occultate o simulate", "weight": 2 }
+      ],
+      "references": ["1986"]
+    },
+    {
+      "prompt": "Che cosa sono i contratti agrari?",
+      "answer": "Sono i contratti che, attraverso la concessione del godimento di un fondo o di bestiame, danno vita all'impresa agricola. Si distinguono in contratti di scambio, come l'affitto di fondi rustici, e contratti associativi.",
+      "rubric": [
+        { "id": "c1", "concept": "godimento del fondo per l'impresa agricola", "weight": 2 },
+        { "id": "c2", "concept": "di scambio o associativi", "weight": 2 }
+      ],
+      "references": ["1628"]
+    },
+    {
+      "prompt": "Che cos'è l'affitto di fondi rustici?",
+      "answer": "È l'affitto di un fondo concesso per l'esercizio dell'attività agricola: verso un corrispettivo in denaro l'affittuario coltiva il fondo e ne fa propri i frutti. La legge favorisce l'affitto a coltivatore diretto e la legislazione speciale limita molto l'autonomia delle parti.",
+      "rubric": [
+        { "id": "c1", "concept": "fondo concesso per l'attività agricola", "weight": 2 },
+        { "id": "c2", "concept": "l'affittuario fa propri i frutti", "weight": 1 },
+        { "id": "c3", "concept": "favore per il coltivatore diretto e leggi speciali", "weight": 1 }
+      ],
+      "references": ["1628", "1647"]
+    }
+  ]
+}

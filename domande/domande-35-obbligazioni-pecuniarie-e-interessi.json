@@ -1,0 +1,150 @@
+{
+  "topic": { "name": "Obbligazioni pecuniarie e interessi" },
+  "questions": [
+    {
+      "prompt": "Che cosa sono le obbligazioni pecuniarie?",
+      "answer": "Sono le obbligazioni che hanno per oggetto il pagamento di una somma di denaro; si distinguono in debiti di valuta e debiti di valore.",
+      "rubric": [
+        { "id": "c1", "concept": "oggetto: una somma di denaro", "weight": 2 },
+        { "id": "c2", "concept": "debiti di valuta e debiti di valore", "weight": 1 }
+      ],
+      "references": ["1277"]
+    },
+    {
+      "prompt": "Che differenza c'è tra debiti di valuta e debiti di valore?",
+      "answer": "Nei debiti di valuta il denaro è dovuto come tale, in una somma fissata fin dall'origine, e vale il principio nominalistico. Nei debiti di valore il denaro serve a misurare il valore di un bene o di un danno, come nel risarcimento, e la somma si determina al momento della liquidazione tenendo conto della svalutazione.",
+      "rubric": [
+        { "id": "c1", "concept": "valuta: somma di denaro fissata dall'origine", "weight": 2 },
+        { "id": "c2", "concept": "valore: il denaro misura un valore", "weight": 2 },
+        { "id": "c3", "concept": "esempio: risarcimento del danno", "weight": 1 }
+      ],
+      "references": ["1277"]
+    },
+    {
+      "prompt": "Che cosa stabilisce il principio nominalistico?",
+      "answer": "I debiti pecuniari si estinguono con moneta avente corso legale al tempo del pagamento e per il suo valore nominale: la somma dovuta è quella indicata, senza tener conto della svalutazione monetaria.",
+      "rubric": [
+        { "id": "c1", "concept": "moneta avente corso legale al pagamento", "weight": 1 },
+        { "id": "c2", "concept": "per il valore nominale", "weight": 2 },
+        { "id": "c3", "concept": "senza considerare la svalutazione", "weight": 1 }
+      ],
+      "references": ["1277"]
+    },
+    {
+      "prompt": "Come si paga un debito espresso in una moneta che non ha più corso legale?",
+      "answer": "Il pagamento si fa in moneta legale, ragguagliata per valore alla moneta originaria, come le lire convertite in euro.",
+      "rubric": [
+        { "id": "c1", "concept": "in moneta legale", "weight": 1 },
+        { "id": "c2", "concept": "ragguagliata al valore della moneta originaria", "weight": 2 }
+      ],
+      "references": ["1277"]
+    },
+    {
+      "prompt": "Come si paga un debito espresso in moneta straniera?",
+      "answer": "Il debitore può pagare in moneta legale al cambio del giorno della scadenza e del luogo stabilito per il pagamento, salvo che le parti abbiano inserito la clausola effettivo, che impone di pagare in moneta straniera, a meno che alla scadenza non sia possibile procurarsela.",
+      "rubric": [
+        { "id": "c1", "concept": "facoltà di pagare in moneta legale al cambio della scadenza", "weight": 2 },
+        { "id": "c2", "concept": "salvo clausola effettivo", "weight": 2 },
+        { "id": "c3", "concept": "salvo impossibilità di procurarsi la moneta", "weight": 1 }
+      ],
+      "references": ["1278", "1279"]
+    },
+    {
+      "prompt": "Che cos'è il debito di specie monetaria avente valore intrinseco?",
+      "answer": "È il debito che, secondo il titolo, va pagato con una specifica moneta che ha valore intrinseco, come la sterlina d'oro; se la moneta non è reperibile o non ha più corso, si paga con moneta corrente che rappresenti il valore intrinseco che aveva quando è sorta l'obbligazione.",
+      "rubric": [
+        { "id": "c1", "concept": "pagamento con la specifica moneta indicata", "weight": 2 },
+        { "id": "c2", "concept": "se non reperibile, moneta corrente pari al valore intrinseco originario", "weight": 2 }
+      ],
+      "references": ["1280"]
+    },
+    {
+      "prompt": "Che differenza c'è tra frutti naturali e frutti civili?",
+      "answer": "I frutti naturali provengono direttamente dalla cosa, come i prodotti agricoli; i frutti civili sono il corrispettivo del godimento che altri hanno della cosa, come i canoni di locazione e gli interessi dei capitali.",
+      "rubric": [
+        { "id": "c1", "concept": "naturali: provengono direttamente dalla cosa", "weight": 2 },
+        { "id": "c2", "concept": "civili: corrispettivo del godimento altrui", "weight": 2 },
+        { "id": "c3", "concept": "gli interessi sono frutti civili", "weight": 1 }
+      ],
+      "references": ["820"]
+    },
+    {
+      "prompt": "Quando i crediti di denaro producono interessi?",
+      "answer": "I crediti liquidi ed esigibili di somme di denaro producono interessi di pieno diritto, salvo che la legge o il titolo stabiliscano diversamente.",
+      "rubric": [
+        { "id": "c1", "concept": "crediti liquidi ed esigibili", "weight": 2 },
+        { "id": "c2", "concept": "producono interessi di pieno diritto", "weight": 2 },
+        { "id": "c3", "concept": "salvo legge o titolo", "weight": 1 }
+      ],
+      "references": ["1282"]
+    },
+    {
+      "prompt": "Che differenza c'è tra interessi corrispettivi e interessi moratori?",
+      "answer": "Gli interessi corrispettivi sono il compenso per la disponibilità del denaro altrui, i suoi frutti. Gli interessi moratori sono dovuti dal giorno della mora come risarcimento del danno per il ritardo nel pagamento.",
+      "rubric": [
+        { "id": "c1", "concept": "corrispettivi: compenso per l'uso del denaro", "weight": 2 },
+        { "id": "c2", "concept": "moratori: risarcimento per il ritardo", "weight": 2 }
+      ],
+      "references": ["1282", "1224"]
+    },
+    {
+      "prompt": "Che differenza c'è tra interesse legale e interesse convenzionale?",
+      "answer": "L'interesse legale è quello stabilito dalla legge e aggiornato annualmente con decreto ministeriale; si applica se le parti non hanno fissato la misura. L'interesse convenzionale è quello pattuito dalle parti.",
+      "rubric": [
+        { "id": "c1", "concept": "legale: fissato dalla legge e aggiornato ogni anno", "weight": 2 },
+        { "id": "c2", "concept": "si applica in mancanza di patto", "weight": 1 },
+        { "id": "c3", "concept": "convenzionale: pattuito dalle parti", "weight": 1 }
+      ],
+      "references": ["1284"]
+    },
+    {
+      "prompt": "Quale forma serve per pattuire interessi superiori alla misura legale?",
+      "answer": "Devono essere determinati per iscritto; altrimenti sono dovuti nella misura legale.",
+      "rubric": [
+        { "id": "c1", "concept": "forma scritta", "weight": 2 },
+        { "id": "c2", "concept": "altrimenti si applica il tasso legale", "weight": 2 }
+      ],
+      "references": ["1284"]
+    },
+    {
+      "prompt": "Che cosa sono gli interessi usurari e come si individua il limite?",
+      "answer": "Sono interessi che superano il tasso soglia, calcolato periodicamente sulla base dei tassi medi praticati dalle banche maggiorati secondo la legge; la loro pattuizione è reato e, nel mutuo, la clausola è nulla e non sono dovuti interessi.",
+      "rubric": [
+        { "id": "c1", "concept": "superano il tasso soglia", "weight": 2 },
+        { "id": "c2", "concept": "soglia calcolata sui tassi medi bancari", "weight": 1 },
+        { "id": "c3", "concept": "reato e nullità della clausola", "weight": 1 }
+      ],
+      "references": ["1815"]
+    },
+    {
+      "prompt": "Perché, se sono pattuiti interessi usurari, il mutuo non è nullo per intero?",
+      "answer": "Perché la nullità dell'intero contratto danneggerebbe il mutuatario, che dovrebbe restituire subito il capitale: la legge colpisce solo la clausola sugli interessi e il prestito diventa gratuito, così l'usuraio non trae vantaggio dal reato.",
+      "rubric": [
+        { "id": "c1", "concept": "la nullità totale danneggerebbe il mutuatario", "weight": 2 },
+        { "id": "c2", "concept": "nulla solo la clausola, il prestito diventa gratuito", "weight": 2 }
+      ],
+      "references": ["1815"]
+    },
+    {
+      "prompt": "Quale tasso di interesse si applica dal momento della domanda giudiziale?",
+      "answer": "Se le parti non hanno determinato la misura, dalla domanda giudiziale si applica il tasso previsto dalla legislazione sui ritardi di pagamento nelle transazioni commerciali, più alto di quello legale, per evitare speculazioni sulla durata del processo.",
+      "rubric": [
+        { "id": "c1", "concept": "tasso delle transazioni commerciali", "weight": 2 },
+        { "id": "c2", "concept": "dalla domanda giudiziale", "weight": 1 },
+        { "id": "c3", "concept": "evita di speculare sulla durata del processo", "weight": 1 }
+      ],
+      "references": ["1284"]
+    },
+    {
+      "prompt": "Che cos'è l'anatocismo e quando è ammesso?",
+      "answer": "È la produzione di interessi sugli interessi. Salvo usi contrari, gli interessi scaduti producono interessi solo dal giorno della domanda giudiziale o per convenzione posteriore alla scadenza, e sempre che siano dovuti per almeno sei mesi.",
+      "rubric": [
+        { "id": "c1", "concept": "interessi sugli interessi", "weight": 1 },
+        { "id": "c2", "concept": "dalla domanda giudiziale o per accordo successivo alla scadenza", "weight": 2 },
+        { "id": "c3", "concept": "interessi dovuti per almeno sei mesi", "weight": 1 },
+        { "id": "c4", "concept": "salvo usi contrari", "weight": 1 }
+      ],
+      "references": ["1283"]
+    }
+  ]
+}

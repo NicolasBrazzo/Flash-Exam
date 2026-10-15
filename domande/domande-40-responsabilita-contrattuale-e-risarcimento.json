@@ -1,0 +1,228 @@
+{
+  "topic": { "name": "Responsabilità contrattuale e risarcimento del danno" },
+  "questions": [
+    {
+      "prompt": "Qual è la funzione della responsabilità civile?",
+      "answer": "È risarcitoria: trasferisce il costo del danno dal patrimonio del danneggiato a quello del responsabile. Non mira a punire il danneggiante, a differenza della responsabilità penale.",
+      "rubric": [
+        { "id": "c1", "concept": "funzione risarcitoria", "weight": 2 },
+        { "id": "c2", "concept": "trasferire il costo del danno sul responsabile", "weight": 1 },
+        { "id": "c3", "concept": "non punitiva, a differenza del diritto penale", "weight": 1 }
+      ],
+      "references": ["1218", "2043"]
+    },
+    {
+      "prompt": "Che differenza c'è tra responsabilità contrattuale ed extracontrattuale?",
+      "answer": "La responsabilità contrattuale deriva dall'inadempimento di un'obbligazione preesistente, qualunque ne sia la fonte. Quella extracontrattuale deriva da un fatto doloso o colposo che cagiona ad altri un danno ingiusto, senza un rapporto obbligatorio precedente. Entrambe obbligano al risarcimento.",
+      "rubric": [
+        { "id": "c1", "concept": "contrattuale: inadempimento di un'obbligazione", "weight": 2 },
+        { "id": "c2", "concept": "extracontrattuale: fatto doloso o colposo e danno ingiusto", "weight": 2 },
+        { "id": "c3", "concept": "stesso effetto risarcitorio", "weight": 1 }
+      ],
+      "references": ["1218", "2043"]
+    },
+    {
+      "prompt": "La responsabilità contrattuale riguarda solo i contratti?",
+      "answer": "No, riguarda l'inadempimento di qualsiasi obbligazione, anche nata da fatto illecito o da altri atti o fatti idonei: il nome deriva solo dalla tradizione.",
+      "rubric": [
+        { "id": "c1", "concept": "riguarda l'inadempimento di ogni obbligazione", "weight": 2 },
+        { "id": "c2", "concept": "qualunque sia la fonte", "weight": 2 }
+      ],
+      "references": ["1218", "1173"]
+    },
+    {
+      "prompt": "Quando il debitore inadempiente è responsabile?",
+      "answer": "Il debitore che non esegue esattamente la prestazione dovuta deve risarcire il danno, se non prova che l'inadempimento o il ritardo è stato determinato da impossibilità della prestazione derivante da causa a lui non imputabile.",
+      "rubric": [
+        { "id": "c1", "concept": "inesatta esecuzione della prestazione", "weight": 1 },
+        { "id": "c2", "concept": "obbligo di risarcire il danno", "weight": 1 },
+        { "id": "c3", "concept": "salvo prova di impossibilità non imputabile", "weight": 2 }
+      ],
+      "references": ["1218"]
+    },
+    {
+      "prompt": "Che forme può avere l'inadempimento?",
+      "answer": "Può essere totale, se il debitore non esegue nulla; parziale, se esegue solo una parte; inesatto, se esegue con modalità diverse da quelle dovute; oppure può consistere in un ritardo.",
+      "rubric": [
+        { "id": "c1", "concept": "totale", "weight": 1 },
+        { "id": "c2", "concept": "parziale", "weight": 1 },
+        { "id": "c3", "concept": "inesatto", "weight": 1 },
+        { "id": "c4", "concept": "ritardo", "weight": 1 }
+      ],
+      "references": ["1218"]
+    },
+    {
+      "prompt": "Che cosa deve provare il debitore per liberarsi dalla responsabilità per inadempimento?",
+      "answer": "Deve provare che la prestazione è diventata impossibile e che l'impossibilità deriva da una causa a lui non imputabile; se la causa resta ignota, ne risponde.",
+      "rubric": [
+        { "id": "c1", "concept": "prova dell'impossibilità", "weight": 2 },
+        { "id": "c2", "concept": "prova della non imputabilità", "weight": 2 },
+        { "id": "c3", "concept": "la causa ignota resta a suo carico", "weight": 1 }
+      ],
+      "references": ["1218"]
+    },
+    {
+      "prompt": "Perché si dice che il rischio delle cause ignote di impossibilità grava sul debitore?",
+      "answer": "Perché tocca al debitore provare che l'impossibilità non gli è imputabile: se non si sa perché la prestazione è diventata impossibile, quella prova manca e il debitore deve risarcire il danno.",
+      "rubric": [
+        { "id": "c1", "concept": "l'onere della prova è del debitore", "weight": 2 },
+        { "id": "c2", "concept": "senza prova della causa risponde", "weight": 2 }
+      ],
+      "references": ["1218"]
+    },
+    {
+      "prompt": "Che cosa comprende il risarcimento del danno?",
+      "answer": "Comprende la perdita subita (danno emergente) e il mancato guadagno (lucro cessante), in quanto siano conseguenza immediata e diretta dell'inadempimento o del fatto illecito.",
+      "rubric": [
+        { "id": "c1", "concept": "danno emergente", "weight": 1 },
+        { "id": "c2", "concept": "lucro cessante", "weight": 1 },
+        { "id": "c3", "concept": "conseguenza immediata e diretta", "weight": 2 }
+      ],
+      "references": ["1223"]
+    },
+    {
+      "prompt": "Che differenza c'è tra danno emergente e lucro cessante?",
+      "answer": "Il danno emergente è la perdita di un'utilità già presente nel patrimonio del danneggiato; il lucro cessante è il mancato incremento che, con ragionevole certezza, sarebbe entrato nel patrimonio in futuro.",
+      "rubric": [
+        { "id": "c1", "concept": "danno emergente: perdita di utilità esistente", "weight": 2 },
+        { "id": "c2", "concept": "lucro cessante: guadagno futuro ragionevolmente certo perduto", "weight": 2 }
+      ],
+      "references": ["1223"]
+    },
+    {
+      "prompt": "Quali norme sul risarcimento valgono sia per la responsabilità contrattuale sia per quella extracontrattuale?",
+      "answer": "Le regole sul danno emergente e lucro cessante, sulla valutazione equitativa del danno e sul concorso del fatto colposo del danneggiato. Non si applicano all'illecito extracontrattuale le regole sul danno nelle obbligazioni pecuniarie e sulla prevedibilità del danno.",
+      "rubric": [
+        { "id": "c1", "concept": "comuni: danno emergente e lucro cessante, equità, concorso di colpa", "weight": 2 },
+        { "id": "c2", "concept": "non si applicano: danno pecuniario e prevedibilità", "weight": 2 }
+      ],
+      "references": ["2056", "1223", "1226", "1227"]
+    },
+    {
+      "prompt": "Quando il giudice liquida il danno con valutazione equitativa?",
+      "answer": "Quando il danno non può essere provato nel suo preciso ammontare, perché la prova è impossibile o estremamente difficile, ma è certo nella sua esistenza.",
+      "rubric": [
+        { "id": "c1", "concept": "danno certo nell'esistenza", "weight": 1 },
+        { "id": "c2", "concept": "ammontare non provabile con precisione", "weight": 2 },
+        { "id": "c3", "concept": "il giudice lo liquida secondo equità", "weight": 1 }
+      ],
+      "references": ["1226"]
+    },
+    {
+      "prompt": "Che effetto ha il concorso del fatto colposo del danneggiato?",
+      "answer": "Se il fatto colposo del danneggiato ha concorso a cagionare il danno, il risarcimento è diminuito secondo la gravità della colpa e l'entità delle conseguenze. Non è dovuto per i danni che il danneggiato avrebbe potuto evitare usando l'ordinaria diligenza.",
+      "rubric": [
+        { "id": "c1", "concept": "concorso nel causare il danno: riduzione del risarcimento", "weight": 2 },
+        { "id": "c2", "concept": "secondo gravità della colpa e conseguenze", "weight": 1 },
+        { "id": "c3", "concept": "niente risarcimento per i danni evitabili con diligenza", "weight": 2 }
+      ],
+      "references": ["1227"]
+    },
+    {
+      "prompt": "Che principio esprime la regola per cui non si risarciscono i danni evitabili con l'ordinaria diligenza?",
+      "answer": "Che su ciascuno grava l'onere di evitare, nei limiti della diligenza, il verificarsi o l'aggravarsi dei danni: il danneggiato non può restare inerte confidando nel risarcimento.",
+      "rubric": [
+        { "id": "c1", "concept": "onere di evitare o limitare i danni", "weight": 2 },
+        { "id": "c2", "concept": "il danneggiato non può restare inerte", "weight": 1 }
+      ],
+      "references": ["1227"]
+    },
+    {
+      "prompt": "Come si calcola il danno da inadempimento di un'obbligazione pecuniaria?",
+      "answer": "Dal giorno della mora sono dovuti gli interessi legali, anche se prima non erano dovuti e anche senza prova del danno; se prima erano dovuti interessi superiori, i moratori sono dovuti nella stessa misura. Il creditore che prova un danno maggiore ha diritto all'ulteriore risarcimento, salvo che sia convenuta la misura degli interessi moratori.",
+      "rubric": [
+        { "id": "c1", "concept": "interessi legali dalla mora senza prova del danno", "weight": 2 },
+        { "id": "c2", "concept": "nella misura convenzionale se superiore", "weight": 1 },
+        { "id": "c3", "concept": "maggior danno se provato e non pattuiti i moratori", "weight": 1 }
+      ],
+      "references": ["1224"]
+    },
+    {
+      "prompt": "Che cosa stabilisce la regola sulla prevedibilità del danno da inadempimento?",
+      "answer": "Se l'inadempimento non dipende da dolo del debitore, il risarcimento è limitato al danno prevedibile al tempo in cui è sorta l'obbligazione; se è doloso, si risarciscono anche i danni imprevedibili.",
+      "rubric": [
+        { "id": "c1", "concept": "inadempimento colposo: solo danno prevedibile", "weight": 2 },
+        { "id": "c2", "concept": "prevedibilità valutata quando è sorta l'obbligazione", "weight": 1 },
+        { "id": "c3", "concept": "inadempimento doloso: anche danno imprevedibile", "weight": 2 }
+      ],
+      "references": ["1225"]
+    },
+    {
+      "prompt": "Che differenza c'è tra inadempimento doloso e colposo?",
+      "answer": "È doloso quando il debitore decide deliberatamente di non adempiere; è colposo quando non riesce ad adempiere per negligenza, imprudenza o imperizia, pur senza volerlo.",
+      "rubric": [
+        { "id": "c1", "concept": "doloso: scelta deliberata di non adempiere", "weight": 2 },
+        { "id": "c2", "concept": "colposo: mancanza di diligenza", "weight": 2 }
+      ],
+      "references": ["1225"]
+    },
+    {
+      "prompt": "Sono valide le clausole che escludono o limitano la responsabilità del debitore?",
+      "answer": "È nullo il patto che esclude o limita preventivamente la responsabilità del debitore per dolo o colpa grave, e quello che la esclude per violazione di obblighi derivanti da norme di ordine pubblico; è valido per la colpa lieve.",
+      "rubric": [
+        { "id": "c1", "concept": "nullo per dolo o colpa grave", "weight": 2 },
+        { "id": "c2", "concept": "nullo per violazioni di norme di ordine pubblico", "weight": 1 },
+        { "id": "c3", "concept": "valido per colpa lieve", "weight": 1 }
+      ],
+      "references": ["1229"]
+    },
+    {
+      "prompt": "Il debitore risponde del fatto degli ausiliari di cui si avvale?",
+      "answer": "Sì, salvo diversa volontà delle parti, il debitore che nell'adempimento si avvale dell'opera di terzi risponde anche dei fatti dolosi o colposi di costoro.",
+      "rubric": [
+        { "id": "c1", "concept": "risponde dei fatti degli ausiliari", "weight": 2 },
+        { "id": "c2", "concept": "dolosi o colposi", "weight": 1 },
+        { "id": "c3", "concept": "salvo diversa volontà delle parti", "weight": 1 }
+      ],
+      "references": ["1228"]
+    },
+    {
+      "prompt": "Che cos'è il risarcimento in forma specifica?",
+      "answer": "È la reintegrazione del danneggiato nella situazione precedente al danno, per esempio con la riparazione della cosa, anziché con il pagamento di una somma; il giudice può disporre il risarcimento per equivalente se la forma specifica è eccessivamente onerosa per il debitore.",
+      "rubric": [
+        { "id": "c1", "concept": "ripristino della situazione precedente", "weight": 2 },
+        { "id": "c2", "concept": "alternativa al risarcimento per equivalente", "weight": 1 },
+        { "id": "c3", "concept": "escluso se eccessivamente oneroso", "weight": 1 }
+      ],
+      "references": ["2058"]
+    },
+    {
+      "prompt": "Che differenza c'è tra risarcimento per equivalente e in forma specifica?",
+      "answer": "Con il risarcimento per equivalente il patrimonio del danneggiato è ricostituito solo nel valore, con una somma di denaro. Con quello in forma specifica è ricostituito anche qualitativamente, eliminando materialmente il danno.",
+      "rubric": [
+        { "id": "c1", "concept": "per equivalente: somma di denaro, solo valore", "weight": 2 },
+        { "id": "c2", "concept": "in forma specifica: eliminazione materiale del danno", "weight": 2 }
+      ],
+      "references": ["2058"]
+    },
+    {
+      "prompt": "Che cos'è il danno non patrimoniale?",
+      "answer": "È il pregiudizio a beni della persona non suscettibili di valutazione economica, come la salute, l'onore o gli affetti familiari; si risarcisce solo nei casi determinati dalla legge.",
+      "rubric": [
+        { "id": "c1", "concept": "lesione di beni personali non valutabili in denaro", "weight": 2 },
+        { "id": "c2", "concept": "risarcibile solo nei casi previsti dalla legge", "weight": 2 }
+      ],
+      "references": ["2059"]
+    },
+    {
+      "prompt": "In quali casi è risarcibile il danno non patrimoniale?",
+      "answer": "Quando il fatto costituisce reato, quando una legge speciale lo prevede espressamente e quando è leso in modo serio e non futile un diritto inviolabile della persona tutelato dalla Costituzione.",
+      "rubric": [
+        { "id": "c1", "concept": "fatto costituente reato", "weight": 1 },
+        { "id": "c2", "concept": "previsione espressa di legge speciale", "weight": 1 },
+        { "id": "c3", "concept": "lesione seria di diritti inviolabili costituzionali", "weight": 2 }
+      ],
+      "references": ["2059"]
+    },
+    {
+      "prompt": "Qual è la funzione del risarcimento del danno non patrimoniale?",
+      "answer": "Non elimina il danno, che resta, ma ha funzione satisfattiva o consolatoria: dà alla vittima una somma, intesa come capacità di spesa, con cui trovare una forma di compensazione.",
+      "rubric": [
+        { "id": "c1", "concept": "non elimina il danno", "weight": 1 },
+        { "id": "c2", "concept": "funzione satisfattiva o consolatoria", "weight": 2 },
+        { "id": "c3", "concept": "il denaro come capacità di spesa", "weight": 1 }
+      ],
+      "references": ["2059"]
+    }
+  ]
+}

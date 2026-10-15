@@ -1,0 +1,183 @@
+{
+  "topic": { "name": "Mezzi di conservazione della garanzia patrimoniale" },
+  "questions": [
+    {
+      "prompt": "Quali sono i mezzi di conservazione della garanzia patrimoniale?",
+      "answer": "L'azione surrogatoria, l'azione revocatoria e il sequestro conservativo: servono a impedire che il patrimonio del debitore diminuisca a danno dei creditori per inerzia o per atti di disposizione.",
+      "rubric": [
+        { "id": "c1", "concept": "azione surrogatoria", "weight": 1 },
+        { "id": "c2", "concept": "azione revocatoria", "weight": 1 },
+        { "id": "c3", "concept": "sequestro conservativo", "weight": 1 },
+        { "id": "c4", "concept": "tutela della garanzia patrimoniale", "weight": 1 }
+      ],
+      "references": ["2900", "2901", "2905"]
+    },
+    {
+      "prompt": "Che cos'è l'azione surrogatoria?",
+      "answer": "È l'azione con cui il creditore, per assicurare le sue ragioni, esercita i diritti e le azioni che spettano al debitore verso i terzi e che questi trascura di esercitare, purché abbiano contenuto patrimoniale e non siano personali.",
+      "rubric": [
+        { "id": "c1", "concept": "il creditore esercita i diritti del debitore", "weight": 2 },
+        { "id": "c2", "concept": "che il debitore trascura di esercitare", "weight": 1 },
+        { "id": "c3", "concept": "diritti patrimoniali e non personali", "weight": 1 }
+      ],
+      "references": ["2900"]
+    },
+    {
+      "prompt": "Quali sono i presupposti dell'azione surrogatoria?",
+      "answer": "L'esistenza di un credito, l'inerzia del debitore nell'esercitare i propri diritti, il pregiudizio che ne deriva al creditore, il carattere patrimoniale e non strettamente personale del diritto. Se agisce in giudizio, il creditore deve citare anche il debitore.",
+      "rubric": [
+        { "id": "c1", "concept": "credito e inerzia del debitore", "weight": 1 },
+        { "id": "c2", "concept": "pregiudizio per il creditore", "weight": 1 },
+        { "id": "c3", "concept": "diritto patrimoniale e non personale", "weight": 1 },
+        { "id": "c4", "concept": "citazione anche del debitore", "weight": 1 }
+      ],
+      "references": ["2900"]
+    },
+    {
+      "prompt": "A chi vanno gli effetti dell'azione surrogatoria?",
+      "answer": "Al debitore e quindi a vantaggio di tutti i suoi creditori, non solo di quello che ha agito; il creditore può esercitare i diritti del debitore ma non disporne.",
+      "rubric": [
+        { "id": "c1", "concept": "gli effetti vanno al patrimonio del debitore", "weight": 2 },
+        { "id": "c2", "concept": "a vantaggio di tutti i creditori", "weight": 1 },
+        { "id": "c3", "concept": "il creditore non può disporre dei diritti", "weight": 1 }
+      ],
+      "references": ["2900"]
+    },
+    {
+      "prompt": "Che cos'è l'azione revocatoria?",
+      "answer": "È l'azione con cui il creditore chiede che siano dichiarati inefficaci nei suoi confronti gli atti di disposizione con cui il debitore ha pregiudicato le sue ragioni, anche se il credito è sottoposto a condizione o termine.",
+      "rubric": [
+        { "id": "c1", "concept": "inefficacia degli atti di disposizione", "weight": 2 },
+        { "id": "c2", "concept": "solo nei confronti del creditore che agisce", "weight": 1 },
+        { "id": "c3", "concept": "atti che pregiudicano le ragioni del creditore", "weight": 1 }
+      ],
+      "references": ["2901"]
+    },
+    {
+      "prompt": "Quali sono i presupposti dell'azione revocatoria?",
+      "answer": "Un credito anche non ancora certo o esigibile, un atto di disposizione del debitore, il pregiudizio per il creditore (eventus damni) e la conoscenza del pregiudizio da parte del debitore (scientia damni); per gli atti onerosi serve anche la consapevolezza del terzo.",
+      "rubric": [
+        { "id": "c1", "concept": "credito e atto di disposizione", "weight": 1 },
+        { "id": "c2", "concept": "eventus damni", "weight": 1 },
+        { "id": "c3", "concept": "scientia damni del debitore", "weight": 1 },
+        { "id": "c4", "concept": "atti onerosi: consapevolezza del terzo", "weight": 1 }
+      ],
+      "references": ["2901"]
+    },
+    {
+      "prompt": "Che cos'è l'eventus damni?",
+      "answer": "È il pregiudizio per il creditore derivante dall'atto: non solo l'insufficienza del patrimonio, ma anche una maggiore difficoltà o incertezza nella realizzazione coattiva del credito.",
+      "rubric": [
+        { "id": "c1", "concept": "pregiudizio per il creditore", "weight": 1 },
+        { "id": "c2", "concept": "anche maggiore difficoltà o incertezza dell'esecuzione", "weight": 2 }
+      ],
+      "references": ["2901"]
+    },
+    {
+      "prompt": "Che differenza fa per la revocatoria che l'atto sia anteriore o posteriore al sorgere del credito?",
+      "answer": "Per l'atto posteriore basta che il debitore conoscesse il pregiudizio. Per l'atto anteriore serve che fosse dolosamente preordinato a pregiudicare il futuro credito e, se oneroso, che il terzo partecipasse a questa dolosa preordinazione.",
+      "rubric": [
+        { "id": "c1", "concept": "posteriore: basta la conoscenza del pregiudizio", "weight": 2 },
+        { "id": "c2", "concept": "anteriore: dolosa preordinazione", "weight": 2 },
+        { "id": "c3", "concept": "e partecipazione del terzo se oneroso", "weight": 1 }
+      ],
+      "references": ["2901"]
+    },
+    {
+      "prompt": "Che differenza c'è nella revocatoria tra atti a titolo gratuito e a titolo oneroso?",
+      "answer": "Per gli atti gratuiti basta la consapevolezza del debitore; per quelli onerosi occorre anche che il terzo fosse consapevole del pregiudizio, perché chi ha pagato un corrispettivo merita più tutela.",
+      "rubric": [
+        { "id": "c1", "concept": "gratuiti: basta il debitore consapevole", "weight": 2 },
+        { "id": "c2", "concept": "onerosi: serve anche il terzo consapevole", "weight": 2 }
+      ],
+      "references": ["2901"]
+    },
+    {
+      "prompt": "Le garanzie prestate dal debitore sono atti gratuiti od onerosi ai fini della revocatoria?",
+      "answer": "Sono considerate onerose quando sono contestuali al credito garantito; se sono prestate successivamente, per un debito già esistente, sono considerate gratuite.",
+      "rubric": [
+        { "id": "c1", "concept": "onerose se contestuali al credito", "weight": 2 },
+        { "id": "c2", "concept": "gratuite se successive", "weight": 2 }
+      ],
+      "references": ["2901"]
+    },
+    {
+      "prompt": "Quali atti non sono soggetti a revocatoria?",
+      "answer": "L'adempimento di un debito scaduto, perché è un atto dovuto che non altera la garanzia, e secondo la giurisprudenza anche gli atti compiuti per procurarsi il denaro necessario a pagarlo.",
+      "rubric": [
+        { "id": "c1", "concept": "adempimento di un debito scaduto", "weight": 2 },
+        { "id": "c2", "concept": "atto dovuto che non pregiudica", "weight": 1 }
+      ],
+      "references": ["2901"]
+    },
+    {
+      "prompt": "Quali effetti ha la sentenza che accoglie la revocatoria?",
+      "answer": "Rende l'atto inefficace solo verso il creditore che ha agito, che può aggredire il bene presso il terzo come se non fosse mai uscito dal patrimonio del debitore; il bene non torna al debitore e l'atto resta valido per il resto.",
+      "rubric": [
+        { "id": "c1", "concept": "inefficacia relativa al creditore che agisce", "weight": 2 },
+        { "id": "c2", "concept": "può agire esecutivamente sul bene presso il terzo", "weight": 1 },
+        { "id": "c3", "concept": "nessun effetto restitutorio", "weight": 1 }
+      ],
+      "references": ["2901", "2902"]
+    },
+    {
+      "prompt": "La revocatoria pregiudica i subacquirenti?",
+      "answer": "Non pregiudica i diritti acquistati a titolo oneroso dai terzi di buona fede, salvi gli effetti della trascrizione della domanda; colpisce invece i subacquirenti a titolo gratuito o in mala fede.",
+      "rubric": [
+        { "id": "c1", "concept": "salvi i subacquirenti onerosi in buona fede", "weight": 2 },
+        { "id": "c2", "concept": "colpiti i gratuiti o in mala fede", "weight": 1 },
+        { "id": "c3", "concept": "salvi gli effetti della trascrizione della domanda", "weight": 1 }
+      ],
+      "references": ["2901"]
+    },
+    {
+      "prompt": "In quanto tempo si prescrive l'azione revocatoria?",
+      "answer": "In cinque anni dalla data dell'atto o, se l'atto è soggetto a pubblicità, dalla data in cui è stata eseguita la formalità.",
+      "rubric": [
+        { "id": "c1", "concept": "cinque anni", "weight": 2 },
+        { "id": "c2", "concept": "dall'atto o dalla sua pubblicità", "weight": 1 }
+      ],
+      "references": ["2903"]
+    },
+    {
+      "prompt": "Che cos'è la revocatoria semplificata degli atti a titolo gratuito?",
+      "answer": "Il creditore pregiudicato da un atto gratuito di alienazione o di vincolo su immobili o mobili registrati, compiuto dopo il sorgere del credito, può procedere direttamente a esecuzione forzata sul bene senza prima ottenere la sentenza di revoca, purché pignori entro un anno dalla trascrizione dell'atto; debitore e terzo possono opporsi contestando i presupposti.",
+      "rubric": [
+        { "id": "c1", "concept": "atti gratuiti successivi al credito su immobili o mobili registrati", "weight": 1 },
+        { "id": "c2", "concept": "esecuzione senza previa sentenza di revoca", "weight": 2 },
+        { "id": "c3", "concept": "pignoramento entro un anno dalla trascrizione", "weight": 1 }
+      ],
+      "references": ["2929-bis"]
+    },
+    {
+      "prompt": "Che cos'è il sequestro conservativo e quali presupposti richiede?",
+      "answer": "È una misura cautelare con cui il giudice vincola beni del debitore, o del terzo acquirente se è proposta la revocatoria, quando il creditore ha fondato timore di perdere la garanzia. Richiede il fumus boni iuris, cioè la probabile esistenza del credito, e il periculum in mora.",
+      "rubric": [
+        { "id": "c1", "concept": "misura cautelare sui beni del debitore", "weight": 1 },
+        { "id": "c2", "concept": "fumus boni iuris", "weight": 1 },
+        { "id": "c3", "concept": "periculum in mora", "weight": 1 },
+        { "id": "c4", "concept": "anche contro il terzo acquirente in caso di revocatoria", "weight": 1 }
+      ],
+      "references": ["2905"]
+    },
+    {
+      "prompt": "Quali effetti produce il sequestro conservativo?",
+      "answer": "Gli atti di alienazione e gli altri atti che hanno per oggetto la cosa sequestrata non hanno effetto in pregiudizio del creditore sequestrante, secondo le regole sul pignoramento.",
+      "rubric": [
+        { "id": "c1", "concept": "inefficacia degli atti di disposizione", "weight": 2 },
+        { "id": "c2", "concept": "solo verso il creditore sequestrante", "weight": 2 }
+      ],
+      "references": ["2906"]
+    },
+    {
+      "prompt": "Che cos'è il diritto di ritenzione?",
+      "answer": "È il diritto del creditore di rifiutare la restituzione di una cosa del debitore finché questi non adempie un'obbligazione connessa a quella cosa. È una forma eccezionale di autotutela, ammessa solo nei casi previsti dalla legge e non estendibile per analogia.",
+      "rubric": [
+        { "id": "c1", "concept": "trattenere la cosa fino all'adempimento", "weight": 2 },
+        { "id": "c2", "concept": "forma di autotutela", "weight": 1 },
+        { "id": "c3", "concept": "solo nei casi previsti, non per analogia", "weight": 1 }
+      ],
+      "references": ["2756", "2794"]
+    }
+  ]
+}

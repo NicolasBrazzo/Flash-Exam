@@ -1,0 +1,230 @@
+{
+  "topic": { "name": "Mandato, commissione e spedizione" },
+  "questions": [
+    {
+      "prompt": "Che cos'è il mandato?",
+      "answer": "È il contratto con cui una parte, il mandatario, si obbliga a compiere uno o più atti giuridici per conto dell'altra, il mandante.",
+      "rubric": [
+        { "id": "c1", "concept": "obbligo di compiere atti giuridici", "weight": 2 },
+        { "id": "c2", "concept": "per conto del mandante", "weight": 2 }
+      ],
+      "references": ["1703"]
+    },
+    {
+      "prompt": "Che cosa distingue il mandato dal contratto d'opera e dal contratto di lavoro?",
+      "answer": "L'oggetto: il mandatario compie atti giuridici, come comprare o vendere, mentre nel contratto d'opera e nel lavoro l'attività dovuta è materiale o intellettuale.",
+      "rubric": [
+        { "id": "c1", "concept": "mandato: atti giuridici", "weight": 2 },
+        { "id": "c2", "concept": "opera e lavoro: attività materiale o intellettuale", "weight": 2 }
+      ],
+      "references": ["1703"]
+    },
+    {
+      "prompt": "Che differenza c'è tra mandato e procura?",
+      "answer": "Il mandato è un contratto che regola i rapporti interni tra mandante e mandatario e obbliga quest'ultimo ad agire; la procura è l'atto unilaterale che conferisce il potere di agire in nome altrui verso i terzi.",
+      "rubric": [
+        { "id": "c1", "concept": "mandato: contratto, obbligo di agire, rapporti interni", "weight": 2 },
+        { "id": "c2", "concept": "procura: atto unilaterale, potere di rappresentanza verso i terzi", "weight": 2 }
+      ],
+      "references": ["1703", "1704", "1387"]
+    },
+    {
+      "prompt": "Che differenza c'è tra mandato con rappresentanza e mandato senza rappresentanza?",
+      "answer": "Nel mandato con rappresentanza il mandatario agisce in nome del mandante e gli effetti si producono direttamente su quest'ultimo. In quello senza rappresentanza agisce in nome proprio: acquista i diritti e assume gli obblighi, che deve poi trasferire al mandante (rappresentanza indiretta).",
+      "rubric": [
+        { "id": "c1", "concept": "con rappresentanza: spendita del nome, effetti diretti sul mandante", "weight": 2 },
+        { "id": "c2", "concept": "senza rappresentanza: agisce in nome proprio", "weight": 2 },
+        { "id": "c3", "concept": "deve poi trasferire gli effetti al mandante", "weight": 1 }
+      ],
+      "references": ["1704", "1705"]
+    },
+    {
+      "prompt": "I terzi hanno rapporti con il mandante nel mandato senza rappresentanza?",
+      "answer": "No, i terzi non hanno alcun rapporto con il mandante, anche se conoscevano il mandato. Il mandante può però esercitare i diritti di credito derivanti dall'esecuzione del mandato, sostituendosi al mandatario.",
+      "rubric": [
+        { "id": "c1", "concept": "nessun rapporto tra terzi e mandante", "weight": 2 },
+        { "id": "c2", "concept": "anche se conoscevano il mandato", "weight": 1 },
+        { "id": "c3", "concept": "il mandante può esercitare i crediti sostituendosi al mandatario", "weight": 1 }
+      ],
+      "references": ["1705"]
+    },
+    {
+      "prompt": "Chi diventa proprietario delle cose mobili acquistate dal mandatario senza rappresentanza?",
+      "answer": "Il mandante può rivendicarle direttamente, quindi ne acquista la proprietà con l'acquisto del mandatario, salvi i diritti dei terzi che le hanno acquistate in buona fede in base al possesso.",
+      "rubric": [
+        { "id": "c1", "concept": "il mandante può rivendicarle", "weight": 2 },
+        { "id": "c2", "concept": "acquisto diretto senza nuovo atto", "weight": 1 },
+        { "id": "c3", "concept": "salvi i terzi di buona fede possessori", "weight": 1 }
+      ],
+      "references": ["1706"]
+    },
+    {
+      "prompt": "Chi diventa proprietario degli immobili acquistati dal mandatario senza rappresentanza?",
+      "answer": "Il mandatario, che è obbligato a ritrasferirli al mandante con un nuovo atto; se non lo fa, il mandante può ottenere una sentenza che produca gli effetti del trasferimento.",
+      "rubric": [
+        { "id": "c1", "concept": "diventa proprietario il mandatario", "weight": 2 },
+        { "id": "c2", "concept": "obbligo di ritrasferire al mandante", "weight": 1 },
+        { "id": "c3", "concept": "in caso di inadempimento sentenza costitutiva", "weight": 1 }
+      ],
+      "references": ["1706", "2932"]
+    },
+    {
+      "prompt": "Perché la legge tratta diversamente mobili e immobili acquistati dal mandatario senza rappresentanza?",
+      "answer": "Per il diverso regime di circolazione: gli immobili richiedono la forma scritta e la trascrizione, quindi serve un nuovo atto di trasferimento; per i mobili basta tutelare i terzi di buona fede con la regola del possesso.",
+      "rubric": [
+        { "id": "c1", "concept": "immobili: forma scritta e trascrizione", "weight": 2 },
+        { "id": "c2", "concept": "mobili: tutela dei terzi con il possesso in buona fede", "weight": 2 }
+      ],
+      "references": ["1706", "1153"]
+    },
+    {
+      "prompt": "I creditori del mandatario possono aggredire i beni acquistati per conto del mandante?",
+      "answer": "No, purché il mandato risulti da scrittura con data certa anteriore al pignoramento, per mobili e crediti, o, per immobili e mobili registrati, sia anteriore al pignoramento la trascrizione dell'atto di ritrasferimento o della domanda giudiziale per ottenerlo.",
+      "rubric": [
+        { "id": "c1", "concept": "i creditori del mandatario non possono aggredirli", "weight": 2 },
+        { "id": "c2", "concept": "mobili: data certa anteriore al pignoramento", "weight": 1 },
+        { "id": "c3", "concept": "immobili: trascrizione anteriore al pignoramento", "weight": 1 }
+      ],
+      "references": ["1707"]
+    },
+    {
+      "prompt": "Il mandato è gratuito od oneroso?",
+      "answer": "Si presume oneroso: al mandatario spetta un compenso, salvo prova che le parti lo abbiano voluto gratuito.",
+      "rubric": [
+        { "id": "c1", "concept": "si presume oneroso", "weight": 2 },
+        { "id": "c2", "concept": "salvo prova della gratuità", "weight": 1 }
+      ],
+      "references": ["1709"]
+    },
+    {
+      "prompt": "Quali sono gli obblighi del mandatario?",
+      "answer": "Eseguire il mandato con la diligenza del buon padre di famiglia, informare il mandante delle circostanze sopravvenute e dell'esecuzione, rendere il conto e rimettergli quanto ricevuto, custodire le cose e tutelare i diritti del mandante.",
+      "rubric": [
+        { "id": "c1", "concept": "diligenza del buon padre di famiglia", "weight": 1 },
+        { "id": "c2", "concept": "obbligo di informazione", "weight": 1 },
+        { "id": "c3", "concept": "rendiconto e consegna di quanto ricevuto", "weight": 1 },
+        { "id": "c4", "concept": "custodia e tutela dei diritti del mandante", "weight": 1 }
+      ],
+      "references": ["1710", "1712", "1713"]
+    },
+    {
+      "prompt": "Quali sono gli obblighi del mandante?",
+      "answer": "Fornire al mandatario i mezzi necessari, rimborsargli le spese, pagargli il compenso e risarcirgli i danni subiti a causa dell'incarico.",
+      "rubric": [
+        { "id": "c1", "concept": "fornire i mezzi necessari", "weight": 1 },
+        { "id": "c2", "concept": "rimborso delle spese", "weight": 1 },
+        { "id": "c3", "concept": "pagamento del compenso", "weight": 1 },
+        { "id": "c4", "concept": "risarcimento dei danni da incarico", "weight": 1 }
+      ],
+      "references": ["1719", "1720"]
+    },
+    {
+      "prompt": "Quali sono le cause di estinzione del mandato?",
+      "answer": "La scadenza del termine o il compimento dell'affare, la revoca del mandante, la rinuncia del mandatario e la morte, interdizione o inabilitazione di una delle parti, perché il mandato si fonda sulla fiducia personale.",
+      "rubric": [
+        { "id": "c1", "concept": "termine o compimento dell'affare", "weight": 1 },
+        { "id": "c2", "concept": "revoca e rinuncia", "weight": 1 },
+        { "id": "c3", "concept": "morte, interdizione o inabilitazione", "weight": 1 },
+        { "id": "c4", "concept": "fondamento: intuitus personae", "weight": 1 }
+      ],
+      "references": ["1722"]
+    },
+    {
+      "prompt": "Il mandante può sempre revocare il mandato?",
+      "answer": "Sì, ma se il mandato è oneroso e la revoca avviene prima del termine o del compimento dell'affare deve risarcire il danno, salvo giusta causa. Il mandato conferito anche nell'interesse del mandatario o di terzi è revocabile solo per giusta causa e non si estingue per morte o incapacità del mandante.",
+      "rubric": [
+        { "id": "c1", "concept": "di regola è revocabile", "weight": 1 },
+        { "id": "c2", "concept": "mandato oneroso: risarcimento salvo giusta causa", "weight": 1 },
+        { "id": "c3", "concept": "nell'interesse del mandatario o di terzi: solo per giusta causa", "weight": 2 }
+      ],
+      "references": ["1723"]
+    },
+    {
+      "prompt": "Come può essere revocato tacitamente il mandato?",
+      "answer": "Con la nomina di un nuovo mandatario per lo stesso affare o con il compimento dell'affare da parte del mandante stesso, dal giorno in cui ciò è comunicato al mandatario.",
+      "rubric": [
+        { "id": "c1", "concept": "nomina di un nuovo mandatario", "weight": 2 },
+        { "id": "c2", "concept": "compimento dell'affare da parte del mandante", "weight": 2 }
+      ],
+      "references": ["1724"]
+    },
+    {
+      "prompt": "Che differenza c'è tra mandato collettivo e mandato congiuntivo?",
+      "answer": "Il mandato collettivo è conferito da più mandanti con un unico atto per un affare di interesse comune ed è revocabile solo da tutti, salvo giusta causa. Il mandato congiuntivo è conferito a più mandatari perché agiscano insieme.",
+      "rubric": [
+        { "id": "c1", "concept": "collettivo: più mandanti, interesse comune", "weight": 2 },
+        { "id": "c2", "concept": "collettivo: revoca da parte di tutti", "weight": 1 },
+        { "id": "c3", "concept": "congiuntivo: più mandatari che agiscono insieme", "weight": 2 }
+      ],
+      "references": ["1726", "1716"]
+    },
+    {
+      "prompt": "Quando il mandatario che rinuncia al mandato deve risarcire il danno?",
+      "answer": "Quando rinuncia senza giusta causa; se il mandato è a tempo indeterminato, quando non dà un congruo preavviso.",
+      "rubric": [
+        { "id": "c1", "concept": "rinuncia senza giusta causa", "weight": 2 },
+        { "id": "c2", "concept": "a tempo indeterminato: senza congruo preavviso", "weight": 2 }
+      ],
+      "references": ["1727"]
+    },
+    {
+      "prompt": "Che cos'è la commissione?",
+      "answer": "È un mandato senza rappresentanza che ha per oggetto l'acquisto o la vendita di beni per conto del committente e in nome del commissionario.",
+      "rubric": [
+        { "id": "c1", "concept": "mandato senza rappresentanza", "weight": 2 },
+        { "id": "c2", "concept": "acquisto o vendita di beni", "weight": 1 },
+        { "id": "c3", "concept": "in nome del commissionario, per conto del committente", "weight": 1 }
+      ],
+      "references": ["1731"]
+    },
+    {
+      "prompt": "Che cos'è lo star del credere?",
+      "answer": "È la garanzia, assunta dal commissionario per patto o per uso, del buon esito dell'affare, cioè dell'adempimento dei terzi con cui ha contrattato; gli dà diritto a una maggiore provvigione.",
+      "rubric": [
+        { "id": "c1", "concept": "garanzia dell'adempimento dei terzi", "weight": 2 },
+        { "id": "c2", "concept": "diritto a una provvigione maggiore", "weight": 1 }
+      ],
+      "references": ["1736"]
+    },
+    {
+      "prompt": "Quando il commissionario può essere contraente in proprio?",
+      "answer": "Quando la commissione riguarda titoli, divise o merci con un prezzo corrente risultante da listini o mercuriali: se il committente non dispone diversamente, il commissionario può fornire o acquistare lui stesso le cose a quel prezzo, perché non c'è rischio di pregiudizio.",
+      "rubric": [
+        { "id": "c1", "concept": "beni con prezzo corrente di borsa o mercato", "weight": 2 },
+        { "id": "c2", "concept": "il commissionario può comprare o vendere in proprio", "weight": 1 },
+        { "id": "c3", "concept": "salvo diversa disposizione del committente", "weight": 1 }
+      ],
+      "references": ["1735"]
+    },
+    {
+      "prompt": "Che cos'è il contratto di spedizione?",
+      "answer": "È un mandato con cui lo spedizioniere si obbliga a concludere, in nome proprio e per conto del mandante, o in nome di questi se ha rappresentanza, uno o più contratti di trasporto e a compiere le operazioni accessorie.",
+      "rubric": [
+        { "id": "c1", "concept": "mandato", "weight": 1 },
+        { "id": "c2", "concept": "concludere contratti di trasporto per conto del mandante", "weight": 2 },
+        { "id": "c3", "concept": "compiere le operazioni accessorie", "weight": 1 }
+      ],
+      "references": ["1737"]
+    },
+    {
+      "prompt": "Che differenza c'è tra spedizioniere, vettore e spedizioniere vettore?",
+      "answer": "Lo spedizioniere conclude il contratto di trasporto per conto altrui; il vettore esegue il trasporto. Lo spedizioniere vettore è lo spedizioniere che assume l'esecuzione del trasporto con mezzi propri o altrui e ha gli obblighi e i diritti del vettore.",
+      "rubric": [
+        { "id": "c1", "concept": "spedizioniere: conclude il trasporto per altri", "weight": 1 },
+        { "id": "c2", "concept": "vettore: esegue il trasporto", "weight": 1 },
+        { "id": "c3", "concept": "spedizioniere vettore: ha obblighi e diritti del vettore", "weight": 2 }
+      ],
+      "references": ["1737", "1741", "1678"]
+    },
+    {
+      "prompt": "Come deve comportarsi lo spedizioniere nella scelta del trasporto?",
+      "answer": "Deve attenersi alle istruzioni del mandante sulla via, sul mezzo e sulle modalità del trasporto e, in mancanza, agire nel miglior interesse del mandante; salvo richiesta, non deve assicurare le cose.",
+      "rubric": [
+        { "id": "c1", "concept": "segue le istruzioni del mandante", "weight": 2 },
+        { "id": "c2", "concept": "in mancanza agisce nel suo miglior interesse", "weight": 1 },
+        { "id": "c3", "concept": "nessun obbligo di assicurare salvo richiesta", "weight": 1 }
+      ],
+      "references": ["1739"]
+    }
+  ]
+}

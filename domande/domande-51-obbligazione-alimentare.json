@@ -1,0 +1,103 @@
+{
+  "topic": { "name": "L'obbligazione alimentare" },
+  "questions": [
+    {
+      "prompt": "Quali sono i presupposti dell'obbligazione alimentare?",
+      "answer": "Lo stato di bisogno di chi li chiede e l'impossibilità di provvedere al proprio mantenimento, oltre al rapporto familiare o di donazione con l'obbligato previsto dalla legge.",
+      "rubric": [
+        { "id": "c1", "concept": "stato di bisogno", "weight": 2 },
+        { "id": "c2", "concept": "impossibilità di provvedere al proprio mantenimento", "weight": 2 },
+        { "id": "c3", "concept": "vincolo previsto dalla legge con l'obbligato", "weight": 1 }
+      ],
+      "references": ["433", "438"]
+    },
+    {
+      "prompt": "Come si determina la misura degli alimenti?",
+      "answer": "In proporzione al bisogno di chi li domanda e alle condizioni economiche di chi deve darli; non devono superare quanto necessario per la vita dell'alimentando, tenuto conto della sua posizione sociale. Tra fratelli sono dovuti nella misura dello stretto necessario.",
+      "rubric": [
+        { "id": "c1", "concept": "proporzione tra bisogno e condizioni dell'obbligato", "weight": 2 },
+        { "id": "c2", "concept": "limite del necessario secondo la posizione sociale", "weight": 1 },
+        { "id": "c3", "concept": "tra fratelli lo stretto necessario", "weight": 1 }
+      ],
+      "references": ["438", "439"]
+    },
+    {
+      "prompt": "Chi è tenuto agli alimenti e in quale ordine?",
+      "answer": "Il coniuge, i figli anche adottivi e in loro mancanza i discendenti prossimi, i genitori e in loro mancanza gli ascendenti prossimi, gli adottanti, i generi e le nuore, il suocero e la suocera, i fratelli e le sorelle. Il donatario è tenuto con precedenza su tutti.",
+      "rubric": [
+        { "id": "c1", "concept": "coniuge, figli, genitori", "weight": 1 },
+        { "id": "c2", "concept": "generi, nuore, suoceri, fratelli e sorelle", "weight": 1 },
+        { "id": "c3", "concept": "il donatario con precedenza", "weight": 2 }
+      ],
+      "references": ["433", "437"]
+    },
+    {
+      "prompt": "Perché il donatario deve gli alimenti al donante?",
+      "answer": "Per un dovere di gratitudine verso chi gli ha fatto la donazione; è tenuto con precedenza su ogni altro obbligato, ma non oltre il valore della donazione ancora esistente nel suo patrimonio, ed è escluso per donazioni obnuziali o rimuneratorie.",
+      "rubric": [
+        { "id": "c1", "concept": "fondamento nella gratitudine", "weight": 1 },
+        { "id": "c2", "concept": "con precedenza sugli altri obbligati", "weight": 1 },
+        { "id": "c3", "concept": "nei limiti del valore della donazione residua", "weight": 2 }
+      ],
+      "references": ["437", "438"]
+    },
+    {
+      "prompt": "Come si ripartisce l'obbligo tra più obbligati dello stesso grado?",
+      "answer": "Ciascuno concorre in proporzione alle proprie condizioni economiche; se l'urgenza lo richiede, il giudice può porre provvisoriamente l'obbligazione a carico di uno solo, salvo regresso.",
+      "rubric": [
+        { "id": "c1", "concept": "in proporzione alle condizioni economiche", "weight": 2 },
+        { "id": "c2", "concept": "in urgenza il giudice può porla a carico di uno", "weight": 2 }
+      ],
+      "references": ["441"]
+    },
+    {
+      "prompt": "Come può l'obbligato adempiere l'obbligazione alimentare?",
+      "answer": "Può scegliere se pagare un assegno periodico anticipato o accogliere e mantenere l'alimentando in casa propria; il giudice può però stabilire diversamente secondo le circostanze.",
+      "rubric": [
+        { "id": "c1", "concept": "assegno periodico anticipato", "weight": 1 },
+        { "id": "c2", "concept": "o accoglienza in casa", "weight": 1 },
+        { "id": "c3", "concept": "il giudice può stabilire diversamente", "weight": 1 }
+      ],
+      "references": ["443"]
+    },
+    {
+      "prompt": "Da quando sono dovuti gli alimenti?",
+      "answer": "Dal giorno della domanda giudiziale o dalla costituzione in mora dell'obbligato, se entro sei mesi segue la domanda: non sono dovuti per il passato.",
+      "rubric": [
+        { "id": "c1", "concept": "dalla domanda giudiziale", "weight": 2 },
+        { "id": "c2", "concept": "o dalla mora se seguita dalla domanda entro sei mesi", "weight": 1 },
+        { "id": "c3", "concept": "non per il passato", "weight": 1 }
+      ],
+      "references": ["445"]
+    },
+    {
+      "prompt": "La misura degli alimenti può cambiare nel tempo?",
+      "answer": "Sì, se mutano le condizioni economiche dell'obbligato o dell'alimentando il giudice ne dispone la cessazione, la riduzione o l'aumento; gli alimenti possono essere ridotti anche per condotta disordinata o riprovevole dell'alimentato.",
+      "rubric": [
+        { "id": "c1", "concept": "cessazione, riduzione o aumento", "weight": 2 },
+        { "id": "c2", "concept": "al mutare delle condizioni economiche", "weight": 1 },
+        { "id": "c3", "concept": "riduzione per condotta riprovevole", "weight": 1 }
+      ],
+      "references": ["440"]
+    },
+    {
+      "prompt": "Quali caratteri personali ha il credito alimentare?",
+      "answer": "Non può essere ceduto, non è compensabile con i debiti dell'alimentando verso l'obbligato e cessa con la morte dell'obbligato o dell'alimentando.",
+      "rubric": [
+        { "id": "c1", "concept": "incedibile", "weight": 1 },
+        { "id": "c2", "concept": "non compensabile", "weight": 1 },
+        { "id": "c3", "concept": "cessa con la morte di una delle parti", "weight": 2 }
+      ],
+      "references": ["447", "448", "1246"]
+    },
+    {
+      "prompt": "Che differenza c'è tra alimenti e mantenimento?",
+      "answer": "Gli alimenti presuppongono lo stato di bisogno e coprono il necessario per vivere. Il mantenimento, per esempio verso il coniuge o i figli, è dovuto indipendentemente dal bisogno e mira a garantire un tenore di vita adeguato.",
+      "rubric": [
+        { "id": "c1", "concept": "alimenti: stato di bisogno, necessario per vivere", "weight": 2 },
+        { "id": "c2", "concept": "mantenimento: indipendente dal bisogno, tenore di vita", "weight": 2 }
+      ],
+      "references": ["438", "143"]
+    }
+  ]
+}

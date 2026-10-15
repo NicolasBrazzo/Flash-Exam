@@ -1,0 +1,192 @@
+{
+  "topic": { "name": "Amministrazione di sostegno e incapacità naturale" },
+  "questions": [
+    {
+      "prompt": "Quali sono i presupposti dell'amministrazione di sostegno?",
+      "answer": "Un'infermità o una menomazione fisica o psichica che renda la persona impossibilitata, anche parzialmente o temporaneamente, a provvedere ai propri interessi.",
+      "rubric": [
+        { "id": "c1", "concept": "infermità o menomazione fisica o psichica", "weight": 2 },
+        { "id": "c2", "concept": "impossibilità di provvedere ai propri interessi", "weight": 1 },
+        { "id": "c3", "concept": "anche parziale o temporanea", "weight": 1 }
+      ],
+      "references": ["404"]
+    },
+    {
+      "prompt": "In che cosa i presupposti dell'amministrazione di sostegno sono più ampi di quelli dell'interdizione?",
+      "answer": "Rileva anche una semplice menomazione, non solo l'infermità di mente; anche fisica, non solo psichica; anche temporanea, non solo abituale; e anche se incide solo su alcuni aspetti della capacità di gestire i propri interessi.",
+      "rubric": [
+        { "id": "c1", "concept": "menomazione e non solo infermità", "weight": 1 },
+        { "id": "c2", "concept": "fisica e non solo psichica", "weight": 1 },
+        { "id": "c3", "concept": "temporanea e non solo abituale", "weight": 1 },
+        { "id": "c4", "concept": "anche parziale", "weight": 1 }
+      ],
+      "references": ["404", "414"]
+    },
+    {
+      "prompt": "Chi nomina l'amministratore di sostegno e con quale provvedimento?",
+      "answer": "Il giudice tutelare del luogo di residenza o domicilio del beneficiario, con decreto motivato immediatamente esecutivo, entro sessanta giorni dalla richiesta.",
+      "rubric": [
+        { "id": "c1", "concept": "giudice tutelare", "weight": 2 },
+        { "id": "c2", "concept": "decreto motivato immediatamente esecutivo", "weight": 1 },
+        { "id": "c3", "concept": "entro sessanta giorni", "weight": 1 }
+      ],
+      "references": ["404", "405"]
+    },
+    {
+      "prompt": "Chi può chiedere l'amministrazione di sostegno?",
+      "answer": "Lo stesso beneficiario, anche se minore, interdetto o inabilitato, i soggetti legittimati a chiedere l'interdizione, cioè coniuge, convivente, parenti, affini, tutore, curatore e pubblico ministero; i responsabili dei servizi sanitari e sociali sono tenuti a proporre il ricorso o informare il pubblico ministero.",
+      "rubric": [
+        { "id": "c1", "concept": "il beneficiario stesso", "weight": 1 },
+        { "id": "c2", "concept": "familiari, tutore, curatore e PM", "weight": 1 },
+        { "id": "c3", "concept": "obbligo dei servizi sanitari e sociali", "weight": 2 }
+      ],
+      "references": ["406"]
+    },
+    {
+      "prompt": "Qual è la fase centrale del procedimento di amministrazione di sostegno?",
+      "answer": "L'audizione personale del beneficiario da parte del giudice tutelare, che si reca, se occorre, dove questi si trova e tiene conto dei suoi bisogni e delle sue richieste.",
+      "rubric": [
+        { "id": "c1", "concept": "audizione personale del beneficiario", "weight": 2 },
+        { "id": "c2", "concept": "il giudice si reca dove si trova se serve", "weight": 1 },
+        { "id": "c3", "concept": "considera bisogni e richieste", "weight": 1 }
+      ],
+      "references": ["407"]
+    },
+    {
+      "prompt": "Che cosa deve indicare il decreto di nomina dell'amministratore di sostegno?",
+      "answer": "Le generalità di beneficiario e amministratore, la durata dell'incarico, anche a tempo indeterminato, gli atti che l'amministratore compie in nome del beneficiario, quelli che il beneficiario compie con la sua assistenza, i limiti di spesa e la periodicità dei resoconti al giudice.",
+      "rubric": [
+        { "id": "c1", "concept": "durata dell'incarico", "weight": 1 },
+        { "id": "c2", "concept": "atti di rappresentanza dell'amministratore", "weight": 1 },
+        { "id": "c3", "concept": "atti con assistenza", "weight": 1 },
+        { "id": "c4", "concept": "limiti di spesa e resoconti", "weight": 1 }
+      ],
+      "references": ["405"]
+    },
+    {
+      "prompt": "Che cosa significa che l'amministrazione di sostegno è flessibile?",
+      "answer": "Che i suoi effetti non sono predeterminati dalla legge, come per interdizione e inabilitazione, ma sono definiti caso per caso dal giudice tutelare, che può modificarli o integrarli in ogni momento, anche d'ufficio.",
+      "rubric": [
+        { "id": "c1", "concept": "effetti stabiliti caso per caso dal giudice", "weight": 2 },
+        { "id": "c2", "concept": "modificabili in ogni tempo", "weight": 1 },
+        { "id": "c3", "concept": "diversa dagli effetti standard dell'interdizione", "weight": 1 }
+      ],
+      "references": ["405", "407"]
+    },
+    {
+      "prompt": "Il beneficiario dell'amministrazione di sostegno conserva la capacità di agire?",
+      "answer": "Sì, conserva la capacità per tutti gli atti che non richiedono la rappresentanza esclusiva o l'assistenza necessaria dell'amministratore e può in ogni caso compiere gli atti necessari alla vita quotidiana.",
+      "rubric": [
+        { "id": "c1", "concept": "conserva la capacità per gli altri atti", "weight": 2 },
+        { "id": "c2", "concept": "sempre gli atti della vita quotidiana", "weight": 2 }
+      ],
+      "references": ["409"]
+    },
+    {
+      "prompt": "Quali doveri ha l'amministratore di sostegno?",
+      "answer": "Deve tener conto dei bisogni e delle aspirazioni del beneficiario, informarlo tempestivamente degli atti da compiere e informare il giudice in caso di dissenso. Non è tenuto a proseguire oltre dieci anni, salvo che sia coniuge, convivente, ascendente o discendente.",
+      "rubric": [
+        { "id": "c1", "concept": "rispetto di bisogni e aspirazioni", "weight": 2 },
+        { "id": "c2", "concept": "informazione del beneficiario e del giudice", "weight": 1 },
+        { "id": "c3", "concept": "limite di dieci anni salvo familiari", "weight": 1 }
+      ],
+      "references": ["410"]
+    },
+    {
+      "prompt": "Che sorte hanno gli atti compiuti in violazione del decreto di amministrazione di sostegno?",
+      "answer": "Gli atti dell'amministratore contrari alla legge o eccedenti i poteri, e quelli compiuti dal beneficiario in violazione del decreto, sono annullabili; l'azione si prescrive in cinque anni dalla cessazione dell'amministrazione.",
+      "rubric": [
+        { "id": "c1", "concept": "atti dell'amministratore oltre i poteri annullabili", "weight": 1 },
+        { "id": "c2", "concept": "atti del beneficiario in violazione annullabili", "weight": 1 },
+        { "id": "c3", "concept": "prescrizione in cinque anni dalla cessazione", "weight": 2 }
+      ],
+      "references": ["412"]
+    },
+    {
+      "prompt": "Il giudice può estendere al beneficiario limitazioni previste per l'interdetto?",
+      "answer": "Sì, il giudice tutelare può disporre che determinati effetti, limitazioni o decadenze previsti dalla legge per l'interdetto o l'inabilitato si estendano al beneficiario, nel suo esclusivo interesse.",
+      "rubric": [
+        { "id": "c1", "concept": "sì, con provvedimento del giudice", "weight": 2 },
+        { "id": "c2", "concept": "nell'interesse del beneficiario", "weight": 1 }
+      ],
+      "references": ["411"]
+    },
+    {
+      "prompt": "Quando cessa l'amministrazione di sostegno?",
+      "answer": "Su istanza motivata del beneficiario, dell'amministratore, del pubblico ministero o degli altri legittimati, quando ne cessano i presupposti; il giudice la dichiara cessata anche d'ufficio se si rivela inidonea, informando il pubblico ministero per l'eventuale interdizione o inabilitazione.",
+      "rubric": [
+        { "id": "c1", "concept": "su istanza quando cessano i presupposti", "weight": 1 },
+        { "id": "c2", "concept": "d'ufficio se inidonea", "weight": 2 },
+        { "id": "c3", "concept": "passaggio a interdizione o inabilitazione", "weight": 1 }
+      ],
+      "references": ["413"]
+    },
+    {
+      "prompt": "Che differenza c'è tra amministrazione di sostegno e interdizione?",
+      "answer": "L'amministrazione di sostegno è disposta dal giudice tutelare con decreto, ha presupposti più ampi, effetti modellati sul caso e lascia al beneficiario la capacità per tutto il resto. L'interdizione è pronunciata dal tribunale con sentenza, toglie in generale la capacità d'agire ed è residuale.",
+      "rubric": [
+        { "id": "c1", "concept": "AdS: giudice tutelare, decreto, effetti su misura", "weight": 2 },
+        { "id": "c2", "concept": "interdizione: tribunale, sentenza, incapacità generale", "weight": 2 },
+        { "id": "c3", "concept": "l'interdizione è residuale", "weight": 1 }
+      ],
+      "references": ["404", "414"]
+    },
+    {
+      "prompt": "Che cos'è l'incapacità naturale?",
+      "answer": "È la condizione di chi, pur legalmente capace, al momento dell'atto è di fatto incapace di intendere o di volere, per qualsiasi causa anche transitoria.",
+      "rubric": [
+        { "id": "c1", "concept": "persona legalmente capace", "weight": 1 },
+        { "id": "c2", "concept": "di fatto incapace di intendere o volere al momento dell'atto", "weight": 2 },
+        { "id": "c3", "concept": "anche per causa transitoria", "weight": 1 }
+      ],
+      "references": ["428"]
+    },
+    {
+      "prompt": "Quando è annullabile l'atto unilaterale compiuto dall'incapace naturale?",
+      "answer": "Quando si prova che la persona era incapace di intendere o di volere al momento dell'atto e che dall'atto le deriva un grave pregiudizio.",
+      "rubric": [
+        { "id": "c1", "concept": "prova dell'incapacità al momento dell'atto", "weight": 2 },
+        { "id": "c2", "concept": "grave pregiudizio", "weight": 2 }
+      ],
+      "references": ["428"]
+    },
+    {
+      "prompt": "Quando è annullabile il contratto concluso dall'incapace naturale?",
+      "answer": "Quando si prova l'incapacità al momento della conclusione e la mala fede dell'altro contraente, che si può desumere dal pregiudizio, dalla qualità del contratto o da altre circostanze. L'azione si prescrive in cinque anni dal compimento dell'atto.",
+      "rubric": [
+        { "id": "c1", "concept": "incapacità al momento del contratto", "weight": 1 },
+        { "id": "c2", "concept": "mala fede dell'altro contraente", "weight": 2 },
+        { "id": "c3", "concept": "desumibile da pregiudizio o qualità del contratto", "weight": 1 },
+        { "id": "c4", "concept": "prescrizione in cinque anni dall'atto", "weight": 1 }
+      ],
+      "references": ["428"]
+    },
+    {
+      "prompt": "Come si impugnano matrimonio, testamento e donazione dell'incapace naturale?",
+      "answer": "Basta provare che la persona era incapace di intendere o di volere al momento dell'atto, senza bisogno di provare il pregiudizio o la mala fede altrui.",
+      "rubric": [
+        { "id": "c1", "concept": "basta l'incapacità al momento dell'atto", "weight": 2 },
+        { "id": "c2", "concept": "non servono pregiudizio né mala fede", "weight": 2 }
+      ],
+      "references": ["120", "591", "775"]
+    },
+    {
+      "prompt": "Che differenza c'è tra incapacità legale e incapacità naturale?",
+      "answer": "L'incapacità legale dipende da una condizione giuridica formale, come la minore età o l'interdizione, a prescindere dallo stato reale. L'incapacità naturale dipende dallo stato di fatto della persona, legalmente capace, al momento dell'atto, e va provata in concreto.",
+      "rubric": [
+        { "id": "c1", "concept": "legale: condizione giuridica formale", "weight": 2 },
+        { "id": "c2", "concept": "naturale: stato di fatto da provare", "weight": 2 }
+      ],
+      "references": ["428", "1425"]
+    },
+    {
+      "prompt": "Che differenza c'è tra incapacità legale assoluta e relativa?",
+      "answer": "L'incapacità assoluta, come quella del minore e dell'interdetto, preclude in generale gli atti negoziali. Quella relativa, come per l'inabilitato, l'emancipato e il beneficiario di amministrazione di sostegno, lascia una più o meno ampia capacità.",
+      "rubric": [
+        { "id": "c1", "concept": "assoluta: minore e interdetto", "weight": 2 },
+        { "id": "c2", "concept": "relativa: inabilitato, emancipato, beneficiario di AdS", "weight": 2 }
+      ],
+      "references": ["414", "415", "404"]
+    }
+  ]
+}

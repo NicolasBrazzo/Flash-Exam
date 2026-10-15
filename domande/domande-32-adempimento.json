@@ -1,0 +1,243 @@
+{
+  "topic": { "name": "L'adempimento dell'obbligazione" },
+  "questions": [
+    {
+      "prompt": "Che cos'è l'adempimento dell'obbligazione?",
+      "answer": "È l'esatta esecuzione della prestazione dovuta, che soddisfa l'interesse del creditore ed estingue l'obbligazione, liberando il debitore.",
+      "rubric": [
+        { "id": "c1", "concept": "esatta esecuzione della prestazione", "weight": 2 },
+        { "id": "c2", "concept": "soddisfa il creditore", "weight": 1 },
+        { "id": "c3", "concept": "estingue l'obbligazione e libera il debitore", "weight": 1 }
+      ],
+      "references": ["1176"]
+    },
+    {
+      "prompt": "Quale diligenza deve usare il debitore nell'adempimento?",
+      "answer": "La diligenza del buon padre di famiglia, cioè quella di una persona media; nelle obbligazioni inerenti all'attività professionale la diligenza si valuta con riguardo alla natura dell'attività esercitata.",
+      "rubric": [
+        { "id": "c1", "concept": "diligenza del buon padre di famiglia", "weight": 2 },
+        { "id": "c2", "concept": "modello della persona media", "weight": 1 },
+        { "id": "c3", "concept": "per i professionisti si valuta secondo l'attività", "weight": 2 }
+      ],
+      "references": ["1176"]
+    },
+    {
+      "prompt": "Perché le norme sull'adempimento sono in gran parte dispositive?",
+      "answer": "Perché le obbligazioni riguardano rapporti patrimoniali dominati dall'autonomia privata: prima conta ciò che le parti hanno stabilito su tempo, luogo e modalità; le norme di legge si applicano solo se le parti non hanno disposto.",
+      "rubric": [
+        { "id": "c1", "concept": "prevale la volontà delle parti", "weight": 2 },
+        { "id": "c2", "concept": "le norme di legge sono suppletive", "weight": 2 }
+      ],
+      "references": ["1182", "1183"]
+    },
+    {
+      "prompt": "Che cos'è la quietanza?",
+      "answer": "È la dichiarazione scritta con cui il creditore attesta di aver ricevuto il pagamento: il debitore ha diritto di ottenerla, a sue spese, ed è la prova dell'adempimento. La quietanza per il capitale fa presumere il pagamento degli interessi.",
+      "rubric": [
+        { "id": "c1", "concept": "dichiarazione del creditore di aver ricevuto", "weight": 2 },
+        { "id": "c2", "concept": "diritto del debitore, a sue spese", "weight": 1 },
+        { "id": "c3", "concept": "prova dell'adempimento", "weight": 1 },
+        { "id": "c4", "concept": "presunzione di pagamento degli interessi", "weight": 1 }
+      ],
+      "references": ["1199"]
+    },
+    {
+      "prompt": "Che cosa comporta l'obbligazione di consegnare una cosa determinata?",
+      "answer": "Comporta anche l'obbligo di custodirla fino alla consegna.",
+      "rubric": [
+        { "id": "c1", "concept": "obbligo di custodia", "weight": 2 },
+        { "id": "c2", "concept": "fino alla consegna", "weight": 1 }
+      ],
+      "references": ["1177"]
+    },
+    {
+      "prompt": "Quale qualità devono avere le cose nelle obbligazioni generiche?",
+      "answer": "Quando l'obbligazione ha per oggetto cose determinate solo nel genere, il debitore deve prestare cose di qualità non inferiore alla media.",
+      "rubric": [
+        { "id": "c1", "concept": "cose determinate solo nel genere", "weight": 1 },
+        { "id": "c2", "concept": "qualità non inferiore alla media", "weight": 2 }
+      ],
+      "references": ["1178"]
+    },
+    {
+      "prompt": "Il creditore può rifiutare un adempimento parziale?",
+      "answer": "Sì, può rifiutarlo anche se la prestazione è divisibile, salvo che la legge o gli usi dispongano diversamente, perché l'adempimento parziale non soddisfa integralmente il suo interesse.",
+      "rubric": [
+        { "id": "c1", "concept": "sì, può rifiutarlo", "weight": 2 },
+        { "id": "c2", "concept": "anche se la prestazione è divisibile", "weight": 1 },
+        { "id": "c3", "concept": "salvo legge o usi", "weight": 1 }
+      ],
+      "references": ["1181"]
+    },
+    {
+      "prompt": "Dove deve essere eseguita la prestazione se le parti non hanno stabilito il luogo?",
+      "answer": "La consegna di una cosa certa e determinata si fa dove la cosa si trovava quando è sorta l'obbligazione; il pagamento di denaro al domicilio del creditore al tempo della scadenza; tutte le altre obbligazioni al domicilio del debitore al tempo della scadenza.",
+      "rubric": [
+        { "id": "c1", "concept": "cosa determinata: dove si trovava alla nascita dell'obbligazione", "weight": 1 },
+        { "id": "c2", "concept": "denaro: domicilio del creditore", "weight": 2 },
+        { "id": "c3", "concept": "altre: domicilio del debitore", "weight": 1 }
+      ],
+      "references": ["1182"]
+    },
+    {
+      "prompt": "Che differenza c'è tra debiti portabili e debiti chiedibili?",
+      "answer": "I debiti portabili, come quelli di denaro, si adempiono al domicilio del creditore: è il debitore che deve portare la prestazione. I debiti chiedibili si adempiono al domicilio del debitore: è il creditore che deve andare a chiedere la prestazione.",
+      "rubric": [
+        { "id": "c1", "concept": "portabili: domicilio del creditore", "weight": 2 },
+        { "id": "c2", "concept": "chiedibili: domicilio del debitore", "weight": 2 },
+        { "id": "c3", "concept": "i debiti di denaro sono portabili", "weight": 1 }
+      ],
+      "references": ["1182"]
+    },
+    {
+      "prompt": "Che cosa può fare il debitore di denaro se il creditore ha cambiato domicilio?",
+      "answer": "Se il domicilio del creditore alla scadenza è diverso da quello che aveva quando è sorta l'obbligazione e ciò rende più gravoso l'adempimento, il debitore, previa dichiarazione al creditore, può pagare al proprio domicilio.",
+      "rubric": [
+        { "id": "c1", "concept": "cambio di domicilio che aggrava l'adempimento", "weight": 2 },
+        { "id": "c2", "concept": "può pagare al proprio domicilio previa dichiarazione", "weight": 2 }
+      ],
+      "references": ["1182"]
+    },
+    {
+      "prompt": "Quando può essere pretesa la prestazione se non è fissato un termine?",
+      "answer": "Il creditore può esigerla immediatamente (quod sine die debetur statim debetur). Se però per gli usi, la natura della prestazione o il modo e il luogo dell'esecuzione è necessario un termine, in mancanza di accordo lo stabilisce il giudice.",
+      "rubric": [
+        { "id": "c1", "concept": "esigibile immediatamente", "weight": 2 },
+        { "id": "c2", "concept": "se serve un termine lo fissa il giudice", "weight": 2 }
+      ],
+      "references": ["1183"]
+    },
+    {
+      "prompt": "Che cosa succede se il termine è rimesso alla volontà del debitore o del creditore?",
+      "answer": "Se è rimesso alla volontà del debitore, lo stabilisce il giudice secondo le circostanze; se è rimesso alla volontà del creditore, può essere fissato dal giudice su istanza del debitore che vuole liberarsi.",
+      "rubric": [
+        { "id": "c1", "concept": "rimesso al debitore: lo fissa il giudice", "weight": 2 },
+        { "id": "c2", "concept": "rimesso al creditore: su istanza del debitore", "weight": 2 }
+      ],
+      "references": ["1183"]
+    },
+    {
+      "prompt": "Che differenza c'è tra termine a favore del debitore e termine a favore del creditore?",
+      "answer": "Se il termine è a favore del debitore, il creditore non può esigere la prestazione prima della scadenza, ma il debitore può adempiere prima. Se è a favore del creditore, questi può esigerla subito, ma il debitore non può liberarsi prima della scadenza.",
+      "rubric": [
+        { "id": "c1", "concept": "a favore del debitore: il creditore non può esigere prima", "weight": 2 },
+        { "id": "c2", "concept": "a favore del creditore: il debitore non può liberarsi prima", "weight": 2 }
+      ],
+      "references": ["1184", "1185"]
+    },
+    {
+      "prompt": "A favore di chi si presume stabilito il termine di adempimento?",
+      "answer": "Si presume a favore del debitore, se non risulta stabilito a favore del creditore o di entrambi (favor debitoris).",
+      "rubric": [
+        { "id": "c1", "concept": "a favore del debitore", "weight": 2 },
+        { "id": "c2", "concept": "salvo che risulti diversamente", "weight": 1 }
+      ],
+      "references": ["1184"]
+    },
+    {
+      "prompt": "Il debitore che ha pagato prima della scadenza può ripetere quanto pagato?",
+      "answer": "No, anche se ignorava l'esistenza del termine; può però ripetere, nei limiti della perdita subita, ciò di cui il creditore si è arricchito per effetto del pagamento anticipato.",
+      "rubric": [
+        { "id": "c1", "concept": "non può ripetere il pagamento", "weight": 2 },
+        { "id": "c2", "concept": "anche se ignorava il termine", "weight": 1 },
+        { "id": "c3", "concept": "può recuperare l'arricchimento del creditore nei limiti della perdita", "weight": 1 }
+      ],
+      "references": ["1185"]
+    },
+    {
+      "prompt": "Quando il debitore decade dal beneficio del termine?",
+      "answer": "Quando è divenuto insolvente o ha diminuito, per fatto proprio, le garanzie che aveva dato, o non ha dato quelle promesse: il creditore può esigere subito la prestazione.",
+      "rubric": [
+        { "id": "c1", "concept": "insolvenza del debitore", "weight": 1 },
+        { "id": "c2", "concept": "garanzie diminuite o non date", "weight": 1 },
+        { "id": "c3", "concept": "il creditore può esigere subito", "weight": 2 }
+      ],
+      "references": ["1186"]
+    },
+    {
+      "prompt": "Come si imputa il pagamento se il debitore ha più debiti della stessa specie verso lo stesso creditore?",
+      "answer": "Il debitore può dichiarare quale debito intende soddisfare. In mancanza, il pagamento si imputa al debito scaduto; tra più debiti scaduti al meno garantito; tra quelli ugualmente garantiti al più antico; altrimenti proporzionalmente.",
+      "rubric": [
+        { "id": "c1", "concept": "sceglie il debitore", "weight": 2 },
+        { "id": "c2", "concept": "altrimenti debito scaduto, poi meno garantito", "weight": 1 },
+        { "id": "c3", "concept": "poi il più antico, infine proporzionalmente", "weight": 1 }
+      ],
+      "references": ["1193"]
+    },
+    {
+      "prompt": "Che valore ha la quietanza in cui il creditore imputa il pagamento a un certo debito?",
+      "answer": "Il debitore che accetta una quietanza con l'imputazione del pagamento a uno dei debiti non può pretendere un'imputazione diversa, salvo dolo o sorpresa del creditore.",
+      "rubric": [
+        { "id": "c1", "concept": "l'accettazione vincola il debitore", "weight": 2 },
+        { "id": "c2", "concept": "salvo dolo o sorpresa", "weight": 1 }
+      ],
+      "references": ["1195"]
+    },
+    {
+      "prompt": "Come si imputa il pagamento tra capitale, interessi e spese?",
+      "answer": "Il pagamento fatto in conto di capitale e interessi deve essere imputato prima agli interessi, salvo il consenso del creditore; e prima ancora alle spese.",
+      "rubric": [
+        { "id": "c1", "concept": "prima alle spese e agli interessi", "weight": 2 },
+        { "id": "c2", "concept": "poi al capitale salvo consenso del creditore", "weight": 1 }
+      ],
+      "references": ["1194"]
+    },
+    {
+      "prompt": "L'obbligazione può essere adempiuta da un terzo?",
+      "answer": "Sì, anche contro la volontà del creditore, se questi non ha interesse a che il debitore esegua personalmente la prestazione. Il creditore può però rifiutare l'adempimento del terzo se il debitore gli ha manifestato la sua opposizione.",
+      "rubric": [
+        { "id": "c1", "concept": "sì, anche contro la volontà del creditore", "weight": 1 },
+        { "id": "c2", "concept": "salvo interesse alla prestazione personale del debitore", "weight": 2 },
+        { "id": "c3", "concept": "rifiuto ammesso se il debitore si è opposto", "weight": 1 }
+      ],
+      "references": ["1180"]
+    },
+    {
+      "prompt": "A chi deve essere fatto il pagamento per liberare il debitore?",
+      "answer": "Al creditore o al suo rappresentante, oppure alla persona indicata dal creditore o autorizzata dalla legge o dal giudice. Il pagamento a chi non era legittimato libera il debitore se il creditore lo ratifica o se ne ha approfittato.",
+      "rubric": [
+        { "id": "c1", "concept": "creditore o suo rappresentante", "weight": 1 },
+        { "id": "c2", "concept": "persona indicata o autorizzata", "weight": 1 },
+        { "id": "c3", "concept": "al non legittimato libera solo con ratifica o approfittamento", "weight": 2 }
+      ],
+      "references": ["1188"]
+    },
+    {
+      "prompt": "Quando è liberatorio il pagamento al creditore apparente?",
+      "answer": "Quando il debitore paga a chi appare legittimato a ricevere in base a circostanze univoche e prova di essere stato in buona fede. Chi ha ricevuto deve restituire al vero creditore secondo le regole sull'indebito.",
+      "rubric": [
+        { "id": "c1", "concept": "apparenza fondata su circostanze univoche", "weight": 1 },
+        { "id": "c2", "concept": "buona fede del debitore", "weight": 2 },
+        { "id": "c3", "concept": "il creditore apparente restituisce al vero creditore", "weight": 1 }
+      ],
+      "references": ["1189"]
+    },
+    {
+      "prompt": "Il pagamento fatto al creditore incapace libera il debitore?",
+      "answer": "No, salvo che il debitore provi che ciò che ha pagato è stato rivolto a vantaggio dell'incapace, cioè che il vantaggio si è stabilizzato nel suo patrimonio.",
+      "rubric": [
+        { "id": "c1", "concept": "di regola non libera", "weight": 2 },
+        { "id": "c2", "concept": "salvo prova del vantaggio per l'incapace", "weight": 2 }
+      ],
+      "references": ["1190"]
+    },
+    {
+      "prompt": "Il debitore incapace può impugnare il pagamento che ha eseguito?",
+      "answer": "No, il debitore che ha eseguito la prestazione dovuta non può impugnare il pagamento a causa della propria incapacità: l'adempimento è un atto dovuto, non una scelta libera da proteggere.",
+      "rubric": [
+        { "id": "c1", "concept": "non può impugnarlo", "weight": 2 },
+        { "id": "c2", "concept": "l'adempimento è un atto dovuto", "weight": 2 }
+      ],
+      "references": ["1191"]
+    },
+    {
+      "prompt": "Perché l'incapacità rileva nel contratto ma non nel pagamento del debitore?",
+      "answer": "Perché nel contratto la legge protegge la libertà e la consapevolezza della decisione di contrarre; nel pagamento il debitore non decide, ma esegue un obbligo, quindi non c'è una scelta da tutelare.",
+      "rubric": [
+        { "id": "c1", "concept": "nel contratto si tutela la libertà di decidere", "weight": 2 },
+        { "id": "c2", "concept": "il pagamento è adempimento di un obbligo", "weight": 2 }
+      ],
+      "references": ["1425", "1191"]
+    }
+  ]
+}

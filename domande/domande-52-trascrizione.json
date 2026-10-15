@@ -1,0 +1,215 @@
+{
+  "topic": { "name": "La trascrizione" },
+  "questions": [
+    {
+      "prompt": "Che cos'è la trascrizione e a quali beni si riferisce?",
+      "answer": "È un mezzo di pubblicità degli atti relativi ai beni immobili e ai mobili registrati, eseguito nei pubblici registri, che serve a rendere opponibili ai terzi le vicende giuridiche di quei beni e a risolvere i conflitti tra più acquirenti.",
+      "rubric": [
+        { "id": "c1", "concept": "pubblicità nei registri", "weight": 1 },
+        { "id": "c2", "concept": "immobili e mobili registrati", "weight": 1 },
+        { "id": "c3", "concept": "opponibilità ai terzi e soluzione dei conflitti", "weight": 2 }
+      ],
+      "references": ["2643", "2644"]
+    },
+    {
+      "prompt": "Che cosa si trascrive: i beni, i diritti o gli atti?",
+      "answer": "Si trascrivono gli atti, cioè i contratti e i provvedimenti che costituiscono, trasferiscono, modificano o estinguono diritti su immobili, non i beni né i diritti in sé.",
+      "rubric": [
+        { "id": "c1", "concept": "si trascrivono gli atti", "weight": 2 },
+        { "id": "c2", "concept": "che riguardano diritti su immobili", "weight": 1 }
+      ],
+      "references": ["2643"]
+    },
+    {
+      "prompt": "Su quale criterio si basa il sistema delle trascrizioni?",
+      "answer": "Su un criterio personale: ogni atto è trascritto contro chi aliena e a favore di chi acquista, creando una catena di trascrizioni che ricostruisce i passaggi del bene.",
+      "rubric": [
+        { "id": "c1", "concept": "criterio personale", "weight": 2 },
+        { "id": "c2", "concept": "contro l'alienante e a favore dell'acquirente", "weight": 2 }
+      ],
+      "references": ["2643"]
+    },
+    {
+      "prompt": "Che effetti produce la trascrizione nei confronti dei terzi?",
+      "answer": "Gli atti soggetti a trascrizione non hanno effetto verso i terzi che hanno acquistato diritti sullo stesso immobile in base a un atto trascritto o iscritto prima; dopo la trascrizione, non ha effetto contro chi ha trascritto alcuna trascrizione successiva di diritti acquistati dallo stesso autore, anche se l'acquisto è di data anteriore.",
+      "rubric": [
+        { "id": "c1", "concept": "prevale chi trascrive per primo", "weight": 2 },
+        { "id": "c2", "concept": "anche se il suo acquisto è posteriore", "weight": 1 },
+        { "id": "c3", "concept": "terzi: chi ha acquistato dallo stesso autore", "weight": 1 }
+      ],
+      "references": ["2644"]
+    },
+    {
+      "prompt": "Chi sono i terzi ai fini della trascrizione?",
+      "answer": "Non tutti coloro che non sono parti dell'atto, ma solo chi ha acquistato dallo stesso autore diritti incompatibili sullo stesso bene, trovandosi in conflitto con l'altro acquirente.",
+      "rubric": [
+        { "id": "c1", "concept": "chi ha acquistato dallo stesso autore", "weight": 2 },
+        { "id": "c2", "concept": "diritti incompatibili sullo stesso bene", "weight": 2 }
+      ],
+      "references": ["2644"]
+    },
+    {
+      "prompt": "Che rilievo ha la buona fede nel conflitto tra acquirenti di immobili?",
+      "answer": "Nessun rilievo ai fini della prevalenza: vince chi trascrive per primo anche se sapeva della precedente vendita. Il secondo acquirente in mala fede, però, può essere tenuto a risarcire il danno al primo, e l'alienante risponde sempre per la doppia vendita.",
+      "rubric": [
+        { "id": "c1", "concept": "la buona fede è irrilevante per la prevalenza", "weight": 2 },
+        { "id": "c2", "concept": "il secondo acquirente in mala fede può dover risarcire", "weight": 1 },
+        { "id": "c3", "concept": "l'alienante risponde della doppia vendita", "weight": 1 }
+      ],
+      "references": ["2644"]
+    },
+    {
+      "prompt": "Perché si dice che la trascrizione ha natura dichiarativa?",
+      "answer": "Perché non è un elemento del contratto né condizione del trasferimento, che avviene con il consenso: serve solo a rendere l'acquisto opponibile ai terzi. È invece costitutiva l'iscrizione dell'ipoteca.",
+      "rubric": [
+        { "id": "c1", "concept": "non è necessaria per il trasferimento", "weight": 2 },
+        { "id": "c2", "concept": "serve all'opponibilità", "weight": 1 },
+        { "id": "c3", "concept": "l'iscrizione dell'ipoteca è costitutiva", "weight": 1 }
+      ],
+      "references": ["2644", "2808"]
+    },
+    {
+      "prompt": "Che cosa sono l'efficacia negativa e l'efficacia positiva della trascrizione?",
+      "answer": "Per l'efficacia negativa gli atti non trascritti non sono opponibili ai terzi; per quella positiva gli atti trascritti si considerano conosciuti e sono opponibili a qualunque terzo.",
+      "rubric": [
+        { "id": "c1", "concept": "negativa: atti non trascritti inopponibili", "weight": 2 },
+        { "id": "c2", "concept": "positiva: atti trascritti opponibili a tutti", "weight": 2 }
+      ],
+      "references": ["2644"]
+    },
+    {
+      "prompt": "La trascrizione sana i vizi dell'atto trascritto?",
+      "answer": "Di regola no; solo in alcuni casi ha efficacia sanante, per esempio quando la domanda di nullità o di annullamento è trascritta dopo cinque anni dalla trascrizione dell'atto impugnato: la sentenza non pregiudica i terzi di buona fede che hanno trascritto prima della domanda.",
+      "rubric": [
+        { "id": "c1", "concept": "di regola non sana i vizi", "weight": 1 },
+        { "id": "c2", "concept": "eccezione: domanda trascritta dopo cinque anni", "weight": 2 },
+        { "id": "c3", "concept": "tutela dei terzi di buona fede che hanno trascritto prima", "weight": 1 }
+      ],
+      "references": ["2652"]
+    },
+    {
+      "prompt": "Che cosa stabilisce il principio di continuità delle trascrizioni?",
+      "answer": "Le trascrizioni o iscrizioni a carico dell'acquirente non producono effetto se non è stato trascritto l'atto anteriore di acquisto; quando questo viene trascritto, le successive producono effetto secondo il loro ordine.",
+      "rubric": [
+        { "id": "c1", "concept": "serve la trascrizione dell'acquisto precedente", "weight": 2 },
+        { "id": "c2", "concept": "ricostituita la catena valgono secondo l'ordine", "weight": 2 }
+      ],
+      "references": ["2650"]
+    },
+    {
+      "prompt": "L'elenco degli atti soggetti a trascrizione è tassativo?",
+      "answer": "Sì, l'elenco degli atti la cui trascrizione serve a risolvere i conflitti tra acquirenti è tassativo: riguarda gli atti che trasferiscono, costituiscono, modificano o estinguono diritti reali su immobili, oltre a casi particolari come il preliminare.",
+      "rubric": [
+        { "id": "c1", "concept": "elenco tassativo", "weight": 2 },
+        { "id": "c2", "concept": "atti su diritti reali immobiliari", "weight": 1 }
+      ],
+      "references": ["2643"]
+    },
+    {
+      "prompt": "Gli acquisti per causa di morte vanno trascritti e con quale funzione?",
+      "answer": "Si trascrivono l'accettazione dell'eredità e l'acquisto del legato relativi a diritti immobiliari, ma non per risolvere conflitti tra più acquirenti: la trascrizione serve soprattutto ad assicurare la continuità delle trascrizioni per gli acquisti successivi dall'erede.",
+      "rubric": [
+        { "id": "c1", "concept": "si trascrivono accettazione ed acquisto del legato", "weight": 1 },
+        { "id": "c2", "concept": "non risolve conflitti tra acquirenti", "weight": 1 },
+        { "id": "c3", "concept": "serve alla continuità delle trascrizioni", "weight": 2 }
+      ],
+      "references": ["2648", "2650"]
+    },
+    {
+      "prompt": "Quali domande giudiziali si trascrivono?",
+      "answer": "Tra le altre, le domande di risoluzione e rescissione, di esecuzione in forma specifica dell'obbligo di contrarre, di accertamento della simulazione, di revocatoria, di nullità e annullamento, di riduzione delle donazioni lesive della legittima, relative ad atti soggetti a trascrizione.",
+      "rubric": [
+        { "id": "c1", "concept": "risoluzione, rescissione, nullità, annullamento", "weight": 1 },
+        { "id": "c2", "concept": "esecuzione in forma specifica", "weight": 1 },
+        { "id": "c3", "concept": "simulazione e revocatoria", "weight": 1 },
+        { "id": "c4", "concept": "riduzione per lesione di legittima", "weight": 1 }
+      ],
+      "references": ["2652"]
+    },
+    {
+      "prompt": "Quanto dura l'efficacia della trascrizione della domanda giudiziale?",
+      "answer": "Vent'anni dalla sua data; può essere rinnovata prima della scadenza. In caso di rigetto o estinzione del processo, il giudice ordina la cancellazione della trascrizione.",
+      "rubric": [
+        { "id": "c1", "concept": "vent'anni", "weight": 2 },
+        { "id": "c2", "concept": "rinnovabile", "weight": 1 },
+        { "id": "c3", "concept": "cancellazione in caso di rigetto", "weight": 1 }
+      ],
+      "references": ["2668-bis"]
+    },
+    {
+      "prompt": "Quali preliminari si possono trascrivere e in quale forma?",
+      "answer": "I preliminari diretti a concludere contratti che trasferiscono la proprietà di immobili o costituiscono o trasferiscono diritti reali su immobili, purché risultino da atto pubblico o scrittura privata con sottoscrizione autenticata o accertata giudizialmente.",
+      "rubric": [
+        { "id": "c1", "concept": "preliminari di contratti traslativi o costitutivi di diritti reali immobiliari", "weight": 2 },
+        { "id": "c2", "concept": "atto pubblico o scrittura autenticata", "weight": 2 }
+      ],
+      "references": ["2645-bis"]
+    },
+    {
+      "prompt": "Entro quale termine opera l'effetto prenotativo della trascrizione del preliminare?",
+      "answer": "Solo se il definitivo o la domanda di esecuzione in forma specifica sono trascritti entro un anno dalla data convenuta per il definitivo e comunque entro tre anni dalla trascrizione del preliminare; altrimenti l'effetto cessa.",
+      "rubric": [
+        { "id": "c1", "concept": "entro un anno dalla data fissata per il definitivo", "weight": 2 },
+        { "id": "c2", "concept": "comunque entro tre anni dalla trascrizione", "weight": 2 }
+      ],
+      "references": ["2645-bis"]
+    },
+    {
+      "prompt": "Quale ulteriore tutela ottiene il promissario acquirente che ha trascritto il preliminare?",
+      "answer": "Se il preliminare non è eseguito, i suoi crediti, come la restituzione degli acconti, hanno privilegio speciale sull'immobile, purché gli effetti della trascrizione non siano cessati.",
+      "rubric": [
+        { "id": "c1", "concept": "privilegio speciale sull'immobile", "weight": 2 },
+        { "id": "c2", "concept": "per i crediti da mancata esecuzione", "weight": 1 }
+      ],
+      "references": ["2775-bis"]
+    },
+    {
+      "prompt": "Che cosa sono gli atti di destinazione trascrivibili?",
+      "answer": "Sono gli atti con cui beni immobili o mobili registrati sono destinati, per non più di novant'anni o per la vita del beneficiario, a realizzare interessi meritevoli di tutela riferibili a persone con disabilità, pubbliche amministrazioni o altri enti o persone: trascritti, il vincolo è opponibile ai terzi.",
+      "rubric": [
+        { "id": "c1", "concept": "vincolo di destinazione su beni", "weight": 2 },
+        { "id": "c2", "concept": "interessi meritevoli di tutela", "weight": 1 },
+        { "id": "c3", "concept": "opponibile se trascritto, durata massima novant'anni", "weight": 1 }
+      ],
+      "references": ["2645-ter"]
+    },
+    {
+      "prompt": "Che cos'è l'annotazione?",
+      "answer": "È la formalità con cui si annotano a margine di una trascrizione le domande giudiziali o le sentenze e convenzioni che dichiarano nullità, annullamento, risoluzione, rescissione o revoca dell'atto trascritto; aumenta la conoscibilità e la sua mancanza priva di effetto le trascrizioni successive.",
+      "rubric": [
+        { "id": "c1", "concept": "formalità a margine di una trascrizione", "weight": 1 },
+        { "id": "c2", "concept": "per sentenze o convenzioni che incidono sull'atto", "weight": 2 },
+        { "id": "c3", "concept": "senza annotazione le trascrizioni successive non hanno effetto", "weight": 1 }
+      ],
+      "references": ["2654", "2655"]
+    },
+    {
+      "prompt": "In base a quali titoli si può eseguire la trascrizione?",
+      "answer": "Solo in base a sentenza, atto pubblico o scrittura privata con sottoscrizione autenticata o accertata giudizialmente; occorre presentare il titolo e una nota di trascrizione all'ufficio dei registri immobiliari del luogo in cui si trova il bene.",
+      "rubric": [
+        { "id": "c1", "concept": "sentenza, atto pubblico o scrittura autenticata", "weight": 2 },
+        { "id": "c2", "concept": "con nota di trascrizione presso l'ufficio competente", "weight": 1 }
+      ],
+      "references": ["2657", "2659"]
+    },
+    {
+      "prompt": "Quando le omissioni nella nota di trascrizione rendono nulla la trascrizione?",
+      "answer": "Solo quando inducono incertezza sulle persone, sul bene o sul rapporto giuridico a cui l'atto si riferisce.",
+      "rubric": [
+        { "id": "c1", "concept": "solo se creano incertezza", "weight": 2 },
+        { "id": "c2", "concept": "su persone, bene o rapporto", "weight": 2 }
+      ],
+      "references": ["2665"]
+    },
+    {
+      "prompt": "Chi è obbligato a curare la trascrizione degli atti?",
+      "answer": "Per le parti la trascrizione è un onere; il notaio o altro pubblico ufficiale che ha ricevuto o autenticato l'atto ha invece l'obbligo di curarla nel più breve tempo possibile, rispondendo dei danni per il ritardo.",
+      "rubric": [
+        { "id": "c1", "concept": "per le parti è un onere", "weight": 1 },
+        { "id": "c2", "concept": "obbligo del notaio di curarla", "weight": 2 },
+        { "id": "c3", "concept": "responsabilità per il ritardo", "weight": 1 }
+      ],
+      "references": ["2671"]
+    }
+  ]
+}

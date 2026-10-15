@@ -1,0 +1,129 @@
+{
+  "topic": { "name": "La rescissione del contratto" },
+  "questions": [
+    {
+      "prompt": "Che cos'è la rescissione del contratto?",
+      "answer": "È il rimedio contro i contratti conclusi in circostanze anomale, lo stato di pericolo o lo stato di bisogno, che hanno indotto una parte ad accettare condizioni gravemente inique.",
+      "rubric": [
+        { "id": "c1", "concept": "circostanze anomale: pericolo o bisogno", "weight": 2 },
+        { "id": "c2", "concept": "condizioni inique o squilibrate", "weight": 2 }
+      ],
+      "references": ["1447", "1448"]
+    },
+    {
+      "prompt": "Quali sono i requisiti della rescissione per stato di pericolo?",
+      "answer": "Una parte ha assunto obbligazioni a condizioni inique per la necessità, nota alla controparte, di salvare sé o altri dal pericolo attuale di un danno grave alla persona.",
+      "rubric": [
+        { "id": "c1", "concept": "condizioni inique", "weight": 1 },
+        { "id": "c2", "concept": "pericolo attuale di danno grave alla persona", "weight": 2 },
+        { "id": "c3", "concept": "necessità nota alla controparte", "weight": 2 }
+      ],
+      "references": ["1447"]
+    },
+    {
+      "prompt": "Che cosa può fare il giudice a favore della controparte quando pronuncia la rescissione per stato di pericolo?",
+      "answer": "Può assegnare, secondo le circostanze, un equo compenso all'altra parte per l'opera prestata.",
+      "rubric": [
+        { "id": "c1", "concept": "equo compenso", "weight": 2 },
+        { "id": "c2", "concept": "per l'opera prestata", "weight": 1 }
+      ],
+      "references": ["1447"]
+    },
+    {
+      "prompt": "Che differenza c'è tra stato di pericolo e violenza morale?",
+      "answer": "Nella violenza la minaccia è creata dalla controparte o da un terzo per costringere a contrarre e il contratto è annullabile. Nello stato di pericolo il pericolo nasce da fattori esterni e la controparte si limita ad approfittarne: il contratto è rescindibile.",
+      "rubric": [
+        { "id": "c1", "concept": "violenza: minaccia creata per far contrarre", "weight": 2 },
+        { "id": "c2", "concept": "pericolo: situazione esterna sfruttata dalla controparte", "weight": 2 },
+        { "id": "c3", "concept": "annullabilità contro rescissione", "weight": 1 }
+      ],
+      "references": ["1434", "1447"]
+    },
+    {
+      "prompt": "Quali sono i requisiti della rescissione per lesione?",
+      "answer": "Sproporzione tra le prestazioni dipesa dallo stato di bisogno di una parte, approfittamento dell'altra, lesione superiore alla metà del valore della prestazione della parte danneggiata e persistenza della lesione fino alla domanda.",
+      "rubric": [
+        { "id": "c1", "concept": "stato di bisogno", "weight": 1 },
+        { "id": "c2", "concept": "approfittamento della controparte", "weight": 1 },
+        { "id": "c3", "concept": "lesione oltre la metà (ultra dimidium)", "weight": 2 },
+        { "id": "c4", "concept": "la lesione perdura fino alla domanda", "weight": 1 }
+      ],
+      "references": ["1448"]
+    },
+    {
+      "prompt": "Che cos'è la lesione ultra dimidium?",
+      "answer": "È la sproporzione richiesta per la rescissione per lesione: la lesione deve eccedere la metà del valore che la prestazione della parte danneggiata aveva al tempo del contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "lesione oltre la metà del valore", "weight": 2 },
+        { "id": "c2", "concept": "valore al tempo del contratto", "weight": 1 }
+      ],
+      "references": ["1448"]
+    },
+    {
+      "prompt": "Si possono rescindere per lesione i contratti aleatori?",
+      "answer": "No, i contratti aleatori non possono essere rescissi per causa di lesione, perché lo squilibrio tra le prestazioni dipende dall'alea accettata dalle parti.",
+      "rubric": [
+        { "id": "c1", "concept": "non sono rescindibili per lesione", "weight": 2 },
+        { "id": "c2", "concept": "lo squilibrio è legato all'alea", "weight": 1 }
+      ],
+      "references": ["1448"]
+    },
+    {
+      "prompt": "Entro quanto tempo si prescrive l'azione di rescissione?",
+      "answer": "In un anno dalla conclusione del contratto; se il fatto costituisce reato, si applica il termine più lungo previsto per il reato.",
+      "rubric": [
+        { "id": "c1", "concept": "un anno", "weight": 2 },
+        { "id": "c2", "concept": "dalla conclusione del contratto", "weight": 1 },
+        { "id": "c3", "concept": "termine diverso se il fatto è reato", "weight": 1 }
+      ],
+      "references": ["1449"]
+    },
+    {
+      "prompt": "La rescindibilità può essere opposta in via di eccezione dopo la prescrizione dell'azione?",
+      "answer": "No, a differenza dell'annullabilità, la rescindibilità non può essere opposta in via di eccezione quando l'azione è prescritta.",
+      "rubric": [
+        { "id": "c1", "concept": "non opponibile dopo la prescrizione", "weight": 2 },
+        { "id": "c2", "concept": "a differenza dell'annullabilità", "weight": 1 }
+      ],
+      "references": ["1449"]
+    },
+    {
+      "prompt": "Come può il contraente evitare la rescissione chiesta dall'altra parte?",
+      "answer": "Offrendo una modificazione del contratto sufficiente per ricondurlo a equità (offerta di riduzione a equità).",
+      "rubric": [
+        { "id": "c1", "concept": "offerta di modificazione del contratto", "weight": 2 },
+        { "id": "c2", "concept": "sufficiente a ricondurlo a equità", "weight": 2 }
+      ],
+      "references": ["1450"]
+    },
+    {
+      "prompt": "Il contratto rescindibile può essere convalidato?",
+      "answer": "No, il contratto rescindibile non può essere convalidato; per questo non si può nemmeno rinunciare preventivamente all'azione di rescissione.",
+      "rubric": [
+        { "id": "c1", "concept": "non è convalidabile", "weight": 2 },
+        { "id": "c2", "concept": "non si può rinunciare all'azione", "weight": 1 }
+      ],
+      "references": ["1451"]
+    },
+    {
+      "prompt": "La rescissione pregiudica i diritti acquistati dai terzi?",
+      "answer": "No, la rescissione non pregiudica i diritti acquistati dai terzi, salvi gli effetti della trascrizione della domanda di rescissione.",
+      "rubric": [
+        { "id": "c1", "concept": "non pregiudica i terzi", "weight": 2 },
+        { "id": "c2", "concept": "salvi gli effetti della trascrizione della domanda", "weight": 2 }
+      ],
+      "references": ["1452"]
+    },
+    {
+      "prompt": "Che cosa hanno in comune e in che cosa differiscono annullabilità e rescissione?",
+      "answer": "In entrambe il contratto produce effetti finché non è eliminato dal giudice. L'annullabilità tutela la libera formazione della volontà, prescrive in cinque anni e ammette la convalida; la rescissione colpisce l'iniquità dello scambio, si prescrive in un anno, non ammette convalida ma consente la riduzione a equità.",
+      "rubric": [
+        { "id": "c1", "concept": "in entrambe il contratto produce effetti fino alla sentenza", "weight": 1 },
+        { "id": "c2", "concept": "annullabilità: vizio della volontà; rescissione: iniquità", "weight": 2 },
+        { "id": "c3", "concept": "cinque anni contro un anno", "weight": 1 },
+        { "id": "c4", "concept": "convalida ammessa solo per l'annullabile", "weight": 1 }
+      ],
+      "references": ["1442", "1444", "1449", "1451"]
+    }
+  ]
+}

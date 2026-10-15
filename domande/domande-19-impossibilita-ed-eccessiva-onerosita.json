@@ -1,0 +1,130 @@
+{
+  "topic": { "name": "Risoluzione per impossibilità sopravvenuta ed eccessiva onerosità" },
+  "questions": [
+    {
+      "prompt": "Perché l'impossibilità sopravvenuta di una prestazione porta alla risoluzione del contratto?",
+      "answer": "Perché l'obbligazione divenuta impossibile per causa non imputabile si estingue: nei contratti a prestazioni corrispettive sarebbe ingiusto che l'altra parte restasse obbligata, quindi il contratto si risolve.",
+      "rubric": [
+        { "id": "c1", "concept": "l'obbligazione impossibile si estingue", "weight": 2 },
+        { "id": "c2", "concept": "causa non imputabile al debitore", "weight": 1 },
+        { "id": "c3", "concept": "sarebbe ingiusto mantenere la controprestazione", "weight": 1 }
+      ],
+      "references": ["1256", "1463"]
+    },
+    {
+      "prompt": "Che cosa succede in caso di impossibilità sopravvenuta totale in un contratto a prestazioni corrispettive?",
+      "answer": "La parte liberata per la sopravvenuta impossibilità non può chiedere la controprestazione e deve restituire quella eventualmente già ricevuta, secondo le norme sulla ripetizione dell'indebito.",
+      "rubric": [
+        { "id": "c1", "concept": "non può chiedere la controprestazione", "weight": 2 },
+        { "id": "c2", "concept": "deve restituire quanto ricevuto", "weight": 2 },
+        { "id": "c3", "concept": "secondo la ripetizione dell'indebito", "weight": 1 }
+      ],
+      "references": ["1463"]
+    },
+    {
+      "prompt": "Che cosa succede in caso di impossibilità sopravvenuta parziale?",
+      "answer": "L'altra parte ha diritto a una corrispondente riduzione della prestazione dovuta e può anche recedere dal contratto se non ha un interesse apprezzabile all'adempimento parziale.",
+      "rubric": [
+        { "id": "c1", "concept": "riduzione proporzionale della controprestazione", "weight": 2 },
+        { "id": "c2", "concept": "recesso se manca interesse all'adempimento parziale", "weight": 2 }
+      ],
+      "references": ["1464"]
+    },
+    {
+      "prompt": "Chi sopporta il rischio del perimento della cosa nei contratti traslativi?",
+      "answer": "Vale il principio res perit domino: se la proprietà è già passata, il perimento per causa non imputabile all'alienante non libera l'acquirente, che deve pagare il prezzo anche se la cosa non gli è stata consegnata.",
+      "rubric": [
+        { "id": "c1", "concept": "res perit domino", "weight": 2 },
+        { "id": "c2", "concept": "l'acquirente deve comunque la controprestazione", "weight": 2 },
+        { "id": "c3", "concept": "anche senza consegna", "weight": 1 }
+      ],
+      "references": ["1465"]
+    },
+    {
+      "prompt": "Quando l'acquirente è liberato se la cosa perisce prima del trasferimento?",
+      "answer": "Quando la proprietà non è ancora passata: per esempio se si tratta di cose generiche non ancora consegnate o individuate, o se il trasferimento era sottoposto a condizione sospensiva e l'impossibilità è sopravvenuta prima dell'avveramento.",
+      "rubric": [
+        { "id": "c1", "concept": "proprietà non ancora passata", "weight": 2 },
+        { "id": "c2", "concept": "cose generiche non individuate", "weight": 1 },
+        { "id": "c3", "concept": "condizione sospensiva non ancora avverata", "weight": 1 }
+      ],
+      "references": ["1465"]
+    },
+    {
+      "prompt": "Che effetto ha l'impossibilità della prestazione di una parte in un contratto plurilaterale?",
+      "answer": "Non comporta la risoluzione del contratto rispetto alle altre parti, salvo che la prestazione mancata debba considerarsi essenziale.",
+      "rubric": [
+        { "id": "c1", "concept": "il contratto resta per le altre parti", "weight": 2 },
+        { "id": "c2", "concept": "salvo prestazione essenziale", "weight": 2 }
+      ],
+      "references": ["1466"]
+    },
+    {
+      "prompt": "Quando si può chiedere la risoluzione per eccessiva onerosità sopravvenuta?",
+      "answer": "Nei contratti a esecuzione continuata, periodica o differita, quando la prestazione di una parte è diventata eccessivamente onerosa per avvenimenti straordinari e imprevedibili: la parte che la deve può chiedere la risoluzione.",
+      "rubric": [
+        { "id": "c1", "concept": "contratti a esecuzione continuata, periodica o differita", "weight": 1 },
+        { "id": "c2", "concept": "prestazione divenuta eccessivamente onerosa", "weight": 1 },
+        { "id": "c3", "concept": "per eventi straordinari e imprevedibili", "weight": 2 },
+        { "id": "c4", "concept": "la chiede la parte gravata", "weight": 1 }
+      ],
+      "references": ["1467"]
+    },
+    {
+      "prompt": "Che cos'è l'alea normale del contratto e che rilievo ha per l'eccessiva onerosità?",
+      "answer": "È il rischio di oscillazioni di valore insito in ogni contratto. La risoluzione non può essere chiesta se la sopravvenuta onerosità rientra nell'alea normale del contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "rischio fisiologico di ogni contratto", "weight": 2 },
+        { "id": "c2", "concept": "entro l'alea normale non c'è risoluzione", "weight": 2 }
+      ],
+      "references": ["1467"]
+    },
+    {
+      "prompt": "Come può la parte evitare la risoluzione per eccessiva onerosità chiesta dall'altra?",
+      "answer": "Offrendo di modificare equamente le condizioni del contratto (riduzione a equità).",
+      "rubric": [
+        { "id": "c1", "concept": "offerta di modifica", "weight": 1 },
+        { "id": "c2", "concept": "equa modifica delle condizioni", "weight": 2 }
+      ],
+      "references": ["1467"]
+    },
+    {
+      "prompt": "Che cosa può chiedere per eccessiva onerosità chi ha assunto obbligazioni in un contratto con obbligazioni di una sola parte?",
+      "answer": "Può chiedere una riduzione della sua prestazione o una modificazione delle modalità di esecuzione sufficienti a ricondurla a equità, non la risoluzione.",
+      "rubric": [
+        { "id": "c1", "concept": "riduzione della prestazione o modifica delle modalità", "weight": 2 },
+        { "id": "c2", "concept": "per ricondurla a equità", "weight": 1 }
+      ],
+      "references": ["1468"]
+    },
+    {
+      "prompt": "La risoluzione per eccessiva onerosità si applica ai contratti aleatori?",
+      "answer": "No, non si applica ai contratti aleatori per loro natura o per volontà delle parti, perché il rischio di squilibrio è accettato dalle parti.",
+      "rubric": [
+        { "id": "c1", "concept": "non si applica ai contratti aleatori", "weight": 2 },
+        { "id": "c2", "concept": "per natura o per volontà delle parti", "weight": 1 }
+      ],
+      "references": ["1469"]
+    },
+    {
+      "prompt": "Che differenza c'è tra impossibilità sopravvenuta ed eccessiva onerosità sopravvenuta?",
+      "answer": "Con l'impossibilità la prestazione non può più essere eseguita e la risoluzione opera di diritto. Con l'eccessiva onerosità la prestazione è ancora possibile ma è diventata molto più gravosa per eventi straordinari e imprevedibili: la risoluzione va chiesta al giudice ed è evitabile con la riduzione a equità.",
+      "rubric": [
+        { "id": "c1", "concept": "impossibilità: prestazione non eseguibile", "weight": 2 },
+        { "id": "c2", "concept": "onerosità: prestazione possibile ma squilibrata", "weight": 2 },
+        { "id": "c3", "concept": "onerosità: domanda giudiziale e riduzione a equità", "weight": 1 }
+      ],
+      "references": ["1463", "1467"]
+    },
+    {
+      "prompt": "Qual è il rapporto tra eccessiva onerosità e buona fede nell'esecuzione del contratto?",
+      "answer": "Dalla regola che permette di evitare la risoluzione offrendo un'equa modifica, insieme alla buona fede nell'esecuzione, si ricava un dovere di rinegoziare il contratto per ricondurlo a equità quando un evento sopravvenuto ne altera l'equilibrio.",
+      "rubric": [
+        { "id": "c1", "concept": "buona fede nell'esecuzione", "weight": 1 },
+        { "id": "c2", "concept": "dovere di rinegoziare", "weight": 2 },
+        { "id": "c3", "concept": "ricondurre il contratto a equità", "weight": 1 }
+      ],
+      "references": ["1375", "1467"]
+    }
+  ]
+}

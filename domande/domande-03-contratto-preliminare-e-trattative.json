@@ -1,0 +1,169 @@
+{
+  "topic": { "name": "Contratto preliminare e responsabilità precontrattuale" },
+  "questions": [
+    {
+      "prompt": "Che cos'è il contratto preliminare?",
+      "answer": "È il contratto con cui le parti si obbligano a concludere in futuro un contratto definitivo alle condizioni già stabilite. Ha effetti solo obbligatori: per esempio, nel preliminare di vendita la proprietà passa solo con il definitivo.",
+      "rubric": [
+        { "id": "c1", "concept": "obbligo di concludere il contratto definitivo", "weight": 2 },
+        { "id": "c2", "concept": "alle condizioni già fissate", "weight": 1 },
+        { "id": "c3", "concept": "effetti solo obbligatori", "weight": 2 }
+      ],
+      "references": ["1351"]
+    },
+    {
+      "prompt": "A che cosa serve il contratto preliminare?",
+      "answer": "Serve a bloccare l'affare rinviando la conclusione del definitivo, quando occorre tempo, per esempio per ottenere un mutuo o fare verifiche, o quando serve l'intervento del notaio.",
+      "rubric": [
+        { "id": "c1", "concept": "blocca l'affare", "weight": 2 },
+        { "id": "c2", "concept": "rinvia la conclusione del definitivo", "weight": 1 },
+        { "id": "c3", "concept": "quando servono tempo o il notaio", "weight": 1 }
+      ],
+      "references": ["1351"]
+    },
+    {
+      "prompt": "Che differenza c'è tra preliminare bilaterale e preliminare unilaterale?",
+      "answer": "Nel preliminare bilaterale entrambe le parti sono obbligate a concludere il definitivo; nell'unilaterale è obbligata una sola parte, mentre l'altra resta libera di decidere se concluderlo.",
+      "rubric": [
+        { "id": "c1", "concept": "bilaterale: entrambe obbligate", "weight": 2 },
+        { "id": "c2", "concept": "unilaterale: obbligata una sola parte", "weight": 2 }
+      ],
+      "references": ["1351"]
+    },
+    {
+      "prompt": "Che differenza c'è tra opzione e preliminare unilaterale?",
+      "answer": "Con l'opzione basta l'accettazione del beneficiario per concludere il contratto, mentre il concedente resta passivo. Con il preliminare unilaterale l'obbligato deve ancora prestare il proprio consenso al contratto definitivo.",
+      "rubric": [
+        { "id": "c1", "concept": "opzione: basta l'accettazione del beneficiario", "weight": 2 },
+        { "id": "c2", "concept": "preliminare: serve un nuovo consenso dell'obbligato al definitivo", "weight": 2 }
+      ],
+      "references": ["1331", "1351"]
+    },
+    {
+      "prompt": "Quale forma deve avere il contratto preliminare?",
+      "answer": "La stessa forma che la legge prescrive per il contratto definitivo, a pena di nullità: per esempio il preliminare di vendita immobiliare deve essere fatto per iscritto.",
+      "rubric": [
+        { "id": "c1", "concept": "stessa forma prescritta per il definitivo", "weight": 2 },
+        { "id": "c2", "concept": "a pena di nullità", "weight": 2 },
+        { "id": "c3", "concept": "esempio: forma scritta per il preliminare immobiliare", "weight": 1 }
+      ],
+      "references": ["1351"]
+    },
+    {
+      "prompt": "Che differenza c'è tra preliminare proprio e preliminare improprio?",
+      "answer": "Nel preliminare proprio le parti si obbligano a stipulare un nuovo contratto definitivo. In quello improprio il contratto è già concluso in privato e le parti si impegnano solo a riprodurlo davanti al notaio, per renderlo trascrivibile.",
+      "rubric": [
+        { "id": "c1", "concept": "proprio: obbligo di concludere un nuovo contratto", "weight": 2 },
+        { "id": "c2", "concept": "improprio: contratto già concluso da riprodurre", "weight": 2 },
+        { "id": "c3", "concept": "scopo dell'improprio: ottenere un atto trascrivibile", "weight": 1 }
+      ],
+      "references": ["1351"]
+    },
+    {
+      "prompt": "Che cosa può fare la parte se l'altra si rifiuta di concludere il contratto definitivo?",
+      "answer": "Oltre al risarcimento del danno, può chiedere al giudice una sentenza costitutiva che produca gli effetti del contratto non concluso (esecuzione in forma specifica dell'obbligo di contrarre).",
+      "rubric": [
+        { "id": "c1", "concept": "esecuzione in forma specifica dell'obbligo di contrarre", "weight": 2 },
+        { "id": "c2", "concept": "sentenza costitutiva che produce gli effetti del contratto", "weight": 2 },
+        { "id": "c3", "concept": "in alternativa o in aggiunta il risarcimento", "weight": 1 }
+      ],
+      "references": ["2932"]
+    },
+    {
+      "prompt": "A quali condizioni si ottiene la sentenza che produce gli effetti del contratto non concluso?",
+      "answer": "Occorre che l'esecuzione sia possibile e non sia esclusa dal titolo; se il contratto trasferisce la proprietà o un altro diritto, chi agisce deve eseguire la propria prestazione o farne offerta nei modi di legge, salvo che non sia ancora esigibile.",
+      "rubric": [
+        { "id": "c1", "concept": "deve essere possibile", "weight": 1 },
+        { "id": "c2", "concept": "non esclusa dal titolo", "weight": 1 },
+        { "id": "c3", "concept": "chi agisce deve eseguire o offrire la propria prestazione", "weight": 2 }
+      ],
+      "references": ["2932"]
+    },
+    {
+      "prompt": "Che cos'è una sentenza costitutiva?",
+      "answer": "È una sentenza che crea, modifica o estingue un rapporto giuridico: nel caso del preliminare inadempiuto produce gli stessi effetti del contratto definitivo non concluso.",
+      "rubric": [
+        { "id": "c1", "concept": "crea, modifica o estingue un rapporto", "weight": 2 },
+        { "id": "c2", "concept": "sostituisce il contratto non concluso", "weight": 2 }
+      ],
+      "references": ["2932"]
+    },
+    {
+      "prompt": "A che cosa serve la trascrizione del contratto preliminare?",
+      "answer": "Protegge il promissario acquirente: se poi trascrive il definitivo o la sentenza costitutiva, gli sono inopponibili gli acquisti dei terzi trascritti dopo il preliminare (effetto prenotativo).",
+      "rubric": [
+        { "id": "c1", "concept": "tutela il promissario acquirente contro le alienazioni a terzi", "weight": 2 },
+        { "id": "c2", "concept": "a condizione di trascrivere poi il definitivo o la sentenza", "weight": 1 },
+        { "id": "c3", "concept": "effetto prenotativo: inopponibili le trascrizioni successive", "weight": 2 }
+      ],
+      "references": ["2645-bis"]
+    },
+    {
+      "prompt": "Come devono comportarsi le parti durante le trattative?",
+      "answer": "Le parti, nello svolgimento delle trattative e nella formazione del contratto, devono comportarsi secondo buona fede.",
+      "rubric": [
+        { "id": "c1", "concept": "obbligo di buona fede", "weight": 2 },
+        { "id": "c2", "concept": "nelle trattative e nella formazione del contratto", "weight": 1 }
+      ],
+      "references": ["1337"]
+    },
+    {
+      "prompt": "Quali doveri derivano dalla buona fede nelle trattative?",
+      "answer": "Il dovere di informazione e di avviso corretto sulla situazione e sui difetti, il dovere di custodire i beni dell'altra parte affidati durante le trattative e il dovere di mantenere il segreto sulle notizie riservate apprese.",
+      "rubric": [
+        { "id": "c1", "concept": "dovere di informazione", "weight": 1 },
+        { "id": "c2", "concept": "dovere di custodia", "weight": 1 },
+        { "id": "c3", "concept": "dovere di segreto", "weight": 1 }
+      ],
+      "references": ["1337"]
+    },
+    {
+      "prompt": "In quali casi si ha responsabilità precontrattuale?",
+      "answer": "Quando la scorrettezza nelle trattative porta alla rottura ingiustificata di trattative avanzate, alla conclusione di un contratto invalido per una causa taciuta, o a un contratto valido ma sconveniente per la vittima.",
+      "rubric": [
+        { "id": "c1", "concept": "recesso ingiustificato da trattative avanzate", "weight": 2 },
+        { "id": "c2", "concept": "contratto invalido", "weight": 1 },
+        { "id": "c3", "concept": "contratto valido ma svantaggioso", "weight": 1 }
+      ],
+      "references": ["1337", "1338"]
+    },
+    {
+      "prompt": "Quando la rottura delle trattative fa sorgere responsabilità precontrattuale?",
+      "answer": "Quando le trattative sono giunte a un punto tale da creare nell'altra parte un ragionevole affidamento nella conclusione del contratto e la rottura avviene senza giusta causa.",
+      "rubric": [
+        { "id": "c1", "concept": "ragionevole affidamento nella conclusione", "weight": 2 },
+        { "id": "c2", "concept": "rottura senza giustificazione", "weight": 2 }
+      ],
+      "references": ["1337"]
+    },
+    {
+      "prompt": "Quale danno si risarcisce in caso di responsabilità precontrattuale?",
+      "answer": "Solo l'interesse negativo: le spese inutilmente sostenute e le occasioni alternative perse per aver confidato nella trattativa. Non si risarcisce l'interesse positivo, cioè il vantaggio che sarebbe derivato dal contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "si risarcisce l'interesse negativo", "weight": 2 },
+        { "id": "c2", "concept": "spese inutili e occasioni perse", "weight": 1 },
+        { "id": "c3", "concept": "non l'interesse positivo", "weight": 2 }
+      ],
+      "references": ["1337"]
+    },
+    {
+      "prompt": "Che differenza c'è tra interesse negativo e interesse positivo?",
+      "answer": "L'interesse negativo è il danno derivante dall'aver intrapreso una trattativa poi fallita (spese e occasioni perse); l'interesse positivo è il danno per il mancato conseguimento del risultato del contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "negativo: danno dall'aver confidato nella trattativa", "weight": 2 },
+        { "id": "c2", "concept": "positivo: mancato risultato del contratto", "weight": 2 }
+      ],
+      "references": ["1337"]
+    },
+    {
+      "prompt": "Che cosa rischia la parte che tace una causa di invalidità del contratto?",
+      "answer": "La parte che conosceva o doveva conoscere una causa di invalidità e non ne ha dato notizia all'altra deve risarcire il danno che questa ha subito per aver confidato, senza sua colpa, nella validità del contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "conosceva o doveva conoscere la causa di invalidità", "weight": 2 },
+        { "id": "c2", "concept": "non l'ha comunicata", "weight": 1 },
+        { "id": "c3", "concept": "risarcisce il danno da affidamento incolpevole", "weight": 2 }
+      ],
+      "references": ["1338"]
+    }
+  ]
+}

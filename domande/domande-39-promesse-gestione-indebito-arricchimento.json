@@ -1,0 +1,222 @@
+{
+  "topic": { "name": "Promesse unilaterali, gestione d'affari, indebito e arricchimento" },
+  "questions": [
+    {
+      "prompt": "La promessa unilaterale è fonte di obbligazione?",
+      "answer": "Solo nei casi ammessi dalla legge: le promesse unilaterali sono tipiche e fuori dei casi previsti non producono effetti obbligatori.",
+      "rubric": [
+        { "id": "c1", "concept": "solo nei casi previsti dalla legge", "weight": 2 },
+        { "id": "c2", "concept": "principio di tipicità delle promesse unilaterali", "weight": 2 }
+      ],
+      "references": ["1987"]
+    },
+    {
+      "prompt": "Che effetto hanno la promessa di pagamento e la ricognizione di debito?",
+      "answer": "Non fanno nascere un'obbligazione, ma dispensano il beneficiario dall'onere di provare il rapporto fondamentale, la cui esistenza si presume fino a prova contraria: invertono l'onere della prova.",
+      "rubric": [
+        { "id": "c1", "concept": "non sono fonti autonome di obbligazione", "weight": 1 },
+        { "id": "c2", "concept": "dispensano dalla prova del rapporto fondamentale", "weight": 2 },
+        { "id": "c3", "concept": "presunzione relativa, inversione dell'onere della prova", "weight": 2 }
+      ],
+      "references": ["1988"]
+    },
+    {
+      "prompt": "Che cosa stabilisce la regola sull'onere della prova?",
+      "answer": "Chi vuol far valere un diritto in giudizio deve provare i fatti che ne costituiscono il fondamento; chi eccepisce l'inefficacia di tali fatti o che il diritto si è modificato o estinto deve provare i fatti su cui si fonda l'eccezione.",
+      "rubric": [
+        { "id": "c1", "concept": "chi agisce prova i fatti costitutivi", "weight": 2 },
+        { "id": "c2", "concept": "chi eccepisce prova i fatti impeditivi, modificativi o estintivi", "weight": 2 }
+      ],
+      "references": ["2697"]
+    },
+    {
+      "prompt": "Che cos'è la promessa al pubblico?",
+      "answer": "È la promessa, rivolta al pubblico, di una prestazione a favore di chi si trovi in una determinata situazione o compia una determinata azione; il promittente è vincolato non appena la promessa è resa pubblica.",
+      "rubric": [
+        { "id": "c1", "concept": "rivolta al pubblico", "weight": 1 },
+        { "id": "c2", "concept": "prestazione per chi si trova in una situazione o compie un'azione", "weight": 1 },
+        { "id": "c3", "concept": "vincola appena resa pubblica", "weight": 2 }
+      ],
+      "references": ["1989"]
+    },
+    {
+      "prompt": "Quanto dura il vincolo della promessa al pubblico senza termine?",
+      "answer": "Se non è apposto un termine né risulta dalla natura o dallo scopo della promessa, il vincolo cessa se entro un anno non è comunicato al promittente l'avveramento della situazione o il compimento dell'azione.",
+      "rubric": [
+        { "id": "c1", "concept": "cessa dopo un anno", "weight": 2 },
+        { "id": "c2", "concept": "se non è comunicato l'avveramento o il compimento", "weight": 1 }
+      ],
+      "references": ["1989"]
+    },
+    {
+      "prompt": "Quando può essere revocata la promessa al pubblico?",
+      "answer": "Prima della scadenza del termine solo per giusta causa, purché la revoca sia resa pubblica nella stessa forma della promessa o in forma equivalente; non può avere effetto se la situazione si è già verificata o l'azione è già stata compiuta.",
+      "rubric": [
+        { "id": "c1", "concept": "solo per giusta causa", "weight": 2 },
+        { "id": "c2", "concept": "nella stessa forma della promessa", "weight": 1 },
+        { "id": "c3", "concept": "inefficace dopo l'avveramento", "weight": 1 }
+      ],
+      "references": ["1990"]
+    },
+    {
+      "prompt": "Che differenza c'è tra promessa al pubblico e offerta al pubblico?",
+      "answer": "La promessa al pubblico vincola subito il promittente per effetto della sola dichiarazione unilaterale. L'offerta al pubblico è una proposta contrattuale: l'obbligazione nasce solo con l'accettazione, cioè con la conclusione del contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "promessa: vincolo unilaterale immediato", "weight": 2 },
+        { "id": "c2", "concept": "offerta: proposta che richiede accettazione", "weight": 2 }
+      ],
+      "references": ["1989", "1336"]
+    },
+    {
+      "prompt": "Che cos'è la gestione di affari altrui?",
+      "answer": "Si ha quando una persona, senza esservi obbligata, assume consapevolmente la gestione di un affare altrui: è tenuta a continuarla e a condurla a termine finché l'interessato non possa provvedervi da sé.",
+      "rubric": [
+        { "id": "c1", "concept": "gestione spontanea senza incarico", "weight": 2 },
+        { "id": "c2", "concept": "consapevolezza che l'affare è altrui", "weight": 1 },
+        { "id": "c3", "concept": "obbligo di continuarla", "weight": 1 }
+      ],
+      "references": ["2028"]
+    },
+    {
+      "prompt": "Quali requisiti deve avere il gestore di affari altrui?",
+      "answer": "Deve avere la capacità di contrattare; deve agire spontaneamente, consapevole di gestire un affare altrui, e la gestione deve essere utilmente iniziata e non vietata dall'interessato.",
+      "rubric": [
+        { "id": "c1", "concept": "capacità di contrattare", "weight": 2 },
+        { "id": "c2", "concept": "gestione utilmente iniziata", "weight": 1 },
+        { "id": "c3", "concept": "non vietata dall'interessato", "weight": 1 }
+      ],
+      "references": ["2029", "2031"]
+    },
+    {
+      "prompt": "Il gestore deve continuare la gestione se l'interessato muore?",
+      "answer": "Sì, l'obbligo di continuare la gestione sussiste anche se l'interessato muore prima che l'affare sia terminato, finché l'erede non possa provvedere direttamente.",
+      "rubric": [
+        { "id": "c1", "concept": "sì, deve continuare", "weight": 2 },
+        { "id": "c2", "concept": "finché l'erede possa provvedere", "weight": 1 }
+      ],
+      "references": ["2028"]
+    },
+    {
+      "prompt": "Quali obblighi ha l'interessato verso il gestore?",
+      "answer": "Se la gestione è stata utilmente iniziata, deve adempiere le obbligazioni assunte dal gestore in suo nome, tenerlo indenne da quelle assunte in nome proprio e rimborsargli le spese necessarie o utili con gli interessi. Non vale per gli atti compiuti contro il suo divieto lecito.",
+      "rubric": [
+        { "id": "c1", "concept": "adempiere le obbligazioni assunte in suo nome", "weight": 1 },
+        { "id": "c2", "concept": "tenere indenne il gestore", "weight": 1 },
+        { "id": "c3", "concept": "rimborsare le spese necessarie o utili", "weight": 1 },
+        { "id": "c4", "concept": "non per atti contro il suo divieto", "weight": 1 }
+      ],
+      "references": ["2031"]
+    },
+    {
+      "prompt": "Che effetto ha la ratifica dell'interessato sulla gestione d'affari?",
+      "answer": "La ratifica dell'interessato produce, relativamente alla gestione, gli effetti che sarebbero derivati da un mandato, anche se la gestione è stata compiuta da chi credeva di gestire un affare proprio.",
+      "rubric": [
+        { "id": "c1", "concept": "la gestione è trattata come un mandato", "weight": 2 },
+        { "id": "c2", "concept": "anche se il gestore credeva l'affare suo", "weight": 1 }
+      ],
+      "references": ["2032"]
+    },
+    {
+      "prompt": "Che cos'è il pagamento dell'indebito?",
+      "answer": "È il pagamento di una prestazione non dovuta, eseguito in mancanza di un rapporto obbligatorio che lo giustifichi: chi ha pagato ha diritto di ripetere ciò che ha pagato.",
+      "rubric": [
+        { "id": "c1", "concept": "prestazione non dovuta", "weight": 2 },
+        { "id": "c2", "concept": "diritto alla restituzione (ripetizione)", "weight": 2 }
+      ],
+      "references": ["2033"]
+    },
+    {
+      "prompt": "Che differenza c'è tra indebito oggettivo e indebito soggettivo?",
+      "answer": "Nell'indebito oggettivo il debito non esiste affatto: un non debitore paga a un non creditore, per esempio in esecuzione di un contratto nullo. Nell'indebito soggettivo il debito esiste ma è di un altro: chi paga si crede debitore per un errore scusabile.",
+      "rubric": [
+        { "id": "c1", "concept": "oggettivo: il debito non esiste", "weight": 2 },
+        { "id": "c2", "concept": "soggettivo: si paga il debito altrui", "weight": 2 },
+        { "id": "c3", "concept": "nel soggettivo serve l'errore scusabile", "weight": 1 }
+      ],
+      "references": ["2033", "2036"]
+    },
+    {
+      "prompt": "Da quando sono dovuti frutti e interessi a chi ha pagato l'indebito?",
+      "answer": "Dal giorno del pagamento, se chi ha ricevuto era in mala fede; dal giorno della domanda, se era in buona fede.",
+      "rubric": [
+        { "id": "c1", "concept": "mala fede: dal giorno del pagamento", "weight": 2 },
+        { "id": "c2", "concept": "buona fede: dal giorno della domanda", "weight": 2 }
+      ],
+      "references": ["2033"]
+    },
+    {
+      "prompt": "Quando non è ammessa la ripetizione nell'indebito soggettivo?",
+      "answer": "Quando il creditore si è privato in buona fede del titolo o delle garanzie del credito; in tal caso chi ha pagato subentra nei diritti del creditore.",
+      "rubric": [
+        { "id": "c1", "concept": "il creditore si è privato in buona fede del titolo o delle garanzie", "weight": 2 },
+        { "id": "c2", "concept": "chi ha pagato subentra nei diritti del creditore", "weight": 2 }
+      ],
+      "references": ["2036"]
+    },
+    {
+      "prompt": "Che differenza c'è tra indebito soggettivo e adempimento del terzo?",
+      "answer": "Nell'adempimento del terzo si paga consapevolmente un debito altrui e l'obbligazione si estingue senza diritto alla restituzione. Nell'indebito soggettivo si paga il debito altrui credendolo proprio per errore scusabile, e si può ripetere.",
+      "rubric": [
+        { "id": "c1", "concept": "adempimento del terzo: pagamento consapevole", "weight": 2 },
+        { "id": "c2", "concept": "indebito soggettivo: errore scusabile e ripetizione", "weight": 2 }
+      ],
+      "references": ["1180", "2036"]
+    },
+    {
+      "prompt": "Che cosa deve restituire chi ha ricevuto indebitamente una cosa determinata e l'ha alienata?",
+      "answer": "Se l'ha alienata in buona fede prima di conoscere l'obbligo di restituirla, deve restituire il corrispettivo ricevuto o cedere l'azione per conseguirlo; se era in mala fede, deve restituire la cosa in natura o corrisponderne il valore.",
+      "rubric": [
+        { "id": "c1", "concept": "buona fede: restituisce il corrispettivo", "weight": 2 },
+        { "id": "c2", "concept": "mala fede: restituisce la cosa o il suo valore", "weight": 2 }
+      ],
+      "references": ["2038"]
+    },
+    {
+      "prompt": "Che cos'è l'azione generale di arricchimento?",
+      "answer": "È l'azione con cui chi si è impoverito senza giusta causa a vantaggio di un altro ottiene un indennizzo nei limiti dell'arricchimento e della correlativa diminuzione patrimoniale; se l'arricchimento ha per oggetto una cosa determinata, questa va restituita in natura se esiste ancora.",
+      "rubric": [
+        { "id": "c1", "concept": "arricchimento senza giusta causa a danno di altri", "weight": 2 },
+        { "id": "c2", "concept": "indennizzo nei limiti di arricchimento e impoverimento", "weight": 2 },
+        { "id": "c3", "concept": "restituzione in natura della cosa determinata", "weight": 1 }
+      ],
+      "references": ["2041"]
+    },
+    {
+      "prompt": "Perché l'azione di arricchimento è sussidiaria?",
+      "answer": "Perché non è proponibile quando il danneggiato può esercitare un'altra azione per farsi indennizzare del pregiudizio subito: è un rimedio residuale.",
+      "rubric": [
+        { "id": "c1", "concept": "non proponibile se esiste un'altra azione", "weight": 2 },
+        { "id": "c2", "concept": "rimedio residuale", "weight": 1 }
+      ],
+      "references": ["2042"]
+    },
+    {
+      "prompt": "Che differenza c'è tra indennizzo e risarcimento del danno?",
+      "answer": "Il risarcimento ripara integralmente il danno causato da un fatto illecito o da un inadempimento. L'indennizzo, come nell'arricchimento senza causa, è dovuto senza illecito ed è limitato alla minor somma tra arricchimento e impoverimento.",
+      "rubric": [
+        { "id": "c1", "concept": "risarcimento: riparazione integrale per illecito o inadempimento", "weight": 2 },
+        { "id": "c2", "concept": "indennizzo: senza illecito, entro la minor somma", "weight": 2 }
+      ],
+      "references": ["2041", "2043"]
+    },
+    {
+      "prompt": "Quali effetti ha l'obbligazione naturale?",
+      "answer": "Non dà azione per pretendere l'adempimento e non produce altri effetti, ma esclude la ripetizione di quanto è stato spontaneamente prestato, salvo che la prestazione sia stata eseguita da un incapace.",
+      "rubric": [
+        { "id": "c1", "concept": "nessuna azione per l'adempimento", "weight": 2 },
+        { "id": "c2", "concept": "esclusa la ripetizione del pagamento spontaneo", "weight": 2 },
+        { "id": "c3", "concept": "salvo pagamento dell'incapace", "weight": 1 }
+      ],
+      "references": ["2034"]
+    },
+    {
+      "prompt": "Perché non si può ripetere la prestazione eseguita per uno scopo contrario al buon costume?",
+      "answer": "Perché chi ha eseguito una prestazione per uno scopo che, anche da parte sua, offende il buon costume non merita la tutela dell'ordinamento: la legge nega la ripetizione a chi ha partecipato all'immoralità.",
+      "rubric": [
+        { "id": "c1", "concept": "scopo contrario al buon costume anche per chi paga", "weight": 2 },
+        { "id": "c2", "concept": "esclusa la ripetizione", "weight": 2 }
+      ],
+      "references": ["2035"]
+    }
+  ]
+}

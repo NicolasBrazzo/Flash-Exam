@@ -1,0 +1,135 @@
+{
+  "topic": { "name": "Rendita, gioco e scommessa" },
+  "questions": [
+    {
+      "prompt": "Che cos'è la rendita?",
+      "answer": "È una prestazione periodica che ha per oggetto denaro o una certa quantità di altre cose fungibili, costituita a fronte dell'alienazione di un bene, della cessione di un capitale o a titolo di liberalità.",
+      "rubric": [
+        { "id": "c1", "concept": "prestazione periodica", "weight": 2 },
+        { "id": "c2", "concept": "denaro o cose fungibili", "weight": 1 },
+        { "id": "c3", "concept": "costituita per alienazione, cessione di capitale o liberalità", "weight": 1 }
+      ],
+      "references": ["1861"]
+    },
+    {
+      "prompt": "Che cos'è la rendita perpetua?",
+      "answer": "È il contratto con cui una parte conferisce all'altra il diritto di esigere in perpetuo una prestazione periodica, come corrispettivo dell'alienazione di un immobile o della cessione di un capitale, oppure come onere di un'alienazione gratuita.",
+      "rubric": [
+        { "id": "c1", "concept": "diritto a una prestazione periodica perpetua", "weight": 2 },
+        { "id": "c2", "concept": "corrispettivo di alienazione di immobile o cessione di capitale", "weight": 1 },
+        { "id": "c3", "concept": "o onere di un'alienazione gratuita", "weight": 1 }
+      ],
+      "references": ["1861"]
+    },
+    {
+      "prompt": "Che differenza c'è tra rendita fondiaria e rendita semplice?",
+      "answer": "La rendita fondiaria è costituita con l'alienazione di un immobile; quella semplice con la cessione di un capitale.",
+      "rubric": [
+        { "id": "c1", "concept": "fondiaria: alienazione di un immobile", "weight": 2 },
+        { "id": "c2", "concept": "semplice: cessione di un capitale", "weight": 2 }
+      ],
+      "references": ["1863"]
+    },
+    {
+      "prompt": "Che cos'è il riscatto della rendita perpetua?",
+      "answer": "È il diritto del debitore di liberarsi dalla rendita con una dichiarazione unilaterale e il pagamento della somma che risulta dalla capitalizzazione della rendita annua sulla base dell'interesse legale: la legge non vede con favore un vincolo perpetuo.",
+      "rubric": [
+        { "id": "c1", "concept": "facoltà del debitore di liberarsi", "weight": 2 },
+        { "id": "c2", "concept": "pagando il capitale corrispondente", "weight": 1 },
+        { "id": "c3", "concept": "sfavore della legge per i vincoli perpetui", "weight": 1 }
+      ],
+      "references": ["1865", "1866"]
+    },
+    {
+      "prompt": "Quando il debitore della rendita perpetua può essere costretto al riscatto?",
+      "answer": "Quando è in mora nel pagamento di due annualità, quando non ha dato le garanzie promesse o le ha diminuite, o quando, per alienazione o divisione, il fondo su cui è garantita la rendita è diviso tra più di tre persone.",
+      "rubric": [
+        { "id": "c1", "concept": "mora nel pagamento", "weight": 1 },
+        { "id": "c2", "concept": "garanzie non date o diminuite", "weight": 1 },
+        { "id": "c3", "concept": "fondo diviso tra più di tre persone", "weight": 1 }
+      ],
+      "references": ["1867"]
+    },
+    {
+      "prompt": "Che cos'è la rendita vitalizia?",
+      "answer": "È la rendita la cui durata è commisurata alla vita di una persona, il beneficiario o un terzo. Può essere costituita a titolo oneroso, per contratto, o per donazione o testamento.",
+      "rubric": [
+        { "id": "c1", "concept": "durata legata alla vita di una persona", "weight": 2 },
+        { "id": "c2", "concept": "beneficiario o terzo", "weight": 1 },
+        { "id": "c3", "concept": "costituita per contratto, donazione o testamento", "weight": 1 }
+      ],
+      "references": ["1872"]
+    },
+    {
+      "prompt": "Perché la rendita vitalizia è un contratto aleatorio e che succede se manca l'alea?",
+      "answer": "Perché non si sa chi ne trarrà vantaggio: dipende dalla durata della vita della persona designata. L'alea è essenziale: il contratto è nullo se la persona era già morta al momento della costituzione o se muore entro venti giorni per una malattia già esistente.",
+      "rubric": [
+        { "id": "c1", "concept": "il vantaggio dipende dalla durata della vita", "weight": 2 },
+        { "id": "c2", "concept": "l'alea è essenziale", "weight": 1 },
+        { "id": "c3", "concept": "nullità se mancano l'alea o la vita della persona", "weight": 1 }
+      ],
+      "references": ["1876"]
+    },
+    {
+      "prompt": "La rendita vitalizia può essere risolta per inadempimento?",
+      "answer": "No: se il debitore non paga le rate, il creditore può far sequestrare e vendere i beni del debitore per ottenere una somma sufficiente ad assicurare il pagamento della rendita. Il riscatto è ammesso solo se pattuito.",
+      "rubric": [
+        { "id": "c1", "concept": "non risolubile per mancato pagamento", "weight": 2 },
+        { "id": "c2", "concept": "sequestro e vendita dei beni del debitore", "weight": 1 },
+        { "id": "c3", "concept": "riscatto solo se pattuito", "weight": 1 }
+      ],
+      "references": ["1878", "1879"]
+    },
+    {
+      "prompt": "Che cos'è il vitalizio alimentare e in che cosa differisce dalla rendita vitalizia?",
+      "answer": "È un contratto atipico con cui una parte, in cambio di un immobile o di altri beni, si obbliga a fornire all'altra vitto, alloggio e assistenza per tutta la vita. Ha un'alea più intensa e, a differenza della rendita vitalizia, è risolubile per inadempimento.",
+      "rubric": [
+        { "id": "c1", "concept": "contratto atipico di assistenza vita natural durante", "weight": 2 },
+        { "id": "c2", "concept": "alea più intensa", "weight": 1 },
+        { "id": "c3", "concept": "risolubile per inadempimento", "weight": 2 }
+      ],
+      "references": ["1872"]
+    },
+    {
+      "prompt": "Che differenza c'è tra gioco o scommessa e assicurazione?",
+      "answer": "Sono tutti contratti aleatori, ma gioco e scommessa hanno scopo di lucro per entrambe le parti, mentre l'assicurazione ha una funzione previdenziale per l'assicurato.",
+      "rubric": [
+        { "id": "c1", "concept": "tutti contratti aleatori", "weight": 1 },
+        { "id": "c2", "concept": "gioco e scommessa: scopo di lucro", "weight": 2 },
+        { "id": "c3", "concept": "assicurazione: funzione previdenziale", "weight": 1 }
+      ],
+      "references": ["1933", "1882"]
+    },
+    {
+      "prompt": "Il vincitore di un gioco lecito può agire per ottenere il pagamento?",
+      "answer": "No, non compete azione per il pagamento di un debito di gioco o scommessa, anche non proibiti; ma il perdente non può ripetere quanto ha spontaneamente pagato dopo l'esito, se non c'è stata frode e se non è incapace. È un'obbligazione naturale.",
+      "rubric": [
+        { "id": "c1", "concept": "manca l'azione per il pagamento", "weight": 2 },
+        { "id": "c2", "concept": "il pagamento spontaneo non si ripete", "weight": 1 },
+        { "id": "c3", "concept": "salvo frode o incapacità del perdente", "weight": 1 },
+        { "id": "c4", "concept": "obbligazione naturale", "weight": 1 }
+      ],
+      "references": ["1933", "2034"]
+    },
+    {
+      "prompt": "Quando il debito di gioco è azionabile?",
+      "answer": "Quando riguarda giochi che addestrano al maneggio delle armi, corse e altre competizioni sportive, e lotterie legalmente autorizzate; il giudice può però ridurre la posta eccessiva nelle competizioni sportive.",
+      "rubric": [
+        { "id": "c1", "concept": "competizioni sportive", "weight": 2 },
+        { "id": "c2", "concept": "lotterie autorizzate", "weight": 2 },
+        { "id": "c3", "concept": "riduzione della posta eccessiva", "weight": 1 }
+      ],
+      "references": ["1934", "1935"]
+    },
+    {
+      "prompt": "Che cosa succede se il gioco o la scommessa sono proibiti?",
+      "answer": "Il contratto è illecito e nullo: il vincitore non ha alcun diritto. Quanto al pagamento eventualmente fatto, si applicano le regole generali sulla ripetizione per causa illecita o contraria al buon costume.",
+      "rubric": [
+        { "id": "c1", "concept": "contratto illecito e nullo", "weight": 2 },
+        { "id": "c2", "concept": "il vincitore non ha diritti", "weight": 1 },
+        { "id": "c3", "concept": "ripetizione secondo le regole generali", "weight": 1 }
+      ],
+      "references": ["1933", "1343"]
+    }
+  ]
+}

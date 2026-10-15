@@ -1,0 +1,159 @@
+{
+  "topic": { "name": "Obbligazioni alternative, divisibili e solidali" },
+  "questions": [
+    {
+      "prompt": "Che cos'è l'obbligazione alternativa?",
+      "answer": "È l'obbligazione in cui sono dedotte due o più prestazioni, ma il debitore si libera eseguendone una sola; non può costringere il creditore a ricevere parte dell'una e parte dell'altra.",
+      "rubric": [
+        { "id": "c1", "concept": "più prestazioni dedotte", "weight": 1 },
+        { "id": "c2", "concept": "il debitore si libera eseguendone una", "weight": 2 },
+        { "id": "c3", "concept": "non si possono mescolare parti di prestazioni diverse", "weight": 1 }
+      ],
+      "references": ["1285"]
+    },
+    {
+      "prompt": "A chi spetta la scelta nell'obbligazione alternativa e quando diventa irrevocabile?",
+      "answer": "Spetta al debitore, se non è attribuita al creditore o a un terzo. Diventa irrevocabile con l'esecuzione di una delle prestazioni o con la dichiarazione di scelta comunicata all'altra parte.",
+      "rubric": [
+        { "id": "c1", "concept": "di regola sceglie il debitore", "weight": 2 },
+        { "id": "c2", "concept": "salvo attribuzione al creditore o a un terzo", "weight": 1 },
+        { "id": "c3", "concept": "irrevocabile con esecuzione o dichiarazione comunicata", "weight": 1 }
+      ],
+      "references": ["1286"]
+    },
+    {
+      "prompt": "Che cosa succede se una delle prestazioni alternative diventa impossibile?",
+      "answer": "Se diventa impossibile per causa non imputabile alle parti, l'obbligazione si concentra sull'altra prestazione e diventa semplice.",
+      "rubric": [
+        { "id": "c1", "concept": "impossibilità non imputabile", "weight": 1 },
+        { "id": "c2", "concept": "concentrazione sull'altra prestazione", "weight": 2 }
+      ],
+      "references": ["1288"]
+    },
+    {
+      "prompt": "Che differenza c'è tra obbligazione alternativa e obbligazione facoltativa?",
+      "answer": "Nell'obbligazione alternativa sono dovute più prestazioni in alternativa. Nell'obbligazione facoltativa è dovuta una sola prestazione, ma il debitore ha la facoltà di liberarsi eseguendone un'altra; se la prestazione dovuta diventa impossibile, l'obbligazione si estingue.",
+      "rubric": [
+        { "id": "c1", "concept": "alternativa: più prestazioni dovute", "weight": 2 },
+        { "id": "c2", "concept": "facoltativa: una prestazione dovuta e facoltà di sostituirla", "weight": 2 },
+        { "id": "c3", "concept": "nella facoltativa l'impossibilità estingue l'obbligazione", "weight": 1 }
+      ],
+      "references": ["1285"]
+    },
+    {
+      "prompt": "Che cosa sono le obbligazioni soggettivamente complesse?",
+      "answer": "Sono le obbligazioni con più debitori, più creditori o entrambi. Possono essere parziarie, solidali o a esecuzione congiunta.",
+      "rubric": [
+        { "id": "c1", "concept": "pluralità di debitori o creditori", "weight": 2 },
+        { "id": "c2", "concept": "parziarie, solidali o congiunte", "weight": 2 }
+      ],
+      "references": ["1292", "1314"]
+    },
+    {
+      "prompt": "Quando un'obbligazione è indivisibile?",
+      "answer": "Quando la prestazione ha per oggetto una cosa o un fatto non suscettibile di divisione per sua natura o per il modo in cui è stato considerato dalle parti. Si applicano, in quanto compatibili, le norme sulle obbligazioni solidali.",
+      "rubric": [
+        { "id": "c1", "concept": "prestazione non divisibile per natura", "weight": 1 },
+        { "id": "c2", "concept": "o per volontà delle parti", "weight": 1 },
+        { "id": "c3", "concept": "si applicano le norme sulla solidarietà", "weight": 2 }
+      ],
+      "references": ["1316", "1317"]
+    },
+    {
+      "prompt": "Che cos'è l'obbligazione parziaria?",
+      "answer": "È l'obbligazione con più debitori o creditori di una prestazione divisibile, non solidale: ciascun creditore può chiedere solo la sua parte e ciascun debitore è tenuto solo per la sua parte.",
+      "rubric": [
+        { "id": "c1", "concept": "prestazione divisibile", "weight": 1 },
+        { "id": "c2", "concept": "ciascuno può chiedere o deve solo la sua parte", "weight": 2 }
+      ],
+      "references": ["1314"]
+    },
+    {
+      "prompt": "Che cos'è l'obbligazione solidale?",
+      "answer": "Si ha quando più debitori sono obbligati per la medesima prestazione, in modo che ciascuno può essere costretto all'adempimento per l'intero e l'adempimento di uno libera gli altri; oppure quando più creditori possono chiedere ciascuno l'intero e l'adempimento a uno libera il debitore verso tutti.",
+      "rubric": [
+        { "id": "c1", "concept": "medesima prestazione per più soggetti", "weight": 1 },
+        { "id": "c2", "concept": "ciascun debitore può essere costretto per l'intero", "weight": 2 },
+        { "id": "c3", "concept": "l'adempimento di uno libera tutti", "weight": 2 }
+      ],
+      "references": ["1292"]
+    },
+    {
+      "prompt": "La solidarietà tra più debitori si presume?",
+      "answer": "Sì, i condebitori sono tenuti in solido se dalla legge o dal titolo non risulta diversamente; per i creditori invece si ritiene che valga la regola opposta, cioè la parziarietà.",
+      "rubric": [
+        { "id": "c1", "concept": "presunzione di solidarietà passiva", "weight": 2 },
+        { "id": "c2", "concept": "salvo legge o titolo", "weight": 1 },
+        { "id": "c3", "concept": "nessuna presunzione per i creditori", "weight": 1 }
+      ],
+      "references": ["1294"]
+    },
+    {
+      "prompt": "Perché la solidarietà passiva tutela il creditore?",
+      "answer": "Perché il creditore può chiedere l'intera prestazione a uno qualsiasi dei debitori, scegliendo quello più solvibile: il rischio di insolvenza di alcuni è sopportato dagli altri condebitori.",
+      "rubric": [
+        { "id": "c1", "concept": "può chiedere l'intero a chiunque", "weight": 2 },
+        { "id": "c2", "concept": "il rischio di insolvenza grava sui condebitori", "weight": 1 }
+      ],
+      "references": ["1292"]
+    },
+    {
+      "prompt": "Come si divide l'obbligazione solidale nei rapporti interni?",
+      "answer": "Nei rapporti interni l'obbligazione si divide tra i debitori o i creditori, in parti che si presumono uguali, salvo che sia stata contratta nell'interesse esclusivo di uno di essi.",
+      "rubric": [
+        { "id": "c1", "concept": "si divide nei rapporti interni", "weight": 2 },
+        { "id": "c2", "concept": "parti presunte uguali", "weight": 1 },
+        { "id": "c3", "concept": "salvo interesse esclusivo di uno", "weight": 1 }
+      ],
+      "references": ["1298"]
+    },
+    {
+      "prompt": "Che cos'è il regresso tra condebitori solidali?",
+      "answer": "È il diritto del debitore che ha pagato l'intero di chiedere a ciascun condebitore la sua parte. Se uno è insolvente, la perdita si ripartisce tra gli altri, compreso chi ha pagato.",
+      "rubric": [
+        { "id": "c1", "concept": "chi ha pagato chiede agli altri la loro parte", "weight": 2 },
+        { "id": "c2", "concept": "l'insolvenza di uno si ripartisce tra gli altri", "weight": 2 }
+      ],
+      "references": ["1299"]
+    },
+    {
+      "prompt": "Che cos'è la solidarietà a interesse unisoggettivo e che effetto ha sul regresso?",
+      "answer": "È la solidarietà in cui l'obbligazione è contratta nell'interesse esclusivo di uno dei debitori, come nella fideiussione. Il debito non si divide: se paga il debitore interessato tutto si chiude; se paga l'altro, ha regresso per l'intero.",
+      "rubric": [
+        { "id": "c1", "concept": "obbligazione nell'interesse di un solo debitore", "weight": 2 },
+        { "id": "c2", "concept": "esempio: fideiussione", "weight": 1 },
+        { "id": "c3", "concept": "chi paga senza interesse ha regresso per l'intero", "weight": 2 }
+      ],
+      "references": ["1298", "1950"]
+    },
+    {
+      "prompt": "Il condebitore solidale che paga è surrogato nei diritti del creditore?",
+      "answer": "Sì, oltre all'azione di regresso ha la surrogazione legale, perché è tenuto con altri o per altri al pagamento e aveva interesse a soddisfarlo: può quindi far valere anche le garanzie del credito.",
+      "rubric": [
+        { "id": "c1", "concept": "surrogazione legale", "weight": 2 },
+        { "id": "c2", "concept": "in aggiunta al regresso", "weight": 1 },
+        { "id": "c3", "concept": "acquista anche le garanzie del credito", "weight": 1 }
+      ],
+      "references": ["1203", "1949"]
+    },
+    {
+      "prompt": "Gli atti e i fatti che riguardano un condebitore solidale si estendono agli altri?",
+      "answer": "Si estendono gli effetti favorevoli, come la remissione del debito a favore di uno, che libera anche gli altri salvo riserva; non si estendono quelli sfavorevoli, come la sentenza di condanna pronunciata contro uno.",
+      "rubric": [
+        { "id": "c1", "concept": "gli effetti favorevoli si estendono", "weight": 2 },
+        { "id": "c2", "concept": "quelli sfavorevoli no", "weight": 2 },
+        { "id": "c3", "concept": "esempi: remissione e sentenza", "weight": 1 }
+      ],
+      "references": ["1301", "1306"]
+    },
+    {
+      "prompt": "Che cos'è l'obbligazione a esecuzione congiunta?",
+      "answer": "È l'obbligazione soggettivamente complessa in cui la prestazione deve essere eseguita da tutti i debitori insieme, perché nessuno di essi da solo può adempierla.",
+      "rubric": [
+        { "id": "c1", "concept": "esecuzione da parte di tutti insieme", "weight": 2 },
+        { "id": "c2", "concept": "nessuno può adempiere da solo", "weight": 1 }
+      ],
+      "references": ["1292"]
+    }
+  ]
+}

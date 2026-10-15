@@ -1,0 +1,188 @@
+{
+  "topic": { "name": "Vendite speciali" },
+  "questions": [
+    {
+      "prompt": "Che cos'è la vendita con patto di riscatto?",
+      "answer": "È la vendita in cui il venditore si riserva il diritto di riavere la proprietà della cosa restituendo il prezzo e i rimborsi di legge. Funziona come una condizione risolutiva potestativa: basta la dichiarazione di riscatto con il pagamento, senza un nuovo contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "diritto del venditore di riavere la cosa", "weight": 2 },
+        { "id": "c2", "concept": "restituendo prezzo e rimborsi", "weight": 1 },
+        { "id": "c3", "concept": "basta una dichiarazione, senza nuovo contratto", "weight": 1 }
+      ],
+      "references": ["1500"]
+    },
+    {
+      "prompt": "Entro quali termini va esercitato il riscatto e che succede al patto di restituire un prezzo maggiore?",
+      "answer": "Entro due anni per i beni mobili e cinque anni per gli immobili; i termini sono di decadenza e non prorogabili. Il patto di restituire un prezzo superiore a quello stipulato è nullo per l'eccedenza.",
+      "rubric": [
+        { "id": "c1", "concept": "due anni per i mobili", "weight": 1 },
+        { "id": "c2", "concept": "cinque anni per gli immobili", "weight": 1 },
+        { "id": "c3", "concept": "termini di decadenza non prorogabili", "weight": 1 },
+        { "id": "c4", "concept": "nullo il prezzo maggiore per l'eccedenza", "weight": 1 }
+      ],
+      "references": ["1500", "1501"]
+    },
+    {
+      "prompt": "Che differenza c'è tra patto di riscatto e patto di retrovendita?",
+      "answer": "Il patto di riscatto ha efficacia reale: la proprietà torna al venditore con la sola dichiarazione e il pagamento. Il patto di retrovendita ha efficacia obbligatoria: obbliga il compratore a concludere un nuovo contratto di vendita a favore del venditore.",
+      "rubric": [
+        { "id": "c1", "concept": "riscatto: effetto reale con la dichiarazione", "weight": 2 },
+        { "id": "c2", "concept": "retrovendita: obbligo di concludere una nuova vendita", "weight": 2 }
+      ],
+      "references": ["1500"]
+    },
+    {
+      "prompt": "Il riscatto è opponibile ai subacquirenti?",
+      "answer": "Sì, salve le regole sulla trascrizione: il venditore che ha esercitato il riscatto può pretendere il rilascio della cosa anche dai successivi acquirenti, purché il patto sia loro opponibile.",
+      "rubric": [
+        { "id": "c1", "concept": "opponibile ai subacquirenti", "weight": 2 },
+        { "id": "c2", "concept": "salve le regole sulla trascrizione", "weight": 2 }
+      ],
+      "references": ["1504"]
+    },
+    {
+      "prompt": "Dove deve essere fatta la consegna nella vendita di cose mobili e chi sopporta il rischio del trasporto?",
+      "answer": "Salvo patto, nel luogo in cui la cosa si trovava alla conclusione o nel domicilio o sede del venditore. Se la cosa deve essere trasportata, il venditore si libera consegnandola al vettore o allo spedizioniere e le spese del trasporto sono del compratore.",
+      "rubric": [
+        { "id": "c1", "concept": "luogo in cui si trovava la cosa o sede del venditore", "weight": 1 },
+        { "id": "c2", "concept": "il venditore si libera consegnando al vettore", "weight": 2 },
+        { "id": "c3", "concept": "spese di trasporto a carico del compratore", "weight": 1 }
+      ],
+      "references": ["1510"]
+    },
+    {
+      "prompt": "Che cosa sono la vendita in danno e la compera in danno?",
+      "answer": "Se il compratore non paga, il venditore può far vendere la cosa per conto e a spese del compratore e ottenere la differenza di prezzo e il risarcimento. Se il venditore non consegna cose fungibili con prezzo di mercato, il compratore può farle acquistare a spese del venditore, ottenendo il maggior costo e il risarcimento.",
+      "rubric": [
+        { "id": "c1", "concept": "vendita in danno: rivendita a spese del compratore inadempiente", "weight": 2 },
+        { "id": "c2", "concept": "compera in danno: acquisto a spese del venditore inadempiente", "weight": 2 },
+        { "id": "c3", "concept": "differenza di prezzo e risarcimento", "weight": 1 }
+      ],
+      "references": ["1515", "1516"]
+    },
+    {
+      "prompt": "Quando si risolve di diritto la vendita di cose mobili per mancato ritiro o mancato pagamento?",
+      "answer": "Quando una parte offre la propria prestazione e l'altra non la accetta né esegue la propria, purché la parte non inadempiente dichiari di volersi avvalere della risoluzione entro otto giorni dalla scadenza del termine.",
+      "rubric": [
+        { "id": "c1", "concept": "offerta di una parte e inerzia dell'altra", "weight": 2 },
+        { "id": "c2", "concept": "dichiarazione entro otto giorni", "weight": 2 }
+      ],
+      "references": ["1517"]
+    },
+    {
+      "prompt": "Che differenza c'è tra vendita con riserva di gradimento e vendita a prova?",
+      "answer": "Nella vendita con riserva di gradimento il contratto si perfeziona solo quando il compratore comunica che la cosa gli è gradita, come un'opzione. Nella vendita a prova il contratto è concluso ma sottoposto alla condizione sospensiva che la cosa abbia le qualità pattuite o sia idonea all'uso.",
+      "rubric": [
+        { "id": "c1", "concept": "riserva di gradimento: si perfeziona con il gradimento", "weight": 2 },
+        { "id": "c2", "concept": "a prova: condizione sospensiva sulle qualità o idoneità", "weight": 2 }
+      ],
+      "references": ["1520", "1521"]
+    },
+    {
+      "prompt": "Che differenza c'è tra vendita su campione e vendita su tipo di campione?",
+      "answer": "Nella vendita su campione il campione è il paragone esclusivo della qualità e qualsiasi difformità consente la risoluzione. Nella vendita su tipo di campione il campione indica solo in modo approssimativo la qualità e la risoluzione spetta solo se la difformità è notevole.",
+      "rubric": [
+        { "id": "c1", "concept": "su campione: qualsiasi difformità consente la risoluzione", "weight": 2 },
+        { "id": "c2", "concept": "su tipo di campione: serve una difformità notevole", "weight": 2 }
+      ],
+      "references": ["1522"]
+    },
+    {
+      "prompt": "Che cos'è la vendita su documenti?",
+      "answer": "È la vendita di merci rappresentate da titoli: il venditore si libera dall'obbligo di consegna rimettendo al compratore il titolo rappresentativo della merce e gli altri documenti stabiliti dal contratto o dagli usi.",
+      "rubric": [
+        { "id": "c1", "concept": "merci rappresentate da documenti o titoli", "weight": 1 },
+        { "id": "c2", "concept": "la consegna avviene con la consegna dei documenti", "weight": 2 }
+      ],
+      "references": ["1527"]
+    },
+    {
+      "prompt": "Che cos'è la vendita con riserva della proprietà?",
+      "answer": "È la vendita a rate in cui il compratore acquista la proprietà con il pagamento dell'ultima rata, ma assume i rischi dal momento della consegna.",
+      "rubric": [
+        { "id": "c1", "concept": "pagamento rateale", "weight": 1 },
+        { "id": "c2", "concept": "la proprietà passa con l'ultima rata", "weight": 2 },
+        { "id": "c3", "concept": "rischi a carico del compratore dalla consegna", "weight": 2 }
+      ],
+      "references": ["1523"]
+    },
+    {
+      "prompt": "Quando la riserva di proprietà è opponibile ai creditori del compratore?",
+      "answer": "Solo se risulta da atto scritto avente data certa anteriore al pignoramento; per i macchinari di valore rilevante è prevista una speciale pubblicità.",
+      "rubric": [
+        { "id": "c1", "concept": "atto scritto con data certa", "weight": 2 },
+        { "id": "c2", "concept": "anteriore al pignoramento", "weight": 2 }
+      ],
+      "references": ["1524"]
+    },
+    {
+      "prompt": "Il mancato pagamento di una rata comporta la risoluzione della vendita con riserva di proprietà?",
+      "answer": "Il mancato pagamento di una sola rata che non superi l'ottava parte del prezzo non dà luogo alla risoluzione e il compratore conserva il beneficio del termine per le rate successive, nonostante patto contrario.",
+      "rubric": [
+        { "id": "c1", "concept": "una sola rata non oltre un ottavo del prezzo", "weight": 2 },
+        { "id": "c2", "concept": "non causa risoluzione", "weight": 1 },
+        { "id": "c3", "concept": "il compratore conserva il beneficio del termine", "weight": 1 }
+      ],
+      "references": ["1525"]
+    },
+    {
+      "prompt": "Che cosa succede alle rate pagate se la vendita con riserva di proprietà è risolta per inadempimento del compratore?",
+      "answer": "Il venditore deve restituire le rate riscosse, ma ha diritto a un equo compenso per l'uso della cosa e al risarcimento del danno. Se è pattuito che le rate restino al venditore come indennità, il giudice può ridurla.",
+      "rubric": [
+        { "id": "c1", "concept": "restituzione delle rate", "weight": 2 },
+        { "id": "c2", "concept": "equo compenso per l'uso e risarcimento", "weight": 1 },
+        { "id": "c3", "concept": "indennità pattuita riducibile dal giudice", "weight": 1 }
+      ],
+      "references": ["1526"]
+    },
+    {
+      "prompt": "Che differenza c'è tra vendita immobiliare a misura e a corpo?",
+      "answer": "Nella vendita a misura il prezzo è fissato in ragione di un tanto per unità di misura e si adegua alla misura reale. Nella vendita a corpo il prezzo è globale e si modifica solo se la differenza tra misura indicata e reale supera un ventesimo.",
+      "rubric": [
+        { "id": "c1", "concept": "a misura: prezzo per unità, si adegua", "weight": 2 },
+        { "id": "c2", "concept": "a corpo: prezzo globale", "weight": 1 },
+        { "id": "c3", "concept": "rettifica solo oltre un ventesimo", "weight": 2 }
+      ],
+      "references": ["1537", "1538"]
+    },
+    {
+      "prompt": "Che cosa può fare il compratore se nella vendita immobiliare è dovuto un supplemento di prezzo?",
+      "answer": "Può scegliere tra pagare il supplemento o recedere dal contratto; in caso di recesso il venditore deve restituire il prezzo e rimborsare le spese. I diritti si prescrivono in un anno dalla consegna.",
+      "rubric": [
+        { "id": "c1", "concept": "scelta tra supplemento e recesso", "weight": 2 },
+        { "id": "c2", "concept": "restituzione del prezzo e delle spese", "weight": 1 },
+        { "id": "c3", "concept": "prescrizione in un anno dalla consegna", "weight": 1 }
+      ],
+      "references": ["1537", "1541"]
+    },
+    {
+      "prompt": "Che cos'è la vendita di eredità e quale garanzia deve il venditore?",
+      "answer": "È la vendita del complesso dei beni ereditari senza specificarli. Il venditore è tenuto a garantire solo la propria qualità di erede; la vendita richiede la forma scritta a pena di nullità.",
+      "rubric": [
+        { "id": "c1", "concept": "vendita dell'eredità nel suo complesso", "weight": 1 },
+        { "id": "c2", "concept": "si garantisce solo la qualità di erede", "weight": 2 },
+        { "id": "c3", "concept": "forma scritta a pena di nullità", "weight": 1 }
+      ],
+      "references": ["1542", "1543"]
+    },
+    {
+      "prompt": "Chi paga i debiti ereditari nella vendita di eredità?",
+      "answer": "Salvo patto contrario, il compratore è obbligato in solido con il venditore a pagare i debiti ereditari, mentre l'erede continua a risponderne verso i creditori.",
+      "rubric": [
+        { "id": "c1", "concept": "il compratore è obbligato in solido", "weight": 2 },
+        { "id": "c2", "concept": "l'erede resta obbligato verso i creditori", "weight": 1 }
+      ],
+      "references": ["1546"]
+    },
+    {
+      "prompt": "Che cos'è la vendita a termine di titoli di credito?",
+      "answer": "È la vendita in cui il venditore si obbliga a trasferire alla scadenza una certa quantità di titoli di una data specie e il compratore a pagarne il prezzo alla stessa scadenza. Interessi e dividendi maturati prima della scadenza spettano al compratore, il diritto di voto al venditore fino alla consegna.",
+      "rubric": [
+        { "id": "c1", "concept": "consegna dei titoli e pagamento alla scadenza", "weight": 2 },
+        { "id": "c2", "concept": "interessi e dividendi al compratore", "weight": 1 },
+        { "id": "c3", "concept": "voto al venditore fino alla consegna", "weight": 1 }
+      ],
+      "references": ["1531"]
+    }
+  ]
+}

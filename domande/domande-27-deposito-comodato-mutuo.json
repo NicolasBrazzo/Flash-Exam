@@ -1,0 +1,252 @@
+{
+  "topic": { "name": "Deposito, comodato e mutuo" },
+  "questions": [
+    {
+      "prompt": "Che cos'è il deposito?",
+      "answer": "È il contratto con cui il depositario riceve dal depositante una cosa mobile con l'obbligo di custodirla e di restituirla in natura.",
+      "rubric": [
+        { "id": "c1", "concept": "consegna di una cosa mobile", "weight": 1 },
+        { "id": "c2", "concept": "obbligo di custodia", "weight": 2 },
+        { "id": "c3", "concept": "restituzione in natura", "weight": 1 }
+      ],
+      "references": ["1766"]
+    },
+    {
+      "prompt": "Il depositario può servirsi della cosa depositata?",
+      "answer": "No, senza il consenso del depositante non può servirsi della cosa né darla in deposito ad altri: ne ha solo la detenzione nell'interesse del depositante.",
+      "rubric": [
+        { "id": "c1", "concept": "non può servirsene senza consenso", "weight": 2 },
+        { "id": "c2", "concept": "ha solo la detenzione", "weight": 2 }
+      ],
+      "references": ["1770"]
+    },
+    {
+      "prompt": "Il deposito è gratuito od oneroso e con quale diligenza deve custodire il depositario?",
+      "answer": "Si presume gratuito, salvo che dalla qualità professionale del depositario o da altre circostanze risulti diversamente. Il depositario deve usare la diligenza del buon padre di famiglia; se il deposito è gratuito la responsabilità per colpa è valutata con minor rigore.",
+      "rubric": [
+        { "id": "c1", "concept": "si presume gratuito", "weight": 1 },
+        { "id": "c2", "concept": "diligenza del buon padre di famiglia", "weight": 2 },
+        { "id": "c3", "concept": "se gratuito la colpa è valutata con minor rigore", "weight": 1 }
+      ],
+      "references": ["1767", "1768"]
+    },
+    {
+      "prompt": "Quando il depositario deve restituire la cosa e quando può liberarsi dalla custodia?",
+      "answer": "Deve restituirla appena il depositante la richiede, salvo un termine pattuito nell'interesse del depositario; può chiedere in ogni tempo di essere liberato dalla custodia, salvo un termine convenuto nell'interesse del depositante.",
+      "rubric": [
+        { "id": "c1", "concept": "restituzione a richiesta del depositante", "weight": 2 },
+        { "id": "c2", "concept": "il depositario può chiedere di essere liberato", "weight": 1 },
+        { "id": "c3", "concept": "salvo termini pattuiti nell'interesse dell'altra parte", "weight": 1 }
+      ],
+      "references": ["1771"]
+    },
+    {
+      "prompt": "Che cosa deve fare il depositario se un terzo rivendica la cosa depositata?",
+      "answer": "Deve restituire la cosa a chi l'ha depositata, senza pretendere la prova della proprietà; se è convenuto in giudizio da chi rivendica la cosa, deve denunciare la lite al depositante. Se scopre che la cosa proviene da reato e conosce il derubato, deve denunciargli il deposito.",
+      "rubric": [
+        { "id": "c1", "concept": "restituisce al depositante senza chiedere prova della proprietà", "weight": 1 },
+        { "id": "c2", "concept": "denuncia della lite al depositante", "weight": 2 },
+        { "id": "c3", "concept": "cosa proveniente da reato: denuncia al derubato", "weight": 1 }
+      ],
+      "references": ["1777", "1778"]
+    },
+    {
+      "prompt": "Di che cosa risponde l'albergatore per le cose dei clienti?",
+      "answer": "Per le cose consegnategli in custodia, o che ha rifiutato senza giusto motivo di ricevere, risponde senza limiti. Per le cose portate in albergo ma non consegnate risponde fino a cento volte il prezzo giornaliero dell'alloggio, salvo che il danno dipenda da sua colpa. Sono nulli i patti che escludono o limitano preventivamente la sua responsabilità.",
+      "rubric": [
+        { "id": "c1", "concept": "cose consegnate: responsabilità illimitata", "weight": 2 },
+        { "id": "c2", "concept": "cose non consegnate: limite di cento volte il prezzo giornaliero", "weight": 1 },
+        { "id": "c3", "concept": "illimitata in caso di colpa", "weight": 1 },
+        { "id": "c4", "concept": "nulli i patti di esonero", "weight": 1 }
+      ],
+      "references": ["1783", "1784", "1785-bis", "1785-quater"]
+    },
+    {
+      "prompt": "Che cos'è il sequestro convenzionale?",
+      "answer": "È il contratto con cui due o più persone, in lite sulla proprietà o sul possesso di una cosa, la affidano a un terzo perché la custodisca e la restituisca a chi spetterà quando la controversia sarà decisa.",
+      "rubric": [
+        { "id": "c1", "concept": "controversia sulla proprietà o sul possesso", "weight": 1 },
+        { "id": "c2", "concept": "cosa affidata a un terzo in custodia", "weight": 2 },
+        { "id": "c3", "concept": "restituzione a chi vince la lite", "weight": 1 }
+      ],
+      "references": ["1798"]
+    },
+    {
+      "prompt": "Che cos'è il deposito irregolare?",
+      "answer": "È il deposito di denaro o altre cose fungibili con la facoltà per il depositario di servirsene: il depositario ne acquista la proprietà ed è tenuto a restituire altrettante cose della stessa specie e qualità. Si applicano in quanto compatibili le norme sul mutuo.",
+      "rubric": [
+        { "id": "c1", "concept": "denaro o cose fungibili con facoltà d'uso", "weight": 1 },
+        { "id": "c2", "concept": "il depositario ne acquista la proprietà", "weight": 2 },
+        { "id": "c3", "concept": "restituisce il tantundem", "weight": 1 },
+        { "id": "c4", "concept": "si applicano le norme sul mutuo", "weight": 1 }
+      ],
+      "references": ["1782"]
+    },
+    {
+      "prompt": "Che differenza c'è tra deposito irregolare e mutuo?",
+      "answer": "In entrambi la proprietà passa all'accipiens, ma diversa è la funzione: nel deposito irregolare prevale l'interesse del depositante alla custodia delle somme; nel mutuo il bisogno del mutuatario di disporre temporaneamente di denaro.",
+      "rubric": [
+        { "id": "c1", "concept": "in entrambi passa la proprietà", "weight": 1 },
+        { "id": "c2", "concept": "deposito irregolare: funzione di custodia", "weight": 2 },
+        { "id": "c3", "concept": "mutuo: funzione di finanziamento", "weight": 2 }
+      ],
+      "references": ["1782", "1813"]
+    },
+    {
+      "prompt": "Che cosa sono la fede di deposito e la nota di pegno nei magazzini generali?",
+      "answer": "Sono titoli rappresentativi della merce depositata: trasferendo la fede di deposito si trasferisce la proprietà della merce senza spostarla; con la nota di pegno (warrant) si costituisce un pegno sulla merce per ottenere finanziamenti.",
+      "rubric": [
+        { "id": "c1", "concept": "titoli rappresentativi della merce", "weight": 1 },
+        { "id": "c2", "concept": "fede di deposito: trasferimento della proprietà", "weight": 2 },
+        { "id": "c3", "concept": "nota di pegno: pegno per finanziamenti", "weight": 1 }
+      ],
+      "references": ["1790"]
+    },
+    {
+      "prompt": "Che cos'è il comodato?",
+      "answer": "È il contratto essenzialmente gratuito con cui il comodante consegna al comodatario una cosa mobile o immobile affinché se ne serva per un tempo o un uso determinato, con l'obbligo di restituire la stessa cosa ricevuta.",
+      "rubric": [
+        { "id": "c1", "concept": "consegna di una cosa per servirsene", "weight": 2 },
+        { "id": "c2", "concept": "per un tempo o uso determinato", "weight": 1 },
+        { "id": "c3", "concept": "restituzione della stessa cosa", "weight": 1 },
+        { "id": "c4", "concept": "essenzialmente gratuito", "weight": 1 }
+      ],
+      "references": ["1803"]
+    },
+    {
+      "prompt": "Che differenza c'è tra comodato e locazione?",
+      "answer": "Il comodato è essenzialmente gratuito; se per il godimento della cosa è previsto un corrispettivo, il contratto è una locazione. Un onere accessorio a carico del comodatario non lo trasforma in locazione se non costituisce un vero corrispettivo.",
+      "rubric": [
+        { "id": "c1", "concept": "comodato: gratuito", "weight": 2 },
+        { "id": "c2", "concept": "con corrispettivo è locazione", "weight": 2 },
+        { "id": "c3", "concept": "il modus non esclude la gratuità", "weight": 1 }
+      ],
+      "references": ["1803", "1571"]
+    },
+    {
+      "prompt": "Che differenza c'è tra comodato e mutuo?",
+      "answer": "Il comodato è un prestito d'uso: ha per oggetto cose inconsumabili, il comodatario ne ha la detenzione e restituisce la stessa cosa. Il mutuo è un prestito di consumo: ha per oggetto cose fungibili, il mutuatario ne acquista la proprietà e restituisce altrettante cose dello stesso genere.",
+      "rubric": [
+        { "id": "c1", "concept": "comodato: prestito d'uso, stessa cosa", "weight": 2 },
+        { "id": "c2", "concept": "mutuo: prestito di consumo, tantundem", "weight": 2 },
+        { "id": "c3", "concept": "nel mutuo passa la proprietà", "weight": 1 }
+      ],
+      "references": ["1803", "1813", "1814"]
+    },
+    {
+      "prompt": "Che cos'è il comodato ad pompam?",
+      "answer": "È il comodato di cose consumabili concesse per un uso che non ne comporta il consumo, per esempio per esposizione od ostentazione.",
+      "rubric": [
+        { "id": "c1", "concept": "cose consumabili", "weight": 1 },
+        { "id": "c2", "concept": "uso che non le consuma, come l'esposizione", "weight": 2 }
+      ],
+      "references": ["1803"]
+    },
+    {
+      "prompt": "Perché il comodato è detto contratto bilaterale imperfetto?",
+      "answer": "Perché di regola fa nascere obbligazioni solo a carico del comodatario, come custodire e restituire la cosa; quelle del comodante, come risarcire i danni da vizi della cosa che conosceva e non ha segnalato, sono solo eventuali.",
+      "rubric": [
+        { "id": "c1", "concept": "obbligazioni necessarie solo del comodatario", "weight": 2 },
+        { "id": "c2", "concept": "obbligazioni del comodante solo eventuali", "weight": 2 }
+      ],
+      "references": ["1812"]
+    },
+    {
+      "prompt": "Quali sono gli obblighi del comodatario?",
+      "answer": "Custodire e conservare la cosa con la diligenza del buon padre di famiglia, servirsene solo per l'uso pattuito o conforme alla sua natura, non concederne il godimento a terzi senza consenso e restituirla alla scadenza.",
+      "rubric": [
+        { "id": "c1", "concept": "custodia con diligenza", "weight": 1 },
+        { "id": "c2", "concept": "uso solo conforme al contratto", "weight": 1 },
+        { "id": "c3", "concept": "niente godimento a terzi senza consenso", "weight": 1 },
+        { "id": "c4", "concept": "restituzione alla scadenza", "weight": 1 }
+      ],
+      "references": ["1804", "1809"]
+    },
+    {
+      "prompt": "Quando il comodante può chiedere la restituzione anticipata della cosa?",
+      "answer": "Se durante il termine convenuto, o prima che il comodatario abbia cessato di servirsene, sopravviene al comodante un urgente e impreveduto bisogno, può esigerne la restituzione immediata.",
+      "rubric": [
+        { "id": "c1", "concept": "urgente e impreveduto bisogno", "weight": 2 },
+        { "id": "c2", "concept": "restituzione immediata", "weight": 1 }
+      ],
+      "references": ["1809"]
+    },
+    {
+      "prompt": "Che cos'è il comodato precario?",
+      "answer": "È il comodato in cui non è stato convenuto un termine né questo risulta dall'uso a cui la cosa è destinata: il comodatario deve restituire la cosa appena il comodante la richiede.",
+      "rubric": [
+        { "id": "c1", "concept": "senza termine né uso determinato", "weight": 2 },
+        { "id": "c2", "concept": "restituzione a semplice richiesta", "weight": 2 }
+      ],
+      "references": ["1810"]
+    },
+    {
+      "prompt": "Che cos'è il mutuo?",
+      "answer": "È il contratto con cui il mutuante consegna al mutuatario una quantità di denaro o di altre cose fungibili, e il mutuatario si obbliga a restituire altrettante cose della stessa specie e qualità. Le cose passano in proprietà del mutuatario.",
+      "rubric": [
+        { "id": "c1", "concept": "consegna di denaro o cose fungibili", "weight": 1 },
+        { "id": "c2", "concept": "restituzione del tantundem", "weight": 2 },
+        { "id": "c3", "concept": "passaggio della proprietà al mutuatario", "weight": 2 }
+      ],
+      "references": ["1813", "1814"]
+    },
+    {
+      "prompt": "Il mutuo è gratuito od oneroso?",
+      "answer": "Si presume oneroso: salvo diversa volontà delle parti il mutuatario deve corrispondere gli interessi al mutuante (mutuo feneratizio); se non è determinata la misura, si applica il tasso legale.",
+      "rubric": [
+        { "id": "c1", "concept": "si presume oneroso", "weight": 2 },
+        { "id": "c2", "concept": "sono dovuti gli interessi", "weight": 1 },
+        { "id": "c3", "concept": "in mancanza tasso legale", "weight": 1 }
+      ],
+      "references": ["1815"]
+    },
+    {
+      "prompt": "Che cosa succede se nel mutuo sono pattuiti interessi usurari?",
+      "answer": "La clausola è nulla e non sono dovuti interessi.",
+      "rubric": [
+        { "id": "c1", "concept": "clausola nulla", "weight": 2 },
+        { "id": "c2", "concept": "nessun interesse dovuto", "weight": 2 }
+      ],
+      "references": ["1815"]
+    },
+    {
+      "prompt": "A favore di chi si presume stabilito il termine nel mutuo?",
+      "answer": "Nel mutuo oneroso si presume stabilito a favore di entrambe le parti; nel mutuo gratuito a favore del mutuatario. Se non è fissato un termine, lo stabilisce il giudice.",
+      "rubric": [
+        { "id": "c1", "concept": "oneroso: a favore di entrambe le parti", "weight": 2 },
+        { "id": "c2", "concept": "gratuito: a favore del mutuatario", "weight": 1 },
+        { "id": "c3", "concept": "senza termine lo fissa il giudice", "weight": 1 }
+      ],
+      "references": ["1816", "1817"]
+    },
+    {
+      "prompt": "Che cosa può fare il mutuante se il mutuatario non paga le rate o gli interessi?",
+      "answer": "Se è stipulata la restituzione rateale e il mutuatario non paga anche una sola rata, il mutuante può chiedere l'immediata restituzione dell'intero; se non adempie l'obbligo di pagare gli interessi, può chiedere la risoluzione del contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "una rata non pagata: restituzione immediata dell'intero", "weight": 2 },
+        { "id": "c2", "concept": "interessi non pagati: risoluzione", "weight": 2 }
+      ],
+      "references": ["1819", "1820"]
+    },
+    {
+      "prompt": "Che cos'è la promessa di mutuo e quando il promittente può rifiutarsi di erogare?",
+      "answer": "È il contratto con cui una parte si obbliga a dare a mutuo; è vincolante, ma il promittente può rifiutare l'adempimento se le condizioni patrimoniali dell'altra parte sono divenute tali da rendere notevolmente difficile la restituzione e non sono offerte idonee garanzie.",
+      "rubric": [
+        { "id": "c1", "concept": "obbligo di erogare il mutuo", "weight": 1 },
+        { "id": "c2", "concept": "rifiuto se le condizioni patrimoniali rendono difficile la restituzione", "weight": 2 },
+        { "id": "c3", "concept": "salvo idonee garanzie", "weight": 1 }
+      ],
+      "references": ["1822"]
+    },
+    {
+      "prompt": "Che differenza c'è tra mutuo e quasi usufrutto?",
+      "answer": "In entrambi chi riceve cose consumabili ne acquista la proprietà e deve restituirne il valore o l'equivalente. Ma il mutuo è un contratto reale che si perfeziona con la consegna, mentre il quasi usufrutto deriva da un contratto consensuale.",
+      "rubric": [
+        { "id": "c1", "concept": "in entrambi passa la proprietà di cose consumabili", "weight": 1 },
+        { "id": "c2", "concept": "mutuo: contratto reale", "weight": 2 },
+        { "id": "c3", "concept": "quasi usufrutto: effetto di un contratto consensuale", "weight": 1 }
+      ],
+      "references": ["1813", "995"]
+    }
+  ]
+}

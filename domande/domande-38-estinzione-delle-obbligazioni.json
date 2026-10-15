@@ -1,0 +1,256 @@
+{
+  "topic": { "name": "Modi di estinzione delle obbligazioni diversi dall'adempimento" },
+  "questions": [
+    {
+      "prompt": "Quali sono i modi di estinzione dell'obbligazione diversi dall'adempimento?",
+      "answer": "La novazione, la remissione del debito, la compensazione, la confusione e l'impossibilità sopravvenuta per causa non imputabile al debitore; a questi si aggiunge la prestazione in luogo dell'adempimento.",
+      "rubric": [
+        { "id": "c1", "concept": "novazione e remissione", "weight": 1 },
+        { "id": "c2", "concept": "compensazione e confusione", "weight": 1 },
+        { "id": "c3", "concept": "impossibilità sopravvenuta non imputabile", "weight": 1 },
+        { "id": "c4", "concept": "datio in solutum", "weight": 1 }
+      ],
+      "references": ["1230", "1236", "1241", "1253", "1256", "1197"]
+    },
+    {
+      "prompt": "Che differenza c'è tra modi di estinzione satisfattori e non satisfattori?",
+      "answer": "Nei modi satisfattori il creditore ottiene comunque soddisfazione, come nella compensazione, nella confusione e nella datio in solutum. In quelli non satisfattori il debitore è liberato senza che il creditore riceva la prestazione, come nella novazione, nella remissione e nell'impossibilità sopravvenuta.",
+      "rubric": [
+        { "id": "c1", "concept": "satisfattori: il creditore è soddisfatto", "weight": 2 },
+        { "id": "c2", "concept": "esempi: compensazione, confusione, datio in solutum", "weight": 1 },
+        { "id": "c3", "concept": "non satisfattori: liberazione senza soddisfazione", "weight": 2 },
+        { "id": "c4", "concept": "esempi: novazione, remissione, impossibilità", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che cos'è la novazione oggettiva?",
+      "answer": "È il contratto con cui le parti sostituiscono all'obbligazione originaria una nuova obbligazione con oggetto o titolo diverso, estinguendo la prima. La volontà di estinguere l'obbligazione precedente deve risultare in modo non equivoco.",
+      "rubric": [
+        { "id": "c1", "concept": "sostituzione con una nuova obbligazione", "weight": 2 },
+        { "id": "c2", "concept": "oggetto o titolo diverso (aliquid novi)", "weight": 1 },
+        { "id": "c3", "concept": "volontà non equivoca di novare (animus novandi)", "weight": 2 }
+      ],
+      "references": ["1230"]
+    },
+    {
+      "prompt": "Quali modifiche dell'obbligazione non comportano novazione?",
+      "answer": "Il rilascio o la rinnovazione di un documento, l'apposizione o l'eliminazione di un termine e ogni altra modificazione accessoria dell'obbligazione non producono novazione.",
+      "rubric": [
+        { "id": "c1", "concept": "rilascio o rinnovazione di un documento", "weight": 1 },
+        { "id": "c2", "concept": "modifiche del termine", "weight": 1 },
+        { "id": "c3", "concept": "ogni modificazione accessoria", "weight": 2 }
+      ],
+      "references": ["1231"]
+    },
+    {
+      "prompt": "Che cos'è la novazione soggettiva?",
+      "answer": "È la sostituzione di un nuovo debitore a quello originario, che viene liberato; è disciplinata dalle norme su delegazione, espromissione e accollo.",
+      "rubric": [
+        { "id": "c1", "concept": "sostituzione del debitore con liberazione del precedente", "weight": 2 },
+        { "id": "c2", "concept": "regolata dalle norme su delegazione, espromissione e accollo", "weight": 2 }
+      ],
+      "references": ["1235"]
+    },
+    {
+      "prompt": "Che cosa succede alle garanzie del credito in caso di novazione?",
+      "answer": "Privilegi, pegno e ipoteche del credito originario si estinguono, se le parti non convengono espressamente di mantenerli per il nuovo credito.",
+      "rubric": [
+        { "id": "c1", "concept": "le garanzie si estinguono", "weight": 2 },
+        { "id": "c2", "concept": "salvo patto espresso di mantenerle", "weight": 2 }
+      ],
+      "references": ["1232"]
+    },
+    {
+      "prompt": "Che effetto ha la novazione se l'obbligazione originaria non esisteva o era annullabile?",
+      "answer": "Se l'obbligazione originaria non esisteva, la novazione è senza effetto. Se derivava da un titolo annullabile, la novazione è valida se il debitore ha assunto il nuovo debito conoscendo il vizio del titolo originario.",
+      "rubric": [
+        { "id": "c1", "concept": "obbligazione inesistente: novazione senza effetto", "weight": 2 },
+        { "id": "c2", "concept": "titolo annullabile: valida se il debitore conosceva il vizio", "weight": 2 }
+      ],
+      "references": ["1234"]
+    },
+    {
+      "prompt": "Che cos'è la remissione del debito?",
+      "answer": "È la dichiarazione unilaterale recettizia con cui il creditore rinuncia in tutto o in parte al credito: estingue l'obbligazione quando è comunicata al debitore, salvo che questi dichiari in un congruo termine di non volerne profittare.",
+      "rubric": [
+        { "id": "c1", "concept": "rinuncia del creditore al credito", "weight": 2 },
+        { "id": "c2", "concept": "atto unilaterale recettizio", "weight": 1 },
+        { "id": "c3", "concept": "il debitore può rifiutarla in un congruo termine", "weight": 1 }
+      ],
+      "references": ["1236"]
+    },
+    {
+      "prompt": "Che valore ha la restituzione volontaria del titolo del credito al debitore?",
+      "answer": "La restituzione volontaria del titolo originale costituisce prova della liberazione anche verso i condebitori in solido; se il titolo è in forma pubblica, la consegna della copia esecutiva fa presumere la liberazione salvo prova contraria.",
+      "rubric": [
+        { "id": "c1", "concept": "prova della liberazione", "weight": 2 },
+        { "id": "c2", "concept": "anche per i condebitori solidali", "weight": 1 },
+        { "id": "c3", "concept": "copia esecutiva: presunzione relativa", "weight": 1 }
+      ],
+      "references": ["1237"]
+    },
+    {
+      "prompt": "Che cos'è la compensazione?",
+      "answer": "È l'estinzione di due debiti reciproci per le quantità corrispondenti, quando due persone sono obbligate l'una verso l'altra: evita un doppio adempimento.",
+      "rubric": [
+        { "id": "c1", "concept": "due debiti reciproci", "weight": 2 },
+        { "id": "c2", "concept": "si estinguono per le quantità corrispondenti", "weight": 2 }
+      ],
+      "references": ["1241"]
+    },
+    {
+      "prompt": "Quali requisiti richiede la compensazione legale?",
+      "answer": "I due debiti devono avere per oggetto somme di denaro o cose fungibili dello stesso genere (omogeneità), essere determinati nell'ammontare (liquidità) ed essere immediatamente pretendibili (esigibilità).",
+      "rubric": [
+        { "id": "c1", "concept": "omogeneità", "weight": 1 },
+        { "id": "c2", "concept": "liquidità", "weight": 1 },
+        { "id": "c3", "concept": "esigibilità", "weight": 1 }
+      ],
+      "references": ["1243"]
+    },
+    {
+      "prompt": "Come opera la compensazione legale?",
+      "answer": "Estingue i due debiti dal giorno della loro coesistenza, ma deve essere eccepita dalla parte interessata: il giudice non può rilevarla d'ufficio.",
+      "rubric": [
+        { "id": "c1", "concept": "effetto dal giorno della coesistenza", "weight": 2 },
+        { "id": "c2", "concept": "va eccepita, non rilevabile d'ufficio", "weight": 2 }
+      ],
+      "references": ["1242"]
+    },
+    {
+      "prompt": "Che cos'è la compensazione giudiziale?",
+      "answer": "Si ha quando il debito opposto in compensazione non è liquido ma è di facile e pronta liquidazione: il giudice può dichiarare la compensazione per la parte che riconosce esistente e sospendere la condanna per il credito liquido.",
+      "rubric": [
+        { "id": "c1", "concept": "credito non liquido ma di facile liquidazione", "weight": 2 },
+        { "id": "c2", "concept": "dichiarata dal giudice per la parte certa", "weight": 2 }
+      ],
+      "references": ["1243"]
+    },
+    {
+      "prompt": "Che cos'è la compensazione volontaria?",
+      "answer": "È la compensazione che avviene per accordo delle parti anche se mancano i requisiti di quella legale; le parti possono anche stabilirne preventivamente le condizioni.",
+      "rubric": [
+        { "id": "c1", "concept": "accordo delle parti", "weight": 2 },
+        { "id": "c2", "concept": "anche senza i requisiti legali", "weight": 1 },
+        { "id": "c3", "concept": "può essere pattuita in anticipo", "weight": 1 }
+      ],
+      "references": ["1252"]
+    },
+    {
+      "prompt": "Che differenza c'è tra compensazione propria e impropria?",
+      "answer": "La compensazione propria riguarda crediti nati da rapporti autonomi. Quella impropria o tecnica riguarda crediti reciproci nati dallo stesso rapporto: si risolve in un semplice conteggio contabile di dare e avere.",
+      "rubric": [
+        { "id": "c1", "concept": "propria: crediti da rapporti distinti", "weight": 2 },
+        { "id": "c2", "concept": "impropria: crediti dallo stesso rapporto, mero conteggio", "weight": 2 }
+      ],
+      "references": ["1241"]
+    },
+    {
+      "prompt": "In quali casi la compensazione non opera?",
+      "answer": "Per il credito alla restituzione di cose di cui il proprietario è stato ingiustamente spogliato, per la restituzione di cose depositate o date in comodato, per i crediti impignorabili, come quelli alimentari, se il debitore vi ha preventivamente rinunciato e nei casi vietati dalla legge.",
+      "rubric": [
+        { "id": "c1", "concept": "restituzione di cose sottratte, depositate o comodate", "weight": 1 },
+        { "id": "c2", "concept": "crediti impignorabili, come gli alimenti", "weight": 1 },
+        { "id": "c3", "concept": "rinuncia preventiva del debitore", "weight": 1 },
+        { "id": "c4", "concept": "divieti di legge", "weight": 1 }
+      ],
+      "references": ["1246"]
+    },
+    {
+      "prompt": "Che cos'è la confusione?",
+      "answer": "È l'estinzione dell'obbligazione che si verifica quando le qualità di creditore e debitore si riuniscono nella stessa persona, per atto tra vivi o per successione; i terzi che hanno prestato garanzia sono liberati.",
+      "rubric": [
+        { "id": "c1", "concept": "creditore e debitore nella stessa persona", "weight": 2 },
+        { "id": "c2", "concept": "per atto tra vivi o successione", "weight": 1 },
+        { "id": "c3", "concept": "i garanti sono liberati", "weight": 1 }
+      ],
+      "references": ["1253"]
+    },
+    {
+      "prompt": "La confusione pregiudica i terzi che hanno diritti sul credito?",
+      "answer": "No, la confusione non opera in pregiudizio dei terzi che hanno acquistato diritti di usufrutto o di pegno sul credito.",
+      "rubric": [
+        { "id": "c1", "concept": "non pregiudica i terzi", "weight": 2 },
+        { "id": "c2", "concept": "titolari di usufrutto o pegno sul credito", "weight": 1 }
+      ],
+      "references": ["1254"]
+    },
+    {
+      "prompt": "Quando l'impossibilità sopravvenuta estingue l'obbligazione?",
+      "answer": "Quando la prestazione diventa impossibile per causa non imputabile al debitore: l'impedimento deve essere sopravvenuto, non prevedibile e non superabile con lo sforzo diligente richiesto. Una semplice difficoltà o maggiore onerosità non basta.",
+      "rubric": [
+        { "id": "c1", "concept": "causa non imputabile al debitore", "weight": 2 },
+        { "id": "c2", "concept": "impedimento sopravvenuto e non superabile con diligenza", "weight": 1 },
+        { "id": "c3", "concept": "non basta la difficoltà o la maggiore onerosità", "weight": 1 }
+      ],
+      "references": ["1256"]
+    },
+    {
+      "prompt": "Che differenza c'è tra impossibilità definitiva e impossibilità temporanea?",
+      "answer": "L'impossibilità definitiva estingue l'obbligazione. Quella temporanea esonera il debitore solo dalla responsabilità per il ritardo; l'obbligazione si estingue solo se l'impossibilità perdura finché il debitore non può più essere ritenuto obbligato o il creditore perde interesse alla prestazione.",
+      "rubric": [
+        { "id": "c1", "concept": "definitiva: estingue l'obbligazione", "weight": 2 },
+        { "id": "c2", "concept": "temporanea: esclude solo la responsabilità per il ritardo", "weight": 2 },
+        { "id": "c3", "concept": "estingue se dura fino a far venire meno obbligo o interesse", "weight": 1 }
+      ],
+      "references": ["1256"]
+    },
+    {
+      "prompt": "Che differenza c'è tra impossibilità materiale e impossibilità giuridica?",
+      "answer": "L'impossibilità materiale deriva da un fatto naturale, come il perimento della cosa. Quella giuridica deriva da una norma o da un provvedimento dell'autorità che vieta la prestazione (factum principis).",
+      "rubric": [
+        { "id": "c1", "concept": "materiale: fatto naturale", "weight": 2 },
+        { "id": "c2", "concept": "giuridica: norma o provvedimento (factum principis)", "weight": 2 }
+      ],
+      "references": ["1256"]
+    },
+    {
+      "prompt": "Perché le obbligazioni pecuniarie e quelle generiche non si estinguono per impossibilità sopravvenuta?",
+      "answer": "Perché il denaro e le cose di genere sono sempre reperibili: il genere non perisce mai (genus numquam perit).",
+      "rubric": [
+        { "id": "c1", "concept": "denaro e cose di genere sempre reperibili", "weight": 2 },
+        { "id": "c2", "concept": "genus numquam perit", "weight": 1 }
+      ],
+      "references": ["1256", "1178"]
+    },
+    {
+      "prompt": "Che cosa succede se la cosa dovuta è perita o è andata perduta in parte?",
+      "answer": "Se l'impossibilità è solo parziale, il debitore si libera eseguendo la prestazione per la parte che è rimasta possibile.",
+      "rubric": [
+        { "id": "c1", "concept": "impossibilità parziale", "weight": 1 },
+        { "id": "c2", "concept": "liberazione eseguendo la parte possibile", "weight": 2 }
+      ],
+      "references": ["1258"]
+    },
+    {
+      "prompt": "Che cos'è la prestazione in luogo dell'adempimento (datio in solutum)?",
+      "answer": "Il debitore non può liberarsi con una prestazione diversa da quella dovuta, anche di valore maggiore, salvo che il creditore consenta; in tal caso l'obbligazione si estingue quando la diversa prestazione è eseguita.",
+      "rubric": [
+        { "id": "c1", "concept": "prestazione diversa da quella dovuta", "weight": 1 },
+        { "id": "c2", "concept": "serve il consenso del creditore", "weight": 2 },
+        { "id": "c3", "concept": "l'estinzione avviene con l'esecuzione", "weight": 2 }
+      ],
+      "references": ["1197"]
+    },
+    {
+      "prompt": "Che garanzie deve il debitore se la datio in solutum consiste nel trasferimento di un bene?",
+      "answer": "Deve la garanzia per evizione e per vizi secondo le norme della vendita, salvo che il creditore preferisca esigere la prestazione originaria e il risarcimento; in ogni caso non rivivono le garanzie prestate dai terzi.",
+      "rubric": [
+        { "id": "c1", "concept": "garanzia per evizione e vizi come nella vendita", "weight": 2 },
+        { "id": "c2", "concept": "o prestazione originaria e risarcimento", "weight": 1 },
+        { "id": "c3", "concept": "non rivivono le garanzie dei terzi", "weight": 1 }
+      ],
+      "references": ["1197"]
+    },
+    {
+      "prompt": "Che differenza c'è tra datio in solutum e novazione?",
+      "answer": "Con la novazione l'obbligazione originaria si estingue subito, con l'accordo, e ne nasce una nuova. Con la datio in solutum l'obbligazione originaria si estingue solo quando la prestazione diversa è effettivamente eseguita.",
+      "rubric": [
+        { "id": "c1", "concept": "novazione: estinzione immediata con l'accordo", "weight": 2 },
+        { "id": "c2", "concept": "datio: estinzione solo con l'esecuzione", "weight": 2 }
+      ],
+      "references": ["1197", "1230"]
+    }
+  ]
+}

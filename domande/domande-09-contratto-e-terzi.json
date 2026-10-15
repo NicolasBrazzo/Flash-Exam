@@ -1,0 +1,211 @@
+{
+  "topic": { "name": "Contratto e terzi: relatività, prelazione, cessione" },
+  "questions": [
+    {
+      "prompt": "Che cosa stabilisce il principio di relatività degli effetti del contratto?",
+      "answer": "Il contratto produce effetti solo tra le parti: i terzi non ne ricevono né vantaggi né pregiudizi, salvo i casi previsti dalla legge.",
+      "rubric": [
+        { "id": "c1", "concept": "effetti solo tra le parti", "weight": 2 },
+        { "id": "c2", "concept": "nessun vantaggio o pregiudizio per i terzi", "weight": 1 },
+        { "id": "c3", "concept": "salvo i casi di legge", "weight": 1 }
+      ],
+      "references": ["1372"]
+    },
+    {
+      "prompt": "Che cosa succede se il terzo non compie il fatto promesso da un contraente?",
+      "answer": "Chi ha promesso l'obbligazione o il fatto del terzo deve indennizzare l'altro contraente se il terzo rifiuta di obbligarsi o non compie il fatto. Il terzo non è obbligato, perché il contratto non lo vincola.",
+      "rubric": [
+        { "id": "c1", "concept": "il promittente deve indennizzare", "weight": 2 },
+        { "id": "c2", "concept": "il terzo non è vincolato", "weight": 2 }
+      ],
+      "references": ["1381"]
+    },
+    {
+      "prompt": "Che cos'è il patto di non alienare e quando è valido?",
+      "answer": "È il patto con cui una parte si impegna a non alienare un bene. Ha effetto solo tra le parti ed è valido solo se contenuto entro convenienti limiti di tempo e se risponde a un apprezzabile interesse di una delle parti.",
+      "rubric": [
+        { "id": "c1", "concept": "impegno a non alienare un bene", "weight": 1 },
+        { "id": "c2", "concept": "effetti solo tra le parti", "weight": 2 },
+        { "id": "c3", "concept": "convenienti limiti di tempo", "weight": 1 },
+        { "id": "c4", "concept": "apprezzabile interesse di una parte", "weight": 1 }
+      ],
+      "references": ["1379"]
+    },
+    {
+      "prompt": "Che cosa succede se una parte viola il divieto di alienare e vende il bene a un terzo?",
+      "answer": "L'acquisto del terzo è valido ed efficace, perché il divieto ha solo effetti obbligatori; chi ha violato il patto è inadempiente e risponde del danno verso l'altra parte.",
+      "rubric": [
+        { "id": "c1", "concept": "l'acquisto del terzo resta valido", "weight": 2 },
+        { "id": "c2", "concept": "il divieto ha efficacia solo obbligatoria", "weight": 1 },
+        { "id": "c3", "concept": "chi viola risponde per inadempimento", "weight": 1 }
+      ],
+      "references": ["1379"]
+    },
+    {
+      "prompt": "Perché la legge limita la validità del divieto convenzionale di alienare?",
+      "answer": "Perché contrasta con il principio della libera circolazione dei beni: per questo è valido solo entro convenienti limiti di tempo e se giustificato da un apprezzabile interesse.",
+      "rubric": [
+        { "id": "c1", "concept": "tutela della libera circolazione dei beni", "weight": 2 },
+        { "id": "c2", "concept": "limiti di tempo e interesse apprezzabile", "weight": 1 }
+      ],
+      "references": ["1379"]
+    },
+    {
+      "prompt": "Che cos'è la prelazione?",
+      "answer": "È il diritto di essere preferito a chiunque altro, a parità di condizioni, nella conclusione di un contratto, se il soggetto obbligato decide di concluderlo.",
+      "rubric": [
+        { "id": "c1", "concept": "diritto di essere preferito", "weight": 2 },
+        { "id": "c2", "concept": "a parità di condizioni", "weight": 2 },
+        { "id": "c3", "concept": "solo se l'obbligato decide di contrarre", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra prelazione convenzionale e prelazione legale?",
+      "answer": "La prelazione convenzionale nasce da un accordo e ha efficacia obbligatoria: se violata, dà solo diritto al risarcimento. La prelazione legale è prevista dalla legge e ha efficacia reale: il titolare può riscattare il bene dal terzo acquirente.",
+      "rubric": [
+        { "id": "c1", "concept": "convenzionale: efficacia obbligatoria", "weight": 2 },
+        { "id": "c2", "concept": "convenzionale violata: solo risarcimento", "weight": 1 },
+        { "id": "c3", "concept": "legale: efficacia reale", "weight": 2 },
+        { "id": "c4", "concept": "legale: riscatto dal terzo", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra prelazione e opzione?",
+      "answer": "Con la prelazione l'obbligato resta libero di non contrarre e il diritto opera solo se decide di farlo. Con l'opzione il concedente non può impedire la conclusione del contratto, che si forma con la sola accettazione del titolare.",
+      "rubric": [
+        { "id": "c1", "concept": "prelazione: l'obbligato può decidere di non contrarre", "weight": 2 },
+        { "id": "c2", "concept": "opzione: il contratto si forma con l'accettazione del titolare", "weight": 2 }
+      ],
+      "references": ["1331"]
+    },
+    {
+      "prompt": "Che cos'è il contratto a favore di terzo?",
+      "answer": "È il contratto con cui una parte, il promittente, si obbliga verso l'altra, lo stipulante, a eseguire una prestazione a favore di un terzo beneficiario. È valido se lo stipulante vi ha interesse.",
+      "rubric": [
+        { "id": "c1", "concept": "il promittente si obbliga verso lo stipulante", "weight": 1 },
+        { "id": "c2", "concept": "prestazione a favore di un terzo", "weight": 2 },
+        { "id": "c3", "concept": "serve l'interesse dello stipulante", "weight": 2 }
+      ],
+      "references": ["1411"]
+    },
+    {
+      "prompt": "Quando il terzo acquista il diritto nel contratto a suo favore?",
+      "answer": "Salvo patto contrario, il terzo acquista il diritto contro il promittente per effetto della stipulazione, senza bisogno della sua adesione. La sua dichiarazione di volerne profittare rende la stipulazione irrevocabile.",
+      "rubric": [
+        { "id": "c1", "concept": "acquista per effetto della stipulazione", "weight": 2 },
+        { "id": "c2", "concept": "non serve l'adesione", "weight": 1 },
+        { "id": "c3", "concept": "la dichiarazione di profittare rende irrevocabile la stipulazione", "weight": 2 }
+      ],
+      "references": ["1411"]
+    },
+    {
+      "prompt": "Il contratto a favore di terzo è una vera eccezione al principio di relatività?",
+      "answer": "Solo in apparenza: il terzo riceve un diritto senza essere parte del contratto, ma soltanto vantaggi e non obblighi, e può comunque rifiutare il beneficio.",
+      "rubric": [
+        { "id": "c1", "concept": "il terzo riceve solo vantaggi", "weight": 2 },
+        { "id": "c2", "concept": "il terzo può rifiutare", "weight": 2 },
+        { "id": "c3", "concept": "il terzo non diventa parte del contratto", "weight": 1 }
+      ],
+      "references": ["1372", "1411"]
+    },
+    {
+      "prompt": "Fino a quando lo stipulante può revocare il beneficio a favore del terzo?",
+      "answer": "Finché il terzo non abbia dichiarato, anche nei confronti del promittente, di volerne profittare. Se la prestazione va eseguita dopo la morte dello stipulante, la revoca è possibile anche per testamento e anche dopo l'adesione, salvo rinuncia scritta al potere di revoca.",
+      "rubric": [
+        { "id": "c1", "concept": "fino alla dichiarazione di profittare del terzo", "weight": 2 },
+        { "id": "c2", "concept": "prestazione dopo la morte: revocabile anche per testamento", "weight": 1 },
+        { "id": "c3", "concept": "salvo rinuncia scritta alla revoca", "weight": 1 }
+      ],
+      "references": ["1411", "1412"]
+    },
+    {
+      "prompt": "A chi spetta la prestazione se il terzo rifiuta o lo stipulante revoca il beneficio?",
+      "answer": "La prestazione rimane a beneficio dello stipulante, salvo che diversamente risulti dalla volontà delle parti o dalla natura del contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "resta allo stipulante", "weight": 2 },
+        { "id": "c2", "concept": "salvo diversa volontà o natura del contratto", "weight": 1 }
+      ],
+      "references": ["1411"]
+    },
+    {
+      "prompt": "Quali eccezioni può opporre il promittente al terzo beneficiario?",
+      "answer": "Le eccezioni fondate sul contratto da cui il terzo deriva il suo diritto, ma non quelle fondate su altri rapporti tra promittente e stipulante.",
+      "rubric": [
+        { "id": "c1", "concept": "le eccezioni fondate sul contratto", "weight": 2 },
+        { "id": "c2", "concept": "non quelle relative ad altri rapporti con lo stipulante", "weight": 2 }
+      ],
+      "references": ["1413"]
+    },
+    {
+      "prompt": "Che cos'è la cessione del contratto?",
+      "answer": "È l'atto con cui una parte, il cedente, sostituisce a sé un terzo, il cessionario, nei rapporti derivanti da un contratto a prestazioni corrispettive non ancora eseguite, con il consenso dell'altra parte, il contraente ceduto.",
+      "rubric": [
+        { "id": "c1", "concept": "sostituzione di un terzo nella posizione contrattuale", "weight": 2 },
+        { "id": "c2", "concept": "contratto a prestazioni corrispettive non ancora eseguite", "weight": 1 },
+        { "id": "c3", "concept": "serve il consenso del contraente ceduto", "weight": 2 }
+      ],
+      "references": ["1406"]
+    },
+    {
+      "prompt": "Quali sono i presupposti della cessione del contratto?",
+      "answer": "Il contratto deve essere a prestazioni corrispettive non ancora del tutto eseguite e occorre, oltre all'accordo tra cedente e cessionario, il consenso del contraente ceduto, anche dato in via preventiva.",
+      "rubric": [
+        { "id": "c1", "concept": "prestazioni corrispettive non ancora eseguite", "weight": 2 },
+        { "id": "c2", "concept": "consenso del contraente ceduto", "weight": 2 },
+        { "id": "c3", "concept": "il consenso può essere preventivo", "weight": 1 }
+      ],
+      "references": ["1406", "1407"]
+    },
+    {
+      "prompt": "Quando è efficace la cessione se il contraente ceduto ha consentito preventivamente?",
+      "answer": "La sostituzione è efficace nei confronti del ceduto dal momento in cui gli è stata notificata o in cui l'ha accettata.",
+      "rubric": [
+        { "id": "c1", "concept": "dalla notificazione al ceduto", "weight": 2 },
+        { "id": "c2", "concept": "o dalla sua accettazione", "weight": 1 }
+      ],
+      "references": ["1407"]
+    },
+    {
+      "prompt": "Il cedente resta obbligato verso il contraente ceduto dopo la cessione?",
+      "answer": "Di regola no: è liberato da quando la cessione è efficace verso il ceduto. Se però il ceduto ha dichiarato di non liberarlo, può agire contro il cedente se il cessionario non adempie, dandogli notizia dell'inadempimento entro quindici giorni.",
+      "rubric": [
+        { "id": "c1", "concept": "di regola il cedente è liberato", "weight": 2 },
+        { "id": "c2", "concept": "salvo dichiarazione di non liberazione", "weight": 2 },
+        { "id": "c3", "concept": "avviso dell'inadempimento entro 15 giorni", "weight": 1 }
+      ],
+      "references": ["1408"]
+    },
+    {
+      "prompt": "Quali eccezioni può opporre il contraente ceduto al cessionario?",
+      "answer": "Tutte le eccezioni derivanti dal contratto, ma non quelle fondate su altri rapporti con il cedente, salvo che ne abbia fatto espressa riserva quando ha consentito alla sostituzione.",
+      "rubric": [
+        { "id": "c1", "concept": "eccezioni derivanti dal contratto", "weight": 2 },
+        { "id": "c2", "concept": "non quelle di altri rapporti con il cedente", "weight": 1 },
+        { "id": "c3", "concept": "salvo espressa riserva", "weight": 1 }
+      ],
+      "references": ["1409"]
+    },
+    {
+      "prompt": "Che cosa garantisce il cedente al cessionario?",
+      "answer": "Il cedente è tenuto a garantire la validità del contratto. Se assume anche la garanzia dell'adempimento, risponde come un fideiussore per le obbligazioni del contraente ceduto.",
+      "rubric": [
+        { "id": "c1", "concept": "garantisce la validità del contratto", "weight": 2 },
+        { "id": "c2", "concept": "l'adempimento solo se lo garantisce espressamente", "weight": 1 },
+        { "id": "c3", "concept": "in tal caso risponde come fideiussore", "weight": 1 }
+      ],
+      "references": ["1410"]
+    },
+    {
+      "prompt": "Che differenza c'è tra cessione del contratto e subcontratto?",
+      "answer": "Con la cessione il cessionario subentra al cedente nel contratto originario. Con il subcontratto una parte resta nel contratto base e ne conclude un altro, con un diverso contraente, avente in tutto o in parte lo stesso oggetto, come la sublocazione.",
+      "rubric": [
+        { "id": "c1", "concept": "cessione: subentro nella posizione contrattuale", "weight": 2 },
+        { "id": "c2", "concept": "subcontratto: nuovo contratto derivato", "weight": 2 },
+        { "id": "c3", "concept": "la parte resta nel contratto originario", "weight": 1 }
+      ],
+      "references": ["1406"]
+    }
+  ]
+}

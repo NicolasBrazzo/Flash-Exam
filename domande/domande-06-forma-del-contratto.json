@@ -1,0 +1,144 @@
+{
+  "topic": { "name": "La forma del contratto" },
+  "questions": [
+    {
+      "prompt": "Perché la volontà contrattuale deve essere manifestata?",
+      "answer": "Perché la volontà è un fatto psichico interno: diventa giuridicamente rilevante solo quando è manifestata all'esterno con mezzi oggettivi.",
+      "rubric": [
+        { "id": "c1", "concept": "la volontà è un fatto interno", "weight": 1 },
+        { "id": "c2", "concept": "è rilevante solo se manifestata all'esterno", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra manifestazione espressa e tacita della volontà?",
+      "answer": "La manifestazione espressa usa i segni del linguaggio, scritto o parlato; quella tacita avviene con comportamenti concludenti, da cui si ricava la volontà in base alle circostanze, come l'inizio dell'esecuzione.",
+      "rubric": [
+        { "id": "c1", "concept": "espressa: con il linguaggio", "weight": 2 },
+        { "id": "c2", "concept": "tacita: con comportamenti concludenti", "weight": 2 },
+        { "id": "c3", "concept": "rilevano le circostanze", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che cos'è la protestatio e quando è inefficace?",
+      "answer": "È la dichiarazione con cui un soggetto precisa che il suo comportamento non va inteso come manifestazione di volontà. Non sempre è ammessa: chi sale sull'autobus dichiarando di non voler concludere il trasporto deve comunque pagare il biglietto.",
+      "rubric": [
+        { "id": "c1", "concept": "esclude il significato del comportamento", "weight": 2 },
+        { "id": "c2", "concept": "non sempre è efficace, esempio dell'autobus", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Il silenzio vale come manifestazione di volontà?",
+      "answer": "Di regola no: il silenzio produce la conclusione del contratto solo in casi particolari previsti dalla legge o giustificati dalle circostanze, come nei contratti con obbligazioni del solo proponente.",
+      "rubric": [
+        { "id": "c1", "concept": "di regola il silenzio non vale come consenso", "weight": 2 },
+        { "id": "c2", "concept": "eccezione: casi particolari, come i contratti con obbligazioni del solo proponente", "weight": 2 }
+      ],
+      "references": ["1333"]
+    },
+    {
+      "prompt": "Che cosa stabilisce il principio di libertà della forma?",
+      "answer": "Che la volontà contrattuale può essere manifestata con qualunque modalità idonea a comunicarla, salvo i casi in cui la legge prescrive una forma determinata.",
+      "rubric": [
+        { "id": "c1", "concept": "qualunque modalità idonea", "weight": 2 },
+        { "id": "c2", "concept": "salvo la forma prescritta dalla legge", "weight": 2 }
+      ],
+      "references": ["1325", "1350"]
+    },
+    {
+      "prompt": "Quali contratti devono essere fatti per iscritto a pena di nullità?",
+      "answer": "Soprattutto i contratti che trasferiscono la proprietà di immobili o costituiscono, modificano, trasferiscono o estinguono diritti reali immobiliari, le locazioni ultranovennali, i contratti della pubblica amministrazione e altri indicati dalla legge, come i contratti bancari.",
+      "rubric": [
+        { "id": "c1", "concept": "trasferimento della proprietà di immobili", "weight": 2 },
+        { "id": "c2", "concept": "diritti reali sugli immobili", "weight": 1 },
+        { "id": "c3", "concept": "locazioni ultranovennali", "weight": 1 },
+        { "id": "c4", "concept": "altri casi di legge (PA, contratti bancari)", "weight": 1 }
+      ],
+      "references": ["1350"]
+    },
+    {
+      "prompt": "Che differenza c'è tra scrittura privata e atto pubblico come forma del contratto?",
+      "answer": "La scrittura privata è il documento sottoscritto dalle parti; l'atto pubblico è redatto con le formalità di legge da un notaio o altro pubblico ufficiale. L'atto pubblico è richiesto, per esempio, per le donazioni, le convenzioni matrimoniali e la costituzione delle società di capitali.",
+      "rubric": [
+        { "id": "c1", "concept": "scrittura privata: documento firmato dalle parti", "weight": 1 },
+        { "id": "c2", "concept": "atto pubblico: redatto da notaio o pubblico ufficiale", "weight": 2 },
+        { "id": "c3", "concept": "esempi di atto pubblico: donazioni, convenzioni matrimoniali, società di capitali", "weight": 1 }
+      ],
+      "references": ["1350", "2699"]
+    },
+    {
+      "prompt": "Quali funzioni svolge la forma del contratto?",
+      "answer": "Garantisce certezza sull'esistenza e sul contenuto del contratto, protegge il contraente debole, rende possibili i controlli di interesse pubblico e consente la pubblicità.",
+      "rubric": [
+        { "id": "c1", "concept": "certezza", "weight": 1 },
+        { "id": "c2", "concept": "protezione del contraente", "weight": 1 },
+        { "id": "c3", "concept": "controlli pubblici", "weight": 1 },
+        { "id": "c4", "concept": "pubblicità", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra forma ad substantiam e forma ad probationem?",
+      "answer": "La forma ad substantiam è richiesta per la validità: se manca, il contratto è nullo. La forma ad probationem è richiesta solo per la prova: il contratto è valido, ma può essere provato solo con la confessione o il giuramento, non con testimoni o presunzioni.",
+      "rubric": [
+        { "id": "c1", "concept": "ad substantiam: la mancanza causa nullità", "weight": 2 },
+        { "id": "c2", "concept": "ad probationem: il contratto resta valido", "weight": 2 },
+        { "id": "c3", "concept": "prova solo con confessione o giuramento", "weight": 1 }
+      ],
+      "references": ["1350", "2725"]
+    },
+    {
+      "prompt": "Che cosa sono le forme convenzionali?",
+      "answer": "Sono forme non imposte dalla legge ma pattuite dalle parti per la futura conclusione di un contratto. Se il patto è scritto, si presume che la forma sia stata voluta per la validità.",
+      "rubric": [
+        { "id": "c1", "concept": "forma scelta dalle parti, non dalla legge", "weight": 2 },
+        { "id": "c2", "concept": "patto scritto", "weight": 1 },
+        { "id": "c3", "concept": "presunzione che sia richiesta per la validità", "weight": 2 }
+      ],
+      "references": ["1352"]
+    },
+    {
+      "prompt": "Che differenza c'è tra la forma e le altre formalità del contratto?",
+      "answer": "La forma riguarda il modo in cui si manifesta la volontà; le altre formalità, come la pubblicità o la registrazione fiscale, sono adempimenti diversi, la cui inosservanza ha conseguenze diverse dalla nullità.",
+      "rubric": [
+        { "id": "c1", "concept": "la forma riguarda la manifestazione della volontà", "weight": 1 },
+        { "id": "c2", "concept": "formalità: pubblicità o registrazione fiscale", "weight": 1 },
+        { "id": "c3", "concept": "la loro inosservanza non causa nullità", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che cos'è il documento informatico e che valore ha?",
+      "answer": "È la rappresentazione informatica di atti, fatti o dati giuridicamente rilevanti. È equiparato al documento cartaceo e il suo valore dipende dall'affidabilità della firma.",
+      "rubric": [
+        { "id": "c1", "concept": "rappresentazione informatica di atti o fatti rilevanti", "weight": 2 },
+        { "id": "c2", "concept": "equiparato al documento cartaceo", "weight": 1 },
+        { "id": "c3", "concept": "valore legato al tipo di firma", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Quali tipi di firma elettronica esistono?",
+      "answer": "La firma elettronica semplice, la firma elettronica qualificata e la firma digitale, basata su un sistema di chiavi asimmetriche, una privata e una pubblica, con gradi di affidabilità crescenti.",
+      "rubric": [
+        { "id": "c1", "concept": "firma elettronica semplice", "weight": 1 },
+        { "id": "c2", "concept": "firma elettronica qualificata", "weight": 1 },
+        { "id": "c3", "concept": "firma digitale con chiavi asimmetriche", "weight": 1 },
+        { "id": "c4", "concept": "affidabilità crescente", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Quando un documento informatico soddisfa la forma scritta?",
+      "answer": "Quando è una scrittura privata con firma digitale o elettronica qualificata, una scrittura autenticata dal notaio o un atto pubblico informatico. Se non rispetta queste modalità, il contratto si forma lo stesso solo se è a forma libera.",
+      "rubric": [
+        { "id": "c1", "concept": "firma digitale o qualificata", "weight": 2 },
+        { "id": "c2", "concept": "scrittura autenticata o atto pubblico informatico", "weight": 1 },
+        { "id": "c3", "concept": "altrimenti vale solo per i contratti a forma libera", "weight": 1 }
+      ],
+      "references": []
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "topic": { "name": "Responsabilità patrimoniale, par condicio e privilegi" },
+  "questions": [
+    {
+      "prompt": "Che cosa stabilisce il principio della responsabilità patrimoniale del debitore?",
+      "answer": "Il debitore risponde dell'adempimento delle obbligazioni con tutti i suoi beni presenti e futuri; le limitazioni della responsabilità non sono ammesse se non nei casi stabiliti dalla legge.",
+      "rubric": [
+        { "id": "c1", "concept": "con tutti i beni presenti e futuri", "weight": 2 },
+        { "id": "c2", "concept": "limitazioni solo nei casi di legge", "weight": 2 }
+      ],
+      "references": ["2740"]
+    },
+    {
+      "prompt": "Perché il patrimonio del debitore è detto garanzia generica dei creditori?",
+      "answer": "Perché tutti i beni del debitore al momento dell'esecuzione possono essere espropriati per soddisfare i creditori; però se un bene esce dal patrimonio il creditore non può più aggredirlo, salvi i rimedi conservativi.",
+      "rubric": [
+        { "id": "c1", "concept": "tutti i beni sono aggredibili", "weight": 2 },
+        { "id": "c2", "concept": "i beni usciti dal patrimonio non lo sono più", "weight": 1 },
+        { "id": "c3", "concept": "salvi i mezzi di conservazione", "weight": 1 }
+      ],
+      "references": ["2740"]
+    },
+    {
+      "prompt": "Quali eccezioni esistono al principio dell'articolo 2740?",
+      "answer": "I beni impignorabili, che non possono essere espropriati, e i patrimoni separati previsti dalla legge, sui quali possono agire solo determinate categorie di creditori, come il fondo patrimoniale o i beni destinati a uno scopo.",
+      "rubric": [
+        { "id": "c1", "concept": "beni impignorabili", "weight": 2 },
+        { "id": "c2", "concept": "patrimoni separati per legge", "weight": 2 }
+      ],
+      "references": ["2740"]
+    },
+    {
+      "prompt": "Che cos'è la par condicio creditorum?",
+      "answer": "È il principio per cui i creditori hanno uguale diritto di essere soddisfatti sui beni del debitore, in proporzione ai rispettivi crediti, salve le cause legittime di prelazione.",
+      "rubric": [
+        { "id": "c1", "concept": "uguale diritto dei creditori", "weight": 2 },
+        { "id": "c2", "concept": "in proporzione ai crediti", "weight": 1 },
+        { "id": "c3", "concept": "salve le cause di prelazione", "weight": 1 }
+      ],
+      "references": ["2741"]
+    },
+    {
+      "prompt": "Quali sono le cause legittime di prelazione?",
+      "answer": "I privilegi, il pegno e le ipoteche.",
+      "rubric": [
+        { "id": "c1", "concept": "privilegi", "weight": 1 },
+        { "id": "c2", "concept": "pegno", "weight": 1 },
+        { "id": "c3", "concept": "ipoteca", "weight": 1 }
+      ],
+      "references": ["2741"]
+    },
+    {
+      "prompt": "Che cos'è la surrogazione reale?",
+      "answer": "Se la cosa gravata da privilegio, pegno o ipoteca perisce o si deteriora, le indennità dovute dagli assicuratori o per espropriazione sono vincolate al pagamento dei crediti privilegiati o garantiti secondo il loro grado, salvo che siano impiegate per riparare la cosa.",
+      "rubric": [
+        { "id": "c1", "concept": "perimento o deterioramento della cosa garantita", "weight": 1 },
+        { "id": "c2", "concept": "la garanzia si trasferisce sulle indennità", "weight": 2 },
+        { "id": "c3", "concept": "salvo impiego per la riparazione", "weight": 1 }
+      ],
+      "references": ["2742"]
+    },
+    {
+      "prompt": "Che cos'è il privilegio?",
+      "answer": "È la causa di prelazione che la legge accorda a certi crediti in considerazione della loro causa; nasce di regola senza bisogno di accordo né di pubblicità ed è tipico, perché solo la legge può crearlo.",
+      "rubric": [
+        { "id": "c1", "concept": "accordato dalla legge per la causa del credito", "weight": 2 },
+        { "id": "c2", "concept": "di regola senza accordo né pubblicità", "weight": 1 },
+        { "id": "c3", "concept": "tipicità dei privilegi", "weight": 1 }
+      ],
+      "references": ["2745"]
+    },
+    {
+      "prompt": "Che differenza c'è tra privilegio generale e privilegio speciale?",
+      "answer": "Il privilegio generale grava su tutti i beni mobili del debitore e non dà diritto di seguito: non si esercita contro i terzi che hanno acquistato i beni. Il privilegio speciale grava su determinati beni mobili o immobili, è un diritto reale di garanzia e si esercita anche contro i terzi acquirenti successivi.",
+      "rubric": [
+        { "id": "c1", "concept": "generale: tutti i mobili, senza seguito", "weight": 2 },
+        { "id": "c2", "concept": "speciale: beni determinati", "weight": 1 },
+        { "id": "c3", "concept": "speciale: diritto reale, opponibile ai terzi", "weight": 2 }
+      ],
+      "references": ["2746", "2747"]
+    },
+    {
+      "prompt": "Come si stabilisce l'ordine tra i crediti privilegiati?",
+      "answer": "Non in base all'anteriorità del credito, ma secondo l'ordine fissato dalla legge per i diversi privilegi; tra crediti con lo stesso grado il ricavato si ripartisce in proporzione.",
+      "rubric": [
+        { "id": "c1", "concept": "ordine stabilito dalla legge", "weight": 2 },
+        { "id": "c2", "concept": "non conta l'anteriorità", "weight": 1 },
+        { "id": "c3", "concept": "pari grado: in proporzione", "weight": 1 }
+      ],
+      "references": ["2777", "2782"]
+    },
+    {
+      "prompt": "Che rapporto c'è tra privilegio speciale, pegno e ipoteca?",
+      "answer": "Di regola il pegno prevale sul privilegio speciale sui mobili, mentre il privilegio speciale sugli immobili prevale sull'ipoteca.",
+      "rubric": [
+        { "id": "c1", "concept": "il pegno prevale sul privilegio mobiliare", "weight": 2 },
+        { "id": "c2", "concept": "il privilegio immobiliare prevale sull'ipoteca", "weight": 2 }
+      ],
+      "references": ["2748"]
+    },
+    {
+      "prompt": "Il privilegio speciale su un bene mobile è opponibile al terzo acquirente in buona fede?",
+      "answer": "No, se il terzo ha acquistato in buona fede il possesso del bene mobile, acquista la proprietà libera dai diritti altrui, compresi i privilegi; il privilegio speciale immobiliare invece è opponibile ai terzi anche senza pubblicità.",
+      "rubric": [
+        { "id": "c1", "concept": "mobili: il possesso in buona fede libera dal privilegio", "weight": 2 },
+        { "id": "c2", "concept": "immobili: privilegio sempre opponibile", "weight": 2 }
+      ],
+      "references": ["1153", "2747"]
+    },
+    {
+      "prompt": "Quali caratteri comuni hanno pegno e ipoteca?",
+      "answer": "Sono diritti reali di garanzia su beni determinati, accessori al credito, che attribuiscono al creditore lo ius distrahendi, cioè il potere di far espropriare il bene, lo ius prelationis, cioè la preferenza sul ricavato, e il diritto di seguito anche verso i terzi acquirenti.",
+      "rubric": [
+        { "id": "c1", "concept": "diritti reali di garanzia accessori al credito", "weight": 1 },
+        { "id": "c2", "concept": "ius distrahendi", "weight": 1 },
+        { "id": "c3", "concept": "ius prelationis", "weight": 1 },
+        { "id": "c4", "concept": "diritto di seguito", "weight": 1 }
+      ],
+      "references": ["2784", "2808"]
+    },
+    {
+      "prompt": "Che differenza c'è tra pegno e ipoteca?",
+      "answer": "Il pegno ha per oggetto beni mobili non registrati, universalità di mobili e crediti, e di regola comporta lo spossessamento del debitore. L'ipoteca ha per oggetto immobili, mobili registrati e rendite dello Stato, non sottrae il possesso e si costituisce con l'iscrizione nei registri.",
+      "rubric": [
+        { "id": "c1", "concept": "pegno: mobili non registrati e crediti", "weight": 1 },
+        { "id": "c2", "concept": "pegno: spossessamento", "weight": 1 },
+        { "id": "c3", "concept": "ipoteca: immobili e mobili registrati", "weight": 1 },
+        { "id": "c4", "concept": "ipoteca: iscrizione senza spossessamento", "weight": 1 }
+      ],
+      "references": ["2784", "2786", "2808", "2810"]
+    },
+    {
+      "prompt": "Perché il pegno richiede lo spossessamento del debitore?",
+      "answer": "Perché per i beni mobili non registrati non esiste un sistema di pubblicità: lo spossessamento è l'unico modo per segnalare ai terzi che il bene è vincolato.",
+      "rubric": [
+        { "id": "c1", "concept": "manca la pubblicità per i mobili non registrati", "weight": 2 },
+        { "id": "c2", "concept": "lo spossessamento avverte i terzi", "weight": 2 }
+      ],
+      "references": ["2786"]
+    },
+    {
+      "prompt": "Che differenza c'è tra terzo datore di pegno o ipoteca e fideiussore?",
+      "answer": "Entrambi garantiscono un debito altrui, ma il fideiussore risponde con tutto il suo patrimonio, senza diritto di seguito, mentre il terzo datore risponde solo con il bene dato in garanzia, su cui il creditore ha un diritto reale.",
+      "rubric": [
+        { "id": "c1", "concept": "fideiussore: tutto il patrimonio, garanzia personale", "weight": 2 },
+        { "id": "c2", "concept": "terzo datore: solo il bene vincolato, garanzia reale", "weight": 2 }
+      ],
+      "references": ["1936", "2784", "2808"]
+    },
+    {
+      "prompt": "Che cos'è il divieto del patto commissorio?",
+      "answer": "È nullo il patto con cui si conviene che, in mancanza di pagamento nel termine, la proprietà della cosa ipotecata o data in pegno passi al creditore, anche se il patto è successivo alla costituzione della garanzia.",
+      "rubric": [
+        { "id": "c1", "concept": "passaggio della proprietà al creditore per inadempimento", "weight": 2 },
+        { "id": "c2", "concept": "il patto è nullo", "weight": 1 },
+        { "id": "c3", "concept": "anche se posteriore alla garanzia", "weight": 1 }
+      ],
+      "references": ["2744"]
+    },
+    {
+      "prompt": "Perché è vietato il patto commissorio?",
+      "answer": "Per tutelare il debitore, che sotto la pressione del bisogno potrebbe accettare di perdere un bene di valore superiore al debito, e per proteggere la par condicio degli altri creditori; la garanzia deve realizzarsi tramite la vendita giudiziale.",
+      "rubric": [
+        { "id": "c1", "concept": "tutela del debitore debole", "weight": 2 },
+        { "id": "c2", "concept": "tutela degli altri creditori", "weight": 1 },
+        { "id": "c3", "concept": "realizzazione tramite vendita giudiziale", "weight": 1 }
+      ],
+      "references": ["2744"]
+    },
+    {
+      "prompt": "Che cos'è il patto marciano e perché è valido?",
+      "answer": "È il patto per cui, in caso di inadempimento, il bene passa al creditore ma secondo una stima fatta da un terzo al momento del trasferimento, e il creditore restituisce al debitore l'eccedenza del valore sul debito. È valido perché evita l'approfittamento vietato dal patto commissorio.",
+      "rubric": [
+        { "id": "c1", "concept": "trasferimento con stima di un terzo", "weight": 2 },
+        { "id": "c2", "concept": "restituzione dell'eccedenza al debitore", "weight": 1 },
+        { "id": "c3", "concept": "valido perché esclude l'approfittamento", "weight": 1 }
+      ],
+      "references": ["2744"]
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "topic": { "name": "Capacità giuridica e capacità d'agire" },
+  "questions": [
+    {
+      "prompt": "Che cos'è la capacità giuridica?",
+      "answer": "È l'idoneità a essere titolari di diritti e doveri, cioè di situazioni giuridiche soggettive. Spetta alle persone fisiche e anche agli enti.",
+      "rubric": [
+        { "id": "c1", "concept": "idoneità a essere titolari di situazioni giuridiche", "weight": 2 },
+        { "id": "c2", "concept": "spetta a persone fisiche ed enti", "weight": 1 }
+      ],
+      "references": ["1"]
+    },
+    {
+      "prompt": "Quando si acquista la capacità giuridica della persona fisica?",
+      "answer": "Al momento della nascita, per il solo fatto di nascere vivi, senza distinzioni.",
+      "rubric": [
+        { "id": "c1", "concept": "al momento della nascita", "weight": 2 },
+        { "id": "c2", "concept": "per tutti, senza distinzioni", "weight": 1 }
+      ],
+      "references": ["1"]
+    },
+    {
+      "prompt": "Quando si considera avvenuta la nascita ai fini della capacità giuridica?",
+      "answer": "Con la piena indipendenza dal corpo materno, segnata dall'inizio della respirazione polmonare; basta che il neonato viva anche solo un istante, non serve la vitalità.",
+      "rubric": [
+        { "id": "c1", "concept": "indipendenza dal corpo materno", "weight": 1 },
+        { "id": "c2", "concept": "inizio della respirazione", "weight": 1 },
+        { "id": "c3", "concept": "basta un istante di vita, non serve la vitalità", "weight": 2 }
+      ],
+      "references": ["1"]
+    },
+    {
+      "prompt": "Quale tutela costituzionale ha la capacità giuridica?",
+      "answer": "Nessuno può esserne privato per motivi politici, insieme alla cittadinanza e al nome; inoltre il principio di uguaglianza garantisce a tutti pari dignità sociale davanti alla legge.",
+      "rubric": [
+        { "id": "c1", "concept": "nessuno ne può essere privato per motivi politici", "weight": 2 },
+        { "id": "c2", "concept": "principio di uguaglianza", "weight": 1 }
+      ],
+      "references": ["1"]
+    },
+    {
+      "prompt": "Lo straniero ha capacità giuridica di diritto privato?",
+      "answer": "Sì; il codice prevede la condizione di reciprocità, ma i diritti fondamentali della persona sono riconosciuti a chiunque, cittadino o straniero, e la reciprocità oggi ha una portata molto limitata.",
+      "rubric": [
+        { "id": "c1", "concept": "sì, ha capacità giuridica", "weight": 1 },
+        { "id": "c2", "concept": "condizione di reciprocità", "weight": 1 },
+        { "id": "c3", "concept": "i diritti fondamentali spettano a chiunque", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Quando si perde la capacità giuridica e come si accerta la morte?",
+      "answer": "Con la morte, che si verifica con la cessazione irreversibile di tutte le funzioni dell'encefalo.",
+      "rubric": [
+        { "id": "c1", "concept": "con la morte", "weight": 1 },
+        { "id": "c2", "concept": "cessazione irreversibile delle funzioni dell'encefalo", "weight": 2 }
+      ],
+      "references": ["4"]
+    },
+    {
+      "prompt": "Che cos'è la commorienza?",
+      "answer": "Quando un effetto giuridico dipende dalla sopravvivenza di una persona a un'altra e non si sa quale sia morta prima, tutte si considerano morte nello stesso momento.",
+      "rubric": [
+        { "id": "c1", "concept": "incertezza su chi sia morto prima", "weight": 1 },
+        { "id": "c2", "concept": "effetto dipendente dalla sopravvivenza", "weight": 1 },
+        { "id": "c3", "concept": "si considerano morte nello stesso momento", "weight": 2 }
+      ],
+      "references": ["4"]
+    },
+    {
+      "prompt": "Che cosa sono le incapacità giuridiche speciali?",
+      "answer": "Sono limitazioni della capacità giuridica per certi atti o rapporti. Sono assolute quando l'atto è precluso del tutto, relative quando è precluso solo verso certe persone o in certe circostanze; l'atto compiuto in violazione è nullo e non può essere compiuto neppure tramite rappresentante.",
+      "rubric": [
+        { "id": "c1", "concept": "limiti alla capacità giuridica per certi atti", "weight": 1 },
+        { "id": "c2", "concept": "assolute o relative", "weight": 1 },
+        { "id": "c3", "concept": "l'atto è nullo, nemmeno tramite rappresentante", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Il concepito ha capacità giuridica?",
+      "answer": "Non ha una piena capacità giuridica, ma la legge gli riconosce alcuni diritti subordinati all'evento della nascita, come la capacità di ricevere per donazione e di succedere per legge o testamento.",
+      "rubric": [
+        { "id": "c1", "concept": "non ha piena capacità giuridica", "weight": 1 },
+        { "id": "c2", "concept": "diritti subordinati alla nascita", "weight": 2 },
+        { "id": "c3", "concept": "donazione e successione", "weight": 1 }
+      ],
+      "references": ["1", "462", "784"]
+    },
+    {
+      "prompt": "Quali tutele ha ricevuto il concepito dalla giurisprudenza?",
+      "answer": "La giurisprudenza ha riconosciuto il risarcimento dei danni subiti prima o durante la nascita e dei danni per l'uccisione del padre avvenuta prima della nascita, sempre a condizione che il concepito nasca vivo.",
+      "rubric": [
+        { "id": "c1", "concept": "risarcimento dei danni prenatali", "weight": 2 },
+        { "id": "c2", "concept": "danno per l'uccisione del padre", "weight": 1 },
+        { "id": "c3", "concept": "condizionato alla nascita", "weight": 1 }
+      ],
+      "references": ["1"]
+    },
+    {
+      "prompt": "Che differenza c'è tra capacità giuridica e capacità d'agire?",
+      "answer": "La capacità giuridica è l'idoneità a essere titolare di diritti e si acquista con la nascita. La capacità d'agire è l'idoneità a compiere personalmente atti giuridici che incidono sulla propria sfera, e si acquista di regola con la maggiore età.",
+      "rubric": [
+        { "id": "c1", "concept": "giuridica: titolarità di diritti, dalla nascita", "weight": 2 },
+        { "id": "c2", "concept": "d'agire: compiere atti in proprio, dalla maggiore età", "weight": 2 }
+      ],
+      "references": ["1", "2"]
+    },
+    {
+      "prompt": "Quando si acquista la capacità d'agire?",
+      "answer": "Con la maggiore età, al compimento del diciottesimo anno: si acquista la capacità di compiere tutti gli atti per i quali non sia stabilita un'età diversa.",
+      "rubric": [
+        { "id": "c1", "concept": "a diciotto anni", "weight": 2 },
+        { "id": "c2", "concept": "salvo atti per cui è prevista un'età diversa", "weight": 1 }
+      ],
+      "references": ["2"]
+    },
+    {
+      "prompt": "Quali atti può compiere il minore ultrasedicenne?",
+      "answer": "Può prestare il proprio lavoro ed esercitare i relativi diritti, può essere ammesso dal giudice a sposarsi, può riconoscere il figlio e compiere gli atti relativi alle proprie opere d'ingegno.",
+      "rubric": [
+        { "id": "c1", "concept": "lavoro e relativi diritti", "weight": 1 },
+        { "id": "c2", "concept": "matrimonio con autorizzazione giudiziale", "weight": 1 },
+        { "id": "c3", "concept": "riconoscimento del figlio", "weight": 1 },
+        { "id": "c4", "concept": "atti sulle opere d'ingegno", "weight": 1 }
+      ],
+      "references": ["2", "84", "250"]
+    },
+    {
+      "prompt": "Che sorte hanno gli atti compiuti dal minore?",
+      "answer": "Sono annullabili su istanza del rappresentante o del minore divenuto maggiorenne, entro cinque anni dal raggiungimento della maggiore età, salvo che il minore abbia occultato con raggiri la sua età; il minore restituisce solo nei limiti del suo vantaggio.",
+      "rubric": [
+        { "id": "c1", "concept": "annullabili", "weight": 2 },
+        { "id": "c2", "concept": "entro cinque anni dalla maggiore età", "weight": 1 },
+        { "id": "c3", "concept": "salvo raggiri sull'età", "weight": 1 },
+        { "id": "c4", "concept": "restituzione nei limiti del vantaggio", "weight": 1 }
+      ],
+      "references": ["1425", "1426", "1442", "1443"]
+    },
+    {
+      "prompt": "Chi amministra il patrimonio del minore e come?",
+      "answer": "I genitori, che lo rappresentano: gli atti di ordinaria amministrazione possono essere compiuti disgiuntamente da ciascun genitore, quelli di straordinaria amministrazione congiuntamente e con l'autorizzazione del giudice tutelare.",
+      "rubric": [
+        { "id": "c1", "concept": "rappresentanza e amministrazione dei genitori", "weight": 1 },
+        { "id": "c2", "concept": "ordinaria amministrazione disgiunta", "weight": 1 },
+        { "id": "c3", "concept": "straordinaria congiunta con autorizzazione del giudice tutelare", "weight": 2 }
+      ],
+      "references": ["320"]
+    },
+    {
+      "prompt": "Che differenza c'è tra atti di ordinaria e di straordinaria amministrazione?",
+      "answer": "Gli atti di ordinaria amministrazione conservano il patrimonio, hanno valore contenuto e rischio ridotto. Quelli di straordinaria amministrazione possono incidere in modo significativo sulla struttura o consistenza del patrimonio, come l'alienazione di beni o la costituzione di ipoteche.",
+      "rubric": [
+        { "id": "c1", "concept": "ordinaria: conservazione, valore e rischio contenuti", "weight": 2 },
+        { "id": "c2", "concept": "straordinaria: incide sulla struttura del patrimonio", "weight": 2 }
+      ],
+      "references": ["320"]
+    },
+    {
+      "prompt": "Che cosa succede agli atti di straordinaria amministrazione compiuti dai genitori senza autorizzazione?",
+      "answer": "Sono annullabili su istanza dei genitori stessi, del figlio o dei suoi eredi o aventi causa.",
+      "rubric": [
+        { "id": "c1", "concept": "annullabili", "weight": 2 },
+        { "id": "c2", "concept": "su istanza di genitori, figlio, eredi o aventi causa", "weight": 1 }
+      ],
+      "references": ["322"]
+    },
+    {
+      "prompt": "Quando si nomina un tutore al minore?",
+      "answer": "Quando entrambi i genitori sono morti o non possono esercitare la responsabilità genitoriale, o ne sono decaduti: il giudice tutelare nomina il tutore, preferibilmente la persona designata dai genitori o, in mancanza, un ascendente o un altro parente.",
+      "rubric": [
+        { "id": "c1", "concept": "genitori morti, impediti o decaduti", "weight": 2 },
+        { "id": "c2", "concept": "nomina del giudice tutelare", "weight": 1 },
+        { "id": "c3", "concept": "preferenza per il designato dai genitori o i parenti", "weight": 1 }
+      ],
+      "references": ["343", "348"]
+    },
+    {
+      "prompt": "Il minore può compiere da solo gli atti della vita quotidiana?",
+      "answer": "Sì, secondo l'orientamento prevalente, per analogia con la disciplina dell'amministrazione di sostegno, il minore può compiere gli atti necessari a soddisfare le esigenze della vita quotidiana adeguati alla sua età.",
+      "rubric": [
+        { "id": "c1", "concept": "sì, gli atti della vita quotidiana", "weight": 2 },
+        { "id": "c2", "concept": "adeguati all'età", "weight": 1 }
+      ],
+      "references": ["409"]
+    },
+    {
+      "prompt": "Che cos'è il diritto di ascolto del minore?",
+      "answer": "È il diritto del minore di essere ascoltato nelle procedure giudiziarie e amministrative che lo riguardano, con un peso crescente secondo l'età e la capacità di discernimento.",
+      "rubric": [
+        { "id": "c1", "concept": "essere ascoltato nelle procedure che lo riguardano", "weight": 2 },
+        { "id": "c2", "concept": "in base all'età e al discernimento", "weight": 1 }
+      ],
+      "references": ["315-bis"]
+    }
+  ]
+}

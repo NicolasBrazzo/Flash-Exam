@@ -1,0 +1,237 @@
+{
+  "topic": { "name": "Gli enti: associazioni, fondazioni e comitati" },
+  "questions": [
+    {
+      "prompt": "Che differenza c'è tra soggettività giuridica e personalità giuridica degli enti?",
+      "answer": "Tutti gli enti hanno soggettività giuridica, cioè sono titolari di diritti e obblighi. Hanno personalità giuridica solo quelli che godono di autonomia patrimoniale perfetta, per cui delle obbligazioni risponde solo l'ente con il suo patrimonio.",
+      "rubric": [
+        { "id": "c1", "concept": "soggettività: titolarità di situazioni giuridiche", "weight": 2 },
+        { "id": "c2", "concept": "personalità: autonomia patrimoniale perfetta", "weight": 2 }
+      ],
+      "references": ["12", "38"]
+    },
+    {
+      "prompt": "Che differenza c'è tra autonomia patrimoniale perfetta e imperfetta?",
+      "answer": "Con l'autonomia perfetta per le obbligazioni dell'ente risponde solo il suo patrimonio. Con quella imperfetta rispondono anche, personalmente e solidalmente, le persone che hanno agito per l'ente, come nell'associazione non riconosciuta.",
+      "rubric": [
+        { "id": "c1", "concept": "perfetta: risponde solo il patrimonio dell'ente", "weight": 2 },
+        { "id": "c2", "concept": "imperfetta: rispondono anche chi ha agito", "weight": 2 }
+      ],
+      "references": ["38"]
+    },
+    {
+      "prompt": "Come agiscono gli enti?",
+      "answer": "Attraverso persone fisiche inserite nella loro organizzazione, gli organi, che possono essere esterni, se hanno il potere di rappresentare l'ente verso i terzi, o interni.",
+      "rubric": [
+        { "id": "c1", "concept": "tramite gli organi", "weight": 2 },
+        { "id": "c2", "concept": "organi esterni con rappresentanza e organi interni", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra associazione e società?",
+      "answer": "Entrambe sono organizzazioni collettive con scopo comune, ma la società persegue uno scopo di lucro o mutualistico, mentre l'associazione persegue uno scopo non economico: è escluso il lucro soggettivo, cioè la distribuzione di utili agli associati.",
+      "rubric": [
+        { "id": "c1", "concept": "società: scopo di lucro o mutualistico", "weight": 2 },
+        { "id": "c2", "concept": "associazione: scopo non economico", "weight": 1 },
+        { "id": "c3", "concept": "esclusione del lucro soggettivo", "weight": 1 }
+      ],
+      "references": ["2247"]
+    },
+    {
+      "prompt": "Come si costituisce un'associazione riconosciuta?",
+      "answer": "Con un atto costitutivo in forma di atto pubblico, che con lo statuto deve indicare denominazione, scopo, patrimonio, sede, norme sull'ordinamento e l'amministrazione, diritti e obblighi degli associati e condizioni di ammissione.",
+      "rubric": [
+        { "id": "c1", "concept": "atto costitutivo per atto pubblico", "weight": 2 },
+        { "id": "c2", "concept": "denominazione, scopo, patrimonio, sede", "weight": 1 },
+        { "id": "c3", "concept": "ordinamento, diritti degli associati, ammissione", "weight": 1 }
+      ],
+      "references": ["14", "16"]
+    },
+    {
+      "prompt": "Come si ottiene il riconoscimento della personalità giuridica?",
+      "answer": "Con l'iscrizione nel registro delle persone giuridiche presso la prefettura, dopo la verifica delle condizioni di legge, della possibilità e liceità dello scopo e dell'adeguatezza del patrimonio. Prima dell'iscrizione l'ente opera come non riconosciuto.",
+      "rubric": [
+        { "id": "c1", "concept": "iscrizione nel registro delle persone giuridiche", "weight": 2 },
+        { "id": "c2", "concept": "controllo su condizioni, scopo e patrimonio", "weight": 1 },
+        { "id": "c3", "concept": "prima opera come ente non riconosciuto", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Quali sono gli organi necessari dell'associazione riconosciuta e quali competenze ha l'assemblea?",
+      "answer": "L'assemblea degli associati e gli amministratori. L'assemblea approva il bilancio, modifica atto costitutivo e statuto, delibera l'azione di responsabilità verso gli amministratori, l'esclusione degli associati e lo scioglimento.",
+      "rubric": [
+        { "id": "c1", "concept": "assemblea e amministratori", "weight": 2 },
+        { "id": "c2", "concept": "bilancio, modifiche statutarie, responsabilità", "weight": 1 },
+        { "id": "c3", "concept": "esclusione e scioglimento", "weight": 1 }
+      ],
+      "references": ["20", "21"]
+    },
+    {
+      "prompt": "Con quali maggioranze delibera l'assemblea dell'associazione?",
+      "answer": "Di regola a maggioranza dei voti con la presenza di almeno metà degli associati in prima convocazione, qualunque sia il numero in seconda. Per modificare atto costitutivo e statuto servono la presenza di tre quarti e il voto della maggioranza dei presenti; per lo scioglimento il voto favorevole di tre quarti degli associati.",
+      "rubric": [
+        { "id": "c1", "concept": "regola: maggioranza con metà dei presenti in prima", "weight": 1 },
+        { "id": "c2", "concept": "modifiche: presenza di tre quarti", "weight": 1 },
+        { "id": "c3", "concept": "scioglimento: voto di tre quarti degli associati", "weight": 2 }
+      ],
+      "references": ["21"]
+    },
+    {
+      "prompt": "Come rispondono gli amministratori dell'associazione?",
+      "answer": "Verso l'ente secondo le norme del mandato; è esente da responsabilità l'amministratore che non ha partecipato all'atto dannoso, salvo che, conoscendolo, non abbia fatto constare il proprio dissenso.",
+      "rubric": [
+        { "id": "c1", "concept": "responsabilità secondo le norme del mandato", "weight": 2 },
+        { "id": "c2", "concept": "esente chi non ha partecipato o ha dissentito", "weight": 2 }
+      ],
+      "references": ["18"]
+    },
+    {
+      "prompt": "Quando può l'associato recedere ed essere escluso?",
+      "answer": "Può sempre recedere, se non si è obbligato per un tempo determinato, con dichiarazione scritta efficace allo scadere dell'anno, se fatta almeno tre mesi prima. L'esclusione può essere deliberata solo per gravi motivi e l'escluso può ricorrere al giudice entro sei mesi.",
+      "rubric": [
+        { "id": "c1", "concept": "recesso sempre possibile salvo vincolo a tempo", "weight": 1 },
+        { "id": "c2", "concept": "efficace a fine anno con tre mesi di preavviso", "weight": 1 },
+        { "id": "c3", "concept": "esclusione solo per gravi motivi, ricorso entro sei mesi", "weight": 2 }
+      ],
+      "references": ["24"]
+    },
+    {
+      "prompt": "L'associato che esce dall'associazione ha diritto a una quota del patrimonio?",
+      "answer": "No, chi recede, è escluso o cessa di appartenere all'associazione non può ripetere i contributi versati né ha diritti sul patrimonio dell'associazione. La qualità di associato non è trasmissibile, salvo diversa previsione.",
+      "rubric": [
+        { "id": "c1", "concept": "nessuna restituzione dei contributi", "weight": 2 },
+        { "id": "c2", "concept": "nessun diritto sul patrimonio", "weight": 1 },
+        { "id": "c3", "concept": "qualità di associato non trasmissibile", "weight": 1 }
+      ],
+      "references": ["24"]
+    },
+    {
+      "prompt": "Quando si estingue la persona giuridica e che cosa succede ai beni?",
+      "answer": "Per le cause previste da atto costitutivo o statuto, quando lo scopo è raggiunto o è divenuto impossibile e, per le associazioni, quando vengono meno tutti gli associati. Si procede alla liquidazione e i beni residui sono devoluti secondo l'atto costitutivo o, in mancanza, dall'autorità governativa a enti con fini analoghi.",
+      "rubric": [
+        { "id": "c1", "concept": "cause statutarie, scopo raggiunto o impossibile", "weight": 1 },
+        { "id": "c2", "concept": "venir meno di tutti gli associati", "weight": 1 },
+        { "id": "c3", "concept": "liquidazione e devoluzione dei beni", "weight": 2 }
+      ],
+      "references": ["27", "30", "31"]
+    },
+    {
+      "prompt": "Che cos'è l'associazione non riconosciuta?",
+      "answer": "È l'associazione priva di personalità giuridica: nasce dal solo accordo degli associati, senza requisiti di forma; ordinamento e amministrazione sono regolati dagli accordi degli associati e sta in giudizio tramite chi ne ha la presidenza o direzione.",
+      "rubric": [
+        { "id": "c1", "concept": "senza personalità giuridica", "weight": 2 },
+        { "id": "c2", "concept": "nasce dall'accordo senza forma", "weight": 1 },
+        { "id": "c3", "concept": "regolata dagli accordi, in giudizio tramite presidente", "weight": 1 }
+      ],
+      "references": ["36"]
+    },
+    {
+      "prompt": "Che cos'è il fondo comune dell'associazione non riconosciuta?",
+      "answer": "È formato dai contributi degli associati e dai beni acquistati con essi; finché l'associazione dura, gli associati non possono chiederne la divisione né pretenderne la quota in caso di recesso.",
+      "rubric": [
+        { "id": "c1", "concept": "contributi e beni acquistati con essi", "weight": 2 },
+        { "id": "c2", "concept": "indivisibile durante l'associazione", "weight": 1 },
+        { "id": "c3", "concept": "nessuna quota in caso di recesso", "weight": 1 }
+      ],
+      "references": ["37"]
+    },
+    {
+      "prompt": "Chi risponde delle obbligazioni dell'associazione non riconosciuta?",
+      "answer": "I terzi possono far valere i loro diritti sul fondo comune; inoltre rispondono personalmente e solidalmente le persone che hanno agito in nome e per conto dell'associazione.",
+      "rubric": [
+        { "id": "c1", "concept": "il fondo comune", "weight": 2 },
+        { "id": "c2", "concept": "personalmente e solidalmente chi ha agito", "weight": 2 }
+      ],
+      "references": ["38"]
+    },
+    {
+      "prompt": "Che cos'è la fondazione?",
+      "answer": "È un'organizzazione stabile che utilizza un patrimonio destinato dal fondatore al perseguimento di uno scopo non economico; nasce da un atto unilaterale, l'atto di fondazione, e richiede un atto di dotazione patrimoniale.",
+      "rubric": [
+        { "id": "c1", "concept": "patrimonio destinato a uno scopo non economico", "weight": 2 },
+        { "id": "c2", "concept": "atto di fondazione unilaterale", "weight": 1 },
+        { "id": "c3", "concept": "atto di dotazione", "weight": 1 }
+      ],
+      "references": ["14", "16"]
+    },
+    {
+      "prompt": "In quale forma si costituisce la fondazione e fino a quando è revocabile l'atto?",
+      "answer": "Per atto pubblico o per testamento. L'atto di fondazione tra vivi può essere revocato dal fondatore finché non è intervenuto il riconoscimento o non ha fatto iniziare l'attività dell'opera; la facoltà di revoca non si trasmette agli eredi.",
+      "rubric": [
+        { "id": "c1", "concept": "atto pubblico o testamento", "weight": 2 },
+        { "id": "c2", "concept": "revocabile fino al riconoscimento o all'inizio dell'attività", "weight": 1 },
+        { "id": "c3", "concept": "revoca non trasmissibile agli eredi", "weight": 1 }
+      ],
+      "references": ["14", "15"]
+    },
+    {
+      "prompt": "Che differenza c'è tra associazione e fondazione?",
+      "answer": "L'associazione è un'organizzazione di persone che perseguono uno scopo comune e decidono attraverso l'assemblea. La fondazione è un'organizzazione di beni destinati dal fondatore a uno scopo, gestita da amministratori e soggetta al controllo dell'autorità governativa.",
+      "rubric": [
+        { "id": "c1", "concept": "associazione: elemento personale, assemblea", "weight": 2 },
+        { "id": "c2", "concept": "fondazione: elemento patrimoniale, scopo fissato dal fondatore", "weight": 2 },
+        { "id": "c3", "concept": "fondazione sotto controllo governativo", "weight": 1 }
+      ],
+      "references": ["14", "25"]
+    },
+    {
+      "prompt": "Può esistere una fondazione non riconosciuta?",
+      "answer": "No, secondo l'orientamento tradizionale senza riconoscimento la fondazione non può operare, perché i privati non possono creare patrimoni separati se non nei casi stabiliti dalla legge.",
+      "rubric": [
+        { "id": "c1", "concept": "no, serve il riconoscimento", "weight": 2 },
+        { "id": "c2", "concept": "divieto di patrimoni separati fuori dai casi di legge", "weight": 2 }
+      ],
+      "references": ["2740"]
+    },
+    {
+      "prompt": "Quali poteri ha l'autorità governativa sulle fondazioni?",
+      "answer": "Vigila sull'amministrazione, nomina e sostituisce gli amministratori se l'atto di fondazione non può attuarsi, annulla le deliberazioni illegittime, può sciogliere l'amministrazione e nominare un commissario straordinario; può coordinarne o unificarne l'attività.",
+      "rubric": [
+        { "id": "c1", "concept": "controllo e vigilanza", "weight": 1 },
+        { "id": "c2", "concept": "nomina degli amministratori e annullamento delle delibere", "weight": 2 },
+        { "id": "c3", "concept": "commissario straordinario", "weight": 1 }
+      ],
+      "references": ["25", "26"]
+    },
+    {
+      "prompt": "Che cos'è la trasformazione della fondazione?",
+      "answer": "Quando lo scopo è esaurito, impossibile o di scarsa utilità, o il patrimonio è insufficiente, l'autorità governativa, invece di estinguerla, può trasformarla allontanandosi il meno possibile dalla volontà del fondatore; non è ammessa se l'atto di fondazione prevede in quei casi l'estinzione.",
+      "rubric": [
+        { "id": "c1", "concept": "scopo esaurito o patrimonio insufficiente", "weight": 1 },
+        { "id": "c2", "concept": "trasformazione invece dell'estinzione", "weight": 2 },
+        { "id": "c3", "concept": "rispettando il più possibile la volontà del fondatore", "weight": 1 }
+      ],
+      "references": ["28"]
+    },
+    {
+      "prompt": "Che cos'è il comitato?",
+      "answer": "È un'organizzazione di persone, i promotori, che raccoglie fondi presso il pubblico mediante oblazioni per realizzare uno scopo altruistico o di pubblico interesse annunciato in un programma, come opere di beneficenza o monumenti.",
+      "rubric": [
+        { "id": "c1", "concept": "promotori che raccolgono fondi dal pubblico", "weight": 2 },
+        { "id": "c2", "concept": "scopo altruistico annunciato", "weight": 2 }
+      ],
+      "references": ["39"]
+    },
+    {
+      "prompt": "Chi risponde delle obbligazioni del comitato non riconosciuto e della gestione dei fondi?",
+      "answer": "Se il comitato non ha personalità giuridica, i componenti rispondono personalmente e solidalmente delle obbligazioni assunte; i sottoscrittori devono solo versare le oblazioni promesse. Organizzatori e gestori rispondono personalmente e solidalmente della conservazione dei fondi e della loro destinazione allo scopo.",
+      "rubric": [
+        { "id": "c1", "concept": "componenti responsabili personalmente e solidalmente", "weight": 2 },
+        { "id": "c2", "concept": "sottoscrittori tenuti solo alle oblazioni", "weight": 1 },
+        { "id": "c3", "concept": "gestori responsabili della destinazione dei fondi", "weight": 1 }
+      ],
+      "references": ["40", "41"]
+    },
+    {
+      "prompt": "Che cosa succede ai fondi del comitato se sono insufficienti o lo scopo non è più attuabile?",
+      "answer": "Se la devoluzione non è stata disciplinata alla costituzione, è l'autorità governativa a stabilire la devoluzione dei beni, anche in caso di residuo dopo il raggiungimento dello scopo.",
+      "rubric": [
+        { "id": "c1", "concept": "devoluzione stabilita dall'autorità governativa", "weight": 2 },
+        { "id": "c2", "concept": "se non prevista alla costituzione", "weight": 1 }
+      ],
+      "references": ["42"]
+    }
+  ]
+}

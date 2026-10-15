@@ -1,0 +1,203 @@
+{
+  "topic": { "name": "Risoluzione per inadempimento ed eccezioni dilatorie" },
+  "questions": [
+    {
+      "prompt": "Che differenza c'è tra i difetti genetici e i difetti funzionali del contratto?",
+      "answer": "I difetti genetici riguardano il contratto come atto e sono presenti fin dalla conclusione: nullità, annullabilità, rescissione. I difetti funzionali riguardano il rapporto contrattuale e sopravvengono durante l'esecuzione: danno luogo alla risoluzione.",
+      "rubric": [
+        { "id": "c1", "concept": "genetici: contratto come atto, vizi originari", "weight": 2 },
+        { "id": "c2", "concept": "funzionali: contratto come rapporto, vizi sopravvenuti", "weight": 2 },
+        { "id": "c3", "concept": "i funzionali portano alla risoluzione", "weight": 1 }
+      ],
+      "references": ["1453"]
+    },
+    {
+      "prompt": "A quali contratti si applica la risoluzione?",
+      "answer": "Ai contratti a prestazioni corrispettive, in cui ciascuna prestazione è il corrispettivo dell'altra.",
+      "rubric": [
+        { "id": "c1", "concept": "contratti a prestazioni corrispettive", "weight": 2 },
+        { "id": "c2", "concept": "nesso di reciprocità tra le prestazioni", "weight": 1 }
+      ],
+      "references": ["1453"]
+    },
+    {
+      "prompt": "Quali sono le cause di risoluzione del contratto?",
+      "answer": "L'inadempimento, l'impossibilità sopravvenuta della prestazione e l'eccessiva onerosità sopravvenuta.",
+      "rubric": [
+        { "id": "c1", "concept": "inadempimento", "weight": 1 },
+        { "id": "c2", "concept": "impossibilità sopravvenuta", "weight": 1 },
+        { "id": "c3", "concept": "eccessiva onerosità sopravvenuta", "weight": 1 }
+      ],
+      "references": ["1453", "1463", "1467"]
+    },
+    {
+      "prompt": "Che cosa può fare il contraente se l'altro non adempie in un contratto a prestazioni corrispettive?",
+      "answer": "Può scegliere tra chiedere l'adempimento o la risoluzione del contratto, salvo in ogni caso il risarcimento del danno.",
+      "rubric": [
+        { "id": "c1", "concept": "scelta tra adempimento e risoluzione", "weight": 2 },
+        { "id": "c2", "concept": "salvo il risarcimento del danno", "weight": 2 }
+      ],
+      "references": ["1453"]
+    },
+    {
+      "prompt": "Dopo aver chiesto l'adempimento si può chiedere la risoluzione, e viceversa?",
+      "answer": "Si può chiedere la risoluzione anche dopo aver agito per l'adempimento, ma non si può chiedere l'adempimento dopo aver domandato la risoluzione. Dalla domanda di risoluzione l'inadempiente non può più adempiere.",
+      "rubric": [
+        { "id": "c1", "concept": "dall'adempimento alla risoluzione sì", "weight": 2 },
+        { "id": "c2", "concept": "dalla risoluzione all'adempimento no", "weight": 2 },
+        { "id": "c3", "concept": "dopo la domanda di risoluzione l'inadempiente non può adempiere", "weight": 1 }
+      ],
+      "references": ["1453"]
+    },
+    {
+      "prompt": "Perché chi ha chiesto la risoluzione non può più chiedere l'adempimento?",
+      "answer": "Per tutelare il debitore: ricevuta la domanda di risoluzione, sa che il creditore non ha più interesse alla prestazione e deve poter disporre liberamente dell'oggetto della propria prestazione.",
+      "rubric": [
+        { "id": "c1", "concept": "tutela del debitore", "weight": 2 },
+        { "id": "c2", "concept": "può disporre dell'oggetto della prestazione", "weight": 2 }
+      ],
+      "references": ["1453"]
+    },
+    {
+      "prompt": "Quando l'inadempimento giustifica la risoluzione?",
+      "answer": "Il contratto non si può risolvere se l'inadempimento ha scarsa importanza, avuto riguardo all'interesse dell'altra parte: la gravità è valutata dal giudice.",
+      "rubric": [
+        { "id": "c1", "concept": "non per inadempimento di scarsa importanza", "weight": 2 },
+        { "id": "c2", "concept": "con riguardo all'interesse dell'altra parte", "weight": 1 },
+        { "id": "c3", "concept": "valutazione del giudice", "weight": 1 }
+      ],
+      "references": ["1455"]
+    },
+    {
+      "prompt": "Quali sono i modi per ottenere la risoluzione per inadempimento?",
+      "answer": "La risoluzione giudiziale, con sentenza costitutiva, e tre forme di risoluzione di diritto: la diffida ad adempiere, la clausola risolutiva espressa e il termine essenziale.",
+      "rubric": [
+        { "id": "c1", "concept": "risoluzione giudiziale", "weight": 1 },
+        { "id": "c2", "concept": "diffida ad adempiere", "weight": 1 },
+        { "id": "c3", "concept": "clausola risolutiva espressa", "weight": 1 },
+        { "id": "c4", "concept": "termine essenziale", "weight": 1 }
+      ],
+      "references": ["1453", "1454", "1456", "1457"]
+    },
+    {
+      "prompt": "Che cos'è la diffida ad adempiere?",
+      "answer": "È l'intimazione scritta con cui una parte chiede all'inadempiente di adempiere entro un congruo termine, non inferiore a quindici giorni salvo patto o usi diversi, dichiarando che in mancanza il contratto si intenderà risolto. Scaduto il termine, il contratto è risolto di diritto.",
+      "rubric": [
+        { "id": "c1", "concept": "intimazione scritta ad adempiere", "weight": 1 },
+        { "id": "c2", "concept": "termine congruo, di regola almeno 15 giorni", "weight": 1 },
+        { "id": "c3", "concept": "avvertimento che il contratto si risolverà", "weight": 1 },
+        { "id": "c4", "concept": "scaduto il termine, risoluzione di diritto", "weight": 2 }
+      ],
+      "references": ["1454"]
+    },
+    {
+      "prompt": "Che cos'è la clausola risolutiva espressa?",
+      "answer": "È il patto con cui le parti stabiliscono che il contratto si risolva se una determinata obbligazione non è adempiuta secondo le modalità previste. La risoluzione opera di diritto quando la parte interessata dichiara all'altra che intende valersene.",
+      "rubric": [
+        { "id": "c1", "concept": "riferita a obbligazioni determinate", "weight": 2 },
+        { "id": "c2", "concept": "risoluzione di diritto", "weight": 1 },
+        { "id": "c3", "concept": "serve la dichiarazione di volersene avvalere", "weight": 2 }
+      ],
+      "references": ["1456"]
+    },
+    {
+      "prompt": "Perché la clausola risolutiva espressa deve riferirsi a obbligazioni determinate?",
+      "answer": "Perché con essa le parti valutano in anticipo la gravità di specifici inadempimenti: una clausola generica, riferita a qualsiasi inadempimento, non vale come clausola risolutiva espressa.",
+      "rubric": [
+        { "id": "c1", "concept": "valutazione preventiva della gravità", "weight": 2 },
+        { "id": "c2", "concept": "una clausola generica non è valida come tale", "weight": 2 }
+      ],
+      "references": ["1456"]
+    },
+    {
+      "prompt": "Che cos'è il termine essenziale e che effetto ha la sua scadenza?",
+      "answer": "È il termine oltre il quale il creditore perde ogni interesse alla prestazione. Se scade senza adempimento, il contratto è risolto di diritto, salvo che il creditore, entro tre giorni, comunichi di volere comunque la prestazione.",
+      "rubric": [
+        { "id": "c1", "concept": "dopo la scadenza la prestazione non interessa più", "weight": 1 },
+        { "id": "c2", "concept": "risoluzione di diritto alla scadenza", "weight": 2 },
+        { "id": "c3", "concept": "salvo avviso entro tre giorni di volere la prestazione", "weight": 2 }
+      ],
+      "references": ["1457"]
+    },
+    {
+      "prompt": "Che differenza c'è tra clausola risolutiva espressa e termine essenziale nel modo in cui operano?",
+      "answer": "Con la clausola risolutiva espressa il contratto si risolve solo se la parte dichiara di avvalersene. Con il termine essenziale il contratto si risolve automaticamente e la parte deve attivarsi, entro tre giorni, solo se vuole evitarlo.",
+      "rubric": [
+        { "id": "c1", "concept": "clausola: serve una dichiarazione per risolvere", "weight": 2 },
+        { "id": "c2", "concept": "termine essenziale: risoluzione automatica", "weight": 2 },
+        { "id": "c3", "concept": "avviso entro tre giorni per evitarla", "weight": 1 }
+      ],
+      "references": ["1456", "1457"]
+    },
+    {
+      "prompt": "Quali effetti ha la risoluzione per inadempimento tra le parti?",
+      "answer": "Ha effetto retroattivo: le prestazioni eseguite vanno restituite. Nei contratti a esecuzione continuata o periodica non si estende alle prestazioni già eseguite.",
+      "rubric": [
+        { "id": "c1", "concept": "effetto retroattivo", "weight": 2 },
+        { "id": "c2", "concept": "restituzione delle prestazioni", "weight": 1 },
+        { "id": "c3", "concept": "contratti di durata: salve le prestazioni eseguite", "weight": 2 }
+      ],
+      "references": ["1458"]
+    },
+    {
+      "prompt": "La risoluzione del contratto pregiudica i diritti acquistati dai terzi?",
+      "answer": "No, anche se è stata espressamente pattuita, la risoluzione non pregiudica i diritti acquistati dai terzi, a prescindere da buona fede e titolo, salvi gli effetti della trascrizione della domanda di risoluzione.",
+      "rubric": [
+        { "id": "c1", "concept": "non pregiudica i terzi", "weight": 2 },
+        { "id": "c2", "concept": "anche se pattuita", "weight": 1 },
+        { "id": "c3", "concept": "salvi gli effetti della trascrizione della domanda", "weight": 2 }
+      ],
+      "references": ["1458"]
+    },
+    {
+      "prompt": "Come si confrontano nullità, annullamento, rescissione e risoluzione quanto agli effetti verso i terzi?",
+      "answer": "La nullità è opponibile ai terzi. L'annullamento non pregiudica i terzi acquirenti a titolo oneroso in buona fede, salvo incapacità legale. Rescissione e risoluzione non pregiudicano mai i terzi. In tutti i casi sono salvi gli effetti della trascrizione della domanda.",
+      "rubric": [
+        { "id": "c1", "concept": "nullità: opponibile ai terzi", "weight": 1 },
+        { "id": "c2", "concept": "annullamento: salvi i terzi onerosi in buona fede", "weight": 1 },
+        { "id": "c3", "concept": "rescissione e risoluzione: salvi i terzi", "weight": 1 },
+        { "id": "c4", "concept": "priorità della trascrizione della domanda", "weight": 1 }
+      ],
+      "references": ["1445", "1452", "1458", "2652"]
+    },
+    {
+      "prompt": "Che effetto ha l'inadempimento di una parte in un contratto plurilaterale?",
+      "answer": "Non comporta la risoluzione del contratto rispetto alle altre parti, salvo che la prestazione mancata debba considerarsi essenziale secondo le circostanze.",
+      "rubric": [
+        { "id": "c1", "concept": "il contratto resta per le altre parti", "weight": 2 },
+        { "id": "c2", "concept": "salvo prestazione essenziale", "weight": 2 }
+      ],
+      "references": ["1459"]
+    },
+    {
+      "prompt": "Che cos'è l'eccezione di inadempimento?",
+      "answer": "Nei contratti a prestazioni corrispettive ciascuna parte può rifiutare di adempiere se l'altra non adempie o non offre di adempiere contemporaneamente, salvo termini diversi. Il rifiuto non è ammesso se contrario a buona fede.",
+      "rubric": [
+        { "id": "c1", "concept": "rifiuto di adempiere", "weight": 1 },
+        { "id": "c2", "concept": "se l'altra parte non adempie né offre di adempiere", "weight": 2 },
+        { "id": "c3", "concept": "non se contrario a buona fede", "weight": 2 }
+      ],
+      "references": ["1460"]
+    },
+    {
+      "prompt": "Quando una parte può sospendere l'esecuzione per le condizioni patrimoniali dell'altra?",
+      "answer": "Quando le condizioni patrimoniali dell'altro contraente sono divenute tali da porre in evidente pericolo il conseguimento della controprestazione, salvo che sia prestata idonea garanzia.",
+      "rubric": [
+        { "id": "c1", "concept": "mutamento delle condizioni patrimoniali", "weight": 1 },
+        { "id": "c2", "concept": "evidente pericolo per la controprestazione", "weight": 2 },
+        { "id": "c3", "concept": "salvo idonea garanzia", "weight": 1 }
+      ],
+      "references": ["1461"]
+    },
+    {
+      "prompt": "Che cos'è la clausola solve et repete e quali eccezioni non può escludere?",
+      "answer": "È la clausola che impedisce a una parte di opporre eccezioni per evitare o ritardare la prestazione: prima paga e poi agisce. Non ha effetto per le eccezioni di nullità, annullabilità e rescissione; il giudice, per gravi motivi, può comunque sospendere la condanna.",
+      "rubric": [
+        { "id": "c1", "concept": "esclude le eccezioni per ritardare la prestazione", "weight": 2 },
+        { "id": "c2", "concept": "non per nullità, annullabilità e rescissione", "weight": 2 },
+        { "id": "c3", "concept": "il giudice può sospendere la condanna per gravi motivi", "weight": 1 }
+      ],
+      "references": ["1462"]
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "topic": { "name": "La causa del contratto" },
+  "questions": [
+    {
+      "prompt": "Che cos'è la causa del contratto?",
+      "answer": "È la ragione giustificativa degli spostamenti patrimoniali realizzati con il contratto: ogni spostamento di ricchezza deve essere giustificato, per esempio lo scambio tra cosa e prezzo nella vendita.",
+      "rubric": [
+        { "id": "c1", "concept": "ragione giustificativa", "weight": 2 },
+        { "id": "c2", "concept": "degli spostamenti patrimoniali", "weight": 2 },
+        { "id": "c3", "concept": "esempio: scambio cosa-prezzo nella vendita", "weight": 1 }
+      ],
+      "references": ["1325"]
+    },
+    {
+      "prompt": "Che cosa succede al contratto privo di causa?",
+      "answer": "È nullo, perché la causa è un requisito essenziale: altrimenti si avrebbero spostamenti di ricchezza non giustificati.",
+      "rubric": [
+        { "id": "c1", "concept": "il contratto è nullo", "weight": 2 },
+        { "id": "c2", "concept": "la causa è requisito essenziale", "weight": 1 },
+        { "id": "c3", "concept": "spostamento di ricchezza non giustificato", "weight": 1 }
+      ],
+      "references": ["1325", "1418"]
+    },
+    {
+      "prompt": "Che differenza c'è tra causa in senso tipico (astratto) e causa in concreto?",
+      "answer": "La causa tipica è la funzione economico-sociale del contratto, uguale in tutti i contratti dello stesso tipo. La causa concreta è l'insieme degli interessi specifici che giustificano quel singolo contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "tipica: funzione economico-sociale", "weight": 2 },
+        { "id": "c2", "concept": "tipica: comune a tutti i contratti del tipo", "weight": 1 },
+        { "id": "c3", "concept": "concreta: interessi specifici del singolo contratto", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra contratti onerosi e contratti gratuiti?",
+      "answer": "Nei contratti onerosi entrambe le parti sostengono un sacrificio per ottenere un vantaggio; nei gratuiti il sacrificio è di una sola parte e l'altra riceve il vantaggio senza sacrificio.",
+      "rubric": [
+        { "id": "c1", "concept": "onerosi: sacrificio e vantaggio per entrambe le parti", "weight": 2 },
+        { "id": "c2", "concept": "gratuiti: sacrificio di una sola parte", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Qual è la causa dei contratti gratuiti?",
+      "answer": "È la ragione per cui una parte accetta il sacrificio senza corrispettivo: lo spirito di liberalità, nella donazione, oppure l'aspettativa di vantaggi indiretti o eventuali.",
+      "rubric": [
+        { "id": "c1", "concept": "spirito di liberalità", "weight": 2 },
+        { "id": "c2", "concept": "oppure vantaggi indiretti o eventuali", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra contratti di scambio e contratti associativi?",
+      "answer": "Nei contratti di scambio le prestazioni sono corrispettive e le parti perseguono interessi diversi; nei contratti associativi le parti perseguono uno scopo comune attraverso un'organizzazione, come nella società.",
+      "rubric": [
+        { "id": "c1", "concept": "scambio: prestazioni corrispettive", "weight": 2 },
+        { "id": "c2", "concept": "scambio: interessi diversi delle parti", "weight": 1 },
+        { "id": "c3", "concept": "associativi: scopo comune tramite un'organizzazione", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che cosa sono i contratti a prestazioni corrispettive?",
+      "answer": "Sono i contratti onerosi in cui la prestazione di ciascuna parte è il corrispettivo della prestazione dell'altra: i sacrifici e i vantaggi sono interdipendenti.",
+      "rubric": [
+        { "id": "c1", "concept": "ciascuna prestazione è corrispettivo dell'altra", "weight": 2 },
+        { "id": "c2", "concept": "interdipendenza delle prestazioni", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra contratti commutativi e contratti aleatori?",
+      "answer": "Nei contratti commutativi le prestazioni sono certe fin dall'inizio; nei contratti aleatori l'esistenza o l'entità di una prestazione dipende da un evento incerto (alea).",
+      "rubric": [
+        { "id": "c1", "concept": "commutativi: prestazioni certe", "weight": 2 },
+        { "id": "c2", "concept": "aleatori: prestazione dipendente da un evento incerto", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra contratti aleatori per natura e aleatori per volontà delle parti?",
+      "answer": "Nei contratti aleatori per natura l'alea è propria del tipo contrattuale, come nell'assicurazione. In quelli aleatori per volontà delle parti l'alea è introdotta dalle parti in un contratto normalmente commutativo, come nella vendita di speranza.",
+      "rubric": [
+        { "id": "c1", "concept": "per natura: alea propria del tipo", "weight": 2 },
+        { "id": "c2", "concept": "per volontà: alea introdotta dalle parti", "weight": 2 },
+        { "id": "c3", "concept": "esempi: assicurazione e vendita di speranza", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che cos'è il negozio astratto?",
+      "answer": "È il negozio che non indica la propria causa, cioè la ragione che giustifica lo spostamento patrimoniale.",
+      "rubric": [
+        { "id": "c1", "concept": "negozio che non indica la causa", "weight": 2 },
+        { "id": "c2", "concept": "manca l'indicazione della ragione giustificativa", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Il negozio astratto è ammesso nel diritto italiano?",
+      "answer": "Non è ammesso il negozio astratto che trasferisce diritti, a tutela di chi dispone. È tollerato quando assume obblighi: per esempio, nella promessa di pagamento la causa si presume e il promittente deve provarne la mancanza.",
+      "rubric": [
+        { "id": "c1", "concept": "inammissibile per il trasferimento di diritti", "weight": 2 },
+        { "id": "c2", "concept": "ammesso per l'assunzione di obblighi", "weight": 1 },
+        { "id": "c3", "concept": "la causa si presume e il debitore prova la sua mancanza", "weight": 2 }
+      ],
+      "references": ["1988"]
+    },
+    {
+      "prompt": "Quando la causa del contratto è illecita?",
+      "answer": "Quando è contraria a norme imperative, all'ordine pubblico o al buon costume. Il contratto con causa illecita è nullo.",
+      "rubric": [
+        { "id": "c1", "concept": "contraria a norme imperative", "weight": 1 },
+        { "id": "c2", "concept": "contraria all'ordine pubblico", "weight": 1 },
+        { "id": "c3", "concept": "contraria al buon costume", "weight": 1 },
+        { "id": "c4", "concept": "il contratto è nullo", "weight": 1 }
+      ],
+      "references": ["1343", "1418"]
+    },
+    {
+      "prompt": "Che cosa sono le norme imperative?",
+      "answer": "Sono norme inderogabili che limitano l'autonomia delle parti, vietando certi contratti o contenuti oppure imponendone altri, per proteggere valori fondamentali o interessi generali.",
+      "rubric": [
+        { "id": "c1", "concept": "norme inderogabili dalle parti", "weight": 2 },
+        { "id": "c2", "concept": "vietano o impongono contratti o contenuti", "weight": 1 },
+        { "id": "c3", "concept": "tutelano interessi generali", "weight": 1 }
+      ],
+      "references": ["1343"]
+    },
+    {
+      "prompt": "Che cos'è l'ordine pubblico come limite all'autonomia contrattuale?",
+      "answer": "È l'insieme dei principi e valori fondamentali dell'organizzazione politica ed economica in un dato momento storico, non necessariamente espressi in una norma imperativa ma comunque ricavabili dall'ordinamento, per esempio dalla Costituzione.",
+      "rubric": [
+        { "id": "c1", "concept": "principi e valori fondamentali dell'ordinamento", "weight": 2 },
+        { "id": "c2", "concept": "non espressi da una specifica norma imperativa", "weight": 1 },
+        { "id": "c3", "concept": "ricavabili dall'ordinamento, per esempio dalla Costituzione", "weight": 1 }
+      ],
+      "references": ["1343"]
+    },
+    {
+      "prompt": "Che cos'è il buon costume?",
+      "answer": "È l'insieme delle regole di comportamento non scritte ma ritenute vincolanti dalla coscienza sociale diffusa, relative soprattutto alla morale sessuale e all'etica professionale.",
+      "rubric": [
+        { "id": "c1", "concept": "regole non scritte", "weight": 1 },
+        { "id": "c2", "concept": "vincolanti secondo la coscienza sociale", "weight": 2 },
+        { "id": "c3", "concept": "morale sessuale ed etica professionale", "weight": 1 }
+      ],
+      "references": ["1343"]
+    },
+    {
+      "prompt": "Che differenza c'è tra causa e motivi del contratto?",
+      "answer": "La causa è un elemento oggettivo comune a entrambe le parti; i motivi sono gli interessi personali che spingono ciascun contraente a contrarre e di regola sono irrilevanti per la validità del contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "causa: elemento oggettivo comune alle parti", "weight": 2 },
+        { "id": "c2", "concept": "motivi: interessi personali del singolo", "weight": 2 },
+        { "id": "c3", "concept": "i motivi di regola sono irrilevanti", "weight": 1 }
+      ],
+      "references": ["1345"]
+    },
+    {
+      "prompt": "Quando il motivo illecito rende nullo il contratto?",
+      "answer": "Quando le parti si sono determinate a concludere il contratto esclusivamente per un motivo illecito comune a entrambe: non basta che una parte conosca il motivo dell'altra, deve essere condiviso.",
+      "rubric": [
+        { "id": "c1", "concept": "motivo illecito comune a entrambe le parti", "weight": 2 },
+        { "id": "c2", "concept": "motivo esclusivo e determinante", "weight": 1 },
+        { "id": "c3", "concept": "non basta la semplice conoscenza", "weight": 1 }
+      ],
+      "references": ["1345", "1418"]
+    },
+    {
+      "prompt": "Che cos'è il contratto in frode alla legge?",
+      "answer": "È il contratto, di per sé non vietato, usato come mezzo per eludere l'applicazione di una norma imperativa, ottenendo lo stesso risultato vietato. Ha causa illecita ed è nullo.",
+      "rubric": [
+        { "id": "c1", "concept": "mezzo per eludere una norma imperativa", "weight": 2 },
+        { "id": "c2", "concept": "raggiunge il risultato vietato con uno strumento lecito", "weight": 1 },
+        { "id": "c3", "concept": "causa illecita e nullità", "weight": 2 }
+      ],
+      "references": ["1344"]
+    },
+    {
+      "prompt": "Che differenza c'è tra contratto in frode alla legge e atto in frode ai creditori?",
+      "answer": "Il contratto in frode alla legge elude una norma imperativa ed è nullo. L'atto in frode ai creditori danneggia i creditori diminuendo la garanzia patrimoniale: è valido, ma può essere reso inefficace verso il creditore con l'azione revocatoria.",
+      "rubric": [
+        { "id": "c1", "concept": "frode alla legge: elude una norma imperativa, nullità", "weight": 2 },
+        { "id": "c2", "concept": "frode ai creditori: pregiudica la garanzia dei creditori", "weight": 1 },
+        { "id": "c3", "concept": "rimedio: azione revocatoria e inefficacia", "weight": 2 }
+      ],
+      "references": ["1344", "2901"]
+    },
+    {
+      "prompt": "Che cos'è la vendita di speranza?",
+      "answer": "È una vendita resa aleatoria dalla volontà delle parti: il compratore paga un prezzo determinato per una cosa futura, come il raccolto, anche se la cosa non verrà a esistenza o sarà scarsa.",
+      "rubric": [
+        { "id": "c1", "concept": "vendita di cosa futura", "weight": 1 },
+        { "id": "c2", "concept": "il prezzo è dovuto comunque", "weight": 2 },
+        { "id": "c3", "concept": "aleatoria per volontà delle parti", "weight": 1 }
+      ],
+      "references": ["1472"]
+    }
+  ]
+}

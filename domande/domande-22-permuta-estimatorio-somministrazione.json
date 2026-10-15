@@ -1,0 +1,164 @@
+{
+  "topic": { "name": "Permuta, riporto, contratto estimatorio e somministrazione" },
+  "questions": [
+    {
+      "prompt": "Che cos'è la permuta?",
+      "answer": "È il contratto che ha per oggetto il reciproco trasferimento della proprietà di cose o di altri diritti da un contraente all'altro, senza un prezzo in denaro.",
+      "rubric": [
+        { "id": "c1", "concept": "reciproco trasferimento di cose o diritti", "weight": 2 },
+        { "id": "c2", "concept": "senza prezzo in denaro", "weight": 2 }
+      ],
+      "references": ["1552"]
+    },
+    {
+      "prompt": "Che cosa può chiedere il permutante che subisce l'evizione?",
+      "answer": "Può scegliere tra chiedere il valore della cosa evitta, secondo le norme sulla vendita, o la restituzione della cosa data, oltre al risarcimento del danno.",
+      "rubric": [
+        { "id": "c1", "concept": "valore della cosa evitta", "weight": 1 },
+        { "id": "c2", "concept": "oppure restituzione della cosa data", "weight": 2 },
+        { "id": "c3", "concept": "più risarcimento", "weight": 1 }
+      ],
+      "references": ["1553"]
+    },
+    {
+      "prompt": "Chi sostiene le spese della permuta e quali norme le si applicano?",
+      "answer": "Salvo patto contrario le spese sono a carico di entrambi i contraenti in parti uguali; per il resto si applicano le norme sulla vendita in quanto compatibili.",
+      "rubric": [
+        { "id": "c1", "concept": "spese a carico di entrambi in parti uguali", "weight": 2 },
+        { "id": "c2", "concept": "si applicano le norme sulla vendita se compatibili", "weight": 2 }
+      ],
+      "references": ["1554", "1555"]
+    },
+    {
+      "prompt": "Che cos'è il riporto?",
+      "answer": "È il contratto con cui il riportato trasferisce al riportatore la proprietà di titoli di credito di una data specie per un determinato prezzo, e il riportatore si obbliga a ritrasferirgli alla scadenza altrettanti titoli della stessa specie, verso il rimborso del prezzo, aumentato o diminuito nella misura convenuta.",
+      "rubric": [
+        { "id": "c1", "concept": "trasferimento di titoli verso un prezzo", "weight": 2 },
+        { "id": "c2", "concept": "obbligo di ritrasferire titoli della stessa specie alla scadenza", "weight": 2 },
+        { "id": "c3", "concept": "verso rimborso del prezzo maggiorato o diminuito", "weight": 1 }
+      ],
+      "references": ["1548"]
+    },
+    {
+      "prompt": "Il riporto è un contratto consensuale o reale?",
+      "answer": "È un contratto reale: si perfeziona con la consegna dei titoli. Produce un effetto reale immediato e un effetto obbligatorio successivo, cioè il ritrasferimento alla scadenza.",
+      "rubric": [
+        { "id": "c1", "concept": "contratto reale, si perfeziona con la consegna", "weight": 2 },
+        { "id": "c2", "concept": "effetto reale immediato e obbligatorio successivo", "weight": 2 }
+      ],
+      "references": ["1549"]
+    },
+    {
+      "prompt": "A quali scopi può servire il riporto?",
+      "answer": "A procurare al riportato un finanziamento garantito dai titoli, a consentire al riportatore di esercitare temporaneamente i diritti, come il voto, legati ai titoli, o a speculare sulle variazioni delle quotazioni.",
+      "rubric": [
+        { "id": "c1", "concept": "finanziamento garantito dai titoli", "weight": 2 },
+        { "id": "c2", "concept": "esercizio dei diritti sui titoli", "weight": 1 },
+        { "id": "c3", "concept": "speculazione sulle quotazioni", "weight": 1 }
+      ],
+      "references": ["1548", "1550"]
+    },
+    {
+      "prompt": "Che cos'è il contratto estimatorio?",
+      "answer": "È il contratto con cui una parte (tradens) consegna una o più cose mobili all'altra (accipiens), che si obbliga a pagarne il prezzo, salvo che le restituisca nel termine stabilito.",
+      "rubric": [
+        { "id": "c1", "concept": "consegna di cose mobili", "weight": 1 },
+        { "id": "c2", "concept": "obbligo di pagare il prezzo", "weight": 2 },
+        { "id": "c3", "concept": "salvo restituzione nel termine", "weight": 2 }
+      ],
+      "references": ["1556"]
+    },
+    {
+      "prompt": "A che cosa serve il contratto estimatorio?",
+      "answer": "Consente al rivenditore di avere merce da offrire ai clienti senza assumere il rischio dell'invenduto: se non la vende, la restituisce invece di pagarla.",
+      "rubric": [
+        { "id": "c1", "concept": "il rivenditore dispone della merce", "weight": 1 },
+        { "id": "c2", "concept": "non sopporta il rischio dell'invenduto", "weight": 2 }
+      ],
+      "references": ["1556"]
+    },
+    {
+      "prompt": "Chi sopporta il rischio del perimento delle cose nel contratto estimatorio?",
+      "answer": "L'accipiens non è liberato dall'obbligo di pagare il prezzo se la restituzione delle cose nella loro integrità è divenuta impossibile per causa a lui non imputabile: il rischio è quindi suo.",
+      "rubric": [
+        { "id": "c1", "concept": "il rischio è dell'accipiens", "weight": 2 },
+        { "id": "c2", "concept": "deve pagare il prezzo anche se la restituzione è impossibile senza colpa", "weight": 2 }
+      ],
+      "references": ["1557"]
+    },
+    {
+      "prompt": "L'accipiens può disporre delle cose ricevute e i suoi creditori possono pignorarle?",
+      "answer": "Sono validi gli atti di disposizione compiuti dall'accipiens; ma i suoi creditori non possono sottoporre le cose a pignoramento o sequestro finché il prezzo non è pagato, perché non sono ancora sue.",
+      "rubric": [
+        { "id": "c1", "concept": "validi gli atti di disposizione dell'accipiens", "weight": 2 },
+        { "id": "c2", "concept": "i suoi creditori non possono pignorarle prima del pagamento", "weight": 2 }
+      ],
+      "references": ["1558"]
+    },
+    {
+      "prompt": "Perché nel contratto estimatorio non c'è un'obbligazione alternativa?",
+      "answer": "Perché l'accipiens deve una sola prestazione, il prezzo, e ha solo la facoltà di liberarsi restituendo le cose: è un'obbligazione con facoltà alternativa (facultas solutionis).",
+      "rubric": [
+        { "id": "c1", "concept": "oggetto dell'obbligazione è solo il prezzo", "weight": 2 },
+        { "id": "c2", "concept": "la restituzione è una facoltà di liberarsi", "weight": 2 }
+      ],
+      "references": ["1556"]
+    },
+    {
+      "prompt": "Che cos'è la somministrazione?",
+      "answer": "È il contratto con cui una parte si obbliga, verso corrispettivo di un prezzo, a eseguire a favore dell'altra prestazioni periodiche o continuative di cose.",
+      "rubric": [
+        { "id": "c1", "concept": "prestazioni periodiche o continuative di cose", "weight": 2 },
+        { "id": "c2", "concept": "verso un prezzo", "weight": 1 }
+      ],
+      "references": ["1559"]
+    },
+    {
+      "prompt": "Che differenza c'è tra somministrazione, vendita a consegne ripartite e appalto?",
+      "answer": "Nella vendita a consegne ripartite la prestazione è unica e solo la consegna è frazionata; nella somministrazione ci sono più prestazioni distinte, periodiche o continuative. L'appalto ha per oggetto un fare, la somministrazione un dare.",
+      "rubric": [
+        { "id": "c1", "concept": "vendita ripartita: prestazione unica frazionata", "weight": 2 },
+        { "id": "c2", "concept": "somministrazione: pluralità di prestazioni", "weight": 2 },
+        { "id": "c3", "concept": "appalto: fare; somministrazione: dare", "weight": 1 }
+      ],
+      "references": ["1559", "1655"]
+    },
+    {
+      "prompt": "Quando l'inadempimento di una singola prestazione consente di risolvere la somministrazione?",
+      "answer": "Quando ha notevole importanza ed è tale da menomare la fiducia nell'esattezza dei successivi adempimenti.",
+      "rubric": [
+        { "id": "c1", "concept": "inadempimento di notevole importanza", "weight": 1 },
+        { "id": "c2", "concept": "menoma la fiducia nei successivi adempimenti", "weight": 2 }
+      ],
+      "references": ["1564"]
+    },
+    {
+      "prompt": "Che cosa può fare il somministrante se l'altra parte è inadempiente in modo lieve?",
+      "answer": "Se l'inadempimento è di lieve entità, il somministrante non può sospendere l'esecuzione senza preavviso: può sospenderla dando un congruo preavviso.",
+      "rubric": [
+        { "id": "c1", "concept": "può sospendere l'esecuzione", "weight": 2 },
+        { "id": "c2", "concept": "con congruo preavviso", "weight": 2 }
+      ],
+      "references": ["1565"]
+    },
+    {
+      "prompt": "Come si scioglie la somministrazione a tempo indeterminato?",
+      "answer": "Ciascuna parte può recedere dando preavviso nel termine pattuito o in quello stabilito dagli usi o, in mancanza, in un termine congruo.",
+      "rubric": [
+        { "id": "c1", "concept": "recesso di ciascuna parte", "weight": 2 },
+        { "id": "c2", "concept": "con preavviso", "weight": 2 }
+      ],
+      "references": ["1569"]
+    },
+    {
+      "prompt": "Che cosa sono il patto di preferenza e il patto di esclusiva nella somministrazione?",
+      "answer": "Con il patto di preferenza il somministrato si obbliga a preferire il somministrante, a parità di condizioni, in un successivo contratto per lo stesso oggetto; non può durare più di cinque anni. Con il patto di esclusiva una parte non può ricevere da terzi o produrre in proprio prestazioni dello stesso tipo, o il somministrante non può fornirle ad altri nella zona.",
+      "rubric": [
+        { "id": "c1", "concept": "preferenza: priorità a parità di condizioni", "weight": 1 },
+        { "id": "c2", "concept": "preferenza: massimo cinque anni", "weight": 1 },
+        { "id": "c3", "concept": "esclusiva: divieto di rivolgersi a terzi o fornire ad altri", "weight": 2 }
+      ],
+      "references": ["1566", "1567", "1568"]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "topic": { "name": "L'obbligazione: nozione, caratteri e fonti" },
+  "questions": [
+    {
+      "prompt": "Che cos'è l'obbligazione?",
+      "answer": "È il rapporto giuridico in forza del quale un soggetto, il debitore, è tenuto a eseguire una prestazione patrimoniale a favore di un altro, il creditore, per soddisfarne l'interesse.",
+      "rubric": [
+        { "id": "c1", "concept": "rapporto tra debitore e creditore", "weight": 1 },
+        { "id": "c2", "concept": "il debitore deve una prestazione", "weight": 2 },
+        { "id": "c3", "concept": "per soddisfare l'interesse del creditore", "weight": 2 }
+      ],
+      "references": ["1173", "1174"]
+    },
+    {
+      "prompt": "Qual è la funzione dell'obbligazione?",
+      "answer": "È assicurare al creditore la soddisfazione del suo interesse, anche contro la volontà del debitore, attraverso l'esecuzione forzata e il risarcimento del danno.",
+      "rubric": [
+        { "id": "c1", "concept": "soddisfare l'interesse del creditore", "weight": 2 },
+        { "id": "c2", "concept": "anche coattivamente contro il debitore", "weight": 2 }
+      ],
+      "references": ["1174", "1218"]
+    },
+    {
+      "prompt": "Perché si dice che l'obbligazione ha carattere temporaneo?",
+      "answer": "Perché esiste solo finché l'interesse del creditore non è soddisfatto: con la soddisfazione, cioè con l'adempimento, l'obbligazione si estingue.",
+      "rubric": [
+        { "id": "c1", "concept": "esiste finché l'interesse non è soddisfatto", "weight": 2 },
+        { "id": "c2", "concept": "l'adempimento la estingue", "weight": 2 }
+      ],
+      "references": ["1174"]
+    },
+    {
+      "prompt": "Quali caratteri deve avere la prestazione oggetto dell'obbligazione?",
+      "answer": "Deve essere suscettibile di valutazione economica, cioè patrimoniale, e corrispondere a un interesse, anche non patrimoniale, del creditore. Può consistere in un dare, un fare o un non fare, purché possibile e lecito.",
+      "rubric": [
+        { "id": "c1", "concept": "patrimonialità della prestazione", "weight": 2 },
+        { "id": "c2", "concept": "interesse del creditore anche non patrimoniale", "weight": 2 },
+        { "id": "c3", "concept": "dare, fare o non fare", "weight": 1 }
+      ],
+      "references": ["1174"]
+    },
+    {
+      "prompt": "L'interesse del creditore deve essere patrimoniale?",
+      "answer": "No: deve essere patrimoniale la prestazione, ma l'interesse del creditore può essere anche non patrimoniale, come quello alla salute nella prestazione del medico.",
+      "rubric": [
+        { "id": "c1", "concept": "l'interesse può essere non patrimoniale", "weight": 2 },
+        { "id": "c2", "concept": "la prestazione deve essere patrimoniale", "weight": 2 }
+      ],
+      "references": ["1174"]
+    },
+    {
+      "prompt": "Perché il dovere di fedeltà tra coniugi non è un'obbligazione?",
+      "answer": "Perché la prestazione non è suscettibile di valutazione economica: è un dovere giuridico, ma manca la patrimonialità richiesta per l'obbligazione e la sua violazione non segue le regole sull'inadempimento.",
+      "rubric": [
+        { "id": "c1", "concept": "manca la patrimonialità della prestazione", "weight": 2 },
+        { "id": "c2", "concept": "è un dovere ma non un'obbligazione", "weight": 1 },
+        { "id": "c3", "concept": "non si applicano le regole dell'inadempimento", "weight": 1 }
+      ],
+      "references": ["1174", "143"]
+    },
+    {
+      "prompt": "Che cosa impone la regola di correttezza a debitore e creditore?",
+      "answer": "Impone a entrambi di comportarsi lealmente: ne derivano, accanto alla prestazione principale, doveri accessori o di protezione, per soddisfare pienamente l'interesse del creditore senza danneggiarne i beni e per non aggravare la posizione del debitore.",
+      "rubric": [
+        { "id": "c1", "concept": "vale per debitore e creditore", "weight": 1 },
+        { "id": "c2", "concept": "comportamento leale", "weight": 1 },
+        { "id": "c3", "concept": "fonte di obblighi accessori di protezione", "weight": 2 }
+      ],
+      "references": ["1175"]
+    },
+    {
+      "prompt": "Che cosa sono gli obblighi di protezione?",
+      "answer": "Sono doveri accessori che derivano dalla correttezza e si affiancano alla prestazione principale: servono a soddisfare integralmente l'interesse del creditore evitando pregiudizi ai suoi beni e alla sua persona.",
+      "rubric": [
+        { "id": "c1", "concept": "doveri accessori alla prestazione principale", "weight": 2 },
+        { "id": "c2", "concept": "derivano dal principio di correttezza", "weight": 1 },
+        { "id": "c3", "concept": "evitare danni alla persona e ai beni del creditore", "weight": 1 }
+      ],
+      "references": ["1175"]
+    },
+    {
+      "prompt": "Che differenza c'è tra correttezza e diligenza nell'obbligazione?",
+      "answer": "La correttezza individua che cosa si deve fare oltre alla prestazione principale, cioè gli obblighi accessori, e vale per entrambe le parti. La diligenza indica come il debitore deve eseguire la prestazione: lo sforzo e la cura richiesti.",
+      "rubric": [
+        { "id": "c1", "concept": "correttezza: fonte di obblighi ulteriori per entrambe le parti", "weight": 2 },
+        { "id": "c2", "concept": "diligenza: modo di eseguire la prestazione", "weight": 2 }
+      ],
+      "references": ["1175", "1176"]
+    },
+    {
+      "prompt": "Quali sono le fonti delle obbligazioni?",
+      "answer": "Le obbligazioni derivano dal contratto, dal fatto illecito e da ogni altro atto o fatto idoneo a produrle in conformità dell'ordinamento giuridico.",
+      "rubric": [
+        { "id": "c1", "concept": "contratto", "weight": 1 },
+        { "id": "c2", "concept": "fatto illecito", "weight": 1 },
+        { "id": "c3", "concept": "ogni altro atto o fatto idoneo secondo l'ordinamento", "weight": 2 }
+      ],
+      "references": ["1173"]
+    },
+    {
+      "prompt": "Perché la terza categoria di fonti delle obbligazioni è detta aperta?",
+      "answer": "Perché non è un elenco chiuso: comprende qualsiasi atto o fatto a cui l'ordinamento ricolleghi la nascita di un'obbligazione, come le promesse unilaterali, la gestione di affari, il pagamento dell'indebito o l'arricchimento senza causa.",
+      "rubric": [
+        { "id": "c1", "concept": "non è un elenco tassativo", "weight": 2 },
+        { "id": "c2", "concept": "esempi: promesse, gestione d'affari, indebito, arricchimento", "weight": 1 }
+      ],
+      "references": ["1173"]
+    },
+    {
+      "prompt": "Che differenza c'è tra illecito civile, penale e amministrativo?",
+      "answer": "Dipende dalla norma violata: la violazione di norme di diritto privato è illecito civile e comporta il risarcimento del danno; quella di norme penali comporta pene come reclusione o multa; quella di norme amministrative sanzioni amministrative. Uno stesso fatto può integrare più illeciti.",
+      "rubric": [
+        { "id": "c1", "concept": "civile: risarcimento del danno", "weight": 2 },
+        { "id": "c2", "concept": "penale: reclusione o multa", "weight": 1 },
+        { "id": "c3", "concept": "amministrativo: sanzione amministrativa", "weight": 1 },
+        { "id": "c4", "concept": "uno stesso fatto può integrarli tutti", "weight": 1 }
+      ],
+      "references": ["1173", "2043"]
+    },
+    {
+      "prompt": "Che cos'è l'obbligazione naturale?",
+      "answer": "È il dovere morale o sociale il cui adempimento spontaneo non è ripetibile, se eseguito da persona capace, ma che non dà al creditore azione per pretenderlo, come il debito di gioco.",
+      "rubric": [
+        { "id": "c1", "concept": "dovere morale o sociale", "weight": 1 },
+        { "id": "c2", "concept": "nessuna azione per pretenderlo", "weight": 2 },
+        { "id": "c3", "concept": "il pagamento spontaneo non si ripete", "weight": 2 }
+      ],
+      "references": ["2034"]
+    }
+  ]
+}

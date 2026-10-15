@@ -1,0 +1,79 @@
+{
+  "topic": { "name": "La mora del debitore" },
+  "questions": [
+    {
+      "prompt": "Che cos'è la mora del debitore?",
+      "answer": "È il ritardo qualificato nell'adempimento: il debitore che non ha adempiuto viene costituito in mora e da quel momento ne subisce effetti più gravi, come il passaggio a suo carico del rischio dell'impossibilità sopravvenuta.",
+      "rubric": [
+        { "id": "c1", "concept": "ritardo qualificato del debitore", "weight": 2 },
+        { "id": "c2", "concept": "conseguenze aggravate per il debitore", "weight": 2 }
+      ],
+      "references": ["1219"]
+    },
+    {
+      "prompt": "Come si costituisce in mora il debitore?",
+      "answer": "Mediante intimazione o richiesta di adempimento fatta per iscritto (mora ex persona): basta la forma scritta, senza particolari requisiti di contenuto.",
+      "rubric": [
+        { "id": "c1", "concept": "intimazione o richiesta scritta", "weight": 2 },
+        { "id": "c2", "concept": "mora ex persona", "weight": 1 }
+      ],
+      "references": ["1219"]
+    },
+    {
+      "prompt": "In quali casi la mora del debitore è automatica (ex re)?",
+      "answer": "Quando il debito deriva da fatto illecito, quando il debitore ha dichiarato per iscritto di non voler eseguire l'obbligazione e quando è scaduto il termine per una prestazione da eseguire al domicilio del creditore.",
+      "rubric": [
+        { "id": "c1", "concept": "debito da fatto illecito", "weight": 1 },
+        { "id": "c2", "concept": "rifiuto scritto di adempiere", "weight": 1 },
+        { "id": "c3", "concept": "scadenza del termine per i debiti portabili", "weight": 1 }
+      ],
+      "references": ["1219"]
+    },
+    {
+      "prompt": "Come si costituiscono in mora gli eredi del debitore?",
+      "answer": "Se il termine scade dopo la morte del debitore, gli eredi sono costituiti in mora solo mediante intimazione o richiesta scritta e decorsi otto giorni da essa.",
+      "rubric": [
+        { "id": "c1", "concept": "serve intimazione scritta agli eredi", "weight": 2 },
+        { "id": "c2", "concept": "decorsi otto giorni", "weight": 1 }
+      ],
+      "references": ["1219"]
+    },
+    {
+      "prompt": "Che differenza c'è tra intimazione ad adempiere per la mora e diffida ad adempiere?",
+      "answer": "L'intimazione per la mora richiede solo la forma scritta e produce gli effetti della mora. La diffida ad adempiere deve fissare un termine di almeno quindici giorni e avvertire che, scaduto, il contratto sarà risolto: porta alla risoluzione di diritto.",
+      "rubric": [
+        { "id": "c1", "concept": "intimazione: basta lo scritto, effetto di mora", "weight": 2 },
+        { "id": "c2", "concept": "diffida: termine e avvertimento, effetto risolutivo", "weight": 2 }
+      ],
+      "references": ["1219", "1454"]
+    },
+    {
+      "prompt": "Quali effetti produce la mora del debitore?",
+      "answer": "Nelle obbligazioni pecuniarie dalla mora decorrono gli interessi moratori; inoltre il rischio dell'impossibilità sopravvenuta passa al debitore, che non è liberato anche se l'impossibilità non gli è imputabile, salvo provare che la cosa sarebbe perita anche presso il creditore.",
+      "rubric": [
+        { "id": "c1", "concept": "decorrono gli interessi moratori", "weight": 1 },
+        { "id": "c2", "concept": "il rischio dell'impossibilità passa al debitore", "weight": 2 },
+        { "id": "c3", "concept": "salvo prova che la cosa sarebbe perita comunque", "weight": 1 }
+      ],
+      "references": ["1221", "1224"]
+    },
+    {
+      "prompt": "Chi ha sottratto illecitamente una cosa è liberato se la cosa perisce?",
+      "answer": "No, in qualunque modo la cosa sia perita o smarrita, la sua perdita non libera chi l'ha sottratta dall'obbligo di restituirne il valore.",
+      "rubric": [
+        { "id": "c1", "concept": "non è liberato", "weight": 2 },
+        { "id": "c2", "concept": "deve restituirne il valore", "weight": 2 }
+      ],
+      "references": ["1221"]
+    },
+    {
+      "prompt": "Si applicano le regole sulla mora alle obbligazioni di non fare?",
+      "answer": "No: nelle obbligazioni negative ogni fatto compiuto in violazione costituisce di per sé inadempimento, senza bisogno di costituzione in mora.",
+      "rubric": [
+        { "id": "c1", "concept": "la mora non si applica", "weight": 2 },
+        { "id": "c2", "concept": "ogni violazione è già inadempimento", "weight": 2 }
+      ],
+      "references": ["1222"]
+    }
+  ]
+}

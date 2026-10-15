@@ -1,0 +1,174 @@
+{
+  "topic": { "name": "Interpretazione e integrazione del contratto" },
+  "questions": [
+    {
+      "prompt": "Che cos'è l'interpretazione del contratto?",
+      "answer": "È l'operazione con cui si attribuisce il giusto significato alle clausole di un contratto oscuro o ambiguo; spetta al giudice, che deve seguire le regole legali di interpretazione.",
+      "rubric": [
+        { "id": "c1", "concept": "attribuire il significato alle clausole", "weight": 2 },
+        { "id": "c2", "concept": "necessaria per testi oscuri o ambigui", "weight": 1 },
+        { "id": "c3", "concept": "il giudice segue le regole di legge", "weight": 1 }
+      ],
+      "references": ["1362"]
+    },
+    {
+      "prompt": "Che differenza c'è tra interpretazione soggettiva e interpretazione oggettiva del contratto?",
+      "answer": "L'interpretazione soggettiva ricerca la comune intenzione delle parti. Quella oggettiva interviene solo se restano dubbi e attribuisce al contratto il senso più ragionevole ed equo, a prescindere dalla volontà delle parti.",
+      "rubric": [
+        { "id": "c1", "concept": "soggettiva: comune intenzione delle parti", "weight": 2 },
+        { "id": "c2", "concept": "oggettiva: sussidiaria, se restano dubbi", "weight": 2 },
+        { "id": "c3", "concept": "oggettiva: senso ragionevole ed equo", "weight": 1 }
+      ],
+      "references": ["1362", "1367"]
+    },
+    {
+      "prompt": "Che cosa significa interpretare il contratto secondo la comune intenzione delle parti?",
+      "answer": "Significa ricostruire ciò che le parti hanno voluto e reso comune, senza limitarsi al senso letterale delle parole, valutando anche il loro comportamento complessivo, compreso quello successivo alla conclusione.",
+      "rubric": [
+        { "id": "c1", "concept": "ricercare la volontà comune", "weight": 2 },
+        { "id": "c2", "concept": "non limitarsi al senso letterale", "weight": 1 },
+        { "id": "c3", "concept": "valutare il comportamento anche successivo", "weight": 2 }
+      ],
+      "references": ["1362"]
+    },
+    {
+      "prompt": "Che cosa prevede la regola dell'interpretazione complessiva delle clausole?",
+      "answer": "Le clausole si interpretano le une per mezzo delle altre, attribuendo a ciascuna il senso che risulta dal complesso dell'atto.",
+      "rubric": [
+        { "id": "c1", "concept": "le clausole si interpretano le une per mezzo delle altre", "weight": 2 },
+        { "id": "c2", "concept": "senso che risulta dall'intero atto", "weight": 1 }
+      ],
+      "references": ["1363"]
+    },
+    {
+      "prompt": "Come si interpretano le espressioni generali e le indicazioni esemplificative nel contratto?",
+      "answer": "Le espressioni generali comprendono solo gli oggetti su cui le parti intendevano contrattare. I casi indicati per spiegare un patto non escludono quelli non espressi a cui il patto può estendersi secondo ragione.",
+      "rubric": [
+        { "id": "c1", "concept": "espressioni generali limitate agli oggetti voluti", "weight": 2 },
+        { "id": "c2", "concept": "gli esempi non escludono i casi non espressi", "weight": 2 }
+      ],
+      "references": ["1364", "1365"]
+    },
+    {
+      "prompt": "Che cosa significa interpretare il contratto secondo buona fede?",
+      "answer": "Significa attribuire al contratto il significato che gli darebbe una persona onesta e leale, escludendo i significati maliziosi o nascosti che una parte scorretta potrebbe sostenere.",
+      "rubric": [
+        { "id": "c1", "concept": "significato attribuito da una persona onesta", "weight": 2 },
+        { "id": "c2", "concept": "esclusi i significati maliziosi", "weight": 1 }
+      ],
+      "references": ["1366"]
+    },
+    {
+      "prompt": "Che cosa stabilisce il principio di conservazione del contratto?",
+      "answer": "Nel dubbio, il contratto o le singole clausole si interpretano nel senso in cui possono avere qualche effetto, anziché in quello in cui non ne avrebbero alcuno.",
+      "rubric": [
+        { "id": "c1", "concept": "nel dubbio", "weight": 1 },
+        { "id": "c2", "concept": "si preferisce il senso che produce effetti", "weight": 2 }
+      ],
+      "references": ["1367"]
+    },
+    {
+      "prompt": "Come si interpretano le clausole ambigue secondo gli usi?",
+      "answer": "Secondo ciò che si pratica generalmente nel luogo in cui il contratto è stato concluso; se una parte è un imprenditore, nel luogo in cui ha sede l'impresa.",
+      "rubric": [
+        { "id": "c1", "concept": "pratiche generali del luogo di conclusione", "weight": 2 },
+        { "id": "c2", "concept": "se c'è un imprenditore, luogo della sede dell'impresa", "weight": 2 }
+      ],
+      "references": ["1368"]
+    },
+    {
+      "prompt": "Come si interpretano le espressioni che possono avere più sensi?",
+      "answer": "Nel dubbio, devono essere intese nel senso più conveniente alla natura e all'oggetto del contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "senso più conveniente", "weight": 1 },
+        { "id": "c2", "concept": "alla natura e all'oggetto del contratto", "weight": 2 }
+      ],
+      "references": ["1369"]
+    },
+    {
+      "prompt": "Che cosa prevede l'interpretazione contro l'autore della clausola?",
+      "answer": "Le clausole delle condizioni generali o di moduli e formulari predisposti da una parte si interpretano, nel dubbio, a favore dell'altra (interpretatio contra stipulatorem).",
+      "rubric": [
+        { "id": "c1", "concept": "clausole predisposte da un contraente", "weight": 1 },
+        { "id": "c2", "concept": "nel dubbio a favore dell'altro contraente", "weight": 2 }
+      ],
+      "references": ["1370"]
+    },
+    {
+      "prompt": "Come si interpreta un contratto che resta oscuro dopo l'applicazione di tutte le regole?",
+      "answer": "Se è a titolo gratuito, nel senso meno gravoso per l'obbligato; se è a titolo oneroso, nel senso che realizzi l'equo contemperamento degli interessi delle parti.",
+      "rubric": [
+        { "id": "c1", "concept": "gratuito: senso meno gravoso per l'obbligato", "weight": 2 },
+        { "id": "c2", "concept": "oneroso: equo contemperamento degli interessi", "weight": 2 }
+      ],
+      "references": ["1371"]
+    },
+    {
+      "prompt": "Che cos'è l'integrazione del contratto?",
+      "answer": "È l'inserimento nel contratto di regole non volute dalle parti ma provenienti da fonti esterne, come la legge, gli usi e l'equità.",
+      "rubric": [
+        { "id": "c1", "concept": "regole non volute dalle parti", "weight": 2 },
+        { "id": "c2", "concept": "provenienti da legge, usi o equità", "weight": 2 }
+      ],
+      "references": ["1374"]
+    },
+    {
+      "prompt": "Che cosa sono le fonti di integrazione del contratto?",
+      "answer": "Il contratto obbliga le parti non solo a quanto è nel contratto espresso, ma anche a tutte le conseguenze che ne derivano secondo la legge o, in mancanza, secondo gli usi e l'equità.",
+      "rubric": [
+        { "id": "c1", "concept": "obbliga anche alle conseguenze non espresse", "weight": 1 },
+        { "id": "c2", "concept": "secondo la legge", "weight": 1 },
+        { "id": "c3", "concept": "in mancanza secondo usi ed equità", "weight": 2 }
+      ],
+      "references": ["1374"]
+    },
+    {
+      "prompt": "Che differenza c'è tra integrazione imperativa e integrazione dispositiva del contratto?",
+      "answer": "L'integrazione imperativa inserisce clausole o prezzi imposti dalla legge anche contro la volontà delle parti. Quella dispositiva inserisce le clausole d'uso, ma solo se non risulta che le parti non le hanno volute.",
+      "rubric": [
+        { "id": "c1", "concept": "imperativa: clausole di legge inderogabili", "weight": 2 },
+        { "id": "c2", "concept": "dispositiva: clausole d'uso", "weight": 1 },
+        { "id": "c3", "concept": "le clausole d'uso sono escluse dalla diversa volontà delle parti", "weight": 2 }
+      ],
+      "references": ["1339", "1340"]
+    },
+    {
+      "prompt": "Che cos'è l'inserzione automatica di clausole?",
+      "answer": "Le clausole e i prezzi di beni o servizi imposti dalla legge sono inseriti di diritto nel contratto, anche in sostituzione delle clausole difformi apposte dalle parti.",
+      "rubric": [
+        { "id": "c1", "concept": "clausole e prezzi imposti dalla legge", "weight": 1 },
+        { "id": "c2", "concept": "inseriti di diritto", "weight": 1 },
+        { "id": "c3", "concept": "sostituiscono le clausole difformi", "weight": 2 }
+      ],
+      "references": ["1339"]
+    },
+    {
+      "prompt": "Perché la sostituzione automatica di clausole evita la nullità del contratto?",
+      "answer": "Perché la clausola contraria alla norma imperativa viene sostituita dalla regola di legge: il contratto, che altrimenti sarebbe nullo in quella parte, resta in piedi con il contenuto imposto e produce i suoi effetti.",
+      "rubric": [
+        { "id": "c1", "concept": "la clausola illegittima è sostituita dalla norma", "weight": 2 },
+        { "id": "c2", "concept": "il contratto conserva la sua efficacia", "weight": 2 }
+      ],
+      "references": ["1339", "1419"]
+    },
+    {
+      "prompt": "Che cosa sono le clausole d'uso?",
+      "answer": "Sono le clausole abitualmente inserite nei contratti di un certo settore: si intendono inserite nel contratto se non risulta che le parti non le hanno volute.",
+      "rubric": [
+        { "id": "c1", "concept": "clausole abituali in un certo settore", "weight": 1 },
+        { "id": "c2", "concept": "si intendono inserite", "weight": 1 },
+        { "id": "c3", "concept": "salvo diversa volontà delle parti", "weight": 2 }
+      ],
+      "references": ["1340"]
+    },
+    {
+      "prompt": "Come devono comportarsi le parti nell'esecuzione del contratto?",
+      "answer": "Il contratto deve essere eseguito secondo buona fede: ciascuna parte deve agire lealmente e preservare l'interesse dell'altra, nei limiti di un apprezzabile sacrificio.",
+      "rubric": [
+        { "id": "c1", "concept": "esecuzione secondo buona fede", "weight": 2 },
+        { "id": "c2", "concept": "lealtà e salvaguardia dell'interesse altrui", "weight": 1 }
+      ],
+      "references": ["1375"]
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "topic": { "name": "Il pegno" },
+  "questions": [
+    {
+      "prompt": "Che cosa può essere dato in pegno e da chi?",
+      "answer": "Il pegno è costituito a garanzia dell'obbligazione dal debitore o da un terzo per il debitore; possono essere dati in pegno beni mobili, universalità di mobili, crediti e altri diritti aventi per oggetto beni mobili.",
+      "rubric": [
+        { "id": "c1", "concept": "dal debitore o da un terzo", "weight": 1 },
+        { "id": "c2", "concept": "beni mobili e universalità di mobili", "weight": 1 },
+        { "id": "c3", "concept": "crediti e altri diritti su mobili", "weight": 1 }
+      ],
+      "references": ["2784"]
+    },
+    {
+      "prompt": "Come si costituisce il pegno su cose mobili?",
+      "answer": "Con la consegna al creditore della cosa o del documento che ne conferisce l'esclusiva disponibilità; la cosa può essere consegnata anche a un terzo designato o posta in custodia comune, in modo che il costituente non possa disporne da solo. È un contratto reale.",
+      "rubric": [
+        { "id": "c1", "concept": "consegna della cosa o del documento", "weight": 2 },
+        { "id": "c2", "concept": "anche a un terzo o in custodia comune", "weight": 1 },
+        { "id": "c3", "concept": "contratto reale", "weight": 1 }
+      ],
+      "references": ["2786"]
+    },
+    {
+      "prompt": "A quali condizioni il pegno su cose mobili dà diritto di prelazione?",
+      "answer": "Oltre alla consegna, quando il credito supera una soglia minima serve un atto scritto con data certa che indichi sufficientemente il credito e la cosa data in pegno.",
+      "rubric": [
+        { "id": "c1", "concept": "atto scritto con data certa", "weight": 2 },
+        { "id": "c2", "concept": "indicazione del credito e della cosa", "weight": 2 }
+      ],
+      "references": ["2787"]
+    },
+    {
+      "prompt": "Come si costituisce il pegno di crediti e quando dà prelazione?",
+      "answer": "La prelazione si ha solo se il pegno risulta da atto scritto e la costituzione è notificata al debitore del credito dato in pegno o da questi accettata con scrittura di data certa.",
+      "rubric": [
+        { "id": "c1", "concept": "atto scritto", "weight": 1 },
+        { "id": "c2", "concept": "notifica al debitore ceduto o sua accettazione con data certa", "weight": 2 }
+      ],
+      "references": ["2800"]
+    },
+    {
+      "prompt": "Che differenza c'è tra pegno di crediti e cessione del credito in garanzia?",
+      "answer": "Con il pegno il credito resta del costituente e il creditore pignoratizio ha solo un diritto di garanzia; con la cessione in garanzia il credito passa al cessionario.",
+      "rubric": [
+        { "id": "c1", "concept": "pegno: il credito resta del costituente", "weight": 2 },
+        { "id": "c2", "concept": "cessione: il credito si trasferisce", "weight": 2 }
+      ],
+      "references": ["2800", "1260"]
+    },
+    {
+      "prompt": "Quali obblighi e limiti ha il creditore pignoratizio sulla cosa?",
+      "answer": "Deve custodire la cosa con diligenza; non può usarla senza il consenso del costituente, salvo che l'uso sia necessario per conservarla, né darla in pegno o concederne ad altri il godimento; i frutti li imputa prima a spese e interessi e poi al capitale.",
+      "rubric": [
+        { "id": "c1", "concept": "obbligo di custodia", "weight": 1 },
+        { "id": "c2", "concept": "divieto di uso e di disposizione", "weight": 2 },
+        { "id": "c3", "concept": "frutti imputati a spese, interessi e capitale", "weight": 1 }
+      ],
+      "references": ["2790", "2791", "2792"]
+    },
+    {
+      "prompt": "Che cosa può fare il costituente se il creditore abusa della cosa data in pegno?",
+      "answer": "Se il creditore abusa della cosa, usandola o disponendone senza consenso, il costituente può domandarne il sequestro.",
+      "rubric": [
+        { "id": "c1", "concept": "abuso del creditore sulla cosa", "weight": 1 },
+        { "id": "c2", "concept": "il costituente chiede il sequestro", "weight": 2 }
+      ],
+      "references": ["2793"]
+    },
+    {
+      "prompt": "Come può soddisfarsi il creditore pignoratizio se il debitore non paga?",
+      "answer": "Può far vendere la cosa, previa intimazione al debitore, e soddisfarsi con prelazione sul ricavato, oppure chiedere al giudice che la cosa gli sia assegnata in pagamento fino alla concorrenza del debito, secondo stima.",
+      "rubric": [
+        { "id": "c1", "concept": "vendita previa intimazione", "weight": 2 },
+        { "id": "c2", "concept": "o assegnazione in pagamento secondo stima", "weight": 2 }
+      ],
+      "references": ["2796", "2797", "2798"]
+    },
+    {
+      "prompt": "Quando il creditore deve restituire la cosa data in pegno?",
+      "answer": "Quando il debito è stato interamente pagato, con gli interessi e le spese; il debitore non può pretenderla prima.",
+      "rubric": [
+        { "id": "c1", "concept": "dopo l'integrale pagamento", "weight": 2 },
+        { "id": "c2", "concept": "inclusi interessi e spese", "weight": 1 }
+      ],
+      "references": ["2794"]
+    },
+    {
+      "prompt": "Che cosa sono il pegno rotativo e il pegno omnibus?",
+      "answer": "Il pegno rotativo prevede la possibilità di sostituire i beni dati in pegno con altri senza novazione della garanzia ed è ammesso. Il pegno omnibus, che garantisce qualunque credito anche futuro, è ritenuto nullo per indeterminatezza del credito garantito.",
+      "rubric": [
+        { "id": "c1", "concept": "rotativo: sostituzione dei beni, ammesso", "weight": 2 },
+        { "id": "c2", "concept": "omnibus: crediti indeterminati, nullo", "weight": 2 }
+      ],
+      "references": ["2787"]
+    },
+    {
+      "prompt": "Chi prevale se lo stesso bene è dato in pegno a più creditori?",
+      "answer": "Per i beni prevale chi per primo ne ha conseguito il possesso; per i crediti chi per primo ha notificato il pegno al debitore o ne ha ottenuto l'accettazione con data certa.",
+      "rubric": [
+        { "id": "c1", "concept": "beni: chi ottiene per primo il possesso", "weight": 2 },
+        { "id": "c2", "concept": "crediti: chi notifica per primo", "weight": 2 }
+      ],
+      "references": ["2800"]
+    },
+    {
+      "prompt": "Che cos'è il pegno irregolare?",
+      "answer": "È la consegna al creditore, a garanzia, di denaro o altre cose fungibili di cui acquista la proprietà: se il debitore adempie, il creditore restituisce altrettante cose dello stesso genere; se no, trattiene quanto gli spetta e restituisce l'eccedenza. Non è un vero pegno.",
+      "rubric": [
+        { "id": "c1", "concept": "cose fungibili date in garanzia", "weight": 1 },
+        { "id": "c2", "concept": "il creditore ne diventa proprietario", "weight": 2 },
+        { "id": "c3", "concept": "restituisce il tantundem o l'eccedenza", "weight": 1 }
+      ],
+      "references": ["1851"]
+    },
+    {
+      "prompt": "Che cos'è il pegno mobiliare non possessorio?",
+      "answer": "È il pegno, previsto da una legge speciale per gli imprenditori, sui beni mobili destinati all'impresa che non comporta lo spossessamento: si costituisce per iscritto e diventa opponibile ai terzi con l'iscrizione in un apposito registro informatizzato.",
+      "rubric": [
+        { "id": "c1", "concept": "senza spossessamento", "weight": 2 },
+        { "id": "c2", "concept": "beni destinati all'impresa", "weight": 1 },
+        { "id": "c3", "concept": "opponibile con l'iscrizione in un registro", "weight": 1 }
+      ],
+      "references": []
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "topic": { "name": "Delegazione, espromissione e accollo" },
+  "questions": [
+    {
+      "prompt": "Perché il trasferimento del debito, a differenza di quello del credito, richiede il consenso del creditore?",
+      "answer": "Perché per il creditore non è indifferente chi sia il debitore: dalla sua solvibilità dipende la soddisfazione del credito. Il debitore originario può quindi essere liberato solo se il creditore lo consente.",
+      "rubric": [
+        { "id": "c1", "concept": "la persona del debitore conta per il creditore", "weight": 2 },
+        { "id": "c2", "concept": "la liberazione richiede il consenso del creditore", "weight": 2 }
+      ],
+      "references": ["1268", "1272", "1273"]
+    },
+    {
+      "prompt": "Quali sono le figure di assunzione del debito altrui e come si distinguono?",
+      "answer": "Delegazione, espromissione e accollo. Nella delegazione il debitore ordina a un terzo di pagare o di obbligarsi; nell'espromissione il terzo si obbliga spontaneamente verso il creditore; nell'accollo debitore e terzo si accordano perché il terzo assuma il debito.",
+      "rubric": [
+        { "id": "c1", "concept": "delegazione: ordine del debitore al terzo", "weight": 2 },
+        { "id": "c2", "concept": "espromissione: iniziativa spontanea del terzo", "weight": 1 },
+        { "id": "c3", "concept": "accollo: accordo tra debitore e terzo", "weight": 2 }
+      ],
+      "references": ["1268", "1272", "1273"]
+    },
+    {
+      "prompt": "Che cos'è la delegazione?",
+      "answer": "È l'atto con cui il debitore (delegante) incarica un terzo (delegato) di pagare o di obbligarsi a pagare il creditore (delegatario).",
+      "rubric": [
+        { "id": "c1", "concept": "incarico del debitore a un terzo", "weight": 2 },
+        { "id": "c2", "concept": "di pagare o obbligarsi verso il creditore", "weight": 2 }
+      ],
+      "references": ["1268", "1269"]
+    },
+    {
+      "prompt": "Che cosa sono il rapporto di provvista e il rapporto di valuta nella delegazione?",
+      "answer": "Il rapporto di provvista è quello tra delegante e delegato, che di solito spiega perché il delegato esegue l'ordine, per esempio perché è debitore del delegante. Il rapporto di valuta è quello tra delegante e delegatario, cioè il debito originario.",
+      "rubric": [
+        { "id": "c1", "concept": "provvista: delegante e delegato", "weight": 2 },
+        { "id": "c2", "concept": "valuta: delegante e delegatario", "weight": 2 }
+      ],
+      "references": ["1271"]
+    },
+    {
+      "prompt": "Che differenza c'è tra delegazione di pagamento e delegazione di debito (cumulativa)?",
+      "answer": "Nella delegazione di pagamento il delegato paga ma non si obbliga verso il creditore, che non può pretendere nulla da lui. Nella delegazione cumulativa il delegato si obbliga verso il creditore, che acquista così un nuovo debitore accanto al delegante.",
+      "rubric": [
+        { "id": "c1", "concept": "di pagamento: il delegato paga senza obbligarsi", "weight": 2 },
+        { "id": "c2", "concept": "cumulativa: il delegato si obbliga verso il creditore", "weight": 2 },
+        { "id": "c3", "concept": "il creditore può pretendere solo nella cumulativa", "weight": 1 }
+      ],
+      "references": ["1268", "1269"]
+    },
+    {
+      "prompt": "Il delegante resta obbligato nella delegazione cumulativa?",
+      "answer": "Sì, il debitore originario non è liberato salvo che il creditore dichiari espressamente di liberarlo; il creditore che ha accettato l'obbligazione del delegato non può rivolgersi al delegante se prima non ha chiesto al delegato l'adempimento.",
+      "rubric": [
+        { "id": "c1", "concept": "non è liberato salvo dichiarazione espressa", "weight": 2 },
+        { "id": "c2", "concept": "il creditore deve prima rivolgersi al delegato", "weight": 2 }
+      ],
+      "references": ["1268"]
+    },
+    {
+      "prompt": "Quali eccezioni può opporre il delegato al delegatario?",
+      "answer": "Salvo patto contrario, il delegato non può opporre al delegatario le eccezioni relative ai suoi rapporti con il delegante né quelle relative al rapporto tra delegante e delegatario; può opporre le eccezioni relative ai suoi rapporti con il delegatario e la nullità del doppio rapporto.",
+      "rubric": [
+        { "id": "c1", "concept": "non le eccezioni del rapporto di provvista", "weight": 2 },
+        { "id": "c2", "concept": "non quelle del rapporto di valuta", "weight": 1 },
+        { "id": "c3", "concept": "sì quelle dei propri rapporti con il delegatario", "weight": 1 }
+      ],
+      "references": ["1271"]
+    },
+    {
+      "prompt": "Che cos'è l'espromissione?",
+      "answer": "È il contratto tra creditore e terzo con cui il terzo, senza delegazione del debitore, assume verso il creditore il debito altrui; il terzo è obbligato in solido con il debitore originario, se il creditore non dichiara espressamente di liberare quest'ultimo.",
+      "rubric": [
+        { "id": "c1", "concept": "il terzo assume spontaneamente il debito", "weight": 2 },
+        { "id": "c2", "concept": "senza incarico del debitore", "weight": 1 },
+        { "id": "c3", "concept": "solidarietà salvo liberazione espressa", "weight": 2 }
+      ],
+      "references": ["1272"]
+    },
+    {
+      "prompt": "Perché non esiste un'espromissione semplice, non cumulativa?",
+      "answer": "Perché un terzo che paga il debito altrui senza obbligarsi verso il creditore compie semplicemente un adempimento del terzo, già disciplinato dalla legge.",
+      "rubric": [
+        { "id": "c1", "concept": "sarebbe un adempimento del terzo", "weight": 2 },
+        { "id": "c2", "concept": "l'espromissione richiede l'obbligo verso il creditore", "weight": 1 }
+      ],
+      "references": ["1272", "1180"]
+    },
+    {
+      "prompt": "Quali eccezioni può opporre l'espromittente al creditore?",
+      "answer": "Non può opporre le eccezioni relative ai suoi rapporti con il debitore originario. Può opporre quelle che avrebbe potuto opporre il debitore originario, se non personali e non derivanti da fatti successivi all'espromissione; non può opporre la compensazione.",
+      "rubric": [
+        { "id": "c1", "concept": "non quelle dei suoi rapporti con il debitore", "weight": 2 },
+        { "id": "c2", "concept": "sì quelle del debitore originario non personali", "weight": 1 },
+        { "id": "c3", "concept": "non la compensazione", "weight": 1 }
+      ],
+      "references": ["1272"]
+    },
+    {
+      "prompt": "Che cos'è l'accollo?",
+      "answer": "È il contratto tra debitore (accollato) e terzo (accollante) con cui il terzo assume il debito dell'altro; il creditore (accollatario) può aderire alla convenzione rendendola irrevocabile a suo favore.",
+      "rubric": [
+        { "id": "c1", "concept": "contratto tra debitore e terzo", "weight": 2 },
+        { "id": "c2", "concept": "il terzo assume il debito", "weight": 1 },
+        { "id": "c3", "concept": "l'adesione del creditore la rende irrevocabile", "weight": 2 }
+      ],
+      "references": ["1273"]
+    },
+    {
+      "prompt": "Che differenza c'è tra accollo interno ed accollo esterno?",
+      "answer": "Nell'accollo interno il terzo si impegna solo verso il debitore a pagare il creditore, che non acquista alcun diritto verso il terzo. Nell'accollo esterno, che è un contratto a favore di terzo, il creditore acquista un diritto verso l'accollante e può aderire alla convenzione.",
+      "rubric": [
+        { "id": "c1", "concept": "interno: obbligo solo verso il debitore", "weight": 2 },
+        { "id": "c2", "concept": "esterno: contratto a favore del creditore", "weight": 2 },
+        { "id": "c3", "concept": "nell'esterno il creditore acquista un diritto", "weight": 1 }
+      ],
+      "references": ["1273", "1411"]
+    },
+    {
+      "prompt": "Quando l'adesione del creditore all'accollo libera il debitore originario?",
+      "answer": "Solo se la liberazione è condizione espressa della stipulazione o se il creditore dichiara espressamente di liberarlo; altrimenti il debitore resta obbligato in solido con il terzo.",
+      "rubric": [
+        { "id": "c1", "concept": "liberazione come condizione espressa o dichiarazione del creditore", "weight": 2 },
+        { "id": "c2", "concept": "altrimenti solidarietà", "weight": 2 }
+      ],
+      "references": ["1273"]
+    },
+    {
+      "prompt": "Quali eccezioni può opporre l'accollante al creditore?",
+      "answer": "Le eccezioni fondate sul contratto in base al quale ha assunto il debito; è obbligato verso il creditore che ha aderito nei limiti in cui ha assunto il debito.",
+      "rubric": [
+        { "id": "c1", "concept": "eccezioni fondate sul contratto di accollo", "weight": 2 },
+        { "id": "c2", "concept": "obbligato nei limiti dell'assunzione", "weight": 1 }
+      ],
+      "references": ["1273"]
+    },
+    {
+      "prompt": "Quando delegazione, espromissione e accollo diventano liberatori?",
+      "answer": "Quando il creditore dichiara di liberare il debitore originario: solo allora si ha un vero trasferimento del debito, perché il nuovo debitore prende il posto del vecchio.",
+      "rubric": [
+        { "id": "c1", "concept": "il creditore libera il debitore originario", "weight": 2 },
+        { "id": "c2", "concept": "si ha il trasferimento del debito", "weight": 2 }
+      ],
+      "references": ["1268", "1272", "1273"]
+    },
+    {
+      "prompt": "Che cosa succede se il nuovo debitore è insolvente dopo una delegazione, espromissione o accollo liberatori?",
+      "answer": "Il creditore che ha liberato il debitore originario non ha azione contro di lui se il nuovo debitore diventa insolvente, salvo che ne abbia fatto espressa riserva; può agire contro il debitore originario se il nuovo era già insolvente al momento dell'assunzione, a sua insaputa.",
+      "rubric": [
+        { "id": "c1", "concept": "di regola nessuna azione contro il debitore liberato", "weight": 2 },
+        { "id": "c2", "concept": "salvo espressa riserva", "weight": 1 },
+        { "id": "c3", "concept": "salvo insolvenza già esistente e ignorata", "weight": 1 }
+      ],
+      "references": ["1274"]
+    },
+    {
+      "prompt": "In quale caso la persona del debitore cambia senza il consenso del creditore?",
+      "answer": "Con la morte del debitore: il debito passa agli eredi, che diventano debitori del creditore senza che questi possa opporsi.",
+      "rubric": [
+        { "id": "c1", "concept": "morte del debitore", "weight": 2 },
+        { "id": "c2", "concept": "il debito passa agli eredi", "weight": 2 }
+      ],
+      "references": []
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "topic": { "name": "I vizi del consenso: errore, dolo, violenza" },
+  "questions": [
+    {
+      "prompt": "Quali sono i vizi della volontà?",
+      "answer": "L'errore, il dolo e la violenza: alterano il processo di formazione della volontà di una parte e rendono il contratto annullabile alle condizioni di legge.",
+      "rubric": [
+        { "id": "c1", "concept": "errore, dolo e violenza", "weight": 2 },
+        { "id": "c2", "concept": "alterano la formazione della volontà", "weight": 1 },
+        { "id": "c3", "concept": "causano annullabilità", "weight": 1 }
+      ],
+      "references": ["1427"]
+    },
+    {
+      "prompt": "Che cos'è l'errore come vizio della volontà?",
+      "answer": "È l'ignoranza o la falsa conoscenza di elementi rilevanti per la decisione di concludere il contratto: la parte vi cade da sola, senza l'inganno altrui.",
+      "rubric": [
+        { "id": "c1", "concept": "ignoranza o falsa conoscenza", "weight": 2 },
+        { "id": "c2", "concept": "di elementi rilevanti per il contratto", "weight": 1 },
+        { "id": "c3", "concept": "spontaneo, non indotto da altri", "weight": 1 }
+      ],
+      "references": ["1428"]
+    },
+    {
+      "prompt": "Quando l'errore è causa di annullamento del contratto?",
+      "answer": "Quando è essenziale ed è riconoscibile dall'altro contraente.",
+      "rubric": [
+        { "id": "c1", "concept": "essenziale", "weight": 2 },
+        { "id": "c2", "concept": "riconoscibile dall'altro contraente", "weight": 2 }
+      ],
+      "references": ["1428"]
+    },
+    {
+      "prompt": "Quando l'errore è essenziale?",
+      "answer": "Quando cade sulla natura o sull'oggetto del contratto; sull'identità dell'oggetto o su una sua qualità determinante; sull'identità o sulle qualità dell'altro contraente, se determinanti del consenso; se è errore di diritto, quando è stato la ragione unica o principale del contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "natura o oggetto del contratto", "weight": 1 },
+        { "id": "c2", "concept": "identità o qualità determinante dell'oggetto", "weight": 1 },
+        { "id": "c3", "concept": "identità o qualità determinante della persona", "weight": 1 },
+        { "id": "c4", "concept": "errore di diritto ragione unica o principale", "weight": 1 }
+      ],
+      "references": ["1429"]
+    },
+    {
+      "prompt": "Che differenza c'è tra errore di fatto ed errore di diritto?",
+      "answer": "L'errore di fatto cade su elementi di fatto; l'errore di diritto consiste nell'ignoranza o falsa interpretazione di norme giuridiche ed è essenziale solo se è stato la ragione unica o principale del contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "di fatto: su elementi di fatto", "weight": 1 },
+        { "id": "c2", "concept": "di diritto: ignoranza o falsa interpretazione di norme", "weight": 2 },
+        { "id": "c3", "concept": "rilevante se ragione unica o principale", "weight": 1 }
+      ],
+      "references": ["1429"]
+    },
+    {
+      "prompt": "Che cos'è l'errore sul motivo e perché è irrilevante?",
+      "answer": "È l'errore che, pur determinante del consenso, non rientra nei casi di errore essenziale: riguarda le ragioni personali che spingono a contrarre e non giustifica l'annullamento, a tutela dell'altra parte.",
+      "rubric": [
+        { "id": "c1", "concept": "può essere determinante del consenso", "weight": 1 },
+        { "id": "c2", "concept": "non rientra tra gli errori essenziali", "weight": 2 },
+        { "id": "c3", "concept": "non consente l'annullamento", "weight": 1 }
+      ],
+      "references": ["1429"]
+    },
+    {
+      "prompt": "Che effetto ha l'errore di calcolo?",
+      "answer": "Non dà luogo all'annullamento ma solo a rettifica, salvo che, traducendosi in un errore sulla quantità, sia stato determinante del consenso.",
+      "rubric": [
+        { "id": "c1", "concept": "dà luogo a rettifica", "weight": 2 },
+        { "id": "c2", "concept": "annullamento solo se errore sulla quantità determinante", "weight": 2 }
+      ],
+      "references": ["1430"]
+    },
+    {
+      "prompt": "Quando l'errore è riconoscibile e perché è richiesto questo requisito?",
+      "answer": "Quando una persona di normale diligenza avrebbe potuto rilevarlo, in relazione al contenuto, alle circostanze del contratto o alla qualità dei contraenti. Il requisito tutela l'affidamento della controparte.",
+      "rubric": [
+        { "id": "c1", "concept": "rilevabile da una persona di normale diligenza", "weight": 2 },
+        { "id": "c2", "concept": "in base a contenuto, circostanze, qualità dei contraenti", "weight": 1 },
+        { "id": "c3", "concept": "tutela dell'affidamento", "weight": 2 }
+      ],
+      "references": ["1431"]
+    },
+    {
+      "prompt": "Che cos'è l'errore ostativo e come è disciplinato?",
+      "answer": "È l'errore che cade sulla dichiarazione o sulla sua trasmissione: la volontà si è formata correttamente ma è stata dichiarata o trasmessa in modo sbagliato. Segue la disciplina dell'errore vizio: annullabilità se essenziale e riconoscibile.",
+      "rubric": [
+        { "id": "c1", "concept": "errore nella dichiarazione o nella trasmissione", "weight": 2 },
+        { "id": "c2", "concept": "volontà formata bene ma dichiarata male", "weight": 1 },
+        { "id": "c3", "concept": "stessa disciplina dell'errore vizio", "weight": 2 }
+      ],
+      "references": ["1433"]
+    },
+    {
+      "prompt": "Che differenza c'è tra errore vizio ed errore ostativo?",
+      "answer": "L'errore vizio incide sulla formazione della volontà; l'errore ostativo incide sulla sua dichiarazione o trasmissione. La disciplina è la stessa.",
+      "rubric": [
+        { "id": "c1", "concept": "vizio: formazione della volontà", "weight": 2 },
+        { "id": "c2", "concept": "ostativo: dichiarazione o trasmissione", "weight": 2 },
+        { "id": "c3", "concept": "disciplina identica", "weight": 1 }
+      ],
+      "references": ["1428", "1433"]
+    },
+    {
+      "prompt": "Quando il dolo è causa di annullamento del contratto?",
+      "answer": "Quando i raggiri usati da un contraente sono stati tali che, senza di essi, l'altra parte non avrebbe contrattato (dolo determinante).",
+      "rubric": [
+        { "id": "c1", "concept": "raggiri di un contraente", "weight": 1 },
+        { "id": "c2", "concept": "senza i raggiri non avrebbe contrattato", "weight": 2 },
+        { "id": "c3", "concept": "dolo determinante", "weight": 1 }
+      ],
+      "references": ["1439"]
+    },
+    {
+      "prompt": "Il dolo del terzo rende annullabile il contratto?",
+      "answer": "Sì, ma solo se i raggiri erano noti al contraente che ne ha tratto vantaggio; altrimenti il contratto resta valido, a tutela del suo affidamento.",
+      "rubric": [
+        { "id": "c1", "concept": "annullabile se noto al contraente avvantaggiato", "weight": 2 },
+        { "id": "c2", "concept": "altrimenti il contratto è valido", "weight": 2 }
+      ],
+      "references": ["1439"]
+    },
+    {
+      "prompt": "Che differenza c'è tra errore e dolo?",
+      "answer": "Nell'errore la parte sbaglia da sola; nel dolo cade in errore perché è stata ingannata dai raggiri dell'altra parte o di un terzo. Per il dolo non serve la riconoscibilità né l'essenzialità dell'errore, basta che sia determinante.",
+      "rubric": [
+        { "id": "c1", "concept": "errore spontaneo", "weight": 1 },
+        { "id": "c2", "concept": "dolo: errore provocato da raggiri", "weight": 2 },
+        { "id": "c3", "concept": "nel dolo basta che sia determinante", "weight": 1 }
+      ],
+      "references": ["1428", "1439"]
+    },
+    {
+      "prompt": "Che cos'è il dolo omissivo?",
+      "answer": "È l'inganno che consiste nel tacere all'altra parte circostanze decisive per il contratto a lei ignote; la semplice reticenza rileva quando c'era un dovere di informare.",
+      "rubric": [
+        { "id": "c1", "concept": "silenzio su circostanze decisive", "weight": 2 },
+        { "id": "c2", "concept": "rileva se c'era un dovere di informare", "weight": 1 }
+      ],
+      "references": ["1439"]
+    },
+    {
+      "prompt": "Che cos'è il dolo incidente e che conseguenze ha?",
+      "answer": "Sono i raggiri che non hanno determinato il consenso ma hanno portato a concludere il contratto a condizioni diverse. Il contratto è valido, ma il contraente in mala fede risponde dei danni.",
+      "rubric": [
+        { "id": "c1", "concept": "non determinante, incide sulle condizioni", "weight": 2 },
+        { "id": "c2", "concept": "il contratto è valido", "weight": 2 },
+        { "id": "c3", "concept": "risarcimento del danno", "weight": 1 }
+      ],
+      "references": ["1440"]
+    },
+    {
+      "prompt": "Che cos'è il dolus bonus?",
+      "answer": "È la generica esaltazione delle qualità del bene offerto, tollerata nella pratica commerciale: non è un raggiro rilevante e non rende annullabile il contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "generica esaltazione delle qualità", "weight": 2 },
+        { "id": "c2", "concept": "non causa annullabilità", "weight": 2 }
+      ],
+      "references": ["1439"]
+    },
+    {
+      "prompt": "Che cos'è la violenza come vizio della volontà?",
+      "answer": "È la minaccia di un male ingiusto e notevole rivolta a un contraente per costringerlo a concludere un contratto che altrimenti non concluderebbe (violenza morale).",
+      "rubric": [
+        { "id": "c1", "concept": "minaccia per costringere a contrarre", "weight": 2 },
+        { "id": "c2", "concept": "male ingiusto e notevole", "weight": 2 }
+      ],
+      "references": ["1434", "1435"]
+    },
+    {
+      "prompt": "Quali caratteri deve avere la violenza per rendere annullabile il contratto?",
+      "answer": "Deve essere tale da fare impressione su una persona sensata e farle temere di esporre sé o i suoi beni a un male ingiusto e notevole, tenendo conto dell'età, del sesso e della condizione delle persone.",
+      "rubric": [
+        { "id": "c1", "concept": "impressione su una persona sensata", "weight": 2 },
+        { "id": "c2", "concept": "male ingiusto e notevole", "weight": 1 },
+        { "id": "c3", "concept": "riguardo a età, sesso e condizione", "weight": 1 }
+      ],
+      "references": ["1435"]
+    },
+    {
+      "prompt": "La violenza esercitata da un terzo rende annullabile il contratto?",
+      "answer": "Sì, anche se l'altro contraente non ne sapeva nulla: a differenza del dolo del terzo, la violenza è ritenuta più grave e la vittima merita una tutela maggiore.",
+      "rubric": [
+        { "id": "c1", "concept": "sì, sempre annullabile", "weight": 2 },
+        { "id": "c2", "concept": "anche se la controparte non ne era a conoscenza", "weight": 1 },
+        { "id": "c3", "concept": "diversamente dal dolo del terzo", "weight": 1 }
+      ],
+      "references": ["1434"]
+    },
+    {
+      "prompt": "Rileva la minaccia rivolta a persone diverse dal contraente?",
+      "answer": "Sì, se il male minacciato riguarda la persona o i beni del coniuge, di un discendente o di un ascendente; se riguarda altre persone, l'annullamento è rimesso alla prudente valutazione del giudice.",
+      "rubric": [
+        { "id": "c1", "concept": "coniuge, discendenti, ascendenti", "weight": 2 },
+        { "id": "c2", "concept": "altre persone: valutazione del giudice", "weight": 2 }
+      ],
+      "references": ["1436"]
+    },
+    {
+      "prompt": "Il timore reverenziale rende annullabile il contratto?",
+      "answer": "No, il solo timore reverenziale, cioè lo stato di soggezione psicologica verso un'altra persona, non è causa di annullamento perché non deriva da una minaccia esterna.",
+      "rubric": [
+        { "id": "c1", "concept": "non è causa di annullamento", "weight": 2 },
+        { "id": "c2", "concept": "manca una minaccia esterna", "weight": 1 }
+      ],
+      "references": ["1437"]
+    },
+    {
+      "prompt": "Quando la minaccia di far valere un diritto rende annullabile il contratto?",
+      "answer": "Solo quando è diretta a conseguire vantaggi ingiusti, cioè non collegati all'attuazione del diritto minacciato.",
+      "rubric": [
+        { "id": "c1", "concept": "solo se diretta a vantaggi ingiusti", "weight": 2 },
+        { "id": "c2", "concept": "vantaggi estranei al diritto minacciato", "weight": 2 }
+      ],
+      "references": ["1438"]
+    },
+    {
+      "prompt": "Che differenza c'è tra violenza morale e violenza fisica?",
+      "answer": "La violenza morale è la minaccia che vizia la volontà, che si è formata ma è coartata, e rende il contratto annullabile. Con la violenza fisica la volontà manca del tutto e il contratto è nullo per mancanza dell'accordo.",
+      "rubric": [
+        { "id": "c1", "concept": "morale: volontà coartata, annullabilità", "weight": 2 },
+        { "id": "c2", "concept": "fisica: volontà assente, nullità", "weight": 2 }
+      ],
+      "references": ["1434", "1418"]
+    }
+  ]
+}

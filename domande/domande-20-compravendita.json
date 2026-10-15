@@ -1,0 +1,259 @@
+{
+  "topic": { "name": "La compravendita: nozione, obbligazioni e garanzie" },
+  "questions": [
+    {
+      "prompt": "Come definisce la vendita il codice civile?",
+      "answer": "La vendita è il contratto che ha per oggetto il trasferimento della proprietà di una cosa o il trasferimento di un altro diritto verso il corrispettivo di un prezzo.",
+      "rubric": [
+        { "id": "c1", "concept": "trasferimento della proprietà o di un altro diritto", "weight": 2 },
+        { "id": "c2", "concept": "verso il corrispettivo di un prezzo", "weight": 2 }
+      ],
+      "references": ["1470"]
+    },
+    {
+      "prompt": "Che differenza c'è tra vendita e permuta?",
+      "answer": "Nella vendita il corrispettivo del trasferimento è un prezzo in denaro; nella permuta le parti si trasferiscono reciprocamente la proprietà di cose o altri diritti, senza prezzo.",
+      "rubric": [
+        { "id": "c1", "concept": "vendita: corrispettivo in denaro", "weight": 2 },
+        { "id": "c2", "concept": "permuta: scambio reciproco di cose o diritti", "weight": 2 }
+      ],
+      "references": ["1470", "1552"]
+    },
+    {
+      "prompt": "La vendita è un contratto consensuale o reale?",
+      "answer": "È un contratto consensuale: si perfeziona con il solo consenso delle parti, mentre la consegna della cosa è un'obbligazione del venditore, non un requisito di formazione.",
+      "rubric": [
+        { "id": "c1", "concept": "contratto consensuale", "weight": 2 },
+        { "id": "c2", "concept": "la consegna è un'obbligazione del venditore", "weight": 2 }
+      ],
+      "references": ["1470", "1476"]
+    },
+    {
+      "prompt": "Come si determina il prezzo se le parti non l'hanno fissato?",
+      "answer": "Le parti possono affidarne la determinazione a un terzo; per le cose vendute abitualmente dal venditore si presume il prezzo normalmente praticato; per le cose con prezzo di borsa o di mercato si ricava dai listini o dalle mercuriali del luogo di consegna. Se il prezzo non è in alcun modo determinabile, il contratto è nullo.",
+      "rubric": [
+        { "id": "c1", "concept": "determinazione affidata a un terzo", "weight": 1 },
+        { "id": "c2", "concept": "prezzo normalmente praticato dal venditore", "weight": 1 },
+        { "id": "c3", "concept": "listini o mercuriali", "weight": 1 },
+        { "id": "c4", "concept": "senza prezzo determinabile il contratto è nullo", "weight": 2 }
+      ],
+      "references": ["1473", "1474"]
+    },
+    {
+      "prompt": "Che differenza c'è tra vendita con effetti reali e vendita obbligatoria?",
+      "answer": "La vendita con effetti reali trasferisce la proprietà al momento del consenso, se la cosa è determinata, esistente e del venditore. La vendita obbligatoria non può trasferirla subito e obbliga il venditore a procurare l'acquisto, come nella vendita di cose generiche, alternative, future o altrui.",
+      "rubric": [
+        { "id": "c1", "concept": "reale: la proprietà passa con il consenso", "weight": 2 },
+        { "id": "c2", "concept": "obbligatoria: il venditore deve procurare l'acquisto", "weight": 2 },
+        { "id": "c3", "concept": "esempi: cose generiche, future, altrui, alternative", "weight": 1 }
+      ],
+      "references": ["1376", "1476"]
+    },
+    {
+      "prompt": "Quando il compratore diventa proprietario nella vendita di cosa altrui?",
+      "answer": "Il venditore è obbligato a procurare l'acquisto della cosa al compratore, che diventa proprietario nel momento in cui il venditore acquista la proprietà dal titolare.",
+      "rubric": [
+        { "id": "c1", "concept": "il venditore deve procurare l'acquisto", "weight": 2 },
+        { "id": "c2", "concept": "il compratore acquista quando il venditore diventa proprietario", "weight": 2 }
+      ],
+      "references": ["1478"]
+    },
+    {
+      "prompt": "Che cosa può fare il compratore che ignorava che la cosa venduta era altrui?",
+      "answer": "Può chiedere la risoluzione del contratto se, nel frattempo, il venditore non gli ha fatto acquistare la proprietà, oltre alla restituzione del prezzo, al rimborso delle spese e al risarcimento del danno.",
+      "rubric": [
+        { "id": "c1", "concept": "compratore che ignorava l'altruità", "weight": 1 },
+        { "id": "c2", "concept": "può chiedere la risoluzione", "weight": 2 },
+        { "id": "c3", "concept": "se il venditore non gli ha fatto acquistare la proprietà", "weight": 1 },
+        { "id": "c4", "concept": "restituzioni e risarcimento", "weight": 1 }
+      ],
+      "references": ["1479"]
+    },
+    {
+      "prompt": "Quale forma richiede la vendita di un immobile?",
+      "answer": "La forma scritta a pena di nullità; la vendita immobiliare è inoltre soggetta a trascrizione per essere opponibile ai terzi.",
+      "rubric": [
+        { "id": "c1", "concept": "forma scritta a pena di nullità", "weight": 2 },
+        { "id": "c2", "concept": "soggetta a trascrizione", "weight": 2 }
+      ],
+      "references": ["1350", "2643"]
+    },
+    {
+      "prompt": "Quali sono le obbligazioni principali del venditore?",
+      "answer": "Consegnare la cosa al compratore, fargli acquistare la proprietà o il diritto se l'acquisto non è effetto immediato del contratto, e garantirlo dall'evizione e dai vizi della cosa.",
+      "rubric": [
+        { "id": "c1", "concept": "consegnare la cosa", "weight": 1 },
+        { "id": "c2", "concept": "far acquistare il diritto se non è effetto immediato", "weight": 1 },
+        { "id": "c3", "concept": "garanzia per evizione", "weight": 1 },
+        { "id": "c4", "concept": "garanzia per vizi", "weight": 1 }
+      ],
+      "references": ["1476"]
+    },
+    {
+      "prompt": "In quale stato e con quali accessori deve essere consegnata la cosa venduta?",
+      "answer": "Nello stato in cui si trovava al momento della vendita, insieme agli accessori, alle pertinenze e ai frutti dal giorno della vendita.",
+      "rubric": [
+        { "id": "c1", "concept": "nello stato al momento della vendita", "weight": 2 },
+        { "id": "c2", "concept": "con accessori, pertinenze e frutti", "weight": 2 }
+      ],
+      "references": ["1477"]
+    },
+    {
+      "prompt": "Che cos'è l'evizione?",
+      "answer": "È la perdita, totale o parziale, del diritto acquistato dal compratore a causa del diritto preesistente di un terzo, fatto valere in giudizio contro di lui.",
+      "rubric": [
+        { "id": "c1", "concept": "perdita totale o parziale del diritto", "weight": 2 },
+        { "id": "c2", "concept": "per un diritto preesistente di un terzo", "weight": 2 }
+      ],
+      "references": ["1483"]
+    },
+    {
+      "prompt": "Che cosa spetta al compratore che subisce l'evizione totale?",
+      "answer": "Il venditore deve restituirgli il prezzo, anche se la cosa è diminuita di valore, rimborsargli le spese del contratto e le spese necessarie e utili per la cosa, e risarcire il danno.",
+      "rubric": [
+        { "id": "c1", "concept": "restituzione del prezzo", "weight": 2 },
+        { "id": "c2", "concept": "rimborso delle spese", "weight": 1 },
+        { "id": "c3", "concept": "risarcimento del danno", "weight": 1 }
+      ],
+      "references": ["1483"]
+    },
+    {
+      "prompt": "Che cosa deve fare il compratore convenuto in giudizio dal terzo che rivendica la cosa?",
+      "answer": "Deve chiamare in causa il venditore. Se non lo fa e perde, decade dalla garanzia qualora il venditore provi che aveva ragioni sufficienti per far respingere la domanda.",
+      "rubric": [
+        { "id": "c1", "concept": "chiamare in causa il venditore", "weight": 2 },
+        { "id": "c2", "concept": "altrimenti perde la garanzia se il venditore avrebbe vinto", "weight": 2 }
+      ],
+      "references": ["1485"]
+    },
+    {
+      "prompt": "Che cosa può fare il compratore che teme la rivendica della cosa da parte di terzi?",
+      "answer": "Può sospendere il pagamento del prezzo, salvo che il venditore presti idonea garanzia o che il pericolo fosse noto al compratore al momento della vendita.",
+      "rubric": [
+        { "id": "c1", "concept": "sospendere il pagamento del prezzo", "weight": 2 },
+        { "id": "c2", "concept": "salvo garanzia del venditore o pericolo già noto", "weight": 2 }
+      ],
+      "references": ["1481"]
+    },
+    {
+      "prompt": "Che cosa spetta al compratore in caso di evizione parziale?",
+      "answer": "Può chiedere la risoluzione se si deve ritenere che non avrebbe acquistato la cosa senza la parte evitta; altrimenti ottiene una riduzione del prezzo, oltre al risarcimento del danno.",
+      "rubric": [
+        { "id": "c1", "concept": "risoluzione se la parte evitta era determinante", "weight": 2 },
+        { "id": "c2", "concept": "altrimenti riduzione del prezzo", "weight": 2 },
+        { "id": "c3", "concept": "più risarcimento", "weight": 1 }
+      ],
+      "references": ["1484"]
+    },
+    {
+      "prompt": "Si può escludere la garanzia per evizione?",
+      "answer": "Sì, le parti possono escluderla o ridurla, ma il venditore risponde sempre dell'evizione derivante da un fatto suo proprio. Con il semplice patto di esclusione il compratore ha comunque diritto alla restituzione del prezzo e delle spese, salvo vendita a suo rischio e pericolo.",
+      "rubric": [
+        { "id": "c1", "concept": "la garanzia è derogabile", "weight": 1 },
+        { "id": "c2", "concept": "nullo il patto per l'evizione da fatto proprio del venditore", "weight": 2 },
+        { "id": "c3", "concept": "spetta comunque il prezzo, salvo vendita a rischio del compratore", "weight": 2 }
+      ],
+      "references": ["1487", "1488"]
+    },
+    {
+      "prompt": "Che cosa può fare il compratore se la cosa è gravata da oneri o diritti di terzi non dichiarati?",
+      "answer": "Se gli oneri o i diritti non sono apparenti e non dichiarati nel contratto, può chiedere la risoluzione, se non avrebbe acquistato conoscendoli, oppure la riduzione del prezzo, oltre al risarcimento del danno.",
+      "rubric": [
+        { "id": "c1", "concept": "oneri o diritti non apparenti e non dichiarati", "weight": 1 },
+        { "id": "c2", "concept": "risoluzione o riduzione del prezzo", "weight": 2 },
+        { "id": "c3", "concept": "più risarcimento", "weight": 1 }
+      ],
+      "references": ["1489"]
+    },
+    {
+      "prompt": "Di quali vizi della cosa risponde il venditore?",
+      "answer": "Dei vizi che rendono la cosa inidonea all'uso a cui è destinata o ne diminuiscono in modo apprezzabile il valore. Il patto che esclude o limita la garanzia non ha effetto se il venditore ha taciuto in mala fede i vizi.",
+      "rubric": [
+        { "id": "c1", "concept": "vizi che rendono la cosa inidonea all'uso", "weight": 1 },
+        { "id": "c2", "concept": "o ne diminuiscono apprezzabilmente il valore", "weight": 1 },
+        { "id": "c3", "concept": "esclusione inefficace se il venditore ha taciuto in mala fede", "weight": 2 }
+      ],
+      "references": ["1490"]
+    },
+    {
+      "prompt": "Quando la garanzia per vizi non è dovuta?",
+      "answer": "Quando al momento del contratto il compratore conosceva i vizi della cosa, o quando i vizi erano facilmente riconoscibili, salvo che il venditore abbia dichiarato che la cosa ne era esente.",
+      "rubric": [
+        { "id": "c1", "concept": "vizi conosciuti dal compratore", "weight": 2 },
+        { "id": "c2", "concept": "vizi facilmente riconoscibili", "weight": 1 },
+        { "id": "c3", "concept": "salvo dichiarazione di assenza di vizi", "weight": 1 }
+      ],
+      "references": ["1491"]
+    },
+    {
+      "prompt": "Quali azioni spettano al compratore in caso di vizi della cosa?",
+      "answer": "A sua scelta, la risoluzione del contratto (azione redibitoria) o la riduzione del prezzo (azione estimatoria), salvo il risarcimento del danno, a meno che il venditore provi di aver ignorato senza colpa i vizi.",
+      "rubric": [
+        { "id": "c1", "concept": "azione redibitoria: risoluzione", "weight": 2 },
+        { "id": "c2", "concept": "azione estimatoria: riduzione del prezzo", "weight": 2 },
+        { "id": "c3", "concept": "risarcimento salvo ignoranza incolpevole del venditore", "weight": 1 }
+      ],
+      "references": ["1492", "1494"]
+    },
+    {
+      "prompt": "Entro quali termini il compratore deve far valere la garanzia per vizi?",
+      "answer": "Deve denunciare i vizi entro otto giorni dalla scoperta, a pena di decadenza, salvo che il venditore li abbia riconosciuti o occultati; l'azione si prescrive in un anno dalla consegna.",
+      "rubric": [
+        { "id": "c1", "concept": "denuncia entro otto giorni dalla scoperta", "weight": 2 },
+        { "id": "c2", "concept": "a pena di decadenza", "weight": 1 },
+        { "id": "c3", "concept": "prescrizione in un anno dalla consegna", "weight": 2 }
+      ],
+      "references": ["1495"]
+    },
+    {
+      "prompt": "Che cosa succede se la cosa viziata è perita?",
+      "answer": "Se è perita a causa dei vizi, il compratore ha diritto alla risoluzione; se è perita per caso fortuito, per sua colpa o è stata alienata o trasformata, può chiedere solo la riduzione del prezzo.",
+      "rubric": [
+        { "id": "c1", "concept": "perita per i vizi: risoluzione", "weight": 2 },
+        { "id": "c2", "concept": "perita per caso o colpa, alienata o trasformata: solo riduzione", "weight": 2 }
+      ],
+      "references": ["1492"]
+    },
+    {
+      "prompt": "Che cosa può fare il compratore se la cosa manca delle qualità promesse o essenziali?",
+      "answer": "Può chiedere la risoluzione secondo le regole generali sull'inadempimento, purché il difetto di qualità ecceda i limiti di tolleranza stabiliti dagli usi; si applicano però i termini di decadenza e prescrizione della garanzia per vizi.",
+      "rubric": [
+        { "id": "c1", "concept": "risoluzione per inadempimento", "weight": 2 },
+        { "id": "c2", "concept": "oltre i limiti di tolleranza degli usi", "weight": 1 },
+        { "id": "c3", "concept": "stessi termini di decadenza e prescrizione dei vizi", "weight": 1 }
+      ],
+      "references": ["1497"]
+    },
+    {
+      "prompt": "Che cos'è la consegna di aliud pro alio?",
+      "answer": "È la consegna di una cosa radicalmente diversa da quella pattuita: il compratore può chiedere la risoluzione per inadempimento secondo le regole generali, senza essere soggetto ai termini brevi di decadenza e prescrizione della garanzia per vizi.",
+      "rubric": [
+        { "id": "c1", "concept": "cosa radicalmente diversa da quella pattuita", "weight": 2 },
+        { "id": "c2", "concept": "risoluzione per inadempimento ordinaria", "weight": 1 },
+        { "id": "c3", "concept": "non si applicano i termini della garanzia per vizi", "weight": 2 }
+      ],
+      "references": ["1453"]
+    },
+    {
+      "prompt": "Che cos'è la garanzia di buon funzionamento?",
+      "answer": "È il patto con cui il venditore garantisce per un certo tempo il buon funzionamento della cosa. Il compratore deve denunciare il difetto entro trenta giorni dalla scoperta e l'azione si prescrive in sei mesi; il giudice può assegnare al venditore un termine per riparare o sostituire la cosa.",
+      "rubric": [
+        { "id": "c1", "concept": "garanzia convenzionale per un periodo", "weight": 1 },
+        { "id": "c2", "concept": "denuncia entro 30 giorni dalla scoperta", "weight": 1 },
+        { "id": "c3", "concept": "prescrizione in sei mesi", "weight": 1 },
+        { "id": "c4", "concept": "termine per riparare o sostituire", "weight": 1 }
+      ],
+      "references": ["1512"]
+    },
+    {
+      "prompt": "Quali sono le obbligazioni del compratore?",
+      "answer": "Pagare il prezzo nel termine e nel luogo fissati dal contratto o, in mancanza, al momento e nel luogo della consegna; e pagare gli interessi sul prezzo se la cosa consegnata produce frutti.",
+      "rubric": [
+        { "id": "c1", "concept": "pagare il prezzo", "weight": 2 },
+        { "id": "c2", "concept": "in mancanza di patto, al momento e luogo della consegna", "weight": 1 },
+        { "id": "c3", "concept": "interessi se la cosa produce frutti", "weight": 1 }
+      ],
+      "references": ["1498", "1499"]
+    }
+  ]
+}

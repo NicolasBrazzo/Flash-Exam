@@ -1,0 +1,152 @@
+{
+  "topic": { "name": "Scomparsa, assenza e morte presunta" },
+  "questions": [
+    {
+      "prompt": "Che funzione hanno gli istituti di scomparsa, assenza e morte presunta?",
+      "answer": "Regolano la situazione di incertezza sull'esistenza in vita di una persona di cui non si hanno più notizie, con effetti via via più intensi: dalla conservazione del patrimonio fino agli effetti della morte.",
+      "rubric": [
+        { "id": "c1", "concept": "incertezza sull'esistenza in vita", "weight": 2 },
+        { "id": "c2", "concept": "effetti progressivamente più intensi", "weight": 2 }
+      ],
+      "references": ["48", "49", "58"]
+    },
+    {
+      "prompt": "Quando si ha la scomparsa e che cosa può disporre il tribunale?",
+      "answer": "Quando una persona non è più comparsa nel luogo dell'ultimo domicilio o residenza e non se ne hanno notizie; il tribunale, su istanza degli interessati, dei presunti successori o del pubblico ministero, può nominare un curatore e adottare provvedimenti per conservarne il patrimonio.",
+      "rubric": [
+        { "id": "c1", "concept": "allontanamento e mancanza di notizie", "weight": 2 },
+        { "id": "c2", "concept": "nomina di un curatore", "weight": 1 },
+        { "id": "c3", "concept": "provvedimenti conservativi del patrimonio", "weight": 1 }
+      ],
+      "references": ["48"]
+    },
+    {
+      "prompt": "Quando non si nomina il curatore dello scomparso?",
+      "answer": "Se lo scomparso ha un rappresentante legale non si nomina il curatore; se ha un procuratore, il tribunale provvede solo per gli atti che questi non può compiere.",
+      "rubric": [
+        { "id": "c1", "concept": "rappresentante legale: niente curatore", "weight": 2 },
+        { "id": "c2", "concept": "procuratore: solo per gli atti che non può fare", "weight": 2 }
+      ],
+      "references": ["48"]
+    },
+    {
+      "prompt": "Che cosa succede se lo scomparso ritorna?",
+      "answer": "Gli effetti della scomparsa cessano senza bisogno di un nuovo provvedimento giudiziale.",
+      "rubric": [
+        { "id": "c1", "concept": "cessano gli effetti", "weight": 2 },
+        { "id": "c2", "concept": "senza nuova pronuncia", "weight": 1 }
+      ],
+      "references": ["48"]
+    },
+    {
+      "prompt": "Quando può essere dichiarata l'assenza e da chi può essere chiesta?",
+      "answer": "Trascorsi due anni dall'ultima notizia, con sentenza del tribunale, su domanda dei presunti successori legittimi o di chiunque ragionevolmente creda di avere sui beni diritti dipendenti dalla morte dello scomparso.",
+      "rubric": [
+        { "id": "c1", "concept": "due anni dall'ultima notizia", "weight": 2 },
+        { "id": "c2", "concept": "sentenza del tribunale", "weight": 1 },
+        { "id": "c3", "concept": "su domanda di presunti successori o titolari di diritti", "weight": 1 }
+      ],
+      "references": ["49"]
+    },
+    {
+      "prompt": "Quali effetti produce la dichiarazione di assenza?",
+      "answer": "Si aprono i testamenti dell'assente; i presunti eredi possono ottenere l'immissione nel possesso temporaneo dei beni, previo inventario e cauzione; legatari e titolari di diritti dipendenti dalla morte possono esercitarli temporaneamente.",
+      "rubric": [
+        { "id": "c1", "concept": "apertura dei testamenti", "weight": 1 },
+        { "id": "c2", "concept": "immissione nel possesso temporaneo dei beni", "weight": 2 },
+        { "id": "c3", "concept": "inventario e cauzione", "weight": 1 }
+      ],
+      "references": ["50", "52"]
+    },
+    {
+      "prompt": "Che poteri hanno gli immessi nel possesso temporaneo dei beni dell'assente?",
+      "answer": "Amministrano i beni, rappresentano l'assente in giudizio e ne godono le rendite: ascendenti, discendenti e coniuge le trattengono tutte, gli altri devono riservare all'assente un terzo. Non possono alienare, ipotecare o dare in pegno i beni se non per necessità o utilità evidente autorizzata dal tribunale.",
+      "rubric": [
+        { "id": "c1", "concept": "amministrazione e rappresentanza in giudizio", "weight": 1 },
+        { "id": "c2", "concept": "godimento delle rendite, un terzo riservato se non stretti congiunti", "weight": 1 },
+        { "id": "c3", "concept": "atti di disposizione solo autorizzati", "weight": 2 }
+      ],
+      "references": ["52", "53", "54"]
+    },
+    {
+      "prompt": "La dichiarazione di assenza scioglie il matrimonio?",
+      "answer": "No, l'assenza non scioglie il matrimonio né l'unione civile dell'assente, ma determina lo scioglimento della comunione legale dei beni.",
+      "rubric": [
+        { "id": "c1", "concept": "non scioglie il matrimonio", "weight": 2 },
+        { "id": "c2", "concept": "scioglie la comunione legale", "weight": 2 }
+      ],
+      "references": ["191"]
+    },
+    {
+      "prompt": "Che cosa succede se l'assente ritorna durante il possesso temporaneo?",
+      "answer": "Cessano gli effetti della dichiarazione di assenza: i possessori devono restituire i beni, ma conservano le rendite fino alla costituzione in mora e restano irrevocabili gli atti autorizzati. Se l'assenza era volontaria e ingiustificata, l'assente perde il diritto alle rendite riservate.",
+      "rubric": [
+        { "id": "c1", "concept": "restituzione dei beni", "weight": 1 },
+        { "id": "c2", "concept": "rendite trattenute fino alla mora", "weight": 1 },
+        { "id": "c3", "concept": "atti autorizzati irrevocabili", "weight": 1 },
+        { "id": "c4", "concept": "assenza volontaria: perde le rendite riservate", "weight": 1 }
+      ],
+      "references": ["56"]
+    },
+    {
+      "prompt": "Quando può essere dichiarata la morte presunta?",
+      "answer": "Quando sono trascorsi dieci anni dall'ultima notizia, con sentenza del tribunale, anche senza previa dichiarazione di assenza; non prima che siano passati nove anni dalla maggiore età dell'assente. Bastano termini più brevi in caso di infortunio o eventi bellici.",
+      "rubric": [
+        { "id": "c1", "concept": "dieci anni dall'ultima notizia", "weight": 2 },
+        { "id": "c2", "concept": "anche senza dichiarazione di assenza", "weight": 1 },
+        { "id": "c3", "concept": "almeno nove anni dopo la maggiore età", "weight": 1 },
+        { "id": "c4", "concept": "termini più brevi per infortuni e guerre", "weight": 1 }
+      ],
+      "references": ["58", "60"]
+    },
+    {
+      "prompt": "In quali casi speciali la morte presunta può essere dichiarata prima dei dieci anni?",
+      "answer": "Per chi è scomparso per infortunio, dopo due anni dall'infortunio; per chi è scomparso in operazioni belliche o è stato fatto prigioniero, dopo due anni dal trattato di pace o tre anni dalla fine dell'anno di cessazione delle ostilità.",
+      "rubric": [
+        { "id": "c1", "concept": "infortunio: due anni", "weight": 2 },
+        { "id": "c2", "concept": "guerra o prigionia: due anni dal trattato o tre dalla fine delle ostilità", "weight": 2 }
+      ],
+      "references": ["60"]
+    },
+    {
+      "prompt": "Quali effetti produce la dichiarazione di morte presunta?",
+      "answer": "Produce gli effetti della morte: chi era immesso nel possesso temporaneo può disporre liberamente dei beni, i diritti e le liberazioni temporanee diventano definitivi, cessano le cauzioni, si scioglie l'unione civile e il coniuge può contrarre nuovo matrimonio.",
+      "rubric": [
+        { "id": "c1", "concept": "libera disposizione dei beni", "weight": 1 },
+        { "id": "c2", "concept": "diritti temporanei diventano definitivi", "weight": 1 },
+        { "id": "c3", "concept": "il coniuge può risposarsi", "weight": 2 }
+      ],
+      "references": ["63", "65"]
+    },
+    {
+      "prompt": "Che cosa recupera il morto presunto che ritorna?",
+      "answer": "Recupera i beni nello stato in cui si trovano, il prezzo dei beni alienati se ancora dovuto o i beni in cui è stato investito, e può pretendere l'adempimento delle obbligazioni considerate estinte; restano salvi gli effetti di prescrizione e usucapione.",
+      "rubric": [
+        { "id": "c1", "concept": "beni nello stato in cui si trovano", "weight": 2 },
+        { "id": "c2", "concept": "prezzo ancora dovuto o beni reinvestiti", "weight": 1 },
+        { "id": "c3", "concept": "salve prescrizione e usucapione", "weight": 1 }
+      ],
+      "references": ["66"]
+    },
+    {
+      "prompt": "Che sorte ha il nuovo matrimonio del coniuge se il morto presunto ritorna?",
+      "answer": "Il nuovo matrimonio è nullo, ma sono salvi i suoi effetti civili; la nullità non può essere pronunciata se si accerta la morte, anche se avvenuta dopo il nuovo matrimonio.",
+      "rubric": [
+        { "id": "c1", "concept": "il nuovo matrimonio è nullo", "weight": 2 },
+        { "id": "c2", "concept": "salvi gli effetti civili", "weight": 1 },
+        { "id": "c3", "concept": "niente nullità se si accerta la morte", "weight": 1 }
+      ],
+      "references": ["68"]
+    },
+    {
+      "prompt": "Che differenza c'è tra scomparsa, assenza e morte presunta?",
+      "answer": "La scomparsa è una situazione di fatto che consente solo misure conservative, senza termine minimo. L'assenza è dichiarata con sentenza dopo due anni e consente il possesso temporaneo dei beni. La morte presunta è dichiarata dopo dieci anni e produce gli effetti della morte.",
+      "rubric": [
+        { "id": "c1", "concept": "scomparsa: misure conservative", "weight": 1 },
+        { "id": "c2", "concept": "assenza: due anni, possesso temporaneo", "weight": 2 },
+        { "id": "c3", "concept": "morte presunta: dieci anni, effetti della morte", "weight": 2 }
+      ],
+      "references": ["48", "49", "58"]
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "topic": { "name": "Appalto, subfornitura e trasporto" },
+  "questions": [
+    {
+      "prompt": "Che cos'è l'appalto?",
+      "answer": "È il contratto con cui una parte, l'appaltatore, assume con organizzazione dei mezzi necessari e con gestione a proprio rischio il compimento di un'opera o di un servizio verso un corrispettivo in denaro.",
+      "rubric": [
+        { "id": "c1", "concept": "compimento di un'opera o di un servizio", "weight": 2 },
+        { "id": "c2", "concept": "organizzazione dei mezzi e gestione a proprio rischio", "weight": 2 },
+        { "id": "c3", "concept": "corrispettivo in denaro", "weight": 1 }
+      ],
+      "references": ["1655"]
+    },
+    {
+      "prompt": "Che differenza c'è tra appalto e contratto d'opera?",
+      "answer": "Nell'appalto l'appaltatore è un imprenditore che organizza mezzi e capitali e assume il rischio della gestione; nel contratto d'opera la prestazione è eseguita con lavoro prevalentemente proprio, senza un'organizzazione d'impresa.",
+      "rubric": [
+        { "id": "c1", "concept": "appalto: organizzazione d'impresa e rischio", "weight": 2 },
+        { "id": "c2", "concept": "contratto d'opera: lavoro prevalentemente proprio", "weight": 2 }
+      ],
+      "references": ["1655", "2222"]
+    },
+    {
+      "prompt": "Che differenza c'è tra appalto e vendita di cosa futura?",
+      "answer": "Si ha vendita quando il produttore realizza un bene della sua normale produzione, anche con varianti scelte dal compratore; si ha appalto quando l'opera è un risultato nuovo, realizzato su progetto del committente rispetto alla serie produttiva.",
+      "rubric": [
+        { "id": "c1", "concept": "vendita: bene della normale produzione", "weight": 2 },
+        { "id": "c2", "concept": "appalto: opera nuova su richiesta del committente", "weight": 2 },
+        { "id": "c3", "concept": "appalto è un fare, vendita un dare", "weight": 1 }
+      ],
+      "references": ["1655", "1472"]
+    },
+    {
+      "prompt": "Che differenza c'è tra appalto pubblico e appalto privato?",
+      "answer": "Nell'appalto pubblico la scelta dell'appaltatore avviene con procedure di gara, per garantire imparzialità e condizioni migliori; nell'appalto privato il contratto è liberamente negoziato tra le parti.",
+      "rubric": [
+        { "id": "c1", "concept": "pubblico: procedure di selezione a evidenza pubblica", "weight": 2 },
+        { "id": "c2", "concept": "privato: libera negoziazione", "weight": 2 }
+      ],
+      "references": ["1655"]
+    },
+    {
+      "prompt": "L'appaltatore può subappaltare l'opera?",
+      "answer": "Solo se è stato autorizzato dal committente. Nel subappalto l'appaltatore diventa committente del subappaltatore, al quale si applicano le norme sull'appalto.",
+      "rubric": [
+        { "id": "c1", "concept": "serve l'autorizzazione del committente", "weight": 2 },
+        { "id": "c2", "concept": "l'appaltatore diventa subcommittente", "weight": 1 }
+      ],
+      "references": ["1656"]
+    },
+    {
+      "prompt": "Come si determina il corrispettivo dell'appalto se le parti non l'hanno fissato?",
+      "answer": "Con riferimento alle tariffe esistenti o agli usi; in mancanza è determinato dal giudice.",
+      "rubric": [
+        { "id": "c1", "concept": "tariffe o usi", "weight": 2 },
+        { "id": "c2", "concept": "in mancanza il giudice", "weight": 2 }
+      ],
+      "references": ["1657"]
+    },
+    {
+      "prompt": "Che cosa succede se per eseguire l'opera a regola d'arte occorre modificare il progetto?",
+      "answer": "Se le parti non si accordano, il giudice determina le variazioni e il nuovo prezzo. Se le variazioni superano un sesto del prezzo l'appaltatore può recedere con un'equa indennità; se sono di notevole entità può recedere il committente, corrispondendo un equo indennizzo.",
+      "rubric": [
+        { "id": "c1", "concept": "in mancanza di accordo decide il giudice", "weight": 2 },
+        { "id": "c2", "concept": "oltre un sesto: recesso dell'appaltatore", "weight": 1 },
+        { "id": "c3", "concept": "variazioni notevoli: recesso del committente con indennizzo", "weight": 1 }
+      ],
+      "references": ["1660"]
+    },
+    {
+      "prompt": "Quando è ammessa la revisione del prezzo nell'appalto?",
+      "answer": "Quando per circostanze imprevedibili il costo dei materiali o della manodopera varia di oltre un decimo del prezzo complessivo: la revisione è ammessa solo per la parte eccedente il decimo. Spetta un compenso anche per difficoltà di esecuzione geologiche o idriche impreviste.",
+      "rubric": [
+        { "id": "c1", "concept": "circostanze imprevedibili", "weight": 1 },
+        { "id": "c2", "concept": "variazione oltre un decimo", "weight": 2 },
+        { "id": "c3", "concept": "revisione solo per l'eccedenza", "weight": 1 },
+        { "id": "c4", "concept": "compenso per difficoltà geologiche impreviste", "weight": 1 }
+      ],
+      "references": ["1664"]
+    },
+    {
+      "prompt": "Che cos'è la verifica dell'opera e quando l'opera si considera accettata?",
+      "answer": "Il committente ha diritto di verificare l'opera prima di riceverla (collaudo). L'opera si considera accettata se il committente non procede alla verifica senza giusti motivi, se non ne comunica l'esito in breve termine o se la riceve senza riserve.",
+      "rubric": [
+        { "id": "c1", "concept": "verifica prima della consegna", "weight": 1 },
+        { "id": "c2", "concept": "accettata se non verifica o non comunica l'esito", "weight": 2 },
+        { "id": "c3", "concept": "accettata se ricevuta senza riserve", "weight": 1 }
+      ],
+      "references": ["1665"]
+    },
+    {
+      "prompt": "Quando l'appaltatore ha diritto al pagamento del corrispettivo?",
+      "answer": "Salvo diversa pattuizione o uso contrario, quando l'opera è accettata dal committente.",
+      "rubric": [
+        { "id": "c1", "concept": "all'accettazione dell'opera", "weight": 2 },
+        { "id": "c2", "concept": "salvo patto o uso contrario", "weight": 1 }
+      ],
+      "references": ["1665"]
+    },
+    {
+      "prompt": "Quando non è dovuta la garanzia per difformità e vizi dell'opera?",
+      "answer": "Quando il committente ha accettato l'opera e le difformità o i vizi erano da lui conosciuti o riconoscibili, purché non siano stati taciuti in mala fede dall'appaltatore.",
+      "rubric": [
+        { "id": "c1", "concept": "opera accettata", "weight": 1 },
+        { "id": "c2", "concept": "vizi conosciuti o riconoscibili", "weight": 2 },
+        { "id": "c3", "concept": "salvo mala fede dell'appaltatore", "weight": 1 }
+      ],
+      "references": ["1667"]
+    },
+    {
+      "prompt": "Entro quali termini il committente deve far valere la garanzia per i vizi dell'opera?",
+      "answer": "Deve denunciarli entro sessanta giorni dalla scoperta, a pena di decadenza, salvo che l'appaltatore li abbia riconosciuti o occultati; l'azione si prescrive in due anni dalla consegna. L'eccezione resta sempre proponibile se la denuncia è tempestiva.",
+      "rubric": [
+        { "id": "c1", "concept": "denuncia entro 60 giorni dalla scoperta", "weight": 2 },
+        { "id": "c2", "concept": "prescrizione in due anni dalla consegna", "weight": 2 },
+        { "id": "c3", "concept": "eccezione sempre proponibile se denunciati", "weight": 1 }
+      ],
+      "references": ["1667"]
+    },
+    {
+      "prompt": "Che cosa può chiedere il committente in caso di difformità o vizi dell'opera?",
+      "answer": "L'eliminazione dei vizi a spese dell'appaltatore o una proporzionale riduzione del prezzo, oltre al risarcimento se l'appaltatore è in colpa; se i vizi rendono l'opera del tutto inadatta alla sua destinazione, la risoluzione del contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "eliminazione dei vizi o riduzione del prezzo", "weight": 2 },
+        { "id": "c2", "concept": "risarcimento in caso di colpa", "weight": 1 },
+        { "id": "c3", "concept": "risoluzione se l'opera è del tutto inadatta", "weight": 2 }
+      ],
+      "references": ["1668"]
+    },
+    {
+      "prompt": "Che cosa prevede la responsabilità dell'appaltatore per rovina e gravi difetti di immobili?",
+      "answer": "Per gli edifici e le altre cose immobili destinate a lunga durata, se l'opera rovina, presenta pericolo di rovina o gravi difetti, l'appaltatore risponde per dieci anni dal compimento, purché sia fatta denuncia entro un anno dalla scoperta; l'azione si prescrive in un anno dalla denuncia.",
+      "rubric": [
+        { "id": "c1", "concept": "immobili destinati a lunga durata", "weight": 1 },
+        { "id": "c2", "concept": "rovina o gravi difetti", "weight": 1 },
+        { "id": "c3", "concept": "responsabilità per dieci anni", "weight": 2 },
+        { "id": "c4", "concept": "denuncia entro un anno dalla scoperta", "weight": 1 }
+      ],
+      "references": ["1669"]
+    },
+    {
+      "prompt": "Che cos'è la clausola if and when nel subappalto?",
+      "answer": "È la clausola con cui il subcommittente si obbliga a pagare il subappaltatore solo dopo aver ricevuto il pagamento dal committente principale, trasferendogli il rischio di insolvenza o ritardo di quest'ultimo.",
+      "rubric": [
+        { "id": "c1", "concept": "pagamento subordinato al pagamento del committente", "weight": 2 },
+        { "id": "c2", "concept": "trasferisce il rischio al subappaltatore", "weight": 2 }
+      ],
+      "references": ["1656"]
+    },
+    {
+      "prompt": "Che cos'è la subfornitura?",
+      "answer": "È il contratto con cui un'impresa si impegna a eseguire lavorazioni o fornire prodotti destinati a essere incorporati nell'attività di un'altra impresa, secondo le sue specifiche. È un contratto autonomo, non dipendente da un contratto principale, disciplinato da una legge speciale a tutela del subfornitore.",
+      "rubric": [
+        { "id": "c1", "concept": "lavorazioni o forniture per l'impresa committente", "weight": 2 },
+        { "id": "c2", "concept": "contratto autonomo, non un subcontratto", "weight": 1 },
+        { "id": "c3", "concept": "legge speciale a tutela del subfornitore", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che cos'è il contratto di trasporto?",
+      "answer": "È il contratto con cui il vettore si obbliga, verso corrispettivo, a trasferire persone o cose da un luogo a un altro.",
+      "rubric": [
+        { "id": "c1", "concept": "trasferire persone o cose", "weight": 2 },
+        { "id": "c2", "concept": "da un luogo a un altro, verso corrispettivo", "weight": 2 }
+      ],
+      "references": ["1678"]
+    },
+    {
+      "prompt": "Quali obblighi hanno i concessionari di servizi di linea?",
+      "answer": "Hanno l'obbligo di accettare le richieste di trasporto compatibili con i mezzi ordinari dell'impresa, cioè l'obbligo di contrarre, e di rispettare la parità di trattamento tra i richiedenti.",
+      "rubric": [
+        { "id": "c1", "concept": "obbligo di contrarre", "weight": 2 },
+        { "id": "c2", "concept": "parità di trattamento", "weight": 2 }
+      ],
+      "references": ["1679"]
+    },
+    {
+      "prompt": "Di che cosa risponde il vettore nel trasporto di persone?",
+      "answer": "Oltre che del ritardo e dell'inadempimento, risponde dei sinistri che colpiscono il viaggiatore durante il viaggio e della perdita o avaria delle cose che porta con sé, se non prova di aver adottato tutte le misure idonee a evitare il danno.",
+      "rubric": [
+        { "id": "c1", "concept": "sinistri alla persona del viaggiatore", "weight": 2 },
+        { "id": "c2", "concept": "perdita o avaria dei bagagli", "weight": 1 },
+        { "id": "c3", "concept": "salvo prova di aver adottato le misure idonee", "weight": 2 }
+      ],
+      "references": ["1681"]
+    },
+    {
+      "prompt": "Sono valide le clausole che limitano la responsabilità del vettore per i danni al viaggiatore?",
+      "answer": "No, sono nulle le clausole che limitano la responsabilità del vettore per i sinistri che colpiscono il viaggiatore, e la regola vale anche per il trasporto gratuito.",
+      "rubric": [
+        { "id": "c1", "concept": "clausole nulle", "weight": 2 },
+        { "id": "c2", "concept": "vale anche per il trasporto gratuito", "weight": 1 }
+      ],
+      "references": ["1681"]
+    },
+    {
+      "prompt": "Che differenza c'è tra trasporto gratuito e trasporto amichevole?",
+      "answer": "Il trasporto gratuito è un contratto, perché il vettore ha un interesse giuridicamente rilevante, e si applica la responsabilità contrattuale del vettore. Il trasporto amichevole o di cortesia non è un contratto: il vettore risponde solo a titolo extracontrattuale.",
+      "rubric": [
+        { "id": "c1", "concept": "gratuito: contratto, interesse del vettore", "weight": 2 },
+        { "id": "c2", "concept": "amichevole: nessun vincolo contrattuale", "weight": 1 },
+        { "id": "c3", "concept": "amichevole: responsabilità extracontrattuale", "weight": 1 }
+      ],
+      "references": ["1681", "2054"]
+    },
+    {
+      "prompt": "Di che cosa risponde il vettore nel trasporto di cose?",
+      "answer": "È responsabile della perdita e dell'avaria delle cose dal momento in cui le riceve a quello in cui le riconsegna, se non prova che il danno deriva da caso fortuito, dalla natura o dai vizi delle cose o dell'imballaggio, o dal fatto del mittente o del destinatario.",
+      "rubric": [
+        { "id": "c1", "concept": "perdita e avaria dalla ricezione alla riconsegna", "weight": 2 },
+        { "id": "c2", "concept": "prova liberatoria di una causa specifica", "weight": 2 },
+        { "id": "c3", "concept": "caso fortuito, vizi, fatto del mittente o destinatario", "weight": 1 }
+      ],
+      "references": ["1693"]
+    },
+    {
+      "prompt": "Che posizione ha il destinatario nel trasporto di cose?",
+      "answer": "Il trasporto è un contratto a favore di terzo: dal momento in cui il destinatario chiede la riconsegna delle cose, acquista i diritti verso il vettore e il mittente perde la possibilità di disporre diversamente delle cose.",
+      "rubric": [
+        { "id": "c1", "concept": "contratto a favore di terzo", "weight": 2 },
+        { "id": "c2", "concept": "la richiesta di riconsegna fa acquistare i diritti", "weight": 1 },
+        { "id": "c3", "concept": "il mittente perde il potere di disposizione", "weight": 1 }
+      ],
+      "references": ["1689", "1411"]
+    },
+    {
+      "prompt": "Che cos'è la lettera di vettura?",
+      "answer": "È il documento che prova il contratto di trasporto di cose, compilato dal mittente e consegnato al vettore, che ne rilascia un duplicato; se il duplicato è all'ordine, è un titolo di credito rappresentativo della merce.",
+      "rubric": [
+        { "id": "c1", "concept": "documento di prova del trasporto", "weight": 2 },
+        { "id": "c2", "concept": "se all'ordine è un titolo di credito", "weight": 1 }
+      ],
+      "references": ["1684"]
+    }
+  ]
+}

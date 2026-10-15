@@ -1,0 +1,265 @@
+{
+  "topic": { "name": "La rappresentanza e il contratto per persona da nominare" },
+  "questions": [
+    {
+      "prompt": "Che cos'è la rappresentanza?",
+      "answer": "È il potere di un soggetto, il rappresentante, di compiere atti giuridici in nome e nell'interesse di un altro, il rappresentato, i cui effetti si producono direttamente nella sfera giuridica del rappresentato.",
+      "rubric": [
+        { "id": "c1", "concept": "potere di agire per un altro", "weight": 1 },
+        { "id": "c2", "concept": "in nome e nell'interesse del rappresentato", "weight": 2 },
+        { "id": "c3", "concept": "effetti diretti sul rappresentato", "weight": 2 }
+      ],
+      "references": ["1388"]
+    },
+    {
+      "prompt": "Quando il contratto concluso dal rappresentante produce effetti sul rappresentato?",
+      "answer": "Quando è concluso in nome e nell'interesse del rappresentato, nei limiti delle facoltà conferite: in tal caso produce direttamente effetto nei suoi confronti.",
+      "rubric": [
+        { "id": "c1", "concept": "spendita del nome del rappresentato", "weight": 2 },
+        { "id": "c2", "concept": "nell'interesse del rappresentato", "weight": 1 },
+        { "id": "c3", "concept": "nei limiti dei poteri conferiti", "weight": 2 }
+      ],
+      "references": ["1388"]
+    },
+    {
+      "prompt": "Che cos'è la spendita del nome e perché è necessaria?",
+      "answer": "È la dichiarazione del rappresentante di agire in nome del rappresentato. Senza di essa la rappresentanza non opera e il contratto produce effetti nei confronti del rappresentante.",
+      "rubric": [
+        { "id": "c1", "concept": "dichiarare di agire in nome altrui", "weight": 2 },
+        { "id": "c2", "concept": "senza spendita gli effetti ricadono sul rappresentante", "weight": 2 }
+      ],
+      "references": ["1388"]
+    },
+    {
+      "prompt": "Che differenza c'è tra parte in senso formale e parte in senso sostanziale nella rappresentanza?",
+      "answer": "Il rappresentante è la parte in senso formale, perché conclude materialmente il contratto; il rappresentato è la parte in senso sostanziale, perché su di lui ricadono gli effetti.",
+      "rubric": [
+        { "id": "c1", "concept": "rappresentante: parte formale, conclude il contratto", "weight": 2 },
+        { "id": "c2", "concept": "rappresentato: parte sostanziale, riceve gli effetti", "weight": 2 }
+      ],
+      "references": ["1388"]
+    },
+    {
+      "prompt": "Quali sono le fonti del potere di rappresentanza?",
+      "answer": "Il potere di rappresentanza è conferito dalla legge (rappresentanza legale) oppure dall'interessato (rappresentanza volontaria), mediante la procura.",
+      "rubric": [
+        { "id": "c1", "concept": "la legge", "weight": 2 },
+        { "id": "c2", "concept": "l'interessato tramite procura", "weight": 2 }
+      ],
+      "references": ["1387"]
+    },
+    {
+      "prompt": "Che differenza c'è tra rappresentanza legale, volontaria e organica?",
+      "answer": "Nella legale è la legge a stabilire la sostituzione e il rappresentante, come per gli incapaci. Nella volontaria l'interessato decide se e da chi farsi rappresentare. Nell'organica il rappresentato è un ente, che deve agire tramite persone fisiche scelte liberamente.",
+      "rubric": [
+        { "id": "c1", "concept": "legale: decisa dalla legge, tipica degli incapaci", "weight": 2 },
+        { "id": "c2", "concept": "volontaria: scelta dell'interessato", "weight": 2 },
+        { "id": "c3", "concept": "organica: rappresentanza degli enti", "weight": 1 }
+      ],
+      "references": ["1387"]
+    },
+    {
+      "prompt": "Che cos'è la procura?",
+      "answer": "È l'atto unilaterale con cui l'interessato conferisce al rappresentante il potere di rappresentarlo. Non richiede l'accettazione del rappresentante ed è rivolta ai terzi con cui questi contratterà.",
+      "rubric": [
+        { "id": "c1", "concept": "atto unilaterale", "weight": 2 },
+        { "id": "c2", "concept": "conferisce il potere rappresentativo", "weight": 2 },
+        { "id": "c3", "concept": "non serve l'accettazione del rappresentante", "weight": 1 }
+      ],
+      "references": ["1387"]
+    },
+    {
+      "prompt": "Che differenza c'è tra procura generale e procura speciale?",
+      "answer": "La procura generale autorizza il rappresentante a compiere tutti gli affari del rappresentato; quella speciale riguarda uno o più affari determinati.",
+      "rubric": [
+        { "id": "c1", "concept": "generale: tutti gli affari", "weight": 2 },
+        { "id": "c2", "concept": "speciale: affari determinati", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Quale forma deve avere la procura?",
+      "answer": "La procura non ha effetto se non è conferita con la forma prescritta per il contratto che il rappresentante deve concludere: per esempio, per vendere un immobile serve la forma scritta.",
+      "rubric": [
+        { "id": "c1", "concept": "stessa forma del contratto da concludere", "weight": 2 },
+        { "id": "c2", "concept": "altrimenti non ha effetto", "weight": 1 }
+      ],
+      "references": ["1392"]
+    },
+    {
+      "prompt": "Quale capacità devono avere rappresentato e rappresentante nella rappresentanza volontaria?",
+      "answer": "Il rappresentato deve essere legalmente capace. Al rappresentante basta la capacità di intendere e di volere, avuto riguardo alla natura e al contenuto del contratto. In ogni caso il contratto non deve essere vietato al rappresentato.",
+      "rubric": [
+        { "id": "c1", "concept": "rappresentato: capacità legale di agire", "weight": 2 },
+        { "id": "c2", "concept": "rappresentante: basta la capacità naturale", "weight": 2 },
+        { "id": "c3", "concept": "il contratto non deve essere vietato al rappresentato", "weight": 1 }
+      ],
+      "references": ["1389"]
+    },
+    {
+      "prompt": "Di chi si considerano i vizi della volontà nel contratto concluso dal rappresentante?",
+      "answer": "Il contratto è annullabile se è viziata la volontà del rappresentante; se però il vizio riguarda elementi predeterminati dal rappresentato, conta solo la volontà di quest'ultimo.",
+      "rubric": [
+        { "id": "c1", "concept": "di regola conta la volontà del rappresentante", "weight": 2 },
+        { "id": "c2", "concept": "per gli elementi predeterminati conta il rappresentato", "weight": 2 }
+      ],
+      "references": ["1390"]
+    },
+    {
+      "prompt": "Di chi rileva la buona o mala fede nel contratto concluso dal rappresentante?",
+      "answer": "Si guarda al rappresentante, salvo che si tratti di elementi predeterminati dal rappresentato. In nessun caso il rappresentato in mala fede può giovarsi della buona fede del rappresentante.",
+      "rubric": [
+        { "id": "c1", "concept": "di regola conta il rappresentante", "weight": 2 },
+        { "id": "c2", "concept": "salvo elementi predeterminati dal rappresentato", "weight": 1 },
+        { "id": "c3", "concept": "il rappresentato in mala fede non sfrutta la buona fede del rappresentante", "weight": 2 }
+      ],
+      "references": ["1391"]
+    },
+    {
+      "prompt": "Che cosa può esigere il terzo che contratta con il rappresentante?",
+      "answer": "Può sempre esigere che il rappresentante giustifichi i suoi poteri e, se la rappresentanza risulta da un atto scritto, che gliene dia una copia da lui firmata.",
+      "rubric": [
+        { "id": "c1", "concept": "giustificazione dei poteri", "weight": 2 },
+        { "id": "c2", "concept": "copia firmata dell'atto scritto", "weight": 1 }
+      ],
+      "references": ["1393"]
+    },
+    {
+      "prompt": "Quando è annullabile il contratto concluso dal rappresentante in conflitto di interessi?",
+      "answer": "È annullabile su domanda del rappresentato se il conflitto era conosciuto o riconoscibile dal terzo; altrimenti resta valido, a tutela dell'affidamento del terzo.",
+      "rubric": [
+        { "id": "c1", "concept": "annullabile su domanda del rappresentato", "weight": 2 },
+        { "id": "c2", "concept": "se il conflitto era conosciuto o riconoscibile dal terzo", "weight": 2 },
+        { "id": "c3", "concept": "altrimenti prevale l'affidamento del terzo", "weight": 1 }
+      ],
+      "references": ["1394"]
+    },
+    {
+      "prompt": "Che cos'è il contratto con se stesso e quando è valido?",
+      "answer": "È il contratto che il rappresentante conclude con se stesso, in proprio o come rappresentante di un'altra parte. È annullabile su domanda del solo rappresentato, salvo che questi lo abbia specificamente autorizzato o che il contenuto sia determinato in modo da escludere il conflitto di interessi.",
+      "rubric": [
+        { "id": "c1", "concept": "il rappresentante è anche controparte", "weight": 1 },
+        { "id": "c2", "concept": "annullabile su domanda del rappresentato", "weight": 2 },
+        { "id": "c3", "concept": "salvo autorizzazione specifica", "weight": 1 },
+        { "id": "c4", "concept": "o contenuto predeterminato che esclude il conflitto", "weight": 1 }
+      ],
+      "references": ["1395"]
+    },
+    {
+      "prompt": "In quali modi si estingue la procura?",
+      "answer": "Per revoca del rappresentato, salvo che sia irrevocabile, per rinuncia del rappresentante, per morte o incapacità di una delle parti e per il venir meno del rapporto sottostante.",
+      "rubric": [
+        { "id": "c1", "concept": "revoca", "weight": 1 },
+        { "id": "c2", "concept": "rinuncia del rappresentante", "weight": 1 },
+        { "id": "c3", "concept": "morte o incapacità", "weight": 1 },
+        { "id": "c4", "concept": "fine del rapporto sottostante", "weight": 1 }
+      ],
+      "references": ["1396"]
+    },
+    {
+      "prompt": "La revoca della procura è opponibile al terzo che contratta con il rappresentante?",
+      "answer": "Le modificazioni e la revoca della procura devono essere portate a conoscenza dei terzi con mezzi idonei; altrimenti non sono opponibili, salvo che si provi che il terzo le conosceva al momento della conclusione del contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "onere di comunicarla ai terzi con mezzi idonei", "weight": 2 },
+        { "id": "c2", "concept": "altrimenti non è opponibile", "weight": 1 },
+        { "id": "c3", "concept": "salvo prova che il terzo la conosceva", "weight": 2 }
+      ],
+      "references": ["1396"]
+    },
+    {
+      "prompt": "Che cosa succede al contratto concluso dal falso rappresentante?",
+      "answer": "Il contratto concluso senza potere o eccedendo i poteri è inefficace: non produce effetti né verso il preteso rappresentato né verso il falso rappresentante, salvo ratifica.",
+      "rubric": [
+        { "id": "c1", "concept": "il contratto è inefficace", "weight": 2 },
+        { "id": "c2", "concept": "non vincola il preteso rappresentato", "weight": 1 },
+        { "id": "c3", "concept": "salvo la ratifica", "weight": 1 }
+      ],
+      "references": ["1398", "1399"]
+    },
+    {
+      "prompt": "Di che cosa risponde il falso rappresentante verso il terzo?",
+      "answer": "Chi ha contrattato come rappresentante senza averne i poteri o eccedendoli risponde del danno che il terzo ha subito per aver confidato senza colpa nella validità del contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "risarcimento del danno al terzo", "weight": 2 },
+        { "id": "c2", "concept": "affidamento incolpevole nella validità", "weight": 2 }
+      ],
+      "references": ["1398"]
+    },
+    {
+      "prompt": "Che cos'è la ratifica?",
+      "answer": "È l'atto unilaterale con cui il preteso rappresentato rende efficace il contratto concluso in suo nome dal falso rappresentante. Richiede la forma prescritta per il contratto e ha effetto retroattivo, salvi i diritti dei terzi.",
+      "rubric": [
+        { "id": "c1", "concept": "rende efficace il contratto del falso rappresentante", "weight": 2 },
+        { "id": "c2", "concept": "stessa forma del contratto", "weight": 1 },
+        { "id": "c3", "concept": "effetto retroattivo salvi i diritti dei terzi", "weight": 2 }
+      ],
+      "references": ["1399"]
+    },
+    {
+      "prompt": "Come può il terzo uscire dall'incertezza sulla ratifica?",
+      "answer": "Può accordarsi con il falso rappresentante per sciogliere il contratto prima della ratifica, oppure invitare l'interessato a pronunciarsi entro un termine, scaduto il quale nel silenzio la ratifica si intende negata.",
+      "rubric": [
+        { "id": "c1", "concept": "scioglimento consensuale con il falso rappresentante", "weight": 1 },
+        { "id": "c2", "concept": "interpello con assegnazione di un termine", "weight": 2 },
+        { "id": "c3", "concept": "il silenzio vale come rifiuto", "weight": 2 }
+      ],
+      "references": ["1399"]
+    },
+    {
+      "prompt": "Quando opera la rappresentanza apparente?",
+      "answer": "Secondo la giurisprudenza il preteso rappresentato è vincolato quando c'è un'apparenza di poteri rappresentativi, questa apparenza gli è imputabile e il terzo ha confidato senza colpa nell'esistenza dei poteri.",
+      "rubric": [
+        { "id": "c1", "concept": "apparenza di poteri", "weight": 1 },
+        { "id": "c2", "concept": "imputabile al preteso rappresentato", "weight": 2 },
+        { "id": "c3", "concept": "affidamento incolpevole del terzo", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che cos'è il contratto per persona da nominare?",
+      "answer": "È il contratto in cui una parte, al momento della conclusione, si riserva la facoltà di nominare successivamente la persona che acquisterà i diritti e assumerà gli obblighi nascenti dal contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "riserva di nomina", "weight": 2 },
+        { "id": "c2", "concept": "il nominato acquista diritti e obblighi", "weight": 2 }
+      ],
+      "references": ["1401"]
+    },
+    {
+      "prompt": "Entro quale termine e con quali requisiti va fatta la dichiarazione di nomina?",
+      "answer": "Deve essere comunicata all'altra parte entro tre giorni dalla stipulazione, salvo diverso termine pattuito, accompagnata dall'accettazione del nominato o da una procura anteriore, nella stessa forma usata per il contratto.",
+      "rubric": [
+        { "id": "c1", "concept": "entro tre giorni salvo diverso termine", "weight": 2 },
+        { "id": "c2", "concept": "accettazione del nominato o procura anteriore", "weight": 2 },
+        { "id": "c3", "concept": "stessa forma del contratto", "weight": 1 }
+      ],
+      "references": ["1402", "1403"]
+    },
+    {
+      "prompt": "Quali effetti ha la dichiarazione di nomina e che cosa succede se manca?",
+      "answer": "Se validamente fatta, il nominato acquista i diritti e assume gli obblighi con effetto retroattivo dalla stipulazione. Se non è fatta validamente nel termine, il contratto produce i suoi effetti tra i contraenti originari.",
+      "rubric": [
+        { "id": "c1", "concept": "effetti retroattivi verso il nominato", "weight": 2 },
+        { "id": "c2", "concept": "in mancanza, effetti tra i contraenti originari", "weight": 2 }
+      ],
+      "references": ["1404", "1405"]
+    },
+    {
+      "prompt": "Che differenza c'è tra contratto per persona da nominare e rappresentanza?",
+      "answer": "In entrambi gli effetti ricadono su un soggetto che non ha partecipato alla conclusione. Nella rappresentanza però il nome del rappresentato è speso subito, mentre nel contratto per persona da nominare il nome dell'interessato non è speso al momento della conclusione.",
+      "rubric": [
+        { "id": "c1", "concept": "analogia: effetti su chi non ha concluso il contratto", "weight": 1 },
+        { "id": "c2", "concept": "differenza: nel contratto per persona da nominare non c'è spendita del nome", "weight": 2 }
+      ],
+      "references": ["1388", "1401"]
+    },
+    {
+      "prompt": "Per quali ragioni si usa il contratto per persona da nominare?",
+      "answer": "Per consentire al vero interessato di non comparire nelle trattative e per ottenere un risparmio fiscale, evitando un doppio trasferimento.",
+      "rubric": [
+        { "id": "c1", "concept": "anonimato dell'interessato nelle trattative", "weight": 2 },
+        { "id": "c2", "concept": "evitare un doppio trasferimento e il relativo costo fiscale", "weight": 2 }
+      ],
+      "references": ["1401"]
+    }
+  ]
+}

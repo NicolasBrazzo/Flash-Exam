@@ -1,0 +1,206 @@
+{
+  "topic": { "name": "Prescrizione e decadenza" },
+  "questions": [
+    {
+      "prompt": "Che cos'è la prescrizione estintiva?",
+      "answer": "È l'estinzione del diritto quando il titolare non lo esercita per il tempo determinato dalla legge.",
+      "rubric": [
+        { "id": "c1", "concept": "estinzione del diritto", "weight": 2 },
+        { "id": "c2", "concept": "per mancato esercizio", "weight": 1 },
+        { "id": "c3", "concept": "per il tempo stabilito dalla legge", "weight": 1 }
+      ],
+      "references": ["2934"]
+    },
+    {
+      "prompt": "Qual è il fondamento della prescrizione?",
+      "answer": "L'esigenza di certezza dei rapporti giuridici: l'inerzia prolungata del titolare fa ritenere che il diritto non esista o sia stato abbandonato.",
+      "rubric": [
+        { "id": "c1", "concept": "certezza dei rapporti giuridici", "weight": 2 },
+        { "id": "c2", "concept": "inerzia del titolare", "weight": 2 }
+      ],
+      "references": ["2934"]
+    },
+    {
+      "prompt": "Quali diritti non si prescrivono?",
+      "answer": "I diritti indisponibili, come i diritti della personalità e gli status familiari, e gli altri indicati dalla legge, come il diritto di proprietà e l'azione di nullità.",
+      "rubric": [
+        { "id": "c1", "concept": "diritti indisponibili", "weight": 2 },
+        { "id": "c2", "concept": "proprietà e altri casi di legge", "weight": 1 },
+        { "id": "c3", "concept": "esempio: azione di nullità", "weight": 1 }
+      ],
+      "references": ["2934", "948", "1422"]
+    },
+    {
+      "prompt": "Le parti possono modificare o rinunciare alla prescrizione?",
+      "answer": "No, le norme sulla prescrizione sono inderogabili: è nullo il patto che modifica la disciplina legale e non si può rinunciare alla prescrizione prima che sia compiuta. Si può invece rinunciare dopo che si è compiuta, anche tacitamente.",
+      "rubric": [
+        { "id": "c1", "concept": "disciplina inderogabile", "weight": 2 },
+        { "id": "c2", "concept": "nulla la rinuncia preventiva", "weight": 1 },
+        { "id": "c3", "concept": "ammessa la rinuncia dopo il compimento", "weight": 1 }
+      ],
+      "references": ["2936", "2937"]
+    },
+    {
+      "prompt": "Il giudice può rilevare d'ufficio la prescrizione?",
+      "answer": "No, la prescrizione deve essere eccepita dalla parte interessata, perché è lei a decidere se avvalersene; possono farla valere anche i suoi creditori, anche se la parte vi ha rinunciato.",
+      "rubric": [
+        { "id": "c1", "concept": "non rilevabile d'ufficio", "weight": 2 },
+        { "id": "c2", "concept": "va eccepita dalla parte", "weight": 1 },
+        { "id": "c3", "concept": "la possono opporre i creditori", "weight": 1 }
+      ],
+      "references": ["2938", "2939"]
+    },
+    {
+      "prompt": "Si può ripetere il pagamento di un debito prescritto?",
+      "answer": "No, non è ammessa la ripetizione di ciò che è stato spontaneamente pagato in adempimento di un debito prescritto.",
+      "rubric": [
+        { "id": "c1", "concept": "non si può ripetere", "weight": 2 },
+        { "id": "c2", "concept": "pagamento spontaneo", "weight": 1 }
+      ],
+      "references": ["2940"]
+    },
+    {
+      "prompt": "Da quando decorre la prescrizione?",
+      "answer": "Dal giorno in cui il diritto può essere fatto valere: per esempio, se è sottoposto a condizione sospensiva o a termine, dall'avveramento della condizione o dalla scadenza del termine. Contano solo gli impedimenti giuridici, non quelli di fatto.",
+      "rubric": [
+        { "id": "c1", "concept": "da quando il diritto può essere esercitato", "weight": 2 },
+        { "id": "c2", "concept": "esempio: condizione o termine", "weight": 1 },
+        { "id": "c3", "concept": "solo impedimenti giuridici", "weight": 1 }
+      ],
+      "references": ["2935"]
+    },
+    {
+      "prompt": "Che differenza c'è tra sospensione e interruzione della prescrizione?",
+      "answer": "Con la sospensione l'inerzia continua ma è giustificata: il tempo si ferma e, cessata la causa, si somma a quello già trascorso. Con l'interruzione l'inerzia viene meno: il tempo trascorso si cancella e inizia un nuovo periodo per intero.",
+      "rubric": [
+        { "id": "c1", "concept": "sospensione: inerzia giustificata, il tempo si ferma", "weight": 2 },
+        { "id": "c2", "concept": "interruzione: cessa l'inerzia, nuovo periodo", "weight": 2 }
+      ],
+      "references": ["2941", "2945"]
+    },
+    {
+      "prompt": "Quali sono le cause di sospensione della prescrizione?",
+      "answer": "Rapporti particolari tra le parti, come tra coniugi, tra genitore e figlio soggetto alla sua responsabilità, tra tutore e tutelato, e condizioni del titolare, come la minore età o l'interdizione senza rappresentante. Le cause sono tassative.",
+      "rubric": [
+        { "id": "c1", "concept": "rapporti tra le parti, come tra coniugi", "weight": 1 },
+        { "id": "c2", "concept": "condizione del titolare, come i minori senza rappresentante", "weight": 1 },
+        { "id": "c3", "concept": "elenco tassativo", "weight": 2 }
+      ],
+      "references": ["2941", "2942"]
+    },
+    {
+      "prompt": "Come si interrompe la prescrizione?",
+      "answer": "Con la notificazione dell'atto con cui si inizia un giudizio, con ogni atto che vale a costituire in mora il debitore e con il riconoscimento del diritto da parte di chi poteva farne valere la prescrizione, anche tacito.",
+      "rubric": [
+        { "id": "c1", "concept": "domanda giudiziale", "weight": 1 },
+        { "id": "c2", "concept": "atto di costituzione in mora", "weight": 1 },
+        { "id": "c3", "concept": "riconoscimento del diritto", "weight": 2 }
+      ],
+      "references": ["2943", "2944"]
+    },
+    {
+      "prompt": "Quanto dura la prescrizione ordinaria?",
+      "answer": "Dieci anni, salvo che la legge disponga diversamente; i diritti reali su cosa altrui si prescrivono per non uso in vent'anni.",
+      "rubric": [
+        { "id": "c1", "concept": "dieci anni", "weight": 2 },
+        { "id": "c2", "concept": "vent'anni per i diritti reali su cosa altrui", "weight": 1 }
+      ],
+      "references": ["2946", "1014", "1073"]
+    },
+    {
+      "prompt": "Quali sono le principali prescrizioni brevi?",
+      "answer": "Cinque anni per il risarcimento da fatto illecito, ridotti a due per la circolazione dei veicoli, salvo termine più lungo se il fatto è reato; cinque anni per annullamento e revocatoria; un anno per la rescissione e per i vizi della vendita.",
+      "rubric": [
+        { "id": "c1", "concept": "cinque anni per l'illecito, due per i veicoli", "weight": 2 },
+        { "id": "c2", "concept": "cinque anni per annullamento e revocatoria", "weight": 1 },
+        { "id": "c3", "concept": "un anno per rescissione e vizi", "weight": 1 }
+      ],
+      "references": ["2947", "1442", "2903", "1449", "1495"]
+    },
+    {
+      "prompt": "In quanto tempo si prescrive il diritto riconosciuto da una sentenza passata in giudicato?",
+      "answer": "In dieci anni, anche se per quel diritto la legge stabilisce una prescrizione più breve.",
+      "rubric": [
+        { "id": "c1", "concept": "dieci anni", "weight": 2 },
+        { "id": "c2", "concept": "anche se il diritto aveva un termine breve", "weight": 1 }
+      ],
+      "references": ["2953"]
+    },
+    {
+      "prompt": "Che cosa sono le prescrizioni presuntive?",
+      "answer": "Sono termini brevi, per crediti della vita quotidiana pagati di solito senza quietanza, trascorsi i quali si presume che il debito sia stato estinto: il debito non si estingue, ma il debitore è esonerato dal provare il pagamento.",
+      "rubric": [
+        { "id": "c1", "concept": "presunzione di avvenuto pagamento", "weight": 2 },
+        { "id": "c2", "concept": "il debito non si estingue", "weight": 1 },
+        { "id": "c3", "concept": "crediti pagati senza quietanza", "weight": 1 }
+      ],
+      "references": ["2954", "2956"]
+    },
+    {
+      "prompt": "Come può il creditore superare la prescrizione presuntiva?",
+      "answer": "Solo deferendo al debitore il giuramento decisorio sull'avvenuta estinzione del debito, o se il debitore ammette in giudizio che l'obbligazione non è stata estinta.",
+      "rubric": [
+        { "id": "c1", "concept": "giuramento decisorio", "weight": 2 },
+        { "id": "c2", "concept": "ammissione del debitore", "weight": 2 }
+      ],
+      "references": ["2959", "2960"]
+    },
+    {
+      "prompt": "Che differenza c'è tra prescrizione estintiva e prescrizione presuntiva?",
+      "answer": "La prescrizione estintiva estingue il diritto per l'inerzia del titolare. La prescrizione presuntiva non estingue il diritto, ma fa presumere che il debito sia stato pagato, invertendo l'onere della prova.",
+      "rubric": [
+        { "id": "c1", "concept": "estintiva: estingue il diritto", "weight": 2 },
+        { "id": "c2", "concept": "presuntiva: presume il pagamento", "weight": 2 }
+      ],
+      "references": ["2934", "2954"]
+    },
+    {
+      "prompt": "Che cos'è la decadenza?",
+      "answer": "È la perdita della possibilità di esercitare un diritto per il mancato compimento, entro un termine perentorio fissato dalla legge o dal contratto, dell'atto previsto.",
+      "rubric": [
+        { "id": "c1", "concept": "termine perentorio", "weight": 2 },
+        { "id": "c2", "concept": "mancato compimento dell'atto previsto", "weight": 1 },
+        { "id": "c3", "concept": "fissato da legge o contratto", "weight": 1 }
+      ],
+      "references": ["2964"]
+    },
+    {
+      "prompt": "Che differenza c'è tra prescrizione e decadenza?",
+      "answer": "La prescrizione si fonda sull'inerzia del titolare, è solo legale e ammette sospensione e interruzione. La decadenza dipende dal solo decorso del termine, può essere anche convenzionale, non si interrompe né, salvo diversa disposizione, si sospende, e si impedisce solo compiendo l'atto previsto.",
+      "rubric": [
+        { "id": "c1", "concept": "prescrizione: inerzia, sospensione e interruzione", "weight": 2 },
+        { "id": "c2", "concept": "decadenza: termine perentorio, niente interruzione né sospensione", "weight": 2 },
+        { "id": "c3", "concept": "la decadenza può essere convenzionale", "weight": 1 }
+      ],
+      "references": ["2934", "2964", "2966"]
+    },
+    {
+      "prompt": "Quali limiti incontrano le decadenze convenzionali?",
+      "answer": "Sono ammesse solo per diritti disponibili, ed è nullo il patto che stabilisce un termine di decadenza tale da rendere eccessivamente difficile a una parte l'esercizio del diritto.",
+      "rubric": [
+        { "id": "c1", "concept": "solo diritti disponibili", "weight": 1 },
+        { "id": "c2", "concept": "nulle se rendono eccessivamente difficile l'esercizio", "weight": 2 }
+      ],
+      "references": ["2965", "2968"]
+    },
+    {
+      "prompt": "Quando la decadenza è rilevabile d'ufficio?",
+      "answer": "Quando è stabilita dalla legge in materia sottratta alla disponibilità delle parti: il giudice la rileva d'ufficio e le parti non possono modificarla né rinunciarvi. Negli altri casi deve essere eccepita dalla parte.",
+      "rubric": [
+        { "id": "c1", "concept": "rilevabile d'ufficio per diritti indisponibili", "weight": 2 },
+        { "id": "c2", "concept": "le parti non possono modificarla", "weight": 1 },
+        { "id": "c3", "concept": "altrimenti va eccepita", "weight": 1 }
+      ],
+      "references": ["2968", "2969"]
+    },
+    {
+      "prompt": "Come si impedisce la decadenza?",
+      "answer": "Con il compimento dell'atto previsto dalla legge o dal contratto; per i diritti disponibili anche con il riconoscimento del diritto da parte della persona contro cui si deve farlo valere.",
+      "rubric": [
+        { "id": "c1", "concept": "compimento dell'atto previsto", "weight": 2 },
+        { "id": "c2", "concept": "o riconoscimento per i diritti disponibili", "weight": 2 }
+      ],
+      "references": ["2966"]
+    }
+  ]
+}

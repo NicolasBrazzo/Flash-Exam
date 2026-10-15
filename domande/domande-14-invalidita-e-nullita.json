@@ -1,0 +1,195 @@
+{
+  "topic": { "name": "Invalidità e nullità del contratto" },
+  "questions": [
+    {
+      "prompt": "Quali sono i rimedi contrattuali e contro quali difetti reagiscono?",
+      "answer": "Nullità, annullamento e rescissione reagiscono contro difetti originari del contratto come atto; la risoluzione reagisce contro disturbi sopravvenuti nel rapporto, durante l'esecuzione.",
+      "rubric": [
+        { "id": "c1", "concept": "nullità, annullamento e rescissione: difetti originari", "weight": 2 },
+        { "id": "c2", "concept": "risoluzione: disturbi sopravvenuti", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Quale interesse tutelano la nullità da un lato e annullamento, rescissione e risoluzione dall'altro?",
+      "answer": "La nullità tutela un interesse generale, perché il difetto lede valori fondamentali; annullamento, rescissione e risoluzione tutelano l'interesse particolare di uno dei contraenti.",
+      "rubric": [
+        { "id": "c1", "concept": "nullità: interesse generale", "weight": 2 },
+        { "id": "c2", "concept": "gli altri rimedi: interesse di una parte", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra invalidità e inefficacia del contratto?",
+      "answer": "L'invalidità è un difetto di un elemento costitutivo del contratto; l'inefficacia è la mancata produzione degli effetti. Un contratto può essere valido ma inefficace, per esempio sotto condizione sospensiva.",
+      "rubric": [
+        { "id": "c1", "concept": "invalidità: difetto di un elemento costitutivo", "weight": 2 },
+        { "id": "c2", "concept": "inefficacia: mancata produzione di effetti", "weight": 2 },
+        { "id": "c3", "concept": "un contratto valido può essere inefficace", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra inefficacia assoluta e inefficacia relativa?",
+      "answer": "L'inefficacia assoluta impedisce gli effetti sia tra le parti sia verso i terzi. Quella relativa riguarda solo determinati terzi, ai quali il contratto, efficace per il resto, non è opponibile.",
+      "rubric": [
+        { "id": "c1", "concept": "assoluta: nessun effetto per nessuno", "weight": 2 },
+        { "id": "c2", "concept": "relativa: inopponibilità a determinati terzi", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Quando il contratto è nullo?",
+      "answer": "Quando è contrario a norme imperative, salvo che la legge disponga diversamente; quando manca un requisito essenziale, la causa o i motivi comuni sono illeciti o l'oggetto non ha i requisiti di legge; negli altri casi previsti dalla legge.",
+      "rubric": [
+        { "id": "c1", "concept": "contrarietà a norme imperative", "weight": 1 },
+        { "id": "c2", "concept": "mancanza di un requisito essenziale", "weight": 1 },
+        { "id": "c3", "concept": "causa o motivo comune illecito, oggetto senza requisiti", "weight": 1 },
+        { "id": "c4", "concept": "altri casi previsti dalla legge", "weight": 1 }
+      ],
+      "references": ["1418"]
+    },
+    {
+      "prompt": "Che differenza c'è tra nullità virtuale, strutturale e testuale?",
+      "answer": "La nullità virtuale deriva dal contrasto con una norma imperativa che non commina espressamente la nullità. Quella strutturale dalla mancanza o dal vizio di un elemento essenziale. Quella testuale è prevista espressamente da una norma di legge.",
+      "rubric": [
+        { "id": "c1", "concept": "virtuale: contrasto con norma imperativa senza espressa previsione", "weight": 2 },
+        { "id": "c2", "concept": "strutturale: difetto di un elemento essenziale", "weight": 1 },
+        { "id": "c3", "concept": "testuale: espressamente prevista dalla legge", "weight": 2 }
+      ],
+      "references": ["1418"]
+    },
+    {
+      "prompt": "Chi può far valere la nullità del contratto?",
+      "answer": "Salvo diverse disposizioni di legge, chiunque vi abbia interesse; inoltre la nullità può essere rilevata d'ufficio dal giudice, perché tutela un interesse generale.",
+      "rubric": [
+        { "id": "c1", "concept": "chiunque vi abbia interesse", "weight": 2 },
+        { "id": "c2", "concept": "rilevabile d'ufficio dal giudice", "weight": 2 },
+        { "id": "c3", "concept": "perché tutela un interesse generale", "weight": 1 }
+      ],
+      "references": ["1421"]
+    },
+    {
+      "prompt": "Che cos'è la nullità relativa o di protezione?",
+      "answer": "È la nullità che può essere fatta valere solo da una delle parti, il contraente debole tutelato dalla norma violata, come il cliente nei contratti bancari o il consumatore.",
+      "rubric": [
+        { "id": "c1", "concept": "solo una parte può farla valere", "weight": 2 },
+        { "id": "c2", "concept": "tutela il contraente debole", "weight": 2 }
+      ],
+      "references": ["1421"]
+    },
+    {
+      "prompt": "L'azione di nullità si prescrive?",
+      "answer": "No, l'azione per far dichiarare la nullità è imprescrittibile, salvi gli effetti dell'usucapione e della prescrizione delle azioni di ripetizione.",
+      "rubric": [
+        { "id": "c1", "concept": "è imprescrittibile", "weight": 2 },
+        { "id": "c2", "concept": "salvi usucapione e prescrizione della ripetizione", "weight": 2 }
+      ],
+      "references": ["1422"]
+    },
+    {
+      "prompt": "Perché l'imprescrittibilità dell'azione di nullità può non servire in pratica?",
+      "answer": "Perché l'azione per la restituzione di quanto prestato si prescrive, e perché il bene può essere stato usucapito nel frattempo da qualcuno: si può ottenere la dichiarazione di nullità ma non la restituzione.",
+      "rubric": [
+        { "id": "c1", "concept": "l'azione di ripetizione si prescrive", "weight": 2 },
+        { "id": "c2", "concept": "il bene può essere usucapito", "weight": 2 }
+      ],
+      "references": ["1422"]
+    },
+    {
+      "prompt": "Il contratto nullo può essere convalidato?",
+      "answer": "No, il contratto nullo non può essere convalidato se la legge non dispone diversamente, perché la nullità tutela un interesse generale; un'eccezione è la conferma della donazione nulla da parte degli eredi del donante.",
+      "rubric": [
+        { "id": "c1", "concept": "non è convalidabile", "weight": 2 },
+        { "id": "c2", "concept": "salvo diversa disposizione di legge", "weight": 1 },
+        { "id": "c3", "concept": "eccezione della donazione nulla", "weight": 1 }
+      ],
+      "references": ["1423", "799"]
+    },
+    {
+      "prompt": "Che cos'è la conversione del contratto nullo?",
+      "answer": "È il meccanismo per cui il contratto nullo produce gli effetti di un contratto diverso, di cui contiene i requisiti di sostanza e di forma, se, avuto riguardo allo scopo delle parti, si deve ritenere che lo avrebbero voluto conoscendo la nullità.",
+      "rubric": [
+        { "id": "c1", "concept": "produce gli effetti di un contratto diverso", "weight": 2 },
+        { "id": "c2", "concept": "contiene i requisiti di sostanza e di forma", "weight": 1 },
+        { "id": "c3", "concept": "le parti lo avrebbero voluto conoscendo la nullità", "weight": 2 }
+      ],
+      "references": ["1424"]
+    },
+    {
+      "prompt": "Come si valuta la volontà ipotetica delle parti nella conversione del contratto nullo?",
+      "answer": "In senso oggettivo e non psicologico: si verifica se gli effetti del contratto diverso sono coerenti con il programma economico che le parti volevano realizzare.",
+      "rubric": [
+        { "id": "c1", "concept": "criterio oggettivo, non psicologico", "weight": 2 },
+        { "id": "c2", "concept": "coerenza con il programma delle parti", "weight": 2 }
+      ],
+      "references": ["1424"]
+    },
+    {
+      "prompt": "Quando la nullità di una clausola determina la nullità dell'intero contratto?",
+      "answer": "Quando risulta che i contraenti non avrebbero concluso il contratto senza la parte colpita da nullità, cioè quando la clausola era essenziale per l'equilibrio del contratto. Altrimenti la nullità è solo parziale.",
+      "rubric": [
+        { "id": "c1", "concept": "le parti non lo avrebbero concluso senza quella parte", "weight": 2 },
+        { "id": "c2", "concept": "valutazione oggettiva dell'essenzialità", "weight": 1 },
+        { "id": "c3", "concept": "altrimenti nullità parziale", "weight": 1 }
+      ],
+      "references": ["1419"]
+    },
+    {
+      "prompt": "Quando la nullità di una clausola essenziale non travolge il contratto?",
+      "answer": "Quando la clausola nulla è sostituita di diritto da una norma imperativa: il contratto resta valido con il contenuto imposto dalla legge.",
+      "rubric": [
+        { "id": "c1", "concept": "sostituzione di diritto con norma imperativa", "weight": 2 },
+        { "id": "c2", "concept": "il contratto resta valido", "weight": 2 }
+      ],
+      "references": ["1419", "1339"]
+    },
+    {
+      "prompt": "Che effetto ha la nullità del vincolo di una sola parte in un contratto plurilaterale?",
+      "answer": "Nei contratti plurilaterali con scopo comune non comporta la nullità dell'intero contratto, salvo che la partecipazione di quella parte debba considerarsi essenziale secondo le circostanze.",
+      "rubric": [
+        { "id": "c1", "concept": "contratti plurilaterali con scopo comune", "weight": 1 },
+        { "id": "c2", "concept": "di regola il contratto resta valido", "weight": 2 },
+        { "id": "c3", "concept": "salvo che la partecipazione sia essenziale", "weight": 2 }
+      ],
+      "references": ["1420"]
+    },
+    {
+      "prompt": "Che effetti ha l'invalidità del contratto tra le parti?",
+      "answer": "Opera retroattivamente: il contratto si considera come se non avesse mai prodotto effetti, quindi le parti devono restituirsi le prestazioni eseguite.",
+      "rubric": [
+        { "id": "c1", "concept": "efficacia retroattiva", "weight": 2 },
+        { "id": "c2", "concept": "obbligo di restituire le prestazioni", "weight": 2 }
+      ],
+      "references": ["2033"]
+    },
+    {
+      "prompt": "Quali sono le eccezioni alla restituzione delle prestazioni eseguite in base a un contratto invalido?",
+      "answer": "Non si può ripetere ciò che si è prestato per uno scopo contrario al buon costume, se anche chi ha pagato vi ha partecipato; nel contratto di lavoro invalido sono salvi gli effetti per il periodo in cui ha avuto esecuzione, e il lavoratore conserva la retribuzione.",
+      "rubric": [
+        { "id": "c1", "concept": "prestazione contraria al buon costume non ripetibile", "weight": 2 },
+        { "id": "c2", "concept": "contratto di lavoro: salvi gli effetti per il periodo eseguito", "weight": 2 }
+      ],
+      "references": ["2035", "2126"]
+    },
+    {
+      "prompt": "La nullità è opponibile ai terzi?",
+      "answer": "Sì, la nullità è sempre opponibile ai terzi, salvi gli effetti della trascrizione della domanda: se A vende nullamente a B e B rivende a X, A può recuperare il bene anche da X.",
+      "rubric": [
+        { "id": "c1", "concept": "opponibile ai terzi", "weight": 2 },
+        { "id": "c2", "concept": "il subacquirente deve restituire", "weight": 1 },
+        { "id": "c3", "concept": "salvi gli effetti della trascrizione della domanda", "weight": 1 }
+      ],
+      "references": ["2652"]
+    },
+    {
+      "prompt": "Quale principio esprimono le regole sulla nullità parziale e sulla conversione?",
+      "answer": "Il principio di conservazione del contratto, vicino a quello di economia dei mezzi giuridici: si cerca di salvare l'operazione economica quando il vizio non ne compromette l'equilibrio.",
+      "rubric": [
+        { "id": "c1", "concept": "principio di conservazione del contratto", "weight": 2 },
+        { "id": "c2", "concept": "salvare l'operazione economica", "weight": 1 }
+      ],
+      "references": ["1419", "1424"]
+    }
+  ]
+}

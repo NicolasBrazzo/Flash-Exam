@@ -1,0 +1,206 @@
+{
+  "topic": { "name": "Agenzia e mediazione" },
+  "questions": [
+    {
+      "prompt": "Che cos'è il contratto di agenzia?",
+      "answer": "È il contratto con cui una parte, l'agente, assume stabilmente l'incarico di promuovere, per conto dell'altra, il preponente, verso retribuzione, la conclusione di contratti in una zona determinata.",
+      "rubric": [
+        { "id": "c1", "concept": "incarico stabile", "weight": 2 },
+        { "id": "c2", "concept": "promuovere la conclusione di contratti per il preponente", "weight": 2 },
+        { "id": "c3", "concept": "in una zona determinata, verso retribuzione", "weight": 1 }
+      ],
+      "references": ["1742"]
+    },
+    {
+      "prompt": "L'agente conclude i contratti per il preponente?",
+      "answer": "Di regola no: raccoglie gli ordini e li trasmette al preponente, che è libero di accettarli. Può concludere contratti solo se gli è conferita la rappresentanza, che non è un elemento essenziale dell'agenzia.",
+      "rubric": [
+        { "id": "c1", "concept": "di regola promuove e trasmette gli ordini", "weight": 2 },
+        { "id": "c2", "concept": "conclude solo se ha la rappresentanza", "weight": 1 },
+        { "id": "c3", "concept": "la rappresentanza non è essenziale", "weight": 1 }
+      ],
+      "references": ["1742", "1752"]
+    },
+    {
+      "prompt": "Quale forma richiede il contratto di agenzia?",
+      "answer": "Deve essere provato per iscritto: la forma scritta è richiesta ad probationem.",
+      "rubric": [
+        { "id": "c1", "concept": "prova per iscritto", "weight": 2 },
+        { "id": "c2", "concept": "forma ad probationem", "weight": 1 }
+      ],
+      "references": ["1742"]
+    },
+    {
+      "prompt": "In che cosa consiste il diritto di esclusiva nel contratto di agenzia?",
+      "answer": "Il preponente non può valersi contemporaneamente di più agenti nella stessa zona e per lo stesso ramo, e l'agente non può trattare nella stessa zona e ramo gli affari di più imprese in concorrenza. È considerata derogabile dalle parti.",
+      "rubric": [
+        { "id": "c1", "concept": "esclusiva a favore dell'agente nella zona", "weight": 1 },
+        { "id": "c2", "concept": "esclusiva a favore del preponente: niente concorrenti", "weight": 1 },
+        { "id": "c3", "concept": "esclusiva reciproca e derogabile", "weight": 2 }
+      ],
+      "references": ["1743"]
+    },
+    {
+      "prompt": "Quali sono gli obblighi dell'agente?",
+      "answer": "Tutelare gli interessi del preponente agendo con lealtà e buona fede, eseguire l'incarico secondo le istruzioni e fornire informazioni sulle condizioni di mercato della zona e sulla convenienza degli affari.",
+      "rubric": [
+        { "id": "c1", "concept": "lealtà e buona fede verso il preponente", "weight": 2 },
+        { "id": "c2", "concept": "rispetto delle istruzioni", "weight": 1 },
+        { "id": "c3", "concept": "obbligo di informazione sul mercato", "weight": 1 }
+      ],
+      "references": ["1746"]
+    },
+    {
+      "prompt": "L'agente può essere chiamato a rispondere dell'inadempimento del cliente?",
+      "answer": "No, è vietato il patto che ponga a suo carico, anche in parte, l'inadempimento del terzo. Eccezionalmente può prestare una garanzia per singoli affari determinati, entro il limite della provvigione e dietro un apposito corrispettivo.",
+      "rubric": [
+        { "id": "c1", "concept": "vietato lo star del credere generale", "weight": 2 },
+        { "id": "c2", "concept": "eccezione per singoli affari", "weight": 1 },
+        { "id": "c3", "concept": "entro la provvigione e con corrispettivo", "weight": 1 }
+      ],
+      "references": ["1746"]
+    },
+    {
+      "prompt": "Quando l'agente ha diritto alla provvigione?",
+      "answer": "Per gli affari conclusi per effetto del suo intervento e, salvo patto contrario, per quelli conclusi dal preponente con clienti da lui acquisiti o della sua zona. Matura quando il preponente ha eseguito o avrebbe dovuto eseguire la prestazione e, al più tardi, quando l'ha eseguita il terzo.",
+      "rubric": [
+        { "id": "c1", "concept": "affari conclusi per effetto del suo intervento", "weight": 2 },
+        { "id": "c2", "concept": "anche affari diretti con clienti della sua zona", "weight": 1 },
+        { "id": "c3", "concept": "matura con l'esecuzione del contratto", "weight": 1 }
+      ],
+      "references": ["1748"]
+    },
+    {
+      "prompt": "L'agente ha diritto alla provvigione sugli affari conclusi dopo la fine del contratto?",
+      "answer": "Sì, se la proposta è pervenuta prima dello scioglimento, o se l'affare è concluso entro un termine ragionevole ed è riconducibile prevalentemente alla sua attività.",
+      "rubric": [
+        { "id": "c1", "concept": "proposta pervenuta prima dello scioglimento", "weight": 2 },
+        { "id": "c2", "concept": "o affare concluso poco dopo grazie alla sua attività", "weight": 2 }
+      ],
+      "references": ["1748"]
+    },
+    {
+      "prompt": "L'agente ha diritto al rimborso delle spese?",
+      "answer": "No, l'agente non ha diritto al rimborso delle spese di agenzia: sostiene in proprio i costi della sua organizzazione e il relativo rischio, come un imprenditore.",
+      "rubric": [
+        { "id": "c1", "concept": "nessun rimborso delle spese", "weight": 2 },
+        { "id": "c2", "concept": "sopporta il rischio come imprenditore", "weight": 1 }
+      ],
+      "references": ["1748"]
+    },
+    {
+      "prompt": "Quali sono gli obblighi del preponente verso l'agente?",
+      "answer": "Agire con lealtà e buona fede, fornire documentazione e informazioni necessarie, avvisare se prevede un volume di affari notevolmente inferiore, comunicare accettazione o rifiuto degli affari e consegnare l'estratto conto delle provvigioni pagandole nei termini.",
+      "rubric": [
+        { "id": "c1", "concept": "lealtà e buona fede", "weight": 1 },
+        { "id": "c2", "concept": "informazioni e avviso di calo degli affari", "weight": 1 },
+        { "id": "c3", "concept": "comunicare l'esito degli affari", "weight": 1 },
+        { "id": "c4", "concept": "estratto conto e pagamento delle provvigioni", "weight": 1 }
+      ],
+      "references": ["1749"]
+    },
+    {
+      "prompt": "Quando spetta all'agente l'indennità di fine rapporto?",
+      "answer": "Quando ha procurato nuovi clienti o sviluppato gli affari con quelli esistenti e il preponente ne riceve ancora vantaggi. Non spetta se il contratto è risolto per inadempimento dell'agente, se l'agente recede senza giustificazione o cede il contratto a un terzo.",
+      "rubric": [
+        { "id": "c1", "concept": "nuovi clienti o sviluppo degli affari", "weight": 1 },
+        { "id": "c2", "concept": "vantaggi che il preponente conserva", "weight": 1 },
+        { "id": "c3", "concept": "esclusa per inadempimento, recesso o cessione dell'agente", "weight": 2 }
+      ],
+      "references": ["1751"]
+    },
+    {
+      "prompt": "Quali limiti ha il patto di non concorrenza dopo la fine del contratto di agenzia?",
+      "answer": "Deve essere fatto per iscritto, non può superare i due anni e deve riguardare la stessa zona, clientela e genere di beni del contratto; all'agente spetta un'indennità non provvigionale.",
+      "rubric": [
+        { "id": "c1", "concept": "forma scritta", "weight": 1 },
+        { "id": "c2", "concept": "massimo due anni", "weight": 2 },
+        { "id": "c3", "concept": "stessa zona, clientela e beni", "weight": 1 },
+        { "id": "c4", "concept": "indennità per l'agente", "weight": 1 }
+      ],
+      "references": ["1751-bis"]
+    },
+    {
+      "prompt": "Che differenza c'è tra agente e mandatario?",
+      "answer": "Il mandatario compie atti giuridici per il mandante; l'agente promuove la conclusione di contratti in modo stabile ma di regola non li conclude. Se l'agente ha anche la rappresentanza, all'agenzia si affianca un mandato.",
+      "rubric": [
+        { "id": "c1", "concept": "mandatario: compie atti giuridici", "weight": 2 },
+        { "id": "c2", "concept": "agente: promuove contratti in modo stabile", "weight": 2 },
+        { "id": "c3", "concept": "agente con rappresentanza: si aggiunge un mandato", "weight": 1 }
+      ],
+      "references": ["1703", "1742"]
+    },
+    {
+      "prompt": "Che differenza c'è tra agente e lavoratore subordinato?",
+      "answer": "L'agente opera in autonomia, con una propria organizzazione e a proprio rischio, e non è soggetto al potere direttivo del preponente; il lavoratore subordinato è sottoposto agli ordini del datore di lavoro.",
+      "rubric": [
+        { "id": "c1", "concept": "agente autonomo con rischio proprio", "weight": 2 },
+        { "id": "c2", "concept": "subordinato: soggetto agli ordini del datore", "weight": 2 }
+      ],
+      "references": ["1742", "2094"]
+    },
+    {
+      "prompt": "Chi è il mediatore?",
+      "answer": "È colui che mette in relazione due o più parti per la conclusione di un affare, senza essere legato ad alcuna di esse da rapporti di collaborazione, di dipendenza o di rappresentanza.",
+      "rubric": [
+        { "id": "c1", "concept": "mette in relazione le parti per un affare", "weight": 2 },
+        { "id": "c2", "concept": "indipendenza: nessun rapporto di collaborazione, dipendenza o rappresentanza", "weight": 2 }
+      ],
+      "references": ["1754"]
+    },
+    {
+      "prompt": "Che differenza c'è tra agenzia e mediazione?",
+      "answer": "L'agente è legato stabilmente al preponente da un incarico di promozione; il mediatore è indipendente da entrambe le parti e interviene in modo occasionale.",
+      "rubric": [
+        { "id": "c1", "concept": "agente: rapporto stabile con il preponente", "weight": 2 },
+        { "id": "c2", "concept": "mediatore: indipendente e occasionale", "weight": 2 }
+      ],
+      "references": ["1742", "1754"]
+    },
+    {
+      "prompt": "Quando il mediatore ha diritto alla provvigione e da chi?",
+      "answer": "Quando l'affare è concluso per effetto del suo intervento, cioè c'è un nesso causale tra la sua attività e la conclusione; la provvigione è dovuta da ciascuna delle parti, salvo patto diverso.",
+      "rubric": [
+        { "id": "c1", "concept": "affare concluso per effetto del suo intervento", "weight": 2 },
+        { "id": "c2", "concept": "dovuta da entrambe le parti", "weight": 2 }
+      ],
+      "references": ["1755"]
+    },
+    {
+      "prompt": "Che cos'è la mediazione atipica o unilaterale?",
+      "answer": "È la mediazione svolta su incarico di una sola parte, che chiede al mediatore di procurarle un affare; il mediatore resta comunque terzo rispetto al rapporto tra le parti.",
+      "rubric": [
+        { "id": "c1", "concept": "incarico di una sola parte", "weight": 2 },
+        { "id": "c2", "concept": "il mediatore resta terzo", "weight": 1 }
+      ],
+      "references": ["1754"]
+    },
+    {
+      "prompt": "Quali obblighi ha il mediatore verso le parti?",
+      "answer": "Deve comunicare alle parti le circostanze a lui note relative alla valutazione e alla sicurezza dell'affare, che possono influire sulla sua conclusione, e comportarsi con correttezza e imparzialità.",
+      "rubric": [
+        { "id": "c1", "concept": "comunicare le circostanze rilevanti per l'affare", "weight": 2 },
+        { "id": "c2", "concept": "correttezza e imparzialità", "weight": 1 }
+      ],
+      "references": ["1759"]
+    },
+    {
+      "prompt": "Quando il mediatore risponde in proprio dell'esecuzione del contratto?",
+      "answer": "Quando non ha reso noto a uno dei contraenti il nome dell'altro.",
+      "rubric": [
+        { "id": "c1", "concept": "non ha rivelato il nome di una parte", "weight": 2 },
+        { "id": "c2", "concept": "risponde dell'esecuzione del contratto", "weight": 1 }
+      ],
+      "references": ["1762"]
+    },
+    {
+      "prompt": "Il mediatore ha diritto al rimborso delle spese se l'affare non si conclude?",
+      "answer": "Salvo patti o usi contrari, ha diritto al rimborso delle spese solo verso la persona per incarico della quale le ha sostenute, anche se l'affare non è concluso.",
+      "rubric": [
+        { "id": "c1", "concept": "rimborso verso chi ha dato l'incarico", "weight": 2 },
+        { "id": "c2", "concept": "salvo patti o usi contrari", "weight": 1 }
+      ],
+      "references": ["1756"]
+    }
+  ]
+}

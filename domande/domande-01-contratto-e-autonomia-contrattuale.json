@@ -1,0 +1,182 @@
+{
+  "topic": { "name": "Diritto privato, contratto e autonomia contrattuale" },
+  "questions": [
+    {
+      "prompt": "Che differenza c'è tra diritto pubblico e diritto privato?",
+      "answer": "Il diritto pubblico regola rapporti tra parti in posizione diversa, in cui il soggetto pubblico ha un potere e il privato lo subisce. Il diritto privato regola rapporti tra soggetti in posizione di parità, per cui tutto si basa sull'accordo.",
+      "rubric": [
+        { "id": "c1", "concept": "nel diritto pubblico una parte ha un potere e l'altra lo subisce", "weight": 2 },
+        { "id": "c2", "concept": "nel diritto privato le parti sono in posizione di parità", "weight": 2 },
+        { "id": "c3", "concept": "nel diritto privato gli effetti si producono con l'accordo", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Perché nel diritto privato tutto si fonda sull'accordo?",
+      "answer": "Perché le parti sono in posizione di parità e nessuna ha il potere di imporre all'altra un comportamento o un effetto giuridico: per produrre l'effetto serve che entrambe siano d'accordo.",
+      "rubric": [
+        { "id": "c1", "concept": "parità tra le parti", "weight": 1 },
+        { "id": "c2", "concept": "manca un potere di imposizione di una parte sull'altra", "weight": 2 },
+        { "id": "c3", "concept": "l'effetto giuridico richiede il consenso di entrambe", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che cos'è la rubrica di un articolo e che valore ha?",
+      "answer": "È il titolo che indica sinteticamente il contenuto dell'articolo. Non ha valore normativo (rubrica legis non est lex): segnala solo l'argomento.",
+      "rubric": [
+        { "id": "c1", "concept": "indica sinteticamente l'argomento dell'articolo", "weight": 1 },
+        { "id": "c2", "concept": "non ha valore normativo (rubrica legis non est lex)", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che differenza c'è tra testo normativo e norma giuridica?",
+      "answer": "Il testo (enunciato) normativo è l'oggetto dell'interpretazione; la norma giuridica è il risultato dell'interpretazione del testo.",
+      "rubric": [
+        { "id": "c1", "concept": "il testo normativo è l'oggetto dell'interpretazione", "weight": 1 },
+        { "id": "c2", "concept": "la norma è il frutto dell'interpretazione del testo", "weight": 2 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Come definisce il contratto il codice civile?",
+      "answer": "Il contratto è l'accordo di due o più parti per costituire, regolare o estinguere tra loro un rapporto giuridico patrimoniale.",
+      "rubric": [
+        { "id": "c1", "concept": "accordo di due o più parti", "weight": 2 },
+        { "id": "c2", "concept": "per costituire, regolare o estinguere un rapporto", "weight": 1 },
+        { "id": "c3", "concept": "il rapporto è giuridico patrimoniale", "weight": 2 }
+      ],
+      "references": ["1321"]
+    },
+    {
+      "prompt": "Che cosa significa che il rapporto regolato dal contratto deve essere patrimoniale?",
+      "answer": "Significa che il contratto riguarda cose, beni o attività che hanno un valore economico, cioè suscettibili di valutazione in denaro.",
+      "rubric": [
+        { "id": "c1", "concept": "oggetto con valore economico", "weight": 1 },
+        { "id": "c2", "concept": "suscettibile di valutazione in denaro", "weight": 2 }
+      ],
+      "references": ["1321"]
+    },
+    {
+      "prompt": "Che differenza c'è tra contratto bilaterale e contratto plurilaterale?",
+      "answer": "Il contratto bilaterale ha due parti (per esempio la compravendita); il plurilaterale ha più di due parti (per esempio il contratto di società).",
+      "rubric": [
+        { "id": "c1", "concept": "bilaterale: due parti", "weight": 1 },
+        { "id": "c2", "concept": "plurilaterale: più di due parti", "weight": 1 },
+        { "id": "c3", "concept": "esempi: compravendita e società", "weight": 1 }
+      ],
+      "references": ["1321"]
+    },
+    {
+      "prompt": "Che cos'è il negozio giuridico?",
+      "answer": "È la categoria che comprende tutti gli atti di volontà, contratti inclusi, i cui effetti giuridici sono voluti dall'autore: per esempio il contratto e il testamento.",
+      "rubric": [
+        { "id": "c1", "concept": "atto di volontà", "weight": 2 },
+        { "id": "c2", "concept": "gli effetti giuridici sono voluti dall'autore", "weight": 2 },
+        { "id": "c3", "concept": "il contratto ne è la figura più importante", "weight": 1 }
+      ],
+      "references": []
+    },
+    {
+      "prompt": "Che cos'è l'autonomia contrattuale?",
+      "answer": "È il potere dei privati di regolare i propri interessi: libertà di decidere se concludere un contratto, con chi e con quale contenuto, nei limiti imposti dalla legge, e di concludere anche contratti atipici.",
+      "rubric": [
+        { "id": "c1", "concept": "libertà di decidere se concludere il contratto", "weight": 1 },
+        { "id": "c2", "concept": "libertà di determinarne il contenuto", "weight": 2 },
+        { "id": "c3", "concept": "nei limiti imposti dalla legge", "weight": 2 },
+        { "id": "c4", "concept": "possibilità di concludere contratti atipici", "weight": 1 }
+      ],
+      "references": ["1322"]
+    },
+    {
+      "prompt": "Quali libertà comprende l'autonomia contrattuale?",
+      "answer": "La libertà di concludere o non concludere il contratto, di scegliere il contraente, di determinarne il contenuto e di scegliere il procedimento di conclusione; inoltre la libertà che il processo decisionale non sia condizionato.",
+      "rubric": [
+        { "id": "c1", "concept": "libertà di concludere o non concludere", "weight": 2 },
+        { "id": "c2", "concept": "libertà di determinare il contenuto", "weight": 2 },
+        { "id": "c3", "concept": "libertà di scegliere il modo di conclusione", "weight": 1 },
+        { "id": "c4", "concept": "decisione libera da condizionamenti", "weight": 1 }
+      ],
+      "references": ["1322"]
+    },
+    {
+      "prompt": "Che cosa significa che il contratto ha forza di legge tra le parti?",
+      "answer": "Significa che, una volta concluso, il contratto vincola le parti: non può essere sciolto che per mutuo consenso o per cause ammesse dalla legge. Alla libertà di contrarre corrisponde la responsabilità per la scelta fatta.",
+      "rubric": [
+        { "id": "c1", "concept": "il contratto concluso vincola le parti", "weight": 2 },
+        { "id": "c2", "concept": "si scioglie solo per mutuo consenso o cause ammesse dalla legge", "weight": 2 },
+        { "id": "c3", "concept": "alla libertà corrisponde la responsabilità", "weight": 1 }
+      ],
+      "references": ["1372"]
+    },
+    {
+      "prompt": "Il contratto produce effetti nei confronti dei terzi?",
+      "answer": "Di regola no: il contratto produce effetti solo tra le parti; verso i terzi produce effetti solo nei casi previsti dalla legge.",
+      "rubric": [
+        { "id": "c1", "concept": "di regola il contratto non produce effetti verso i terzi", "weight": 2 },
+        { "id": "c2", "concept": "salvo i casi previsti dalla legge", "weight": 2 }
+      ],
+      "references": ["1372"]
+    },
+    {
+      "prompt": "Che differenza c'è tra contratti tipici e contratti atipici?",
+      "answer": "I contratti tipici hanno una disciplina specifica nel codice civile o nelle leggi (per esempio la compravendita); gli atipici non appartengono a nessun tipo legale e sono ammessi se diretti a realizzare interessi meritevoli di tutela.",
+      "rubric": [
+        { "id": "c1", "concept": "tipici: disciplina specifica prevista dalla legge", "weight": 2 },
+        { "id": "c2", "concept": "atipici: non corrispondono a un tipo legale", "weight": 1 },
+        { "id": "c3", "concept": "gli atipici devono realizzare interessi meritevoli di tutela", "weight": 2 }
+      ],
+      "references": ["1322"]
+    },
+    {
+      "prompt": "A quale condizione sono ammessi i contratti atipici?",
+      "answer": "Sono ammessi purché siano diretti a realizzare interessi meritevoli di tutela secondo l'ordinamento giuridico.",
+      "rubric": [
+        { "id": "c1", "concept": "interessi meritevoli di tutela", "weight": 2 },
+        { "id": "c2", "concept": "secondo l'ordinamento giuridico", "weight": 1 }
+      ],
+      "references": ["1322"]
+    },
+    {
+      "prompt": "Quali sono le due tesi sul giudizio di meritevolezza degli interessi nei contratti atipici?",
+      "answer": "Per la prima tesi l'interesse è meritevole tutte le volte che il contratto non viola alcun divieto di legge. Per la seconda serve un giudizio positivo di valore sull'interesse perseguito, affidato al giudice.",
+      "rubric": [
+        { "id": "c1", "concept": "prima tesi: meritevole se non viola divieti", "weight": 2 },
+        { "id": "c2", "concept": "seconda tesi: serve un giudizio positivo di valore", "weight": 2 },
+        { "id": "c3", "concept": "nella seconda tesi decide la valutazione del giudice", "weight": 1 }
+      ],
+      "references": ["1322"]
+    },
+    {
+      "prompt": "Quali sono i requisiti essenziali del contratto?",
+      "answer": "L'accordo delle parti, la causa, l'oggetto e la forma, quando è prescritta dalla legge sotto pena di nullità.",
+      "rubric": [
+        { "id": "c1", "concept": "accordo delle parti", "weight": 1 },
+        { "id": "c2", "concept": "causa", "weight": 1 },
+        { "id": "c3", "concept": "oggetto", "weight": 1 },
+        { "id": "c4", "concept": "forma solo quando prescritta a pena di nullità", "weight": 2 }
+      ],
+      "references": ["1325"]
+    },
+    {
+      "prompt": "Che cosa significa che un requisito del contratto è essenziale?",
+      "answer": "Significa che senza di esso il contratto non esiste: se manca l'accordo, la causa, l'oggetto o la forma richiesta ad substantiam, non c'è un contratto valido e il contratto è nullo.",
+      "rubric": [
+        { "id": "c1", "concept": "senza il requisito il contratto non esiste", "weight": 2 },
+        { "id": "c2", "concept": "la mancanza di un requisito essenziale determina la nullità", "weight": 2 }
+      ],
+      "references": ["1325", "1418"]
+    },
+    {
+      "prompt": "Perché è vietato vendere un organo ma non donarlo?",
+      "answer": "Gli atti di disposizione del proprio corpo sono vietati quando causano una diminuzione permanente dell'integrità fisica; la norma è letta come divieto degli atti a titolo oneroso, mentre la donazione di organi è consentita dalle leggi speciali.",
+      "rubric": [
+        { "id": "c1", "concept": "divieto di atti che causano diminuzione permanente dell'integrità fisica", "weight": 2 },
+        { "id": "c2", "concept": "il divieto riguarda gli atti a titolo oneroso", "weight": 2 },
+        { "id": "c3", "concept": "è un limite di legge all'autonomia contrattuale", "weight": 1 }
+      ],
+      "references": ["5"]
+    }
+  ]
+}

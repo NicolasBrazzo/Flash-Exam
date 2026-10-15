@@ -1,0 +1,135 @@
+{
+  "topic": { "name": "Sede della persona, parentela e stato civile" },
+  "questions": [
+    {
+      "prompt": "Come definisce il codice civile il domicilio e la residenza?",
+      "answer": "Il domicilio è il luogo in cui la persona ha stabilito la sede principale dei suoi affari e interessi; la residenza è il luogo in cui la persona ha la dimora abituale.",
+      "rubric": [
+        { "id": "c1", "concept": "domicilio: sede principale di affari e interessi", "weight": 2 },
+        { "id": "c2", "concept": "residenza: dimora abituale", "weight": 2 }
+      ],
+      "references": ["43"]
+    },
+    {
+      "prompt": "Quali sono gli elementi della residenza?",
+      "answer": "Un elemento oggettivo, la permanenza abituale in un luogo, e uno soggettivo, l'intenzione di abitarvi stabilmente.",
+      "rubric": [
+        { "id": "c1", "concept": "elemento oggettivo: permanenza abituale", "weight": 2 },
+        { "id": "c2", "concept": "elemento soggettivo: intenzione di abitarvi stabilmente", "weight": 2 }
+      ],
+      "references": ["43"]
+    },
+    {
+      "prompt": "Che differenza c'è tra domicilio legale e domicilio volontario?",
+      "answer": "Il domicilio legale è fissato dalla legge, come quello del minore presso la residenza della famiglia o del tutore e quello dell'interdetto presso il tutore. Il domicilio volontario è scelto dall'interessato come centro dei propri affari.",
+      "rubric": [
+        { "id": "c1", "concept": "legale: fissato dalla legge", "weight": 2 },
+        { "id": "c2", "concept": "esempi: minore e interdetto", "weight": 1 },
+        { "id": "c3", "concept": "volontario: scelto dall'interessato", "weight": 1 }
+      ],
+      "references": ["45"]
+    },
+    {
+      "prompt": "Dove ha il domicilio il minore?",
+      "answer": "Nel luogo di residenza della famiglia o in quello del tutore; se i genitori sono separati o non hanno la stessa residenza, presso il genitore con cui convive.",
+      "rubric": [
+        { "id": "c1", "concept": "residenza della famiglia o del tutore", "weight": 2 },
+        { "id": "c2", "concept": "genitori separati: presso il genitore convivente", "weight": 2 }
+      ],
+      "references": ["45"]
+    },
+    {
+      "prompt": "Che cos'è il domicilio speciale e come si elegge?",
+      "answer": "È il domicilio eletto per determinati affari o atti, distinto dal domicilio generale; l'elezione deve farsi espressamente per iscritto.",
+      "rubric": [
+        { "id": "c1", "concept": "domicilio per determinati affari", "weight": 2 },
+        { "id": "c2", "concept": "elezione espressa per iscritto", "weight": 2 }
+      ],
+      "references": ["47"]
+    },
+    {
+      "prompt": "Il trasferimento della residenza è opponibile ai terzi?",
+      "answer": "Non è opponibile ai terzi di buona fede se non è stato denunciato nei modi di legge; se domicilio e residenza coincidevano, verso i terzi in buona fede si considera trasferito anche il domicilio, salvo diversa dichiarazione.",
+      "rubric": [
+        { "id": "c1", "concept": "opponibile solo se denunciato nei modi di legge", "weight": 2 },
+        { "id": "c2", "concept": "si presume trasferito anche il domicilio coincidente", "weight": 2 }
+      ],
+      "references": ["44"]
+    },
+    {
+      "prompt": "Che cos'è la parentela?",
+      "answer": "È il vincolo tra le persone che discendono da uno stesso stipite, sia che la filiazione sia avvenuta nel matrimonio, sia fuori, sia per adozione; non sorge con l'adozione di maggiorenni.",
+      "rubric": [
+        { "id": "c1", "concept": "discendenza da uno stesso stipite", "weight": 2 },
+        { "id": "c2", "concept": "nel o fuori dal matrimonio o per adozione", "weight": 1 },
+        { "id": "c3", "concept": "esclusa l'adozione di maggiorenni", "weight": 1 }
+      ],
+      "references": ["74"]
+    },
+    {
+      "prompt": "Che differenza c'è tra parentela in linea retta e in linea collaterale?",
+      "answer": "Sono parenti in linea retta le persone di cui l'una discende dall'altra, come genitore e figlio; in linea collaterale quelle che hanno uno stipite comune ma non discendono l'una dall'altra, come fratelli o cugini.",
+      "rubric": [
+        { "id": "c1", "concept": "retta: l'uno discende dall'altro", "weight": 2 },
+        { "id": "c2", "concept": "collaterale: stipite comune senza discendenza reciproca", "weight": 2 }
+      ],
+      "references": ["75"]
+    },
+    {
+      "prompt": "Come si computano i gradi di parentela?",
+      "answer": "In linea retta si contano tanti gradi quante sono le generazioni, escluso lo stipite; in linea collaterale si sale da un parente fino allo stipite comune e si scende all'altro, sempre escludendo lo stipite. Oltre il sesto grado la parentela di regola non rileva.",
+      "rubric": [
+        { "id": "c1", "concept": "linea retta: generazioni escluso lo stipite", "weight": 1 },
+        { "id": "c2", "concept": "collaterale: si sale allo stipite e si scende", "weight": 2 },
+        { "id": "c3", "concept": "limite del sesto grado", "weight": 1 }
+      ],
+      "references": ["76", "77"]
+    },
+    {
+      "prompt": "Che cos'è l'affinità?",
+      "answer": "È il vincolo tra un coniuge e i parenti dell'altro coniuge, nella stessa linea e nello stesso grado. Non cessa per la morte del coniuge, ma cessa se il matrimonio è dichiarato nullo; tra i coniugi non c'è né parentela né affinità.",
+      "rubric": [
+        { "id": "c1", "concept": "vincolo tra coniuge e parenti dell'altro", "weight": 2 },
+        { "id": "c2", "concept": "stessa linea e grado della parentela", "weight": 1 },
+        { "id": "c3", "concept": "non cessa per morte, cessa per nullità del matrimonio", "weight": 1 }
+      ],
+      "references": ["78"]
+    },
+    {
+      "prompt": "Che cosa si iscrive nei registri dello stato civile?",
+      "answer": "Gli atti relativi alle principali vicende della persona: cittadinanza, nascita, matrimonio, unione civile e morte. I registri sono tenuti in ogni comune e sono pubblici.",
+      "rubric": [
+        { "id": "c1", "concept": "cittadinanza, nascita, matrimonio, unione civile, morte", "weight": 2 },
+        { "id": "c2", "concept": "tenuti in ogni comune e pubblici", "weight": 1 }
+      ],
+      "references": ["449", "450"]
+    },
+    {
+      "prompt": "Che efficacia probatoria hanno gli atti dello stato civile?",
+      "answer": "Fanno prova fino a querela di falso di ciò che l'ufficiale attesta essere avvenuto in sua presenza o da lui compiuto; le dichiarazioni dei comparenti fanno fede fino a prova contraria.",
+      "rubric": [
+        { "id": "c1", "concept": "fino a querela di falso per quanto attestato dall'ufficiale", "weight": 2 },
+        { "id": "c2", "concept": "dichiarazioni dei comparenti fino a prova contraria", "weight": 2 }
+      ],
+      "references": ["451"]
+    },
+    {
+      "prompt": "Come si prova la nascita o la morte se mancano i registri?",
+      "answer": "Se i registri non sono stati tenuti, sono andati distrutti o manca la registrazione, la prova può essere data con ogni mezzo, salvo che la mancanza dipenda da dolo del richiedente.",
+      "rubric": [
+        { "id": "c1", "concept": "prova con ogni mezzo", "weight": 2 },
+        { "id": "c2", "concept": "salvo dolo del richiedente", "weight": 1 }
+      ],
+      "references": ["452"]
+    },
+    {
+      "prompt": "Entro quali termini vanno dichiarate nascita e morte?",
+      "answer": "La nascita va dichiarata all'ufficiale dello stato civile entro dieci giorni, da un genitore, da un procuratore o da chi ha assistito al parto; la morte entro ventiquattro ore.",
+      "rubric": [
+        { "id": "c1", "concept": "nascita: entro dieci giorni", "weight": 2 },
+        { "id": "c2", "concept": "morte: entro ventiquattro ore", "weight": 2 }
+      ],
+      "references": []
+    }
+  ]
+}

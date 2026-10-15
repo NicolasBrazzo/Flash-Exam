@@ -1,0 +1,158 @@
+{
+  "topic": { "name": "Responsabilità per fatto altrui, cose, animali e veicoli" },
+  "questions": [
+    {
+      "prompt": "Chi risponde del danno cagionato da una persona incapace di intendere o di volere?",
+      "answer": "Chi è tenuto alla sua sorveglianza, salvo che provi di non aver potuto impedire il fatto. Se il danneggiato non ottiene il risarcimento dal sorvegliante, il giudice può condannare l'incapace a un'equa indennità, considerando le condizioni economiche delle parti.",
+      "rubric": [
+        { "id": "c1", "concept": "risponde il sorvegliante", "weight": 2 },
+        { "id": "c2", "concept": "salvo prova di non aver potuto impedire il fatto", "weight": 1 },
+        { "id": "c3", "concept": "equa indennità a carico dell'incapace in via sussidiaria", "weight": 2 }
+      ],
+      "references": ["2047"]
+    },
+    {
+      "prompt": "Di che cosa rispondono i genitori e il tutore?",
+      "answer": "Del danno cagionato dal fatto illecito dei figli minori non emancipati o delle persone soggette a tutela che abitano con essi; sono liberati solo se provano di non aver potuto impedire il fatto.",
+      "rubric": [
+        { "id": "c1", "concept": "fatto illecito dei figli minori o dei tutelati conviventi", "weight": 2 },
+        { "id": "c2", "concept": "liberati solo provando di non aver potuto impedire il fatto", "weight": 2 }
+      ],
+      "references": ["2048"]
+    },
+    {
+      "prompt": "Di che cosa rispondono precettori e maestri d'arte?",
+      "answer": "Del danno cagionato dal fatto illecito dei loro allievi e apprendisti nel tempo in cui sono sotto la loro vigilanza, salvo che provino di non aver potuto impedire il fatto.",
+      "rubric": [
+        { "id": "c1", "concept": "fatto illecito di allievi e apprendisti", "weight": 1 },
+        { "id": "c2", "concept": "durante la vigilanza", "weight": 2 },
+        { "id": "c3", "concept": "salvo prova di non aver potuto impedirlo", "weight": 1 }
+      ],
+      "references": ["2048"]
+    },
+    {
+      "prompt": "Il minore capace di intendere e di volere risponde personalmente del danno che causa?",
+      "answer": "Sì: se è capace di intendere e di volere risponde direttamente per fatto illecito, e accanto a lui rispondono in solido i genitori o il tutore. Se è incapace, rispondono il sorvegliante e i genitori.",
+      "rubric": [
+        { "id": "c1", "concept": "il minore capace risponde personalmente", "weight": 2 },
+        { "id": "c2", "concept": "in solido con i genitori o il tutore", "weight": 1 },
+        { "id": "c3", "concept": "se incapace rispondono sorvegliante e genitori", "weight": 1 }
+      ],
+      "references": ["2043", "2047", "2048", "2055"]
+    },
+    {
+      "prompt": "Di che cosa rispondono padroni e committenti?",
+      "answer": "Dei danni arrecati dal fatto illecito dei loro domestici e commessi nell'esercizio delle incombenze a cui sono adibiti: oggi la norma si riferisce al datore di lavoro per i danni causati dai dipendenti nello svolgimento delle mansioni.",
+      "rubric": [
+        { "id": "c1", "concept": "fatto illecito di dipendenti o commessi", "weight": 1 },
+        { "id": "c2", "concept": "nell'esercizio delle mansioni", "weight": 2 },
+        { "id": "c3", "concept": "responsabilità oggettiva del datore di lavoro", "weight": 1 }
+      ],
+      "references": ["2049"]
+    },
+    {
+      "prompt": "Perché la legge fa rispondere il datore di lavoro dei danni causati dal dipendente?",
+      "answer": "Per proteggere il danneggiato: aggiunge al patrimonio del dipendente quello, di solito più consistente, del datore di lavoro, che trae vantaggio dall'attività e ne deve sopportare i rischi.",
+      "rubric": [
+        { "id": "c1", "concept": "tutela del danneggiato", "weight": 2 },
+        { "id": "c2", "concept": "patrimonio più consistente del datore", "weight": 1 },
+        { "id": "c3", "concept": "chi trae vantaggio dall'attività ne sopporta i rischi", "weight": 1 }
+      ],
+      "references": ["2049"]
+    },
+    {
+      "prompt": "Che cosa prevede la responsabilità per l'esercizio di attività pericolose?",
+      "answer": "Chi cagiona danno ad altri nello svolgimento di un'attività pericolosa per sua natura o per i mezzi adoperati deve risarcire il danno, se non prova di aver adottato tutte le misure idonee a evitarlo.",
+      "rubric": [
+        { "id": "c1", "concept": "attività pericolosa per natura o mezzi", "weight": 2 },
+        { "id": "c2", "concept": "prova liberatoria: tutte le misure idonee", "weight": 2 }
+      ],
+      "references": ["2050"]
+    },
+    {
+      "prompt": "Che cosa prevede la responsabilità per danno cagionato da cose in custodia?",
+      "answer": "Ciascuno è responsabile del danno cagionato dalle cose che ha in custodia, salvo che provi il caso fortuito: la responsabilità si fonda sul rapporto di custodia, non sulla colpa.",
+      "rubric": [
+        { "id": "c1", "concept": "rapporto di custodia", "weight": 2 },
+        { "id": "c2", "concept": "prova liberatoria del caso fortuito", "weight": 2 },
+        { "id": "c3", "concept": "responsabilità oggettiva", "weight": 1 }
+      ],
+      "references": ["2051"]
+    },
+    {
+      "prompt": "Che cos'è il caso fortuito?",
+      "answer": "È un evento imprevedibile e inevitabile, esterno alla sfera del custode o del responsabile, che interrompe il nesso causale tra la cosa o l'attività e il danno; può consistere anche nel fatto del terzo o del danneggiato.",
+      "rubric": [
+        { "id": "c1", "concept": "evento imprevedibile e inevitabile", "weight": 2 },
+        { "id": "c2", "concept": "interrompe il nesso causale", "weight": 1 },
+        { "id": "c3", "concept": "può essere il fatto del terzo o del danneggiato", "weight": 1 }
+      ],
+      "references": ["2051"]
+    },
+    {
+      "prompt": "Chi risponde dei danni cagionati da animali?",
+      "answer": "Il proprietario dell'animale o chi se ne serve per il tempo in cui lo ha in uso, sia che fosse sotto la sua custodia sia che fosse smarrito o fuggito, salvo che provi il caso fortuito.",
+      "rubric": [
+        { "id": "c1", "concept": "proprietario o utilizzatore", "weight": 2 },
+        { "id": "c2", "concept": "anche se l'animale era smarrito o fuggito", "weight": 1 },
+        { "id": "c3", "concept": "salvo caso fortuito", "weight": 1 }
+      ],
+      "references": ["2052"]
+    },
+    {
+      "prompt": "Chi risponde dei danni cagionati dalla rovina di un edificio?",
+      "answer": "Il proprietario dell'edificio o della costruzione, salvo che provi che la rovina non è dovuta a difetto di manutenzione o a vizio di costruzione.",
+      "rubric": [
+        { "id": "c1", "concept": "il proprietario", "weight": 2 },
+        { "id": "c2", "concept": "salvo prova che la rovina non dipende da manutenzione o costruzione", "weight": 2 }
+      ],
+      "references": ["2053"]
+    },
+    {
+      "prompt": "Quando risponde il conducente di un veicolo per i danni da circolazione?",
+      "answer": "Il conducente di un veicolo senza guida di rotaie deve risarcire il danno prodotto a persone o cose dalla circolazione, se non prova di aver fatto tutto il possibile per evitare il danno.",
+      "rubric": [
+        { "id": "c1", "concept": "veicoli senza guida di rotaie", "weight": 1 },
+        { "id": "c2", "concept": "prova liberatoria: aver fatto tutto il possibile", "weight": 2 }
+      ],
+      "references": ["2054"]
+    },
+    {
+      "prompt": "Che cosa si presume in caso di scontro tra veicoli?",
+      "answer": "Si presume, fino a prova contraria, che ciascuno dei conducenti abbia concorso ugualmente a produrre il danno subito dai singoli veicoli.",
+      "rubric": [
+        { "id": "c1", "concept": "presunzione di pari concorso di colpa", "weight": 2 },
+        { "id": "c2", "concept": "superabile con prova contraria", "weight": 1 }
+      ],
+      "references": ["2054"]
+    },
+    {
+      "prompt": "Quando risponde il proprietario del veicolo per i danni causati dal conducente?",
+      "answer": "Il proprietario, o in sua vece l'usufruttuario o l'acquirente con riserva di proprietà, risponde in solido con il conducente, se non prova che la circolazione è avvenuta contro la sua volontà, come nel caso di furto.",
+      "rubric": [
+        { "id": "c1", "concept": "responsabilità solidale con il conducente", "weight": 2 },
+        { "id": "c2", "concept": "salvo circolazione contro la sua volontà", "weight": 2 }
+      ],
+      "references": ["2054"]
+    },
+    {
+      "prompt": "Chi risponde dei danni derivanti da vizi di costruzione o difetti di manutenzione del veicolo?",
+      "answer": "Ne rispondono in ogni caso il conducente e il proprietario, senza possibilità di prova liberatoria.",
+      "rubric": [
+        { "id": "c1", "concept": "conducente e proprietario", "weight": 2 },
+        { "id": "c2", "concept": "in ogni caso, senza prova liberatoria", "weight": 2 }
+      ],
+      "references": ["2054"]
+    },
+    {
+      "prompt": "Che cos'è la responsabilità oggettiva?",
+      "answer": "È la responsabilità che prescinde dalla colpa del responsabile: la legge lo individua in base a un rapporto con la cosa, l'attività o la persona che ha causato il danno, come la custodia, la proprietà o il rapporto di lavoro, e ammette solo prove liberatorie limitate.",
+      "rubric": [
+        { "id": "c1", "concept": "prescinde dalla colpa", "weight": 2 },
+        { "id": "c2", "concept": "fondata su un rapporto con cosa, attività o persona", "weight": 1 },
+        { "id": "c3", "concept": "prove liberatorie limitate", "weight": 1 }
+      ],
+      "references": ["2049", "2051", "2052"]
+    }
+  ]
+}

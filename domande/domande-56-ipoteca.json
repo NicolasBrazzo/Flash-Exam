@@ -1,0 +1,242 @@
+{
+  "topic": { "name": "L'ipoteca" },
+  "questions": [
+    {
+      "prompt": "Che cosa attribuisce l'ipoteca al creditore?",
+      "answer": "Il diritto di espropriare, anche nei confronti del terzo acquirente, i beni vincolati a garanzia del credito e di essere soddisfatto con preferenza sul prezzo ricavato.",
+      "rubric": [
+        { "id": "c1", "concept": "diritto di espropriare i beni vincolati", "weight": 1 },
+        { "id": "c2", "concept": "anche contro il terzo acquirente", "weight": 2 },
+        { "id": "c3", "concept": "preferenza sul ricavato", "weight": 1 }
+      ],
+      "references": ["2808"]
+    },
+    {
+      "prompt": "Come si costituisce l'ipoteca?",
+      "answer": "Mediante l'iscrizione nei registri immobiliari: l'iscrizione ha efficacia costitutiva. Può gravare su beni del debitore o di un terzo.",
+      "rubric": [
+        { "id": "c1", "concept": "iscrizione nei registri immobiliari", "weight": 2 },
+        { "id": "c2", "concept": "efficacia costitutiva", "weight": 1 },
+        { "id": "c3", "concept": "su beni del debitore o di un terzo", "weight": 1 }
+      ],
+      "references": ["2808"]
+    },
+    {
+      "prompt": "Quali sono i caratteri dell'ipoteca?",
+      "answer": "Accessorietà, perché dipende dal credito garantito; specialità, perché grava su beni determinati e per una somma determinata; indivisibilità, perché grava per intero su ciascun bene e su ogni sua parte; pubblicità, perché non esistono ipoteche occulte.",
+      "rubric": [
+        { "id": "c1", "concept": "accessorietà", "weight": 1 },
+        { "id": "c2", "concept": "specialità", "weight": 1 },
+        { "id": "c3", "concept": "indivisibilità", "weight": 1 },
+        { "id": "c4", "concept": "pubblicità", "weight": 1 }
+      ],
+      "references": ["2809"]
+    },
+    {
+      "prompt": "Che cosa significa che l'ipoteca è indivisibile?",
+      "answer": "Che grava per intero su tutti i beni vincolati, su ciascuno di essi e su ogni loro parte: il creditore può espropriare anche uno solo dei beni per l'intero credito, e l'ipoteca resta per l'intero anche dopo un pagamento parziale.",
+      "rubric": [
+        { "id": "c1", "concept": "grava per intero su ogni bene e parte", "weight": 2 },
+        { "id": "c2", "concept": "permane anche dopo il pagamento parziale", "weight": 2 }
+      ],
+      "references": ["2809"]
+    },
+    {
+      "prompt": "Su quali beni e diritti può costituirsi l'ipoteca?",
+      "answer": "Sui beni immobili in commercio con le pertinenze, sull'usufrutto, sulla superficie, sull'enfiteusi e sulla nuda proprietà, sui mobili registrati e sulle rendite dello Stato. Non su servitù, uso e abitazione.",
+      "rubric": [
+        { "id": "c1", "concept": "immobili e diritti reali di godimento alienabili", "weight": 2 },
+        { "id": "c2", "concept": "mobili registrati e rendite dello Stato", "weight": 1 },
+        { "id": "c3", "concept": "esclusi servitù, uso e abitazione", "weight": 1 }
+      ],
+      "references": ["2810"]
+    },
+    {
+      "prompt": "A che cosa si estende l'ipoteca sull'immobile?",
+      "answer": "Ai miglioramenti, alle costruzioni e alle altre accessioni dell'immobile ipotecato, salve le eccezioni di legge.",
+      "rubric": [
+        { "id": "c1", "concept": "miglioramenti, costruzioni e accessioni", "weight": 2 },
+        { "id": "c2", "concept": "salve le eccezioni di legge", "weight": 1 }
+      ],
+      "references": ["2811"]
+    },
+    {
+      "prompt": "Quali sono i tipi di ipoteca secondo il titolo?",
+      "answer": "L'ipoteca legale, attribuita dalla legge a certi creditori; quella giudiziale, fondata su una sentenza di condanna; quella volontaria, concessa per contratto o dichiarazione unilaterale.",
+      "rubric": [
+        { "id": "c1", "concept": "legale", "weight": 1 },
+        { "id": "c2", "concept": "giudiziale", "weight": 1 },
+        { "id": "c3", "concept": "volontaria", "weight": 1 }
+      ],
+      "references": ["2808"]
+    },
+    {
+      "prompt": "A chi spetta l'ipoteca legale?",
+      "answer": "All'alienante, sugli immobili alienati, per l'adempimento degli obblighi dell'acquirente; ai coeredi, soci e altri condividenti, per il pagamento dei conguagli; allo Stato, sui beni dell'imputato e del civilmente responsabile.",
+      "rubric": [
+        { "id": "c1", "concept": "alienante per gli obblighi dell'acquirente", "weight": 1 },
+        { "id": "c2", "concept": "condividenti per i conguagli", "weight": 1 },
+        { "id": "c3", "concept": "Stato sui beni dell'imputato", "weight": 1 }
+      ],
+      "references": ["2817"]
+    },
+    {
+      "prompt": "Che particolarità ha l'ipoteca legale dell'alienante e del condividente?",
+      "answer": "È iscritta d'ufficio insieme alla trascrizione dell'atto di alienazione o divisione e, se iscritta contemporaneamente, prevale sulle trascrizioni e iscrizioni già eseguite contro l'acquirente o il condividente, in deroga al criterio della priorità.",
+      "rubric": [
+        { "id": "c1", "concept": "iscritta d'ufficio", "weight": 1 },
+        { "id": "c2", "concept": "contemporanea alla trascrizione del titolo", "weight": 1 },
+        { "id": "c3", "concept": "prevale sulle formalità anteriori contro l'acquirente", "weight": 2 }
+      ],
+      "references": ["2817", "2650", "2834"]
+    },
+    {
+      "prompt": "Quando si può iscrivere ipoteca giudiziale?",
+      "answer": "In base a ogni sentenza, anche non definitiva, che condanni al pagamento di una somma, all'adempimento di un'altra obbligazione o al risarcimento dei danni da liquidare, e in base agli altri provvedimenti cui la legge attribuisce questo effetto; il creditore può iscriverla su qualsiasi immobile del debitore.",
+      "rubric": [
+        { "id": "c1", "concept": "sentenza di condanna anche non definitiva", "weight": 2 },
+        { "id": "c2", "concept": "o altri provvedimenti previsti", "weight": 1 },
+        { "id": "c3", "concept": "su qualsiasi immobile del debitore", "weight": 1 }
+      ],
+      "references": ["2818", "2828"]
+    },
+    {
+      "prompt": "Che cosa può fare il debitore se l'ipoteca giudiziale è eccessiva?",
+      "answer": "Può chiedere la riduzione dell'ipoteca, restringendola a una parte dei beni, quando il valore dei beni ipotecati eccede di oltre un terzo l'importo dei crediti iscritti con gli accessori.",
+      "rubric": [
+        { "id": "c1", "concept": "riduzione dell'ipoteca", "weight": 2 },
+        { "id": "c2", "concept": "se il valore eccede di oltre un terzo il credito", "weight": 2 }
+      ],
+      "references": ["2872", "2875"]
+    },
+    {
+      "prompt": "Come si concede l'ipoteca volontaria?",
+      "answer": "Con contratto o anche con dichiarazione unilaterale, per atto pubblico o scrittura privata a pena di nullità; non può essere concessa per testamento. L'atto deve individuare l'immobile e il credito garantito.",
+      "rubric": [
+        { "id": "c1", "concept": "contratto o dichiarazione unilaterale", "weight": 1 },
+        { "id": "c2", "concept": "forma scritta a pena di nullità", "weight": 1 },
+        { "id": "c3", "concept": "non per testamento", "weight": 2 }
+      ],
+      "references": ["2821", "2826"]
+    },
+    {
+      "prompt": "Che effetto ha l'ipoteca concessa su cosa altrui o su cosa futura?",
+      "answer": "Può essere iscritta solo quando la cosa è acquistata dal concedente o è venuta a esistenza; prima l'atto ha solo efficacia obbligatoria.",
+      "rubric": [
+        { "id": "c1", "concept": "iscrizione solo dopo l'acquisto o l'esistenza", "weight": 2 },
+        { "id": "c2", "concept": "prima efficacia obbligatoria", "weight": 2 }
+      ],
+      "references": ["2822", "2823"]
+    },
+    {
+      "prompt": "Da che cosa dipende il grado dell'ipoteca?",
+      "answer": "L'ipoteca prende grado dal momento della sua iscrizione; le iscrizioni contemporanee contro la stessa persona sullo stesso immobile hanno lo stesso numero e i creditori concorrono in proporzione.",
+      "rubric": [
+        { "id": "c1", "concept": "grado dal momento dell'iscrizione", "weight": 2 },
+        { "id": "c2", "concept": "iscrizioni contemporanee concorrono in proporzione", "weight": 1 }
+      ],
+      "references": ["2852", "2853"]
+    },
+    {
+      "prompt": "Quali crediti accessori sono garantiti nello stesso grado dell'ipoteca?",
+      "answer": "Le spese dell'atto di costituzione, dell'iscrizione e della rinnovazione, le spese ordinarie per l'intervento nel processo esecutivo e gli interessi delle due annate anteriori e di quella in corso al pignoramento; gli interessi successivi solo nella misura legale.",
+      "rubric": [
+        { "id": "c1", "concept": "spese di costituzione, iscrizione e rinnovazione", "weight": 1 },
+        { "id": "c2", "concept": "spese per l'intervento nell'esecuzione", "weight": 1 },
+        { "id": "c3", "concept": "interessi nei limiti di legge", "weight": 2 }
+      ],
+      "references": ["2855"]
+    },
+    {
+      "prompt": "Che cosa sono la postergazione e la permuta di grado?",
+      "answer": "Sono accordi con cui i creditori ipotecari scambiano o cedono il proprio grado, purché non pregiudichino i creditori di grado intermedio; vanno annotati a margine dell'iscrizione.",
+      "rubric": [
+        { "id": "c1", "concept": "scambio o cessione del grado", "weight": 2 },
+        { "id": "c2", "concept": "senza pregiudizio per i creditori intermedi", "weight": 1 },
+        { "id": "c3", "concept": "annotazione", "weight": 1 }
+      ],
+      "references": ["2843"]
+    },
+    {
+      "prompt": "Che cos'è la surrogazione del creditore perdente?",
+      "answer": "Il creditore ipotecario che resta insoddisfatto perché sul prezzo dei suoi beni si è soddisfatto un creditore anteriore con ipoteca estesa anche ad altri beni del debitore può surrogarsi nell'ipoteca di quel creditore sugli altri beni, con preferenza sui creditori posteriori a sé.",
+      "rubric": [
+        { "id": "c1", "concept": "creditore rimasto perdente", "weight": 1 },
+        { "id": "c2", "concept": "il creditore anteriore aveva ipoteca su più beni", "weight": 1 },
+        { "id": "c3", "concept": "surroga nell'ipoteca sugli altri beni", "weight": 2 }
+      ],
+      "references": ["2856"]
+    },
+    {
+      "prompt": "Quanto dura l'efficacia dell'iscrizione ipotecaria e che cosa succede senza rinnovazione?",
+      "answer": "Vent'anni; se non è rinnovata prima della scadenza, l'ipoteca si estingue e può essere iscritta di nuovo solo con il grado della nuova iscrizione, e non più se il bene è stato nel frattempo acquistato da un terzo che ha trascritto.",
+      "rubric": [
+        { "id": "c1", "concept": "vent'anni", "weight": 2 },
+        { "id": "c2", "concept": "senza rinnovazione perde il grado", "weight": 1 },
+        { "id": "c3", "concept": "nuova iscrizione impossibile dopo l'acquisto del terzo", "weight": 1 }
+      ],
+      "references": ["2847", "2848"]
+    },
+    {
+      "prompt": "Quando si cancella l'ipoteca?",
+      "answer": "Quando è consentita dal creditore, con atto nelle forme richieste per la concessione, o ordinata con sentenza passata in giudicato; si esegue con annotazione a margine dell'iscrizione. Il creditore soddisfatto deve consentire alla cancellazione.",
+      "rubric": [
+        { "id": "c1", "concept": "consenso del creditore", "weight": 1 },
+        { "id": "c2", "concept": "o sentenza passata in giudicato", "weight": 1 },
+        { "id": "c3", "concept": "annotazione a margine", "weight": 1 },
+        { "id": "c4", "concept": "obbligo del creditore soddisfatto", "weight": 1 }
+      ],
+      "references": ["2882", "2884"]
+    },
+    {
+      "prompt": "Quali facoltà ha il terzo acquirente di un bene ipotecato?",
+      "answer": "Per evitare l'espropriazione può pagare i creditori iscritti, rilasciare i beni ipotecati perché l'esecuzione si svolga contro un amministratore, o liberare l'immobile dalle ipoteche con la purgazione, offrendo il prezzo o il valore dichiarato. Ha poi regresso contro il debitore.",
+      "rubric": [
+        { "id": "c1", "concept": "pagare i creditori iscritti", "weight": 1 },
+        { "id": "c2", "concept": "rilascio dei beni", "weight": 1 },
+        { "id": "c3", "concept": "purgazione delle ipoteche", "weight": 1 },
+        { "id": "c4", "concept": "regresso contro il debitore", "weight": 1 }
+      ],
+      "references": ["2858", "2866"]
+    },
+    {
+      "prompt": "Che differenza c'è tra terzo acquirente e terzo datore di ipoteca?",
+      "answer": "Il terzo acquirente compra un bene già ipotecato e può pagare, rilasciare i beni o chiederne la purgazione. Il terzo datore ha concesso lui l'ipoteca per un debito altrui: non può rilasciare i beni né purgarli né chiedere la preventiva escussione del debitore, ma ha regresso e surrogazione verso il debitore.",
+      "rubric": [
+        { "id": "c1", "concept": "acquirente: ha rilascio e purgazione", "weight": 2 },
+        { "id": "c2", "concept": "datore: niente rilascio, purgazione né escussione", "weight": 2 },
+        { "id": "c3", "concept": "entrambi hanno regresso", "weight": 1 }
+      ],
+      "references": ["2858", "2868", "2871"]
+    },
+    {
+      "prompt": "Quali sono le cause di estinzione dell'ipoteca?",
+      "answer": "La cancellazione dell'iscrizione, la mancata rinnovazione, l'estinzione dell'obbligazione garantita, il perimento del bene salva la surrogazione reale, la rinuncia del creditore, la scadenza del termine o la condizione risolutiva e il provvedimento che trasferisce il bene espropriato ordinando la cancellazione.",
+      "rubric": [
+        { "id": "c1", "concept": "cancellazione e mancata rinnovazione", "weight": 1 },
+        { "id": "c2", "concept": "estinzione dell'obbligazione", "weight": 1 },
+        { "id": "c3", "concept": "perimento del bene e rinuncia", "weight": 1 },
+        { "id": "c4", "concept": "termine, condizione, decreto di trasferimento", "weight": 1 }
+      ],
+      "references": ["2878"]
+    },
+    {
+      "prompt": "L'ipoteca si prescrive?",
+      "answer": "Di regola no, perché segue il credito; ma per i beni acquistati da terzi si prescrive con il decorso di vent'anni dalla trascrizione del titolo d'acquisto, indipendentemente dal credito.",
+      "rubric": [
+        { "id": "c1", "concept": "di regola segue il credito", "weight": 1 },
+        { "id": "c2", "concept": "vent'anni dalla trascrizione dell'acquisto del terzo", "weight": 2 }
+      ],
+      "references": ["2880"]
+    },
+    {
+      "prompt": "Il creditore ipotecario può pignorare altri beni del debitore prima di quelli ipotecati?",
+      "answer": "No, il creditore che ha pegno o ipoteca non può pignorare altri beni del debitore se non sottopone a esecuzione anche i beni gravati dalla garanzia.",
+      "rubric": [
+        { "id": "c1", "concept": "deve escutere anche i beni ipotecati", "weight": 2 },
+        { "id": "c2", "concept": "non può pignorare solo altri beni", "weight": 1 }
+      ],
+      "references": ["2911"]
+    }
+  ]
+}
