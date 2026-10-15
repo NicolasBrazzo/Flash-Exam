@@ -12,6 +12,7 @@ import { NotFound } from "./pages/NotFound.jsx";
 import { Domande } from "./pages/Domande.jsx";
 import { Import } from "./pages/Import.jsx";
 import { Simulazione } from "./pages/Simulazione.jsx";
+import { Flashcard } from "./pages/Flashcard.jsx";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ function App() {
                 <Route element={<AppLayout />}>
                   <Route path="/" element={<Home />} />
                   <Route path="/domande" element={<Domande />} />
+                  <Route path="/flashcard" element={<Flashcard />} />
                   <Route path="/import" element={<Import />} />
                   <Route path="/simulazione" element={<Simulazione />} />
                   <Route path="/simulazione/:id" element={<Simulazione />} />
