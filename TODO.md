@@ -278,16 +278,16 @@ Schema `#003` (`FE_Topics`, `FE_Questions`, `FE_ExamSessions`, `FE_Attempts`) in
 - **Note**: `FeedbackBlock` (nuovo, autorizzato) mostra esito con icona Lucide + etichetta (`role="status"`), correzioni con `del`/`ins` e freccia (testo "diventa" sr-only), suggerimento, risposta esemplare, risposta di riferimento e riferimenti (`formatReferences`); nessun numero. Funzioni pure in `utils/flashcardSession.js` verificate da `scripts/checks/flashcardSession.check.mjs` (31 casi); pagina verificata con 12 scenari Playwright su API finta (non committati). Scelte: gli argomenti con 0 domande sono disabilitati ed esclusi da "Tutti"; "Non so" svuota la textarea e invia ""; il focus va su "Avanti"/"Termina" all'arrivo dell'esito e su "Nuova sessione" a fine sessione; la fase finale e' provvisoria (FLASH-5 aggiunge riepilogo e Home). Osservazioni aperte: `hasFeedbackContent` per ora non e' usata; in PROVA-8 la pagina di revisione avra' piu' `role="status"` (conviene renderlo opzionale); dopo un 500 un nuovo "Invia" crea un secondo tentativo sul server; il `Loader` esistente usa colori fissi anche nel tema scuro.
 
 ### FLASH-5 — Flashcard: fallback di autovalutazione, riepilogo e Home
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: FLASH-3, FLASH-4
 - **Descrizione**: chiude il percorso flashcard e sistema la Home.
 - **Criteri di accettazione**:
-  - [ ] `services/attemptsService.js` (`selfGradeAttempt`)
-  - [ ] se la risposta ha `verdict: null`: si mostra la risposta di riferimento e tre pulsanti (corretta, parzialmente corretta, errata); la scelta chiama il service, poi si mostra `FeedbackBlock` con l'esito e la risposta di riferimento; un errore non perde la schermata
-  - [ ] fine sessione: riepilogo sobrio con **solo** il numero di domande svolte, senza punteggi né conteggi per esito, e due azioni ("Nuova sessione", "Home")
-  - [ ] `pages/Home.jsx`: titolo e un punto di ingresso verso "Flashcard" (link con icona Lucide); niente statistiche, promemoria o gamification
+  - [x] `services/attemptsService.js` (`selfGradeAttempt`)
+  - [x] se la risposta ha `verdict: null`: si mostra la risposta di riferimento e tre pulsanti (corretta, parzialmente corretta, errata); la scelta chiama il service, poi si mostra `FeedbackBlock` con l'esito e la risposta di riferimento; un errore non perde la schermata
+  - [x] fine sessione: riepilogo sobrio con **solo** il numero di domande svolte, senza punteggi né conteggi per esito, e due azioni ("Nuova sessione", "Home")
+  - [x] `pages/Home.jsx`: titolo e un punto di ingresso verso "Flashcard" (link con icona Lucide); niente statistiche, promemoria o gamification
   - [ ] [manuale] fallback provato con chiave finta
-- **Note**:
+- **Note**: `services/attemptsService.js` (`selfGradeAttempt`, stesso `toError` di flashcardsService che conserva lo status). Con `verdict: null` la pagina mostra il sottocomponente locale `AutovalutazioneFlashcard` (nessun componente nuovo): testo esplicativo, `FeedbackBlock` con `verdict: null` (solo risposta di riferimento e articoli) e tre pulsanti da 44 px con icona in un `role="group"`; focus sulla prima scelta; doppio clic bloccato; un errore resta in `role="alert"` senza perdere la schermata; a esito salvato compare `FeedbackBlock` con l'esito e il focus va su "Avanti". Riepilogo: titolo + "N domande svolte" (`sessionSummary`), "Nuova sessione" e "Home". Home: titolo e link "Flashcard" con icona `Layers`. Funzioni pure (`SELF_GRADE_OPTIONS`, `needsSelfGrade`, `sessionSummary`) verificate da `scripts/checks/flashcardSelfGrade.check.mjs` (10 casi, non nei gate: va lanciato a mano); 12 scenari Playwright su API finta (non committati). Scelte: "Avanti" resta nascosto finché l'autovalutazione non riesce, così nessun tentativo resta senza esito; conseguenza: con 409 o 500 ripetuti la sessione resta ferma su quella domanda (seguito possibile: mostrare "Avanti" sul 409). Il conteggio del riepilogo usa `questions.length`, valido finché non esiste un'uscita anticipata.
 
 ---
 
