@@ -47,3 +47,16 @@ export const hasFeedbackContent = (feedback) =>
         (feedback.suggestion ?? "").trim() ||
         (feedback.exampleAnswer ?? "").trim())
   );
+
+// Pulsanti dell'autovalutazione (AI non disponibile), nell'ordine mostrato
+export const SELF_GRADE_OPTIONS = Object.freeze([
+  Object.freeze({ verdict: "correct", label: "Corretta", icon: VERDICTS.correct.icon }),
+  Object.freeze({ verdict: "partial", label: "Parzialmente corretta", icon: VERDICTS.partial.icon }),
+  Object.freeze({ verdict: "wrong", label: "Errata", icon: VERDICTS.wrong.icon }),
+]);
+
+// Risposta registrata ma senza esito: tocca all'utente valutarla
+export const needsSelfGrade = (attempt) => attempt != null && attempt.verdict == null;
+
+// Riepilogo sobrio: solo quante domande sono state svolte
+export const sessionSummary = (n) => (n === 1 ? "1 domanda svolta" : `${n} domande svolte`);

@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { Check, Circle, Play, RotateCcw, Send } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Check, Circle, CircleAlert, CircleCheck, CircleX, House, Play, RotateCcw, Send } from "lucide-react";
 import { useFetch } from "@/hooks/useFetch";
 import { useMutation } from "@/hooks/useMutation";
 import { getTopics } from "@/services/topicsService";
 import { answerFlashcard, getFlashcards } from "@/services/flashcardsService";
+import { selfGradeAttempt } from "@/services/attemptsService";
 import { FeedbackBlock } from "@/components/FeedbackBlock";
 import Loader from "@/components/Loader";
 import { Button } from "@/components/ui/button";
@@ -15,11 +17,14 @@ import {
   MAX_ANSWER_LENGTH,
   MAX_COUNT,
   MIN_COUNT,
+  SELF_GRADE_OPTIONS,
   canStart,
   isLastQuestion,
+  needsSelfGrade,
   parseCount,
   selectAll,
   sessionCounter,
+  sessionSummary,
   toggleTopic,
 } from "@/utils/flashcardSession";
 
@@ -41,9 +46,14 @@ const LABELS = {
   grading: "Sto valutando la risposta",
   next: "Avanti",
   finish: "Termina",
-  done: "Sessione terminata.",
+  done: "Sessione terminata",
   newSession: "Nuova sessione",
+  home: "Home",
+  selfGradeIntro: "La valutazione automatica non è disponibile: confronta la tua risposta con quella di riferimento e scegli tu l'esito.",
+  selfGradeGroup: "La tua risposta era",
 };
+
+const SELF_GRADE_ICONS = { CircleCheck, CircleAlert, CircleX };
 
 // Errori uniti con "; " -> elenco
 const ErrorList = ({ message }) => {
@@ -186,6 +196,56 @@ const ImpostazioneFlashcard = ({ selected, setSelected, countRaw, setCountRaw, o
   );
 };
 
+// Fallback senza AI: risposta di riferimento e scelta dell'esito
+const AutovalutazioneFlashcard = ({ attempt, onGraded }) => {
+  const gradingRef = useRef(false);
+  const firstRef = useRef(null);
+  const mutation = useMutation(selfGradeAttempt, { onSuccess: onGraded });
+
+  // I pulsanti di invio sono spariti: il focus va sulla prima scelta
+  useEffect(() => {
+    firstRef.current?.focus();
+  }, []);
+
+  const grade = async (verdict) => {
+    if (gradingRef.current) return;
+    gradingRef.current = true;
+    try {
+      await mutation.mutate(attempt.id, verdict);
+    } catch {
+      // l'errore resta in mutation.error; la schermata non cambia
+    } finally {
+      gradingRef.current = false;
+    }
+  };
+
+  return (
+    <div className="space-y-4">
+      <p className="text-sm text-muted-foreground">{LABELS.selfGradeIntro}</p>
+      <FeedbackBlock verdict={null} feedback={null} referenceAnswer={attempt.reference_answer} references={attempt.references} />
+      <ErrorList message={mutation.error} />
+      <div role="group" aria-label={LABELS.selfGradeGroup} className="flex flex-wrap justify-end gap-2">
+        {SELF_GRADE_OPTIONS.map((option, i) => {
+          const Icon = SELF_GRADE_ICONS[option.icon];
+          return (
+            <Button
+              key={option.verdict}
+              ref={i === 0 ? firstRef : undefined}
+              variant="outline"
+              className="h-11 px-4"
+              disabled={mutation.isLoading}
+              onClick={() => grade(option.verdict)}
+            >
+              <Icon aria-hidden="true" />
+              {option.label}
+            </Button>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
 // Ciclo: una domanda per schermata, risposta, correzione, avanti
 const SessioneFlashcard = ({ questions, onFinish }) => {
   const [index, setIndex] = useState(0);
@@ -200,10 +260,12 @@ const SessioneFlashcard = ({ questions, onFinish }) => {
   const last = isLastQuestion(index, questions.length);
   const locked = mutation.isLoading || attempt !== null;
 
+  const selfGrading = needsSelfGrade(attempt);
+
   // Arrivato l'esito, i pulsanti di invio spariscono: il focus va su "Avanti"
   useEffect(() => {
-    if (attempt) nextRef.current?.focus();
-  }, [attempt]);
+    if (attempt && !selfGrading) nextRef.current?.focus();
+  }, [attempt, selfGrading]);
 
   const send = async (text) => {
     if (sendingRef.current || attempt) return;
@@ -280,9 +342,10 @@ const SessioneFlashcard = ({ questions, onFinish }) => {
 
       {mutation.isLoading && <Loader text={LABELS.grading} />}
 
-      {attempt && (
+      {selfGrading && <AutovalutazioneFlashcard attempt={attempt} onGraded={setAttempt} />}
+
+      {attempt && !selfGrading && (
         <div className="space-y-4">
-          {/* FLASH-5: con verdict null (AI non disponibile) qui va l'autovalutazione */}
           <FeedbackBlock
             verdict={attempt.verdict}
             feedback={attempt.feedback}
@@ -342,13 +405,24 @@ export const Flashcard = () => {
       )}
 
       {phase === "done" && (
-        // FLASH-5: riepilogo sobrio (solo il numero di domande svolte) e "Home"
+        // Riepilogo sobrio: solo il numero di domande svolte, nessun conteggio per esito
         <div className="space-y-4 rounded-lg border bg-card p-4 shadow-sm">
-          <p>{LABELS.done}</p>
-          <Button ref={newSessionRef} className="h-11 px-4" onClick={() => setPhase("setup")}>
-            <RotateCcw />
-            {LABELS.newSession}
-          </Button>
+          <div className="space-y-1">
+            <h2 className="text-lg font-semibold">{LABELS.done}</h2>
+            <p className="text-muted-foreground">{sessionSummary(questions.length)}</p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <Button ref={newSessionRef} className="h-11 px-4" onClick={() => setPhase("setup")}>
+              <RotateCcw />
+              {LABELS.newSession}
+            </Button>
+            <Button asChild variant="outline" className="h-11 px-4">
+              <Link to="/">
+                <House />
+                {LABELS.home}
+              </Link>
+            </Button>
+          </div>
         </div>
       )}
     </div>
