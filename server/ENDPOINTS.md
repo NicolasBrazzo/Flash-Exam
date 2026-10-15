@@ -189,7 +189,10 @@ Rotte:
   revisione finale, a seconda di `status`. **Protetta.**
   Risposta: `{ "ok": true, "exam": {...} }`. `404` `"Simulazione non trovata"`
   se non esiste o se l'id non è un uuid. Se la prova è `IN_PROGRESS` ma
-  scaduta, prima la consegna automaticamente (vedi sopra; da PROVA-4).
+  scaduta oltre la tolleranza, prima la consegna automaticamente con le bozze
+  salvate (`auto_submitted: true`) e la valuta come `submit`: la risposta
+  contiene già la revisione (`GRADED`, oppure `SELF_GRADED` se il grader non
+  risponde).
 - `POST /exams` — Avvia una nuova simulazione. **Protetta.** Body vuoto.
   Estrae 6 domande a caso e crea la sessione, con le 6 righe di `FE_Attempts`
   e la risposta vuota.
@@ -197,7 +200,8 @@ Rotte:
   - Se esiste già una prova `IN_PROGRESS` non scaduta (entro `expires_at` più
     la tolleranza), non ne crea un'altra e risponde `200` con quella:
     `{ "ok": true, "exam": {...}, "resumed": true }`. Una prova scaduta non
-    viene ripresa (la sua consegna automatica arriva con PROVA-4).
+    viene ripresa: prima viene consegnata automaticamente e valutata (si
+    ritrova nello storico), poi se ne crea una nuova.
   - `409` se nel database ci sono meno di 6 domande.
 - `PUT /exams/:id/answers/:position` — Salva in bozza la risposta a una
   domanda durante la prova. **Protetta.**
@@ -231,21 +235,34 @@ Rotte:
   - `400` se il body non è valido (elenco degli errori). `404`
     `"Simulazione non trovata"` se la prova non esiste o l'id non è un uuid.
     `409` `"Simulazione già consegnata"` se la prova non è più
-    `IN_PROGRESS`. `500` per un errore interno: la prova resta `GRADING` e si
-    rivaluta con `POST /exams/:id/grade` (PROVA-4).
+    `IN_PROGRESS`. `500` per un errore interno: la prova resta `GRADING` e,
+    dopo 5 minuti, si rivaluta con `POST /exams/:id/grade`.
 - `POST /exams/:id/self-grade` — Autovalutazione di riserva, quando l'AI non
   ha risposto. **Protetta.**
   Body: `{ "verdicts": [{ "position": number, "verdict": "correct" | "partial" | "wrong" }] }`,
-  con tutte e 6 le posizioni. Il punteggio interno vale 1 / 0.5 / 0; il codice
-  calcola punti, voto e lode.
-  Risposta: `{ "ok": true, "exam": {...} }`. `409` se la prova non è
-  `SELF_GRADED` o ha già un voto.
+  con tutte e 6 le posizioni, ciascuna una volta sola.
+  - Il punteggio interno vale 1 / 0.5 / 0; il codice calcola punti e voto.
+    In autovalutazione **non c'è la lode**: `honors` resta `false`.
+  - Le risposte vuote restano `wrong` d'ufficio, qualunque verdetto arrivi
+    (la posizione va comunque inviata).
+  - Lo stato resta `SELF_GRADED`, con `grade` valorizzato.
+  Risposta: `{ "ok": true, "exam": {...} }`. `400` se il body non è valido
+  (elenco degli errori). `404` se la prova non esiste o l'id non è un uuid.
+  `409` `"Simulazione già valutata"` se la prova ha già un voto, `409`
+  `"La simulazione non è in attesa di autovalutazione"` se non è
+  `SELF_GRADED`.
 - `POST /exams/:id/grade` — Riprova la valutazione AI di una prova rimasta
-  senza voto (`GRADING` bloccata, oppure `SELF_GRADED` con `grade` null).
-  **Protetta.** Body vuoto.
-  Risposta: `{ "ok": true, "exam": {...} }`. `409` se la prova ha già un voto.
-  `502` se il grader non risponde neanche questa volta: la prova resta
-  com'era e si può ancora autovalutare.
+  senza voto: `SELF_GRADED` con `grade` null, oppure `GRADING` bloccata
+  (consegnata da più di 5 minuti: una consegna in corso non si tocca).
+  **Protetta.** Body vuoto. Stessa valutazione di `submit`, con una sola
+  chiamata al grader.
+  Risposta: `{ "ok": true, "exam": {...} }` con stato `GRADED`. `404` se la
+  prova non esiste o l'id non è un uuid. `409` `"Simulazione già valutata"`
+  se ha già un voto, `"Simulazione non ancora consegnata"` se è
+  `IN_PROGRESS`, `"Valutazione già in corso: riprova tra qualche minuto"` se
+  è `GRADING` da meno di 5 minuti. `502` se il grader non risponde neanche
+  questa volta: la prova resta com'era (una `SELF_GRADED` si può ancora
+  autovalutare, una `GRADING` resta `GRADING`).
 
 ---
 

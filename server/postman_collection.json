@@ -374,7 +374,7 @@
                 "exams"
               ]
             },
-            "description": "Avvia una simulazione (6 domande, 40 minuti): 201 con resumed: false; oppure riprende quella in corso non scaduta: 200 con resumed: true. 409 se ci sono meno di 6 domande. Salva l'id nella variabile examId. Protetta."
+            "description": "Avvia una simulazione (6 domande, 40 minuti): 201 con resumed: false; oppure riprende quella in corso non scaduta: 200 con resumed: true. Una prova in corso scaduta viene prima consegnata e valutata. 409 se ci sono meno di 6 domande. Salva l'id nella variabile examId. Protetta."
           },
           "event": [
             {
@@ -406,7 +406,7 @@
                 "{{examId}}"
               ]
             },
-            "description": "Prova in corso (senza risposte di riferimento) o revisione finale. 404 se non esiste o l'id non e' un uuid. Consegna automaticamente una prova scaduta (da PROVA-4). Protetta."
+            "description": "Prova in corso (senza risposte di riferimento) o revisione finale. 404 se non esiste o l'id non e' un uuid. Una prova in corso scaduta viene prima consegnata automaticamente (bozze salvate, auto_submitted: true) e valutata. Protetta."
           }
         },
         {
@@ -487,7 +487,7 @@
                 "self-grade"
               ]
             },
-            "description": "Autovalutazione di riserva quando l'AI non ha risposto: tutte e 6 le posizioni. Protetta.",
+            "description": "Autovalutazione di riserva quando l'AI non ha risposto: tutte e 6 le posizioni una volta sola. Voto senza lode, stato resta SELF_GRADED, risposte vuote wrong d'ufficio. 400 body non valido, 404 prova inesistente, 409 se gia' valutata o non SELF_GRADED. Protetta.",
             "body": {
               "mode": "raw",
               "raw": "{\n    \"verdicts\": [\n        {\n            \"position\": 1,\n            \"verdict\": \"correct\"\n        },\n        {\n            \"position\": 2,\n            \"verdict\": \"correct\"\n        },\n        {\n            \"position\": 3,\n            \"verdict\": \"correct\"\n        },\n        {\n            \"position\": 4,\n            \"verdict\": \"correct\"\n        },\n        {\n            \"position\": 5,\n            \"verdict\": \"correct\"\n        },\n        {\n            \"position\": 6,\n            \"verdict\": \"correct\"\n        }\n    ]\n}"
@@ -510,7 +510,7 @@
                 "grade"
               ]
             },
-            "description": "Riprova la valutazione AI di una prova senza voto. 502 se il grader non risponde. Protetta."
+            "description": "Riprova la valutazione AI di una prova senza voto (SELF_GRADED con grade null, oppure GRADING da piu' di 5 minuti). 404 prova inesistente, 409 se gia' valutata, non consegnata o valutazione in corso. 502 se il grader non risponde: la prova resta com'era. Protetta."
           }
         }
       ]
