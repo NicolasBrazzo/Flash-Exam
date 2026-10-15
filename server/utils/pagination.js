@@ -17,11 +17,12 @@ const getRange = (page, limit) => {
   return { from, to: from + limit - 1 };
 };
 
-// page, limit, sort e order dalla query string, con default, tetto e whitelist
-const parsePagination = (query = {}, { sortable = [DEFAULT_SORT] } = {}) => {
+// page, limit, sort e order dalla query string, con default, tetto e whitelist.
+// Un sort fuori whitelist ricade su defaultSort
+const parsePagination = (query = {}, { sortable = [DEFAULT_SORT], defaultSort = DEFAULT_SORT } = {}) => {
   const page = positiveInt(query.page, DEFAULT_PAGE);
   const limit = Math.min(MAX_LIMIT, positiveInt(query.limit, DEFAULT_LIMIT));
-  const sort = sortable.includes(query.sort) ? query.sort : DEFAULT_SORT;
+  const sort = sortable.includes(query.sort) ? query.sort : defaultSort;
   const order = query.order === "asc" ? "asc" : "desc";
 
   return { page, limit, sort, order, ...getRange(page, limit) };

@@ -102,7 +102,7 @@
                 "login"
               ]
             },
-            "description": "Login con le credenziali dell'unica utente (variabili seedEmail / seedPassword, da allineare a SEED_EMAIL e SEED_PASSWORD del .env). Salva automaticamente il token nella variabile della collection: le altre richieste lo usano via Bearer."
+            "description": "Login con le credenziali dell'unica utente (variabili seedEmail / seedPassword, da allineare a SEED_EMAIL e SEED_PASSWORD del .env). Salva automaticamente il token nella variabile della collection: le altre richieste lo usano via Bearer. 400 \"Email e password sono obbligatorie\", 401 \"Credenziali non valide\". Pubblica."
           }
         },
         {
@@ -120,7 +120,7 @@
                 "me"
               ]
             },
-            "description": "Dati dell'utente autenticato (dal token). Protetta."
+            "description": "Utente autenticato: { ok, user: { sub, email, first_name, last_name, iat, exp } } (payload del token). Protetta."
           }
         }
       ]
@@ -322,45 +322,6 @@
       "name": "Exams",
       "item": [
         {
-          "name": "Elenco simulazioni",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/exams?status=&page=1&limit=20&sort=started_at&order=desc",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "exams"
-              ],
-              "query": [
-                {
-                  "key": "status",
-                  "value": ""
-                },
-                {
-                  "key": "page",
-                  "value": "1"
-                },
-                {
-                  "key": "limit",
-                  "value": "20"
-                },
-                {
-                  "key": "sort",
-                  "value": "started_at"
-                },
-                {
-                  "key": "order",
-                  "value": "desc"
-                }
-              ]
-            },
-            "description": "Storico paginato (FILTERS_BE.md). Filtro: status. Protetta."
-          }
-        },
-        {
           "name": "Avvia simulazione",
           "request": {
             "method": "POST",
@@ -374,7 +335,7 @@
                 "exams"
               ]
             },
-            "description": "Avvia una simulazione (6 domande, 40 minuti): 201 con resumed: false; oppure riprende quella in corso non scaduta: 200 con resumed: true. 409 se ci sono meno di 6 domande. Salva l'id nella variabile examId. Protetta."
+            "description": "Avvia una simulazione (6 domande, 40 minuti): 201 con resumed: false; oppure riprende quella in corso non scaduta: 200 con resumed: true. Una prova in corso scaduta viene prima consegnata e valutata. 409 se ci sono meno di 6 domande. Salva l'id nella variabile examId. Protetta."
           },
           "event": [
             {
@@ -406,7 +367,7 @@
                 "{{examId}}"
               ]
             },
-            "description": "Prova in corso (senza risposte di riferimento) o revisione finale. 404 se non esiste o l'id non e' un uuid. Consegna automaticamente una prova scaduta (da PROVA-4). Protetta."
+            "description": "Prova in corso (senza risposte di riferimento) o revisione finale. 404 se non esiste o l'id non e' un uuid. Una prova in corso scaduta viene prima consegnata automaticamente (bozze salvate, auto_submitted: true) e valutata. Protetta."
           }
         },
         {
@@ -459,7 +420,7 @@
                 "submit"
               ]
             },
-            "description": "Consegna e valuta con una sola chiamata al grader. answers è opzionale (ultime risposte non salvate). Protetta.",
+            "description": "Consegna e valuta con una sola chiamata al grader. answers è opzionale (ultime risposte non salvate; posizioni 1-6 non ripetute), salvato solo entro expires_at + 15 s, oltre si valutano le bozze. auto_submitted deciso dal server. Risposte vuote wrong d'ufficio. Grader non disponibile: 200 con SELF_GRADED. 400 body non valido, 404 prova inesistente, 409 già consegnata. Protetta.",
             "body": {
               "mode": "raw",
               "raw": "{\n    \"answers\": [\n        {\n            \"position\": 1,\n            \"answer\": \"Con la nascita.\"\n        }\n    ]\n}"
@@ -487,7 +448,7 @@
                 "self-grade"
               ]
             },
-            "description": "Autovalutazione di riserva quando l'AI non ha risposto: tutte e 6 le posizioni. Protetta.",
+            "description": "Autovalutazione di riserva quando l'AI non ha risposto: tutte e 6 le posizioni una volta sola. Voto senza lode, stato resta SELF_GRADED, risposte vuote wrong d'ufficio. 400 body non valido, 404 prova inesistente, 409 se gia' valutata o non SELF_GRADED. Protetta.",
             "body": {
               "mode": "raw",
               "raw": "{\n    \"verdicts\": [\n        {\n            \"position\": 1,\n            \"verdict\": \"correct\"\n        },\n        {\n            \"position\": 2,\n            \"verdict\": \"correct\"\n        },\n        {\n            \"position\": 3,\n            \"verdict\": \"correct\"\n        },\n        {\n            \"position\": 4,\n            \"verdict\": \"correct\"\n        },\n        {\n            \"position\": 5,\n            \"verdict\": \"correct\"\n        },\n        {\n            \"position\": 6,\n            \"verdict\": \"correct\"\n        }\n    ]\n}"
@@ -510,7 +471,46 @@
                 "grade"
               ]
             },
-            "description": "Riprova la valutazione AI di una prova senza voto. 502 se il grader non risponde. Protetta."
+            "description": "Riprova la valutazione AI di una prova senza voto (SELF_GRADED con grade null, oppure GRADING da piu' di 5 minuti). 404 prova inesistente, 409 se gia' valutata, non consegnata o valutazione in corso. 502 se il grader non risponde: la prova resta com'era. Protetta."
+          }
+        },
+        {
+          "name": "Elenco simulazioni",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/exams?status=&page=1&limit=20&sort=started_at&order=desc",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "exams"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": ""
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "sort",
+                  "value": "started_at"
+                },
+                {
+                  "key": "order",
+                  "value": "desc"
+                }
+              ]
+            },
+            "description": "Storico paginato (FILTERS_BE.md): { ok, data, pagination }, ogni elemento senza questions. status: IN_PROGRESS | GRADING | GRADED | SELF_GRADED (vuoto = nessun filtro; altro valore = data vuoto). sort: started_at (default) o grade, prove senza voto in fondo; order asc/desc; limit massimo 100. Non consegna le prove scadute. Protetta."
           }
         }
       ]
@@ -579,7 +579,7 @@
                 "answer"
               ]
             },
-            "description": "Crea il tentativo e lo valuta subito. Salva l'id del tentativo nella variabile attemptId. Protetta.",
+            "description": "Risposta a una flashcard: crea il tentativo e lo fa valutare subito. 201 { ok, attempt } con verdict, grading_source, feedback (null se il grader non risponde: poi Autovalutazione flashcard), reference_answer, references. Risposta vuota: wrong d'ufficio (SELF), senza AI. 400 se il body non e' valido, 404 se la domanda non esiste. Salva l'id nella variabile attemptId. Protetta.",
             "body": {
               "mode": "raw",
               "raw": "{\n    \"question_id\": \"{{questionId}}\",\n    \"answer\": \"Con la nascita.\"\n}"
@@ -626,7 +626,7 @@
                 "self-grade"
               ]
             },
-            "description": "Autovalutazione di riserva di una flashcard senza valutazione. Protetta.",
+            "description": "Autovalutazione di riserva di una flashcard senza valutazione (verdict: correct | partial | wrong). 200 { ok, attempt } con grading_source SELF e feedback null. 400 se il body non e' valido, 404 se il tentativo non esiste, 409 se e' gia' valutato o appartiene a una simulazione. Protetta.",
             "body": {
               "mode": "raw",
               "raw": "{\n    \"verdict\": \"partial\"\n}"
@@ -655,7 +655,7 @@
                 "health"
               ]
             },
-            "description": "Verifica che il server sia su. Pubblica."
+            "description": "Health check: 200 { status: \"ok\" }. Pubblica."
           }
         }
       ]

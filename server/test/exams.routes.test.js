@@ -262,19 +262,8 @@ describe("POST /exams e GET /exams/:id", () => {
     assert.equal(body.resumed, true);
   });
 
-  test("prova scaduta: non ripresa, se ne crea una nuova", async () => {
-    results = [
-      { data: sessionRow("IN_PROGRESS", -60 * 60 * 1000) },
-      { data: ids(8) },
-      { data: sessionRow() },
-      { data: attemptRows() },
-    ];
-    const { status, body } = await call("POST", "/");
-    assert.equal(status, 201);
-    assert.equal(body.resumed, false);
-    assert.ok(allCalls("insert").some((c) => c.table === "FE_ExamSessions"));
-    assert.deepEqual(allCalls("update"), []);
-  });
+  // Prova scaduta oltre la tolleranza: da PROVA-4 viene consegnata e valutata
+  // prima di crearne una nuova (test in examSettle.test.js, sezione POST /exams)
 
   test("meno di 6 domande: 409", async () => {
     for (const n of [5, 0]) {

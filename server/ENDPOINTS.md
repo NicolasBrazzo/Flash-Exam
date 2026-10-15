@@ -17,7 +17,7 @@ Se aggiungi o modifichi un endpoint, aggiorna anche la collection.
 
 - **Base URL**: definito dalla porta del server (`PORT`, default `3000`). Es. `http://localhost:3000`.
 - **Formato**: tutte le richieste e risposte usano JSON (`Content-Type: application/json`).
-- **Formato risposta**: ogni risposta ha la forma `{ "ok": true, ... }` in caso di successo, oppure `{ "ok": false, "error": <string | string[]> }` in caso di errore.
+- **Formato risposta**: ogni risposta (tranne `GET /health`) ha la forma `{ "ok": true, ... }` in caso di successo, oppure `{ "ok": false, "error": <string | string[]> }` in caso di errore.
 - **Autenticazione**: le rotte protette richiedono l'header `Authorization: Bearer <token>`. Il token JWT si ottiene tramite `POST /auth/login`.
 - **Utente unico**: non esiste registrazione pubblica. L'unica utente viene creata da `npm run seed` a partire dalle variabili `SEED_*` del `.env`.
 - **Logout**: è solo lato client (rimozione del token da `localStorage`), non esiste una rotta dedicata.
@@ -28,7 +28,9 @@ Se aggiungi o modifichi un endpoint, aggiorna anche la collection.
 |--------|--------|
 | `401 Non autenticato` | Header `Authorization` assente o non nel formato `Bearer <token>` |
 | `401 Token non valido o scaduto` | Token JWT non verificabile o scaduto |
+| `400 Il body della richiesta non è un JSON valido` | Body non leggibile come JSON (con `Content-Type: application/json`) |
 | `404 Rotta non trovata` | Endpoint inesistente |
+| `413 Il body della richiesta è troppo grande` | Body oltre il limite di `express.json` (100 kB) |
 | `500 Errore interno del server` | Errore non gestito lato server |
 
 ---
@@ -37,8 +39,11 @@ Se aggiungi o modifichi un endpoint, aggiorna anche la collection.
 
 - `POST /auth/login` — Autenticazione utente. **Pubblica.**
   Body: `{ "email": string, "password": string }`. Risposta: `{ "ok": true, "token": string }`.
-  `400` se manca email o password, `401` con credenziali non valide.
+  `400` `"Email e password sono obbligatorie"` se manca email o password,
+  `401` `"Credenziali non valide"` con credenziali non valide.
 - `GET /auth/me` — Dati dell'utente autenticato (letti dal token: `sub`, `email`, `first_name`, `last_name`). **Protetta.**
+  Risposta: `{ "ok": true, "user": { "sub", "email", "first_name", "last_name", "iat", "exp" } }`
+  (il payload del token, con emissione e scadenza).
 
 ---
 
@@ -47,7 +52,7 @@ Se aggiungi o modifichi un endpoint, aggiorna anche la collection.
 Valgono per tutte le sezioni seguenti. Tutte le rotte di dominio sono **protette**.
 
 - **Dati mai esposti**: `score` (punteggio interno 0-1) e `points` (punti 0-5 della singola domanda) non escono mai dalle API. Di una simulazione si restituiscono solo `grade` e `honors`. Dell'output del grader si espone solo `feedback`: `{ corrections, suggestion, exampleAnswer }`. `concepts` resta sul server.
-- **Nomi dei campi**: `answer` è sempre la risposta scritta da lei `reference_answer` è la risposta di riferimento della domanda (colonna `answer` di `FE_Questions`). `references` è l'array dei riferimenti normativi (colonna `article_refs`).
+- **Nomi dei campi**: `answer` è sempre la risposta scritta da lei; `reference_answer` è la risposta di riferimento della domanda (colonna `answer` di `FE_Questions`). `references` è l'array dei riferimenti normativi (colonna `article_refs`).
 - **Elenchi paginati**: seguono [`client/src/FILTERS_BE.md`](../client/src/FILTERS_BE.md)
   (`page`, `limit`, `sort`, `order`), con la risposta
   `{ "ok": true, "data": [...], "pagination": { total, page, limit, totalPages } }`.
@@ -88,8 +93,9 @@ Valgono per tutte le sezioni seguenti. Tutte le rotte di dominio sono **protette
   - `400` se il JSON non rispetta lo schema: `topic.name` o `questions`
     mancanti, rubrica fuori da 2-4 concetti, `id` di rubrica duplicati, `weight`
     non intero positivo, e così via.
-  - `409` se, mentre l'import era in corso, un altro import ha inserito una
-    delle stesse domande: non viene inserito nulla e basta riprovare.
+  - `409` `"Alcune domande sono state inserite nel frattempo da un altro import: riprova"`
+    se, mentre l'import era in corso, un altro import ha inserito una delle
+    stesse domande: non viene inserito nulla e basta riprovare.
 
 ---
 
@@ -147,7 +153,8 @@ fino a `expires_at` più una piccola tolleranza per la latenza; se la consegna
 arriva dopo `expires_at`, imposta `auto_submitted = true`. Se lei chiude la
 pagina e la prova scade senza consegna, la prima rotta che la tocca
 (`GET /exams/:id` o `POST /exams`) la consegna automaticamente con le bozze
-salvate e la valuta, prima di rispondere.
+salvate e la valuta, prima di rispondere. Lo storico (`GET /exams`) è in sola
+lettura e non consegna nulla.
 
 **Forma di una simulazione** (`exam` nelle risposte seguenti):
 ```json
@@ -182,14 +189,28 @@ salvate e la valuta, prima di rispondere.
 Rotte:
 
 - `GET /exams` — Storico delle simulazioni, paginato. **Protetta.**
-  Query: `status` (filtro; es. `IN_PROGRESS` per trovare una prova da
-  riprendere), `page`, `limit`, `sort` (whitelist: `started_at`, `grade`),
-  `order`. Ogni elemento di `data` ha i campi di `exam` **senza** `questions`.
+  Query:
+  - `status`: filtro, uno tra `IN_PROGRESS`, `GRADING`, `GRADED`,
+    `SELF_GRADED` (es. `IN_PROGRESS` per trovare una prova da riprendere).
+    Vuoto o assente: nessun filtro. Un valore diverso (minuscolo, sconosciuto
+    o ripetuto) non trova nulla: `200` con `data: []`.
+  - `page` (default 1), `limit` (default 20, massimo 100).
+  - `sort`: whitelist `started_at` (default) e `grade`; le prove senza voto
+    vanno sempre in fondo. `order`: `asc`, qualunque altro valore vale `desc`.
+  Risposta: `{ "ok": true, "data": [...], "pagination": {...} }`; ogni elemento
+  di `data` ha i campi di `exam` **senza** `questions` (`id`, `status`,
+  `started_at`, `expires_at`, `submitted_at`, `auto_submitted`, `grade`,
+  `honors`). Una pagina oltre l'ultima restituisce `data: []` con il totale.
+  L'elenco non consegna le prove scadute: una prova abbandonata resta
+  `IN_PROGRESS` finché non la tocca `GET /exams/:id` o `POST /exams`.
 - `GET /exams/:id` — Dettaglio di una simulazione: durante la prova o la
   revisione finale, a seconda di `status`. **Protetta.**
   Risposta: `{ "ok": true, "exam": {...} }`. `404` `"Simulazione non trovata"`
   se non esiste o se l'id non è un uuid. Se la prova è `IN_PROGRESS` ma
-  scaduta, prima la consegna automaticamente (vedi sopra; da PROVA-4).
+  scaduta oltre la tolleranza, prima la consegna automaticamente con le bozze
+  salvate (`auto_submitted: true`) e la valuta come `submit`: la risposta
+  contiene già la revisione (`GRADED`, oppure `SELF_GRADED` se il grader non
+  risponde).
 - `POST /exams` — Avvia una nuova simulazione. **Protetta.** Body vuoto.
   Estrae 6 domande a caso e crea la sessione, con le 6 righe di `FE_Attempts`
   e la risposta vuota.
@@ -197,42 +218,75 @@ Rotte:
   - Se esiste già una prova `IN_PROGRESS` non scaduta (entro `expires_at` più
     la tolleranza), non ne crea un'altra e risponde `200` con quella:
     `{ "ok": true, "exam": {...}, "resumed": true }`. Una prova scaduta non
-    viene ripresa (la sua consegna automatica arriva con PROVA-4).
-  - `409` se nel database ci sono meno di 6 domande.
+    viene ripresa: prima viene consegnata automaticamente e valutata (si
+    ritrova nello storico), poi se ne crea una nuova.
+  - `409` `"Servono almeno 6 domande per avviare una simulazione"` se nel
+    database ci sono meno di 6 domande.
 - `PUT /exams/:id/answers/:position` — Salva in bozza la risposta a una
   domanda durante la prova. **Protetta.**
   Body: `{ "answer": string }` (può essere vuota, massimo 5000 caratteri,
   salvata così com'è). `:position` è un intero da 1 a 6.
   Risposta: `{ "ok": true, "updated_at": "..." }`.
-  `400` se il body non è valido (elenco degli errori) o la posizione non è un
-  intero da 1 a 6. `404` se la prova o la posizione non esistono (o l'id non è
-  un uuid). `409` se la prova non è più `IN_PROGRESS` o se è oltre
-  `expires_at` più la tolleranza (15 secondi).
+  Controlli nell'ordine: id non uuid -> `404` `"Simulazione non trovata"`;
+  posizione non valida -> `400` `"Posizione non valida: deve essere un intero da 1 a 6"`;
+  body non valido -> `400` con l'elenco degli errori; prova inesistente ->
+  `404` `"Simulazione non trovata"`; prova non più `IN_PROGRESS` -> `409`
+  `"Simulazione già consegnata"`; oltre `expires_at` più la tolleranza (15
+  secondi) -> `409` `"Tempo scaduto: la simulazione non accetta più risposte"`;
+  posizione assente -> `404` `"Domanda non trovata in questa simulazione"`.
 - `POST /exams/:id/submit` — Consegna la prova e la fa valutare. **Protetta.**
   Body (opzionale): `{ "answers": [{ "position": number, "answer": string }] }`,
-  con le ultime risposte non ancora salvate in bozza, così non si perde nulla.
-  - Porta lo stato a `GRADING` e valuta le 6 risposte con **una sola**
-    chiamata al grader. Le risposte vuote non vanno all'AI: sono `wrong`
-    d'ufficio.
+  con le ultime risposte non ancora salvate in bozza, così non si perde nulla
+  (posizioni da 1 a 6 non ripetute, al massimo 6 elementi, risposte fino a
+  5000 caratteri; body assente o `{}` ammesso).
+  - Porta lo stato a `GRADING` con un update condizionato (atomico): una
+    consegna doppia o concorrente riceve `409` e non valuta due volte.
+  - `auto_submitted` lo decide il server: `true` se la consegna arriva dopo
+    `expires_at`. Le `answers` si salvano solo fino a `expires_at` più la
+    tolleranza (15 secondi); oltre si ignorano senza errore e si valutano le
+    bozze già salvate.
+  - Valuta le 6 risposte con **una sola** chiamata al grader. Le risposte
+    vuote non vanno all'AI: sono `wrong` d'ufficio, 0 punti. Se sono tutte
+    vuote non c'è nessuna chiamata e il voto è 0.
   - Se il grader risponde: `GRADED`, con voto e lode calcolati dal codice.
-  - Se il grader non risponde (dopo i retry): `SELF_GRADED` con `grade` null.
-    La revisione mostra le risposte di riferimento e aspetta
+  - Se il grader non risponde (dopo i retry) o restituisce un output non
+    valido: `200` con `SELF_GRADED`, `grade` null e nessuna risposta
+    valutata. La revisione mostra le risposte di riferimento e aspetta
     `POST /exams/:id/self-grade`.
   - Risposta: `{ "ok": true, "exam": {...} }`, già con la revisione.
-  - `409` se la prova è già stata consegnata.
+  - `400` se il body non è valido (elenco degli errori). `404`
+    `"Simulazione non trovata"` se la prova non esiste o l'id non è un uuid.
+    `409` `"Simulazione già consegnata"` se la prova non è più
+    `IN_PROGRESS`. `500` per un errore interno: la prova resta `GRADING` e,
+    dopo 5 minuti, si rivaluta con `POST /exams/:id/grade`.
 - `POST /exams/:id/self-grade` — Autovalutazione di riserva, quando l'AI non
   ha risposto. **Protetta.**
   Body: `{ "verdicts": [{ "position": number, "verdict": "correct" | "partial" | "wrong" }] }`,
-  con tutte e 6 le posizioni. Il punteggio interno vale 1 / 0.5 / 0; il codice
-  calcola punti, voto e lode.
-  Risposta: `{ "ok": true, "exam": {...} }`. `409` se la prova non è
-  `SELF_GRADED` o ha già un voto.
+  con tutte e 6 le posizioni, ciascuna una volta sola.
+  - Il punteggio interno vale 1 / 0.5 / 0; il codice calcola punti e voto.
+    In autovalutazione **non c'è la lode**: `honors` resta `false`.
+  - Le risposte vuote restano `wrong` d'ufficio, qualunque verdetto arrivi
+    (la posizione va comunque inviata).
+  - Lo stato resta `SELF_GRADED`, con `grade` valorizzato.
+  Risposta: `{ "ok": true, "exam": {...} }`. `400` se il body non è valido
+  (elenco degli errori). `404` `"Simulazione non trovata"` se la prova non
+  esiste o l'id non è un uuid. `409` `"Simulazione già valutata"` se la prova
+  ha già un voto, `409`
+  `"La simulazione non è in attesa di autovalutazione"` se non è
+  `SELF_GRADED`.
 - `POST /exams/:id/grade` — Riprova la valutazione AI di una prova rimasta
-  senza voto (`GRADING` bloccata, oppure `SELF_GRADED` con `grade` null).
-  **Protetta.** Body vuoto.
-  Risposta: `{ "ok": true, "exam": {...} }`. `409` se la prova ha già un voto.
-  `502` se il grader non risponde neanche questa volta: la prova resta
-  com'era e si può ancora autovalutare.
+  senza voto: `SELF_GRADED` con `grade` null, oppure `GRADING` bloccata
+  (consegnata da più di 5 minuti: una consegna in corso non si tocca).
+  **Protetta.** Body vuoto. Stessa valutazione di `submit`, con una sola
+  chiamata al grader.
+  Risposta: `{ "ok": true, "exam": {...} }` con stato `GRADED`. `404`
+  `"Simulazione non trovata"` se la prova non esiste o l'id non è un uuid. `409` `"Simulazione già valutata"`
+  se ha già un voto, `"Simulazione non ancora consegnata"` se è
+  `IN_PROGRESS`, `"Valutazione già in corso: riprova tra qualche minuto"` se
+  è `GRADING` da meno di 5 minuti. `502`
+  `"Valutazione AI non disponibile: riprova più tardi"` se il grader non
+  risponde neanche questa volta: la prova resta com'era (una `SELF_GRADED` si può ancora
+  autovalutare, una `GRADING` resta `GRADING`).
 
 ---
 
@@ -254,25 +308,32 @@ sessione: ogni risposta è un tentativo `FLASHCARD` a sé.
   non è un intero 1-50 o se un parametro è ripetuto.
 - `POST /flashcards/answer` — Invia la risposta a una flashcard e la fa
   valutare subito. **Protetta.**
-  Body: `{ "question_id": uuid, "answer": string }`. Una risposta vuota vale
-  "non so": non va all'AI ed è `wrong` d'ufficio.
-  Crea il tentativo e chiama il grader. Risposta `201`:
+  Body: `{ "question_id": uuid, "answer": string }` (massimo 5000 caratteri,
+  salvata così com'è). Una risposta vuota o di soli spazi vale "non so": non va
+  all'AI ed è `wrong` d'ufficio, con `grading_source: "SELF"` e `feedback: null`.
+  Crea prima il tentativo con la risposta, poi chiama il grader. Risposta `201`:
   ```json
   {
     "ok": true,
     "attempt": {
       "id": "uuid",
       "verdict": "correct | partial | wrong | null",
-      "grading_source": "AI | null",
+      "grading_source": "AI | SELF | null",
       "feedback": { "corrections": [], "suggestion": "...", "exampleAnswer": "..." },
       "reference_answer": "...",
       "references": ["1"]
     }
   }
   ```
-  Se il grader non risponde, `verdict`, `grading_source` e `feedback` sono
-  `null`: il tentativo resta da valutare e si chiude con
-  `POST /attempts/:id/self-grade`. `404` se la domanda non esiste.
+  `feedback` è valorizzato solo con `grading_source: "AI"`; nessun punteggio
+  nella risposta. Se il grader non risponde, `verdict`, `grading_source` e
+  `feedback` sono `null`: il tentativo resta da valutare e si chiude con
+  `POST /attempts/:id/self-grade`. `400` se il body non è valido (`question_id`
+  non uuid, `answer` non testo o oltre 5000 caratteri, campi in più), con
+  l'elenco degli errori. `404` `"Domanda non trovata"` se la domanda non
+  esiste. `500` se il
+  salvataggio fallisce o la valutazione dà un errore inatteso (il tentativo,
+  se già creato, resta salvato e da valutare).
 
 ---
 
@@ -280,14 +341,22 @@ sessione: ogni risposta è un tentativo `FLASHCARD` a sé.
 
 - `POST /attempts/:id/self-grade` — Autovalutazione di riserva di una
   flashcard rimasta senza valutazione. **Protetta.**
-  Body: `{ "verdict": "correct" | "partial" | "wrong" }`.
-  Risposta: `{ "ok": true, "attempt": {...} }` (stessa forma di
-  `POST /flashcards/answer`). `404` se il tentativo non esiste. `409` se è già
-  valutato o se appartiene a una simulazione, che si autovaluta con
-  `POST /exams/:id/self-grade`.
+  Body: `{ "verdict": "correct" | "partial" | "wrong" }` (campi in più rifiutati).
+  Il punteggio interno vale 1 / 0.5 / 0 e il codice calcola i punti; nessun
+  punteggio nella risposta.
+  Risposta `200`: `{ "ok": true, "attempt": {...} }` (stessa forma di
+  `POST /flashcards/answer`, con `grading_source: "SELF"` e `feedback: null`).
+  `400` se il body non è valido (elenco degli errori). `404`
+  `"Tentativo non trovato"` se non esiste o l'id non è un uuid. `409`
+  `"Tentativo già valutato"` se è già valutato (anche da un'autovalutazione
+  arrivata nel frattempo); `409`
+  `"Il tentativo appartiene a una simulazione: usa POST /exams/:id/self-grade"`
+  se appartiene a una simulazione. `500` se il salvataggio fallisce.
 
 ---
 
 ## Utility
 
 - `GET /health` — Health check del server. **Pubblica.**
+  Risposta `200`: `{ "status": "ok" }` (senza `ok`: la usano i controlli di
+  salute del deploy).
