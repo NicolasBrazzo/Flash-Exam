@@ -103,6 +103,24 @@ const updateAttempt = async (id, fields) => {
   return data ?? null;
 };
 
+// Valuta un tentativo solo se non è ancora valutato (due autovalutazioni
+// contemporanee non si sovrascrivono): null se non c'era o era già valutato
+const gradeUngradedAttempt = async (id, fields) => {
+  const { data, error } = await supabase
+    .from(TABLE_NAME)
+    .update({ ...fields, updated_at: new Date().toISOString() })
+    .eq("id", id)
+    .is("verdict", null)
+    .select(ATTEMPT_COLUMNS)
+    .maybeSingle();
+
+  if (error) {
+    throw new Error("DATABASE_GRADE_ATTEMPT_ERROR");
+  }
+
+  return data ?? null;
+};
+
 // Indica se una domanda ha già dei tentativi (blocca la cancellazione)
 const hasAttemptsForQuestion = async (questionId) => {
   const { count, error } = await supabase
@@ -124,5 +142,6 @@ module.exports = {
   createExamAttempts,
   createFlashcardAttempt,
   updateAttempt,
+  gradeUngradedAttempt,
   hasAttemptsForQuestion,
 };

@@ -626,7 +626,7 @@
                 "self-grade"
               ]
             },
-            "description": "Autovalutazione di riserva di una flashcard senza valutazione. Protetta.",
+            "description": "Autovalutazione di riserva di una flashcard senza valutazione (verdict: correct | partial | wrong). 200 { ok, attempt } con grading_source SELF e feedback null. 400 se il body non e' valido, 404 se il tentativo non esiste, 409 se e' gia' valutato o appartiene a una simulazione. Protetta.",
             "body": {
               "mode": "raw",
               "raw": "{\n    \"verdict\": \"partial\"\n}"

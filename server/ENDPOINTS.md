@@ -286,11 +286,16 @@ sessione: ogni risposta è un tentativo `FLASHCARD` a sé.
 
 - `POST /attempts/:id/self-grade` — Autovalutazione di riserva di una
   flashcard rimasta senza valutazione. **Protetta.**
-  Body: `{ "verdict": "correct" | "partial" | "wrong" }`.
-  Risposta: `{ "ok": true, "attempt": {...} }` (stessa forma di
-  `POST /flashcards/answer`). `404` se il tentativo non esiste. `409` se è già
-  valutato o se appartiene a una simulazione, che si autovaluta con
-  `POST /exams/:id/self-grade`.
+  Body: `{ "verdict": "correct" | "partial" | "wrong" }` (campi in più rifiutati).
+  Il punteggio interno vale 1 / 0.5 / 0 e il codice calcola i punti; nessun
+  punteggio nella risposta.
+  Risposta `200`: `{ "ok": true, "attempt": {...} }` (stessa forma di
+  `POST /flashcards/answer`, con `grading_source: "SELF"` e `feedback: null`).
+  `400` se il body non è valido (elenco degli errori). `404`
+  `"Tentativo non trovato"` se non esiste o l'id non è un uuid. `409`
+  `"Tentativo già valutato"` se è già valutato (anche da un'autovalutazione
+  arrivata nel frattempo); `409` se appartiene a una simulazione, che si
+  autovaluta con `POST /exams/:id/self-grade`. `500` se il salvataggio fallisce.
 
 ---
 
