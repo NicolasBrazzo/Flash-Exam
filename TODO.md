@@ -240,29 +240,29 @@ Schema `#003` (`FE_Topics`, `FE_Questions`, `FE_ExamSessions`, `FE_Attempts`) in
 - **Note**: commit unico del branch `agent/FLASH-1`, impilato su `agent/DOM-5` (la dipendenza è DOM-1; impilato in fondo alla catena DOM per evitare conflitti su `question.model.js` e preparare PROVA-1/PROVA-6). `utils/random.js` (`shuffle` Fisher-Yates senza mutare l'input, `pickRandom`; `rng` iniettabile, riusato da PROVA-1), `utils/flashcardQuery.js` (`parseFlashcardQuery`, puro), `serializeFlashcard` in `utils/serializeQuestion.js` (whitelist `id`, `prompt`, `topic`), `getRandomQuestionsByTopics` (prima query solo gli id degli argomenti, scelta in JS, seconda query solo `id, prompt, topic` degli id scelti, riordinati come estratti) e la rotta `GET /flashcards`. Scelte: virgole in più e duplicati in `topics` ignorati (id in minuscolo), al massimo 100 argomenti, `count` vuoto vale 10, parametri ripetuti -> 400, argomenti inesistenti o senza domande -> 200 con `questions: []`; parsing della query a mano come `parsePagination` (messaggi italiani precisi). Limite noto: la prima query è soggetta al massimo di 1000 righe di PostgREST, quindi oltre 1000 domande negli argomenti scelti l'estrazione non sarebbe uniforme (stesso limite per `getRandomQuestions` di PROVA-1). `ENDPOINTS.md` e Postman allineati. Test: `random.test.js`, `flashcardQuery.test.js`, `flashcards.routes.test.js` (Supabase finto).
 
 ### FLASH-2 — `POST /flashcards/answer`: valutazione immediata e fallback
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: FLASH-1, AI-3, AI-5
 - **Descrizione**: salva la risposta, la fa valutare dal grader e restituisce il feedback. Se l'AI non risponde, lo studio non si ferma. Riempie `findAttemptById`, `createFlashcardAttempt`, `updateAttempt` e la rotta.
 - **Criteri di accettazione**:
-  - [ ] `utils/serializeAttempt.js` (puro): dall'attempt e dalla domanda alla forma `{ id, verdict, grading_source, feedback: { corrections, suggestion, exampleAnswer } | null, reference_answer, references }`. Test in `server/test/serializeAttempt.test.js`: l'oggetto prodotto **non contiene mai** `score`, `points`, `concepts`, `rubric`, `grading`
-  - [ ] body validato (`question_id` uuid, `answer` stringa, massimo 5000 caratteri -> `400`); domanda inesistente -> `404`
-  - [ ] ordine: prima si crea il tentativo con la risposta (nulla si perde), poi si valuta
-  - [ ] risposta vuota o di soli spazi: niente AI, tentativo `wrong` d'ufficio (D6), `feedback` null
-  - [ ] successo: `gradeAnswer` poi `computeScore`/`computePoints`; `updateAttempt` salva `verdict`, `grading` (output validato completo), `grading_source: "AI"`, `points`, `score`, `graded_at` rispettando i CHECK dello schema; risposta `201 { ok: true, attempt }`
-  - [ ] il grader fallisce (`GRADER_UNAVAILABLE` o `GRADER_INVALID_OUTPUT`): il tentativo resta non valutato, risposta `201` con `verdict`, `grading_source`, `feedback` a `null` e `reference_answer` valorizzata; l'errore è loggato senza dati sensibili
+  - [x] `utils/serializeAttempt.js` (puro): dall'attempt e dalla domanda alla forma `{ id, verdict, grading_source, feedback: { corrections, suggestion, exampleAnswer } | null, reference_answer, references }`. Test in `server/test/serializeAttempt.test.js`: l'oggetto prodotto **non contiene mai** `score`, `points`, `concepts`, `rubric`, `grading`
+  - [x] body validato (`question_id` uuid, `answer` stringa, massimo 5000 caratteri -> `400`); domanda inesistente -> `404`
+  - [x] ordine: prima si crea il tentativo con la risposta (nulla si perde), poi si valuta
+  - [x] risposta vuota o di soli spazi: niente AI, tentativo `wrong` d'ufficio (D6), `feedback` null
+  - [x] successo: `gradeAnswer` poi `computeScore`/`computePoints`; `updateAttempt` salva `verdict`, `grading` (output validato completo), `grading_source: "AI"`, `points`, `score`, `graded_at` rispettando i CHECK dello schema; risposta `201 { ok: true, attempt }`
+  - [x] il grader fallisce (`GRADER_UNAVAILABLE` o `GRADER_INVALID_OUTPUT`): il tentativo resta non valutato, risposta `201` con `verdict`, `grading_source`, `feedback` a `null` e `reference_answer` valorizzata; l'errore è loggato senza dati sensibili
   - [ ] [manuale] con chiave valida arriva la valutazione; con chiave finta scatta il fallback
-- **Note**:
+- **Note**: commit unico del branch `agent/FLASH-2`, impilato su `agent/AI-4` (vedi PR). `POST /flashcards/answer`: body validato con `schemas/flashcardAnswer.schema.js` (strict, `question_id` uuid, `answer` fino a 5000 caratteri salvata com'è); domanda inesistente 404; poi si crea SUBITO il tentativo `FLASHCARD` con la risposta e solo dopo si valuta. Risposta vuota o di soli spazi (D6): nessuna chiamata all'AI, `emptyAnswerResult()` + `graded_at` (wrong, SELF, 0, 0, grading null). Altrimenti `gradeAnswer` -> `computeScore`/`computePoints` -> `updateAttempt` con verdict, output completo in `grading`, `grading_source: "AI"`, score, points, `graded_at` (rispetta i CHECK di `FE_Attempts`). Fallback solo su `GRADER_UNAVAILABLE`/`GRADER_INVALID_OUTPUT`: nessun aggiornamento, 201 con verdict/fonte/feedback null e la risposta di riferimento, log con il solo codice e l'id del tentativo; ogni altro errore (DB, scoring, errore inatteso del grader) -> 500 con log del solo messaggio, e il tentativo eventualmente creato resta da valutare (si chiude con FLASH-3). `utils/serializeAttempt.js` (whitelist: id, verdict, grading_source, feedback solo per AI, reference_answer, references) e `utils/serializeFeedback.js`, estratto tale e quale da `serializeExam.js` per riusarlo. Model: `createFlashcardAttempt` (senza sessione né posizione) e `findAttemptById` (con `session_id` e `mode`, per FLASH-3). Il controller chiama `grader.gradeAnswer` sull'oggetto del modulo, così i test lo sostituiscono senza toccare l'architettura. `ENDPOINTS.md` e Postman: `grading_source` ora `AI | SELF | null` (D6), più 400 e 500. Test: `serializeAttempt.test.js`, `flashcards.answer.test.js` (Supabase e grader finti).
 
 ### FLASH-3 — `POST /attempts/:id/self-grade`
-- **Stato**: aperto
+- **Stato**: fatto
 - **Dipende da**: FLASH-2
 - **Descrizione**: l'autovalutazione di riserva di una flashcard rimasta senza valutazione. Riempie la rotta in `controllers/attempts.controller.js`.
 - **Criteri di accettazione**:
-  - [ ] body `{ verdict }` validato (`correct|partial|wrong`) -> `400` altrimenti; tentativo inesistente o id non uuid -> `404`
-  - [ ] `409` se il tentativo è già valutato o appartiene a una simulazione (`session_id` non nullo), con il messaggio che rimanda a `POST /exams/:id/self-grade`
-  - [ ] salva `verdict`, `grading_source: "SELF"`, `score = selfGradeScore(verdict)`, `points = computePoints(score)`, `graded_at`, `grading` null; risposta `{ ok: true, attempt }` nella stessa forma di FLASH-2 (con `feedback: null`)
+  - [x] body `{ verdict }` validato (`correct|partial|wrong`) -> `400` altrimenti; tentativo inesistente o id non uuid -> `404`
+  - [x] `409` se il tentativo è già valutato o appartiene a una simulazione (`session_id` non nullo), con il messaggio che rimanda a `POST /exams/:id/self-grade`
+  - [x] salva `verdict`, `grading_source: "SELF"`, `score = selfGradeScore(verdict)`, `points = computePoints(score)`, `graded_at`, `grading` null; risposta `{ ok: true, attempt }` nella stessa forma di FLASH-2 (con `feedback: null`)
   - [ ] [manuale] fallback di FLASH-2 seguito dall'autovalutazione
-- **Note**:
+- **Note**: commit unico del branch `agent/FLASH-3`, impilato su `agent/FLASH-2` (vedi PR). `POST /attempts/:id/self-grade`: id non uuid 404; body validato con `schemas/selfGrade.schema.js` (strict, `verdict` tra `correct|partial|wrong`) 400; tentativo inesistente 404 "Tentativo non trovato"; tentativo di una simulazione 409 con rimando a `POST /exams/:id/self-grade`; già valutato 409 "Tentativo già valutato". Salva `verdict`, `grading_source: "SELF"`, `score = selfGradeScore(verdict)`, `points = computePoints(score)`, `graded_at`, `grading: null` con la nuova funzione del model `gradeUngradedAttempt` (aggiornamento condizionato a `verdict` ancora nullo: se due autovalutazioni arrivano insieme, la seconda riceve 409 invece di sovrascrivere). Risposta 200 (non si crea nulla) `{ ok: true, attempt }` nella stessa forma di FLASH-2, con `feedback: null`; nessun punteggio. Errori DB 500 con log del solo messaggio. `ENDPOINTS.md` e Postman aggiornati. Test: `server/test/attempts.selfgrade.test.js`.
 
 ### FLASH-4 — Pagina "Flashcard": scelta, domande e feedback
 - **Stato**: aperto

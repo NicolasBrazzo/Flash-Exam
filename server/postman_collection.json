@@ -579,7 +579,7 @@
                 "answer"
               ]
             },
-            "description": "Crea il tentativo e lo valuta subito. Salva l'id del tentativo nella variabile attemptId. Protetta.",
+            "description": "Risposta a una flashcard: crea il tentativo e lo fa valutare subito. 201 { ok, attempt } con verdict, grading_source, feedback (null se il grader non risponde: poi Autovalutazione flashcard), reference_answer, references. Risposta vuota: wrong d'ufficio (SELF), senza AI. 400 se il body non e' valido, 404 se la domanda non esiste. Salva l'id nella variabile attemptId. Protetta.",
             "body": {
               "mode": "raw",
               "raw": "{\n    \"question_id\": \"{{questionId}}\",\n    \"answer\": \"Con la nascita.\"\n}"
@@ -626,7 +626,7 @@
                 "self-grade"
               ]
             },
-            "description": "Autovalutazione di riserva di una flashcard senza valutazione. Protetta.",
+            "description": "Autovalutazione di riserva di una flashcard senza valutazione (verdict: correct | partial | wrong). 200 { ok, attempt } con grading_source SELF e feedback null. 400 se il body non e' valido, 404 se il tentativo non esiste, 409 se e' gia' valutato o appartiene a una simulazione. Protetta.",
             "body": {
               "mode": "raw",
               "raw": "{\n    \"verdict\": \"partial\"\n}"
