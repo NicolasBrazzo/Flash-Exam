@@ -16,11 +16,22 @@
 // dettagli. Nei log non finiscono mai chiave, prompt, risposta della studentessa
 // o testo del modello.
 //
+// Valutazione in batch (simulazione): gradeBatch(items) valuta da 1 a
+// EXAM_QUESTIONS risposte in UNA chiamata logica, con la stessa gestione dei
+// fallimenti e un timeout di default più lungo (batchTimeoutMs). Restituisce una
+// Map index -> output (stessa forma di gradeAnswer); batch vuoto -> Map vuota,
+// senza chiamare la rete. Un input non valido del chiamante è un errore di
+// programmazione ("gradeBatch: ..."), non un GRADER_*.
+//
 // La risposta vuota non arriva qui: la intercetta il chiamante (D6).
 // =============================================================================
 
-const { graderOutputSchema } = require("../schemas/graderOutput.schema");
-const { buildSinglePrompt } = require("./graderPrompt");
+const {
+  graderOutputSchema,
+  graderBatchOutputSchema,
+} = require("../schemas/graderOutput.schema");
+const { buildSinglePrompt, buildBatchPrompt } = require("./graderPrompt");
+const { EXAM_QUESTIONS } = require("../config/exam");
 const { formatZodError } = require("../utils/zodError");
 
 const DEFAULT_BASE_URL = "https://generativelanguage.googleapis.com/v1beta";
@@ -74,6 +85,57 @@ const validateSingle = (json, rubric) => {
   return { ok: true, data: parsed.data };
 };
 
+// Output del batch -> { ok, data: Map index -> output } | { ok: false, reasons }
+const validateBatch = (json, items) => {
+  const parsed = graderBatchOutputSchema.safeParse(json);
+  if (!parsed.success) return { ok: false, reasons: formatZodError(parsed.error) };
+
+  const requested = new Set(items.map((item) => item.index));
+  const byIndex = new Map();
+  const reasons = [];
+  for (const result of parsed.data.results) {
+    if (byIndex.has(result.index)) reasons.push(`index ${result.index} ripetuto`);
+    else if (!requested.has(result.index)) reasons.push(`index ${shortId(result.index)} non richiesto`);
+    byIndex.set(result.index, result);
+  }
+  for (const index of requested) {
+    if (!byIndex.has(index)) reasons.push(`index ${index} mancante`);
+  }
+  if (reasons.length > 0) return { ok: false, reasons };
+
+  for (const item of items) {
+    for (const error of conceptIdErrors(byIndex.get(item.index).concepts, item.rubric)) {
+      reasons.push(`index ${item.index}: ${error}`);
+    }
+  }
+  if (reasons.length > 0) return { ok: false, reasons };
+
+  // Ordine degli elementi richiesti, senza il campo index
+  const data = new Map();
+  for (const item of items) {
+    const { index, ...output } = byIndex.get(item.index);
+    data.set(index, output);
+  }
+  return { ok: true, data };
+};
+
+// Input del batch (errore di programmazione del chiamante, prima di ogni chiamata)
+const assertBatchItems = (items) => {
+  if (!Array.isArray(items)) throw new Error("gradeBatch: items deve essere un array");
+  if (items.length > EXAM_QUESTIONS) {
+    throw new Error(`gradeBatch: al massimo ${EXAM_QUESTIONS} elementi`);
+  }
+  const seen = new Set();
+  for (const item of items) {
+    const index = item?.index;
+    if (!Number.isInteger(index) || index <= 0) {
+      throw new Error("gradeBatch: ogni elemento deve avere un index intero positivo");
+    }
+    if (seen.has(index)) throw new Error(`gradeBatch: index ${index} ripetuto`);
+    seen.add(index);
+  }
+};
+
 // Testo del modello dalla busta della risposta, null se manca
 const extractText = (body) => {
   const parts = body?.candidates?.[0]?.content?.parts;
@@ -90,6 +152,7 @@ const createGrader = ({
   sleep = defaultSleep,
   maxAttempts = 4,
   timeoutMs = 30000,
+  batchTimeoutMs = 90000,
   random = Math.random,
 } = {}) => {
   if (!apiKey || !model) {
@@ -163,10 +226,10 @@ const createGrader = ({
 
   // Valutazione completa: al massimo due chiamate logiche entro il timeout.
   // `validate(json)` -> { ok, data } | { ok: false, reasons } (riusato dal batch)
-  const runGrading = async (prompt, validate) => {
+  const runGrading = async (prompt, validate, limitMs) => {
     const controller = new AbortController();
-    const deadline = Date.now() + timeoutMs;
-    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    const deadline = Date.now() + limitMs;
+    const timer = setTimeout(() => controller.abort(), limitMs);
     try {
       for (let round = 1; round <= MAX_LOGICAL_CALLS; round += 1) {
         try {
@@ -193,9 +256,20 @@ const createGrader = ({
 
   // Valutazione di una risposta: { prompt, referenceAnswer, rubric, references, answer }
   const gradeAnswer = (item) =>
-    runGrading(buildSinglePrompt(item), (json) => validateSingle(json, item.rubric));
+    runGrading(buildSinglePrompt(item), (json) => validateSingle(json, item.rubric), timeoutMs);
 
-  return { gradeAnswer };
+  // Valutazione di più risposte in una chiamata: items [{ index, ...come gradeAnswer }]
+  const gradeBatch = async (items, { timeoutMs: limitMs } = {}) => {
+    assertBatchItems(items);
+    if (items.length === 0) return new Map();
+    return runGrading(
+      buildBatchPrompt(items),
+      (json) => validateBatch(json, items),
+      limitMs ?? batchTimeoutMs
+    );
+  };
+
+  return { gradeAnswer, gradeBatch };
 };
 
 // Istanza di default, creata alla prima chiamata da config/gemini.js (che lancia
@@ -210,10 +284,12 @@ const getDefaultGrader = () => {
 };
 
 const gradeAnswer = (item) => getDefaultGrader().gradeAnswer(item);
+const gradeBatch = (items, options) => getDefaultGrader().gradeBatch(items, options);
 
 module.exports = {
   createGrader,
   getDefaultGrader,
   gradeAnswer,
+  gradeBatch,
   conceptIdErrors,
 };
