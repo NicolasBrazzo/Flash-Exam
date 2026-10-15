@@ -459,7 +459,7 @@
                 "submit"
               ]
             },
-            "description": "Consegna e valuta con una sola chiamata al grader. answers è opzionale (ultime risposte non salvate). Protetta.",
+            "description": "Consegna e valuta con una sola chiamata al grader. answers è opzionale (ultime risposte non salvate; posizioni 1-6 non ripetute), salvato solo entro expires_at + 15 s, oltre si valutano le bozze. auto_submitted deciso dal server. Risposte vuote wrong d'ufficio. Grader non disponibile: 200 con SELF_GRADED. 400 body non valido, 404 prova inesistente, 409 già consegnata. Protetta.",
             "body": {
               "mode": "raw",
               "raw": "{\n    \"answers\": [\n        {\n            \"position\": 1,\n            \"answer\": \"Con la nascita.\"\n        }\n    ]\n}"

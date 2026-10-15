@@ -21,6 +21,8 @@ const { buildExamTimes, isWithinDeadline } = require("../utils/examTime");
 const { serializeExam } = require("../utils/serializeExam");
 const { isUuid } = require("../utils/sqlFilters");
 const { examDraftSchema } = require("../schemas/examDraft.schema");
+const { examSubmitSchema } = require("../schemas/examSubmit.schema");
+const { submitExam } = require("../services/examGrading");
 const { sendZodError } = require("../utils/zodError");
 
 const EXAM_NOT_FOUND = "Simulazione non trovata";
@@ -180,7 +182,33 @@ router.put("/:id/answers/:position", protect, async (req, res) => {
 });
 
 // Consegna la prova e la fa valutare
-router.post("/:id/submit", protect, async (req, res) => {});
+router.post("/:id/submit", protect, async (req, res) => {
+  try {
+    const now = new Date();
+    const { id } = req.params;
+
+    if (!isUuid(id)) {
+      return res.status(404).json({ ok: false, error: EXAM_NOT_FOUND });
+    }
+
+    const parsed = examSubmitSchema.safeParse(req.body ?? {});
+    if (!parsed.success) return sendZodError(res, parsed.error);
+
+    // auto_submitted, tolleranza e valutazione li decide il servizio
+    const { session, attempts } = await submitExam(id, { answers: parsed.data.answers, now });
+
+    return res.json({ ok: true, exam: serializeExam(session, attempts) });
+
+  } catch (err) {
+    if (err.message === "EXAM_NOT_FOUND") {
+      return res.status(404).json({ ok: false, error: EXAM_NOT_FOUND });
+    }
+    if (err.message === "EXAM_ALREADY_SUBMITTED") {
+      return res.status(409).json({ ok: false, error: EXAM_ALREADY_SUBMITTED });
+    }
+    return serverError(res, "POST EXAM SUBMIT ERROR:", err.message);
+  }
+});
 
 // Autovalutazione di riserva
 router.post("/:id/self-grade", protect, async (req, res) => {});

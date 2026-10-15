@@ -56,8 +56,21 @@ const createExamSession = async ({ started_at, expires_at }) => {
   return data;
 };
 
-// Aggiorna una simulazione (status, submitted_at, auto_submitted, grade, honors)
-const updateExamSession = async (id, fields) => {};
+// Aggiorna una simulazione (status, submitted_at, auto_submitted, grade, honors).
+// Con expectedStatus l'update vale solo se lo stato è ancora quello (transizione
+// atomica). Restituisce la riga aggiornata, null se nessuna riga corrisponde
+const updateExamSession = async (id, fields, { expectedStatus } = {}) => {
+  let query = supabase.from(TABLE_NAME).update(fields).eq("id", id);
+  if (expectedStatus) query = query.eq("status", expectedStatus);
+
+  const { data, error } = await query.select(SESSION_COLUMNS).maybeSingle();
+
+  if (error) {
+    throw new Error("DATABASE_UPDATE_EXAM_SESSION_ERROR");
+  }
+
+  return data ?? null;
+};
 
 // Cancella una simulazione (rollback di un avvio fallito: i tentativi vanno
 // via in cascata)

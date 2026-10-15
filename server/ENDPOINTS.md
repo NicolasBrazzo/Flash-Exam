@@ -210,16 +210,29 @@ Rotte:
   `expires_at` più la tolleranza (15 secondi).
 - `POST /exams/:id/submit` — Consegna la prova e la fa valutare. **Protetta.**
   Body (opzionale): `{ "answers": [{ "position": number, "answer": string }] }`,
-  con le ultime risposte non ancora salvate in bozza, così non si perde nulla.
-  - Porta lo stato a `GRADING` e valuta le 6 risposte con **una sola**
-    chiamata al grader. Le risposte vuote non vanno all'AI: sono `wrong`
-    d'ufficio.
+  con le ultime risposte non ancora salvate in bozza, così non si perde nulla
+  (posizioni da 1 a 6 non ripetute, al massimo 6 elementi, risposte fino a
+  5000 caratteri; body assente o `{}` ammesso).
+  - Porta lo stato a `GRADING` con un update condizionato (atomico): una
+    consegna doppia o concorrente riceve `409` e non valuta due volte.
+  - `auto_submitted` lo decide il server: `true` se la consegna arriva dopo
+    `expires_at`. Le `answers` si salvano solo fino a `expires_at` più la
+    tolleranza (15 secondi); oltre si ignorano senza errore e si valutano le
+    bozze già salvate.
+  - Valuta le 6 risposte con **una sola** chiamata al grader. Le risposte
+    vuote non vanno all'AI: sono `wrong` d'ufficio, 0 punti. Se sono tutte
+    vuote non c'è nessuna chiamata e il voto è 0.
   - Se il grader risponde: `GRADED`, con voto e lode calcolati dal codice.
-  - Se il grader non risponde (dopo i retry): `SELF_GRADED` con `grade` null.
-    La revisione mostra le risposte di riferimento e aspetta
+  - Se il grader non risponde (dopo i retry) o restituisce un output non
+    valido: `200` con `SELF_GRADED`, `grade` null e nessuna risposta
+    valutata. La revisione mostra le risposte di riferimento e aspetta
     `POST /exams/:id/self-grade`.
   - Risposta: `{ "ok": true, "exam": {...} }`, già con la revisione.
-  - `409` se la prova è già stata consegnata.
+  - `400` se il body non è valido (elenco degli errori). `404`
+    `"Simulazione non trovata"` se la prova non esiste o l'id non è un uuid.
+    `409` `"Simulazione già consegnata"` se la prova non è più
+    `IN_PROGRESS`. `500` per un errore interno: la prova resta `GRADING` e si
+    rivaluta con `POST /exams/:id/grade` (PROVA-4).
 - `POST /exams/:id/self-grade` — Autovalutazione di riserva, quando l'AI non
   ha risposto. **Protetta.**
   Body: `{ "verdicts": [{ "position": number, "verdict": "correct" | "partial" | "wrong" }] }`,
